@@ -1,0 +1,72 @@
+using System;
+using Server.Network;
+using Server.Items;
+using Server.Engines.Harvest;
+
+namespace Server.Items
+{
+	public class MhordulBoneScythe : BasePoleArm, IBoneArmour
+	{
+		public override string NameType{ get{ return "Mhordul Bone Scythe"; } }
+		
+		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.BleedAttack; } }
+		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ParalyzingBlow; } }
+
+		public override int AosStrengthReq{ get{ return 55; } }
+		public override double OverheadPercentage{ get{ return 0.4; } }
+		public override double SwingPercentage{ get{ return 0.5; } }
+		public override double ThrustPercentage{ get{ return 0.1; } }
+		public override double RangedPercentage{ get{ return 0; } }
+		public override int AosMinDamage{ get{ return 17; } }
+		public override int AosMaxDamage{ get{ return 17; } }
+		public override double AosSpeed{ get{ return 4.25; } }
+
+		public override bool Unwieldy{ get{ return false; } }
+		public override bool CanThrustOnMount{ get{ return false; } }
+		public override bool CanUseDefensiveFormation{ get{ return false; } }
+		
+		public override int OldStrengthReq{ get{ return 45; } }
+		public override int OldMinDamage{ get{ return 15; } }
+		public override int OldMaxDamage{ get{ return 18; } }
+		public override int OldSpeed{ get{ return 32; } }
+
+		public override int InitMinHits{ get{ return 31; } }
+		public override int InitMaxHits{ get{ return 100; } }
+		
+		public override SkillName DefSkill{ get{ return SkillName.ExoticWeaponry; } }
+
+		//public override HarvestSystem HarvestSystem{ get{ return null; } }
+
+		[Constructable]
+		public MhordulBoneScythe() : base( 0x3CD6 )
+		{
+			Weight = 8.0;
+			Name = "Mhordul Bone Scythe";
+			AosElementDamages.Piercing = 30;
+			AosElementDamages.Slashing = 70;
+		}
+		
+		public override bool IsStill( Mobile attacker )
+		{
+			return true;
+		}
+
+		public MhordulBoneScythe( Serial serial ) : base( serial )
+		{
+		}
+
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+
+			writer.Write( (int) 0 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+
+			int version = reader.ReadInt();
+		}
+	}
+}

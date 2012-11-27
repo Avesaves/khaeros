@@ -1,0 +1,68 @@
+Find this section in your HouseRegion.cs:
+
+	else if ( (m_House.Public || !m_House.IsAosRules) && m_House.IsBanned( m ) && m_House.IsInside( m ) )
+	{
+		m.Location = m_House.BanLocation;
+
+		if( !Core.SE )
+			m.SendLocalizedMessage( 501284 ); // You may not enter.
+	}
+
+\\----------------------------------------------------------------------------------------------------------------------------------------//
+
+And change it to look like this:
+
+	else if ( (m_House.Public || !m_House.IsAosRules) && m_House.IsBanned( m ) && m_House.IsInside( m ) )
+	{
+
+//New Player Statue Addition
+		if( m is PlayerMadeStatue)
+		{
+			return;
+		}
+//End
+
+		m.Location = m_House.BanLocation;
+
+		if( !Core.SE )
+			m.SendLocalizedMessage( 501284 ); // You may not enter.
+	}
+
+\\----------------------------------------------------------------------------------------------------------------------------------------//
+
+Next find this section in yoru HouseRegion.cs:
+
+	else if ( (m_House.Public || !m_House.IsAosRules) && m_House.IsBanned( from ) && m_House.IsInside( newLocation, 16 ) )
+	{
+
+		from.Location = m_House.BanLocation;
+
+		if( !Core.SE )
+		from.SendLocalizedMessage( 501284 ); // You may not enter.
+
+			return false;
+	}
+
+\\----------------------------------------------------------------------------------------------------------------------------------------//
+
+And change it to this:
+
+	else if ( (m_House.Public || !m_House.IsAosRules) && m_House.IsBanned( from ) && m_House.IsInside( newLocation, 16 ) )
+	{
+
+//New Statues Addition
+		if( from is PlayerMadeStatue)
+		{
+			return true;
+		}
+//End
+
+		from.Location = m_House.BanLocation;
+
+		if( !Core.SE )
+		from.SendLocalizedMessage( 501284 ); // You may not enter.
+
+			return false;
+	}
+
+\\----------------------------------------------------------------------------------------------------------------------------------------//
