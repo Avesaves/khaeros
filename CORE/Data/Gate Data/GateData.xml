@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StargateAddresses>
+  <StargateEntry>
+    <SGX>915</SGX>
+    <SGY>1684</SGY>
+    <SGZ>0</SGZ>
+    <SGFacing>S</SGFacing>
+    <SGStyle>1</SGStyle>
+    <SGCanBeUsed>True</SGCanBeUsed>
+    <SGBeingUsed>False</SGBeingUsed>
+    <SGEnergy>False</SGEnergy>
+    <SGHidden>False</SGHidden>
+    <SGDiscovered>Janusa Childe</SGDiscovered>
+    <SGLocationName>North Deserts</SGLocationName>
+    <SGFacetCode>1</SGFacetCode>
+    <SGAddressCode1>4</SGAddressCode1>
+    <SGAddressCode2>1</SGAddressCode2>
+    <SGAddressCode3>5</SGAddressCode3>
+    <SGAddressCode4>2</SGAddressCode4>
+    <SGAddressCode5>3</SGAddressCode5>
+  </StargateEntry>
+  <StargateEntry>
+    <SGX>2361</SGX>
+    <SGY>3324</SGY>
+    <SGZ>2</SGZ>
+    <SGFacing>S</SGFacing>
+    <SGStyle>1</SGStyle>
+    <SGCanBeUsed>True</SGCanBeUsed>
+    <SGBeingUsed>False</SGBeingUsed>
+    <SGEnergy>False</SGEnergy>
+    <SGHidden>False</SGHidden>
+    <SGDiscovered>Janusa Childe</SGDiscovered>
+    <SGLocationName>Droeddmor</SGLocationName>
+    <SGFacetCode>1</SGFacetCode>
+    <SGAddressCode1>2</SGAddressCode1>
+    <SGAddressCode2>4</SGAddressCode2>
+    <SGAddressCode3>4</SGAddressCode3>
+    <SGAddressCode4>4</SGAddressCode4>
+    <SGAddressCode5>2</SGAddressCode5>
+  </StargateEntry>
+</StargateAddresses>

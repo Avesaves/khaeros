@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<TreasuryList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AlyrianTreasury>
+    <SellingList>
+      <anyType xsi:type="xsd:string">pew</anyType>
+    </SellingList>
+    <BuyingList>
+      <anyType xsi:type="xsd:int">2</anyType>
+    </BuyingList>
+  </AlyrianTreasury>
+  <AzhuranTreasury>
+    <SellingList />
+    <BuyingList />
+  </AzhuranTreasury>
+  <KhemetarTreasury>
+    <SellingList />
+    <BuyingList />
+  </KhemetarTreasury>
+  <MhordulTreasury>
+    <SellingList />
+    <BuyingList />
+  </MhordulTreasury>
+  <TyreanTreasury>
+    <SellingList />
+    <BuyingList />
+  </TyreanTreasury>
+  <VhalurianTreasury>
+    <SellingList />
+    <BuyingList />
+  </VhalurianTreasury>
+</TreasuryList>
