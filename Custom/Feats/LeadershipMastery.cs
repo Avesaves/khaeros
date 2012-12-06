@@ -31,6 +31,11 @@ namespace Server.FeatInfo
 
         public static void Initialize() { WriteWebpage(new LeadershipMastery()); }
 
+        public override void AttemptPurchase(PlayerMobile m, int level, bool freeRemoval)
+        {
+            m.SendMessage("This feat has been disabled, you cannot purchase it.");
+        }
+
         public override void OnLevelLowered(PlayerMobile owner)
         {
             owner.FollowersMax--;

@@ -176,7 +176,7 @@ namespace Server.FeatInfo
 			return (m.Feats.GetFeatLevel(ListName) > 2);
 		}
 		
-		public void AttemptRemoval( PlayerMobile m, int level, bool freeRemoval )
+		public virtual void AttemptRemoval( PlayerMobile m, int level, bool freeRemoval )
 		{
 			if( level != Level )
 				m.SendMessage( "Please remove the higher levels of this skill first." );
@@ -282,7 +282,7 @@ namespace Server.FeatInfo
 			return false;
 		}
 		
-		public void AttemptPurchase( PlayerMobile m, int level, bool freeRemoval )
+		public virtual void AttemptPurchase( PlayerMobile m, int level, bool freeRemoval )
 		{
 			if( CostLevel == FeatCost.None )
 				m.SendMessage( "This skill cannot be directly purchased." );
