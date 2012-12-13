@@ -12,6 +12,7 @@ TestResults
 *.suo
 *.user
 *.sln.docstates
+/Custom/FTP/*
 
 # Build results
 [Dd]ebug/
@@ -35,6 +36,9 @@ x64/
 *.log
 *.vspscc
 *.vssscc
+*.sln
+*.csproj
+app.config
 .builds
 
 # Visual C++ cache files
