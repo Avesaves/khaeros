@@ -49,7 +49,7 @@ namespace ftp
 	{
 		public static FTP ftplib = new FTP();
 
-		[STAThread]
+		/*[STAThread]
 		static void Main(string[] args)
 		{
 			if (args.Length > 0)
@@ -67,7 +67,7 @@ namespace ftp
 			{
 				console_mode();
 			}
-		}
+		}*/
 
 		static void commandline_mode(string[] args)
 		{
