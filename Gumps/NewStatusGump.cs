@@ -49,7 +49,7 @@ namespace Server.Gumps
 			if( from.Backpack != null && !from.Backpack.Deleted )
 				CountCoins( from.Backpack, ref copper, ref silver, ref gold );
 			
-			int cpcap = 150000;
+			int cpcap = 175000;
 			
 			if( from.Advanced != Advanced.None )
 				cpcap += 75000;

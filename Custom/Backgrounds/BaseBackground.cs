@@ -106,7 +106,7 @@ namespace Server.BackgroundInfo
 			if( !HasThisBackground(m) && CanAcquireThisBackground(m) )
 			{
 				
-				if( (150000 + m.ExtraCPRewards + m.CPCapOffset) < (m.CPSpent + Cost) )
+				if( (175000 + m.ExtraCPRewards + m.CPCapOffset) < (m.CPSpent + Cost) )
 				{
 					m.SendMessage( "Adding this background would lower your CP cap beyond the amount of CP you have already spent." );
 					return;
@@ -124,7 +124,7 @@ namespace Server.BackgroundInfo
 
             else if( HasThisBackground(m) && CanRemoveThisBackground(m) )
 			{
-				if( (150000 + m.ExtraCPRewards + m.CPCapOffset + Cost) < (m.CPSpent) )
+				if( (175000 + m.ExtraCPRewards + m.CPCapOffset + Cost) < (m.CPSpent) )
 				{
 					m.SendMessage( "Removing this background would lower your CP cap beyond the amount of CP you have already spent." );
 					return;

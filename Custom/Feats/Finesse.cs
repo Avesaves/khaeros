@@ -20,9 +20,9 @@ namespace Server.FeatInfo
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "The assassin can hurl light weapons, such as daggers, with unerring accuracy, " +
-					"greatly increasing the chance of a critical hit. [Chance for a critical hit is (60% * Feat Level) / (Weight * Weight)]"; } }
-		public override string SecondDescription{ get{ return "Improved chance."; } }
-		public override string ThirdDescription{ get{ return "Improved chance."; } }
+					"greatly increasing the damage inflicted per hit. [Damage is increased by 10% per rank.]"; } }
+		public override string SecondDescription{ get{ return "Improved damage."; } }
+		public override string ThirdDescription{ get{ return "Improved damage."; } }
 		
 		public override string FirstCommand{ get{ return "None"; } }
 		public override string SecondCommand{ get{ return "None"; } }

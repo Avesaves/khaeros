@@ -51,6 +51,7 @@ namespace Server.Mobiles
 
 		public override int Meat{ get{ return 4; } }
 		public override int Hides{ get{ return 3; } }
+        public override HideType HideType { get { return HideType.Scaled; } }
 
 		public BoaConstrictor(Serial serial) : base(serial)
 		{

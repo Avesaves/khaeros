@@ -3258,6 +3258,8 @@ namespace Server.Items
 		{
 			int min, max;
 			GetBaseDamageRange( attacker, out min, out max );
+            /*if (((IKhaerosMobile)attacker).OffensiveFeat == FeatList.ThrowingMastery)
+                factor = .75;*/
 			min = (int)(factor*ScaleDamageAOS( attacker, defender, min, true, true )); 
 			max = (int)(factor*ScaleDamageAOS( attacker, defender, max, true, false ));
 
@@ -3457,11 +3459,11 @@ namespace Server.Items
 			{
 				if( ((IKhaerosMobile)attacker).OffensiveFeat == FeatList.Backstab )
 					damage = 10.0 + (5.0*((IKhaerosMobile)attacker).Feats.GetFeatLevel(FeatList.Backstab));
-				else if ( Critical && !(attacker.FindItemOnLayer( Layer.TwoHanded ) is BaseShield) ) // doesn't stack with backstab or throwing
+				/*else if ( Critical && !(attacker.FindItemOnLayer( Layer.TwoHanded ) is BaseShield) ) // doesn't stack with backstab or throwing
 				{
 					if ( ((IKhaerosMobile)attacker).OffensiveFeat != FeatList.ThrowingMastery && Utility.RandomBool() )
 						damage *= 1.5; // double damage
-				}
+				}*/ 
 			}
 
             if( attacker is PlayerMobile && attacker.Weapon is Fists && ( (PlayerMobile)attacker ).Claws != null )
@@ -4675,9 +4677,9 @@ namespace Server.Items
 			// 1062613 "~stuff"
 			// 1063483 ~stuff~ ~stuff~
 			// 1070722 ~NOTHING
-			if ( Critical ) // this and unwieldy cannot be both set, due to cliloc issues atm
-				list.Add( 1070722, "<BASEFONT COLOR=#009600>Improved critical<BASEFONT COLOR=#FFFFFF>" ); // ~NOTHIN
-			else if ( Unwieldy )
+			//if ( Critical ) // this and unwieldy cannot be both set, due to cliloc issues atm
+				//list.Add( 1070722, "<BASEFONT COLOR=#009600>Improved critical<BASEFONT COLOR=#FFFFFF>" ); // ~NOTHIN
+			if ( Unwieldy )
 				list.Add( 1070722, "<BASEFONT COLOR=#960000>Unwieldy<BASEFONT COLOR=#FFFFFF>" ); // ~NOTHIN
 			if ( CanThrustOnMount )
 				list.Add( 1049644, "<BASEFONT COLOR=#009600>Can thrust on mount<BASEFONT COLOR=#FFFFFF>\t" ); // [~sumthin~]

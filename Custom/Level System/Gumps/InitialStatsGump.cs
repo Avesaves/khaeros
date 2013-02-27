@@ -309,7 +309,7 @@ namespace Server.Gumps
 				{
 					if ( m.RawInt > 10 )
 					{
-						int max = 150000 + m.ExtraCPRewards + m.CPCapOffset - 1000;
+						int max = 175000 + m.ExtraCPRewards + m.CPCapOffset - 1000;
 						
 						if( m.CPSpent > max )
 						{

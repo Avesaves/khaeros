@@ -12,7 +12,7 @@ namespace Server.Gumps
 			: base( 0, 0 )
 		{
 			m.CloseGump( typeof( CharInfoGump ) ); 
-			int cpcap = 150000 + m.ExtraCPRewards;
+			int cpcap = 175000 + m.ExtraCPRewards;
 			
 			int totalxpneeded = m.Level * 1000;
 			int thislevelsxp = m.XP - ( m.NextLevel - ( m.Level * 1000 ) );

@@ -773,18 +773,18 @@ namespace Server.Items
 
             switch (r)
             {
-                case CraftResource.Copper: div = 10; break;
-                case CraftResource.Tin: div = 5; break;
-                case CraftResource.Iron: div = 3; break;
-                case CraftResource.Silver: div = 1; break;
-                case CraftResource.Gold: div = 0.1; break;
+                case CraftResource.Copper: div = 15; break;
+                case CraftResource.Tin: div = 10; break;
+                case CraftResource.Iron: div = 5; break;
+                case CraftResource.Silver: div = 2; break;
+                case CraftResource.Gold: div = .5; break;
                 case CraftResource.Cotton: div = 12; break;
                 case CraftResource.Wool: div = 12; break;
-                case CraftResource.Silk: div = 1; break;
+                case CraftResource.Silk: div = 4; break;
                 case CraftResource.RegularLeather: div = 10; break;
                 case CraftResource.ThickLeather: div = 8; break;
                 case CraftResource.BeastLeather: div = 6; break;
-                case CraftResource.ScaledLeather: div = 4; break;
+                case CraftResource.ScaledLeather: div = 2; break;
                 case CraftResource.Oak: div = 10; break;
                 case CraftResource.Yew: div = 9; break;
                 case CraftResource.Redwood: div = 8; break;

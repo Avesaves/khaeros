@@ -14,8 +14,8 @@ namespace Server.Misc
 		public override bool UsesFullEffect{ get{ return true; } }
 		public override FeatList Feat{ get{ return FeatList.Sanctuary; } }
 		public override string Name{ get{ return "Sanctuary"; } }
-		public override int BaseCost{ get{ return 20; } }
-		public override double FullEffect{ get{ return (Caster.Skills[SkillName.Faith].Base * 0.20); } }
+		public override int BaseCost{ get{ return 40; } }
+		public override double FullEffect{ get{ return (Caster.Skills[SkillName.Faith].Base * 0.10); } }
 		
 		public Sanctuary( Mobile caster, int featLevel ) : base( caster, featLevel )
 		{

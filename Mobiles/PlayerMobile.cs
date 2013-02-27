@@ -1540,7 +1540,7 @@ namespace Server.Mobiles
        	{
        		get
        		{
-       			int max = 150000 + ExtraCPRewards + CPCapOffset;
+       			int max = 175000 + ExtraCPRewards + CPCapOffset;
 						
 				if( CPSpent > max )
 					return true;

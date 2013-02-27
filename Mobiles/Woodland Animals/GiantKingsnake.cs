@@ -15,7 +15,7 @@ namespace Server.Mobiles
 			Name = "a giant kingsnake";
 			Body = 89;
 			BaseSoundID = 219;
-			Hue = 2006;
+			Hue = 2118;
 
 			SetStr( 216, 245 );
 			SetDex( 26, 30 );
@@ -64,6 +64,7 @@ namespace Server.Mobiles
 		public override int Meat{ get{ return 4; } }
 		public override int Bones{ get{ return 4; } }
 		public override int Hides{ get{ return 3; } }
+        public override HideType HideType { get { return HideType.Scaled; } }
 
 		public GiantKingsnake(Serial serial) : base(serial)
 		{

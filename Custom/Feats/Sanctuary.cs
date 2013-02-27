@@ -19,10 +19,10 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.AuraOfProtection }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
-		public override string FirstDescription{ get{ return "This spell creates a protected area around the caster. Those that are outside " +
-					"cannot attack those that are inside it and vice-versa. [Costs 20 mana and lasts for 20 seconds]"; } }
-		public override string SecondDescription{ get{ return "[Costs 40 mana and lasts for 40 second]"; } }
-		public override string ThirdDescription{ get{ return "[Costs 60 mana and lasts for 60 second]"; } }
+		public override string FirstDescription{ get{ return "This spell creates a protected area around the caster, protecting those within " +
+					"from combat for a short time. [Costs 40 mana and lasts for 10 seconds]"; } }
+		public override string SecondDescription{ get{ return "[Costs 80 mana and lasts for 20 second]"; } }
+		public override string ThirdDescription{ get{ return "[Costs 120 mana and lasts for 30 second]"; } }
 
 		public override string FirstCommand{ get{ return ".Sanctuary | .Sanctuary 1"; } }
 		public override string SecondCommand{ get{ return ".Sanctuary | .Sanctuary 2"; } }

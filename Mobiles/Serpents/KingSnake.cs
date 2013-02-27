@@ -8,7 +8,7 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a grass snake corpse" )]
+	[CorpseName( "a king snake corpse" )]
 	public class KingSnake : Serpent, IPlainsCreature
 	{
         private bool constrictAbility;
@@ -16,8 +16,8 @@ namespace Server.Mobiles
 		[Constructable]
 		public KingSnake() : base()
 		{
-            NewBreed = "Grass Snake";
-            Hue = 2003;
+            NewBreed = "king snake";
+            Hue = 2118;
             constrictAbility = false;
 
             SetDamageType(ResistanceType.Blunt, 100);

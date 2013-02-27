@@ -2892,7 +2892,7 @@ namespace Server.Engines.XmlSpawner2
 
 							if( weapon.Throwable )
 							{
-								switch( km.Feats.GetFeatLevel(FeatList.ThrowingMastery) )
+								switch( km.Feats.GetFeatLevel(FeatList.Finesse) )
 								{
 									case 0: break;
 									case 1: damagebonus = 1.1; break;
@@ -2901,8 +2901,10 @@ namespace Server.Engines.XmlSpawner2
 								}
 							}
 							
-							if ( km.Feats.GetFeatLevel(FeatList.Finesse) > 0 && Utility.RandomDouble() <= (0.6*(km.Feats.GetFeatLevel(FeatList.Finesse))/(weapon.Weight*weapon.Weight) ) )
-								damagebonus += 1.0;
+							/*if ( km.Feats.GetFeatLevel(FeatList.Finesse) > 0 && Utility.RandomDouble() <= (0.6*(km.Feats.GetFeatLevel(FeatList.Finesse))/(weapon.Weight*weapon.Weight) ) )
+								damagebonus += 1.0;*/
+                            /*if (km.Feats.GetFeatLevel(FeatList.Finesse) > 0)
+                                damagebonus += (0.2 * km.Feats.GetFeatLevel(FeatList.Finesse));*/
 
 							km.OffensiveFeat = FeatList.ThrowingMastery;
 							Point3D loc = defender.Location;

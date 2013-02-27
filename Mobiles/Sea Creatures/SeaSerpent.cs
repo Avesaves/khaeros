@@ -49,7 +49,7 @@ namespace Server.Mobiles
 		public override int Meat{ get{ return 20; } }
 		public override int Bones{ get{ return 10; } }
 		public override int Hides{ get{ return 10; } }
-		public override HideType HideType{ get{ return HideType.Thick; } }
+		public override HideType HideType{ get{ return HideType.Scaled; } }
 
 		public SeaSerpent( Serial serial ) : base( serial )
 		{

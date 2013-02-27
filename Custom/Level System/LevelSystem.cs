@@ -53,7 +53,10 @@ namespace Server.Misc
 
         	if( a > 0 && player.Nation == Nation.Vhalurian )
 				a++;
-        	
+
+            if (player.IsHardcore)
+                a = (a + a);
+
         	if( player.Level < 50 )
             	player.XP += a;
         	
@@ -142,25 +145,28 @@ namespace Server.Misc
         			else
         				a = (int)(a * 1.5);
         		}
-        			
-        		if( a > player.Level * 20 )
-            		a = player.Level * 20;
+
+                if ((a > player.Level * 40) && (player.IsHardcore))
+                    a = player.Level * 40;
+                else if ((a > player.Level * 20) && (player.IsHardcore == false))
+                    a = player.Level * 20;
         		
 	        	if( player.Nation == Nation.Vhalurian )
 					a++;
-	        	
-	        	int cpcap = 150000 + player.ExtraCPRewards;
+
+	        	int cpcap = 175000 + player.ExtraCPRewards;
 	        	
 	        	//if( player.Advanced != Advanced.None )
 	        		//cpcap += 75000;
-	        	
+
 	        	if( ( player.CP + player.CPSpent + a ) > ( player.CPCapOffset + cpcap ) )
 	        	{
 	        		player.CP = ( player.CPCapOffset + cpcap ) - player.CPSpent;
 	        		a = ( player.CPCapOffset + cpcap ) - ( player.CPSpent + player.CP );
 	        	}
         	}
-			
+
+
 			player.CP += a;
 			player.SendMessage( 0x35, "You have gained " + a + " character point{0}!", a == 1 ? "" : "s" );
 		}
@@ -728,7 +734,7 @@ namespace Server.Misc
 		
 		public static bool CanSpendCP( PlayerMobile m, int amount )
 		{
-			int limit = 150000 + m.ExtraCPRewards;
+			int limit = 175000 + m.ExtraCPRewards;
 			
 			if( m.FeatSlots >= limit )
 			{

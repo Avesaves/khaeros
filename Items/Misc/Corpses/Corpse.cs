@@ -945,8 +945,10 @@ namespace Server.Items
 				{
 				if (ow.Maimings >= 1) //Do our check for Maimings first, to see if they need a chance at PDing
 				{
-						if (ow.Maimings > Utility.Random(10)); //Escalating chance of PD based on the more injuries.
+					int r = Utility.Random(1,10);
+             				if (ow.Maimings > r) //Escalating chance of PD based on the more injuries.
 						{
+							from.SendMessage( 32, "Rolled {0}",r);
 							from.SendMessage( 32, "You have permanently ended the life of " + dead.Name + " by inflicting a fatal wound upon them!" );
 							ow.m_DeathTimer.Stop();	
 							ow.CloseGump( typeof( DeathGump ) );				
@@ -955,7 +957,7 @@ namespace Server.Items
 							dead.MoveToWorld( permdeath, deathmap );
 							from.Emote( "*{0} fatally wounds {1}*",from.Name ,dead.Name );
 							PlayerMobile PM = m_Owner as PlayerMobile;
-							string stringdeath = "" + PM.RawName + " has been slain by the hands of another; the lands of Khaeros whisper of their passing.";
+							string stringdeath = "A person has been slain by the hands of another; the lands of Khaeros whisper of their passing.";
 							UseDelaySystem.AddContext(from, DelayContextType.WoundCommand,TimeSpan.FromHours(1));
 							World.Broadcast( 0x35, true, "{0}", stringdeath );
 							dead.SendMessage( 32, "You have been fatally wounded, and your character is now permanently dead!" );

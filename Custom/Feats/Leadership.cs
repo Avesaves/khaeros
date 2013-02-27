@@ -32,6 +32,11 @@ namespace Server.FeatInfo
 		public override string FullDescription{ get{ return GetFullDescription(this); } }
 		
 		public static void Initialize(){ WriteWebpage(new Leadership()); }
+
+     		public override void AttemptPurchase(PlayerMobile m, int level, bool freeRemoval)
+        	{
+           	 m.SendMessage("This feat has been disabled, you cannot purchase it.");
+        	}
 		
 		public Leadership() {}
 	}

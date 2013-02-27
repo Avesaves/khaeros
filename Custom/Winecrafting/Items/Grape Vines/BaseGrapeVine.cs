@@ -15,7 +15,7 @@ namespace Server.Items.Crops
 {
 	public class BaseGrapeVine : Item
 	{
-		private const int max = 5;
+		private const int max = 10;
 		private DateTime lastpicked;
 		private int m_yield;
 		private GrapeVariety m_Variety;
@@ -78,7 +78,7 @@ namespace Server.Items.Crops
 			}
 			else
 			{
-				plant.Yield = 5;
+				plant.Yield = 10;
 				plant.regrowTimer.Start();
 			}
 		}
