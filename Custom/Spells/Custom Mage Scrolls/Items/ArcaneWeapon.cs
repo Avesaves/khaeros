@@ -30,7 +30,7 @@ namespace Server.Items
 
         public override int InitMinHits { get { return 25; } }
         public override int InitMaxHits { get { return 50; } }
-		public override SkillName DefSkill{ get{ return SkillName.ExoticWeaponry; } }
+		public override SkillName DefSkill{ get{ return SkillName.Swords; } }
 
         [Constructable]
         public ArcaneWeapon() : base( 0x2D35 )
