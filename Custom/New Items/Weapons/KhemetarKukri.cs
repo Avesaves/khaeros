@@ -36,7 +36,7 @@ namespace Server.Items
 		
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.Slash1H; } }
 		
-		public override SkillName DefSkill{ get{ return SkillName.Fencing; } }
+		public override SkillName DefSkill{ get{ return SkillName.ExoticWeaponry; } }
 
 		[Constructable]
 		public KhemetarKukri() : base( 0x2D20 )
