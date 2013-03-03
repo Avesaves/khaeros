@@ -677,48 +677,48 @@ namespace Server.Engines.Craft
 			#endregion
 
 			#region Bladed
-			//AddCraft( typeof( HandScythe ), 1011081, "hand scythe", 35.0, 85.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
-			//AddCraft( typeof( Cutlass ), 1011081, "cutlass", 25.0, 75.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
+			AddCraft( typeof( HandScythe ), 1011081, "hand scythe", 35.0, 85.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
+			AddCraft( typeof( Cutlass ), 1011081, "cutlass", 25.0, 75.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
 			AddCraft( typeof( Dagger ), 1011081, "dagger", 0.0, 20.0, typeof( CopperIngot ), 1044036, 3, 1044037 );
-			//AddCraft( typeof( DualDaggers ), 1011081, "dual daggers", 80.0, 120.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
-			//AddCraft( typeof( Kryss ), 1011081, "kryss", 35.0, 85.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
-			//AddCraft( typeof( Longsword ), 1011081, "longsword", 40.0, 80.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			//AddCraft( typeof( Shortsword ), 1011081, "shortsword", 20.0, 70.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
-			//AddCraft( typeof( Machete ), 1011081, "machete", 20.0, 70.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
+			AddCraft( typeof( DualDaggers ), 1011081, "dual daggers", 80.0, 120.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
+			AddCraft( typeof( Kryss ), 1011081, "kryss", 35.0, 85.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
+			AddCraft( typeof( Longsword ), 1011081, "longsword", 40.0, 80.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( Shortsword ), 1011081, "shortsword", 20.0, 70.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
+			AddCraft( typeof( Machete ), 1011081, "machete", 20.0, 70.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
 			AddCraft( typeof( SkinningKnife ), 1011081, "skinning knife", 0.0, 20.0, typeof( CopperIngot ), 1044036, 3, 1044037 );
 			AddCraft( typeof( Cleaver ), 1011081, "cleaver", 10.0, 30.0, typeof( CopperIngot ), 1044036, 3, 1044037 );
 			AddCraft( typeof( ButcherKnife ), 1011081, "butcher knife", 0.0, 20.0, typeof( CopperIngot ), 1044036, 3, 1044037 );
-			//AddCraft( typeof( Greatsword ), 1011081, "greatsword", 60.0, 100.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
-			//AddCraft( typeof( Rapier ), 1011081, "rapier", 70.0, 110.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
-			//AddCraft( typeof( DoubleBladedStaff ), 1011081, "double bladed staff", 70.0, 110.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			//AddCraft( typeof( AlyrianClaymore ), 1011081, "alyrian claymore", 80.0, 120.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
-			//AddCraft( typeof( AlyrianSabre ), 1011081, "alyrian sabre", 70.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			//AddCraft( typeof( AlyrianHandScythe ), 1011081, "alyrian hand scythe", 40.0, 80.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
-			//AddCraft( typeof( AlyrianLongsword ), 1011081, "alyrian longsword", 80.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			//AddCraft( typeof( AzhuranShortsword ), 1011081, "azhuran shortsword", 60.0, 100.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
-			//AddCraft( typeof( AzhuranLongsword ), 1011081, "azhuran longsword", 70.0, 120.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
-			//AddCraft( typeof( AzhuranBroadsword ), 1011081, "azhuran broadsword", 70.0, 120.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
-			//AddCraft( typeof( KhemetarScimitar ), 1011081, "khemetar scimitar", 30.0, 80.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
-			//AddCraft( typeof( KhemetarHeavyKhopesh ), 1011081, "khemetar heavy khopesh", 75.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			//AddCraft( typeof( KhemetarKukri ), 1011081, "khemetar kukri", 70.0, 120.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
-			//AddCraft( typeof( KhemetarFalchion ), 1011081, "khemetar falchion", 70.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			//AddCraft( typeof( KhemetarKhopesh ), 1011081, "khemetar khopesh", 70.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			//AddCraft( typeof( KhemetarThinScimitar ), 1011081, "khemetar thin scimitar", 50.0, 100.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
-			//AddCraft( typeof( KhemetarCrescentSword ), 1011081, "khemetar crescent sword", 70.0, 120.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
-			//AddCraft( typeof( KhemetarLargeCrescentSword ), 1011081, "khemetar large crescent sword", 70.0, 120.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
-			//AddCraft( typeof( MhordulCrescentBlade ), 1011081, "mhordul crescent blade", 45.0, 95.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			//index = AddCraft( typeof( MhordulBoneSword ), 1011081, "mhordul bone sword", 40.0, 90.0, typeof( CopperIngot ), 1044036, 2, 1044037 );
-			//AddRes( index, typeof( Bone ), 1049064, 6, 1049063 );
-			//AddCraft( typeof( TyreanBroadsword ), 1011081, "tyrean broadsword", 50.0, 80.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			//AddCraft( typeof( TyreanBastardSword ), 1011081, "tyrean bastard sword", 80.0, 120.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
-			//AddCraft( typeof( VhalurianGladius ), 1011081, "vhalurian gladius", 50.0, 80.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
-			//AddCraft( typeof( VhalurianBroadsword ), 1011081, "vhalurian broadsword", 70.0, 100.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			//AddCraft( typeof( VhalurianBastardSword ), 1011081, "vhalurian bastard sword", 90.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-            //AddCraft( typeof( DualSwords ), 1011081, "dual swords", 75.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+			AddCraft( typeof( Greatsword ), 1011081, "greatsword", 60.0, 100.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
+			AddCraft( typeof( Rapier ), 1011081, "rapier", 70.0, 110.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
+			AddCraft( typeof( DoubleBladedStaff ), 1011081, "double bladed staff", 70.0, 110.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( AlyrianClaymore ), 1011081, "alyrian claymore", 80.0, 120.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
+			AddCraft( typeof( AlyrianSabre ), 1011081, "alyrian sabre", 70.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( AlyrianHandScythe ), 1011081, "alyrian hand scythe", 40.0, 80.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
+			AddCraft( typeof( AlyrianLongsword ), 1011081, "alyrian longsword", 80.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( AzhuranShortsword ), 1011081, "azhuran shortsword", 60.0, 100.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
+			AddCraft( typeof( AzhuranLongsword ), 1011081, "azhuran longsword", 70.0, 120.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
+			AddCraft( typeof( AzhuranBroadsword ), 1011081, "azhuran broadsword", 70.0, 120.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
+			AddCraft( typeof( KhemetarScimitar ), 1011081, "khemetar scimitar", 30.0, 80.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
+			AddCraft( typeof( KhemetarHeavyKhopesh ), 1011081, "khemetar heavy khopesh", 75.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+			AddCraft( typeof( KhemetarKukri ), 1011081, "khemetar kukri", 70.0, 120.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
+			AddCraft( typeof( KhemetarFalchion ), 1011081, "khemetar falchion", 70.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+			AddCraft( typeof( KhemetarKhopesh ), 1011081, "khemetar khopesh", 70.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( KhemetarThinScimitar ), 1011081, "khemetar thin scimitar", 50.0, 100.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
+			AddCraft( typeof( KhemetarCrescentSword ), 1011081, "khemetar crescent sword", 70.0, 120.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
+			AddCraft( typeof( KhemetarLargeCrescentSword ), 1011081, "khemetar large crescent sword", 70.0, 120.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
+			AddCraft( typeof( MhordulCrescentBlade ), 1011081, "mhordul crescent blade", 45.0, 95.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+			index = AddCraft( typeof( MhordulBoneSword ), 1011081, "mhordul bone sword", 40.0, 90.0, typeof( CopperIngot ), 1044036, 2, 1044037 );
+			AddRes( index, typeof( Bone ), 1049064, 6, 1049063 );
+			AddCraft( typeof( TyreanBroadsword ), 1011081, "tyrean broadsword", 50.0, 80.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+			AddCraft( typeof( TyreanBastardSword ), 1011081, "tyrean bastard sword", 80.0, 120.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
+			AddCraft( typeof( VhalurianGladius ), 1011081, "vhalurian gladius", 50.0, 80.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
+			AddCraft( typeof( VhalurianBroadsword ), 1011081, "vhalurian broadsword", 70.0, 100.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( VhalurianBastardSword ), 1011081, "vhalurian bastard sword", 90.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+            		AddCraft( typeof( DualSwords ), 1011081, "dual swords", 75.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
 
-			//#endregion
+			#endregion
 
-			/*#region Axes
+			#region Axes
 			AddCraft( typeof( Axe ), 1011082, "axe", 35.0, 85.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
 			AddCraft( typeof( BattleAxe ), 1011082, "battle axe", 30.0, 80.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
 			AddCraft( typeof( WarAxe ), 1011082, "war axe", 40.0, 90.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
@@ -787,7 +787,7 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( VhalurianMace ), 1011084, "vhalurian mace", 40.0, 80.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
 			AddCraft( typeof( VhalurianWarHammer ), 1011084, "vhalurian war hammer", 50.0, 90.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
 			AddCraft( typeof( VhalurianMaul ), 1011084, "vhalurian maul", 60.0, 100.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
-			AddCraft( typeof( VhalurianHeavyMaul ), 1011084, "vhalurian heavy maul", 70.0, 110.0, typeof( CopperIngot ), 1044036, 20, 1044037 );*/
+			AddCraft( typeof( VhalurianHeavyMaul ), 1011084, "vhalurian heavy maul", 70.0, 110.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
 
 			#endregion
 			
