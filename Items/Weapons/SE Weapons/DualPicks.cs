@@ -37,7 +37,7 @@ namespace Server.Items
 		public override int InitMinHits{ get{ return 35; } }
 		public override int InitMaxHits{ get{ return 60; } }
 
-		public override SkillName DefSkill{ get{ return SkillName.Axemanship; } }
+		public override SkillName DefSkill{ get{ return SkillName.ExoticWeaponry; } }
 		
 		//public override bool Throwable { get { return true; } }
 
