@@ -525,13 +525,13 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( WaterTroughEastDeed ), 1044299, 1044349, 95.0, 105.0, typeof( Log ), 1044041, 150, 1044351 );
 			AddCraft( typeof( WaterTroughSouthDeed ), 1044299, 1044350, 95.0, 105.0, typeof( Log ), 1044041, 150, 1044351 );
 
-			AddCraft( typeof( SmallBoatDeed ), 1044290, "small boat deed", 40.0, 80.0, typeof( BoatPart ), "Boat Parts", 2500, "You do not have enough boat parts for that." );
-			AddCraft( typeof( MediumBoatDeed ), 1044290, "medium boat deed", 40.0, 80.0, typeof( BoatPart ), "Boat Parts", 3250, "You do not have enough boat parts for that." );
-			AddCraft( typeof( LargeBoatDeed ), 1044290, "large boat deed", 40.0, 80.0, typeof( BoatPart ), "Boat Parts", 4000, "You do not have enough boat parts for that." );
+			AddCraft( typeof( SmallBoatDeed ), 1044290, "small boat deed", 40.0, 80.0, typeof( BoatPart ), "Boat Parts", 1000, "You do not have enough boat parts for that." );
+			AddCraft( typeof( MediumBoatDeed ), 1044290, "medium boat deed", 40.0, 80.0, typeof( BoatPart ), "Boat Parts", 1500, "You do not have enough boat parts for that." );
+			AddCraft( typeof( LargeBoatDeed ), 1044290, "large boat deed", 40.0, 80.0, typeof( BoatPart ), "Boat Parts", 2000, "You do not have enough boat parts for that." );
 			
-			AddCraft( typeof( SmallDragonBoatDeed ), 1044290, "small dragon boat deed", 40.0, 80.0, typeof( BoatPart ), "Boat Parts", 2500, "You do not have enough boat parts for that." );
-			AddCraft( typeof( MediumDragonBoatDeed ), 1044290, "medium dragon boat deed", 40.0, 80.0, typeof( BoatPart ), "Boat Parts", 3250, "You do not have enough boat parts for that." );
-			AddCraft( typeof( LargeDragonBoatDeed ), 1044290, "large dragon boat deed", 40.0, 80.0, typeof( BoatPart ), "Boat Parts", 4000, "You do not have enough boat parts for that." );
+			AddCraft( typeof( SmallDragonBoatDeed ), 1044290, "small dragon boat deed", 40.0, 80.0, typeof( BoatPart ), "Boat Parts", 1000, "You do not have enough boat parts for that." );
+			AddCraft( typeof( MediumDragonBoatDeed ), 1044290, "medium dragon boat deed", 40.0, 80.0, typeof( BoatPart ), "Boat Parts", 1500, "You do not have enough boat parts for that." );
+			AddCraft( typeof( LargeDragonBoatDeed ), 1044290, "large dragon boat deed", 40.0, 80.0, typeof( BoatPart ), "Boat Parts", 2000, "You do not have enough boat parts for that." );
 			
 			SetSubRes( typeof( Log ), 1063506 );
 			
