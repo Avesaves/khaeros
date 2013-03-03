@@ -98,8 +98,8 @@ namespace Server.Items
             {
                 Halberd weapon = new Halberd();
                 weapon.NewCrafting = true;
-                weapon.QualityDamage = m_Hilt.GetDamageBonus() + m_Blade.Damage;
-                weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + m_Blade.Speed;
+                weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
+                weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
                 weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Attack;
                 weapon.QualityDefense = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Defense;
                 weapon.Resource = m_Blade.Resource;
@@ -145,8 +145,8 @@ namespace Server.Items
                 {
                     PriestStaff weapon = new PriestStaff();
                     weapon.NewCrafting = true;
-                    weapon.QualityDamage = m_Hilt.GetDamageBonus() + m_Blade.Damage;
-                    weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + m_Blade.Speed;
+                    weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
+                    weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
                     weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Attack;
                     weapon.QualityDefense = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Defense;
                     weapon.Resource = m_Hilt.Resource;
@@ -187,8 +187,8 @@ namespace Server.Items
                 {
                     ShamanStaff weapon = new ShamanStaff();
                     weapon.NewCrafting = true;
-                    weapon.QualityDamage = m_Hilt.GetDamageBonus() + m_Blade.Damage;
-                    weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + m_Blade.Speed;
+                    weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
+                    weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
                     weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Attack;
                     weapon.QualityDefense = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Defense;
                     weapon.Resource = m_Hilt.Resource;
@@ -231,8 +231,8 @@ namespace Server.Items
             {
                 AzhuranBladedStaff weapon = new AzhuranBladedStaff();
                 weapon.NewCrafting = true;
-                weapon.QualityDamage = m_Hilt.GetDamageBonus() + m_Blade.Damage;
-                weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + m_Blade.Speed;
+                weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
+                weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
                 weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Attack;
                 weapon.QualityDefense = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Defense;
                 weapon.Resource = m_Blade.Resource;
@@ -274,8 +274,8 @@ namespace Server.Items
             {
                 AzhuranSpear weapon = new AzhuranSpear();
                 weapon.NewCrafting = true;
-                weapon.QualityDamage = m_Hilt.GetDamageBonus() + m_Blade.Damage;
-                weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + m_Blade.Speed;
+                weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
+                weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
                 weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Attack;
                 weapon.QualityDefense = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Defense;
                 weapon.Resource = m_Blade.Resource;
@@ -320,8 +320,8 @@ namespace Server.Items
             {
                 MhordulBoneStaff weapon = new MhordulBoneStaff();
                 weapon.NewCrafting = true;
-                weapon.QualityDamage = m_Hilt.GetDamageBonus() + m_Blade.Damage;
-                weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + m_Blade.Speed;
+                weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
+                weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
                 weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Attack;
                 weapon.QualityDefense = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Defense;
                 weapon.Resource = m_Hilt.Resource;
@@ -436,8 +436,8 @@ namespace Server.Items
         {
             Bardiche weapon = new Bardiche();
             weapon.NewCrafting = true;
-            weapon.QualityDamage = m_Hilt.GetDamageBonus() + m_Blade.Damage;
-            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + m_Blade.Speed;
+            weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
+            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
             weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Attack;
             weapon.QualityDefense = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Defense;
             weapon.Resource = m_Blade.Resource;
@@ -479,8 +479,8 @@ namespace Server.Items
         {
             Spear weapon = new Spear();
             weapon.NewCrafting = true;
-            weapon.QualityDamage = m_Hilt.GetDamageBonus() + m_Blade.Damage;
-            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + m_Blade.Speed;
+            weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
+            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
             weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Attack;
             weapon.QualityDefense = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Defense;
             weapon.Resource = m_Blade.Resource;
@@ -522,8 +522,8 @@ namespace Server.Items
         {
             Scythe weapon = new Scythe();
             weapon.NewCrafting = true;
-            weapon.QualityDamage = m_Hilt.GetDamageBonus() + m_Blade.Damage;
-            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + m_Blade.Speed;
+            weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
+            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
             weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Attack;
             weapon.QualityDefense = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Defense;
             weapon.Resource = m_Blade.Resource;
@@ -565,8 +565,8 @@ namespace Server.Items
         {
             MhordulBoneSpear weapon = new MhordulBoneSpear();
             weapon.NewCrafting = true;
-            weapon.QualityDamage = m_Hilt.GetDamageBonus() + m_Blade.Damage;
-            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + m_Blade.Speed;
+            weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
+            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
             weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Attack;
             weapon.QualityDefense = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Defense;
             weapon.Resource = m_Blade.Resource;
@@ -608,8 +608,8 @@ namespace Server.Items
         {
             MhordulBoneScythe weapon = new MhordulBoneScythe();
             weapon.NewCrafting = true;
-            weapon.QualityDamage = m_Hilt.GetDamageBonus() + m_Blade.Damage;
-            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + m_Blade.Speed;
+            weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
+            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
             weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Attack;
             weapon.QualityDefense = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Defense;
             weapon.Resource = m_Blade.Resource;
@@ -698,9 +698,9 @@ namespace Server.Items
             Pitchfork weapon = new Pitchfork();
             weapon.NewCrafting = true;
             int quality = (int)(m_Blade1.Damage * 0.35 + m_Blade2.Damage * 0.35 + m_Blade3.Damage * 0.35);
-            weapon.QualityDamage = m_Hilt.GetDamageBonus() + quality;
+            weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + quality;
             quality = (int)(m_Blade1.Speed * 0.3 + m_Blade2.Speed * 0.3 + m_Blade3.Speed * 0.3);
-            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + quality;
+            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + quality;
             quality = (int)(m_Blade1.Attack * 0.35 + m_Blade2.Attack * 0.35 + m_Blade3.Attack * 0.35);
             weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + quality;
             quality = (int)(m_Blade1.Defense * 0.3 + m_Blade2.Defense * 0.3 + m_Blade3.Defense * 0.3);
@@ -765,9 +765,9 @@ namespace Server.Items
             MhordulBladedBoneStaff weapon = new MhordulBladedBoneStaff();
             weapon.NewCrafting = true;
             int quality = (int)(m_Blade.Damage * 0.5 + xtraBlade.Damage * 0.5);
-            weapon.QualityDamage = m_Hilt.GetDamageBonus() + quality + 2;
+            weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + quality + 2;
             quality = (int)(m_Blade.Speed * 0.5 + xtraBlade.Speed * 0.5);
-            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + quality + 4;
+            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + quality + 4;
             quality = (int)(m_Blade.Attack * 0.5 + xtraBlade.Attack * 0.5);
             weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + quality;
             quality = (int)(m_Blade.Defense * 0.5 + xtraBlade.Defense * 0.5);
@@ -867,8 +867,8 @@ namespace Server.Items
         {
             TyreanHarpoon weapon = new TyreanHarpoon();
             weapon.NewCrafting = true;
-            weapon.QualityDamage = m_Hilt.GetDamageBonus() + m_Blade.Damage;
-            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + m_Blade.Speed;
+            weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
+            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
             weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Attack;
             weapon.QualityDefense = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Defense;
             weapon.Resource = m_Blade.Resource;
@@ -910,8 +910,8 @@ namespace Server.Items
         {
             Pike weapon = new Pike();
             weapon.NewCrafting = true;
-            weapon.QualityDamage = m_Hilt.GetDamageBonus() + m_Blade.Damage;
-            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + m_Blade.Speed;
+            weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
+            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
             weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Attack;
             weapon.QualityDefense = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Defense;
             weapon.Resource = m_Blade.Resource;
@@ -953,8 +953,8 @@ namespace Server.Items
         {
             ShortSpear weapon = new ShortSpear();
             weapon.NewCrafting = true;
-            weapon.QualityDamage = m_Hilt.GetDamageBonus() + m_Blade.Damage;
-            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + m_Blade.Speed;
+            weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
+            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
             weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Attack;
             weapon.QualityDefense = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Defense;
             weapon.Resource = m_Blade.Resource;
@@ -996,8 +996,8 @@ namespace Server.Items
         {
             MhordulSpear weapon = new MhordulSpear();            
             weapon.NewCrafting = true;
-            weapon.QualityDamage = m_Hilt.GetDamageBonus() + m_Blade.Damage;
-            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + m_Blade.Speed;
+            weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
+            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
             weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Attack;
             weapon.QualityDefense = m_Hilt.GetHitChanceBonus() / 2 + m_Blade.Defense;
             weapon.Resource = m_Blade.Resource;
@@ -1057,9 +1057,9 @@ namespace Server.Items
             DoubleBladedStaff weapon = new DoubleBladedStaff();
             weapon.NewCrafting = true;
             int quality = (int)(m_Blade.Damage * 0.5 + xtraBlade.Damage * 0.5);
-            weapon.QualityDamage = m_Hilt.GetDamageBonus() + quality;
+            weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + quality;
             quality = (int)(m_Blade.Speed * 0.5 + xtraBlade.Speed * 0.5);
-            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() + quality;
+            weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + quality;
             quality = (int)(m_Blade.Attack * 0.5 + xtraBlade.Attack * 0.5);
             weapon.QualityAccuracy = m_Hilt.GetHitChanceBonus() / 2 + quality;
             quality = (int)(m_Blade.Defense * 0.5 + xtraBlade.Defense * 0.5);
