@@ -9,8 +9,8 @@ namespace Server.Items
         public override ArmourWeight ArmourType { get { return ArmourWeight.Heavy; } }
 
         public override int BaseBluntResistance{ get{ return 7; } }
-		public override int BasePiercingResistance{ get{ return 7; } }
-		public override int BaseSlashingResistance{ get{ return 7; } }
+		public override int BasePiercingResistance{ get{ return 11; } }
+		public override int BaseSlashingResistance{ get{ return 11; } }
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 3; } }
 		public override int BaseColdResistance{ get{ return 2; } }
