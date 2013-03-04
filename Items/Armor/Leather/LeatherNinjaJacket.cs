@@ -7,7 +7,7 @@ namespace Server.Items
 	{
 		public override int BaseBluntResistance{ get{ return 3; } }
 		public override int BaseSlashingResistance{ get{ return 3; } }
-		public override int BasePiercingResistance{ get{ return 3; } }
+		public override int BasePiercingResistance{ get{ return 5; } }
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 0; } }
 		public override int BaseColdResistance{ get{ return 0; } }
