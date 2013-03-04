@@ -11,7 +11,7 @@ namespace Server.Items
     public class MhordulBoneChest : BaseArmor, IBoneArmour
     {
         public override int BaseBluntResistance { get { return 16; } }
-        public override int BasePiercingResistance { get { return 12; } }
+        public override int BasePiercingResistance { get { return 14; } }
         public override int BaseSlashingResistance { get { return 15; } }
         public override int BasePhysicalResistance { get { return 0; } }
         public override int BaseFireResistance { get { return 3; } }
