@@ -1,10 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Server;
-using Server.Gumps;
 using Server.Network;
-using Server.Commands;
 using Server.Misc;
 using Server.Mobiles;
 using Server.Items;
@@ -13,14 +7,14 @@ namespace Server.Gumps
 {
     public class CustomSpellScrollGump : Gump
     {
-    	private CustomSpellScroll Scroll;
+    	private readonly CustomSpellScroll Scroll;
     	
         public CustomSpellScrollGump( PlayerMobile m, CustomSpellScroll scroll ) : base( 0, 0 )
         {
-            this.Closable=false;
-			this.Disposable=false;
-			this.Dragable=true;
-			this.Resizable=false;
+            Closable=false;
+			Disposable=false;
+			Dragable=true;
+			Resizable=false;
 
 			AddPage(0);
 			AddBackground(149, 86, 390, 370, 5120);
@@ -84,7 +78,7 @@ namespace Server.Gumps
         
         public static int GetNumbersFromString( string text )
         {
-        	if( text == null || text.Length < 1 )
+        	if( string.IsNullOrEmpty(text) )
         		return 0;
         	
         	int result = 0;
