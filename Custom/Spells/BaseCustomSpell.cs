@@ -1,8 +1,6 @@
 using System;
-using Server;
 using Server.Mobiles;
 using Server.Items;
-using Server.Commands;
 using Server.Targeting;
 using Server.Engines.XmlSpawner2;
 using Server.Network;
@@ -24,6 +22,7 @@ namespace Server.Misc
 		public virtual string Name{ get{ return "a spell"; } }
 		public virtual double FullEffect{ get{ return 0; } }
 		public virtual double PartialEffect{ get{ return 0; } }
+        public virtual FeatList RequiredFeat { get { return FeatList.Magery; } }
 		public virtual double FaithModifier
 		{ 
 			get
@@ -163,7 +162,13 @@ namespace Server.Misc
 					return false;
 				
 				IKhaerosMobile caster = m_Caster as IKhaerosMobile;
-				
+
+                if (caster == null)
+                    return false;
+
+                if (!caster.Feats.FeatDictionary.ContainsKey(RequiredFeat))
+                    return false;
+
 				if( caster.IsTired() )
 					return false;
 
