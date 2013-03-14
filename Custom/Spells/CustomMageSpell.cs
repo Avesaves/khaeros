@@ -30,6 +30,7 @@ namespace Server.Misc
 		public override double FullEffect{ get{ return (HadFirstEffect == true ? ChainedDamage : Damage); } }
 		public override double PartialEffect{ get{ return (int)(FullEffect * 0.75); } }
 		public override int BaseRange{ get{ return Range; } }
+
 		
 		private Mobile m_NextTarget;
 		private string m_CustomName;

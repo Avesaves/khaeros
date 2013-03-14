@@ -22,7 +22,6 @@ namespace Server.Misc
 		public virtual string Name{ get{ return "a spell"; } }
 		public virtual double FullEffect{ get{ return 0; } }
 		public virtual double PartialEffect{ get{ return 0; } }
-        public virtual FeatList RequiredFeat { get { return FeatList.Magery; } }
 		public virtual double FaithModifier
 		{ 
 			get
@@ -154,6 +153,10 @@ namespace Server.Misc
 				return CanTargetEntity(TargetItem);
 			}
 		}
+
+        FeatList requiredFeat = FeatList.Magery;
+        public virtual FeatList RequiredFeat { get { return requiredFeat; } set { requiredFeat = value; } }
+
 		public virtual bool CanBeCast
 		{
 			get
