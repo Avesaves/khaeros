@@ -170,9 +170,12 @@ namespace Server.Misc
                     return false;
 
                 if (!caster.Feats.FeatDictionary.ContainsKey(RequiredFeat))
+                {
+                    m_Caster.SendMessage(String.Format("You cannot cast this spell without the feat {0}", RequiredFeat));
                     return false;
+                }
 
-				if( caster.IsTired() )
+			    if( caster.IsTired() )
 					return false;
 
 				if( m_Caster.Target != null )
