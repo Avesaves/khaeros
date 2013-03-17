@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.UnarmedFighting }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Technique }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "With your lighting quick reflexes you are able to catch projectiles thrown at " +
 					"you. Only works when unarmed and without a shield. [Catch chance is 10%]"; } }
