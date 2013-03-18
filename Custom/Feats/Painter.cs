@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Craftsmanship }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.TattooArtist }; } }
 		
 		public override string FirstDescription{ get{ return "This skill gives the character the ability to paint paintings."; } }
 		public override string SecondDescription{ get{ return "This skill gives the character the ability to paint and name paintings."; } }

@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Tactics }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.FlurryOfBlows }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "When activated, the next attack will be feigned (i.e. only animation, no effect). " +
 					"This 'attack' will not cause a delay, so if the opponent attempts to parry the feigned attack, the player can initiate a " +

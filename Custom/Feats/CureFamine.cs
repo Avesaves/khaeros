@@ -16,7 +16,7 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Invocation }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Magery, FeatList.Faith }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "This spell allows you to quench a creature's thirst. [Replenishes your " +

@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.CatchProjectiles }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.CatchProjectiles, FeatList.Technique }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Unarmed Fighting skill, which will " +
 					"enhance the speed of your attack animation when fighting unarmed. [20% skill]"; } }

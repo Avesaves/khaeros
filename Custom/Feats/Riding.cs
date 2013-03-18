@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.MountedEndurance }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.MountedEndurance, FeatList.MountedDefence, FeatList.MountedArchery }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Riding skill, which will " +
 					"lower your chance of falling from your horse when galloping. [20% skill]"; } }

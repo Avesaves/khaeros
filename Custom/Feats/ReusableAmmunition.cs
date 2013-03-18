@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Archery }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.CrossbowMastery, FeatList.BowMastery }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "You know how to fire off your arrows/bolts in a way to " +
 					"increase their chance of not breaking upon impact. [+20% chance of reclaiming ammunition] <br>"; } }

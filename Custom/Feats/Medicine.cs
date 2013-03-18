@@ -16,8 +16,8 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Barbery }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Surgery, FeatList.Pathology }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Alchemy }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Surgery }; } }
 		
 		public override string FirstDescription{ get{ return "The study of medicine will allow you to heal injuries much faster than time would normally allow. [+5 Seconds to Heal Attempts]"; } }
 		public override string SecondDescription{ get{ return "[+10 Seconds to Heal Attempts]"; } }

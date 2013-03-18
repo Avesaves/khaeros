@@ -559,7 +559,7 @@ namespace Server.Items
 
 		protected override void GenerateTreasure()
 		{
-			DropItem( new Gold( 600, 900 ) );
+			DropItem( new copper( 10, 1000 ) );
 
 			ArrayList gems = new ArrayList();
 			for ( int i = 0; i < 9; i++ )
@@ -588,7 +588,7 @@ namespace Server.Items
 
 
 			if ( 0.2 > Utility.RandomDouble() )
-				DropItem( new BagOfReagents( 50 ) );
+				DropItem( new silver( 1, 10 ) );
 
 			for ( int i = 0; i < 2; i++ )
 			{
@@ -605,12 +605,10 @@ namespace Server.Items
 
 					if ( Core.AOS )
 					{
-						int attributeCount;
-						int min, max;
+						weapon.DamageLevel = (WeaponDamageLevel)Utility.Random( 6 );
+						weapon.AccuracyLevel = (WeaponAccuracyLevel)Utility.Random( 6 );
+						weapon.DurabilityLevel = (WeaponDurabilityLevel)Utility.Random( 6 );
 
-						GetRandomAOSStats( out attributeCount, out min, out max );
-
-						BaseRunicTool.ApplyAttributesTo( weapon, attributeCount, min, max );
 					}
 					else
 					{
@@ -627,12 +625,8 @@ namespace Server.Items
 
 					if ( Core.AOS )
 					{
-						int attributeCount;
-						int min, max;
-
-						GetRandomAOSStats( out attributeCount, out min, out max );
-
-						BaseRunicTool.ApplyAttributesTo( armor, attributeCount, min, max );
+						armor.ProtectionLevel = (ArmorProtectionLevel)Utility.Random( 6 );
+						armor.Durability = (ArmorDurabilityLevel)Utility.Random( 6 );
 					}
 					else
 					{
@@ -644,12 +638,7 @@ namespace Server.Items
 				}
 				else if ( item is BaseJewel )
 				{
-					int attributeCount;
-					int min, max;
 
-					GetRandomAOSStats( out attributeCount, out min, out max );
-
-					BaseRunicTool.ApplyAttributesTo( (BaseJewel)item, attributeCount, min, max );
 
 					DropItem( item );
 				}

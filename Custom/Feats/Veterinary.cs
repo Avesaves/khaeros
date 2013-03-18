@@ -17,7 +17,8 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.AnimalLore }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.DogBreeding, FeatList.HorseBreeding }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.DogBreeding, FeatList.HorseBreeding, FeatList.PetFeats,
+		FeatList.Beartalker, FeatList.Snakecharmer, FeatList.AvianBreeding }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Veterinary skill, which will " +
 					"allow you allow you to apply bandages to your pets with greater efficiency. [20% skill]"; } }

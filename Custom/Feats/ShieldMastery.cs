@@ -16,8 +16,8 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.DeflectProjectiles }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.DefensiveStance }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.ShieldBash }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.DeflectProjectiles }; } }
 		
 		public override string FirstDescription{ get{ return "Having adopted a fighting style that includes shields you are better able to " +
 					"defend yourself. Increases attack cooldown for the opponent when you parry their attack with a shield. [0.125s cooldown " +

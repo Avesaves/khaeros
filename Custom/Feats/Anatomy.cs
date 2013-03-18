@@ -17,8 +17,8 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.HeavyLifting, FeatList.PoisonResistance, FeatList.MagicResistance, 
-				FeatList.Barbery, FeatList.BruteStrength, FeatList.CriticalStrike }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.HeavyLifting, FeatList.PoisonResistance,  
+				FeatList.BruteStrength, FeatList.QuickReflexes, FeatList.Barbery }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Anatomy skill, slightly improving " +
 					"both your melee and ranged damage, as well as your healing capabilities with bandages. [20% skill]"; } }

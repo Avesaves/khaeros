@@ -16,7 +16,7 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.EnhancedTracking }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.DetectHidden }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "Your senses are keener than normal, allow you to sense and spot hidden people " +
