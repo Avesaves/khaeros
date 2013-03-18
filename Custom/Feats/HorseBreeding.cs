@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Veterinary }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.PetFeats }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "The knowledge acquired from this skill will enable you to breed horses."; } }
 		public override string SecondDescription{ get{ return "This skill will grant +3 additional lives (initial and maximum) to the horses you breed."; } }
