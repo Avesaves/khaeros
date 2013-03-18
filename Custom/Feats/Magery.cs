@@ -9,7 +9,7 @@ namespace Server.FeatInfo
 {
 	public class Magery : BaseFeat
 	{
-		public override string Name{ get{ return "Magery"; } }
+		public override string Name{ get{ return "Black Magic"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.Magery; } }
 		public override FeatCost CostLevel{ get{ return FeatCost.Medium; } }
 		
@@ -17,12 +17,11 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Invocation }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Meditation, FeatList.DamagingEffect, FeatList.RangedEffect, 
-				FeatList.ExplosiveEffect, FeatList.StatusEffect, FeatList.RecurrentEffect, FeatList.ChainEffect, FeatList.EnchantArmour, 
-				FeatList.EnchantWeapon, FeatList.EnchantClothing, FeatList.EnchantRing, FeatList.EnchantTrinket, FeatList.EnchantBracelet }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Meditation, FeatList.DeathI, FeatList.MatterI, 
+				FeatList.MindI, FeatList.ForcesI }; } }
 		
-		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Magery skill, which will " +
-					"give you access to mage powers. [20% skill]"; } }
+		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Black Magic, which will " +
+					"give you access to low-level mage powers. [20% skill]"; } }
 		public override string SecondDescription{ get{ return "[50% skill]"; } }
 		public override string ThirdDescription{ get{ return "[100% skill]"; } }
 
