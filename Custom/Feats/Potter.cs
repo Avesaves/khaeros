@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Craftsmanship }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Sculptor }; } }
 		
 		public override string FirstDescription{ get{ return "You know how to find clay suitable for pottery."; } }
 		public override string SecondDescription{ get{ return "You have learned the art of pottery."; } }
