@@ -11,7 +11,7 @@ namespace Server.FeatInfo
 	{
 		public override string Name{ get{ return "Axemanship"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.Axemanship; } }
-		public override FeatCost CostLevel{ get{ return FeatCost.Low; } }
+		public override FeatCost CostLevel{ get{ return FeatCost.High; } }
 		
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ SkillName.Axemanship }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
