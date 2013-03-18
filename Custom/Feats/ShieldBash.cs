@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Parrying }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.DeflectProjectiles }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.ShieldMastery }; } }
 		
 		public override string FirstDescription{ get{ return "Using your shield, you " +
 					"bash your enemy, dealing damage and slowing their attacks. This attack " +
