@@ -11,13 +11,13 @@ namespace Server.FeatInfo
     {
         public override string Name{ get{ return "Barbery"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.Barbery; } }
-		public override FeatCost CostLevel{ get{ return FeatCost.High; } }
+		public override FeatCost CostLevel{ get{ return FeatCost.None; } }
 		
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ SkillName.Healing }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Anatomy }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Medicine }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "Barbery is the combined knowledge of basic healing arts and the art of hair-styling. [20% Healing]"; } }
 		public override string SecondDescription{ get{ return "[50% Healing]"; } }
