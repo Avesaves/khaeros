@@ -47,11 +47,11 @@ namespace Server.FeatInfo
             base.OnLevelLowered( owner );
 
             if( Level == 0 )
-                owner.RawMana -= 1;
-            else if( Level == 1 )
-                owner.RawMana -= 2;
-            else if( Level == 2 )
                 owner.RawMana -= 3;
+            else if( Level == 1 )
+                owner.RawMana -= 6;
+            else if( Level == 2 )
+                owner.RawMana -= 9;
         }
 
         public override void OnLevelRaised( PlayerMobile owner )
@@ -59,11 +59,11 @@ namespace Server.FeatInfo
             base.OnLevelRaised( owner );
 
             if( Level == 1 )
-                owner.RawMana += 1;
-            else if( Level == 2 )
-                owner.RawMana += 2;
-            else if( Level == 3 )
                 owner.RawMana += 3;
+            else if( Level == 2 )
+                owner.RawMana += 6;
+            else if( Level == 3 )
+                owner.RawMana += 9;
         }
 	}
 }
