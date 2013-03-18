@@ -17,10 +17,10 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ FeatList.CureFamine }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Faith, FeatList.Magery, FeatList.CureFamine }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Faith, FeatList.Magery, FeatList.CureFamine, FeatList.MagicResistance }; } }
 		
-		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Invocation skill, which will " +
-					"give you access to more magic powers, lower your enemies' chance of resisting your spells, and also grant you the Cure Famine spell. [20% skill]"; } }
+		public override string FirstDescription{ get{ return "This skill will allow you to tap into the energy of Khaeros, " +
+					"give you access to more magic powers if you are worthy, and lower your enemies' chance of resisting your spells. [20% skill]"; } }
 		public override string SecondDescription{ get{ return "[50% skill]"; } }
 		public override string ThirdDescription{ get{ return "[100% skill]"; } }
 
