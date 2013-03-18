@@ -17,8 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Meditation }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.LifeII, FeatList.DeathII, FeatList.MatterII, FeatList.SpiritII, 
-				FeatList.TimeII, FeatList.PrimeII, FeatList.MindII, FeatList.SpaceII, FeatList.FateII, FeatList.ForcesII }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Concentration skill, which will " +
 					"lower your chance to fizzle spells when surrounded by enemies or getting struck while casting. [20% skill]"; } }

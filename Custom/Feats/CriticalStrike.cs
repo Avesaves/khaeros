@@ -16,8 +16,8 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Anatomy }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.FocusedAttack }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Axemanship }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "You know where to hit with your weapon to inflict massive " +
 					"damage. [7 damage bonus]"; } }

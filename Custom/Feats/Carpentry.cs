@@ -16,7 +16,7 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ SkillName.Carpentry }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Craftsmanship }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.WoodStaining, FeatList.Shipwright }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Carpentry skill, which will " +

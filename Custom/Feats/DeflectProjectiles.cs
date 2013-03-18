@@ -16,8 +16,8 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.ShieldBash }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.ShieldMastery }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.ShieldMastery }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "You know how to hide behind your shield to prevent projectiles from hitting " +
 					"you. [10% chance to deflect projectiles]"; } }

@@ -11,13 +11,13 @@ namespace Server.FeatInfo
 	{
 		public override string Name{ get{ return "Axemanship"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.Axemanship; } }
-		public override FeatCost CostLevel{ get{ return FeatCost.Low; } }
+		public override FeatCost CostLevel{ get{ return FeatCost.High; } }
 		
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ SkillName.Axemanship }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.FightingStyle, FeatList.GreatweaponFighting }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.FightingStyle, FeatList.GreatweaponFighting, FeatList.CriticalStrike }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Axemanship skill, which will " +
 					"enhance the speed of your attack animation with weapons of this type. [20% skill]"; } }

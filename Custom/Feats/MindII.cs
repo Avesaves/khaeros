@@ -16,7 +16,7 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Concentration }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.MindI }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will allow you to cast mind-based spells from ancient " +
@@ -47,11 +47,11 @@ namespace Server.FeatInfo
             base.OnLevelLowered( owner );
 
             if( Level == 0 )
-                owner.RawMana -= 1;
-            else if( Level == 1 )
-                owner.RawMana -= 2;
-            else if( Level == 2 )
                 owner.RawMana -= 3;
+            else if( Level == 1 )
+                owner.RawMana -= 6;
+            else if( Level == 2 )
+                owner.RawMana -= 9;
         }
 
         public override void OnLevelRaised( PlayerMobile owner )
@@ -59,11 +59,11 @@ namespace Server.FeatInfo
             base.OnLevelRaised( owner );
 
             if( Level == 1 )
-                owner.RawMana += 1;
-            else if( Level == 2 )
-                owner.RawMana += 2;
-            else if( Level == 3 )
                 owner.RawMana += 3;
+            else if( Level == 2 )
+                owner.RawMana += 6;
+            else if( Level == 3 )
+                owner.RawMana += 9;
         }
 	}
 }

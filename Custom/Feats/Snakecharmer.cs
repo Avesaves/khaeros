@@ -16,7 +16,7 @@ namespace Server.FeatInfo
         public override SkillName[] AssociatedSkills { get { return new SkillName[] { }; } }
         public override FeatList[] AssociatedFeats { get { return new FeatList[] { }; } }
 
-        public override FeatList[] Requires { get { return new FeatList[] { FeatList.DogBreeding }; } }
+        public override FeatList[] Requires { get { return new FeatList[] { FeatList.Veterinary }; } }
         public override FeatList[] Allows { get { return new FeatList[] { }; } }
 
         public override string FirstDescription { get { return "The knowledge acquired from this skill will enable you to breed snakes."; } }

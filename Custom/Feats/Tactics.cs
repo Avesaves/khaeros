@@ -17,8 +17,8 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.CripplingBlow, FeatList.FlashyAttack, FeatList.Feint, 
-					FeatList.BackToBack, FeatList.QuickReflexes, FeatList.Intimidate }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.DefensiveStance, FeatList.FlurryOfBlows, FeatList.Feint, 
+					FeatList.BackToBack, FeatList.FocusedAttack, FeatList.Intimidate }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Tactics skill, thus improving " +
 					"both your melee and ranged damage. [20% skill]"; } }

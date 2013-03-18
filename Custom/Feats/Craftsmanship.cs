@@ -17,8 +17,9 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.DurableCrafts, FeatList.Painter, FeatList.Sculptor, 
-				FeatList.Potter, FeatList.GlassBlower }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.DurableCrafts, FeatList.Painter, FeatList.Blacksmithing, 
+				FeatList.Potter, FeatList.GlassBlower, FeatList.Tinkering, FeatList.Fletching, FeatList.Tailoring, FeatList.Inscription,
+				FeatList.Carpentry }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Craftsmanship skill, which will " +
 					"improve your success/exceptional chance when crafting. [20% skill]"; } }

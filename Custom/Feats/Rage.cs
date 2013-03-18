@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.DefensiveFury }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.DamageIgnore, FeatList.SavageStrike }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.DamageIgnore }; } }
 		
 		public override string FirstDescription{ get{ return "Firing up your blood you rage in to combat, attacking the " +
 					"enemies without any thought of injury. [+7.5% damage and speed, +10 hp bonus, -5% Defence Chance, +5% " +

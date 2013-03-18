@@ -16,7 +16,7 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ SkillName.Leadership }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.LifeI }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.MercTraining, FeatList.LingeringCommand, FeatList.ExpeditiousRetreat, 
 				FeatList.InspireResilience, FeatList.InspireHeroics, FeatList.InspireFortitude }; } }
 		

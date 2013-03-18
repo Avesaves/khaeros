@@ -16,8 +16,8 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Tactics }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.FlurryOfBlows }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Swordsmanship }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "You are able to cripple your opponents and prevent them from running " +
 					"or knock them off their mounts. [Lasts 1.5 seconds, freezes creatures, dismounts riders]"; } }

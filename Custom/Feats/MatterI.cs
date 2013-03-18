@@ -16,8 +16,8 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Meditation }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Magery }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.MatterII }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will allow you to cast matter-based spells from ancient scrolls you may " +
 					"find. It will also increase your mana regeneration rate."; } }

@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.ReusableAmmunition }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.ReusableAmmunition, FeatList.CrossbowMastery, FeatList.BowMastery }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Archery skill, which will " +
 					"enhance the speed of your attack animation when fighting with ranged weapons. [20% skill]"; } }

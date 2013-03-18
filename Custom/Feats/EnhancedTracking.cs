@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Tracking }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Alertness }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "You are an expert tracker and able to see subtle evidence that would " +
 					"be unnoticeable to others. [+25 tiles to tracking range]"; } }

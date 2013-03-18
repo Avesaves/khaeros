@@ -17,8 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ FeatList.Trample }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Riding }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.MountedCharge, FeatList.MountedArchery, FeatList.MountedDefence, 
-				FeatList.Trample }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.MountedCharge, FeatList.Trample }; } }
 		
 		public override string FirstDescription{ get{ return "You know how to preserve your mount's stamina, allowing him to " +
 					"carry you further. [Whenever your mount would regen stamina it will regen an extra 0-1 stamina]"; } }

@@ -16,7 +16,7 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Anatomy }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Anatomy, FeatList.Alchemy }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Poisoning }; } }
 		
 		public override string FirstDescription{ get{ return "The assassin, having imbibed small doses of poison over many years of practice, " +

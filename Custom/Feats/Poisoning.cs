@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.PoisonResistance }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.BleedingStrike }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Poisoning skill, which will allow " +
 					"you to create poisons using a mixing set and venom you can extract by skinning venomous creatures. It will also improve the " +
@@ -32,6 +32,18 @@ namespace Server.FeatInfo
 		public override string FullDescription{ get{ return GetFullDescription(this); } }
 		
 		public static void Initialize(){ WriteWebpage(new Poisoning()); }
+		
+		public override bool MeetsOurRequirements( PlayerMobile m )
+			{
+
+           	 if(((PlayerMobile)m).Feats.GetFeatLevel(FeatList.Anatomy) < 3)
+                	return false;
+
+          	 if (((PlayerMobile)m).Feats.GetFeatLevel(FeatList.Alchemy) < 3)
+               		 return false;
+
+				return base.MeetsOurRequirements( m );
+			}
 		
 		public Poisoning() {}
 	}

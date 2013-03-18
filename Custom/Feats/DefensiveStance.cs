@@ -16,7 +16,7 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.ShieldMastery }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Tactics }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "You excel at defensive combat. [-1.5% Speed, -1.5% Damage, +10% Defence Chance]"; } }
