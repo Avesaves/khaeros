@@ -108,6 +108,9 @@ namespace Server.Items
 			
 			else if( (spell.RepDelay < 11 && m.Feats.GetFeatLevel(FeatList.RecurrentEffect) < 2) || (spell.RepDelay < 6 && m.Feats.GetFeatLevel(FeatList.RecurrentEffect) < 3) )
 				m.SendMessage( "You lack the appropriate knowledge to create a spell whose recurrent effect happens so fast." );
+            
+            else if(!m.Feats.FeatDictionary.ContainsKey(spell.RequiredFeat))
+                m.SendMessage(String.Format("You lack the {0} feat to create this spell.", spell.RequiredFeat));
 			
 			else
 				return true;
@@ -169,6 +172,7 @@ namespace Server.Items
 			m.SendMessage( "Explosion Hue: " + spell.ExplosionHue.ToString() );
 			m.SendMessage( "Explosion Sound: " + spell.ExplosionSound.ToString() );
 			m.SendMessage( "Icon ID: " + spell.IconID.ToString() );
+            m.SendMessage("Required Feat: "+spell.RequiredFeat.ToString());
 		}
 		
 		public static CustomMageSpell DupeCustomMageSpell( CustomMageSpell Spell )
@@ -195,6 +199,7 @@ namespace Server.Items
 			spell.ExplosionHue = Spell.ExplosionHue;
 			spell.ExplosionSound = Spell.ExplosionSound;
 			spell.IconID = Spell.IconID;
+		    spell.RequiredFeat = Spell.RequiredFeat;
 			
 			return spell;
 		}
@@ -262,6 +267,7 @@ namespace Server.Items
 			writer.Write( (int) Spell.ExplosionHue );
 			writer.Write( (int) Spell.ExplosionSound );
 			writer.Write( (int) Spell.IconID );
+            writer.Write( Spell.RequiredFeat.ToString());
   		}
 
  		public override void Serialize( GenericWriter writer ) 
@@ -302,6 +308,7 @@ namespace Server.Items
             newSpell.ExplosionHue = reader.ReadInt();
             newSpell.ExplosionSound = reader.ReadInt();
             newSpell.IconID = reader.ReadInt();
+            newSpell.RequiredFeat = (FeatList)(Enum.Parse(typeof(FeatList), reader.ReadString())); 
 
             return newSpell;
  		}
