@@ -16,7 +16,7 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Tactics }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Anatomy }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "Having conditioned yourself to rigorous agility training, you are now able " +
