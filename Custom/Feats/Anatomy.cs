@@ -18,7 +18,7 @@ namespace Server.FeatInfo
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.HeavyLifting, FeatList.PoisonResistance,  
-				FeatList.BruteStrength, FeatList.CriticalStrike }; } }
+				FeatList.BruteStrength, FeatList.QuickReflexes }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Anatomy skill, slightly improving " +
 					"both your melee and ranged damage, as well as your healing capabilities with bandages. [20% skill]"; } }
