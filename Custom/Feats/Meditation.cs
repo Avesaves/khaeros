@@ -17,8 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Faith, FeatList.Magery }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Concentration, FeatList.LifeI, FeatList.DeathI, FeatList.MatterI, 
-					FeatList.SpiritI, FeatList.TimeI, FeatList.PrimeI, FeatList.MindI, FeatList.SpaceI, FeatList.FateI, FeatList.ForcesI }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Concentration }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Meditation skill, which will " +
 					"increase the rate with which you regain mana. [20% skill]"; } }
