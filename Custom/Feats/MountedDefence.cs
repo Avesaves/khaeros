@@ -16,7 +16,7 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.MountedEndurance }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Riding }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Longstrider, FeatList.Ridgeking, FeatList.ScarabWarrior, FeatList.Bearjarl, FeatList.Fanglord, FeatList.Horselord }; } }
 		
 		public override string FirstDescription{ get{ return "You are able to defend yourself from melee attacks by using " +
