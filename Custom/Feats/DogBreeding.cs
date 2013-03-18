@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Veterinary }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Beartalker, FeatList.WolfBreeding, FeatList.Snakecharmer, FeatList.AvianBreeding, FeatList.PetFeats }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.WolfBreeding }; } }
 		
 		public override string FirstDescription{ get{ return "The knowledge acquired from this skill will enable you to breed dogs."; } }
 		public override string SecondDescription{ get{ return "This skill will grant +2 additional lives (initial and maximum) to the dogs you breed."; } }
