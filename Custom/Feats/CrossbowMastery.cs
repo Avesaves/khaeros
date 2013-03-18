@@ -16,7 +16,7 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.ReusableAmmunition }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Archery }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.FocusedShot, FeatList.CriticalShot }; } }
 		
 		public override string FirstDescription{ get{ return "Dedicating yourself to archery you have now become a master " +
