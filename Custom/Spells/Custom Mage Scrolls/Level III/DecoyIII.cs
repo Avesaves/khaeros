@@ -101,7 +101,7 @@ namespace Server.Items
         {
             get
             {
-                return base.CanBeCast && HasRequiredArcanas( new FeatList[] { FeatList.ForcesII, FeatList.PrimeII, FeatList.MatterII, FeatList.SpaceII  } );
+                return base.CanBeCast && HasRequiredArcanas( new FeatList[] { FeatList.MindII } );
             }
         }
 
