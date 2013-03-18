@@ -16,7 +16,7 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Concentration }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.ForcesI }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will allow you to cast forces-based spells from ancient " +
