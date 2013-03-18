@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Magery }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.DeathII }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will allow you to cast death-based spells from ancient scrolls you may " +
 					"find. It will also increase your mana regeneration rate."; } }
