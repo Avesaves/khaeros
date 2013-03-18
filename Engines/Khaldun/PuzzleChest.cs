@@ -559,7 +559,7 @@ namespace Server.Items
 
 		protected override void GenerateTreasure()
 		{
-			DropItem( new copper( 10, 1000 ) );
+			DropItem( new gold( 1, 10 ) );
 
 			ArrayList gems = new ArrayList();
 			for ( int i = 0; i < 9; i++ )
@@ -588,7 +588,7 @@ namespace Server.Items
 
 
 			if ( 0.2 > Utility.RandomDouble() )
-				DropItem( new silver( 1, 10 ) );
+				DropItem( new gold( 1, 10 ) );
 
 			for ( int i = 0; i < 2; i++ )
 			{
