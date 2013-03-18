@@ -14,11 +14,11 @@ namespace Server.FeatInfo
 		public override FeatCost CostLevel{ get{ return FeatCost.Medium; } }
 		
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ SkillName.Magery }; } }
-		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
+		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ FeatList.CureFamine }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Invocation }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Meditation, FeatList.DeathI, FeatList.MatterI, 
-				FeatList.MindI, FeatList.ForcesI }; } }
+				FeatList.MindI, FeatList.ForcesI, FeatList.CureFamine }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Black Magic, which will " +
 					"give you access to low-level mage powers. [20% skill]"; } }
