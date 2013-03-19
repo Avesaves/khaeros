@@ -81,7 +81,7 @@ namespace Server.Commands
                 Console.WriteLine( "Retrieving file log from the database..." );
                 ftplib.ChangeDir( "public_html/data/pages/database/creatures/" );
             }
-//khaeros "mVJJQLvpR5"
+
             catch( Exception ex )
             {
                 Console.WriteLine( ex.Message );
