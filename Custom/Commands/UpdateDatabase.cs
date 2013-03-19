@@ -77,7 +77,7 @@ namespace Server.Commands
             try
             {
                 Console.WriteLine( "Connecting to \"ftp.khaeros.net\"..." );
-                ftplib.Connect( "ftp.khaeros.net", "CaptainZack@khaeros.com", "kiiUbP46704F" );
+                ftplib.Connect( "ftp.khaeros.net", "khaeros", "mVJJQLvpR5" );
                 Console.WriteLine( "Retrieving file log from the database..." );
                 ftplib.ChangeDir( "public_html/data/pages/database/creatures/" );
             }
