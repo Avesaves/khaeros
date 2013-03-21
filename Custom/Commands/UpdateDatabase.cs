@@ -1,14 +1,7 @@
 using System;
-using Server.Items;
 using Server.Mobiles;
-using Server.Misc;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using Server.Network;
-using Server.Prompts;
-using ftp;
 using FTPLib;
 using System.Threading;
 
@@ -30,11 +23,8 @@ namespace Server.Commands
 
             PlayerMobile m = e.Mobile as PlayerMobile;
 
-            if( WikiDataBase.trd == null )
-                WikiDataBase.StartFTPThread( m );
-
-            else
-                m.SendMessage( "The server is already processing an update request. Please try again in 30 seconds." );
+            if (m != null)
+                WikiDataBase.LoadCreatureFiles(m);
         }
     }
 	
@@ -191,7 +181,7 @@ namespace Server.Commands
             try
             {
                 //DownloadFilesFromFTP();
-                string[] creatureFilePaths = Directory.GetFiles( FilePath );
+                string[] creatureFilePaths = Directory.GetFiles( @"C:\Mobs\" );
 
                 for( int i = 0; i < creatureFilePaths.Length; i++ )
                     ReadCreatureFile( creatureFilePaths[i] );
