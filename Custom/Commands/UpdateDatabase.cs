@@ -57,11 +57,6 @@ namespace Server.Commands
 
         public static void DownloadFilesFromFTP()
         {
-            if( Directory.Exists( FilePath ) )
-                Directory.Delete( FilePath, true );
-
-            Directory.CreateDirectory( FilePath );
-
             FTP ftplib = new FTP();
 
             try
