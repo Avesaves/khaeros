@@ -243,7 +243,86 @@ namespace Server.Items
   		{ 
  		}
   		
-  		public static void SerializeSpell( GenericWriter writer, CustomMageSpell Spell )
+
+        public static void SerializeSpell( GenericWriter writer, CustomMageSpell Spell )
+  		{
+  			writer.Write( (int) 1 ); // version
+            writer.Write( (string) Spell.GetType().Name );
+  			writer.Write( (string) Spell.CustomName );
+     		writer.Write( (int) Spell.RepDamage );
+			writer.Write( (int) Spell.Damage );
+			writer.Write( (int) Spell.Range );
+			writer.Write( (int) Spell.ChainedTargets );
+			writer.Write( (int) Spell.ChainedDamage );
+			writer.Write( (int) Spell.ChainedRange );
+			writer.Write( (int) Spell.ExplosionDamage );
+			writer.Write( (int) Spell.ExplosionArea );
+			writer.Write( (int) Spell.Reps );
+			writer.Write( (int) Spell.RepDelay );
+			writer.Write( (int) Spell.StatusType );
+			writer.Write( (int) Spell.StatusDuration );
+			writer.Write( (int) Spell.EffectID );
+			writer.Write( (int) Spell.EffectHue );
+			writer.Write( (int) Spell.EffectSound );
+			writer.Write( (int) Spell.ExplosionID );
+			writer.Write( (int) Spell.ExplosionHue );
+			writer.Write( (int) Spell.ExplosionSound );
+			writer.Write( (int) Spell.IconID );
+           // writer.Write( Spell.RequiredFeat.ToString());
+  		}
+
+ 		public override void Serialize( GenericWriter writer ) 
+  		{
+ 			base.Serialize( writer );
+     		writer.Write( (int) 0 ); // version
+     		SerializeSpell( writer, Spell );
+  		}
+ 		
+ 		public static CustomMageSpell DeserializeSpell( GenericReader reader )
+ 		{
+ 			int version = reader.ReadInt();
+            CustomMageSpell newSpell = null;
+
+            if( version > 0 )
+                newSpell = (CustomMageSpell)Activator.CreateInstance( ScriptCompiler.FindTypeByName( reader.ReadString(), true ) );
+
+            else
+                newSpell = new CustomMageSpell( null, 1 );
+
+            newSpell.CustomName = reader.ReadString();
+            newSpell.RepDamage = reader.ReadInt();
+            newSpell.Damage = reader.ReadInt();
+            newSpell.Range = reader.ReadInt();
+            newSpell.ChainedTargets = reader.ReadInt();
+            newSpell.ChainedDamage = reader.ReadInt();
+            newSpell.ChainedRange = reader.ReadInt();
+            newSpell.ExplosionDamage = reader.ReadInt();
+            newSpell.ExplosionArea = reader.ReadInt();
+            newSpell.Reps = reader.ReadInt();
+            newSpell.RepDelay = reader.ReadInt();
+            newSpell.StatusType = reader.ReadInt();
+            newSpell.StatusDuration = reader.ReadInt();
+            newSpell.EffectID = reader.ReadInt();
+            newSpell.EffectHue = reader.ReadInt();
+            newSpell.EffectSound = reader.ReadInt();
+            newSpell.ExplosionID = reader.ReadInt();
+            newSpell.ExplosionHue = reader.ReadInt();
+            newSpell.ExplosionSound = reader.ReadInt();
+            newSpell.IconID = reader.ReadInt();
+           // newSpell.RequiredFeat = (FeatList)(Enum.Parse(typeof(FeatList), reader.ReadString())); 
+
+            return newSpell;
+ 		}
+
+  		public override void Deserialize( GenericReader reader ) 
+  		{ 
+  			base.Deserialize( reader );
+     		int version = reader.ReadInt();
+     		Spell = DeserializeSpell( reader );
+  		}
+   	} 
+
+  		/*public static void SerializeSpell( GenericWriter writer, CustomMageSpell Spell )
   		{
   			writer.Write( (int) 2 ); // version
             writer.Write( (string) Spell.GetType().Name );
@@ -323,7 +402,7 @@ namespace Server.Items
 				}
 			}
             return newSpell;
- 		}
+ 		}*/
 
         static FeatList DeserializeRequiredFeat(GenericReader reader)
         {
