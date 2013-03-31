@@ -165,10 +165,14 @@ namespace Server.Gumps
 
         public bool AllowAccess( bool msg )
         {
-            if( CustomGuildStone.IsGuildMilitary( m_Viewer, m_Guild, msg ) )
+            if (m_Viewer.AccessLevel > AccessLevel.Player)
                 return true;
+            else
+            {
+                m_Viewer.SendMessage("Players do not have access to this function.");
+                return false;
+            }
 
-            return false;
         }
 
         public void ResourcesOnResponse(int id)
