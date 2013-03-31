@@ -267,7 +267,7 @@ namespace Server.Items
 			writer.Write( (int) Spell.ExplosionHue );
 			writer.Write( (int) Spell.ExplosionSound );
 			writer.Write( (int) Spell.IconID );
-           // writer.Write( Spell.RequiredFeat.ToString());
+            writer.Write( Spell.RequiredFeat.ToString());
   		}
 
  		public override void Serialize( GenericWriter writer ) 
@@ -308,12 +308,25 @@ namespace Server.Items
             newSpell.ExplosionHue = reader.ReadInt();
             newSpell.ExplosionSound = reader.ReadInt();
             newSpell.IconID = reader.ReadInt();
-           // newSpell.RequiredFeat = (FeatList)(Enum.Parse(typeof(FeatList), reader.ReadString())); 
+            newSpell.RequiredFeat = DeserializeRequiredFeat(reader); 
 
             return newSpell;
  		}
 
-  		public override void Deserialize( GenericReader reader ) 
+        static FeatList DeserializeRequiredFeat(GenericReader reader)
+        {
+            try
+            {
+                FeatList feat = (FeatList)(Enum.Parse(typeof(FeatList), reader.ReadString()));
+                return feat;
+            }
+            catch (Exception)
+            {
+                return FeatList.Magery;               
+            }
+        }
+
+        public override void Deserialize( GenericReader reader ) 
   		{ 
   			base.Deserialize( reader );
      		int version = reader.ReadInt();
