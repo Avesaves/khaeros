@@ -245,7 +245,7 @@ namespace Server.Items
   		
   		public static void SerializeSpell( GenericWriter writer, CustomMageSpell Spell )
   		{
-  			writer.Write( (int) 1 ); // version
+  			writer.Write( (int) 2 ); // version
             writer.Write( (string) Spell.GetType().Name );
   			writer.Write( (string) Spell.CustomName );
      		writer.Write( (int) Spell.RepDamage );
@@ -267,7 +267,7 @@ namespace Server.Items
 			writer.Write( (int) Spell.ExplosionHue );
 			writer.Write( (int) Spell.ExplosionSound );
 			writer.Write( (int) Spell.IconID );
-            writer.Write( Spell.RequiredFeat.ToString());
+            writer.Write( (string) Spell.RequiredFeat.ToString());
   		}
 
  		public override void Serialize( GenericWriter writer ) 
@@ -278,38 +278,48 @@ namespace Server.Items
   		}
  		
  		public static CustomMageSpell DeserializeSpell( GenericReader reader )
- 		{
+ 		{			
  			int version = reader.ReadInt();
             CustomMageSpell newSpell = null;
+			string type = reader.ReadString();
 
-            if( version > 0 )
-                newSpell = (CustomMageSpell)Activator.CreateInstance( ScriptCompiler.FindTypeByName( reader.ReadString(), true ) );
-
-            else
-                newSpell = new CustomMageSpell( null, 1 );
-
-            newSpell.CustomName = reader.ReadString();
-            newSpell.RepDamage = reader.ReadInt();
-            newSpell.Damage = reader.ReadInt();
-            newSpell.Range = reader.ReadInt();
-            newSpell.ChainedTargets = reader.ReadInt();
-            newSpell.ChainedDamage = reader.ReadInt();
-            newSpell.ChainedRange = reader.ReadInt();
-            newSpell.ExplosionDamage = reader.ReadInt();
-            newSpell.ExplosionArea = reader.ReadInt();
-            newSpell.Reps = reader.ReadInt();
-            newSpell.RepDelay = reader.ReadInt();
-            newSpell.StatusType = reader.ReadInt();
-            newSpell.StatusDuration = reader.ReadInt();
-            newSpell.EffectID = reader.ReadInt();
-            newSpell.EffectHue = reader.ReadInt();
-            newSpell.EffectSound = reader.ReadInt();
-            newSpell.ExplosionID = reader.ReadInt();
-            newSpell.ExplosionHue = reader.ReadInt();
-            newSpell.ExplosionSound = reader.ReadInt();
-            newSpell.IconID = reader.ReadInt();
-            newSpell.RequiredFeat = DeserializeRequiredFeat(reader); 
-
+			switch (version) {
+				case 2:
+				{
+					newSpell.RequiredFeat = DeserializeRequiredFeat(reader);
+					goto case 1;
+				}
+				case 1:
+				{
+				newSpell = (CustomMageSpell)Activator.CreateInstance( ScriptCompiler.FindTypeByName(type , true ) );
+				newSpell.CustomName = reader.ReadString();
+				newSpell.RepDamage = reader.ReadInt();
+				newSpell.Damage = reader.ReadInt();
+				newSpell.Range = reader.ReadInt();
+				newSpell.ChainedTargets = reader.ReadInt();
+				newSpell.ChainedDamage = reader.ReadInt();
+				newSpell.ChainedRange = reader.ReadInt();
+				newSpell.ExplosionDamage = reader.ReadInt();
+				newSpell.ExplosionArea = reader.ReadInt();
+				newSpell.Reps = reader.ReadInt();
+				newSpell.RepDelay = reader.ReadInt();
+				newSpell.StatusType = reader.ReadInt();
+				newSpell.StatusDuration = reader.ReadInt();
+				newSpell.EffectID = reader.ReadInt();
+				newSpell.EffectHue = reader.ReadInt();
+				newSpell.EffectSound = reader.ReadInt();
+				newSpell.ExplosionID = reader.ReadInt();
+				newSpell.ExplosionHue = reader.ReadInt();
+				newSpell.ExplosionSound = reader.ReadInt();
+				newSpell.IconID = reader.ReadInt();   
+				break;
+				}		
+				case 0:
+				{
+					newSpell = new CustomMageSpell(null, 1);
+					break;
+				}
+			}
             return newSpell;
  		}
 
@@ -317,8 +327,10 @@ namespace Server.Items
         {
             try
             {
-                FeatList feat = (FeatList)(Enum.Parse(typeof(FeatList), reader.ReadString()));
-                return feat;
+				string featAsString = reader.ReadString();
+				if (featAsString == null && featAsString == String.Empty)
+					return FeatList.Magery;
+                return (FeatList)(Enum.Parse(typeof(FeatList), featAsString));
             }
             catch (Exception)
             {
