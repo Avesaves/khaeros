@@ -46,8 +46,8 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Meditation, 100.1, 110.0 );
 			SetSkill( SkillName.MagicResist, 15.0 );
 
-			Fame = 1000;
-			Karma = -1000;
+			Fame = 1600;
+			Karma = -1600;
 
 		}
 		
