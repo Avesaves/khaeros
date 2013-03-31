@@ -924,18 +924,6 @@ namespace Server.Items
         	return false;
         }
 
-        public static bool IsGuildMilitary(PlayerMobile m, CustomGuildStone g, bool msg)
-        {
-            if (IsGuildMilitary(m, g))
-                return true;
-            else
-            {
-                if (msg)
-                    m.SendMessage("You do have access to that function because you are not military personnel for this organization.");
-                return false;
-            }
-        }
-
         public static bool IsGuildMilitary(PlayerMobile m, CustomGuildStone g)
         {
             if (m.AccessLevel > AccessLevel.Player)
