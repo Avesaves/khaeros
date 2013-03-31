@@ -247,6 +247,7 @@ namespace Server.Items
   		{
   			writer.Write( (int) 2 ); // version
             writer.Write( (string) Spell.GetType().Name );
+            writer.Write((string)Spell.RequiredFeat.ToString());
   			writer.Write( (string) Spell.CustomName );
      		writer.Write( (int) Spell.RepDamage );
 			writer.Write( (int) Spell.Damage );
@@ -267,7 +268,6 @@ namespace Server.Items
 			writer.Write( (int) Spell.ExplosionHue );
 			writer.Write( (int) Spell.ExplosionSound );
 			writer.Write( (int) Spell.IconID );
-            writer.Write( (string) Spell.RequiredFeat.ToString());
   		}
 
  		public override void Serialize( GenericWriter writer ) 
@@ -330,7 +330,7 @@ namespace Server.Items
 				string featAsString = reader.ReadString();
 				if (featAsString == null && featAsString == String.Empty)
 					return FeatList.Magery;
-                FeatList feat = (FeatList) (Enum.Parse(typeof (FeatList), featAsString);
+                FeatList feat = (FeatList) (Enum.Parse(typeof (FeatList), featAsString));
                 if (feat == null)
                     return FeatList.Magery;
                 return feat;
