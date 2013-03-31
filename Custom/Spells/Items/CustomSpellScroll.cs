@@ -291,6 +291,8 @@ namespace Server.Items
 				}
 				case 1:
 				{
+                    if (type == null)
+                        goto case 0;
 				newSpell = (CustomMageSpell)Activator.CreateInstance( ScriptCompiler.FindTypeByName(type , true ) );
 				newSpell.CustomName = reader.ReadString();
 				newSpell.RepDamage = reader.ReadInt();
