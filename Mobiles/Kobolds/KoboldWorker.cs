@@ -37,8 +37,8 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 79.1, 89.0 );
 			SetSkill( SkillName.UnarmedFighting, 60.1, 70.0 );
 
-			Fame = 400;
-			Karma = -400;
+			Fame = 900;
+			Karma = -900;
 			PackItem( new Copper( 1 ) );
 		}
 		

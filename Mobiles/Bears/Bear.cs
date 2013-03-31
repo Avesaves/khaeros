@@ -15,44 +15,36 @@ namespace Server.Mobiles
             Body = 213;
             BaseSoundID = 0xA3;
 
-            SetStr(126, 155);
-            SetDex(5, 10);
-            SetInt(10);
+			SetStr( 150, 185 );
+			SetDex( 100, 110 );
+			SetInt( 26, 30 );
 
-            SetHits(70, 100);
-            SetMana(0);
+			SetHits( 180, 196 );
 
-            SetDamage(4, 10);
+			SetDamage( 12, 15 );
 
-            ActiveSpeed = 0.2;
-            PassiveSpeed = 0.4;
-
-            SetDamageType(ResistanceType.Piercing, 50);
-            SetDamageType(ResistanceType.Blunt, 50);
+			SetDamageType( ResistanceType.Blunt, 100 );
 
 			SetResistance( ResistanceType.Blunt, 25, 35 );
-			SetResistance( ResistanceType.Slashing, 15, 30 );
-			SetResistance( ResistanceType.Piercing, 15, 25 );
-			SetResistance( ResistanceType.Energy, 10, 15 );
+			SetResistance( ResistanceType.Slashing, 20, 30 );
+			SetResistance( ResistanceType.Piercing, 25, 35 );
+			SetResistance( ResistanceType.Energy, 25, 30 );
+			SetResistance( ResistanceType.Fire, 35, 40 );
 
-			SetSkill( SkillName.MagicResist, 0.0 );
-			SetSkill( SkillName.Tactics, 60.1, 90.0 );
-			SetSkill( SkillName.UnarmedFighting, 45.1, 70.0 );
+			SetSkill( SkillName.MagicResist, 20.0 );
+			SetSkill( SkillName.Tactics, 80.1, 100.0 );
+			SetSkill( SkillName.UnarmedFighting, 80.1, 100.0 );
 
-			Fame = 750;
-			Karma = 0;
+			Fame = 6000;
+			Karma = -6000;
 
-            VirtualArmor = 35;
-
-            Tamable = true;
-            ControlSlots = 3;
-            MinTameSkill = 66.1;
-        }
+			VirtualArmor = 30;
+		}
 
 		public override bool HasFur{ get{ return true; } }
-		public override int Meat{ get{ return 12; } }
-		public override int Bones{ get{ return 10; } }
-		public override int Hides{ get{ return 6; } }
+		public override int Meat{ get{ return 24; } }
+		public override int Bones{ get{ return 20; } }
+		public override int Hides{ get{ return 16; } }
 		public override HideType HideType{ get{ return HideType.Thick; } }
 		public override FoodType FavoriteFood{ get{ return FoodType.Fish | FoodType.FruitsAndVegies | FoodType.Meat; } }
 		public override PackInstinct PackInstinct{ get{ return PackInstinct.Bear; } }
