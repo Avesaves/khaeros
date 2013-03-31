@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using Server.Mobiles;
-using Server.Items;
 using Server.Targeting;
-using Server.Targets;
-using Server.Network;
-using Server.Misc;
 
 namespace Server.Items
 {
