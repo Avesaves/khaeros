@@ -282,6 +282,7 @@ namespace Server.Items
  			int version = reader.ReadInt();
             CustomMageSpell newSpell = null;
 			string type = reader.ReadString();
+            newSpell = (CustomMageSpell)Activator.CreateInstance(ScriptCompiler.FindTypeByName(type, true));
 
 			switch (version) {
 				case 2:
@@ -291,9 +292,6 @@ namespace Server.Items
 				}
 				case 1:
 				{
-                    if (type == null)
-                        goto case 0;
-				newSpell = (CustomMageSpell)Activator.CreateInstance( ScriptCompiler.FindTypeByName(type , true ) );
 				newSpell.CustomName = reader.ReadString();
 				newSpell.RepDamage = reader.ReadInt();
 				newSpell.Damage = reader.ReadInt();
