@@ -15,29 +15,29 @@ namespace Server.Mobiles
 			Body = 0x7E;
 			BaseSoundID = 0x73;
 
-			SetStr( 86, 90 );
-			SetDex( 56, 65 );
+			SetStr( 140, 160 );
+			SetDex( 165, 185 );
 			SetInt( 26, 30 );
 
-			SetHits( 134, 148 );
+			SetHits( 200, 250 );
 			SetMana( 0 );
 
-			SetDamage( 9, 11 );
+			SetDamage( 5, 20 );
 
 			SetDamageType( ResistanceType.Piercing, 100 );
 
-			SetResistance( ResistanceType.Blunt, 20, 25 );
-			SetResistance( ResistanceType.Piercing, 5, 10 );
-			SetResistance( ResistanceType.Slashing, 30, 40 );
+			SetResistance( ResistanceType.Blunt, 20, 40 );
+			SetResistance( ResistanceType.Piercing, 20, 40 );
+			SetResistance( ResistanceType.Slashing, 20, 40 );
 			SetResistance( ResistanceType.Poison, 10, 20 );
-			SetResistance( ResistanceType.Energy, 20, 30 );
+			SetResistance( ResistanceType.Energy, 10, 15 );
 
 			SetSkill( SkillName.MagicResist, 0.0 );
-			SetSkill( SkillName.Tactics, 45.1, 60.0 );
-			SetSkill( SkillName.UnarmedFighting, 40.1, 50.0 );
+			SetSkill( SkillName.Tactics, 90.1, 100.0 );
+			SetSkill( SkillName.UnarmedFighting, 90.1, 100.0 );
 
-			Fame = 3450;
-			Karma = -3450;
+			Fame = 6000;
+			Karma = -6000;
 
 			VirtualArmor = 24;
 
@@ -48,8 +48,8 @@ namespace Server.Mobiles
 		
 		public override bool HasFur{ get{ return true; } }
 		public override int Meat{ get{ return 8; } }
-		public override int Bones{ get{ return 8; } }
-		public override int Hides{ get{ return 4; } }
+		public override int Bones{ get{ return 12; } }
+		public override int Hides{ get{ return 12; } }
 		public override HideType HideType{ get{ return HideType.Thick; } }
 		public override FoodType FavoriteFood{ get{ return FoodType.Meat | FoodType.Fish; } }
 		public override PackInstinct PackInstinct{ get{ return PackInstinct.Feline; } }

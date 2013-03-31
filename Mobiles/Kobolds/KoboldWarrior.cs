@@ -41,8 +41,8 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 95.1, 105.0 );
 			SetSkill( SkillName.UnarmedFighting, 97.6, 107.5 );
 
-			Fame = 1200;	
-			Karma = -1200;
+			Fame = 1600;	
+			Karma = -1600;
 		}
 
 		public override FoodType FavoriteFood{ get{ return FoodType.Fish; } }

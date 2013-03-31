@@ -1,10 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Server;
-using Server.Gumps;
 using Server.Network;
-using Server.Commands;
 using Server.Misc;
 using Server.Mobiles;
 using Server.Items;
@@ -13,14 +8,14 @@ namespace Server.Gumps
 {
     public class CustomSpellScrollGump : Gump
     {
-    	private CustomSpellScroll Scroll;
+    	private readonly CustomSpellScroll Scroll;
     	
         public CustomSpellScrollGump( PlayerMobile m, CustomSpellScroll scroll ) : base( 0, 0 )
         {
-            this.Closable=false;
-			this.Disposable=false;
-			this.Dragable=true;
-			this.Resizable=false;
+            Closable=false;
+			Disposable=false;
+			Dragable=true;
+			Resizable=false;
 
 			AddPage(0);
 			AddBackground(149, 86, 390, 370, 5120);
@@ -48,6 +43,7 @@ namespace Server.Gumps
 			AddLabel(190, 400, 2983, @"Repetition Damage:");
 			
 			AddLabel(352, 150, 2983, @"Mana Cost: " + scroll.Spell.ManaCost.ToString());
+            AddLabel(352, 175, 2983, @"Required Feat:");
 			AddLabel(352, 200, 2983, @"Explosion Damage:");
 			AddLabel(352, 225, 2983, @"Explosion Area:");
 			AddLabel(352, 250, 2983, @"Explosion Sound:");
@@ -80,11 +76,12 @@ namespace Server.Gumps
 			AddTextEntry(429, 350, 87, 20, 0, 16, @"" + scroll.Spell.EffectHue.ToString());
 			AddTextEntry(419, 375, 98, 20, 0, 17, @"" + scroll.Spell.EffectID.ToString());
 			AddTextEntry(402, 400, 107, 20, 0, 18, @"" + scroll.Spell.IconID.ToString());
+            AddTextEntry(442, 175, 107, 20, 0, 20, @"" + scroll.Spell.RequiredFeat.ToString());
         }
         
         public static int GetNumbersFromString( string text )
         {
-        	if( text == null || text.Length < 1 )
+        	if( string.IsNullOrEmpty(text) )
         		return 0;
         	
         	int result = 0;
@@ -125,8 +122,21 @@ namespace Server.Gumps
             	from.SendGump( new CustomSpellScrollGump( from, Scroll ) );
             	return;
             }
+
+            FeatList requiredFeat;
+            try
+            {
+                requiredFeat = (FeatList)(Enum.Parse(typeof(FeatList), info.GetTextEntry(20).Text));
+            }
+            catch (Exception)
+            {
+                from.SendMessage(String.Format("Was unable to find a feat named {0}", info.GetTextEntry(20).Text));
+                from.SendGump(new CustomSpellScrollGump(from, Scroll));
+                return;
+            }
             
             CustomMageSpell spell = new CustomMageSpell( null, 1 );
+            spell.RequiredFeat = requiredFeat;
             spell.CustomName = info.GetTextEntry(0).Text;
             spell.Damage = GetNumbersFromString( info.GetTextEntry(1).Text );
             spell.Range = GetNumbersFromString( info.GetTextEntry(2).Text );
@@ -147,6 +157,7 @@ namespace Server.Gumps
             spell.EffectID = GetNumbersFromString( info.GetTextEntry(17).Text );
             spell.IconID = GetNumbersFromString( info.GetTextEntry(18).Text );
             spell.ChainedRange = GetNumbersFromString( info.GetTextEntry(19).Text );
+            
 
             if( CustomSpellScroll.TryToEditSpell(from, spell) )
             {

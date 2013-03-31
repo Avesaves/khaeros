@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Server.Items; 
 using Server.Gumps;
 using Server.Misc;
 using Server.Mobiles;
@@ -110,6 +108,9 @@ namespace Server.Items
 			
 			else if( (spell.RepDelay < 11 && m.Feats.GetFeatLevel(FeatList.RecurrentEffect) < 2) || (spell.RepDelay < 6 && m.Feats.GetFeatLevel(FeatList.RecurrentEffect) < 3) )
 				m.SendMessage( "You lack the appropriate knowledge to create a spell whose recurrent effect happens so fast." );
+            
+            else if(!m.Feats.FeatDictionary.ContainsKey(spell.RequiredFeat))
+                m.SendMessage(String.Format("You lack the {0} feat to create this spell.", spell.RequiredFeat));
 			
 			else
 				return true;
@@ -171,6 +172,7 @@ namespace Server.Items
 			m.SendMessage( "Explosion Hue: " + spell.ExplosionHue.ToString() );
 			m.SendMessage( "Explosion Sound: " + spell.ExplosionSound.ToString() );
 			m.SendMessage( "Icon ID: " + spell.IconID.ToString() );
+            m.SendMessage("Required Feat: "+spell.RequiredFeat.ToString());
 		}
 		
 		public static CustomMageSpell DupeCustomMageSpell( CustomMageSpell Spell )
@@ -197,6 +199,7 @@ namespace Server.Items
 			spell.ExplosionHue = Spell.ExplosionHue;
 			spell.ExplosionSound = Spell.ExplosionSound;
 			spell.IconID = Spell.IconID;
+		    spell.RequiredFeat = Spell.RequiredFeat;
 			
 			return spell;
 		}
@@ -242,7 +245,7 @@ namespace Server.Items
   		
   		public static void SerializeSpell( GenericWriter writer, CustomMageSpell Spell )
   		{
-  			writer.Write( (int) 1 ); // version
+  			writer.Write( (int) 2 ); // version
             writer.Write( (string) Spell.GetType().Name );
   			writer.Write( (string) Spell.CustomName );
      		writer.Write( (int) Spell.RepDamage );
@@ -264,6 +267,7 @@ namespace Server.Items
 			writer.Write( (int) Spell.ExplosionHue );
 			writer.Write( (int) Spell.ExplosionSound );
 			writer.Write( (int) Spell.IconID );
+            writer.Write( (string) Spell.RequiredFeat.ToString());
   		}
 
  		public override void Serialize( GenericWriter writer ) 
@@ -274,41 +278,67 @@ namespace Server.Items
   		}
  		
  		public static CustomMageSpell DeserializeSpell( GenericReader reader )
- 		{
+ 		{			
  			int version = reader.ReadInt();
             CustomMageSpell newSpell = null;
+			string type = reader.ReadString();
 
-            if( version > 0 )
-                newSpell = (CustomMageSpell)Activator.CreateInstance( ScriptCompiler.FindTypeByName( reader.ReadString(), true ) );
-
-            else
-                newSpell = new CustomMageSpell( null, 1 );
-
-            newSpell.CustomName = reader.ReadString();
-            newSpell.RepDamage = reader.ReadInt();
-            newSpell.Damage = reader.ReadInt();
-            newSpell.Range = reader.ReadInt();
-            newSpell.ChainedTargets = reader.ReadInt();
-            newSpell.ChainedDamage = reader.ReadInt();
-            newSpell.ChainedRange = reader.ReadInt();
-            newSpell.ExplosionDamage = reader.ReadInt();
-            newSpell.ExplosionArea = reader.ReadInt();
-            newSpell.Reps = reader.ReadInt();
-            newSpell.RepDelay = reader.ReadInt();
-            newSpell.StatusType = reader.ReadInt();
-            newSpell.StatusDuration = reader.ReadInt();
-            newSpell.EffectID = reader.ReadInt();
-            newSpell.EffectHue = reader.ReadInt();
-            newSpell.EffectSound = reader.ReadInt();
-            newSpell.ExplosionID = reader.ReadInt();
-            newSpell.ExplosionHue = reader.ReadInt();
-            newSpell.ExplosionSound = reader.ReadInt();
-            newSpell.IconID = reader.ReadInt();
-
+			switch (version) {
+				case 2:
+				{
+					newSpell.RequiredFeat = DeserializeRequiredFeat(reader);
+					goto case 1;
+				}
+				case 1:
+				{
+				newSpell = (CustomMageSpell)Activator.CreateInstance( ScriptCompiler.FindTypeByName(type , true ) );
+				newSpell.CustomName = reader.ReadString();
+				newSpell.RepDamage = reader.ReadInt();
+				newSpell.Damage = reader.ReadInt();
+				newSpell.Range = reader.ReadInt();
+				newSpell.ChainedTargets = reader.ReadInt();
+				newSpell.ChainedDamage = reader.ReadInt();
+				newSpell.ChainedRange = reader.ReadInt();
+				newSpell.ExplosionDamage = reader.ReadInt();
+				newSpell.ExplosionArea = reader.ReadInt();
+				newSpell.Reps = reader.ReadInt();
+				newSpell.RepDelay = reader.ReadInt();
+				newSpell.StatusType = reader.ReadInt();
+				newSpell.StatusDuration = reader.ReadInt();
+				newSpell.EffectID = reader.ReadInt();
+				newSpell.EffectHue = reader.ReadInt();
+				newSpell.EffectSound = reader.ReadInt();
+				newSpell.ExplosionID = reader.ReadInt();
+				newSpell.ExplosionHue = reader.ReadInt();
+				newSpell.ExplosionSound = reader.ReadInt();
+				newSpell.IconID = reader.ReadInt();   
+				break;
+				}		
+				case 0:
+				{
+					newSpell = new CustomMageSpell(null, 1);
+					break;
+				}
+			}
             return newSpell;
  		}
 
-  		public override void Deserialize( GenericReader reader ) 
+        static FeatList DeserializeRequiredFeat(GenericReader reader)
+        {
+            try
+            {
+				string featAsString = reader.ReadString();
+				if (featAsString == null && featAsString == String.Empty)
+					return FeatList.Magery;
+                return (FeatList)(Enum.Parse(typeof(FeatList), featAsString));
+            }
+            catch (Exception)
+            {
+                return FeatList.Magery;               
+            }
+        }
+
+        public override void Deserialize( GenericReader reader ) 
   		{ 
   			base.Deserialize( reader );
      		int version = reader.ReadInt();

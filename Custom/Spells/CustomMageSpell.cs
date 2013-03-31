@@ -1,13 +1,9 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Text;
-using Server;
 using Server.Mobiles;
 using Server.Items;
 using Server.Commands;
-using Server.Targeting;
-using Server.Network;
 
 namespace Server.Misc
 {
@@ -29,11 +25,12 @@ namespace Server.Misc
 		public override bool UsesTarget{ get{ return (Range > 0); } }
 		public override bool UsesFullEffect{ get{ return !(TargetMobile is PlayerMobile); } }
 		public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
-		public override string Name{ get{ return (CustomName != null ? CustomName : "a Custom Mage Spell"); } }
+		public override string Name{ get{ return (CustomName ?? "a Custom Mage Spell"); } }
 		public override int TotalCost{ get{ return ManaCost; } }
 		public override double FullEffect{ get{ return (HadFirstEffect == true ? ChainedDamage : Damage); } }
 		public override double PartialEffect{ get{ return (int)(FullEffect * 0.75); } }
 		public override int BaseRange{ get{ return Range; } }
+
 		
 		private Mobile m_NextTarget;
 		private string m_CustomName;
@@ -67,53 +64,55 @@ namespace Server.Misc
 		[CommandProperty( AccessLevel.GameMaster )]
 		public virtual int ManaCost
 		{ 
-			get
-			{
-				int effects = 0;
-				double cost = 0;
-				
-				if( Damage > 0 )
-				{
-					effects++;
-					cost += GetDamageCost(Damage);
-				}
-				
-				if( Reps > 0 && RepDelay > 0 )
-				{
-					effects++;
-					cost += ((Reps * Math.Max(1, ChainedTargets)) * (GetDamageCost(RepDamage) * (1.5 - (RepDelay * 0.05))));
-				}
-				
-				if( Range > 0 )
-				{
-					effects++;
-					cost += (Range * 2);
-				}
-				
-				if( ChainedTargets > 0 )
-				{
-					effects++;
-					cost += (ChainedTargets * GetDamageCost(ChainedDamage));
-					cost += (ChainedRange * 2);
-				}
-				
-				if( ExplosionArea > 0 )
-				{
-					effects++;
-					cost += (GetDamageCost(ExplosionDamage) * (1 + (0.5 * ExplosionArea)));
-				}
-				
-				if( StatusType > 0 )
-				{
-					effects++;
-					cost += (StatusType * (StatusDuration * 5));
-				}
-
-				return (int)(cost + (effects * effects));
-			}
+			get { return CalculateManaCost(); }
 		}
-		
-		public double GetDamageCost( int damage )
+
+	    int CalculateManaCost()
+	    {
+	        int effects = 0;
+	        double cost = 0;
+
+	        if (Damage > 0)
+	        {
+	            effects++;
+	            cost += GetDamageCost(Damage);
+	        }
+
+	        if (Reps > 0 && RepDelay > 0)
+	        {
+	            effects++;
+	            cost += ((Reps*Math.Max(1, ChainedTargets))*(GetDamageCost(RepDamage)*(1.5 - (RepDelay*0.05))));
+	        }
+
+	        if (Range > 0)
+	        {
+	            effects++;
+	            cost += (Range*2);
+	        }
+
+	        if (ChainedTargets > 0)
+	        {
+	            effects++;
+	            cost += (ChainedTargets*GetDamageCost(ChainedDamage));
+	            cost += (ChainedRange*2);
+	        }
+
+	        if (ExplosionArea > 0)
+	        {
+	            effects++;
+	            cost += (GetDamageCost(ExplosionDamage)*(1 + (0.5*ExplosionArea)));
+	        }
+
+	        if (StatusType > 0)
+	        {
+	            effects++;
+	            cost += (StatusType*(StatusDuration*5));
+	        }
+
+	        return (int) (cost + (effects*effects));
+	    }
+
+	    public double GetDamageCost( int damage )
 		{
             if (this.IsTouchspell())
                 return ((damage * (damage * 0.005))*6);
