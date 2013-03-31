@@ -169,7 +169,7 @@ namespace Server.Misc
                 if (caster == null)
                     return false;
 
-                if (caster.Feats.GetFeatLevel(RequiredFeat) > 0)
+                if (!(caster.Feats.GetFeatLevel(RequiredFeat) > 0))
                 {
                     m_Caster.SendMessage(String.Format("You cannot cast this spell without the feat {0}", RequiredFeat));
                     return false;
