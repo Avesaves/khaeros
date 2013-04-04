@@ -19,37 +19,35 @@ namespace Server.Mobiles
 			Body = 38;
 			BaseSoundID = 427;
 
-			SetStr( 126, 255 );
-			SetDex( 46, 65 );
-			SetInt( 35 );
+			SetStr( 201, 350 );
+			SetDex( 66, 75 );
+			SetInt( 21, 30 );
 
-			SetHits( 250, 277 );
-			SetMana( 0 );
+			SetHits( 650 );
 
-			SetDamage( 13, 15 );
+			SetDamage( 32, 36 );
 
-			SetDamageType( ResistanceType.Blunt, 100 );
+			SetDamageType( ResistanceType.Slashing, 100 );
 
-			SetResistance( ResistanceType.Blunt, 30, 35 );
+			SetResistance( ResistanceType.Blunt, 45, 55 );
 			SetResistance( ResistanceType.Piercing, 30, 40 );
 			SetResistance( ResistanceType.Slashing, 30, 40 );
-			SetResistance( ResistanceType.Fire, 15, 25 );
+			SetResistance( ResistanceType.Fire, 25, 35 );
 			SetResistance( ResistanceType.Cold, 15, 25 );
-			SetResistance( ResistanceType.Poison, 15, 25 );
-			SetResistance( ResistanceType.Energy, 25 );
+			SetResistance( ResistanceType.Poison, 100 );
+			SetResistance( ResistanceType.Energy, 40, 50 );
 
-			SetSkill( SkillName.MagicResist, 0.0 );
-			SetSkill( SkillName.Tactics, 60.1, 70.0 );
-			SetSkill( SkillName.UnarmedFighting, 70.1, 80.0 );
+			SetSkill( SkillName.Invocation, 90.1, 100.0 );
+			SetSkill( SkillName.Magery, 90.1, 100.0 );
+			SetSkill( SkillName.Meditation, 90.1, 100.0 );
+			SetSkill( SkillName.MagicResist, 25.0 );
+			SetSkill( SkillName.Tactics, 75.1, 85.0 );
+			SetSkill( SkillName.UnarmedFighting, 80.1, 100.0 );
 
-			Fame = 6000;
-			Karma = -6000;
+			Fame = 18500;
+			Karma = -18500;
 
-			VirtualArmor = 42;
-			
-			Tamable = true;
-			ControlSlots = 2;
-			MinTameSkill = 80.0;
+			VirtualArmor = 54;
 		}
 
 		public override bool CanRummageCorpses{ get{ return true; } }
