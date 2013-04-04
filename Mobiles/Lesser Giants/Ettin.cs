@@ -17,35 +17,36 @@ namespace Server.Mobiles
 			Body = 18;
 			BaseSoundID = 367;
 
-			SetStr( 136, 165 );
-			SetDex( 16, 25 );
-			SetInt( 35 );
+			SetStr( 406, 445 );
+			SetDex( 46, 75 );
+			SetInt( 11, 25 );
 
-			SetHits( 352, 369 );
+			SetHits( 822, 831 );
 
-			SetDamage( 10, 15 );
+			SetDamage( 30, 35 );
 
 			SetDamageType( ResistanceType.Blunt, 100 );
 
-			SetResistance( ResistanceType.Blunt, 25, 30 );
-			SetResistance( ResistanceType.Piercing, 20, 30 );
-			SetResistance( ResistanceType.Slashing, 20, 30 );
-			SetResistance( ResistanceType.Fire, 15, 25 );
-			SetResistance( ResistanceType.Cold, 40, 50 );
-			SetResistance( ResistanceType.Poison, 15, 25 );
-			SetResistance( ResistanceType.Energy, 15, 25 );
+			SetResistance( ResistanceType.Blunt, 35, 45 );
+			SetResistance( ResistanceType.Piercing, 35, 50 );
+			SetResistance( ResistanceType.Slashing, 35, 50 );
+			SetResistance( ResistanceType.Fire, 30, 40 );
+			SetResistance( ResistanceType.Cold, 25, 35 );
+			SetResistance( ResistanceType.Poison, 30, 40 );
+			SetResistance( ResistanceType.Energy, 30, 40 );
 
-			SetSkill( SkillName.MagicResist, 20.0 );
-			SetSkill( SkillName.Tactics, 70.1, 80.0 );
-			SetSkill( SkillName.UnarmedFighting, 70.1, 80.0 );
-			SetSkill( SkillName.Macing, 70.1, 80.0 );
-			
-			this.RangeFight = 3;
+			SetSkill( SkillName.Invocation, 85.1, 100.0 );
+			SetSkill( SkillName.Magery, 85.1, 100.0 );
+			SetSkill( SkillName.MagicResist, 60.0 );
+			SetSkill( SkillName.Tactics, 110.1, 120.0 );
+			SetSkill( SkillName.UnarmedFighting, 110.1, 120.0 );
+			SetSkill( SkillName.Macing, 110.1, 120.0 );
 
-			Fame = 10000;
-			Karma = -10000;
+			Fame = 22000;
+			Karma = -22000;
 
-			VirtualArmor = 28;
+			VirtualArmor = 49;
+            PackItem( new RewardToken( 1 ) );
 		}
 		
 		public override void OnAfterMove( Point3D oldLocation )
