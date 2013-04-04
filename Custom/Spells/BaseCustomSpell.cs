@@ -154,7 +154,7 @@ namespace Server.Misc
 			}
 		}
 
-        FeatList requiredFeat = FeatList.Magery;
+        FeatList requiredFeat = FeatList.Invocation;
         public virtual FeatList RequiredFeat { get { return requiredFeat; } set { requiredFeat = value; } }
 
 		public virtual bool CanBeCast
