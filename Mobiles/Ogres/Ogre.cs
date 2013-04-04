@@ -16,32 +16,36 @@ namespace Server.Mobiles
 			Body = Utility.RandomList( 53, 54 );
 			BaseSoundID = 461;
 
-			SetStr( 76, 105 );
-			SetDex( 46, 65 );
-			SetInt( 35 );
+			SetStr( 586, 785 );
+			SetDex( 177, 255 );
+			SetInt( 351, 450 );
 
-			SetHits( 146, 163 );
+			SetHits( 352, 471 );
 
-			SetDamage( 8, 10 );
+			SetDamage( 13, 19 );
 
-			SetDamageType( ResistanceType.Blunt, 100 );
+			SetDamageType( ResistanceType.Slashing, 100 );
 
-			SetResistance( ResistanceType.Blunt, 35, 45 );
-			SetResistance( ResistanceType.Piercing, 30, 40 );
-			SetResistance( ResistanceType.Slashing, 30, 40 );
-			SetResistance( ResistanceType.Fire, 25, 35 );
-			SetResistance( ResistanceType.Cold, 15, 25 );
-			SetResistance( ResistanceType.Poison, 5, 15 );
-			SetResistance( ResistanceType.Energy, 5, 15 );
+			SetResistance( ResistanceType.Blunt, 80, 90 );
+			SetResistance( ResistanceType.Piercing, 80, 90 );
+			SetResistance( ResistanceType.Slashing, 80, 90 );
+			SetResistance( ResistanceType.Fire, 40, 50 );
+			SetResistance( ResistanceType.Cold, 40, 50 );
+			SetResistance( ResistanceType.Poison, 40, 50 );
+			SetResistance( ResistanceType.Energy, 40, 50 );
 
-			SetSkill( SkillName.MagicResist, 0.0 );
-			SetSkill( SkillName.Tactics, 50.1, 70.0 );
-			SetSkill( SkillName.UnarmedFighting, 50.1, 70.0 );
+			SetSkill( SkillName.Anatomy, 50.1, 75.0 );
+			SetSkill( SkillName.Invocation, 90.1, 100.0 );
+			SetSkill( SkillName.Magery, 99.1, 100.0 );
+			SetSkill( SkillName.Meditation, 90.1, 100.0 );
+			SetSkill( SkillName.MagicResist, 90.1, 100.0 );
+			SetSkill( SkillName.Tactics, 90.1, 100.0 );
+			SetSkill( SkillName.UnarmedFighting, 97.6, 100.0 );
 
-			Fame = 3500;
-			Karma = -3500;
+			Fame = 8000;
+			Karma = 8000;
 
-			VirtualArmor = 30;
+			VirtualArmor = 40;
 		}
 
 		public override bool CanRummageCorpses{ get{ return true; } }
