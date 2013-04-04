@@ -16,36 +16,36 @@ namespace Server.Mobiles
 			Body = 75;
 			BaseSoundID = 604;
 
-			SetStr( 336, 385 );
-			SetDex( 26, 35 );
-			SetInt( 35 );
+			SetStr( 426, 465 );
+			SetDex( 46, 75 );
+			SetInt( 11, 25 );
 
-			SetHits( 402, 431 );
-			SetMana( 0 );
+			SetHits( 942, 961 );
 
-			SetDamage( 15, 20 );
+			SetDamage( 35, 40 );
 
 			SetDamageType( ResistanceType.Blunt, 100 );
 
-			SetResistance( ResistanceType.Blunt, 25, 30 );
-			SetResistance( ResistanceType.Piercing, 20, 30 );
-			SetResistance( ResistanceType.Slashing, 20, 30 );
+			SetResistance( ResistanceType.Blunt, 35, 45 );
+			SetResistance( ResistanceType.Piercing, 35, 50 );
+			SetResistance( ResistanceType.Slashing, 35, 50 );
 			SetResistance( ResistanceType.Fire, 30, 40 );
 			SetResistance( ResistanceType.Cold, 25, 35 );
-			SetResistance( ResistanceType.Poison, 30, 40 );
+			SetResistance( ResistanceType.Poison, 40 );
 			SetResistance( ResistanceType.Energy, 30, 40 );
 
-			SetSkill( SkillName.MagicResist, 30.0 );
-			SetSkill( SkillName.Tactics, 80.1, 100.0 );
-			SetSkill( SkillName.UnarmedFighting, 80.1, 90.0 );
-			SetSkill( SkillName.Macing, 80.1, 90.0 );
-			
-			this.RangeFight = 3;
+			SetSkill( SkillName.Invocation, 85.1, 100.0 );
+			SetSkill( SkillName.Magery, 85.1, 100.0 );
+			SetSkill( SkillName.MagicResist, 70.0 );
+			SetSkill( SkillName.Tactics, 110.1, 120.0 );
+			SetSkill( SkillName.UnarmedFighting, 110.1, 120.0 );
+			SetSkill( SkillName.Macing, 110.1, 120.0 );
 
-			Fame = 12000;
-			Karma = -12000;
+			Fame = 25000;
+			Karma = 25000;
 
-			VirtualArmor = 30;
+			VirtualArmor = 52;
+            PackItem( new RewardToken( 2 ) );
 		}
 		
 		public override int Meat{ get{ return 18; } }
