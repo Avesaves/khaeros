@@ -247,7 +247,7 @@ namespace Server.Items
   		{
   			writer.Write( (int) 2 ); // version
             writer.Write( (string) Spell.GetType().Name );
-            writer.Write((string)Spell.RequiredFeat.ToString());
+            //writer.Write((string)Spell.RequiredFeat.ToString());
   			writer.Write( (string) Spell.CustomName );
      		writer.Write( (int) Spell.RepDamage );
 			writer.Write( (int) Spell.Damage );
@@ -268,24 +268,78 @@ namespace Server.Items
 			writer.Write( (int) Spell.ExplosionHue );
 			writer.Write( (int) Spell.ExplosionSound );
 			writer.Write( (int) Spell.IconID );
+			writer.Write( (string) Spell.RequiredFeat.ToString());
   		}
 
  		public override void Serialize( GenericWriter writer ) 
   		{
  			base.Serialize( writer );
-     		writer.Write( (int) 0 ); // version
+     		writer.Write( (int) 2 ); // version
      		SerializeSpell( writer, Spell );
   		}
  		
+		static void PrintReadValues(GenericReader reader)
+		{
+			Console.WriteLine("Version: " +reader.ReadInt());
+			//Console.WriteLine("Feat: " + reader.ReadString());
+			Console.WriteLine("Type: " + reader.ReadString());
+			Console.WriteLine("CustomName: " + reader.ReadString());
+			Console.WriteLine("Rep Damage: " + reader.ReadInt());
+			Console.WriteLine("SpellDamage: "+ reader.ReadInt());
+			Console.WriteLine("Range: "+ reader.ReadInt());
+			Console.WriteLine("Chained Targets" + reader.ReadInt());
+			Console.WriteLine("Chained DMG " + reader.ReadInt());
+			Console.WriteLine(reader.ReadInt());
+			Console.WriteLine(reader.ReadInt());
+			Console.WriteLine(reader.ReadInt());
+			Console.WriteLine(reader.ReadInt());
+			Console.WriteLine(reader.ReadInt());
+			Console.WriteLine(reader.ReadInt());
+			Console.WriteLine(reader.ReadInt());
+			Console.WriteLine("Effect Id" + reader.ReadInt());
+			Console.WriteLine("Effect Hue" + reader.ReadInt());
+			Console.WriteLine("Effect Sound " + reader.ReadInt());
+			Console.WriteLine("Explosion ID " + reader.ReadInt());
+			Console.WriteLine("Explosion Hue " +reader.ReadInt());
+			Console.WriteLine("Explosion Sound " + reader.ReadInt());
+			Console.WriteLine("Icon Id " + reader.ReadInt());
+			Console.WriteLine("Extra " + reader.ReadString());
+		}
+		
  		public static CustomMageSpell DeserializeSpell( GenericReader reader )
  		{			
- 			/*int version = reader.ReadInt();
-            CustomMageSpell newSpell = null;
-			string feat = reader.ReadString();
-			string type = reader.ReadString();
-            newSpell = (CustomMageSpell)Activator.CreateInstance(ScriptCompiler.FindTypeByName(type, true));
-
-			switch (version) {
+ 			int version = reader.ReadInt();
+            CustomMageSpell newSpell = null;		
+			
+			if (version > 0)
+				newSpell = (CustomMageSpell)Activator.CreateInstance(ScriptCompiler.FindTypeByName(reader.ReadString(), true));
+			else return new CustomMageSpell(null, 1);
+			
+			newSpell.CustomName = reader.ReadString();
+			newSpell.RepDamage = reader.ReadInt();
+			newSpell.Damage = reader.ReadInt();
+			newSpell.Range = reader.ReadInt();
+			newSpell.ChainedTargets = reader.ReadInt();
+			newSpell.ChainedDamage = reader.ReadInt();
+			newSpell.ChainedRange = reader.ReadInt();
+			newSpell.ExplosionDamage = reader.ReadInt();
+			newSpell.ExplosionArea = reader.ReadInt();
+			newSpell.Reps = reader.ReadInt();
+			newSpell.RepDelay = reader.ReadInt();
+			newSpell.StatusType = reader.ReadInt();
+			newSpell.StatusDuration = reader.ReadInt();
+			newSpell.EffectID = reader.ReadInt();
+			newSpell.EffectHue = reader.ReadInt();
+			newSpell.EffectSound = reader.ReadInt();
+			newSpell.ExplosionID = reader.ReadInt();
+			newSpell.ExplosionHue = reader.ReadInt();
+			newSpell.ExplosionSound = reader.ReadInt();
+			newSpell.IconID = reader.ReadInt();
+			newSpell.RequiredFeat = DeserializeRequiredFeat(reader.ReadString());
+			
+			return newSpell;
+			
+			/*switch (version) {
 				case 2:
 				{		
 					newSpell.RequiredFeat = DeserializeRequiredFeat(feat);
@@ -320,9 +374,10 @@ namespace Server.Items
 					newSpell = new CustomMageSpell(null, 1);
 					break;
 				}
-			}
-            return newSpell;*/
-			return new CustomMageSpell(null, 1);
+			}*/
+            //return newSpell;	
+			//PrintReadValues(reader);
+			//return new CustomMageSpell(null, 1);
  		}
 
         static FeatList DeserializeRequiredFeat(string featAsString)
@@ -330,15 +385,15 @@ namespace Server.Items
             try
             {
 				if (featAsString == null && featAsString == String.Empty)
-					return FeatList.Magery;
+					return FeatList.Invocation;
                 FeatList feat = (FeatList) (Enum.Parse(typeof (FeatList), featAsString));
                 if (feat == null)
-                    return FeatList.Magery;
+                    return FeatList.Invocation;
                 return feat;
             }
             catch (Exception)
             {
-                return FeatList.Magery;               
+                return FeatList.Invocation;               
             }
         }
 
