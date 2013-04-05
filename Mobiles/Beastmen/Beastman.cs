@@ -12,36 +12,36 @@ namespace Server.Mobiles
 			Name = "a Beastman";
 			Body = 30;
 
-			SetStr( 550, 750 );
-			SetDex( 200, 275 );
-			SetInt( 351, 450 );
+			SetStr( 101, 110 );
+			SetDex( 81, 90 );
+			SetInt( 11, 25 );
 
-			SetHits( 352, 471 );
+			SetHits( 101, 130 );
 
-			SetDamage( 10, 15 );
+			SetDamage( 8, 12 );
 
 			SetDamageType( ResistanceType.Slashing, 100 );
 
-			SetResistance( ResistanceType.Blunt, 85, 90 );
-			SetResistance( ResistanceType.Piercing, 85, 90 );
-			SetResistance( ResistanceType.Slashing, 85, 90 );
-			SetResistance( ResistanceType.Fire, 40, 50 );
-			SetResistance( ResistanceType.Cold, 40, 50 );
-			SetResistance( ResistanceType.Poison, 40, 50 );
-			SetResistance( ResistanceType.Energy, 10, 20 );
+			SetResistance( ResistanceType.Blunt, 25, 30 );
+			SetResistance( ResistanceType.Piercing, 20, 30 );
+			SetResistance( ResistanceType.Slashing, 20, 30 );
+			SetResistance( ResistanceType.Fire, 50, 70 );
+			SetResistance( ResistanceType.Cold, 35, 50 );
+			SetResistance( ResistanceType.Poison, 45, 70 );
+			SetResistance( ResistanceType.Energy, 45, 65 );
 
-			SetSkill( SkillName.Anatomy, 50.1, 75.0 );
-			SetSkill( SkillName.Invocation, 90.1, 100.0 );
-			SetSkill( SkillName.Magery, 99.1, 100.0 );
-			SetSkill( SkillName.Meditation, 90.1, 100.0 );
-			SetSkill( SkillName.MagicResist, 90.1, 100.0 );
-			SetSkill( SkillName.Tactics, 90.1, 100.0 );
-			SetSkill( SkillName.UnarmedFighting, 97.6, 100.0 );
+			SetSkill( SkillName.Invocation, 100.1, 125.0 );
+			SetSkill( SkillName.Magery, 96.1, 106.0 );
+			SetSkill( SkillName.Anatomy, 85.1, 95.0 );
+			SetSkill( SkillName.MagicResist, 20.0 );
+			SetSkill( SkillName.Tactics, 86.1, 101.0 );
+			SetSkill( SkillName.UnarmedFighting, 90.1, 100.0 );
+			SetSkill( SkillName.Parry, 100.0 );
 
-			Fame = 8000;
-			Karma = 8000;
-
-			VirtualArmor = 50;
+			Fame = 3500;
+			Karma = -3500;
+			
+			VirtualArmor = 20;
 		}
 
 		public override int GetAngerSound()
