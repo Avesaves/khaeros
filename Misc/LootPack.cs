@@ -324,14 +324,14 @@ namespace Server
 		#region AOS definitions
 		public static readonly LootPack AosPoor = new LootPack( new LootPackEntry[]
 			{
-				new LootPackEntry(  true, Copper,			100.00, "3d2" )
+				new LootPackEntry(  true, Copper,			100.00, "1d5" )
 				//new LootPackEntry( false, AosMagicItemsPoor,	  0.02, 1, 5, 0, 90 ),
 				//new LootPackEntry( false, Instruments,	  0.02, 1 )
 			} );
 
 		public static readonly LootPack AosMeager = new LootPack( new LootPackEntry[]
 			{
-				new LootPackEntry(  true, Copper,			100.00, "d5+10" )
+				new LootPackEntry(  true, Copper,			100.00, "1d6+4" )
 				//new LootPackEntry( false, AosMagicItemsMeagerType1,	  1.00, 1, 2, 0, 10 ),
 				//new LootPackEntry( false, AosMagicItemsMeagerType2,	  0.20, 1, 5, 0, 90 ),
 				//new LootPackEntry( false, Instruments,	  0.10, 1 )
@@ -339,7 +339,7 @@ namespace Server
 
 		public static readonly LootPack AosAverage = new LootPack( new LootPackEntry[]
 			{
-				new LootPackEntry(  true, Copper,			100.00, "10d3+10" )
+				new LootPackEntry(  true, Copper,			100.00, "2d8+9" )
 				//new LootPackEntry( false, AosMagicItemsAverageType1,  5.00, 1, 4, 0, 20 ),
 				//new LootPackEntry( false, AosMagicItemsAverageType1,  2.00, 1, 3, 0, 50 ),
 				//new LootPackEntry( false, AosMagicItemsAverageType2,  0.50, 1, 5, 0, 90 ),
@@ -348,7 +348,7 @@ namespace Server
 
 		public static readonly LootPack AosRich = new LootPack( new LootPackEntry[]
 			{
-				new LootPackEntry(  true, Copper,			100.00, "4d10+65" ),
+				new LootPackEntry(  true, Copper,			100.00, "5d5+20" ),
 				new LootPackEntry(  true, Silver,			100.00, "1d2" )
 				//new LootPackEntry( false, AosMagicItemsRichType1,	 20.00, 1, 4, 0, 40 ),
 				//new LootPackEntry( false, AosMagicItemsRichType1,	 10.00, 1, 5, 0, 60 ),
@@ -358,8 +358,8 @@ namespace Server
 
 		public static readonly LootPack AosFilthyRich = new LootPack( new LootPackEntry[]
 			{
-				new LootPackEntry(  true, Copper,			100.00, "10d5+110" ),
-				new LootPackEntry(  true, Silver,			100.00, "3d3" )
+				new LootPackEntry(  true, Copper,			100.00, "3d10+45" ),
+				new LootPackEntry(  true, Silver,			100.00, "1d3+1" )
 				//new LootPackEntry( false, AosMagicItemsFilthyRichType1,	 33.00, 1, 4, 0, 50 ),
 				//new LootPackEntry( false, AosMagicItemsFilthyRichType1,	 33.00, 1, 4, 0, 60 ),
 				//new LootPackEntry( false, AosMagicItemsFilthyRichType2,	 20.00, 1, 5, 0, 75 ),
@@ -369,9 +369,9 @@ namespace Server
 
 		public static readonly LootPack AosUltraRich = new LootPack( new LootPackEntry[]
 			{
-				new LootPackEntry(  true, Copper,			100.00, "5d11+145" ),
-				new LootPackEntry(  true, Silver,			100.00, "5d2" ),
-				new LootPackEntry(  true, Gold,				100.00, "1d2" ),
+				new LootPackEntry(  true, Copper,			100.00, "5d5+70" ),
+				new LootPackEntry(  true, Silver,			100.00, "1d5+3" ),
+				new LootPackEntry(  true, Gold,				100.00, "1d5" ),
 				//new LootPackEntry( false, AosMagicItemsUltraRich,	100.00, 1, 5, 25, 100 ),
 				//new LootPackEntry( false, AosMagicItemsUltraRich,	100.00, 1, 5, 25, 100 ),
 				//new LootPackEntry( false, AosMagicItemsUltraRich,	100.00, 1, 5, 25, 100 ),
@@ -383,9 +383,9 @@ namespace Server
 
 		public static readonly LootPack AosSuperBoss = new LootPack( new LootPackEntry[]
 			{
-				new LootPackEntry(  true, Copper,			100.00, "10d2+490" ),
-				new LootPackEntry(  true, Silver,			100.00, "20d2" ),
-				new LootPackEntry(  true, Gold,				100.00, "3d2" ),
+				new LootPackEntry(  true, Copper,			100.00, "10d10+90" ),
+				new LootPackEntry(  true, Silver,			100.00, "1d5+3" ),
+				new LootPackEntry(  true, Gold,				100.00, "1d6+4" ),
 				//new LootPackEntry( false, AosMagicItemsUltraRich,	100.00, 1, 5, 25, 100 ),
 				//new LootPackEntry( false, AosMagicItemsUltraRich,	100.00, 1, 5, 25, 100 ),
 				//new LootPackEntry( false, AosMagicItemsUltraRich,	100.00, 1, 5, 25, 100 ),
