@@ -55,13 +55,12 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.MedScrolls, 2 );
+			AddLoot( LootPack.FilthyRich, 1 );
 		}
 
 		public override bool CanRummageCorpses{ get{ return true; } }
 		public override Poison PoisonImmune{ get{ return Poison.Regular; } }
-		public override int TreasureMapLevel{ get{ return 4; } }
-		public override int Meat{ get{ return 1; } }
+		public override int Meat{ get{ return 10; } }
 
 		public Daemon( Serial serial ) : base( serial )
 		{
