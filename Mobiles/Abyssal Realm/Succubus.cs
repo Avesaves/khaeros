@@ -6,7 +6,7 @@ using Server.Items;
 namespace Server.Mobiles
 {
 	[CorpseName( "a succubus corpse" )]
-	public class Succubus : BaseCreature
+	public class Succubus : BaseCreature, IAbyssal
 	{
 		[Constructable]
 		public Succubus () : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
