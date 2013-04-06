@@ -82,6 +82,11 @@ namespace Server.Mobiles
 		public override HideType HideType{ get{ return HideType.Thick; } }
 		
 		public override bool CanRummageCorpses{ get{ return true; } }
+		
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Average, 4 );
+		}
 
 		public Ettin( Serial serial ) : base( serial )
 		{
