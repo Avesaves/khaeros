@@ -22,9 +22,9 @@ namespace Server.Mobiles
 			SetDex( 86, 105 );
 			SetInt( 36, 75 );
 
-			SetHits( 478, 595 );
+			SetHits( 778, 895 );
 
-			SetDamage( 26, 32 );
+			SetDamage( 32, 38 );
 
 			SetDamageType( ResistanceType.Slashing, 100 );
 
@@ -46,10 +46,10 @@ namespace Server.Mobiles
 			this.RangeFight = 3;
             MeleeAttackType = MeleeAttackType.FrontalAOE;
 
-			Fame = 25000;
-			Karma = -25000;
+			Fame = 40000;
+			Karma = 40000;
 
-			VirtualArmor = 40;
+			VirtualArmor = 45;
             PackItem( new RewardToken( 3 ) );
 		}
 		
