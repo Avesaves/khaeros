@@ -116,6 +116,11 @@ namespace Server.Mobiles
             base.OnGotMeleeAttack(attacker);
         }
 
+    			public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Poor, 1 );
+		}
+
         public GoblinSapper(Serial serial)
             : base(serial)
         {
