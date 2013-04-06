@@ -56,6 +56,12 @@ namespace Server.Mobiles
 		public override int Hides{ get{ return 14; } }
 		public override HideType HideType{ get{ return HideType.Beast; } }
 
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Average, 1 );
+			AddLoot( LootPack.Poor, 1 );
+		}
+
 		public MountainTroll( Serial serial ) : base( serial )
 		{
 		}
