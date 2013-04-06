@@ -67,7 +67,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Average );
+			AddLoot( LootPack.Meager, 2 );
 		}
 		
 		public override bool HasFur { get{ return true; } }
