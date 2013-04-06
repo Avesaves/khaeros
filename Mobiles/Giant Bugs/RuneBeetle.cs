@@ -15,33 +15,32 @@ namespace Server.Mobiles
 			Name = "a rune beetle";
 			Body = 244;
 
-			SetStr( 101, 160 );
-			SetDex( 121, 170 );
-			SetInt( 26, 30 );
+			SetStr( 167, 185 );
+			SetDex( 46, 55 );
+			SetInt( 35 );
 
-			SetHits( 151, 160 );
+			SetHits( 300 );
 
-			SetDamage( 7, 11 );
+			SetDamage( 15, 20 );
 
-			SetDamageType( ResistanceType.Piercing, 100 );
+			SetDamageType( ResistanceType.Blunt, 100 );			
 
-			SetResistance( ResistanceType.Blunt, 20, 35 );
-			SetResistance( ResistanceType.Piercing, 30, 40 );
-			SetResistance( ResistanceType.Slashing, 30, 40 );
-			SetResistance( ResistanceType.Fire, 35, 50 );
-			SetResistance( ResistanceType.Cold, 35, 50 );
-			SetResistance( ResistanceType.Poison, 75, 95 );
-			SetResistance( ResistanceType.Energy, 40, 60 );
+			SetResistance( ResistanceType.Blunt, 45, 55 );
+			SetResistance( ResistanceType.Piercing, 30, 50 );
+			SetResistance( ResistanceType.Slashing, 50 );
+			SetResistance( ResistanceType.Energy, 40, 50 );
+			SetResistance( ResistanceType.Fire, 60, 70 );
+			SetResistance( ResistanceType.Poison, 40 );
 
-			SetSkill( SkillName.Invocation, 100.1, 125.0 );
-			SetSkill( SkillName.Magery, 100.1, 110.0 );
-			SetSkill( SkillName.Poisoning, 120.1, 140.0 );
-			SetSkill( SkillName.MagicResist, 30.0 );
-			SetSkill( SkillName.Tactics, 78.1, 93.0 );
-			SetSkill( SkillName.UnarmedFighting, 70.1, 77.5 );
+			SetSkill( SkillName.Macing, 95.1, 100.0 );
+			SetSkill( SkillName.MagicResist, 45.1, 70.0 );
+			SetSkill( SkillName.Tactics, 95.1, 100.0 );
+			SetSkill( SkillName.UnarmedFighting, 85.1, 90.0 );
 
-			Fame = 4500;
-			Karma = -4500;
+			Fame = 12000;
+			Karma = -12000;
+
+			VirtualArmor = 30;
 		}
 
 		public override int GetAngerSound()
@@ -70,6 +69,11 @@ namespace Server.Mobiles
 		}
 
 		public override int Meat{ get{ return 20; } }
+
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Average, 1 );
+		}
 
 		public RuneBeetle( Serial serial ) : base( serial )
 		{
