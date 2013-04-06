@@ -55,7 +55,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Poor);
+			AddLoot( LootPack.FilthyRich, 1 );
 		}
 
 		public Cyclops( Serial serial ) : base( serial )
