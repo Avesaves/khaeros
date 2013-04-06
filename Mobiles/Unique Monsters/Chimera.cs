@@ -51,7 +51,7 @@ namespace Server.Mobiles
 			VirtualArmor = 40;
 
 			Tamable = true;
-			ControlSlots = 3;
+			ControlSlots = 99;
 			MinTameSkill = 100.0;
 			
 		}
@@ -71,6 +71,11 @@ namespace Server.Mobiles
 		public override HideType HideType{ get{ return HideType.Scaled; } }
 		public override FoodType FavoriteFood{ get{ return FoodType.Meat; } }
 		public override bool BardImmune{ get{ return true; } }				
+
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.FilthyRich );
+		}
 
 		public Chimera( Serial serial ) : base( serial )
 		{
