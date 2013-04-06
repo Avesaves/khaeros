@@ -15,14 +15,13 @@ namespace Server.Mobiles
 			Name = "a Silver Dragon";
 			Hue = 2985;
 			
-			SetHits( 778, 895 );
+			SetHits( 900, 1100 );
 
-			SetDamage( 32, 38 );
+			SetDamage( 40, 45 );
 			
-			FightMode = FightMode.Aggressor;
+			Fame = 50000;
+			Karma = -50000;
 			
-			Fame = 40000;
-			Karma = 40000;
             PackItem( new RewardToken( 3 ) );
 		}
 		
