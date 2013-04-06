@@ -44,14 +44,19 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 60.1, 80.0 );
 			SetSkill( SkillName.UnarmedFighting, 60.1, 80.0 );
 
-			Fame = 4500;
-			Karma = -4500;
+			Fame = 5000;
+			Karma = -5000;
 
 			VirtualArmor = 30;
 			ControlSlots = 2;
 		}
 
 		public override bool BleedImmune{ get{ return true; } }
+		
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Meager, 1 );
+		}
 
 		public LesserAirElemental( Serial serial ) : base( serial )
 		{
