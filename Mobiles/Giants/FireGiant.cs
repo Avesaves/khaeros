@@ -18,39 +18,39 @@ namespace Server.Mobiles
 			BaseSoundID = 609;
 			Hue = 0;
 
-			SetStr( 886, 825 );
-			SetDex( 46, 75 );
-			SetInt( 11, 25 );
+			SetStr( 306, 325 );
+			SetDex( 86, 105 );
+			SetInt( 36, 75 );
 
-			SetHits( 782, 791 );
+			SetHits( 478, 595 );
 
-			SetDamage( 25, 30 );
+			SetDamage( 26, 32 );
 
-			SetDamageType( ResistanceType.Blunt, 100 );
+			SetDamageType( ResistanceType.Slashing, 100 );
 
-			SetResistance( ResistanceType.Blunt, 35, 45 );
-			SetResistance( ResistanceType.Piercing, 35, 50 );
-			SetResistance( ResistanceType.Slashing, 35, 50 );
+			SetResistance( ResistanceType.Blunt, 45, 55 );
+			SetResistance( ResistanceType.Piercing, 40, 50 );
+			SetResistance( ResistanceType.Slashing, 40, 50 );
 			SetResistance( ResistanceType.Fire, 60, 70 );
-			SetResistance( ResistanceType.Cold, 25, 35 );
-			SetResistance( ResistanceType.Poison, 40 );
-			SetResistance( ResistanceType.Energy, 30, 40 );
+			SetResistance( ResistanceType.Cold, 30, 40 );
+			SetResistance( ResistanceType.Poison, 25, 35 );
+			SetResistance( ResistanceType.Energy, 35, 45 );
 
-			SetSkill( SkillName.Invocation, 85.1, 100.0 );
-			SetSkill( SkillName.Magery, 85.1, 100.0 );
-			SetSkill( SkillName.MagicResist, 50.0 );
-			SetSkill( SkillName.Tactics, 110.1, 120.0 );
-			SetSkill( SkillName.UnarmedFighting, 110.1, 120.0 );
-			SetSkill( SkillName.Macing, 110.1, 120.0 );
-			
+			SetSkill( SkillName.Invocation, 30.1, 40.0 );
+			SetSkill( SkillName.Magery, 30.1, 40.0 );
+			SetSkill( SkillName.MagicResist, 99.1, 100.0 );
+			SetSkill( SkillName.Tactics, 97.6, 100.0 );
+			SetSkill( SkillName.UnarmedFighting, 90.1, 92.5 );
+			SetSkill( SkillName.Macing, 90.1, 92.5 );
+
 			this.RangeFight = 3;
             MeleeAttackType = MeleeAttackType.FrontalAOE;
 
-			Fame = 20000;
-			Karma = -20000;
+			Fame = 25000;
+			Karma = -25000;
 
-			VirtualArmor = 46;
-            PackItem( new RewardToken( 1 ) );
+			VirtualArmor = 40;
+            PackItem( new RewardToken( 3 ) );
 		}
 		
 		public override void AddBodyParts( BodyPartsContainer bpc, Corpse corpse )
@@ -61,7 +61,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Average, 3 );
+			AddLoot( LootPack.FilthyRich, 5 );
 		}
 
 		public override int Meat{ get{ return 40; } }
