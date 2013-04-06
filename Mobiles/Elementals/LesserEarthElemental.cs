@@ -48,6 +48,12 @@ namespace Server.Mobiles
 		}
 
 		public override bool BleedImmune{ get{ return true; } }
+		
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Poor, 1 );
+			AddLoot( LootPack.Gems, 3 );
+		}
 
 		public LesserEarthElemental( Serial serial ) : base( serial )
 		{
