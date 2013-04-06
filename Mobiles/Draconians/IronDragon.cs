@@ -15,12 +15,12 @@ namespace Server.Mobiles
 			Name = "an Iron Dragon";
 			Hue = 2104;
 			
-			SetHits( 678, 795 );
+			SetHits( 900, 1100 );
 
-			SetDamage( 30, 36 );
+			SetDamage( 40, 45 );
 			
-			Fame = 35000;
-			Karma = -35000;
+			Fame = 50000;
+			Karma = -50000;
             PackItem( new RewardToken( 3 ) );
 		}
 
@@ -36,7 +36,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.FilthyRich, 1 );
+			AddLoot( LootPack.UltraRich, 1 );
 			AddLoot( LootPack.Gems, 8 );
 		}
 
