@@ -52,6 +52,11 @@ namespace Server.Mobiles
 		public override int Hides{ get{ return 3; } }
 		public override HideType HideType{ get{ return HideType.Scaled; } }
 
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Meager, 2 );
+		}
+
 		public YuanTi( Serial serial ) : base( serial )
 		{
 		}
