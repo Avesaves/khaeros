@@ -55,7 +55,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Meager );
+			AddLoot( LootPack.Average );
 		}
 
 		public GoatmanWarrior( Serial serial ) : base( serial )
