@@ -128,7 +128,7 @@ namespace Server.Mobiles
 		
 				public override void GenerateLoot()
 		{
-			AddLoot( LootPack.UltraRich 1 );
+			AddLoot( LootPack.UltraRich, 1 );
 		}
 		
 		public override int GetAttackSound()
