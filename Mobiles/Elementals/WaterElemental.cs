@@ -92,6 +92,11 @@ namespace Server.Mobiles
             bpc.DropItem(new PureWater());
         }
 
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Average, 1 );
+		}
+
 		public WaterElemental( Serial serial ) : base( serial )
 		{
 		}
