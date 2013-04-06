@@ -13,7 +13,7 @@ namespace Server.Mobiles
 		public FormianMyrmarch() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			Name = "a formian myrmarch";
-			Body = 807;
+			Body = 808;
 			BaseSoundID = 959;
 			Hue = 0;
 
@@ -72,6 +72,11 @@ namespace Server.Mobiles
 		}
 		
 		public override int Meat{ get{ return 10; } }
+		
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Average, 2 );
+		}
 
 		public FormianMyrmarch( Serial serial ) : base( serial )
 		{
