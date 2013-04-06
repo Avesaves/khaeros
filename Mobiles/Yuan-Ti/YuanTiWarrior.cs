@@ -50,6 +50,11 @@ namespace Server.Mobiles
 		public override int Bones{ get{ return 10; } }
 		public override int Hides{ get{ return 4; } }
 		public override HideType HideType{ get{ return HideType.Scaled; } }
+		
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Average );
+		}
 
 		public YuanTiWarrior( Serial serial ) : base( serial )
 		{
