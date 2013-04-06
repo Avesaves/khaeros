@@ -42,12 +42,11 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 30.1, 50.0 );
 			SetSkill( SkillName.UnarmedFighting, 40.1, 50.0 );
 
-			Fame = 800;
-			Karma = -800;
+			Fame = 900;
+			Karma = -900;
 
 			VirtualArmor = 0;
 			
-			PackItem( new Copper( 1 ) );
 		}
 
 		public override void AddBodyParts( BodyPartsContainer bpc, Corpse corpse )
@@ -58,6 +57,11 @@ namespace Server.Mobiles
 
 		public override int Meat{ get{ return 2; } }
 		public override int Bones{ get{ return 2; } }
+
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.poor, 1 );
+		}
 
 		public GoblinScavenger( Serial serial ) : base( serial )
 		{
