@@ -2103,20 +2103,20 @@ namespace Server.Mobiles
             {
                 case Armament.Light:
                     {
-                        SetStr(Utility.Random(65, 85));
-                        SetDex(Utility.Random(140, 160));
+                        SetStr(Utility.Random(120, 130));
+                        SetDex(Utility.Random(160, 180));
                         SetInt(Utility.Random(65, 85));
-                        SetHits(Utility.Random(150, 250));
+                        SetHits(Utility.Random(125, 130));
                         SetStam(Utility.Random(90, 110));
 
-                        SetResistance(ResistanceType.Blunt, 5);
-                        SetResistance(ResistanceType.Piercing, 5);
-                        SetResistance(ResistanceType.Slashing, 5);
+                        SetResistance(ResistanceType.Blunt, 50);
+                        SetResistance(ResistanceType.Piercing, 50);
+                        SetResistance(ResistanceType.Slashing, 50);
                         VirtualArmor = 0;
 
                         SetDamageType(ResistanceType.Blunt, 100);
                         CombatSkills = 75;
-                        SetDamage(8, 13);
+                        SetDamage(15, 20);
 
                         PassiveSpeed = 0.4;
                         ActiveSpeed = 0.2;
@@ -2135,20 +2135,20 @@ namespace Server.Mobiles
                     }
                 case Armament.Medium:
                     {
-                        SetStr(Utility.Random(90, 110));
-                        SetDex(Utility.Random(90, 110));
+                        SetStr(Utility.Random(140, 160));
+                        SetDex(Utility.Random(130, 150));
                         SetInt(Utility.Random(90, 110));
-                        SetHits(Utility.Random(250, 350));
+                        SetHits(Utility.Random(135, 155));
                         SetStam(Utility.Random(100, 125));
 
-                        SetResistance(ResistanceType.Blunt, 10);
-                        SetResistance(ResistanceType.Piercing, 10);
-                        SetResistance(ResistanceType.Slashing, 10);
+                        SetResistance(ResistanceType.Blunt, 60);
+                        SetResistance(ResistanceType.Piercing, 60);
+                        SetResistance(ResistanceType.Slashing, 60);
                         VirtualArmor = 0;
 
                         SetDamageType(ResistanceType.Blunt, 100);
                         CombatSkills = 90;
-                        SetDamage(13, 18);
+                        SetDamage(20, 25);
 
                         PassiveSpeed = 0.45;
                         ActiveSpeed = 0.25;
@@ -2168,20 +2168,20 @@ namespace Server.Mobiles
                     }
                 case Armament.Heavy:
                     {
-                        SetStr(Utility.Random(140, 160));
-                        SetDex(Utility.Random(65, 85));
+                        SetStr(Utility.Random(160, 180));
+                        SetDex(Utility.Random(90, 110));
                         SetInt(Utility.Random(115, 135));
-                        SetHits(Utility.Random(350, 450));
+                        SetHits(Utility.Random(175, 200));
                         SetStam(Utility.Random(200, 225));
 
-                        SetResistance(ResistanceType.Blunt, 15);
-                        SetResistance(ResistanceType.Piercing, 15);
-                        SetResistance(ResistanceType.Slashing, 15);
+                        SetResistance(ResistanceType.Blunt, 70);
+                        SetResistance(ResistanceType.Piercing, 70);
+                        SetResistance(ResistanceType.Slashing, 70);
                         VirtualArmor = 0;
 
                         SetDamageType(ResistanceType.Blunt, 100);
                         CombatSkills = 100;
-                        SetDamage(23, 28);
+                        SetDamage(25, 30);
 
                         PassiveSpeed = 0.5;
                         ActiveSpeed = 0.3;
@@ -2200,15 +2200,15 @@ namespace Server.Mobiles
                     }
                 case Armament.Ranged:
                     {
-                        SetStr(Utility.Random(100, 150));
+                        SetStr(Utility.Random(120, 130));
                         SetDex(Utility.Random(150, 250));
                         SetInt(Utility.Random(90, 110));
-                        SetHits(Utility.Random(50, 150));
+                        SetHits(Utility.Random(100, 120));
                         SetStam(Utility.Random(100, 125));
 
-                        SetResistance(ResistanceType.Blunt, 0);
-                        SetResistance(ResistanceType.Piercing, 0);
-                        SetResistance(ResistanceType.Slashing, 0);
+                        SetResistance(ResistanceType.Blunt, 40);
+                        SetResistance(ResistanceType.Piercing, 40);
+                        SetResistance(ResistanceType.Slashing, 40);
                         VirtualArmor = 0;
 
                         SetDamageType(ResistanceType.Blunt, 100);
@@ -2232,25 +2232,25 @@ namespace Server.Mobiles
                     }
                 case Armament.LightCavalry:
                     {
-                        SetStr(Utility.Random(85, 105));
-                        SetDex(Utility.Random(150, 170));
-                        SetInt(Utility.Random(75, 95));
-                        SetHits(Utility.Random(250, 350));
-                        SetStam(Utility.Random(100, 120));
+                        SetStr(Utility.Random(140, 160));
+                        SetDex(Utility.Random(130, 150));
+                        SetInt(Utility.Random(90, 110));
+                        SetHits(Utility.Random(135, 155));
+                        SetStam(Utility.Random(100, 125));
 
-                        SetResistance(ResistanceType.Blunt, 10);
-                        SetResistance(ResistanceType.Piercing, 10);
-                        SetResistance(ResistanceType.Slashing, 10);
+                        SetResistance(ResistanceType.Blunt, 60);
+                        SetResistance(ResistanceType.Piercing, 60);
+                        SetResistance(ResistanceType.Slashing, 60);
                         VirtualArmor = 0;
 
                         SetDamageType(ResistanceType.Blunt, 100);
-                        CombatSkills = 95;
-                        SetDamage(10, 15);
+                        CombatSkills = 90;
+                        SetDamage(25, 30);
 
                         PassiveSpeed = 0.3;
                         ActiveSpeed = 0.1;
 
-                        PayRate = 2500;
+						PayRate = 2500;
 						
 						if (Nation == Nation.Insularii )
                         {
@@ -2268,20 +2268,20 @@ namespace Server.Mobiles
                     }
                 case Armament.HeavyCavalry:
                     {
-                        SetStr(Utility.Random(160, 180));
-                        SetDex(Utility.Random(75, 95));
-                        SetInt(Utility.Random(125, 145));
-                        SetHits(Utility.Random(450, 550));
-                        SetStam(Utility.Random(300, 325));
+                        SetStr(Utility.Random(180, 200));
+                        SetDex(Utility.Random(100, 120));
+                        SetInt(Utility.Random(125, 135));
+                        SetHits(Utility.Random(190, 200));
+                        SetStam(Utility.Random(200, 225));
 
-                        SetResistance(ResistanceType.Blunt, 15);
-                        SetResistance(ResistanceType.Piercing, 15);
-                        SetResistance(ResistanceType.Slashing, 15);
+                        SetResistance(ResistanceType.Blunt, 70);
+                        SetResistance(ResistanceType.Piercing, 70);
+                        SetResistance(ResistanceType.Slashing, 70);
                         VirtualArmor = 0;
 
                         SetDamageType(ResistanceType.Blunt, 100);
                         CombatSkills = 100;
-                        SetDamage(25, 30);
+                        SetDamage(30, 35);
 
                         PassiveSpeed = 0.4;
                         ActiveSpeed = 0.2;
