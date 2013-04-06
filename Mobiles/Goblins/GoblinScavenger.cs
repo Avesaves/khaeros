@@ -60,7 +60,7 @@ namespace Server.Mobiles
 
 				public override void GenerateLoot()
 		{
-			AddLoot( LootPack.poor, 1 );
+			AddLoot( LootPack.Poor, 1 );
 		}
 
 		public GoblinScavenger( Serial serial ) : base( serial )
