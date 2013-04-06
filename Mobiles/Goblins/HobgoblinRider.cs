@@ -56,17 +56,13 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Meager );
+			AddLoot( LootPack.Poor, 2 );
 
 		}
 		
 		public override int Meat{ get{ return 2; } }
 		public override int Bones{ get{ return 2; } }
 		
-						public override void GenerateLoot()
-		{
-			AddLoot( LootPack.Poor, 2 );
-		}
 
 		public HobgoblinRider( Serial serial ) : base( serial )
 		{
