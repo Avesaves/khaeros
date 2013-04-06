@@ -61,7 +61,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Rich );
+			AddLoot( LootPack.UltraRich );
 		}
 
 		public override bool Unprovokable{ get{ return true; } }
