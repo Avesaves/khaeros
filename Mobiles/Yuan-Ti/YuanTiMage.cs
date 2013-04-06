@@ -49,7 +49,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Meager, 2 );
+			AddLoot( LootPack.Rich );
 		}
 
 		public override int Meat{ get{ return 12; } }
