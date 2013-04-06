@@ -16,32 +16,34 @@ namespace Server.Mobiles
 			Body = 44;
 			BaseSoundID = 461;
 
-			SetStr( 67, 85 );
-			SetDex( 66, 75 );
-			SetInt( 26, 30 );
+			SetStr( 66, 75 );
+			SetDex( 126, 135 );
+			SetInt( 35 );
 
-			SetHits( 270, 286 );
+			SetHits( 52, 59 );
+			SetMana( 0 );
 
-			SetDamage( 13, 16 );
+			SetDamage( 4, 6 );
 
-			SetDamageType( ResistanceType.Blunt, 100 );
+			SetDamageType( ResistanceType.Piercing, 100 );
 
-			SetResistance( ResistanceType.Blunt, 25, 35 );
-			SetResistance( ResistanceType.Slashing, 20, 30 );
-			SetResistance( ResistanceType.Piercing, 25, 35 );
-			SetResistance( ResistanceType.Energy, 25, 30 );
-			SetResistance( ResistanceType.Fire, 35, 40 );
+			SetResistance( ResistanceType.Blunt, 20, 25 );
+			SetResistance( ResistanceType.Piercing, 30, 40 );
+			SetResistance( ResistanceType.Slashing, 30, 40 );
+			SetResistance( ResistanceType.Fire, 10, 20 );
+			SetResistance( ResistanceType.Cold, 15, 25 );
+			SetResistance( ResistanceType.Poison, 30, 40 );
+			SetResistance( ResistanceType.Energy, 15, 25 );
 
-			SetSkill( SkillName.MagicResist, 40.0 );
-			SetSkill( SkillName.Tactics, 80.1, 100.0 );
-			SetSkill( SkillName.UnarmedFighting, 80.1, 100.0 );
-			SetSkill( SkillName.Macing, 80.1, 100.0 );
+			SetSkill( SkillName.Poisoning, 40.1, 60.0 );
+			SetSkill( SkillName.MagicResist, 0.0 );
+			SetSkill( SkillName.Tactics, 30.1, 50.0 );
+			SetSkill( SkillName.UnarmedFighting, 40.1, 50.0 );
 
-			Fame = 8000;
-			Karma = -8000;
+			Fame = 1600;
+			Karma = -1600;
 
-			VirtualArmor = 40;
-			PackItem( new Mace() );
+			VirtualArmor = 14;
 		}
 		
 		public override void AddBodyParts( BodyPartsContainer bpc, Corpse corpse )
@@ -55,7 +57,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Average );
+			AddLoot( LootPack.Meager);
 		}
 
 		public GoatmanWarrior( Serial serial ) : base( serial )
