@@ -50,7 +50,8 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Poor );
+			AddLoot( LootPack.Average );
+			AddLoot( LootPack.Meager );
 		}
 
 		public override bool CanRummageCorpses{ get{ return true; } }
