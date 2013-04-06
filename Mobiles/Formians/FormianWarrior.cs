@@ -73,6 +73,11 @@ namespace Server.Mobiles
 		}
 		
 		public override int Meat{ get{ return 8; } }
+		
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Poor, 2 );
+		}
 
 		public FormianWarrior( Serial serial ) : base( serial )
 		{
