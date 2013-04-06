@@ -57,7 +57,7 @@ namespace Server.Mobiles
 		public override void GenerateLoot()
 		{
 			AddLoot( LootPack.Poor );
-			// TODO: weapon?
+			AddLoot( LootPack.Meager);
 		}
 		
 		public override int Meat{ get{ return 2; } }
