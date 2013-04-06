@@ -14,22 +14,22 @@ namespace Server.Mobiles
 			BodyValue = 61;
 			BaseSoundID = 362;
 
-			SetStr( 306, 325 );
-			SetDex( 86, 105 );
-			SetInt( 36, 75 );
+			SetStr( 350, 400 );
+			SetDex( 150, 200 );
+			SetInt( 100, 150 );
 
-			SetHits( 478, 595 );
+			SetHits( 900, 1100 );
 
-			SetDamage( 26, 32 );
+			SetDamage( 40, 45 );
 
 			SetDamageType( ResistanceType.Slashing, 100 );
 
-			SetResistance( ResistanceType.Blunt, 45, 55 );
-			SetResistance( ResistanceType.Piercing, 40, 50 );
-			SetResistance( ResistanceType.Slashing, 40, 50 );
+			SetResistance( ResistanceType.Blunt, 60, 65 );
+			SetResistance( ResistanceType.Piercing, 60, 60 );
+			SetResistance( ResistanceType.Slashing, 60, 60 );
 			SetResistance( ResistanceType.Fire, 60, 70 );
 			SetResistance( ResistanceType.Cold, 30, 40 );
-			SetResistance( ResistanceType.Poison, 25, 35 );
+			SetResistance( ResistanceType.Poison, 65, 70 );
 			SetResistance( ResistanceType.Energy, 35, 45 );
 
 			SetSkill( SkillName.Invocation, 30.1, 40.0 );
@@ -45,13 +45,13 @@ namespace Server.Mobiles
 			Fame = 25000;
 			Karma = -25000;
 
-			VirtualArmor = 40;
+			VirtualArmor = 50;
 			PackItem( new SulfurousAsh( 12 ) );
 		}
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.FilthyRich, 3 );
+			AddLoot( LootPack.UltraRich, 1 );
 			AddLoot( LootPack.Gems, 5 );
 		}
 		
