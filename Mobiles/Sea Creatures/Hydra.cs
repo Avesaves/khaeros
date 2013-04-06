@@ -66,6 +66,11 @@ namespace Server.Mobiles
 		public override int Bones{ get{ return 20; } }
 		public override int Hides{ get{ return 12; } }
 		public override HideType HideType{ get{ return HideType.Scaled; } }
+		
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.SuperBoss);
+		}
 
 		public Hydra( Serial serial ) : base( serial )
 		{
