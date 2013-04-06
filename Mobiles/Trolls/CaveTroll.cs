@@ -13,30 +13,32 @@ namespace Server.Mobiles
 			Body = 130;
 			BaseSoundID = 461;
 
-			SetStr( 167, 195 );
-			SetDex( 26, 35 );
-			SetInt( 26, 30 );
+                        SetStr( 180, 200 );
+			SetDex( 66, 85 );
+			SetInt( 35 );
 
-			SetHits( 200, 226 );
+			SetHits( 176, 193 );
 
-			SetDamage( 12, 14 );
+			SetDamage( 14, 16 );
 
 			SetDamageType( ResistanceType.Blunt, 100 );
 
-			SetResistance( ResistanceType.Blunt, 25, 35 );
-			SetResistance( ResistanceType.Slashing, 20, 30 );
-			SetResistance( ResistanceType.Piercing, 25, 35 );
-			SetResistance( ResistanceType.Energy, 25, 30 );
-			SetResistance( ResistanceType.Fire, 35, 40 );
+			SetResistance( ResistanceType.Blunt, 30, 35 );
+			SetResistance( ResistanceType.Piercing, 30, 40 );
+			SetResistance( ResistanceType.Slashing, 30, 40 );
+			SetResistance( ResistanceType.Fire, 10, 20 );
+			SetResistance( ResistanceType.Cold, 10, 20 );
+			SetResistance( ResistanceType.Poison, 100 );
+			SetResistance( ResistanceType.Energy, 15, 25 );
 
-			SetSkill( SkillName.MagicResist, 30.0 );
-			SetSkill( SkillName.Tactics, 80.1, 100.0 );
-			SetSkill( SkillName.UnarmedFighting, 80.1, 100.0 );
+			SetSkill( SkillName.MagicResist, 50.1, 95.0 );
+			SetSkill( SkillName.Tactics, 60.1, 100.0 );
+			SetSkill( SkillName.UnarmedFighting, 60.1, 100.0 );
 
-			Fame = 8000;
-			Karma = -8000;
+			Fame = 4500;
+			Karma = -4500;
 
-			VirtualArmor = 30;
+			VirtualArmor = 34;
 		}
 		
 		public override void AddBodyParts( BodyPartsContainer bpc, Corpse corpse )
