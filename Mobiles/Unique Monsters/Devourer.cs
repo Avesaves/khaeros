@@ -55,6 +55,11 @@ namespace Server.Mobiles
 		public override int Meat{ get{ return 8; } }
 		public override int Bones{ get{ return 6; } }
 
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Rich );
+		}
+
 		public Devourer( Serial serial ) : base( serial )
 		{
 		}
