@@ -77,6 +77,11 @@ namespace Server.Mobiles
 		{
 		}
 
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.poor, 1 );
+		}
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
