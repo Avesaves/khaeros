@@ -50,7 +50,7 @@ namespace Server.Mobiles
 
 			VirtualArmor = 28; 
 
-			PackItem( new SpidersSilk( 7 ) );
+			PackItem( new SpidersSilk( 5 ) );
 		}
 		public override FoodType FavoriteFood{ get{ return FoodType.Meat; } }
 		public override PackInstinct PackInstinct{ get{ return PackInstinct.Arachnid; } }
