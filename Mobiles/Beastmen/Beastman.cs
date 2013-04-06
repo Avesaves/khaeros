@@ -9,7 +9,7 @@ namespace Server.Mobiles
 		[Constructable]
 		public Beastman() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
-			Name = NameList.RandomName( "beastman" )
+			Name = NameList.RandomName( "beastman" );
 			Body = 30;
 
 			SetStr( 126, 255 );
