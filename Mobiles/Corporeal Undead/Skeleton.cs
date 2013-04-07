@@ -56,6 +56,11 @@ namespace Server.Mobiles
 
 		public override bool BleedImmune{ get{ return true; } }
 
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Poor, 1 );
+		}
+
 		public Skeleton( Serial serial ) : base( serial )
 		{
 		}

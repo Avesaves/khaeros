@@ -17,38 +17,41 @@ namespace Server.Mobiles
 			Body = 1;
 			BaseSoundID = 427;
 
-			SetStr( 166, 195 );
-			SetDex( 46, 65 );
+			SetStr( 190 );
+			SetDex( 45 );
 			SetInt( 35 );
 
-			SetHits( 200, 217 );
-			SetMana( 0 );
+			SetHits( 460 );
 
-			SetDamage( 10, 12 );
+			SetDamage( 23, 27 );
 
-			SetDamageType( ResistanceType.Blunt, 100 );
+			SetDamageType( ResistanceType.Piercing, 100 );
 
-			SetResistance( ResistanceType.Blunt, 30, 35 );
-			SetResistance( ResistanceType.Piercing, 30, 40 );
-			SetResistance( ResistanceType.Slashing, 30, 40 );
-			SetResistance( ResistanceType.Fire, 15, 25 );
-			SetResistance( ResistanceType.Cold, 15, 25 );
-			SetResistance( ResistanceType.Poison, 15, 25 );
-			SetResistance( ResistanceType.Energy, 25 );
+			SetResistance( ResistanceType.Blunt, 30 );
+			SetResistance( ResistanceType.Piercing, 20, 30 );
+			SetResistance( ResistanceType.Slashing, 20, 30 );
+			SetResistance( ResistanceType.Fire, 60 );
+			SetResistance( ResistanceType.Cold, 75 );
+			SetResistance( ResistanceType.Poison, 60 );
+			SetResistance( ResistanceType.Energy, 40 );
 
-			SetSkill( SkillName.MagicResist, 0.0 );
-			SetSkill( SkillName.Tactics, 60.1, 70.0 );
-			SetSkill( SkillName.UnarmedFighting, 70.1, 80.0 );
+			SetSkill( SkillName.DetectHidden, 80.0 );
+			SetSkill( SkillName.Meditation, 120.0 );
+			SetSkill( SkillName.Poisoning, 160.0 );
+			SetSkill( SkillName.MagicResist, 10.0 );
+			SetSkill( SkillName.Tactics, 100.0 );
+			SetSkill( SkillName.UnarmedFighting, 80.0 );
 
-			Fame = 5000;
-			Karma = -5000;
+			Fame = 10000;
+			Karma = -10000;
 
-			VirtualArmor = 42;
+			VirtualArmor = 45;
 		}
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Poor );
+			AddLoot( LootPack.Average );
+			AddLoot( LootPack.Meager );
 		}
 
 		public override bool CanRummageCorpses{ get{ return true; } }

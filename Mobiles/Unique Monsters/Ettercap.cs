@@ -85,6 +85,11 @@ namespace Server.Mobiles
 			}
 		}
 
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Meager );
+		}
+
 		public Ettercap( Serial serial ) : base( serial )
 		{
 		}

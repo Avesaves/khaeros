@@ -5,7 +5,7 @@ using Server.Engines.CannedEvil;
 
 namespace Server.Mobiles
 {
-	public class Semidar : BaseCreature
+	public class Semidar : BaseCreature, IAbyssal
 	{
 		[Constructable]
 		public Semidar() : base( AIType.AI_Mage, FightMode.Aggressor, 10, 1, 0.2, 0.4 )
@@ -108,6 +108,11 @@ namespace Server.Mobiles
 
 			if ( 0.25 >= Utility.RandomDouble() )
 				DrainLife();
+		}
+
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.FilthyRich, 3 );
 		}
 
 		public Semidar( Serial serial ) : base( serial )

@@ -142,6 +142,11 @@ namespace Server.Mobiles
             }
         }
 
+    	public override void GenerateLoot()
+		{
+			AddLoot( LootPack.FilthyRich );
+		}
+
         public Stalker(Serial serial)
             : base(serial)
         {

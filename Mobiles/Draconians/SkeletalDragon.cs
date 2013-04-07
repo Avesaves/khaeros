@@ -49,6 +49,11 @@ namespace Server.Mobiles
 
 		public override Poison PoisonImmune{ get{ return Poison.Lethal; } }
 		public override bool BleedImmune{ get{ return true; } }
+		
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.FilthyRich, 1 );
+		}
 
 		public SkeletalDragon( Serial serial ) : base( serial )
 		{

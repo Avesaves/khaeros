@@ -13,7 +13,7 @@ namespace Server.Mobiles
 		public KoboldWorker() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			Name = "a Kobold Worker";
-			Body = 240;
+			Body = 253;
 
 			SetStr( 26, 30 );
 			SetDex( 21, 35 );
@@ -75,6 +75,11 @@ namespace Server.Mobiles
 
 		public KoboldWorker( Serial serial ) : base( serial )
 		{
+		}
+
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Poor, 1 );
 		}
 
 		public override void Serialize( GenericWriter writer )

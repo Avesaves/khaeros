@@ -73,6 +73,11 @@ namespace Server.Mobiles
 			return 0x354;
 		}
 
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Meager, 1 );
+		}
+
 		public DuneDigger( Serial serial ) : base( serial )
 		{
 		}

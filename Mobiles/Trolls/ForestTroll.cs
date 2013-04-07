@@ -16,35 +16,35 @@ namespace Server.Mobiles
 			Name = "a Forest Troll";
 			Body = 241;
 
-			SetStr( 101, 110 );
-			SetDex( 81, 90 );
+			SetStr( 356, 385 );
+			SetDex( 46, 75 );
 			SetInt( 11, 25 );
 
-			SetHits( 161, 170 );
+			SetHits( 522, 551 );
 
-			SetDamage( 8, 12 );
+			SetDamage( 15, 20 );
 
-			SetDamageType( ResistanceType.Slashing, 100 );
+			SetDamageType( ResistanceType.Blunt, 100 );
 
-			SetResistance( ResistanceType.Blunt, 25, 30 );
-			SetResistance( ResistanceType.Piercing, 20, 30 );
-			SetResistance( ResistanceType.Slashing, 20, 30 );
-			SetResistance( ResistanceType.Fire, 50, 70 );
-			SetResistance( ResistanceType.Cold, 35, 50 );
-			SetResistance( ResistanceType.Poison, 45, 70 );
-			SetResistance( ResistanceType.Energy, 45, 65 );
+			SetResistance( ResistanceType.Blunt, 35, 45 );
+			SetResistance( ResistanceType.Piercing, 35, 50 );
+			SetResistance( ResistanceType.Slashing, 35, 50 );
+			SetResistance( ResistanceType.Fire, 30, 40 );
+			SetResistance( ResistanceType.Cold, 25, 35 );
+			SetResistance( ResistanceType.Poison, 40 );
+			SetResistance( ResistanceType.Energy, 30, 40 );
 
-			SetSkill( SkillName.Invocation, 100.1, 125.0 );
-			SetSkill( SkillName.Magery, 96.1, 106.0 );
-			SetSkill( SkillName.Anatomy, 85.1, 95.0 );
-			SetSkill( SkillName.MagicResist, 20.0 );
-			SetSkill( SkillName.Tactics, 86.1, 101.0 );
+			SetSkill( SkillName.Invocation, 85.1, 100.0 );
+			SetSkill( SkillName.Magery, 85.1, 100.0 );
+			SetSkill( SkillName.MagicResist, 30.0 );
+			SetSkill( SkillName.Tactics, 90.1, 100.0 );
 			SetSkill( SkillName.UnarmedFighting, 90.1, 100.0 );
+			SetSkill( SkillName.Macing, 90.1, 100.0 );
 
-			Fame = 4000;
-			Karma = -4000;
-			
-			VirtualArmor = 30;
+			Fame = 12000;
+			Karma = -12000;
+
+			VirtualArmor = 40;
 		}
 		
 		public override void AddBodyParts( BodyPartsContainer bpc, Corpse corpse )
@@ -58,6 +58,11 @@ namespace Server.Mobiles
 		public override int Bones{ get{ return 10; } }
 		public override int Hides{ get{ return 6; } }
 		public override HideType HideType{ get{ return HideType.Beast; } }
+		
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Average, 1 );
+		}
 			
 		public override int GetAngerSound()
 		{

@@ -46,8 +46,8 @@ namespace Server.Mobiles
 			this.RangeFight = 2;
             MeleeAttackType = MeleeAttackType.FrontalAOE;
 
-			Fame = 15000;
-			Karma = -15000;
+			Fame = 25000;
+			Karma = -25000;
 
 			VirtualArmor = 40;
 
@@ -63,7 +63,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Average, 2 );
+			AddLoot( LootPack.FilthyRich, 2 );
 		}
 
 		public override int Meat{ get{ return 30; } }

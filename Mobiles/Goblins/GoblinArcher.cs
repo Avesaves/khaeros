@@ -51,7 +51,6 @@ namespace Server.Mobiles
 			EquipItem( bow );
 			PackItem( new Arrow( Utility.RandomMinMax( 10, 20 ) ) );
 			
-			PackItem( new Copper( 1 ) );
 		}
 		
 		public override void AddBodyParts( BodyPartsContainer bpc, Corpse corpse )
@@ -62,6 +61,11 @@ namespace Server.Mobiles
 
 		public override int Meat{ get{ return 2; } }
 		public override int Bones{ get{ return 2; } }
+		
+						public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Poor, 1 );
+		}
 
 		public GoblinArcher( Serial serial ) : base( serial )
 		{

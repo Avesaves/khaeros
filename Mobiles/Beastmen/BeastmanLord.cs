@@ -9,38 +9,32 @@ namespace Server.Mobiles
 		[Constructable]
 		public BeastmanLord() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
-			Name = "a Beastman Lord";
+			Name = NameList.RandomName( "beastman" );
 			Body = 24;
 
-			SetStr( 121, 130 );
-			SetDex( 81, 90 );
-			SetInt( 11, 25 );
+			SetStr( 167, 195 );
+			SetDex( 26, 35 );
+			SetInt( 26, 30 );
 
-			SetHits( 141, 170 );
+			SetHits( 200, 226 );
 
-			SetDamage( 10, 14 );
+			SetDamage( 12, 14 );
 
-			SetDamageType( ResistanceType.Slashing, 100 );
+			SetDamageType( ResistanceType.Blunt, 100 );
 
-			SetResistance( ResistanceType.Blunt, 25, 30 );
-			SetResistance( ResistanceType.Piercing, 20, 30 );
+			SetResistance( ResistanceType.Blunt, 25, 35 );
 			SetResistance( ResistanceType.Slashing, 20, 30 );
-			SetResistance( ResistanceType.Fire, 50, 70 );
-			SetResistance( ResistanceType.Cold, 35, 50 );
-			SetResistance( ResistanceType.Poison, 45, 70 );
-			SetResistance( ResistanceType.Energy, 45, 65 );
+			SetResistance( ResistanceType.Piercing, 25, 35 );
+			SetResistance( ResistanceType.Energy, 25, 30 );
+			SetResistance( ResistanceType.Fire, 35, 40 );
 
-			SetSkill( SkillName.Invocation, 100.1, 125.0 );
-			SetSkill( SkillName.Magery, 96.1, 106.0 );
-			SetSkill( SkillName.Anatomy, 85.1, 95.0 );
 			SetSkill( SkillName.MagicResist, 30.0 );
-			SetSkill( SkillName.Tactics, 86.1, 101.0 );
-			SetSkill( SkillName.UnarmedFighting, 90.1, 100.0 );
-			SetSkill( SkillName.Parry, 100.0 );
+			SetSkill( SkillName.Tactics, 80.1, 100.0 );
+			SetSkill( SkillName.UnarmedFighting, 80.1, 100.0 );
 
-			Fame = 4000;
-			Karma = -4000;
-			
+			Fame = 8000;
+			Karma = -8000;
+
 			VirtualArmor = 30;
 		}
 
@@ -71,7 +65,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Average );
+			AddLoot( LootPack.Average, 2 );
 		}
 
 		public override bool CanRummageCorpses{ get{ return true; } }

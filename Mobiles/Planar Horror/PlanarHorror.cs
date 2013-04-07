@@ -72,6 +72,11 @@ namespace Server.Mobiles
 			}
 		}
 
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Rich);
+		}
+
 		public PlanarHorror( Serial serial ) : base( serial )
 		{
 		}

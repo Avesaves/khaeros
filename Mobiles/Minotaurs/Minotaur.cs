@@ -54,6 +54,12 @@ namespace Server.Mobiles
 		public override int Bones{ get{ return 10; } }
 		public override int Hides{ get{ return 8; } }
 		public override HideType HideType{ get{ return HideType.Beast; } }
+		
+						public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Average, 1 );
+			AddLoot( LootPack.Meager, 1 );
+		}
 
 		public Minotaur( Serial serial ) : base( serial )
 		{

@@ -15,14 +15,12 @@ namespace Server.Mobiles
 			Name = "a Gold Dragon";
 			Hue = 2935;
 			
-			SetHits( 878, 995 );
+			SetHits( 900, 1100 );
 
-			SetDamage( 34, 40 );
+			SetDamage( 40, 45 );
 			
-			FightMode = FightMode.Aggressor;
-			
-			Fame = 45000;
-			Karma = 45000;
+			Fame = 50000;
+			Karma = -50000;
             PackItem( new RewardToken( 4 ) );
 		}
 		
@@ -36,7 +34,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.FilthyRich, 1 );
+			AddLoot( LootPack.UltraRich, 1 );
 			AddLoot( LootPack.Gems, 8 );
 		}
 

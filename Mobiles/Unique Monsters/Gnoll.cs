@@ -51,6 +51,11 @@ namespace Server.Mobiles
 		public override int Hides{ get{ return 3; } }
 		public override HideType HideType{ get{ return HideType.Thick; } }
 
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Meager);
+		}
+
 		public Gnoll( Serial serial ) : base( serial )
 		{
 		}

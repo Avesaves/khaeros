@@ -51,6 +51,17 @@ namespace Server.Mobiles
 		}
 
 		public override bool BleedImmune{ get{ return true; } }
+		
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Meager, 1 );
+		}
+		
+		        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new PureWater());
+        }
 
 		public LesserWaterElemental( Serial serial ) : base( serial )
 		{

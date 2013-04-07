@@ -64,6 +64,11 @@ namespace Server.Mobiles
 		public override bool Unprovokable{ get{ return Core.SE; } }
 		public override bool Uncalmable{ get{ return Core.SE; } }
 		public override bool BleedImmune{ get{ return true; } }
+		
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Rich );
+		}
 
 		public Quaraphon( Serial serial ) : base( serial )
 		{

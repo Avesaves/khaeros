@@ -40,8 +40,8 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 80.1, 100.0 );
 			SetSkill( SkillName.UnarmedFighting, 80.1, 100.0 );
 
-			Fame = 20000;
-			Karma = -20000;
+			Fame = 12000;
+			Karma = -12000;
 
 			VirtualArmor = 50;
             PackItem( new RewardToken( 2 ) );
@@ -95,6 +95,11 @@ namespace Server.Mobiles
             		( (BaseCreature)m_m ).m_PetrifiedTimer = null;
             }
         }
+
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Rich, 1 );
+		}
 
 		public Gazer( Serial serial ) : base( serial )
 		{

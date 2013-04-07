@@ -42,17 +42,21 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 80.1, 100.0 );
 			SetSkill( SkillName.UnarmedFighting, 80.1, 100.0 );
 
-			Fame = 16500;
-			Karma = -16500;
+			Fame = 8000;
+			Karma = -8000;
 
-			VirtualArmor = 50;
-            PackItem( new RewardToken( 1 ) );
+			VirtualArmor = 40;
 		}
 		
 		public override void AddBodyParts( BodyPartsContainer bpc, Corpse corpse )
 		{
 			base.AddBodyParts( bpc, corpse );
 			bpc.DropItem( new BeholdersEye() );
+		}
+		
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Meager, 1 );
 		}
 		
 		public Beholder( Serial serial ) : base( serial )

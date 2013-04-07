@@ -67,6 +67,11 @@ namespace Server.Mobiles
 		public override int Bones{ get{ return 20; } }
 		public override int Hides{ get{ return 7; } }
 		public override HideType HideType{ get{ return HideType.Scaled; } }
+		
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Rich, 1 );
+		}
 
 		public override int GetAttackSound()
 		{
