@@ -19,27 +19,25 @@ namespace Server.Mobiles
 
 			SetStr( 190 );
 			SetDex( 45 );
-			SetInt( 35 );
+			SetInt( 31, 40 );
 
-			SetHits( 460 );
+			SetHits( 450, 500 );
 
 			SetDamage( 23, 27 );
 
 			SetDamageType( ResistanceType.Piercing, 100 );
 
-			SetResistance( ResistanceType.Blunt, 30 );
-			SetResistance( ResistanceType.Piercing, 20, 30 );
-			SetResistance( ResistanceType.Slashing, 20, 30 );
-			SetResistance( ResistanceType.Fire, 60 );
+			SetResistance( ResistanceType.Blunt, 35, 45 );
+			SetResistance( ResistanceType.Piercing, 30, 40 );
+			SetResistance( ResistanceType.Slashing, 25, 35 );
+			SetResistance( ResistanceType.Fire, 20, 25 );
 			SetResistance( ResistanceType.Cold, 75 );
 			SetResistance( ResistanceType.Poison, 60 );
-			SetResistance( ResistanceType.Energy, 40 );
+			SetResistance( ResistanceType.Energy, 30 );
 
 			SetSkill( SkillName.DetectHidden, 80.0 );
-			SetSkill( SkillName.Meditation, 120.0 );
-			SetSkill( SkillName.Poisoning, 160.0 );
 			SetSkill( SkillName.MagicResist, 10.0 );
-			SetSkill( SkillName.Tactics, 100.0 );
+			SetSkill( SkillName.Tactics, 80.0, 95.0 );
 			SetSkill( SkillName.UnarmedFighting, 80.0 );
 
 			Fame = 10000;
