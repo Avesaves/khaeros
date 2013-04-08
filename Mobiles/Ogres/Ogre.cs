@@ -16,31 +16,30 @@ namespace Server.Mobiles
 			Body = Utility.RandomList( 53, 54 );
 			BaseSoundID = 461;
 
-			SetStr( 586, 785 );
-			SetDex( 177, 255 );
-			SetInt( 351, 450 );
+			SetStr( 190, 220 );
+			SetDex( 45, 65 );
+			SetInt( 21, 30 );
 
-			SetHits( 352, 471 );
+			SetHits( 350, 450 );
 
-			SetDamage( 13, 19 );
+			SetDamage( 23, 27 );
 
-			SetDamageType( ResistanceType.Slashing, 100 );
+			SetDamageType( ResistanceType.Piercing, 100 );
 
-			SetResistance( ResistanceType.Blunt, 80, 90 );
-			SetResistance( ResistanceType.Piercing, 80, 90 );
-			SetResistance( ResistanceType.Slashing, 80, 90 );
-			SetResistance( ResistanceType.Fire, 40, 50 );
-			SetResistance( ResistanceType.Cold, 40, 50 );
-			SetResistance( ResistanceType.Poison, 40, 50 );
-			SetResistance( ResistanceType.Energy, 40, 50 );
+			SetResistance( ResistanceType.Blunt, 30, 40 );
+			SetResistance( ResistanceType.Piercing, 20, 30 );
+			SetResistance( ResistanceType.Slashing, 20, 30 );
+			SetResistance( ResistanceType.Fire, 15, 20 );
+			SetResistance( ResistanceType.Cold, 70 );
+			SetResistance( ResistanceType.Poison, 60 );
+			SetResistance( ResistanceType.Energy, 20 );
 
-			SetSkill( SkillName.Anatomy, 50.1, 75.0 );
-			SetSkill( SkillName.Invocation, 90.1, 100.0 );
-			SetSkill( SkillName.Magery, 99.1, 100.0 );
-			SetSkill( SkillName.Meditation, 90.1, 100.0 );
-			SetSkill( SkillName.MagicResist, 90.1, 100.0 );
-			SetSkill( SkillName.Tactics, 90.1, 100.0 );
-			SetSkill( SkillName.UnarmedFighting, 97.6, 100.0 );
+			SetSkill( SkillName.DetectHidden, 80.0 );
+			SetSkill( SkillName.Meditation, 120.0 );
+			SetSkill( SkillName.Poisoning, 160.0 );
+			SetSkill( SkillName.MagicResist, 10.0 );
+			SetSkill( SkillName.Tactics, 75.0, 85.0 );
+			SetSkill( SkillName.UnarmedFighting, 80.0 );
 
 			Fame = 8000;
 			Karma = 8000;
