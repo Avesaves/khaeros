@@ -7,7 +7,7 @@ using Server.Network;
 namespace Server.Mobiles
 {
 	[CorpseName( "a Fire Giants corpse" )]
-	public class FireGiant : BaseCreature, ILargePredator, IGiant, IEnraged
+	public class FireGiant : BaseCreature, ILargePredator, IGiant, IEnraged, IHuge
 	{
 		public override int Height{ get{ return 50; } }
 		[Constructable]

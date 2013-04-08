@@ -5,7 +5,7 @@ using Server.Items;
 namespace Server.Mobiles
 {
 	[CorpseName( "a water elemental corpse" )]
-	public class WaterElemental : BaseCreature, IElemental, IEnraged
+	public class WaterElemental : BaseCreature, IElemental, IEnraged, IIncorporeal
 	{
 		public override double DispelDifficulty{ get{ return 117.5; } }
 		public override double DispelFocus{ get{ return 45.0; } }

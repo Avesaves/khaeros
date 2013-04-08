@@ -6,7 +6,7 @@ using Server.Targeting;
 namespace Server.Mobiles
 {
 	[CorpseName( "a cyclops corpse" )]
-	public class Cyclops : BaseCreature, ILargePredator, IHasReach, IEnraged, IGiant
+	public class Cyclops : BaseCreature, ILargePredator, IHasReach, IEnraged, IGiant, IHuge
 	{
 		public override int Height{ get{ return 35; } }
 		[Constructable]

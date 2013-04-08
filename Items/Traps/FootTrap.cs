@@ -92,6 +92,30 @@ namespace Server.Items
             if (!from.Alive || from.Blessed || !this.Armed)
                 return;
 
+            if (from is IHuge) 
+
+             {  
+              from.Emote("*crushes a foot trap*");
+              this.Delete();
+              return; 
+              }
+
+
+            if (from is IIncorporeal) 
+
+             {  
+              from.Emote("*passes through the trap*");
+              return; 
+              }
+
+
+            if (from is ITooSmart) 
+
+             {  
+              from.Emote("*steps over a trap*");
+              return; 
+              }
+
             PlayerMobile pm = from as PlayerMobile;
 
             int detecthidden = Convert.ToInt32(from.Skills[SkillName.DetectHidden].Fixed);

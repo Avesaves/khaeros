@@ -5,7 +5,7 @@ using Server.Items;
 namespace Server.Mobiles
 {
 	[CorpseName( "a Planar Horror corpse" )]
-	public class PlanarHorror : BaseCreature
+	public class PlanarHorror : BaseCreature, IIncorporeal
 	{
 		[Constructable]
 		public PlanarHorror() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
