@@ -212,7 +212,9 @@ namespace Server.Items
                 m_m = m;
                 m_trap = trap;
                 trap.InUse = true;
-                m.SendMessage(60, "You start arming the trap.");
+                m.RevealingAction();
+                m.Say("*places something on the ground*");
+                m.Animate(32, 5, 1, true, false, 0);
                 m_loc = m.Location;
                 m_trap.SkillLevel = Convert.ToInt32(m_m.Skills[SkillName.ArmDisarmTraps].Fixed);
                 m_trap.Owner = m_m;
