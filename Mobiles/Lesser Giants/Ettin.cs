@@ -85,7 +85,8 @@ namespace Server.Mobiles
 		
 				public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Average, 4 );
+			AddLoot( LootPack.Rich, 1 );
+			AddLoot( LootPack.Average, 1 );
 		}
 
 		public Ettin( Serial serial ) : base( serial )

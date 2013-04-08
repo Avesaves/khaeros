@@ -47,12 +47,11 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 80.1, 100.0 );
 			SetSkill( SkillName.UnarmedFighting, 70.1, 100.0 );
 
-			Fame = 6500;
-			Karma = -6500;
+			Fame = 7000;
+			Karma = -7000;
 
 			VirtualArmor = 40;
 			ControlSlots = 4;
-			PackItem( new SulfurousAsh( 6 ) );
 		}
 
 

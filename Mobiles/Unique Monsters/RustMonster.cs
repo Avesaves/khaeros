@@ -162,7 +162,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Rich );
+			AddLoot( LootPack.FilthyRich );
 		}
 
 		public RustMonster( Serial serial ) : base( serial )

@@ -6,36 +6,36 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a Gold Dragon corpse" )]
+	[CorpseName( "a Huge Dragon corpse" )]
 	public class GoldDragon : Dragon, IPeacefulPredator
 	{
 		[Constructable]
 		public GoldDragon ()
 		{
-			Name = "a Gold Dragon";
-			Hue = 2935;
+			Name = "A Huge Dragon";
+			Body = 59;
 			
-			SetHits( 900, 1100 );
+			SetHits( 1500, 1700 );
 
-			SetDamage( 40, 45 );
+			SetDamage( 45, 50 );
 			
-			Fame = 50000;
-			Karma = -50000;
-            PackItem( new RewardToken( 4 ) );
+			Fame = 80000;
+			Karma = -80000;
+            PackItem( new RewardToken( 13 ) );
 		}
 		
 		public override void AddBodyParts( BodyPartsContainer bpc, Corpse corpse )
 		{
 			base.AddBodyParts( bpc, corpse );
 			DragonHead head = new DragonHead();
-			head.Hue = 2935;
+			head.Hue = 0;
 			bpc.DropItem( head );
 		}
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.UltraRich, 1 );
-			AddLoot( LootPack.Gems, 8 );
+			AddLoot( LootPack.SuperBoss, 2 );
+			AddLoot( LootPack.Gems, 15 );
 		}
 
 		public GoldDragon( Serial serial ) : base( serial )

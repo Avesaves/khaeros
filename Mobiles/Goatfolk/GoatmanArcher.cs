@@ -16,31 +16,34 @@ namespace Server.Mobiles
 			Body = 42;
 			BaseSoundID = 461;
 
-			SetStr( 67, 85 );
-			SetDex( 106, 115 );
-			SetInt( 26, 30 );
+			SetStr( 66, 75 );
+			SetDex( 135, 150 );
+			SetInt( 35 );
 
-			SetHits( 210, 226 );
+			SetHits( 45, 51 );
+			SetMana( 0 );
 
-			SetDamage( 13, 16 );
+			SetDamage( 4, 6 );
 
-			SetDamageType( ResistanceType.Blunt, 100 );
+			SetDamageType( ResistanceType.Piercing, 100 );
 
-			SetResistance( ResistanceType.Blunt, 25, 35 );
-			SetResistance( ResistanceType.Slashing, 20, 30 );
-			SetResistance( ResistanceType.Piercing, 25, 35 );
-			SetResistance( ResistanceType.Energy, 25, 30 );
-			SetResistance( ResistanceType.Fire, 35, 40 );
+			SetResistance( ResistanceType.Blunt, 20, 25 );
+			SetResistance( ResistanceType.Piercing, 30, 40 );
+			SetResistance( ResistanceType.Slashing, 30, 40 );
+			SetResistance( ResistanceType.Fire, 10, 20 );
+			SetResistance( ResistanceType.Cold, 15, 25 );
+			SetResistance( ResistanceType.Poison, 30, 40 );
+			SetResistance( ResistanceType.Energy, 15, 25 );
 
 			SetSkill( SkillName.MagicResist, 40.0 );
 			SetSkill( SkillName.Tactics, 80.1, 100.0 );
 			SetSkill( SkillName.UnarmedFighting, 80.1, 100.0 );
 			SetSkill( SkillName.Archery, 80.1, 100.0 );
 
-			Fame = 7000;
-			Karma = -7000;
+			Fame = 1600;
+			Karma = -1600;
 
-			VirtualArmor = 30;
+			VirtualArmor = 10;
 			Bow bow = new Bow();
 			AddItem( bow );
 			EquipItem( bow );
@@ -55,7 +58,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Meager, 2 );
+			AddLoot( LootPack.Meager, 1 );
 		}
 		
 		public override int Meat{ get{ return 4; } }

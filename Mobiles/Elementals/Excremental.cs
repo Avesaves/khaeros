@@ -72,7 +72,7 @@ namespace Server.Mobiles
         #region Loot
         public override void GenerateLoot()
         {
-            AddLoot(LootPack.FilthyRich, 3);
+            AddLoot(LootPack.FilthyRich, 2);
             AddLoot(LootPack.Gems, 5);
         }
 

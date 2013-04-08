@@ -52,7 +52,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.UltraRich, 5 );
+			AddLoot( LootPack.SuperBoss );
 		}
 		
 		public override bool AutoDispel{ get{ return true; } }

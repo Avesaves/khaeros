@@ -42,7 +42,6 @@ namespace Server.Mobiles
 
 			VirtualArmor = 14;
 			
-			PackItem( new Copper( Utility.RandomMinMax( 1, 3 ) ) );
 		}
 
 		public override bool HasFur{ get{ return true; } }

@@ -38,10 +38,10 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 100.0 );
 			SetSkill( SkillName.UnarmedFighting, 90.1, 100.0 );
 
-			Fame = 5000;
-			Karma = -5000;
+			Fame = 6000;
+			Karma = -6000;
 
-			VirtualArmor = 24;
+			VirtualArmor = 23;
 		}
 
 		public override int Meat{ get{ return 10; } }
@@ -71,11 +71,6 @@ namespace Server.Mobiles
 		public override int GetDeathSound()
 		{
 			return 0x354;
-		}
-
-				public override void GenerateLoot()
-		{
-			AddLoot( LootPack.Meager, 1 );
 		}
 
 		public DuneDigger( Serial serial ) : base( serial )

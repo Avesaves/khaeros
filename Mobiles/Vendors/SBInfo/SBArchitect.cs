@@ -20,7 +20,7 @@ namespace Server.Mobiles
 		{
 			public InternalBuyInfo()
 			{
-				Add( new GenericBuyInfo( "1041280", typeof( InteriorDecorator ), 100, 20, 0xFC1, 0 ) );
+				Add( new GenericBuyInfo( "1041280", typeof( InteriorDecorator ), 125, 20, 0xFC1, 0 ) );
 			}
 		}
 

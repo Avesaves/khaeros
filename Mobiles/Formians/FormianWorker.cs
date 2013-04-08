@@ -73,7 +73,7 @@ namespace Server.Mobiles
 		
 				public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Poor, 1 );
+			AddLoot( LootPack.Poor, 2 );
 		}
 
 		public FormianWorker( Serial serial ) : base( serial )

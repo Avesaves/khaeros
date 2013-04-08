@@ -54,7 +54,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Meager, 2 );
+			AddLoot( LootPack.Average );
 		}
 
 		public YuanTi( Serial serial ) : base( serial )

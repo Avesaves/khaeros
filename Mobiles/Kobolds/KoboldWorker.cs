@@ -39,7 +39,6 @@ namespace Server.Mobiles
 
 			Fame = 900;
 			Karma = -900;
-			PackItem( new Copper( 1 ) );
 		}
 		
 		public override FoodType FavoriteFood{ get{ return FoodType.Fish; } }

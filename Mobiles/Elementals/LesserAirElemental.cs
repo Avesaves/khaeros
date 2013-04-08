@@ -10,6 +10,11 @@ namespace Server.Mobiles
 		public override double DispelDifficulty{ get{ return 117.5; } }
 		public override double DispelFocus{ get{ return 45.0; } }
 
+		public override bool DeleteCorpseOnDeath
+		{
+			get{ return true; }
+		}
+
 		[Constructable]
 		public LesserAirElemental () : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
@@ -44,8 +49,8 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 60.1, 80.0 );
 			SetSkill( SkillName.UnarmedFighting, 60.1, 80.0 );
 
-			Fame = 5000;
-			Karma = -5000;
+			Fame = 5500;
+			Karma = -5500;
 
 			VirtualArmor = 30;
 			ControlSlots = 2;
@@ -53,10 +58,6 @@ namespace Server.Mobiles
 
 		public override bool BleedImmune{ get{ return true; } }
 		
-				public override void GenerateLoot()
-		{
-			AddLoot( LootPack.Meager, 1 );
-		}
 
 		public LesserAirElemental( Serial serial ) : base( serial )
 		{

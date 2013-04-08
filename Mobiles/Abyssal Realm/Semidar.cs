@@ -112,7 +112,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.FilthyRich, 3 );
+			AddLoot( LootPack.SuperBoss, 1 );
 		}
 
 		public Semidar( Serial serial ) : base( serial )

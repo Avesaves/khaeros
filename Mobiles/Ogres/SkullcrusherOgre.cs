@@ -55,7 +55,8 @@ namespace Server.Mobiles
 		
 				public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Average, 2 );
+			AddLoot( LootPack.Average, 1 );
+			AddLoot( LootPack.Meager, 1 );
 		}
 
 		public SkullcrusherOgre( Serial serial ) : base( serial )

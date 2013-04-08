@@ -48,7 +48,7 @@ namespace Server.Mobiles
 
 			Fame = 45000;
 			Karma = 45000;
-            PackItem( new RewardToken( 4 ) );
+            PackItem( new RewardToken( 5 ) );
 		}
 		
 		public override void AddBodyParts( BodyPartsContainer bpc, Corpse corpse )
@@ -59,7 +59,8 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.FilthyRich, 3 );
+			AddLoot( LootPack.UltraRich, 1 );
+			AddLoot( LootPack.FilthyRich, 2 );
 		}
 
 		public override int Meat{ get{ return 50; } }

@@ -12,14 +12,21 @@ namespace Server.Mobiles
 		[Constructable]
 		public CopperDragon ()
 		{
-			Name = "a Copper Dragon";
-			Hue = 2413;
-            PackItem( new RewardToken( 2 ) );
+			Name = "A Dragon";
+			Body = 60;
+			
+			SetHits( 900, 1100 );
+
+			SetDamage( 40, 45 );
+			
+			Fame = 50000;
+			Karma = -50000;
+            PackItem( new RewardToken( 8 ) );
 		}
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.UltraRich, 1 );
+			AddLoot( LootPack.SuperBoss, 1 );
 			AddLoot( LootPack.Gems, 8 );
 		}
 		
@@ -27,7 +34,7 @@ namespace Server.Mobiles
 		{
 			base.AddBodyParts( bpc, corpse );
 			DragonHead head = new DragonHead();
-			head.Hue = 2413;
+			head.Hue = 0;
 			bpc.DropItem( head );
 		}
 

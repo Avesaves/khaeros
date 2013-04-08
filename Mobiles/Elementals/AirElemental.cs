@@ -49,8 +49,8 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 60.1, 80.0 );
 			SetSkill( SkillName.UnarmedFighting, 60.1, 80.0 );
 
-			Fame = 6500;
-			Karma = -6500;
+			Fame = 7000;
+			Karma = -7000;
 
 			VirtualArmor = 40;
 			ControlSlots = 2;

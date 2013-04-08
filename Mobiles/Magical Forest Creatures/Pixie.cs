@@ -61,6 +61,7 @@ namespace Server.Mobiles
 		public override void GenerateLoot()
 		{
 			AddLoot( LootPack.Gems, 1 );
+			AddLoot( LootPack.Meager, 1 );
 		}
 
 		public Pixie( Serial serial ) : base( serial )
