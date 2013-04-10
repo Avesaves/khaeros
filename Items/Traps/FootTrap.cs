@@ -237,7 +237,7 @@ namespace Server.Items
                 m_trap = trap;
                 trap.InUse = true;
                 m.RevealingAction();
-                m.Say("*places something on the ground*");
+                m_m.SendMessage(60, "You begin arming the foot trap.");
                 m.Animate(32, 5, 1, true, false, 0);
                 m_loc = m.Location;
                 m_trap.SkillLevel = Convert.ToInt32(m_m.Skills[SkillName.ArmDisarmTraps].Fixed);
