@@ -21,14 +21,12 @@ namespace Server.FeatInfo
 		
 		public override string FirstDescription{ get{ return "This skill will improve your knowledge of lockpicking to such an extent that " +
 					"you will never break a lockpick again. Additionally, this skill will allow you to attempt to open house doors."; } }
-		public override string SecondDescription{ get{ return "This skill level will allow you to break open doors and containers, leaving them unlocked."; } }
-		public override string ThirdDescription{ get{ return "At this skill level, you are so familiar with locks that you can pick them with " +
-					"anything you have at hand, not needing to resort to lockpicks anymore. [Just double-click the door or container " +
-					"after using the command to turn the auto picking mode on]"; } }
+		public override string SecondDescription{ get{ return "This skill level will allow you to say that you have two points in Locksmithing."; } }
+		public override string ThirdDescription{ get{ return "This skill level will allow you to break open doors and containers, leaving them unlocked."; } }
 
 		public override string FirstCommand{ get{ return "None"; } }
-		public override string SecondCommand{ get{ return ".BreakLock"; } }
-		public override string ThirdCommand{ get{ return ".AutoPicking"; } }
+		public override string SecondCommand{ get{ return ".AutoPicking"; } }
+		public override string ThirdCommand{ get{ return ".BreakLock"; } }
 		
 		public override string FullDescription{ get{ return GetFullDescription(this); } }
 		
