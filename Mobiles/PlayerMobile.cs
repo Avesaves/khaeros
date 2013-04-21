@@ -855,12 +855,12 @@ namespace Server.Mobiles
         [CommandProperty( AccessLevel.GameMaster )]
         public bool PureDodge{ get{ return m_PureDodge; } set{ m_PureDodge = value; } }
         
-        [CommandProperty( AccessLevel.Administrator )]
+        [CommandProperty( AccessLevel.Owner )]
         public bool IsVampire{ get{ return m_IsVampire; } set{ m_IsVampire = value; } }
         
         public bool VampSafety{ get{ return m_VampSafety; } set{ m_VampSafety = value; } }
         
-        [CommandProperty( AccessLevel.Administrator )]
+        [CommandProperty( AccessLevel.Owner )]
         public int MaxBPs{ get{ return m_MaxBPs; } set{ m_MaxBPs = Math.Max( 0, value ); } }
 
         [CommandProperty(AccessLevel.GameMaster)]
@@ -4056,8 +4056,9 @@ namespace Server.Mobiles
 			if( offset < 0 )
 				offset *= 15 - Math.Min( 15, (Feats.GetFeatLevel(FeatList.Daywalker) * 5) );
 			
-			
-			string name = String.Format( "[Vampire] {0} Offset", StatType.StamMax );
+			string name = String.Format( "[Vampire] {0} Offset", StatType.HitsMax );
+			HandleVampireStatMod( GetStatMod(name), offset, StatType.HitsMax, name );
+			name = String.Format( "[Vampire] {0} Offset", StatType.StamMax );
 			HandleVampireStatMod( GetStatMod(name), offset, StatType.StamMax, name );
 			name = String.Format( "[Vampire] {0} Offset", StatType.ManaMax );
 			HandleVampireStatMod( GetStatMod(name), offset, StatType.ManaMax, name );
@@ -4089,8 +4090,9 @@ namespace Server.Mobiles
 
             if( mod.Offset > 0 )
             {
-
-                if( mod.Type == StatType.StamMax )
+                if( mod.Type == StatType.HitsMax )
+                    Hits += mod.Offset;
+                else if( mod.Type == StatType.StamMax )
                     Stam += mod.Offset;
                 else if( mod.Type == StatType.ManaMax )
                     Mana += mod.Offset;
@@ -4373,7 +4375,9 @@ namespace Server.Mobiles
 				CheckBirthday( this );
 			}
 			
-			string name = String.Format( "[Vampire] {0} Offset", StatType.StamMax );
+			string name = String.Format( "[Vampire] {0} Offset", StatType.HitsMax );
+			HandleVampireStatMod( GetStatMod(name), offset, StatType.HitsMax, name );
+			name = String.Format( "[Vampire] {0} Offset", StatType.StamMax );
 			HandleVampireStatMod( GetStatMod(name), offset, StatType.StamMax, name );
 			name = String.Format( "[Vampire] {0} Offset", StatType.ManaMax );
 			HandleVampireStatMod( GetStatMod(name), offset, StatType.ManaMax, name );
