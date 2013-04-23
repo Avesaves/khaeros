@@ -104,8 +104,7 @@ namespace Server.Gumps
 						this.AddLabel(233, 283, 0, @"Thin Beard & Mustache");
 						facialhair11 = thinbeardmustache;
 						
-						if( m.Nation != Nation.Azhuran )
-						{
+
 							this.AddButton(215, 307, 1209, 1210, 112, GumpButtonType.Reply, 0);
 							this.AddLabel(233, 306, 0, @"Full Beard");
 							facialhair12 = fullbeard;
@@ -115,7 +114,7 @@ namespace Server.Gumps
 							this.AddButton(215, 353, 1209, 1210, 114, GumpButtonType.Reply, 0);
 							this.AddLabel(233, 352, 0, @"Curly Long Beard");
 							facialhair14 = curlylongbeard;
-						}
+						
 					}
 					
 					break;
@@ -238,16 +237,58 @@ namespace Server.Gumps
 					this.AddLabel(115, 329, 0, @"Ornate Long Beard");
 					facialhair6 = ornatelongbeard;
 					this.AddButton(97, 353, 1209, 1210, 107, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 352, 0, @"Ornate Very Long Beard");
+					facialhair7 = ornateverylongbeard;
+					this.AddButton(269, 215, 1209, 1210, 108, GumpButtonType.Reply, 0);
+					this.AddLabel(287, 214, 0, @"Mid-Long Beard");
+					facialhair8 = midlongbeard;
+					this.AddButton(269, 238, 1209, 1210, 109, GumpButtonType.Reply, 0);
+					this.AddLabel(287, 237, 0, @"Ornate Beard");
+					facialhair9 = ornatebeard;
+					this.AddButton(97, 353, 1209, 1210, 107, GumpButtonType.Reply, 0);
 					this.AddLabel(115, 352, 0, @"Braided Beard");
 					facialhair7 = braidedbeard;
+					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 214, 0, @"Nice Goatee");
+					facialhair1 = khemetargoatee;
 					
 					break;
 				}
 					
-				case Nation.Khemetar:
+				case Nation.Azhuran:
 				{
 					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
-					this.AddLabel(115, 214, 0, @"Khemetar Goatee");
+					this.AddLabel(115, 214, 0, @"Long Beard");
+					facialhair1 = longbeard;
+					this.AddButton(97, 238, 1209, 1210, 102, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 237, 0, @"Long Beard & Mustache");
+					facialhair2 = longbeardmustache;
+					this.AddButton(97, 261, 1209, 1210, 103, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 260, 0, @"Very Long Beard");
+					facialhair3 = verylongbeard;
+					this.AddButton(97, 284, 1209, 1210, 104, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 283, 0, @"Extra Long Beard");
+					facialhair4 = extralongbeard;
+					this.AddButton(97, 307, 1209, 1210, 105, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 306, 0, @"Two Braids Beard");
+					facialhair5 = twobraidsbeard;
+					this.AddButton(97, 330, 1209, 1210, 106, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 329, 0, @"Ornate Long Beard");
+					facialhair6 = ornatelongbeard;
+					this.AddButton(97, 353, 1209, 1210, 107, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 352, 0, @"Ornate Very Long Beard");
+					facialhair7 = ornateverylongbeard;
+					this.AddButton(269, 215, 1209, 1210, 108, GumpButtonType.Reply, 0);
+					this.AddLabel(287, 214, 0, @"Mid-Long Beard");
+					facialhair8 = midlongbeard;
+					this.AddButton(269, 238, 1209, 1210, 109, GumpButtonType.Reply, 0);
+					this.AddLabel(287, 237, 0, @"Ornate Beard");
+					facialhair9 = ornatebeard;
+					this.AddButton(97, 353, 1209, 1210, 107, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 352, 0, @"Braided Beard");
+					facialhair7 = braidedbeard;
+					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 214, 0, @"Nice Goatee");
 					facialhair1 = khemetargoatee;
 					
 					break;
@@ -267,6 +308,27 @@ namespace Server.Gumps
 					this.AddButton(97, 284, 1209, 1210, 104, GumpButtonType.Reply, 0);
 					this.AddLabel(115, 283, 0, @"Extra Long Beard");
 					facialhair4 = extralongbeard;
+					this.AddButton(97, 307, 1209, 1210, 105, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 306, 0, @"Two Braids Beard");
+					facialhair5 = twobraidsbeard;
+					this.AddButton(97, 330, 1209, 1210, 106, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 329, 0, @"Ornate Long Beard");
+					facialhair6 = ornatelongbeard;
+					this.AddButton(97, 353, 1209, 1210, 107, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 352, 0, @"Ornate Very Long Beard");
+					facialhair7 = ornateverylongbeard;
+					this.AddButton(269, 215, 1209, 1210, 108, GumpButtonType.Reply, 0);
+					this.AddLabel(287, 214, 0, @"Mid-Long Beard");
+					facialhair8 = midlongbeard;
+					this.AddButton(269, 238, 1209, 1210, 109, GumpButtonType.Reply, 0);
+					this.AddLabel(287, 237, 0, @"Ornate Beard");
+					facialhair9 = ornatebeard;
+					this.AddButton(97, 353, 1209, 1210, 107, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 352, 0, @"Braided Beard");
+					facialhair7 = braidedbeard;
+					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 214, 0, @"Nice Goatee");
+					facialhair1 = khemetargoatee;
 					
 					break;
 				}
@@ -318,7 +380,27 @@ namespace Server.Gumps
 					this.AddButton(97, 284, 1209, 1210, 104, GumpButtonType.Reply, 0);
 					this.AddLabel(115, 283, 0, @"Extra Long Beard");
 					facialhair4 = extralongbeard;
-					
+					this.AddButton(97, 307, 1209, 1210, 105, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 306, 0, @"Two Braids Beard");
+					facialhair5 = twobraidsbeard;
+					this.AddButton(97, 330, 1209, 1210, 106, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 329, 0, @"Ornate Long Beard");
+					facialhair6 = ornatelongbeard;
+					this.AddButton(97, 353, 1209, 1210, 107, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 352, 0, @"Ornate Very Long Beard");
+					facialhair7 = ornateverylongbeard;
+					this.AddButton(269, 215, 1209, 1210, 108, GumpButtonType.Reply, 0);
+					this.AddLabel(287, 214, 0, @"Mid-Long Beard");
+					facialhair8 = midlongbeard;
+					this.AddButton(269, 238, 1209, 1210, 109, GumpButtonType.Reply, 0);
+					this.AddLabel(287, 237, 0, @"Ornate Beard");
+					facialhair9 = ornatebeard;
+					this.AddButton(97, 353, 1209, 1210, 107, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 352, 0, @"Braided Beard");
+					facialhair7 = braidedbeard;
+					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
+					this.AddLabel(115, 214, 0, @"Nice Goatee");
+					facialhair1 = khemetargoatee;					
 					break;
 				}
 			}
