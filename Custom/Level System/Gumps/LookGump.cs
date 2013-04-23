@@ -151,16 +151,16 @@ namespace Server.Gumps
 				//if( !myself && self.Disguise.Nation != null )
                     //race = "Appears to be of " + self.Disguise.Nation + " ancestory";
 		if (self.GetDisguisedNation().ToString() == "Vhalurian")
-			race = "Exhibits Northern qualities"
+			race = "Exhibits Northern qualities";
 			
 		else if (self.GetDisguisedNation().ToString() == "Azhuran")
-			race = "Exhibits Western qualities"
+			race = "Exhibits Western qualities";
 
 		else if (self.GetDisguisedNation().ToString() == "Alyrian")
-			race = "Exhibits Southern qualities"
+			race = "Exhibits Southern qualities";
 			
 		else if (self.GetDisguisedNation().ToString() == "Mhordul")
-			race = "Exhibits foreign qualities"			
+			race = "Exhibits foreign qualities";			
                 	//race = "Exhibits " + self.GetDisguisedNation().ToString() + " qualities";
 
                 //if (self.Nation == Nation.Vhalurian)
