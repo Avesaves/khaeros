@@ -24,7 +24,7 @@ namespace Server.Items
 				from.SendGump( new HeightWeightGump(from, true, Convert.ToDouble(from.Height), Convert.ToDouble(from.Weight)) );
 			
 			else
-				from.SendMessage( "You must choose a race first." );
+				from.SendMessage( "You must choose a culture first." );
         } 
 
       	public HeightWeightStone( Serial serial ) : base( serial ) 
