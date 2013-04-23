@@ -7424,23 +7424,22 @@ namespace Server.Mobiles
 
             if (RPTitle != null)
             {
-                if (RPTitle.Contains("the Alyrian") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Alyrian))
+                if (RPTitle.Contains("of the South") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Mhordul))
                     nation = Nation.Alyrian;
 
-                else if (RPTitle.Contains("the Azhuran") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Azhuran))
+                else if (RPTitle.Contains("of the West") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Azhuran))
                     nation = Nation.Azhuran;
 
                 else if (RPTitle.Contains("the Khemetar") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Khemetar))
                     nation = Nation.Khemetar;
 
-                else if (RPTitle.Contains("the Mhordul") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Mhordul))
-                    nation = Nation.Mhordul;
-
                 else if (RPTitle.Contains("the Tyrean") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Tyrean))
                     nation = Nation.Tyrean;
 
-                else if (RPTitle.Contains("the Vhalurian") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Vhalurian))
+                else if (RPTitle.Contains("of the North") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Vhalurian))
                     nation = Nation.Vhalurian;
+                    
+                  
             }
 			
 			return nation;
