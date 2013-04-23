@@ -1297,13 +1297,13 @@ namespace Server.Gumps
 				{
 					hairhue1 = 2801;
 					hairhue2 = 2411;
-					hairhue3 = 1140;
+					hairhue3 = 1141;
 					hairhue4 = 1109;
-					hairhue5 = 2990;
+					hairhue5 = 2799;
 					hairhue6 = 2406;
 					hairhue7 = 1175;
 					hairhue8 = 1881;
-					hairhue9 = 1989;
+					hairhue9 = 1022;
 					hairhue10 = 2992;
 					
 					skinhue1 = 1005;
@@ -1351,7 +1351,7 @@ namespace Server.Gumps
 					hairhue2 = 1147;
 					hairhue3 = 1058;
 					hairhue4 = 1109;
-					hairhue5 = 1127;
+					hairhue5 = 2418;
 					hairhue6 = 1149;
 					hairhue7 = 1145;
 					hairhue8 = 1103;
@@ -1402,7 +1402,7 @@ namespace Server.Gumps
 					hairhue1 = 2107;
 					hairhue2 = 1149;
 					hairhue3 = 2413;
-					hairhue4 = 2418;
+					hairhue4 = 1022;
 					hairhue5 = 2312;
 					hairhue6 = 1627;
 					hairhue7 = 1830;
@@ -1436,7 +1436,7 @@ namespace Server.Gumps
 					hairhue7 = 2799;
 					hairhue8 = 2801;
 					hairhue9 = 2992;
-					hairhue10 = 1108;
+					hairhue10 = 2418;
 					
 					skinhue1 = 1849;
 					skinhue2 = 1145;
