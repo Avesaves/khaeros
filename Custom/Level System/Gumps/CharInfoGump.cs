@@ -50,7 +50,7 @@ namespace Server.Gumps
 			//this.AddLabel( 140, 295, 0, @"Life Points: " + m.Lives );
 			//this.AddLabel( 140, 315, 0, @"Thirst: " + m.Thirst );
 			this.AddLabel( 140, 335, 0, @"XP Meter");
-			this.AddLabel( 260, 155, 0, @"" + Convert.ToString( m.Nation ) );
+			this.AddLabel( 260, 155, 0, @"" + m.RPTitle );
 			this.AddButton( 327, 134, 3, 4, 0, GumpButtonType.Reply, 0 );
 			this.AddImage( 137, 336, 93 );
 			this.AddImage( 150, 151, 96 );
