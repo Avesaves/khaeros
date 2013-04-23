@@ -363,6 +363,18 @@ namespace Server.Mobiles
 	{
 	}
 	
+	public interface IIncorporeal
+	{
+	}
+
+	public interface IHuge
+	{
+	}
+
+	public interface ITooSmart
+	{
+	}
+
 	public interface IUndead
 	{
 	}

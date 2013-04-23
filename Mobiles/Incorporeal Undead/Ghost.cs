@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace Server.Mobiles
 {
 	[CorpseName( "a ghost corpse" )]
-	public class Ghost : BaseCreature, IUndead, IEnraged
+	public class Ghost : BaseCreature, IUndead, IEnraged, IIncorporeal
 	{
 		[Constructable]
 		public Ghost() : base( AIType.AI_Melee, FightMode.Closest, 18, 1, 0.2, 0.4 )

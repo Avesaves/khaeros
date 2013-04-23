@@ -351,8 +351,8 @@ namespace Server.Items
 		{
 			if( from.AccessLevel < AccessLevel.GameMaster && this.Locked && from is PlayerMobile && ((PlayerMobile)from).AutoPicking )
 			{
-				from.PlaySound( 0x241 );
-				new LockPickTimer( from, this ).Start();
+				from.SendLocalizedMessage( 501747 ); // It appears to be locked.
+				return;
 			}
 		
 			else

@@ -5,10 +5,15 @@ using Server.Items;
 namespace Server.Mobiles
 {
 	[CorpseName( "a lesser fire elemental corpse" )]
-	public class LesserFireElemental : BaseCreature, IElemental, IEnraged
+	public class LesserFireElemental : BaseCreature, IElemental, IEnraged, IIncorporeal
 	{
 		public override double DispelDifficulty{ get{ return 117.5; } }
 		public override double DispelFocus{ get{ return 45.0; } }
+
+		public override bool DeleteCorpseOnDeath
+		{
+			get{ return true; }
+		}
 
 		[Constructable]
 		public LesserFireElemental () : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
@@ -42,12 +47,11 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 80.1, 100.0 );
 			SetSkill( SkillName.UnarmedFighting, 70.1, 100.0 );
 
-			Fame = 4500;
-			Karma = -4500;
+			Fame = 5000;
+			Karma = -5000;
 
 			VirtualArmor = 20;
 			ControlSlots = 4;
-			PackItem( new SulfurousAsh( 3 ) );
 		}
 
 		public override bool BleedImmune{ get{ return true; } }

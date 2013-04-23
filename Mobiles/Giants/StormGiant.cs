@@ -7,7 +7,7 @@ using Server.Network;
 namespace Server.Mobiles
 {
 	[CorpseName( "a storm Giants corpse" )]
-	public class StormGiant : BaseCreature, ILargePredator, IGiant, IEnraged, IPeacefulPredator
+	public class StormGiant : BaseCreature, ILargePredator, IGiant, IEnraged, IPeacefulPredator, IHuge
 	{
 		public override int Height{ get{ return 40; } }
 		[Constructable]
@@ -50,7 +50,7 @@ namespace Server.Mobiles
 			Karma = 50000;
 
 			VirtualArmor = 50;
-            PackItem( new RewardToken( 4 ) );
+            PackItem( new RewardToken( 6 ) );
 		}
 		
 		public override void AddBodyParts( BodyPartsContainer bpc, Corpse corpse )
@@ -61,7 +61,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Rich, 3 );
+			AddLoot( LootPack.UltraRich, 2 );
 		}
 
 		public override int Meat{ get{ return 50; } }

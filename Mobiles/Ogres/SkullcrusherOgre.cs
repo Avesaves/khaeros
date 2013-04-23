@@ -21,9 +21,9 @@ namespace Server.Mobiles
 
 			SetStr( 201, 350 );
 			SetDex( 66, 75 );
-			SetInt( 21, 30 );
+			SetInt( 41, 45 );
 
-			SetHits( 650 );
+			SetHits( 500, 550 );
 
 			SetDamage( 32, 36 );
 
@@ -37,15 +37,12 @@ namespace Server.Mobiles
 			SetResistance( ResistanceType.Poison, 100 );
 			SetResistance( ResistanceType.Energy, 40, 50 );
 
-			SetSkill( SkillName.Invocation, 90.1, 100.0 );
-			SetSkill( SkillName.Magery, 90.1, 100.0 );
-			SetSkill( SkillName.Meditation, 90.1, 100.0 );
 			SetSkill( SkillName.MagicResist, 25.0 );
-			SetSkill( SkillName.Tactics, 75.1, 85.0 );
+			SetSkill( SkillName.Tactics, 100.0 );
 			SetSkill( SkillName.UnarmedFighting, 80.1, 100.0 );
 
-			Fame = 18500;
-			Karma = -18500;
+			Fame = 15500;
+			Karma = -15500;
 
 			VirtualArmor = 54;
 		}
@@ -58,7 +55,8 @@ namespace Server.Mobiles
 		
 				public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Average, 2 );
+			AddLoot( LootPack.Average, 1 );
+			AddLoot( LootPack.Meager, 1 );
 		}
 
 		public SkullcrusherOgre( Serial serial ) : base( serial )

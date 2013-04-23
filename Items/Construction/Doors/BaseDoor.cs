@@ -662,8 +662,9 @@ namespace Server.Items
 				{
 					if( from is PlayerMobile && ((PlayerMobile)from).AutoPicking && this.AllowPicking( from ) )
 					{
-						from.PlaySound( 0x241 );
-						new LockableContainer.LockPickTimer( from, this ).Start();
+                                        						from.LocalOverheadMessage( MessageType.Regular, 0x3B2, 502503 ); // That is locked.
+
+					return;
 					}
 					else if ( Hue == 0x44E && Map == Map.Malas ) // doom door into healer room in doom
 						this.SendLocalizedMessageTo( from, 1060014 ); // Only the dead may pass.

@@ -6,37 +6,36 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a Silver Dragon corpse" )]
+	[CorpseName( "a Huge Dragon corpse" )]
 	public class SilverDragon : Dragon, IPeacefulPredator
 	{
 		[Constructable]
 		public SilverDragon ()
 		{
-			Name = "a Silver Dragon";
-			Hue = 2985;
+			Name = "A Huge Dragon";
+			Body = 59;
 			
-			SetHits( 900, 1100 );
+			SetHits( 1500, 1700 );
 
-			SetDamage( 40, 45 );
+			SetDamage( 45, 50 );
 			
-			Fame = 50000;
-			Karma = -50000;
-			
-            PackItem( new RewardToken( 3 ) );
+			Fame = 80000;
+			Karma = -80000;
+            PackItem( new RewardToken( 12 ) );
 		}
 		
 		public override void AddBodyParts( BodyPartsContainer bpc, Corpse corpse )
 		{
 			base.AddBodyParts( bpc, corpse );
 			DragonHead head = new DragonHead();
-			head.Hue = 2985;
+			head.Hue = 0;
 			bpc.DropItem( head );
 		}
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.FilthyRich, 1 );
-			AddLoot( LootPack.Gems, 8 );
+			AddLoot( LootPack.SuperBoss, 2 );
+			AddLoot( LootPack.Gems, 15 );
 		}
 
 		public SilverDragon( Serial serial ) : base( serial )

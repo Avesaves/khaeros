@@ -5,7 +5,7 @@ using Server.Items;
 namespace Server.Mobiles
 {
 	[CorpseName( "an air elemental corpse" )]
-	public class AirElemental : BaseCreature, IElemental, IEnraged
+	public class AirElemental : BaseCreature, IElemental, IEnraged, IIncorporeal
 	{
 		public override double DispelDifficulty{ get{ return 117.5; } }
 		public override double DispelFocus{ get{ return 45.0; } }
@@ -49,8 +49,8 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 60.1, 80.0 );
 			SetSkill( SkillName.UnarmedFighting, 60.1, 80.0 );
 
-			Fame = 6500;
-			Karma = -6500;
+			Fame = 7000;
+			Karma = -7000;
 
 			VirtualArmor = 40;
 			ControlSlots = 2;

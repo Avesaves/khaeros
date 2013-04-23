@@ -79,6 +79,12 @@ namespace Server.Mobiles
 			EquipItem( new WaistSash() );
 		}
 
+
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Poor );
+		}
+
 		public KhemetarBrigand(Serial serial) : base(serial)
 		{
 		}

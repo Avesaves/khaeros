@@ -98,7 +98,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Rich, 1 );
+			AddLoot( LootPack.Rich, 2 );
 		}
 
 		public Gazer( Serial serial ) : base( serial )

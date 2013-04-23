@@ -59,7 +59,7 @@ namespace Server.Mobiles
 		public override void GenerateLoot()
 		{
 			AddLoot( LootPack.Average, 1 );
-			AddLoot( LootPack.Poor, 1 );
+			AddLoot( LootPack.Rich, 1 );
 		}
 
 		public MountainTroll( Serial serial ) : base( serial )

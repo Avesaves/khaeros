@@ -7,7 +7,7 @@ using Server.Network;
 namespace Server.Mobiles
 {
 	[CorpseName( "a Stone Giants corpse" )]
-	public class StoneGiant : BaseCreature, ILargePredator, IGiant, IEnraged
+	public class StoneGiant : BaseCreature, ILargePredator, IGiant, IEnraged, IHuge
 	{
 		public override int Height{ get{ return 20; } }
 		[Constructable]
@@ -65,7 +65,8 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.FilthyRich, 2 );
+			AddLoot( LootPack.UltraRich, 1 );
+			AddLoot( LootPack.Rich, 1 );
 		}
 
 		public override int Meat{ get{ return 20; } }

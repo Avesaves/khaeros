@@ -48,8 +48,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Meager );
-			AddLoot( LootPack.Poor );
+			AddLoot( LootPack.Meager, 2 );
 		}
 
 		public TroglinWarrior( Serial serial ) : base( serial )

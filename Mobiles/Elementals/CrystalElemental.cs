@@ -50,6 +50,11 @@ namespace Server.Mobiles
 
 		public override bool BleedImmune{ get{ return true; } }
 
+				public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Meager, 1 );
+		}
+
 		public CrystalElemental( Serial serial ) : base( serial )
 		{
 		}

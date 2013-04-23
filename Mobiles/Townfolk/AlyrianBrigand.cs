@@ -80,6 +80,11 @@ namespace Server.Mobiles
 			EquipItem( new Sandals() );
 		}
 
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Poor );
+		}
+
 		public AlyrianBrigand(Serial serial) : base(serial)
 		{
 		}

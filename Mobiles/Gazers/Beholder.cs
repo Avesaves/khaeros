@@ -56,7 +56,7 @@ namespace Server.Mobiles
 		
 				public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Meager, 1 );
+			AddLoot( LootPack.Average, 1 );
 		}
 		
 		public Beholder( Serial serial ) : base( serial )

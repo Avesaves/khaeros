@@ -40,8 +40,8 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 100.0 );
 			SetSkill( SkillName.UnarmedFighting, 90.1, 100.0 );
 
-			Fame = 5000;
-			Karma = -5000;
+			Fame = 6000;
+			Karma = -6000;
 
 			VirtualArmor = 34;
 		}
@@ -75,11 +75,6 @@ namespace Server.Mobiles
 
 		public Snowdigger( Serial serial ) : base( serial )
 		{
-		}
-
-				public override void GenerateLoot()
-		{
-			AddLoot( LootPack.Meager, 1 );
 		}
 
 		public override void Serialize( GenericWriter writer )

@@ -6,7 +6,7 @@ using Server.Targeting;
 namespace Server.Mobiles
 {
 	[CorpseName( "an ettins corpse" )]
-	public class Ettin : BaseCreature, ILargePredator, IHasReach, IEnraged, IGiant
+	public class Ettin : BaseCreature, ILargePredator, IHasReach, IEnraged, IGiant, IHuge
 	{
 		public override int Height{ get{ return 35; } }
 		
@@ -85,7 +85,8 @@ namespace Server.Mobiles
 		
 				public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Average, 4 );
+			AddLoot( LootPack.Rich, 1 );
+			AddLoot( LootPack.Average, 1 );
 		}
 
 		public Ettin( Serial serial ) : base( serial )

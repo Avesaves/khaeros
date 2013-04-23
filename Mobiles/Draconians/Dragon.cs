@@ -5,7 +5,7 @@ using Server.Items;
 namespace Server.Mobiles
 {
 	[CorpseName( "a dragon corpse" )]
-	public class Dragon : BaseCreature, ILargePredator, IHasReach, IEnraged, IDraconic
+	public class Dragon : BaseCreature, ILargePredator, IHasReach, IEnraged, IDraconic, IHuge
 	{
 		public override int Height{ get{ return 25; } }
 		public Dragon () : base( AIType.AI_Berserk, FightMode.Closest, 10, 1, 0.2, 0.4 )

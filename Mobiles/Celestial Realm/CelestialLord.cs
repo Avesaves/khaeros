@@ -5,7 +5,7 @@ using Server.Items;
 namespace Server.Mobiles 
 { 
 	[CorpseName( "a Celestial Lord corpse" )] 
-	public class CelestialLord : BaseCreature, ICelestial, IHasReach
+	public class CelestialLord : BaseCreature, ICelestial, IHasReach, IHuge
 	{ 
 		public override bool DeleteCorpseOnDeath
 		{

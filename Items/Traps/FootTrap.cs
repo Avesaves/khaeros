@@ -92,6 +92,30 @@ namespace Server.Items
             if (!from.Alive || from.Blessed || !this.Armed)
                 return;
 
+            if (from is IHuge) 
+
+             {  
+              from.Emote("*crushes a foot trap*");
+              this.Delete();
+              return; 
+              }
+
+
+            if (from is IIncorporeal) 
+
+             {  
+              from.Emote("*passes through the trap*");
+              return; 
+              }
+
+
+            if (from is ITooSmart) 
+
+             {  
+              from.Emote("*steps over a trap*");
+              return; 
+              }
+
             PlayerMobile pm = from as PlayerMobile;
 
             int detecthidden = Convert.ToInt32(from.Skills[SkillName.DetectHidden].Fixed);
@@ -212,7 +236,9 @@ namespace Server.Items
                 m_m = m;
                 m_trap = trap;
                 trap.InUse = true;
-                m.SendMessage(60, "You start arming the trap.");
+                m.RevealingAction();
+                m_m.SendMessage(60, "You begin arming the foot trap.");
+                m.Animate(32, 5, 1, true, false, 0);
                 m_loc = m.Location;
                 m_trap.SkillLevel = Convert.ToInt32(m_m.Skills[SkillName.ArmDisarmTraps].Fixed);
                 m_trap.Owner = m_m;
