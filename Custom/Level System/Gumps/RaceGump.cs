@@ -227,7 +227,7 @@ namespace Server.Gumps
 					
 				case Nation.Mhordul:
 				{
-
+					m.RPTitle = "the Stranger";
 					m.Height = 103;
 					m.Weight = 98;
 					
