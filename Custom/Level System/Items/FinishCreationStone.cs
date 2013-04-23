@@ -23,7 +23,7 @@ namespace Server.Items
 			
 			if( from.Nation == Nation.None )
 			{
-				from.SendMessage( 60, "You must choose a race first." );
+				from.SendMessage( 60, "You must choose a culture first." );
 				return;
 			}
 			
