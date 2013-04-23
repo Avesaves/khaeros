@@ -1306,11 +1306,11 @@ namespace Server.Gumps
 					hairhue9 = 1989;
 					hairhue10 = 2992;
 					
-					skinhue1 = 1133;
-					skinhue2 = 1132;
-					skinhue3 = 1131;
-					skinhue4 = 1130;
-					skinhue5 = 1190;
+					skinhue1 = 1005;
+					skinhue2 = 1850;
+					skinhue3 = 1812;
+					skinhue4 = 1849;
+					skinhue5 = 1815;
 					skinhue6 = 1148;
 					skinhue7 = 1147;
 					skinhue8 = 1146;
@@ -1360,14 +1360,14 @@ namespace Server.Gumps
 					
 					skinhue1 = 1018;
 					skinhue2 = 1025;
-					skinhue3 = 1030;
-					skinhue4 = 1037;
+					skinhue3 = 1851;
+					skinhue4 = 1145;
 					skinhue5 = 1005;
 					skinhue6 = 1012;
 					skinhue7 = 1019;
 					skinhue8 = 1026;
 					skinhue9 = 1031;
-					skinhue10 = 1038;
+					skinhue10 = 1065;
 					break;
 				}
 					
@@ -1412,19 +1412,21 @@ namespace Server.Gumps
 					
 					skinhue1 = 1062;
 					skinhue2 = 1061;
-					skinhue3 = 1063;
+					skinhue3 = 1849;
 					skinhue4 = 1064;
 					skinhue5 = 1065;
 					skinhue6 = 1066;
-					skinhue7 = 1023;
-					skinhue8 = 1030;
+					skinhue7 = 1019;
+					skinhue8 = 1003;
 					skinhue9 = 1037;
-					skinhue10 = 1045;
+					skinhue10 = 1144;
 					break;
 				}
 					
 				case Nation.Mhordul:
 				{
+					
+					
 					hairhue1 = 1149;
 					hairhue2 = 1022;
 					hairhue3 = 1141;
@@ -1436,16 +1438,18 @@ namespace Server.Gumps
 					hairhue9 = 2992;
 					hairhue10 = 1108;
 					
-					skinhue1 = 2419;
-					skinhue2 = 2420;
-					skinhue3 = 2421;
-					skinhue4 = 1045;
+					skinhue1 = 1849;
+					skinhue2 = 1145;
+					skinhue3 = 1062;
+					skinhue4 = 1147;
 					skinhue5 = 2426;
-					skinhue6 = 1037;
-					skinhue7 = 2419;
+					skinhue6 = 1017;
+					skinhue7 = 1011;
 					skinhue8 = 2425;
-					skinhue9 = 2107;
+					skinhue9 = 1813;
 					skinhue10 = 1072;
+					
+
 					break;
 				}
 			}
