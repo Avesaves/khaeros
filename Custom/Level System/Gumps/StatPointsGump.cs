@@ -88,12 +88,12 @@ namespace Server.Gumps
 			
 			switch( m.Nation )
 			{
-				case Nation.Alyrian: strcap += 25; dexcap += 40; intcap += 45; hitscap += 30; stamcap += 35; manacap += 50; break;
-				case Nation.Azhuran: strcap += 35; dexcap += 50; intcap += 40; hitscap += 25; stamcap += 30; manacap += 45; break;
-				case Nation.Khemetar: strcap += 30; dexcap += 45; intcap += 50; hitscap += 35; stamcap += 25; manacap += 40; break;
-				case Nation.Mhordul: strcap += 50; dexcap += 35; intcap += 25; hitscap += 45; stamcap += 40; manacap += 30; break;
-				case Nation.Tyrean: strcap += 40; dexcap += 25; intcap += 30; hitscap += 50; stamcap += 45; manacap += 35; break;
-				case Nation.Vhalurian: strcap += 45; dexcap += 30; intcap += 35; hitscap += 40; stamcap += 50; manacap += 25; break;
+				case Nation.Alyrian: strcap += 50; dexcap += 50; intcap += 50; hitscap += 50; stamcap += 50; manacap += 50; break;
+				case Nation.Azhuran: strcap += 50; dexcap += 50; intcap += 50; hitscap += 50; stamcap += 50; manacap += 50; break;
+				case Nation.Khemetar: strcap += 50; dexcap += 50; intcap += 50; hitscap += 50; stamcap += 50; manacap += 50; break;
+				case Nation.Mhordul: strcap += 50; dexcap += 50; intcap += 50; hitscap += 50; stamcap += 50; manacap += 50; break;
+				case Nation.Tyrean: strcap += 50; dexcap += 50; intcap += 50; hitscap += 50; stamcap += 50; manacap += 50; break;
+				case Nation.Vhalurian: strcap += 50; dexcap += 50; intcap += 50; hitscap += 50; stamcap += 50; manacap += 50; break;
 			}
 			
 			if (m == null)
