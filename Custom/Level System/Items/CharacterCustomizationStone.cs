@@ -24,7 +24,7 @@ namespace Server.Items
 				from.SendGump( new CharCustomGump(from, 1) );
 			
 			else
-				from.SendMessage( "You must choose a race first." );
+				from.SendMessage( "You must choose a culture first." );
     	} 
 
   		public CharacterCustomizationStone( Serial serial ) : base( serial ) 
