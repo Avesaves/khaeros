@@ -476,15 +476,20 @@ namespace Server.Mobiles
 				{
 					switch( Utility.Random( 9 ) )
 					{
-						case 0:	return 1133;
-						case 1:	return 1132;
-						case 2:	return 1131;
-						case 3:	return 1130;
-						case 4:	return 1190;
+						//case 0:	return 1133;
+						//case 1:	return 1132;
+						//case 2:	return 1131;
+						//case 3:	return 1130;
+						//case 4:	return 1190;
+						case 0: return 1005;
+						case 1: return 1850;
+						case 2: return 1812;
+						case 3: return 1849;
+						case 4: return 1815;
 						case 5:	return 1148;
-						case 6:	return 1147;
+						case 6:	return 1147; 
 						case 7:	return 1146;
-						case 8:	return 1145;
+						case 8:	return 1145; 
 						case 9:	return 1144;
 					}
 					break;
@@ -514,14 +519,16 @@ namespace Server.Mobiles
 					{
 						case 0:	return 1018;
 						case 1:	return 1025;
-						case 2:	return 1030;
-						case 3:	return 1037;
+						case 2: return 1851;
+						case 3: return 1145;
+						//case 2:	return 1030;
+					//	case 3:	return 1037;
 						case 4:	return 1005;
 						case 5:	return 1012;
 						case 6:	return 1019;
 						case 7:	return 1026;
 						case 8:	return 1031;
-						case 9:	return 1038;
+						case 9:	return 1065;
 					}
 					break;
 				}
@@ -550,14 +557,18 @@ namespace Server.Mobiles
 					{
 						case 0:	return 1062;
 						case 1:	return 1061;
-						case 2:	return 1063;
+						case 2: return 1849;
+						//case 2:	return 1063;
 						case 3:	return 1064;
 						case 4:	return 1065;
 						case 5:	return 1066;
-						case 6:	return 1023;
-						case 7:	return 1030;
+						case 6: return 1019;
+						case 7: return 1003;
+						//case 6:	return 1023;
+						//case 7:	return 1030;
 						case 8:	return 1037;
-						case 9:	return 1045;
+						case 9: return 1144;
+						//case 9:	return 1045;
 					}
 					break;
 				}
@@ -566,16 +577,16 @@ namespace Server.Mobiles
 				{
 					switch( Utility.Random( 9 ) )
 					{
-						case 0:	return 2419;
-						case 1:	return 2420;
-						case 2:	return 2421;
-						case 3:	return 1045;
-						case 4:	return 2426;
-						case 5:	return 1037;
-						case 6:	return 2419;
-						case 7:	return 2425;
-						case 8:	return 2107;
-						case 9:	return 1072;
+						case 0:	return 1849;
+						case 1:	return 1147;
+						case 2:	return 1145;
+						case 3:	return 1062;
+						case 4:	return 2426; 
+						case 5:	return 1017;
+						case 6:	return 1011;
+						case 7:	return 2425; 
+						case 8:	return 1813;
+						case 9:	return 1072; 
 					}
 					break;
 				}
