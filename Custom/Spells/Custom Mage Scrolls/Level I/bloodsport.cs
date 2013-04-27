@@ -10,13 +10,13 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-    public class MageSightScroll : CustomSpellScroll
+    public class BloodSportScroll : CustomSpellScroll
     {
         public override CustomMageSpell Spell
         {
             get
             {
-                return new MageSightSpell();
+                return new BloodSportSpell();
             }
             set
             {
@@ -24,10 +24,10 @@ namespace Server.Items
         }
 
         [Constructable]
-        public MageSightScroll() : base()
+        public BloodSportScroll() : base()
         {
-            Hue = 2687;
-            Name = "A Mage Sight scroll";
+            Hue = 37;
+            Name = "A Blood Sport scroll";
         }
 
         public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
@@ -42,10 +42,10 @@ namespace Server.Items
             if( !IsMageCheck( m, true ) )
                 return;
 
-            BaseCustomSpell.SpellInitiator( new MageSightSpell( m, 1 ) );
+            BaseCustomSpell.SpellInitiator( new BloodSportSpell( m, 1 ) );
         }
 
-        public MageSightScroll( Serial serial )
+        public BloodSportScroll( Serial serial )
             : base( serial )
         {
         }
@@ -64,55 +64,70 @@ namespace Server.Items
     }
 
     [PropertyObject]
-    public class MageSightSpell : CustomMageSpell
+    public class BloodSportSpell : CustomMageSpell
     {
         public override CustomMageSpell GetNewInstance()
         {
-            return new MageSightSpell();
+            return new BloodSportSpell();
         }
 
         public override bool CustomScripted { get { return true; } }
 		public override bool IsMageSpell { get { return true; } }
         public override Type ScrollType { get { return typeof( OrigamiPaper ); } }
-        public override bool CanTargetSelf{ get{ return true; } }
-		public override bool AffectsMobiles{ get{ return true; } }
-		public override bool IsHarmful{ get{ return false; } }
-		public override bool UsesTarget{ get{ return true; } }
+		public override bool CanTargetSelf { get { return false; } }
+        public override bool AffectsItems { get { return true; } }
+		public override bool AffectsMobiles { get { return true; } }
+        public override bool IsHarmful { get { return true; } }
+        public override bool UsesTarget { get { return true; } }
 		public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
-        public override string Name { get { return "Mage Sight"; } }
-        public override int ManaCost { get { return 10; } }
+        public override string Name { get { return "Blood Sport"; } }
+        public override int ManaCost { get { return 50; } }
         public override int BaseRange { get { return 12; } }
 
-        public MageSightSpell()
+        public BloodSportSpell()
             : this( null, 1 )
         {
         }
 
-        public MageSightSpell( Mobile caster, int featLevel ) 
+        public BloodSportSpell( Mobile caster, int featLevel ) 
             : base( caster, featLevel )
         {
-            IconID = 6018;
+            IconID = 6166;
             Range = 12;
-            CustomName = "Mage Sight";
+            CustomName = "Blood Sport";
         }
 
         public override bool CanBeCast
         {
             get
             {                     
-                return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.ForcesI } );
+                return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.DeathI } );
             }
         }
-
+		
         public override void Effect()
-        {
-            if( TargetCanBeAffected && CasterHasEnoughMana )
-            {
-                TargetMobile.PlaySound( 483 );
-                Caster.Mana -= TotalCost;
-                XmlAttach.AttachTo( TargetMobile, new XmlMageSight( 0, 60 ) );
-                Success = true;
-            }
-        }
-    }
+        {		
+			if (TargetMobile is Mobile && CasterHasEnoughMana )
+			{
+				Mobile targ = TargetMobile as Mobile;
+
+				
+				Caster.Mana -= TotalCost;
+				Success = true;
+
+                Caster.PlaySound(0x175);
+
+                Caster.FixedParticles(0x375A, 1, 17, 9919, 33, 7, EffectLayer.Waist);
+                Caster.FixedParticles(0x3728, 1, 13, 9502, 33, 7, (EffectLayer)255);
+
+                targ.FixedParticles(0x375A, 1, 17, 9919, 33, 7, EffectLayer.Waist);
+                targ.FixedParticles(0x3728, 1, 13, 9502, 33, 7, (EffectLayer)255);
+                AOS.Damage(targ, Caster, 50, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
+                Caster.Hits += 25;
+                Caster.Emote("*looks healthier*");
+                targ.Emote("*gasps in pain*");
+						return;
+				}
+			}
+	}
 }

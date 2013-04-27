@@ -131,11 +131,11 @@ namespace Server.Items
             else if (TargetMobile is Mobile && CasterHasEnoughMana )
                 {
                     Mobile target = TargetMobile as Mobile;
-                    Caster.Emote("*{0} form changes to grotesquely mimic a creature nearby*", Caster.Female == true ? "her" : "his", Caster.Name);
                     Caster.Mana -= TotalCost;
                     Caster.BodyValue = target.BodyValue;
                     Caster.NameMod = target.Name;
                     Caster.HueMod = target.Hue;
+                    Caster.Emote("*{0} form changes to grotesquely mimic a creature nearby*", Caster.Female == true ? "her" : "his", Caster.Name);
                     Success = true;
 
                 } 

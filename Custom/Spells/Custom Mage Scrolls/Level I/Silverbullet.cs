@@ -10,13 +10,13 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-    public class ColourWheelScroll : CustomSpellScroll
+    public class SilverBulletScroll : CustomSpellScroll
     {
         public override CustomMageSpell Spell
         {
             get
             {
-                return new ColourWheelSpell();
+                return new SilverBulletSpell();
             }
             set
             {
@@ -24,10 +24,10 @@ namespace Server.Items
         }
 
         [Constructable]
-        public ColourWheelScroll() : base()
+        public SilverBulletScroll() : base()
         {
-            Hue = 200;
-            Name = "A ColourWheel scroll";
+            Hue = 2985;
+            Name = "A Silver Bullet scroll";
         }
 
         public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
@@ -42,10 +42,10 @@ namespace Server.Items
             if( !IsMageCheck( m, true ) )
                 return;
 
-            BaseCustomSpell.SpellInitiator( new ColourWheelSpell( m, 1 ) );
+            BaseCustomSpell.SpellInitiator( new SilverBulletSpell( m, 1 ) );
         }
 
-        public ColourWheelScroll( Serial serial )
+        public SilverBulletScroll( Serial serial )
             : base( serial )
         {
         }
@@ -64,11 +64,11 @@ namespace Server.Items
     }
 
     [PropertyObject]
-    public class ColourWheelSpell : CustomMageSpell
+    public class SilverBulletSpell : CustomMageSpell
     {
         public override CustomMageSpell GetNewInstance()
         {
-            return new ColourWheelSpell();
+            return new SilverBulletSpell();
         }
 
         public override bool CustomScripted { get { return true; } }
@@ -76,25 +76,25 @@ namespace Server.Items
         public override Type ScrollType { get { return typeof( OrigamiPaper ); } }
 		public override bool CanTargetSelf { get { return false; } }
         public override bool AffectsItems { get { return true; } }
-		public override bool AffectsMobiles { get { return false; } }
-        public override bool IsHarmful { get { return false; } }
+		public override bool AffectsMobiles { get { return true; } }
+        public override bool IsHarmful { get { return true; } }
         public override bool UsesTarget { get { return true; } }
 		public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
-        public override string Name { get { return "ColourWheel"; } }
+        public override string Name { get { return "Silver Bullet"; } }
         public override int ManaCost { get { return 10; } }
         public override int BaseRange { get { return 12; } }
 
-        public ColourWheelSpell()
+        public SilverBulletSpell()
             : this( null, 1 )
         {
         }
 
-        public ColourWheelSpell( Mobile caster, int featLevel ) 
+        public SilverBulletSpell( Mobile caster, int featLevel ) 
             : base( caster, featLevel )
         {
-            IconID = 6087;
+            IconID = 6108;
             Range = 12;
-            CustomName = "ColourWheel";
+            CustomName = "Silver Bullet";
         }
 
         public override bool CanBeCast
@@ -104,40 +104,55 @@ namespace Server.Items
                 return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.MindI } );
             }
         }
-		
-        public override void Effect()
-        {				
-			if (TargetItem.IsChildOf( Caster.Backpack ))
-			{
-				Caster.SendMessage("You cannot use that on an item in your pack.");
-				Success = false;
-				return;
-			}
-				
-            if( TargetCanBeAffected && CasterHasEnoughMana && TargetItem is Item && TargetItem.Movable != false )
-            {
-				Caster.Mana -= TotalCost;
-				Success = true;
-                Random random = new Random();
-                int randomNumber = random.Next(1, 200);
-                TargetItem.HueMod = randomNumber;
-                Caster.Emote("*{0} eyes flash a strange colour*", Caster.Female == true ? "her" : "his");
-				TargetItem.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*Shimmers as it changes colour*" );
-				Timer.DelayCall( TimeSpan.FromSeconds( 60 ), new TimerCallback( Flare ) );
-            }
-        }
-				
-		private void Flare()
-		{
-			if ( Caster == null )
-				return;
-				
-			if (TargetItem == null || TargetItem.Deleted)
-				return;
-				
-			 TargetItem.HueMod = -1;
-			 TargetItem.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*returns to its ordinary colour*" );
+		public virtual bool ConsumeReagents()
+        {
+            
+                Container pack = Caster.Backpack;
 
-		}				
+                if (pack == null)
+                    return false;
+
+                if (pack.ConsumeTotal(typeof(Silver), 1))
+                    return true;
+                return false;
+                
+               
+
+         }
+
+        public override void Effect()
+        {		
+			if (TargetMobile is Mobile && CasterHasEnoughMana )
+			{
+
+                if (!ConsumeReagents())
+                {
+                    Caster.Emote("*digs in {0} pocket, but finds nothing usable...*", Caster.Female == true ? "her" : "his", Caster.Name);
+                    Success = false;
+                }
+                else
+                {
+
+                    Mobile targ = TargetMobile as Mobile;
+
+
+                    Caster.Mana -= TotalCost;
+                    Success = true;
+
+                    Caster.PlaySound(0x2E6);
+
+                    Caster.MovingParticles(targ, 0xF1B, 7, 0, false, true, 3043, 4043, 0x211);
+                    targ.FixedParticles(0x377A, 244, 25, 9950, 31, 0, EffectLayer.Waist);
+                    if ( targ is IUndead )
+                        AOS.Damage(targ, Caster, 100, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
+                    else
+                        AOS.Damage(targ, Caster, 50, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
+                    Caster.Emote("*magically sends a silver coin flying through the air!*");
+
+                    return;
+                }
+
+				}
+			}
 	}
 }

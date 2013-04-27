@@ -119,27 +119,29 @@ namespace Server.Items
             if (Caster.HueMod != -1)
                 {
                     
-                    Caster.Emote("*The colour drains out of {0} body*", Caster.Female == true ? "her" : "his");
+                    
                     Caster.Mana -= 5;
 
                     Caster.HueMod = -1;
+                    Caster.Emote("*The colour drains out of {0} body*", Caster.Female == true ? "her" : "his");
                     Success = true;
                 }
             else if (TargetMobile is Mobile && CasterHasEnoughMana )
                 {
                     Mobile target = TargetMobile as Mobile;
-                    Caster.Emote("*{0} body shimmers as its colour changes to match the creature*", Caster.Female == true ? "her" : "his", Caster.Name);
                     Caster.Mana -= TotalCost;
                     Caster.HueMod = target.Hue;
+                    Caster.Emote("*{0} body shimmers as its colour changes to match the creature*", Caster.Female == true ? "her" : "his", Caster.Name);
                     Success = true;
 
                 }
                 else if (TargetItem is Item && CasterHasEnoughMana)
                 {
                     Item target = TargetItem as Item;
-                    Caster.Emote("*{0} body shimmers as its colour changes to match the item*", Caster.Female == true ? "her" : "his", Caster.Name);
+                    
                     Caster.Mana -= TotalCost;
                     Caster.HueMod = target.Hue;
+                    Caster.Emote("*{0} body shimmers as its colour changes to match the item*", Caster.Female == true ? "her" : "his", Caster.Name);
                     Success = true;
                 }
                 else
