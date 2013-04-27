@@ -1,6 +1,8 @@
 using System;
+using Server;
 using Server.Mobiles;
 using Server.Items;
+using Server.Commands;
 using Server.Targeting;
 using Server.Engines.XmlSpawner2;
 using Server.Network;
@@ -153,10 +155,6 @@ namespace Server.Misc
 				return CanTargetEntity(TargetItem);
 			}
 		}
-
-        FeatList requiredFeat = FeatList.Invocation;
-        public virtual FeatList RequiredFeat { get { return requiredFeat; } set { requiredFeat = value; } }
-
 		public virtual bool CanBeCast
 		{
 			get
@@ -165,17 +163,8 @@ namespace Server.Misc
 					return false;
 				
 				IKhaerosMobile caster = m_Caster as IKhaerosMobile;
-
-                if (caster == null)
-                    return false;
-
-                if (!(caster.Feats.GetFeatLevel(RequiredFeat) > 0))
-                {
-                    m_Caster.SendMessage(String.Format("You cannot cast this spell without the {0} feat.", RequiredFeat));
-                    return false;
-                }
-
-			    if( caster.IsTired() )
+				
+				if( caster.IsTired() )
 					return false;
 
 				if( m_Caster.Target != null )
@@ -356,7 +345,7 @@ namespace Server.Misc
 				m_Caster.Emote( "*starts casting a spell*" );
 			
 			else
-				m_Caster.Emote( "*utters a prayer to the gods*" );
+				m_Caster.Emote( "*starts casting a spell*" );
 			
 			if( caster.StunnedTimer == null )
 			{
