@@ -356,7 +356,7 @@ namespace Server.Misc
 				m_Caster.Emote( "*starts casting a spell*" );
 			
 			else
-				m_Caster.Emote( "*utters a prayer to the gods*" );
+				m_Caster.Emote( "*starts casting a spell*" );
 			
 			if( caster.StunnedTimer == null )
 			{
