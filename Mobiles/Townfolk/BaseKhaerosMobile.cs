@@ -950,27 +950,24 @@ namespace Server.Mobiles
 				{
 					if( female )
 					{
-						namelist = "Julia,Julianne,Marina,Maria,Nadia,Marianne," +
-							"Teresa,Juliette,Vanessa,Angela,Emily,Hailey,Sarah," +
-							"Jessica,Audrey,Sophia,Victoria,Olivia,Gabrielle,Rachel," +
-							"Amanda,Isabella,Nicole,Hannah,Rebecca,Samantha,Jenna," +
-							"Katelyn,Caroline,Ashley,Katherine,Elizabeth,Alexandra," +
-							"Lily,Stephanie,Alyssa,Mia,Jennifer,Andrea,Melanie,Natalie," +
-							"Angelina,Leah,Chloe,Diana,Michelle,Lillian,Molly,Ella," +
-							"Lauren,Brooke,Madeline";
+						namelist = "Alma,Alexis,Andrea,Angela,Anna,Annika,Barbara,Cecilia," +
+							"Clara,Claudia,Diana,Doreen,Doris,Emilia,Emma,Erika,Elisabeth," +
+							"Elise,Flora,Gabriele,Gretchen,Hannah,Heidi,Helena,Irene," +
+							"Isabell,Julia,Katharine,Kristin,Lara,Leah,Lena,Lisa,Livia," +
+							"Marie,Marina,Marlene,Miriam,Monica,Nadia,Nadine,Natalie,Nicole," +
+							"Nina,Olivia,Paula,Rita,Sabrina,Sandra,Sara,Sasha,Simone,Sophia," +
+							"Stephanie,Therese,Thora,Vanessa,Victoria,Yvonne";
 					}
 					
 					else
 					{
-						namelist = "Michael,Matthew,Ethan,Andrew,Daniel,Anthony," +
-							"Christopher,Joseph,William,Alexander,David,Nicholas," +
-							"James,John,Jonathan,Nathan,Samuel,Christian,Noah," +
-							"Dylan,Benjamin,Brandon,Gabriel,Elijah,Kevin,Jack," +
-							"Justin,Austin,Evan,Robert,Thomas,Luke,Mason,Aidan," +
-							"Isaiah,Jordan,Connor,Jason,Cameron,Charles,Aaron,Lucas," +
-							"Owen,Diego,Brian,Adam,Adrian,Kyle,Ian,Nathaniel,Alex," +
-							"Julian,Sean,Carter,Cole,Wyatt,Steven,Timothy,Sebastian," +
-							"Xavier,Seth,Richard";
+						namelist = "Adam,Alexander,Alfred,Anton,Arnold,Benjamin,Christoff,Daniel," +
+                                                        "Dennis,Elias,Eric,Ernest,Felix,Frederick,Gabriel,Garret,Gunnar," +
+                                                        "Harold,Herman,Jakob,Jan,Jonas,Karl,Kasper,Kirk,Konrad,Kurt,Leon," +
+                                                        "Linus,Lukas,Luther,Marcel,Marcus,Martin,Matthias,Max,Michael,Nicholas," +
+                                                        "Oliver,Oskar,Patrick,Paul,Peter,Philipp,Ralph,Richard,Robert,Roland,"+
+                                                        "Ruben,Rudolf,Samuel,Sebastian,Simon,Sven,Thomas,Tristan,Tobias,"+
+                                                        "Victor,Walter,William";
 					}
 					
 					break;
@@ -1037,46 +1034,15 @@ namespace Server.Mobiles
                     }
                 case Nation.Vhalurian:
                     {
-                        String surname1 = "";
-                        String surname2 = "";
+                        surname += " ";
 
-                        //resources, places, people, products, etc.
-                        string list1 = "Wood,Oak,Yew,Ash,Redwood,Metal,Copper,Bronze,Tin,Iron,Steel,Wool,Cotton,Crop,Egg,Chicken,Cattle,Horse,Fur,Hide,Leather,Wheat,Apple,Tree," +
-                            "Orange,Sugar,Sand,Stone,Granite,Coal,Thick,Beast,Scale,Linen,Gold,Silver,Fish,Ale,Wine,Grape,Mountain,River,Plain,Village,Borough,City,North," +
-                            "South,East,West,Road,Street,Forest,Sea,Ocean,Island,Cave,Jungle,Desert,Common,Coin,Noble,King,Queen,Knight,Sword,Spear,Dagger,Bow,Shield," +
-                            "Helm,Plate,Chain,Arrow,Bolt,Chest,Quill,Book,Ink,Hammer,Tongs,Axe,Boot,Knife,Pie,Cloak,Bottle";
+                        string titleslist = "Akers,Anderson,Anson,Beck,Bernard,Brant,Brewer,Burke,Cline,Dennel,Derrick,Engel," +
+                            "Erikson,Falk,Fischer,Frank,Frost,Fuller,Garber,Garner,Hagen,Hall,Hanson,Hart,Hoffman,Holt,Ivarson,Johanson,Keller," +
+                            "Kramer,Krause,Kruger,Lambert,Lang,Lennart,Lowe,Lynch,Mann,Mason,Meyer,Miller,Olson,Powell,Peters,Ragnarson," +
+                            "Rasmus,Reed,Ritter,Samson,Schaefer,Snyder,Sommer,Sorenson,Stark,Wagner,Warner,Weber,Weiss,Westen,Winters,Wolf,Wright,Zimmerman";
 
-                        //actions,feelings,colors,adjectives
-                        string list2 = "Add,Back,Bake,Beg,Bless,Blind,Boast,Boil,Burn,Call,Carry,Cheat,Claim,Chop,Crush,Chew,Dare,Dance,Dust,Drown,Earn,End," +
-                            "Face,Fail,Fix,Fit,Fill,Fire,Fold,Follow,Gather,Gaze,Greet,Guard,Guide,Hand,Hate,Heal,Hope,Hunt,Jump,Kill,Kiss,Knot,Look,Love,Match,Mate," +
-                            "Melt,Mend,Miss,Mourn,Move,Murder,Need,Note,Open,Pack,Pass,Peck,Pick,Please,Preach,Rain,Rhyme,Risk,Rot,Scare,Scold,Scorch,Seal,Share,Stay," +
-                            "Switch,Talk,Tame,Tempt,Thank,Tie,Trade,Trap,Trust,Turn,Watch,Want,Wait,Free,Glee,Good,Bad,Strong,Ache,White,Black,Blue,Green,Yellow,Purple," +
-                            "Red,Bright,Dark,Gray,Big,Little,Small,Long,High,Low,Soft,Hard,Top,Bottom";
-
-                        if (Utility.RandomBool())
-                        {
-                            string[] firsthalf = list1.Split(',');
-                            surname1 += firsthalf[Utility.Random(firsthalf.Length)];
-
-                            string[] secondhalf = list2.Split(',');
-                            surname2 += secondhalf[Utility.Random(secondhalf.Length)];
-
-                            surname2 = surname2.ToLower();
-
-                            surname = " " + surname1 + surname2;
-                        }
-                        else
-                        {
-                            string[] firsthalf = list2.Split(',');
-                            surname1 += firsthalf[Utility.Random(firsthalf.Length)];
-
-                            string[] secondhalf = list1.Split(',');
-                            surname2 += secondhalf[Utility.Random(secondhalf.Length)];
-
-                            surname2 = surname2.ToLower();
-
-                            surname = " " + surname1 + surname2;
-                        }
+                        string[] names = titleslist.Split(',');
+                        surname += names[Utility.Random(names.Length)];
 
                         return surname;
                     }
