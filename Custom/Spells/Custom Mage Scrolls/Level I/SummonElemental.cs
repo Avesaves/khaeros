@@ -131,7 +131,7 @@ namespace Server.Items
                     Caster.Emote("*digs in {0} pocket, but finds no usable gemstones...*", Caster.Female == true ? "her" : "his", Caster.Name);
                     Success = false;
                 }
-               		 else if ( (Caster.Followers + 3) >= Caster.FollowersMax ))
+               		 else if ( (Caster.Followers + 3) >= Caster.FollowersMax )
                		 {
                			 Caster.SendMessage( "You need at least four free follower slots to cast this spell." );
                			 Success = false;
