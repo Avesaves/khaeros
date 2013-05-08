@@ -9,7 +9,7 @@ using Server.Network;
 using Server.ContextMenus;
 using Server.Prompts;
 
-namespace Server.Items
+namespace Server.Gumps.Music
 {
 	public enum Notes
 	{
