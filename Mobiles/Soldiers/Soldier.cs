@@ -1075,9 +1075,9 @@ namespace Server.Mobiles
                 a = (Armament)3;
 
             Surcoat coat = new Surcoat();
-            coat.Name = "A Surcoat of the Rivergate Militia";
-            coat.Hue = 2932;
-            coat.ItemID = 15479;
+            coat.Name = "A Surcoat of the Riverkeep Militia";
+            coat.Hue = 2985;
+            coat.ItemID = 15477;
             m.EquipItem(coat);
 
             switch (a)
@@ -1087,12 +1087,7 @@ namespace Server.Mobiles
                         LeatherBoots boots = new LeatherBoots();
                         boots.Resource = CraftResource.BeastLeather;
                         boots.Hue = 2101;
-
                         m.EquipItem(boots);
-
-                        Beret beret = new Beret();
-                        beret.Hue = 2932;
-                        m.EquipItem(beret);
 
                         StuddedChest sc = new StuddedChest();
                         sc.Resource = CraftResource.BeastLeather;
@@ -1125,43 +1120,44 @@ namespace Server.Mobiles
                         m.EquipItem(vm);
 
                         WoodenShield ws = new WoodenShield();
-                        ws.Resource = CraftResource.Oak;
+                        ws.Resource = CraftResource.Ash;
                         ws.Hue = 0;
                         m.EquipItem(ws);
+
+                        if (m.Female)
+                        {
+                            m.Body = 0x190;
+                            m.Female = false;
+                        m.Name = "Guardsman " + RandomName(Nation.Vhalurian, m.Female) + RandomSurname(Nation.Vhalurian, m.Female);
+                        }
+                        else
+                        { 
+                            m.Body = 0x190;
+                        }
 
                         break;
                     }
                 case Armament.Medium:
                     {
                         ChainChest cc = new ChainChest();
-                        cc.Resource = CraftResource.Bronze;
+                        cc.Resource = CraftResource.Iron;
                         cc.Hue = 2101;
                         m.EquipItem(cc);
 
                         ChainLegs cl = new ChainLegs();
-                        cl.Resource = CraftResource.Bronze;
+                        cl.Resource = CraftResource.Iron;
                         cl.Hue = 2101;
                         m.EquipItem(cl);
 
-                        ChainCoif co = new ChainCoif();
-                        co.Resource = CraftResource.Bronze;
-                        co.Hue = 2101;
-                        m.EquipItem(co);
-
                         RingmailArms ra = new RingmailArms();
-                        ra.Resource = CraftResource.Bronze;
+                        ra.Resource = CraftResource.Iron;
                         ra.Hue = 2101;
                         m.EquipItem(ra);
 
                         RingmailGloves rg = new RingmailGloves();
-                        rg.Resource = CraftResource.Bronze;
+                        rg.Resource = CraftResource.Iron;
                         rg.Hue = 2101;
                         m.EquipItem(rg);
-
-                        VhalurianMetalKiteShield vmks = new VhalurianMetalKiteShield();
-                        vmks.Resource = CraftResource.Bronze;
-                        vmks.Hue = 2101;
-                        m.EquipItem(vmks);
 
                         LeatherBoots boots = new LeatherBoots();
                         boots.Resource = CraftResource.BeastLeather;
@@ -1169,86 +1165,74 @@ namespace Server.Mobiles
 
                         m.EquipItem(boots);
 
+                            Pike sword = new Pike();
+                            sword.Resource = CraftResource.Iron;
+                            m.EquipItem(sword);
+
                         if (m.Female)
                         {
-                            VhalurianGladius sword = new VhalurianGladius();
-                            sword.Resource = CraftResource.Bronze;
-
-                            m.EquipItem(sword);
+                            m.Body = 0x190;
+                            m.Female = false;
+                        m.Name = "Guardsman " + RandomName(Nation.Vhalurian, m.Female) + RandomSurname(Nation.Vhalurian, m.Female);
                         }
-
                         else
-                        {
-                            VhalurianBroadsword sword = new VhalurianBroadsword();
-                            sword.Resource = CraftResource.Bronze;
-
-                            m.EquipItem(sword);
+                        { 
+                            m.Body = 0x190;
                         }
 
                         break;
                     }
                 case Armament.Heavy:
                     {
-                        VhalurianOrnatePlateChest vopc = new VhalurianOrnatePlateChest();
-                        vopc.Resource = CraftResource.Bronze;
+                        TyreanHalfPlateChest vopc = new TyreanHalfPlateChest();
+                        vopc.Resource = CraftResource.Steel;
                         vopc.Hue = 2101;
                         m.EquipItem(vopc);
 
-                        VhalurianOrnatePlateLegs vopl = new VhalurianOrnatePlateLegs();
-                        vopl.Resource = CraftResource.Bronze;
+                        TyreanHalfPlateLegs vopl = new TyreanHalfPlateLegs();
+                        vopl.Resource = CraftResource.Steel;
                         vopl.Hue = 2101;
                         m.EquipItem(vopl);
 
                         VhalurianOrnatePlateGorget vopo = new VhalurianOrnatePlateGorget();
-                        vopo.Resource = CraftResource.Bronze;
+                        vopo.Resource = CraftResource.Steel;
                         vopo.Hue = 2101;
                         m.EquipItem(vopo);
 
                         PlateSabatons ps = new PlateSabatons();
-                        ps.Resource = CraftResource.Bronze;
+                        ps.Resource = CraftResource.Steel;
                         ps.Hue = 2105;
                         m.EquipItem(ps);
 
-                        VhalurianOrnatePlateArms vopa = new VhalurianOrnatePlateArms();
-                        vopa.Resource = CraftResource.Bronze;
+                        TyreanHalfPlateArms vopa = new TyreanHalfPlateArms();
+                        vopa.Resource = CraftResource.Steel;
                         vopa.Hue = 2101;
                         m.EquipItem(vopa);
 
-                        VhalurianOrnatePlateGloves vopg = new VhalurianOrnatePlateGloves();
-                        vopg.Resource = CraftResource.Bronze;
+                        TyreanHalfPlateGloves vopg = new TyreanHalfPlateGloves();
+                        vopg.Resource = CraftResource.Steel;
                         vopg.Hue = 2101;
                         m.EquipItem(vopg);
 
-                            
-                        VhalurianOrnateKiteShield voks = new VhalurianOrnateKiteShield();
-                        voks.Resource = CraftResource.Bronze;
+                        HeaterShield voks = new HeaterShield();
+                        voks.Resource = CraftResource.Steel;
                         voks.Hue = 2102;
                         m.EquipItem(voks);
-                        
-                        m.EquipItem(new Cloak(1133));
+                       
+
+                            VhalurianBastardSword sword = new VhalurianBastardSword();
+                            sword.Resource = CraftResource.Steel;
+                            m.EquipItem(sword);
 
                         if (m.Female)
                         {
-                            VhalurianWarHammer hammer = new VhalurianWarHammer();
-                            hammer.Resource = CraftResource.Bronze;
-                            m.EquipItem(hammer);
-
-                            VhalurianOrnateHelm voh = new VhalurianOrnateHelm();
-                            voh.Resource = CraftResource.Bronze;
-                            voh.Hue = 2102;
-                            m.EquipItem(voh);
+                            m.Body = 0x190;
+                            m.Female = false;
+                        m.Name = "Guardsman " + RandomName(Nation.Vhalurian, m.Female) + RandomSurname(Nation.Vhalurian, m.Female);
                         }
-
                         else
-                        {
-                            VhalurianBastardSword sword = new VhalurianBastardSword();
-                            sword.Resource = CraftResource.Bronze;
-                            m.EquipItem(sword);
-
-                            VhalurianOrnatePlateHelm voph = new VhalurianOrnatePlateHelm();
-                            voph.Resource = CraftResource.Bronze;
-                            voph.Hue = 2102;
-                            m.EquipItem(voph);
+                        { 
+                            m.Body = 0x190;
                         }
 
                         break;
@@ -1259,11 +1243,6 @@ namespace Server.Mobiles
                         boots.Resource = CraftResource.BeastLeather;
                         boots.Hue = 2101;
                         m.EquipItem(boots);
-
-                        LeatherCap cap = new LeatherCap();
-                        cap.Resource = CraftResource.RegularLeather;
-                        cap.Hue = 2101;
-                        m.EquipItem(cap);
 
                         LeatherChest lc = new LeatherChest();
                         lc.Resource = CraftResource.RegularLeather;
@@ -1289,9 +1268,19 @@ namespace Server.Mobiles
                         lg.Hue = 2101;
                         m.EquipItem(lg);
 
-                        VhalurianLongbow bow = new VhalurianLongbow();
+                        TyreanCompositeBow bow = new TyreanCompositeBow();
                         bow.Resource = CraftResource.Yew;
                         m.EquipItem(bow);
+                        if (m.Female)
+                        {
+                            m.Body = 0x190;
+                            m.Female = false;
+                        m.Name = "Guardsman " + RandomName(Nation.Vhalurian, m.Female) + RandomSurname(Nation.Vhalurian, m.Female);
+                        }
+                        else
+                        { 
+                            m.Body = 0x190;
+                        }
 
                         if (m is BaseCreature)
                         {
@@ -1300,6 +1289,7 @@ namespace Server.Mobiles
                             bc.PackItem(new Arrow(Utility.RandomMinMax(10, 20)));
                         }
 
+                       
                         break;
                     }
             }
@@ -1313,8 +1303,8 @@ namespace Server.Mobiles
                 a = (Armament)3;
 
             Surcoat coat = new Surcoat();
-            coat.ItemID = 15476;
-            coat.Name = "A Surcoat of the Imperial Legion";
+            coat.ItemID = 15477;
+            coat.Name = "A Surcoat of the True Church of the North";
             coat.Hue = 2751;
             m.EquipItem(coat);
 
@@ -1322,141 +1312,177 @@ namespace Server.Mobiles
             {
                 case Armament.Light:
                     {
+
+                        ChainCoif co = new ChainCoif();
+                        co.Resource = CraftResource.Iron;
+                        co.Hue = 2101;
+                        m.EquipItem(co);
+
+                        ChainChest cc = new ChainChest();
+                        cc.Resource = CraftResource.Iron;
+                        cc.Hue = 2101;
+                        m.EquipItem(cc);
+
+                        ChainLegs cl = new ChainLegs();
+                        cl.Resource = CraftResource.Iron;
+                        cl.Hue = 2101;
+                        m.EquipItem(cl);
+
+                        RingmailArms ra = new RingmailArms();
+                        ra.Resource = CraftResource.Iron;
+                        ra.Hue = 2101;
+                        m.EquipItem(ra);
+
+                        RingmailGloves rg = new RingmailGloves();
+                        rg.Resource = CraftResource.Iron;
+                        rg.Hue = 2101;
+                        m.EquipItem(rg);
+
                         LeatherBoots boots = new LeatherBoots();
                         boots.Resource = CraftResource.BeastLeather;
-                        boots.Hue = 1899;
+                        boots.Hue = 2101;
+
                         m.EquipItem(boots);
 
-                        WolfMask mask = new WolfMask();
-                        mask.Hue = 1899;
-                        m.EquipItem(mask);
-
-                        StuddedChest sc = new StuddedChest();
-                        sc.Resource = CraftResource.BeastLeather;
-                        sc.Hue = 1899;
-                        m.EquipItem(sc);
-
-                        StuddedLegs sl = new StuddedLegs();
-                        sl.Resource = CraftResource.BeastLeather;
-                        sl.Hue = 1899;
-                        m.EquipItem(sl);
-
-                        StuddedArms sa = new StuddedArms();
-                        sa.Resource = CraftResource.BeastLeather;
-                        sa.Hue = 1899;
-                        m.EquipItem(sa);
-
-                        StuddedGloves sg = new StuddedGloves();
-                        sg.Resource = CraftResource.BeastLeather;
-                        sg.Hue = 1899;
-                        m.EquipItem(sg);
-
-                        StuddedGorget so = new StuddedGorget();
-                        so.Resource = CraftResource.BeastLeather;
-                        so.Hue = 1899;
-                        m.EquipItem(so);
-
-                        VhalurianGladius vg = new VhalurianGladius();
-                        vg.Resource = CraftResource.Iron;
-                        vg.Hue = 0;
-                        m.EquipItem(vg);
-
-                        WoodenShield ws = new WoodenShield();
-                        ws.Resource = CraftResource.Ash;
+                        WoodenKiteShield ws = new WoodenKiteShield();
+                        ws.Resource = CraftResource.Iron;
                         m.EquipItem(ws);
+
+
+                            Maul sword = new Maul();
+                            sword.Resource = CraftResource.Iron;
+                            m.EquipItem(sword);
+
+                        m.EquipItem(new Cloak(1133));
+
+                       if (m.Female)
+                        {
+                            m.Body = 0x190;
+                            m.Female = false;
+                        m.Name = "Brother " + RandomName(Nation.Vhalurian, m.Female) + RandomSurname(Nation.Vhalurian, m.Female);
+                        }
+                        else
+                        { 
+                            m.Body = 0x190;
+                        }
 
                         break;
                     }
                 case Armament.Medium:
                     {
                         ChainChest cc = new ChainChest();
-                        cc.Resource = CraftResource.Bronze;
+                        cc.Resource = CraftResource.Iron;
                         cc.Hue = 1899;
                         m.EquipItem(cc);
 
                         ChainLegs cl = new ChainLegs();
-                        cl.Resource = CraftResource.Bronze;
+                        cl.Resource = CraftResource.Iron;
                         cl.Hue = 1899;
                         m.EquipItem(cl);
 
-                        ChainCoif co = new ChainCoif();
-                        co.Resource = CraftResource.Bronze;
+                        NorseHelm co = new NorseHelm();
+                        co.Resource = CraftResource.Iron;
                         co.Hue = 1899;
                         m.EquipItem(co);
 
-                        RingmailArms ra = new RingmailArms();
-                        ra.Resource = CraftResource.Bronze;
+                        TyreanHalfPlateArms ra = new TyreanHalfPlateArms();
+                        ra.Resource = CraftResource.Iron;
                         ra.Hue = 1899;
                         m.EquipItem(ra);
 
-                        RingmailGloves rg = new RingmailGloves();
-                        rg.Resource = CraftResource.Bronze;
+                        TyreanHalfPlateGloves rg = new TyreanHalfPlateGloves();
+                        rg.Resource = CraftResource.Iron;
                         rg.Hue = 1899;
                         m.EquipItem(rg);
-
-                        TyreanKiteShield vmks = new TyreanKiteShield();
-                        vmks.Resource = CraftResource.Bronze;
-                        vmks.Hue = 1899;
-                        m.EquipItem(vmks);
 
                         LeatherBoots boots = new LeatherBoots();
                         boots.Resource = CraftResource.BeastLeather;
                         boots.Hue = 1899;
                         m.EquipItem(boots);
 
-                        TyreanOrnateAxe axe = new TyreanOrnateAxe();
-                        axe.Resource = CraftResource.Iron;
-                        m.EquipItem(axe);
+                        NorseHelm norse = new NorseHelm();
+                        norse.Resource = CraftResource.Iron;
+                        norse.Hue = 1899;
+                        m.EquipItem(norse);
+
+                        Halberd hally = new Halberd();
+                        hally.Resource = CraftResource.Iron;
+                        m.EquipItem(hally);
+
+                        m.EquipItem(new Cloak(1133));
+
+                       if (m.Female)
+                        {
+                            m.Body = 0x190;
+                            m.Female = false;
+                        m.Name = "Brother " + RandomName(Nation.Vhalurian, m.Female) + RandomSurname(Nation.Vhalurian, m.Female);
+                        }
+                        else
+                        { 
+                            m.Body = 0x190;
+                        }
 
                         break;
                     }
                 case Armament.Heavy:
                     {
                         VhalurianOrnatePlateLegs vopl = new VhalurianOrnatePlateLegs();
-                        vopl.Resource = CraftResource.Bronze;
+                        vopl.Resource = CraftResource.Steel;
                         vopl.Hue = 1899;
                         m.EquipItem(vopl);
 
                         VhalurianOrnatePlateGorget vopo = new VhalurianOrnatePlateGorget();
-                        vopo.Resource = CraftResource.Bronze;
+                        vopo.Resource = CraftResource.Steel;
                         vopo.Hue = 1899;
                         m.EquipItem(vopo);
 
                         PlateSabatons ps = new PlateSabatons();
-                        ps.Resource = CraftResource.Bronze;
+                        ps.Resource = CraftResource.Steel;
                         ps.Hue = 1899;
                         m.EquipItem(ps);
 
-                        VhalurianOrnateKiteShield voks = new VhalurianOrnateKiteShield();
-                        voks.Resource = CraftResource.Bronze;
-                        voks.Hue = 1899;
-                        m.EquipItem(voks);
-
-                        VhalurianWarHammer hammer = new VhalurianWarHammer();
-                        hammer.Resource = CraftResource.Iron;
-                        m.EquipItem(hammer);
-
-                        TyreanHalfPlateChest thpc = new TyreanHalfPlateChest();
-                        thpc.Resource = CraftResource.Bronze;
+                        VhalurianOrnatePlateChest thpc = new VhalurianOrnatePlateChest();
+                        thpc.Resource = CraftResource.Steel;
                         thpc.Hue = 1899;
                         m.EquipItem(thpc);
 
-                        TyreanHalfPlateArms thpa = new TyreanHalfPlateArms();
-                        thpa.Resource = CraftResource.Bronze;
+                        VhalurianOrnatePlateArms thpa = new VhalurianOrnatePlateArms();
+                        thpa.Resource = CraftResource.Steel;
                         thpa.Hue = 1899;
                         m.EquipItem(thpa);
 
-                        TyreanHalfPlateGloves thpg = new TyreanHalfPlateGloves();
-                        thpg.Resource = CraftResource.Bronze;
+                        VhalurianOrnatePlateGloves thpg = new VhalurianOrnatePlateGloves();
+                        thpg.Resource = CraftResource.Steel;
                         thpg.Hue = 1899;
                         m.EquipItem(thpg);
 
                         TyreanWingedHelm twh = new TyreanWingedHelm();
-                        twh.Resource = CraftResource.Bronze;
+                        twh.Resource = CraftResource.Steel;
                         twh.Hue = 1899;
                         m.EquipItem(twh);
 
+                        VhalurianOrnateKiteShield voks = new VhalurianOrnateKiteShield();
+                        voks.Resource = CraftResource.Steel;
+                        voks.Hue = 2102;
+                        m.EquipItem(voks);
+                       
+
+                            TyreanBastardSword sword = new TyreanBastardSword();
+                            sword.Resource = CraftResource.Steel;
+                            m.EquipItem(sword);
+
                         m.EquipItem(new ElegantCloak(2751));
+
+                       if (m.Female)
+                        {
+                            m.Body = 0x190;
+                            m.Female = false;
+                        m.Name = "Brother " + RandomName(Nation.Vhalurian, m.Female) + RandomSurname(Nation.Vhalurian, m.Female);
+                        }
+                        else
+                        { 
+                            m.Body = 0x190;
+                        }
 
                         break;
                     }
@@ -1467,9 +1493,14 @@ namespace Server.Mobiles
                         boots.Hue = 1899;
                         m.EquipItem(boots);
 
-                        Bandana bandana = new Bandana();
+                        ExpensiveHat bandana = new ExpensiveHat();
                         bandana.Hue = 1899;
                         m.EquipItem(bandana);
+
+                        Scarf scarf = new Scarf();
+                        scarf.Hue = 1899;
+                        scarf.Layer = Layer.Neck;
+                        m.EquipItem(scarf);
 
                         LeatherChest lc = new LeatherChest();
                         lc.Resource = CraftResource.RegularLeather;
@@ -1480,8 +1511,8 @@ namespace Server.Mobiles
                         qv.Layer = Layer.Earrings;
                         m.EquipItem(qv);
 
-                        RaggedPants rp = new RaggedPants();
-                        rp.Resource = CraftResource.Cotton;
+                        LeatherLegs rp = new LeatherLegs();
+                        rp.Resource = CraftResource.RegularLeather;
                         rp.Hue = 1899;
                         m.EquipItem(rp);
 
@@ -1490,15 +1521,33 @@ namespace Server.Mobiles
                         lg.Hue = 1899;
                         m.EquipItem(lg);
 
-                        VhalurianLongbow bow = new VhalurianLongbow();
+                        LeatherArms la = new LeatherArms();
+                        lg.Resource = CraftResource.RegularLeather;
+                        lg.Hue = 1899;
+                        m.EquipItem(la);
+
+                        HeavyCrossbow bow = new HeavyCrossbow();
                         bow.Resource = CraftResource.Yew;
                         m.EquipItem(bow);
+
+                       if (m.Female)
+                        {
+                            m.Body = 0x190;
+                            m.Female = false;
+                        m.Name = "Brother " + RandomName(Nation.Vhalurian, m.Female) + RandomSurname(Nation.Vhalurian, m.Female);
+                        }
+                        else
+                        { 
+                            m.Body = 0x190;
+                        }
+
+                        m.EquipItem(new Cloak(1133));
 
                         if (m is BaseCreature)
                         {
                             BaseCreature bc = m as BaseCreature;
                             bc.AI = AIType.AI_Archer;
-                            bc.PackItem(new Arrow(Utility.RandomMinMax(10, 20)));
+                            bc.PackItem(new Bolt(Utility.RandomMinMax(20, 30)));
                         }
 
                         break;
@@ -2516,8 +2565,8 @@ namespace Server.Mobiles
                     {
                         switch (rank)
                         {
-                            case 1: Name = "Private " + BaseName; break;
-                            case 2: Name = "Corporal " + BaseName; break;
+                            case 1: Name = "Guardsman " + BaseName; break;
+                            case 2: Name = "Guardsman " + BaseName; break;
                         }
                         break;
                     }
@@ -2525,8 +2574,8 @@ namespace Server.Mobiles
                     {
                         switch (rank)
                         {
-                            case 1: Name = "Private " + BaseName; break;
-                            case 2: Name = "Corporal " + BaseName; break;
+                            case 1: Name = "Brother " + BaseName; break;
+                            case 2: Name = "Brother " + BaseName; break;
                         }
                         break;
                     }
@@ -2809,8 +2858,8 @@ namespace Server.Mobiles
                 case Nation.Khemetar:   alertMessage = "The Khemetar have been alerted of your deeds!";     break;
                 case Nation.Mhordul:    alertMessage = "The Mhordul have been alerted of your deeds!";      break;
                 case Nation.Tyrean:     alertMessage = "The Tyreans have been alerted of your deeds!";      break;
-                case Nation.Vhalurian:  alertMessage = "The Vhalurians have been alerted of your deeds!";   break;
-                case Nation.Imperial:   alertMessage = "The Empire has been alerted of your deeds!";        break;
+                case Nation.Vhalurian:  alertMessage = "The Northerners have been alerted of your deeds!";   break;
+                case Nation.Imperial:   alertMessage = "The Northerners have been alerted of your deeds!";        break;
                 case Nation.Sovereign:  alertMessage = "The Sovereign have been alerted of your deeds!";    break;
                 case Nation.Society:    alertMessage = "The Society has been alerted of your deeds!";       break;
 				case Nation.Insularii:  alertMessage = "The Insularii has been alerted of your deeds!";       break;
@@ -3943,9 +3992,9 @@ namespace Server.Mobiles
                             {
                                 case 1: { s.SpeechInterval = DateTime.Now; return "Awake the iron!"; }
                                 case 2: { s.SpeechInterval = DateTime.Now; return "Long live Vhaluran!"; }
-                                case 3: { s.SpeechInterval = DateTime.Now; return "Stop right there, criminal scum!"; }
+                                case 3: { s.SpeechInterval = DateTime.Now; return "Halt, criminal scum!"; }
                                 case 4: { s.SpeechInterval = DateTime.Now; return "Charge, my brothers!"; }
-                                case 5: { s.SpeechInterval = DateTime.Now; return "For the Captain!"; }
+                                case 5: { s.SpeechInterval = DateTime.Now; return "For the Father!"; }
                                 case 6: { s.SpeechInterval = DateTime.Now; return "To arms, to arms!"; }
                                 case 7: { s.SpeechInterval = DateTime.Now; return "Halfborn bastard of a Mhordul!"; }
                                 case 8: { s.SpeechInterval = DateTime.Now; return "*snooore... snr-rr-snort?!*"; }
@@ -3960,14 +4009,14 @@ namespace Server.Mobiles
                         {
                             switch (randomAttackPhrase)
                             {
-                                case 1: { s.SpeechInterval = DateTime.Now; return "For the Empire!"; }
-                                case 2: { s.SpeechInterval = DateTime.Now; return "In the name of the Emperor!"; }
-                                case 3: { s.SpeechInterval = DateTime.Now; return "Stop right there, criminal scum!"; }
-                                case 4: { s.SpeechInterval = DateTime.Now; return "For the honor of the Legion!"; }
-                                case 5: { s.SpeechInterval = DateTime.Now; return "Cut them down!"; }
-                                case 6: { s.SpeechInterval = DateTime.Now; return "Into the fray, you dogs!"; }
-                                case 7: { s.SpeechInterval = DateTime.Now; return "Glory for the first man to die!"; }
-                                case 8: { s.SpeechInterval = DateTime.Now; return "Hammer and anvil!"; }
+                                case 1: { s.SpeechInterval = DateTime.Now; return "Idolator!"; }
+                                case 2: { s.SpeechInterval = DateTime.Now; return "In the name of our Father!"; }
+                                case 3: { s.SpeechInterval = DateTime.Now; return "Slay them!"; }
+                                case 4: { s.SpeechInterval = DateTime.Now; return "For the glory of our Mother!"; }
+                                case 5: { s.SpeechInterval = DateTime.Now; return "Run them through!"; }
+                                case 6: { s.SpeechInterval = DateTime.Now; return "Cleanse the ground with their blood!"; }
+                                case 7: { s.SpeechInterval = DateTime.Now; return "To the abyss!"; }
+                                case 8: { s.SpeechInterval = DateTime.Now; return "Come to meet my reaper?"; }
                             }
                         }
 

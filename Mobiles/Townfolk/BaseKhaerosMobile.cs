@@ -1037,8 +1037,8 @@ namespace Server.Mobiles
                         surname += " ";
 
                         string titleslist = "Akers,Anderson,Anson,Beck,Bernard,Brant,Brewer,Burke,Cline,Dennel,Derrick,Engel," +
-                            "Erikson,Falk,Fischer,Frank,Frost,Fuller,Garber,Garner,Hagen,Hall,Hanson,Hart,Hoffman,Holt,Ivarson,Johanson,Keller," +
-                            "Kramer,Krause,Kruger,Lambert,Lang,Lennart,Lowe,Lynch,Mann,Mason,Meyer,Miller,Olson,Powell,Peters,Ragnarson," +
+                            "Ericson,Falk,Fischer,Frank,Frost,Fuller,Garber,Garner,Hagen,Hall,Hanson,Hart,Hoffman,Holt,Ivarson,Janson,Keller," +
+                            "Kramer,Krause,Kruger,Lambert,Lang,Lennart,Lowe,Lynch,Mann,Mason,Meyer,Miller,Olson,Powell,Peters,Renner," +
                             "Rasmus,Reed,Ritter,Samson,Schaefer,Snyder,Sommer,Sorenson,Stark,Wagner,Warner,Weber,Weiss,Westen,Winters,Wolf,Wright,Zimmerman";
 
                         string[] names = titleslist.Split(',');
