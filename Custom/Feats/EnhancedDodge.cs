@@ -11,7 +11,7 @@ namespace Server.FeatInfo
 	{
 		public override string Name{ get{ return "Enhanced Dodge"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.EnhancedDodge; } }
-		public override FeatCost CostLevel{ get{ return FeatCost.Medium; } }
+		public override FeatCost CostLevel{ get{ return FeatCost.Low; } }
 		
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
@@ -19,10 +19,9 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Dodge }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.PureDodge }; } }
 		
-		public override string FirstDescription{ get{ return "You are extremely good at dodging blows. [+5% all physical resists 5% chance " +
-					"to completely dodge an attack]"; } }
-		public override string SecondDescription{ get{ return "[+10% all physical resists 10% chance to completely dodge an attack]"; } }
-		public override string ThirdDescription{ get{ return "[+15% all physical resists 15% chance to completely dodge an attack]"; } }
+		public override string FirstDescription{ get{ return "You are extremely good at dodging blows. [+5% chance to completely dodge an attack]"; } }
+		public override string SecondDescription{ get{ return "[+10% chance to completely dodge an attack]"; } }
+		public override string ThirdDescription{ get{ return "[+15% chance to completely dodge an attack]"; } }
 
 		public override string FirstCommand{ get{ return "None"; } }
 		public override string SecondCommand{ get{ return "None"; } }
