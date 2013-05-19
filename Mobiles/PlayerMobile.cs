@@ -3663,7 +3663,7 @@ namespace Server.Mobiles
 					return minvalue;
 				
 				if( this.Feats.GetFeatLevel(FeatList.EnhancedDodge) > 0 )
-					minvalue += this.Feats.GetFeatLevel(FeatList.EnhancedDodge) * 5;
+					minvalue += this.Feats.GetFeatLevel(FeatList.EnhancedDodge) * 1;
 				
 				if( PureDodge )
 				{
