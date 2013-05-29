@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.BowMastery }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.AimedShot }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "You know where to shoot your arrows so that they really " +
 					"hurt. [7 bonus damage]"; } }

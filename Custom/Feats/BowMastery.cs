@@ -18,7 +18,7 @@ namespace Server.FeatInfo
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Archery }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.FarShot, FeatList.SwiftShot, FeatList.HailOfArrows, 
-				FeatList.TravelingShot, FeatList.CripplingShot }; } }
+				FeatList.TravelingShot, FeatList.CripplingShot, FeatList.CriticalShot }; } }
 		
 		public override string FirstDescription{ get{ return 	"Dedicating yourself to archery you have now become a " +
 					"master with the bow. [+5% increased hit chance with bows]"; } }
