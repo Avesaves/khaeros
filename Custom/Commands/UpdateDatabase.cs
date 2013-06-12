@@ -45,11 +45,8 @@ namespace Server.Commands
 		
 		public static void Initialize()
 		{
-            if (Misc.StatusPage.LiveServer)
-            {
-                StartFTPThread(null);
-                LoadCreatureFiles(new PlayerMobile());
-            }
+            if( Misc.StatusPage.LiveServer )
+                StartFTPThread( null );
 		}
 
         public static void StartFTPThread( Mobile m )
