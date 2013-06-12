@@ -14,11 +14,6 @@ namespace Server.Commands
             CommandSystem.Register( "UpdateDataBase", AccessLevel.GameMaster, new CommandEventHandler( UpdateDataBase_OnCommand ) );
         }
 
-        public static void Update()
-        {
-            WikiDataBase.LoadCreatureFiles(new PlayerMobile());
-        }
-
         [Usage( "UpdateDataBase" )]
         [Description( "Loads database info." )]
         private static void UpdateDataBase_OnCommand( CommandEventArgs e )
