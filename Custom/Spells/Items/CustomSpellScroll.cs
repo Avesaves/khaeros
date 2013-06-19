@@ -134,7 +134,7 @@ namespace Server.Items
 				{
 					book.Spells.Add( DupeCustomMageSpell(Spell) );
 					from.SendMessage( "You successfully add the spell into the book." );
-					CustomSpellScroll.delete;
+					CustomSpellScroll.Delete();
 				}
 			}
 				
