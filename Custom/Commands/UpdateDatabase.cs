@@ -48,7 +48,7 @@ namespace Server.Commands
             if (Misc.StatusPage.LiveServer)
             {
                 StartFTPThread(null);
-                LoadCreatureFiles(new PlayerMobile());
+                LoadCreatureFiles();
             }
 		}
 
@@ -197,7 +197,25 @@ namespace Server.Commands
                 trd = null;
             }
 		}
-		
+
+        //loading all creature files on the wiki
+        public static void LoadCreatureFiles()
+        {
+            try
+            {
+                string[] creatureFilePaths = Directory.GetFiles(@"C:\Mobs\");
+
+                for (int i = 0; i < creatureFilePaths.Length; i++)
+                    ReadCreatureFile(creatureFilePaths[i]);
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                trd = null;
+            }
+        }
+
 		//generic method to read files
 		public static string ReadFile( string address )
 		{
