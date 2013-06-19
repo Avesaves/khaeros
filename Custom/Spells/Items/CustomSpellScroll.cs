@@ -120,7 +120,7 @@ namespace Server.Items
 		
 		public override bool OnDroppedOnto( Mobile from, Item target )
 		{
-			private CustomSpellScroll m_Scroll
+			private CustomSpellScroll m_Scroll;
 			if( target != null && !target.Deleted && target is CustomSpellBook && target.IsChildOf(from) )
 			{
 				CustomSpellBook book = target as CustomSpellBook;
