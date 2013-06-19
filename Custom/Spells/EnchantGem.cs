@@ -5,6 +5,8 @@ using Server.Items;
 using Server.Commands;
 using Server.Targeting;
 using Server.Network;
+using Server.Misc;
+using Server.Engines.XmlSpawner2;
 
 namespace Server.Misc
 {
@@ -55,12 +57,12 @@ namespace Server.Misc
                     Caster.RawMana -= 10;
                 }
 
-                else if (TargetItem is Sapphire && Caster.ExtraCPRewards > 9999 )
+                else if (TargetItem is Sapphire && Caster.BPs > 0 )
                 {
                     GlowingSapphire glow4 = new GlowingSapphire();
 					TargetItem.Delete();
                     pack.DropItem( glow4 );
-                    Caster.ExtraCPRewards -= 10000;
+                    Caster.BPs -= 1;
                 }
 
                 else if (TargetItem is Cinnabar)
@@ -147,7 +149,7 @@ namespace Server.Misc
 		
 		[Usage( "EnchantGem" )]
         [Description( "Casts Enchant Gem." )]
-        private static void CureFamine_OnCommand( CommandEventArgs e )
+        private static void EnchantGem_OnCommand( CommandEventArgs e )
         {
         	if( e.Mobile != null )
         		SpellInitiator( new EnchantGem( e.Mobile, GetSpellPower( e.ArgString, ((IKhaerosMobile)e.Mobile).Feats.GetFeatLevel(FeatList.Magery) ) ) );
