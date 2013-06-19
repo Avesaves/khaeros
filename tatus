@@ -1,0 +1,137 @@
+[1mdiff --git a/Custom/Gumps/NPCCustomizationGump.cs b/Custom/Gumps/NPCCustomizationGump.cs[m
+[1mindex 18dc8a7..195920f 100644[m
+[1m--- a/Custom/Gumps/NPCCustomizationGump.cs[m
+[1m+++ b/Custom/Gumps/NPCCustomizationGump.cs[m
+[36m@@ -1297,20 +1297,20 @@[m [mpublic static void RacialInfo( Nation nation )[m
+ 				{[m
+ 					hairhue1 = 2801;[m
+ 					hairhue2 = 2411;[m
+[31m-					hairhue3 = 1140;[m
+[32m+[m					[32mhairhue3 = 1141;[m[41m[m
+ 					hairhue4 = 1109;[m
+[31m-					hairhue5 = 2990;[m
+[32m+[m					[32mhairhue5 = 2799;[m[41m[m
+ 					hairhue6 = 2406;[m
+ 					hairhue7 = 1175;[m
+ 					hairhue8 = 1881;[m
+[31m-					hairhue9 = 1989;[m
+[32m+[m					[32mhairhue9 = 1022;[m[41m[m
+ 					hairhue10 = 2992;[m
+ 					[m
+[31m-					skinhue1 = 1133;[m
+[31m-					skinhue2 = 1132;[m
+[31m-					skinhue3 = 1131;[m
+[31m-					skinhue4 = 1130;[m
+[31m-					skinhue5 = 1190;[m
+[32m+[m					[32mskinhue1 = 1005;[m[41m[m
+[32m+[m					[32mskinhue2 = 1850;[m[41m[m
+[32m+[m					[32mskinhue3 = 1812;[m[41m[m
+[32m+[m					[32mskinhue4 = 1849;[m[41m[m
+[32m+[m					[32mskinhue5 = 1815;[m[41m[m
+ 					skinhue6 = 1148;[m
+ 					skinhue7 = 1147;[m
+ 					skinhue8 = 1146;[m
+[36m@@ -1351,7 +1351,7 @@[m [mpublic static void RacialInfo( Nation nation )[m
+ 					hairhue2 = 1147;[m
+ 					hairhue3 = 1058;[m
+ 					hairhue4 = 1109;[m
+[31m-					hairhue5 = 1127;[m
+[32m+[m					[32mhairhue5 = 2418;[m[41m[m
+ 					hairhue6 = 1149;[m
+ 					hairhue7 = 1145;[m
+ 					hairhue8 = 1103;[m
+[36m@@ -1360,14 +1360,14 @@[m [mpublic static void RacialInfo( Nation nation )[m
+ 					[m
+ 					skinhue1 = 1018;[m
+ 					skinhue2 = 1025;[m
+[31m-					skinhue3 = 1030;[m
+[31m-					skinhue4 = 1037;[m
+[32m+[m					[32mskinhue3 = 1851;[m[41m[m
+[32m+[m					[32mskinhue4 = 1145;[m[41m[m
+ 					skinhue5 = 1005;[m
+ 					skinhue6 = 1012;[m
+ 					skinhue7 = 1019;[m
+ 					skinhue8 = 1026;[m
+ 					skinhue9 = 1031;[m
+[31m-					skinhue10 = 1038;[m
+[32m+[m					[32mskinhue10 = 1065;[m[41m[m
+ 					break;[m
+ 				}[m
+ 					[m
+[36m@@ -1402,7 +1402,7 @@[m [mpublic static void RacialInfo( Nation nation )[m
+ 					hairhue1 = 2107;[m
+ 					hairhue2 = 1149;[m
+ 					hairhue3 = 2413;[m
+[31m-					hairhue4 = 2418;[m
+[32m+[m					[32mhairhue4 = 1022;[m[41m[m
+ 					hairhue5 = 2312;[m
+ 					hairhue6 = 1627;[m
+ 					hairhue7 = 1830;[m
+[36m@@ -1412,19 +1412,21 @@[m [mpublic static void RacialInfo( Nation nation )[m
+ 					[m
+ 					skinhue1 = 1062;[m
+ 					skinhue2 = 1061;[m
+[31m-					skinhue3 = 1063;[m
+[32m+[m					[32mskinhue3 = 1849;[m[41m[m
+ 					skinhue4 = 1064;[m
+ 					skinhue5 = 1065;[m
+ 					skinhue6 = 1066;[m
+[31m-					skinhue7 = 1023;[m
+[31m-					skinhue8 = 1030;[m
+[32m+[m					[32mskinhue7 = 1019;[m[41m[m
+[32m+[m					[32mskinhue8 = 1003;[m[41m[m
+ 					skinhue9 = 1037;[m
+[31m-					skinhue10 = 1045;[m
+[32m+[m					[32mskinhue10 = 1144;[m[41m[m
+ 					break;[m
+ 				}[m
+ 					[m
+ 				case Nation.Mhordul:[m
+ 				{[m
+[32m+[m[41m					[m
+[32m+[m[41m					[m
+ 					hairhue1 = 1149;[m
+ 					hairhue2 = 1022;[m
+ 					hairhue3 = 1141;[m
+[36m@@ -1434,18 +1436,20 @@[m [mpublic static void RacialInfo( Nation nation )[m
+ 					hairhue7 = 2799;[m
+ 					hairhue8 = 2801;[m
+ 					hairhue9 = 2992;[m
+[31m-					hairhue10 = 1108;[m
+[32m+[m					[32mhairhue10 = 2418;[m[41m[m
+ 					[m
+[31m-					skinhue1 = 2419;[m
+[31m-					skinhue2 = 2420;[m
+[31m-					skinhue3 = 2421;[m
+[31m-					skinhue4 = 1045;[m
+[32m+[m					[32mskinhue1 = 1849;[m[41m[m
+[32m+[m					[32mskinhue2 = 1145;[m[41m[m
+[32m+[m					[32mskinhue3 = 1062;[m[41m[m
+[32m+[m					[32mskinhue4 = 1147;[m[41m[m
+ 					skinhue5 = 2426;[m
+[31m-					skinhue6 = 1037;[m
+[31m-					skinhue7 = 2419;[m
+[32m+[m					[32mskinhue6 = 1017;[m[41m[m
+[32m+[m					[32mskinhue7 = 1011;[m[41m[m
+ 					skinhue8 = 2425;[m
+[31m-					skinhue9 = 2107;[m
+[32m+[m					[32mskinhue9 = 1813;[m[41m[m
+ 					skinhue10 = 1072;[m
+[32m+[m[41m					[m
+[32m+[m[41m[m
+ 					break;[m
+ 				}[m
+ 			}[m
+[1mdiff --git a/Misc/ServerList.cs b/Misc/ServerList.cs[m
+[1mindex 0179ae6..0515815 100644[m
+[1m--- a/Misc/ServerList.cs[m
+[1m+++ b/Misc/ServerList.cs[m
+[36m@@ -37,7 +37,7 @@[m [mpublic class ServerList[m
+ 		 * firewalls) or specific IP adddresses you can do so by modifying the file SocketOptions.cs found in this directory.[m
+ 		 */[m
+ [m
+[31m-		public static readonly string Address = "168.62.176.181";[m
+[32m+[m		[32mpublic static readonly string Address = "168.61.43.160";[m
+ 		public static readonly string ServerName = "Khaeros";[m
+ [m
+ 		public static readonly bool AutoDetect = true;[m
