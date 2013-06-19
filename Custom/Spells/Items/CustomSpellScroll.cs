@@ -133,7 +133,8 @@ namespace Server.Items
 				else
 				{
 					book.Spells.Add( DupeCustomMageSpell(Spell) );
-					from.SendMessage( "You successfully copy the spell onto the book." );
+					from.SendMessage( "You successfully add the spell into the book." );
+					CustomSpellScroll.delete;
 				}
 			}
 				
