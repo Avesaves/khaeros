@@ -21,7 +21,7 @@ namespace Server.Misc
 		
 		public override SkillName GetSkillName{ get{ return SkillName.Magery; } }
 		
-		public EnchantGem( Mobile caster, int featLevel ) : base( caster, featLevel )
+		public EnchantGem( Mobile Caster, int featLevel ) : base( Caster, featLevel )
 		{
 		}
 		
