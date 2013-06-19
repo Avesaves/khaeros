@@ -7,7 +7,7 @@ using Server.Commands;
 
 namespace Server.Items
 {
-	public class Sapphire : Item, IGem
+	public class GlowingCitrine : Item, IGem
 	{
 		public override double DefaultWeight
 		{
@@ -15,19 +15,19 @@ namespace Server.Items
 		}
 
 		[Constructable]
-		public Sapphire() : this( 1 )
+		public GlowingCitrine() : this( 1 )
 		{
 		}
 
 		[Constructable]
-		public Sapphire( int amount ) : base( 0xF19 )
+		public GlowingCitrine( int amount ) : base( 0xF15 )
 		{
 			Stackable = true;
 			Amount = amount;
-
+            Name = "Glowing Citrine";
 		}
 
-		public Sapphire( Serial serial ) : base( serial )
+		public GlowingCitrine( Serial serial ) : base( serial )
 		{
 		}
 
@@ -45,7 +45,7 @@ namespace Server.Items
 				
 				if( m.Feats.GetFeatLevel(FeatList.GemEmbedding) > 0 )
 				{
-					m.Target = new LevelSystemCommands.EmbedTarget( m, "Sapphire", this );
+					m.Target = new LevelSystemCommands.EmbedTarget( m, "GlowingCitrine", this );
 				}
 			}
 		}
