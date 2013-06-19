@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.CrossbowMastery }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.AimedShot }; } }
 		
 		public override string FirstDescription{ get{ return "This skill grants the player the ability to sacrifice firing " +
 					"speed for increased accuracy and damage. [-3% speed + 5% damage +5% hit chance]"; } }

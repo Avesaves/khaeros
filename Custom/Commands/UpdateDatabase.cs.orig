@@ -40,12 +40,17 @@ namespace Server.Commands
 		
 		public static void Initialize()
 		{
+<<<<<<< HEAD
             if (Misc.StatusPage.LiveServer)
             {
                 StartFTPThread(null);
                 LoadCreatureFiles();
-            }		
-        }
+            }
+=======
+            if( Misc.StatusPage.LiveServer )
+                StartFTPThread( null );
+>>>>>>> 3fb392475ef784142ca5178a463ccf6be7bb3974
+		}
 
         public static void StartFTPThread( Mobile m )
         {

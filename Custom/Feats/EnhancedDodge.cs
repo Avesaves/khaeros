@@ -19,9 +19,15 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Dodge }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.PureDodge }; } }
 		
+<<<<<<< HEAD
 		public override string FirstDescription{ get{ return "You are extremely good at dodging blows. [+5% chance to completely dodge an attack]"; } }
 		public override string SecondDescription{ get{ return "[+10% chance to completely dodge an attack]"; } }
 		public override string ThirdDescription{ get{ return "[+15% chance to completely dodge an attack]"; } }
+=======
+		public override string FirstDescription{ get{ return "You are extremely good at dodging blows. [+7% chance to completely dodge an attack]"; } }
+		public override string SecondDescription{ get{ return "[+15% chance to completely dodge an attack]"; } }
+		public override string ThirdDescription{ get{ return "[+20% chance to completely dodge an attack]"; } }
+>>>>>>> master
 
 		public override string FirstCommand{ get{ return "None"; } }
 		public override string SecondCommand{ get{ return "None"; } }

@@ -19,7 +19,7 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.BowMastery }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.QuickTravelingShot }; } }
 		
-		public override string FirstDescription{ get{ return "You are able to fire off your bow or crossbow while on the move. [50% speed penalty]"; } }
+		public override string FirstDescription{ get{ return "You are able to fire off your bow while on the move. [50% speed penalty]"; } }
 		public override string SecondDescription{ get{ return "[40% speed penalty]"; } }
 		public override string ThirdDescription{ get{ return "[30% speed penalty]"; } }
 

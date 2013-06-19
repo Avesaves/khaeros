@@ -10173,7 +10173,7 @@ namespace Server.Mobiles
 
         	if( (((IKhaerosMobile)mob).Feats.GetFeatLevel(FeatList.EnhancedDodge) + offset) > 0 )
             {
-        		int chancetoevade = (((IKhaerosMobile)mob).Feats.GetFeatLevel(FeatList.EnhancedDodge) * 5) + offset;
+        		int chancetoevade = (((IKhaerosMobile)mob).Feats.GetFeatLevel(FeatList.EnhancedDodge) * 7) + offset;
                 int evaderoll = Utility.RandomMinMax( 1, 100 );
 
                 if( chancetoevade >= evaderoll )

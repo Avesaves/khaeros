@@ -11,13 +11,13 @@ namespace Server.FeatInfo
 	{
 		public override string Name{ get{ return "Crossbow Mastery"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.CrossbowMastery; } }
-		public override FeatCost CostLevel{ get{ return FeatCost.High; } }
+		public override FeatCost CostLevel{ get{ return FeatCost.Medium; } }
 		
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Archery }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.FocusedShot, FeatList.CriticalShot }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.FocusedShot, FeatList.CripplingShot }; } }
 		
 		public override string FirstDescription{ get{ return "Dedicating yourself to archery you have now become a master " +
 					"with the crossbow. [+5% increased hit chance with crossbows]"; } }
