@@ -7,10 +7,7 @@ using Server.Commands;
 
 namespace Server.Items
 {
-	public interface IGem
-	{
-	}
-	
+
 	public class GlowingAmber : Item, IGem
 	{
 		public override double DefaultWeight
