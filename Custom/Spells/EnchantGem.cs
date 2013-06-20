@@ -21,7 +21,7 @@ namespace Server.Misc
 		
 		public override SkillName GetSkillName{ get{ return SkillName.Magery; } }
 		
-		public EnchantGem( PlayerMobile Caster, int featLevel ) : base( Caster, featLevel )
+		public EnchantGem( Mobile Caster, int featLevel ) : base( Caster, featLevel )
 		{
 		}
 		
@@ -39,6 +39,7 @@ namespace Server.Misc
 					TargetItem.Delete();
                     pack.DropItem( glow1 );
                     Caster.RawInt -= 10;
+                    Caster.SendMessage ("You feel a little more dull...");
                 }
 
                 else if( TargetItem is Citrine )
@@ -46,7 +47,8 @@ namespace Server.Misc
                     GlowingCitrine glow2 = new GlowingCitrine();
 					TargetItem.Delete();
                     pack.DropItem( glow2 );
-                    Caster.Age += 2;
+                    Caster.SendMessage ("You feel a little older.");
+
                 }
 
                 else if (TargetItem is Diamond && Caster.RawMana > 19 )
@@ -55,6 +57,7 @@ namespace Server.Misc
 					TargetItem.Delete();
                     pack.DropItem( glow3 );
                     Caster.RawMana -= 10;
+                    Caster.SendMessage ("You feel some of your power drain away.");
                 }
 
                 else if (TargetItem is Sapphire && Caster.TithingPoints > 0 )
@@ -63,6 +66,7 @@ namespace Server.Misc
 					TargetItem.Delete();
                     pack.DropItem( glow4 );
                     Caster.TithingPoints -= 1;
+                    Caster.SendMessage ("You feel strange.");
                 }
 
                 else if (TargetItem is Cinnabar)
@@ -72,6 +76,7 @@ namespace Server.Misc
                         GlowingCinnabar glow5 = new GlowingCinnabar();
                         TargetItem.Delete();
                         pack.DropItem(glow5);
+                        Caster.SendMessage ("The stone seems to consume the dead flesh...");
                         Success = true;
                         return;
                     }
@@ -86,6 +91,7 @@ namespace Server.Misc
                         GlowingStarSapphire glow6 = new GlowingStarSapphire();
                         TargetItem.Delete();
                         pack.DropItem(glow6);
+                        Caster.SendMessage ("The stone seems to consume the metal...");
                         Success = true;
                         return;
                     }
@@ -101,6 +107,7 @@ namespace Server.Misc
                     GlowingEmerald glow7 = new GlowingEmerald();
                     TargetItem.Delete();
                     pack.DropItem(glow7);
+                    Caster.SendMessage ("You feel a little less dextrous.");
                     Caster.RawDex -= 10;
                 }
 
@@ -110,6 +117,7 @@ namespace Server.Misc
                     TargetItem.Delete();
                     pack.DropItem(glow8);
                     Caster.RawHits -= 10;
+                    Caster.SendMessage ("You feel unhealthy.");
                 }
 
                 else if (TargetItem is Amber && Caster.RawStr > 19)
@@ -118,6 +126,7 @@ namespace Server.Misc
                     TargetItem.Delete();
                     pack.DropItem(glow9);
                     Caster.RawStr -= 10;
+                    Caster.SendMessage ("You feel weaker.");
                 }
 
                 else if (TargetItem is Tourmaline && Caster.RawStam > 19)
@@ -126,6 +135,7 @@ namespace Server.Misc
                     TargetItem.Delete();
                     pack.DropItem(glow10);
                     Caster.RawStam -= 10;
+                    Caster.SendMessage ("You feel more out of shape.");
                 }
 
                 else
