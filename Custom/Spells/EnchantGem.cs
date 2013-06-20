@@ -12,9 +12,8 @@ namespace Server.Misc
 {
 	public class EnchantGem : BaseCustomSpell
 	{
-        public override bool CustomScripted { get { return true; } }
+
 public override bool IsMageSpell { get { return true; } }
-        public override Type ScrollType { get { return typeof( OrigamiPaper ); } }
 public override bool CanTargetSelf { get { return false; } }
         public override bool AffectsItems { get { return true; } }
 public override bool AffectsMobiles { get { return false; } }
@@ -22,7 +21,7 @@ public override bool AffectsMobiles { get { return false; } }
         public override bool UsesTarget { get { return true; } }
 public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
 
-        public override int ManaCost { get { return 10; } }
+        public override int TotalCost { get { return 10; } }
 
 		
 		public override SkillName GetSkillName{ get{ return SkillName.Magery; } }
