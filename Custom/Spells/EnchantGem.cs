@@ -21,7 +21,7 @@ namespace Server.Misc
 		
 		public override SkillName GetSkillName{ get{ return SkillName.Magery; } }
 		
-		public EnchantGem( Mobile Caster, int featLevel ) : base( Caster, featLevel )
+		public EnchantGem( PlayerMobile Caster, int featLevel ) : base( Caster, featLevel )
 		{
 		}
 		
@@ -57,12 +57,12 @@ namespace Server.Misc
                     Caster.RawMana -= 10;
                 }
 
-                else if (TargetItem is Sapphire && Caster.BPs > 0 )
+                else if (TargetItem is Sapphire && Caster.TithingPoints > 0 )
                 {
                     GlowingSapphire glow4 = new GlowingSapphire();
 					TargetItem.Delete();
                     pack.DropItem( glow4 );
-                    Caster.BPs -= 1;
+                    Caster.TithingPoints -= 1;
                 }
 
                 else if (TargetItem is Cinnabar)
