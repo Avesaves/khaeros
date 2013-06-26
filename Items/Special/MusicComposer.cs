@@ -156,48 +156,55 @@ namespace Server.Gumps.Music
 
 			protected override void OnTick()
 			{
-				if(m_Sheet==null)
-				{
-					Stop();
-				}
-				else if(m_Mobile==null || m_Mobile.Backpack==null || m_Mobile.NetState==null || !m_Mobile.Alive)
-				{
-					Stop();
-				}
-				else if(!m_Mobile.Backpack.Items.Contains(m_Sheet) || (m_Mus>-1 && !m_Mobile.Backpack.Items.Contains(m_Sheet.m_Instrument)))
-				{
-					Stop();
-				}
-				else
-				{
-					MusicSheet.SheetPage sheet = m_Sheet.Pages[m_Page];
-					uint tocheck = sheet.GetColumn(m_Column);
-					foreach(uint val in m_Values)
+				try {
+					
+					if(m_Sheet==null)
 					{
-						if((tocheck & val) != 0)
+						Stop();
+					}
+					else if(m_Mobile==null || m_Mobile.Backpack==null || m_Mobile.NetState==null || !m_Mobile.Alive)
+					{
+						Stop();
+					}
+					else if(!m_Mobile.Backpack.Items.Contains(m_Sheet) || (m_Mus>-1 && !m_Mobile.Backpack.Items.Contains(m_Sheet.m_Instrument)))
+					{
+						Stop();
+					}
+					else
+					{
+						MusicSheet.SheetPage sheet = m_Sheet.Pages[m_Page];
+						uint tocheck = sheet.GetColumn(m_Column);
+						foreach(uint val in m_Values)
 						{
-							string name = ((NoteFlag)val).ToString();
-							if(m_Mus>-1)
-								m_Mobile.PlaySound(m_Mus+((int)Enum.Parse(typeof(Notes), name)));
+							if((tocheck & val) != 0)
+							{
+								string name = ((NoteFlag)val).ToString();
+								if(m_Mus>-1)
+									m_Mobile.PlaySound(m_Mus+((int)Enum.Parse(typeof(Notes), name)));
+							}
+						}
+						m_Column++;
+						if(m_Column>=sheet.Count)
+						{
+							m_Page++;
+							m_Column=0;
+						}
+						if(m_Page>=m_Sheet.Pages.Count)
+						{
+							if(!m_Sheet.Repeat)
+							{
+								m_Mobile.CloseGump(typeof(MusicComposer));
+								Stop();
+								m_Mobile.SendGump(new MusicComposer(m_Mobile, m_Sheet, 1));
+							}
+							else
+								m_Page=0;
 						}
 					}
-					m_Column++;
-					if(m_Column>=sheet.Count)
-					{
-						m_Page++;
-						m_Column=0;
-					}
-					if(m_Page>=m_Sheet.Pages.Count)
-					{
-						if(!m_Sheet.Repeat)
-						{
-							m_Mobile.CloseGump(typeof(MusicComposer));
-							Stop();
-							m_Mobile.SendGump(new MusicComposer(m_Mobile, m_Sheet, 1));
-						}
-						else
-							m_Page=0;
-					}
+				}
+				catch (Exception e)
+				{
+					Stop();
 				}
 			}
 		}
