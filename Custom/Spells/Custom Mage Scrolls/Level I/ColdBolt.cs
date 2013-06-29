@@ -182,15 +182,15 @@ namespace Server.Items
                     return;
 
                     targ.SolidHueOverride = 2975;
-                    targ.Frozen = true;
+                    
 
                     if ( targ is PlayerMobile )
                         AOS.Damage(targ, Caster, 10, false, 0, 0, 100, 0, 0, 0, 0, 0, false);
                         //phys fire cold pois energy, blunt slash pierce 
                     else
                         AOS.Damage(targ, Caster, 20, false, 0, 0, 100, 0, 0, 0, 0, 0, false);
-                    
-                    
+
+                    targ.Frozen = true;
                     targ.Emote("*Freezes in place!*");
                     
 
@@ -256,8 +256,10 @@ namespace Server.Items
         private void Flare6()
                     {
                         Mobile targ = TargetMobile as Mobile;
-                 targ.Frozen = false;
                  targ.SolidHueOverride = -1;
+            
+                 targ.Frozen = false;
+                 
                  targ.Emote("*Warmth returns to them!*");
 
 
