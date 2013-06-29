@@ -118,7 +118,7 @@ namespace Server.Items
 
                     Caster.PlaySound(521);
 
-                    Caster.MovingParticles(targ, 0x36FE, 7, 0, false, true, 2975, 0, 3043, 4043, 0x211, 0x100);
+                    Caster.MovingParticles(targ, 0x36FE, 7, 0, false, true, 2976, 0, 3043, 4043, 0x211, 0x100);
                     
                     Caster.Emote("*Fires a bolt of pure cold!*");
                     Timer.DelayCall(TimeSpan.FromSeconds(2), new TimerCallback(Flare1));
@@ -145,7 +145,8 @@ namespace Server.Items
                     else
                         AOS.Damage(targ, Caster, 20, false, 0, 0, 100, 0, 0, 0, 0, 0, false);
                     targ.Emote("*Grows colder...*");
-                    targ.FixedParticles(0x375A, 244, 25, 9950, 2975, 0, EffectLayer.Waist);
+                    targ.FixedParticles(0x375A, 244, 25, 9950, 2976, 0, EffectLayer.Waist);
+                    targ.SolidHueOverride = 2972;
 
                 }	
                         	private void Flare2()
@@ -164,7 +165,7 @@ namespace Server.Items
                     else
                         AOS.Damage(targ, Caster, 20, false, 0, 0, 100, 0, 0, 0, 0, 0, false);
                     targ.Emote("*Grows colder...*");
-                    targ.FixedParticles(0x375A, 244, 25, 9950, 2975, 0, EffectLayer.Waist);
+                    targ.FixedParticles(0x375A, 244, 25, 9950, 2976, 0, EffectLayer.Waist);
                     
 
                     return;
@@ -184,9 +185,10 @@ namespace Server.Items
                         //phys fire cold pois energy, blunt slash pierce 
                     else
                         AOS.Damage(targ, Caster, 20, false, 0, 0, 100, 0, 0, 0, 0, 0, false);
-                    targ.Emote("*Freezes in place!*");
+                    
                     targ.Frozen = true;
-                    targ.SolidHueOverride = 2975; 
+                    targ.SolidHueOverride = 2975;
+                    targ.Emote("*Freezes in place!*");
                     
 
                     return;
@@ -214,7 +216,7 @@ namespace Server.Items
                         //phys fire cold pois energy, blunt slash pierce 
                     else
                         AOS.Damage(targ, Caster, 20, false, 0, 0, 100, 0, 0, 0, 0, 0, false);
-                    targ.FixedParticles(0x375A, 244, 25, 9950, 2975, 0, EffectLayer.Waist);
+                    targ.FixedParticles(0x375A, 244, 25, 9950, 2976, 0, EffectLayer.Waist);
  
                     
 
@@ -252,7 +254,8 @@ namespace Server.Items
                     {
                         Mobile targ = TargetMobile as Mobile;
                  targ.Frozen = false;
-                 targ.SolidHueOverride = -1;    
+                 targ.SolidHueOverride = -1;
+                 targ.Emote("*Warmth returns to them!*");
 
 
 
