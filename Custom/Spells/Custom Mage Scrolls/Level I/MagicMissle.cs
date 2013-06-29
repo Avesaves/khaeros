@@ -27,7 +27,7 @@ namespace Server.Items
         public MagicMissleScroll() : base()
         {
             Hue = 2624;
-            Name = "A Magic Missle scroll";
+            Name = "A Magic Missile scroll";
         }
 
         public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
@@ -94,7 +94,7 @@ namespace Server.Items
         {
             IconID = 6030;
             Range = 12;
-            CustomName = "Magic Missle";
+            CustomName = "Magic Missile";
         }
 
         public override bool CanBeCast
