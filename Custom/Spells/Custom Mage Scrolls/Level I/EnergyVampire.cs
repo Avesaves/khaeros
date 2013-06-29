@@ -104,13 +104,8 @@ namespace Server.Items
                 return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.MindI } );
             }
         }
-        int erg = Caster.EnergyResistance;
-        int fir = Caster.FireResistance;
-        int poi = Caster.PoisonResistance;
-        int col = Caster.ColdResistance;
-        int sla = Caster.SlashingResistance;
-        int pie = Caster.PiercingResistance;
-        int blu = Caster.BluntResistance;
+
+
         public override void Effect()
         {		
 			if (TargetMobile is Mobile && CasterHasEnoughMana )
@@ -132,7 +127,7 @@ namespace Server.Items
                 Timer.DelayCall(TimeSpan.FromSeconds(6), new TimerCallback(Flare3));
                 Timer.DelayCall(TimeSpan.FromSeconds(8), new TimerCallback(Flare4));
                 Timer.DelayCall(TimeSpan.FromSeconds(10), new TimerCallback(Flare5));
-                Timer.DelayCall(TimeSpan.FromSeconds(11), new TimerCallback(Flare6));
+
             }
         }
 
@@ -149,10 +144,11 @@ namespace Server.Items
                     targ.SendMessage("You feel your lifeforce slipping away!");
                     Caster.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
                     targ.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
-                    if (Caster.Mana < Caster.RawMana && targ.mana >= 10)
+                    if (Caster.Mana < Caster.RawMana && targ.Mana >= 10)
                     {
                         targ.Mana -= 10;
                         Caster.Mana += 10;
+                        Caster.Stamina -= 10;
                     }
                     return;
 
@@ -171,10 +167,11 @@ namespace Server.Items
 
                 Caster.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
                 targ.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
-                if (Caster.Mana < Caster.RawMana && targ.mana >= 10)
+                if (Caster.Mana < Caster.RawMana && targ.Mana >= 10)
                 {
                     targ.Mana -= 10;
                     Caster.Mana += 10;
+                    Caster.Stamina -= 10;
                 }
                 return;
                 }
@@ -192,10 +189,11 @@ namespace Server.Items
 
                 Caster.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
                 targ.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
-                if (Caster.Mana < Caster.RawMana && targ.mana >= 10)
+                if (Caster.Mana < Caster.RawMana && targ.Mana >= 10)
                 {
                     targ.Mana -= 10;
                     Caster.Mana += 10;
+                    Caster.Stamina -= 10;
                 }
                 return;
                 }
@@ -215,10 +213,11 @@ namespace Server.Items
 
                     Caster.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
                     targ.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
-                    if (Caster.Mana < Caster.RawMana && targ.mana >= 10)
+                    if (Caster.Mana < Caster.RawMana && targ.Mana >= 10)
                     {
                         targ.Mana -= 10;
                         Caster.Mana += 10;
+                        Caster.Stamina -= 10;
                     }
                     return;
                 }
@@ -238,30 +237,15 @@ namespace Server.Items
 
                         Caster.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
                         targ.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
-                        if (Caster.Mana < Caster.RawMana && targ.mana >= 10)
+                        if (Caster.Mana < Caster.RawMana && targ.Mana >= 10)
                         {
                             targ.Mana -= 10;
                             Caster.Mana += 10;
+                            Caster.Stamina -= 10;
                         }
                         return;
                 }
-        private void Flare6()
-                    {
-                        Caster.EnergyResistance = erg;
-                        Caster.FireResistance = fir;
-                        Caster.PoisonResistance = poi;
-                        Caster.ColdResistance = col;
-                        Caster.SlashingResistance = sla;
-                        Caster.PiercingResistance = pie;
-                        Caster.BluntResistance = blu;   
 
-
-
-
-                    
-
-                    return;
-                }
 				}
 			}
 	
