@@ -148,7 +148,7 @@ namespace Server.Items
                     {
                         targ.Mana -= 10;
                         Caster.Mana += 10;
-                        Caster.Stamina -= 10;
+                        Caster.Stam -= 10;
                     }
                     return;
 
@@ -171,7 +171,7 @@ namespace Server.Items
                 {
                     targ.Mana -= 10;
                     Caster.Mana += 10;
-                    Caster.Stamina -= 10;
+                    Caster.Stam -= 10;
                 }
                 return;
                 }
@@ -193,7 +193,7 @@ namespace Server.Items
                 {
                     targ.Mana -= 10;
                     Caster.Mana += 10;
-                    Caster.Stamina -= 10;
+                    Caster.Stam -= 10;
                 }
                 return;
                 }
@@ -217,7 +217,7 @@ namespace Server.Items
                     {
                         targ.Mana -= 10;
                         Caster.Mana += 10;
-                        Caster.Stamina -= 10;
+                        Caster.Stam -= 10;
                     }
                     return;
                 }
@@ -241,7 +241,7 @@ namespace Server.Items
                         {
                             targ.Mana -= 10;
                             Caster.Mana += 10;
-                            Caster.Stamina -= 10;
+                            Caster.Stam -= 10;
                         }
                         return;
                 }
