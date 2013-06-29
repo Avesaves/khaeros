@@ -104,20 +104,20 @@ namespace Server.Items
                 return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.MindI } );
             }
         }
-
+        int erg = Caster.EnergyResistance;
+        int fir = Caster.FireResistance;
+        int poi = Caster.PoisonResistance;
+        int col = Caster.ColdResistance;
+        int sla = Caster.SlashingResistance;
+        int pie = Caster.PiercingResistance;
+        int blu = Caster.BluntResistance;
         public override void Effect()
         {		
 			if (TargetMobile is Mobile && CasterHasEnoughMana )
 			{
 
                     Mobile targ = TargetMobile as Mobile;
-                    erg = Caster.EnergyResistance;
-                    fir = Caster.FireResistance;
-                    poi = Caster.PoisonResistance;
-                    col = Caster.ColdResistance;
-                    sla = Caster.SlashingResistance;
-                    pie = Caster.PiercingResistance;
-                    blu = Caster.BluntResistance;
+
                     
                     Caster.Mana -= TotalCost;
                     Success = true;
@@ -138,6 +138,7 @@ namespace Server.Items
 
                 	private void Flare1()
                     {
+                        Mobile targ = TargetMobile as Mobile;
                     if ( Caster == null )
                     return;
 
@@ -158,6 +159,7 @@ namespace Server.Items
                 }	
                         	private void Flare2()
                     {
+                        Mobile targ = TargetMobile as Mobile;
                     if ( Caster == null )
                     return;
 
@@ -178,6 +180,7 @@ namespace Server.Items
                 }
                         	private void Flare3()
                     {
+                        Mobile targ = TargetMobile as Mobile;
                     if ( Caster == null )
                     return;
 
@@ -198,6 +201,7 @@ namespace Server.Items
                 }
                                 	private void Flare4()
                     {
+                        Mobile targ = TargetMobile as Mobile;
                         if (Caster == null)
                             return;
                    
@@ -220,6 +224,7 @@ namespace Server.Items
                 }
                                 	private void Flare5()
                     {
+                        Mobile targ = TargetMobile as Mobile;
                         if (Caster == null)
                             return;
 
@@ -248,7 +253,7 @@ namespace Server.Items
                         Caster.ColdResistance = col;
                         Caster.SlashingResistance = sla;
                         Caster.PiercingResistance = pie;
-                        Caster.BluntResistance;   
+                        Caster.BluntResistance = blu;   
 
 
 

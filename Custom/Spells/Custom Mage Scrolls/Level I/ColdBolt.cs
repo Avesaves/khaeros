@@ -132,6 +132,7 @@ namespace Server.Items
 
                 	private void Flare1()
                     {
+                        Mobile targ = TargetMobile as Mobile;
                     if ( Caster == null )
                     return;
 
@@ -149,6 +150,7 @@ namespace Server.Items
                 }	
                         	private void Flare2()
                     {
+                        Mobile targ = TargetMobile as Mobile;
                     if ( Caster == null )
                     return;
 
@@ -168,6 +170,7 @@ namespace Server.Items
                 }
                         	private void Flare3()
                     {
+                        Mobile targ = TargetMobile as Mobile;
                     if ( Caster == null )
                     return;
 
@@ -189,6 +192,7 @@ namespace Server.Items
                 }
                                 	private void Flare4()
                     {
+                        Mobile targ = TargetMobile as Mobile;
                     if ( Caster == null )
                     {
                         targ.Frozen = false;
@@ -216,6 +220,7 @@ namespace Server.Items
                 }
                                 	private void Flare5()
                     {
+                        Mobile targ = TargetMobile as Mobile;
                     if ( Caster == null )
                     {
                         targ.Frozen = false;
@@ -243,8 +248,9 @@ namespace Server.Items
                 }
         private void Flare6()
                     {
+                        Mobile targ = TargetMobile as Mobile;
                  targ.Frozen = false;
-            targ.SolidHueOverride = -1;    
+                 targ.SolidHueOverride = -1;    
 
 
 
