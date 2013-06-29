@@ -118,15 +118,15 @@ namespace Server.Items
 
                     Caster.PlaySound(521);
 
-                    Caster.MovingParticles(targ, 0x36FE, 7, 0, false, true, 2968, 0, 3043, 4043, 0x211, 0x100);
+                    Caster.MovingParticles(targ, 0x36FE, 7, 0, false, true, 2975, 0, 3043, 4043, 0x211, 0x100);
                     
                     Caster.Emote("*Fires a bolt of pure cold!*");
                     Timer.DelayCall(TimeSpan.FromSeconds(2), new TimerCallback(Flare1));
-                Timer.DelayCall(TimeSpan.FromSeconds(3), new TimerCallback(Flare2));
-                Timer.DelayCall(TimeSpan.FromSeconds(4), new TimerCallback(Flare3));
-                Timer.DelayCall(TimeSpan.FromSeconds(5), new TimerCallback(Flare4));
-                Timer.DelayCall(TimeSpan.FromSeconds(6), new TimerCallback(Flare5));
-                Timer.DelayCall(TimeSpan.FromSeconds(7), new TimerCallback(Flare6));
+                Timer.DelayCall(TimeSpan.FromSeconds(4), new TimerCallback(Flare2));
+                Timer.DelayCall(TimeSpan.FromSeconds(6), new TimerCallback(Flare3));
+                Timer.DelayCall(TimeSpan.FromSeconds(8), new TimerCallback(Flare4));
+                Timer.DelayCall(TimeSpan.FromSeconds(10), new TimerCallback(Flare5));
+                Timer.DelayCall(TimeSpan.FromSeconds(11), new TimerCallback(Flare6));
             }
         }
 
@@ -145,7 +145,7 @@ namespace Server.Items
                     else
                         AOS.Damage(targ, Caster, 20, false, 0, 0, 100, 0, 0, 0, 0, 0, false);
                     targ.Emote("*Grows colder...*");
-                    Caster.FixedParticles(0x375A, 244, 25, 9950, 2968, 0, EffectLayer.Waist);
+                    targ.FixedParticles(0x375A, 244, 25, 9950, 2975, 0, EffectLayer.Waist);
 
                 }	
                         	private void Flare2()
@@ -164,6 +164,7 @@ namespace Server.Items
                     else
                         AOS.Damage(targ, Caster, 20, false, 0, 0, 100, 0, 0, 0, 0, 0, false);
                     targ.Emote("*Grows colder...*");
+                    targ.FixedParticles(0x375A, 244, 25, 9950, 2975, 0, EffectLayer.Waist);
                     
 
                     return;
@@ -185,7 +186,7 @@ namespace Server.Items
                         AOS.Damage(targ, Caster, 20, false, 0, 0, 100, 0, 0, 0, 0, 0, false);
                     targ.Emote("*Freezes in place!*");
                     targ.Frozen = true;
-                    targ.SolidHueOverride = 90; 
+                    targ.SolidHueOverride = 2975; 
                     
 
                     return;
@@ -213,6 +214,7 @@ namespace Server.Items
                         //phys fire cold pois energy, blunt slash pierce 
                     else
                         AOS.Damage(targ, Caster, 20, false, 0, 0, 100, 0, 0, 0, 0, 0, false);
+                    targ.FixedParticles(0x375A, 244, 25, 9950, 2975, 0, EffectLayer.Waist);
  
                     
 

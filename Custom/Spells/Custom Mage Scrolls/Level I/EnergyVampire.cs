@@ -117,16 +117,16 @@ namespace Server.Items
                     Caster.Mana -= TotalCost;
                     Success = true;
 
-                    Caster.PlaySound(521);
+                    Caster.PlaySound(254);
 
                     
                     
                     Caster.Emote("*Glows with stolen power...*");
                     Timer.DelayCall(TimeSpan.FromSeconds(2), new TimerCallback(Flare1));
-                Timer.DelayCall(TimeSpan.FromSeconds(4), new TimerCallback(Flare2));
-                Timer.DelayCall(TimeSpan.FromSeconds(6), new TimerCallback(Flare3));
-                Timer.DelayCall(TimeSpan.FromSeconds(8), new TimerCallback(Flare4));
-                Timer.DelayCall(TimeSpan.FromSeconds(10), new TimerCallback(Flare5));
+                Timer.DelayCall(TimeSpan.FromSeconds(5), new TimerCallback(Flare2));
+                Timer.DelayCall(TimeSpan.FromSeconds(8), new TimerCallback(Flare3));
+                Timer.DelayCall(TimeSpan.FromSeconds(11), new TimerCallback(Flare4));
+                Timer.DelayCall(TimeSpan.FromSeconds(14), new TimerCallback(Flare5));
 
             }
         }
@@ -140,10 +140,11 @@ namespace Server.Items
                     if ( targ.Alive == false )
                     return;
 
-                    targ.MovingParticles(Caster, 0x3818, 7, 0, false, true, 0, 0, 3043, 4043, 0x211, 0x100);
+                    targ.MovingParticles(Caster, 0x37B9, 7, 0, false, false, 0, 0, 3043, 4043, 0x211, 0x100);
                     targ.SendMessage("You feel your lifeforce slipping away!");
                     Caster.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
                     targ.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
+                    Caster.Emote("*Glows...*");
                     if (Caster.Mana < Caster.RawMana && targ.Mana >= 10)
                     {
                         targ.Mana -= 10;
@@ -163,10 +164,11 @@ namespace Server.Items
                     return;
 
 
-                targ.MovingParticles(Caster, 0x3818, 7, 0, false, true, 0, 0, 3043, 4043, 0x211, 0x100);
+                targ.MovingParticles(Caster, 0x37B9, 7, 0, false, false, 0, 0, 3043, 4043, 0x211, 0x100);
 
                 Caster.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
                 targ.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
+                Caster.Emote("*Glows...*");
                 if (Caster.Mana < Caster.RawMana && targ.Mana >= 10)
                 {
                     targ.Mana -= 10;
@@ -185,10 +187,11 @@ namespace Server.Items
                     return;
 
 
-                targ.MovingParticles(Caster, 0x3818, 7, 0, false, true, 0, 0, 3043, 4043, 0x211, 0x100);
+                targ.MovingParticles(Caster, 0x37B9, 7, 0, false, false, 0, 0, 3043, 4043, 0x211, 0x100);
 
                 Caster.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
                 targ.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
+                Caster.Emote("*Glows...*");
                 if (Caster.Mana < Caster.RawMana && targ.Mana >= 10)
                 {
                     targ.Mana -= 10;
@@ -209,10 +212,11 @@ namespace Server.Items
 
 
 
-                    targ.MovingParticles(Caster, 0x3818, 7, 0, false, true, 0, 0, 3043, 4043, 0x211, 0x100);
+                    targ.MovingParticles(Caster, 0x37B9, 7, 0, false, false, 0, 0, 3043, 4043, 0x211, 0x100);
 
                     Caster.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
                     targ.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
+                    Caster.Emote("*Glows...*");
                     if (Caster.Mana < Caster.RawMana && targ.Mana >= 10)
                     {
                         targ.Mana -= 10;
@@ -233,10 +237,11 @@ namespace Server.Items
 
 
 
-                        targ.MovingParticles(Caster, 0x3818, 7, 0, false, true, 0, 0, 3043, 4043, 0x211, 0x100);
+                        targ.MovingParticles(Caster, 0x37B9, 7, 0, false, false, 0, 0, 3043, 4043, 0x211, 0x100);
 
                         Caster.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
                         targ.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
+                        Caster.Emote("*Glows...*");
                         if (Caster.Mana < Caster.RawMana && targ.Mana >= 10)
                         {
                             targ.Mana -= 10;
