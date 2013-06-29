@@ -119,7 +119,7 @@ namespace Server.Items
                     Caster.PlaySound(513);
 
                     Caster.MovingParticles(targ, 0x36D4, 7, 0, false, true, 2624, 0, 3043, 4043, 0x211, 0x100);
-                    targ.FixedParticles(0x375A, 244, 25, 9950, 2624, 0, EffectLayer.Waist);
+                    Caster.FixedParticles(0x375A, 244, 25, 9950, 2624, 0, EffectLayer.Waist);
                     if ( targ is PlayerMobile )
                         AOS.Damage(targ, Caster, 45, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
                         //phys fire cold pois energy, blunt slash pierce 
