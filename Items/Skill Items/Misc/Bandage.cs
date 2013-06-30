@@ -116,7 +116,7 @@ namespace Server.Items
 
 	    static bool HasBeenInCombatWithAPlayer(DamageEntry de)
 	    {
-	        return de != null && de.Damager is PlayerMobile && DateTime.Compare(DateTime.Now, de.LastDamage + TimeSpan.FromMinutes(5)) < 0;
+	        return de != null && de.Damager is PlayerMobile && DateTime.Compare(DateTime.Now, de.LastDamage + TimeSpan.FromMinutes(2)) < 0;
 	    }
 
 	    private class InternalTarget : Target
