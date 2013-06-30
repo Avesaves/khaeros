@@ -70,13 +70,20 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
+            DamageEntry de = from.FindMostRecentDamageEntry(false);
+            if (HasBeenInCombatWithAPlayer(de) && HasMovedInThePastSecond(@from))
+            {
+                from.SendMessage("Your hands are still shaking from the battle. Try standing still.");
+                return;
+            }
+
 			if( from is PlayerMobile )
 			{
 				PlayerMobile pm = from as PlayerMobile;
 				
 				if( pm.HealingTimer != null )
                 {
-                	pm.SendMessage( "You are alreadying trying to heal someone." );
+                	pm.SendMessage( "You are trying to heal someone already." );
                 	return;
                 }
 			}
@@ -102,7 +109,17 @@ namespace Server.Items
 			}
 		}
 
-		private class InternalTarget : Target
+	    static bool HasMovedInThePastSecond(Mobile @from)
+	    {
+	        return DateTime.Compare(DateTime.Now, @from.LastMoveTime + TimeSpan.FromSeconds(1)) < 0;
+	    }
+
+	    static bool HasBeenInCombatWithAPlayer(DamageEntry de)
+	    {
+	        return de != null && de.Damager is PlayerMobile && DateTime.Compare(DateTime.Now, de.LastDamage + TimeSpan.FromMinutes(5)) < 0;
+	    }
+
+	    private class InternalTarget : Target
 		{
 			private Bandage m_Bandage;
 
