@@ -31,9 +31,9 @@ namespace Khaeros.Scripts.Khaeros.Spells
         {
 			if (PlayerIsInRange(e))
 			{
-			    var speech = e.Speech;
-			    var buyer = e.Mobile;
-			    var backpack = buyer.Backpack;
+			    string speech = e.Speech;
+			    Mobile buyer = e.Mobile;
+			    Container backpack = buyer.Backpack;
 
                 BuySpells(speech, backpack, buyer);
 			}
@@ -44,16 +44,16 @@ namespace Khaeros.Scripts.Khaeros.Spells
             if (PlayerHasEnoughGemsToPurchase(typeof(T), backpack))
             {
                 ConsumeGemsByPurchasing(typeof(T), backpack);
-                var scroll = Activator.CreateInstance<T>();
+                T scroll = Activator.CreateInstance<T>();
                 buyer.AddToBackpack(scroll);
             }
         }
 
         void ConsumeGemsByPurchasing(Type spell, Container backpack)
         {
-            var costs = spellCosts[spell];
+            List<SpellScrollCost> costs = spellCosts[spell];
 
-            foreach (var cost in costs)
+            foreach (SpellScrollCost cost in costs)
             {
                 backpack.ConsumeTotal(cost.Gem, cost.Amount);
             }
@@ -64,9 +64,9 @@ namespace Khaeros.Scripts.Khaeros.Spells
             if (!spellCosts.ContainsKey(spell))
                 return false;
 
-            var costs = spellCosts[spell];
+            List<SpellScrollCost> costs = spellCosts[spell];
 
-            foreach (var cost in costs)
+            foreach (SpellScrollCost cost in costs)
             {
                 if (backpack.GetAmount(cost.Gem) < cost.Amount)
                     return false;
