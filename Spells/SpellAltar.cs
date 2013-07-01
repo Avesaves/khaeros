@@ -7,11 +7,11 @@ namespace Khaeros.Scripts.Khaeros.Spells
 {
     public class SpellAltar : Item
     {
-        readonly Dictionary<Type, List<Tuple<Type, int>>> spellCosts;
+        readonly Dictionary<Type, List<SpellScrollCost>> spellCosts;
 
         void AddSpellCosts()
         {
-            AddToSpellCosts(typeof(ShapeshiftScroll), new List<Tuple<Type, int>>
+            AddToSpellCosts(typeof(ShapeshiftScroll), new List<SpellScrollCost>
                 {
                     CreateSpellCost(typeof(GlowingEmerald), 1),
                     CreateSpellCost(typeof(GlowingRuby), 1),
@@ -49,14 +49,13 @@ namespace Khaeros.Scripts.Khaeros.Spells
             }
         }
 
-
         void ConsumeGemsByPurchasing(Type spell, Container backpack)
         {
             var costs = spellCosts[spell];
 
             foreach (var cost in costs)
             {
-                backpack.ConsumeTotal(cost.Item1, cost.Item2);
+                backpack.ConsumeTotal(cost.Gem, cost.Amount);
             }
         }
 
@@ -69,20 +68,20 @@ namespace Khaeros.Scripts.Khaeros.Spells
 
             foreach (var cost in costs)
             {
-                if (backpack.GetAmount(cost.Item1) < cost.Item2)
+                if (backpack.GetAmount(cost.Gem) < cost.Amount)
                     return false;
             }
             return true;
         }
 
-        void AddToSpellCosts(Type spell, List<Tuple<Type, int>> cost)
+        void AddToSpellCosts(Type spell, List<SpellScrollCost> cost)
         {
             spellCosts.Add(spell, cost);
         }
 
-        Tuple<Type, int> CreateSpellCost(Type gem, int amount)
+        SpellScrollCost CreateSpellCost(Type gem, int amount)
         {
-            return new Tuple<Type, int>(gem, amount);
+            return new SpellScrollCost(gem, amount);
         }
 
         bool PlayerIsInRange(SpeechEventArgs e)
@@ -99,7 +98,7 @@ namespace Khaeros.Scripts.Khaeros.Spells
 		public SpellAltar( int amount ) : base( 0x3650 )
 		{
 			Amount = amount;
-            spellCosts = new Dictionary<Type, List<Tuple<Type, int>>>();
+            spellCosts = new Dictionary<Type, List<SpellScrollCost>>();
             AddSpellCosts();
 		}
 
