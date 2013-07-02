@@ -19,8 +19,8 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.ForcesI }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
-		public override string FirstDescription{ get{ return "This skill will allow you to cast forces-based spells from ancient " +
-					"scrolls you may find. It will also increase your mana total."; } }
+		public override string FirstDescription{ get{ return "This skill will allow you to cast energy-based spells from sacrifices " +
+					"you have performed. It will also increase your mana total."; } }
 		public override string SecondDescription{ get{ return "Improved effect."; } }
 		public override string ThirdDescription{ get{ return "Improved effect."; } }
 
