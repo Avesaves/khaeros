@@ -87,7 +87,7 @@ namespace Server.Items
                 list.Add(m_Seal);
 		}
 
-		public override void OnDoubleClick( Mobile from )
+		public override void OnDoubleClick( PlayerMobile from )
 		{
 			if ( String.IsNullOrEmpty( Title ) )
 			{
