@@ -3059,7 +3059,7 @@ namespace Server.Items
 
 		public virtual void AddBlood( Mobile attacker, Mobile defender, int damage )
 		{
-			if ( damage > 0 )
+			if ( damage > 0 && defender.BodyValue != 803 && defender.Hue != 12345678 )
 			{
 				new Blood().MoveToWorld( defender.Location, defender.Map );
 
