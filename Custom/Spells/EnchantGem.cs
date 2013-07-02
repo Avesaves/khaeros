@@ -37,7 +37,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
 				Caster.Emote ("*Pours their life-force into a gemstone*");
 				Caster.Mana -= TotalCost;
                 Container pack = Caster.Backpack;
-                	PlayerMobile m = Caster.Mobile as PlayerMobile;
+                	PlayerMobile m = Caster as PlayerMobile;
 				
 				if( TargetItem is Amethyst && Caster.RawInt > 19 )
                 {
