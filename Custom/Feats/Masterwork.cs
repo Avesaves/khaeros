@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.DurableCrafts }; } }
-        public override FeatList[] Allows { get { return new FeatList[] { FeatList.RenownedMasterwork, FeatList.Damage, FeatList.Speed, FeatList.HCI, FeatList.DCI}; } }
+        public override FeatList[] Allows { get { return new FeatList[] { FeatList.RenownedMasterwork }; } }
 		
 		public override string FirstDescription{ get{ return "Having spent years honing your skills you are able to craft items of extraordinary " +
 					"quality. [0.33% chance of an extraordinary item when you would craft an exceptional item. 3 random bonuses]"; } }
