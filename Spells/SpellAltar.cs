@@ -11,12 +11,12 @@ namespace Khaeros.Scripts.Khaeros.Spells
 
         void AddSpellCosts()
         {
-            AddToSpellCosts(typeof(ShapeshiftScroll), new List<SpellScrollCost>()
-                {
-                    CreateSpellCost(typeof(GlowingEmerald), 1),
-                    CreateSpellCost(typeof(GlowingRuby), 1),
-                    CreateSpellCost(typeof(GlowingSapphire), 1)
-                });
+            List<SpellScrollCost> shapeShiftCosts = new List<SpellScrollCost>();
+            shapeShiftCosts.Add(CreateSpellCost(typeof(GlowingEmerald), 1));
+            shapeShiftCosts.Add(CreateSpellCost(typeof(GlowingRuby), 1));
+            shapeShiftCosts.Add(CreateSpellCost(typeof(GlowingSapphire), 1));
+
+            AddToSpellCosts(typeof (ShapeshiftScroll), shapeShiftCosts);
         }
 
         void BuySpells(string speech, Container backpack, Mobile buyer)
