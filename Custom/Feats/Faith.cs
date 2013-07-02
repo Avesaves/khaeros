@@ -33,6 +33,18 @@ namespace Server.FeatInfo
 		
 		public override string FullDescription{ get{ return GetFullDescription(this); } }
 		
+		public override bool MeetsOurRequirements( PlayerMobile m )
+		{
+			if( !m.CanBeFaithful )
+				return false;
+				
+           		if (m.Feats.GetFeatLevel(FeatList.Magery) > 0 )
+              			return false;
+			
+			return base.MeetsOurRequirements( m );
+		}
+				
+		
 		public static void Initialize(){ WriteWebpage(new Faith()); }
 		
 		public Faith() {}
