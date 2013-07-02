@@ -9,7 +9,7 @@ namespace Server.FeatInfo
 {
 	public class MatterI : BaseFeat
 	{
-		public override string Name{ get{ return "Form I"; } }
+		public override string Name{ get{ return "Matter I"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.MatterI; } }
 		public override FeatCost CostLevel{ get{ return FeatCost.Low; } }
 		
@@ -19,7 +19,7 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Magery }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.MatterII }; } }
 		
-		public override string FirstDescription{ get{ return "This skill will allow you to cast spells which affect your body from scrolls you " +
+		public override string FirstDescription{ get{ return "This skill will allow you to cast spells which affect the world from scrolls you " +
 					"find. It will also increase your mana regeneration rate."; } }
 		public override string SecondDescription{ get{ return "Improved effect."; } }
 		public override string ThirdDescription{ get{ return "Improved effect."; } }
