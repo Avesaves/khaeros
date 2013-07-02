@@ -36,6 +36,8 @@ namespace Server.FeatInfo
 			
             	if (m.Feats.GetFeatLevel(FeatList.Faith) > 0 )
                		return false;
+               	
+               	return base.MeetsOurRequirements( m );
                 
 		}
 		
