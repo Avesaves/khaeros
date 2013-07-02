@@ -88,9 +88,12 @@ namespace Khaeros.Scripts.Khaeros.Spells
 
         bool PlayerIsInRange(SpeechEventArgs e)
         {
-<<<<<<< .mine            return !e.Handled && e.Mobile.InRange( this.Location, 50 );
-=======            return e.Mobile.InRange( this.Location, 4 );
->>>>>>> .theirs        }
+<<<<<<< HEAD
+            return !e.Handled && e.Mobile.InRange( this.Location, 50 );
+=======
+            return e.Mobile.InRange( this.Location, 4 );
+>>>>>>> 9e804278d273660f624806707fc971ac842cd503
+        }
 
         [Constructable]
 		public SpellAltar() : this( 1 )

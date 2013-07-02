@@ -1,10 +1,6 @@
 using System;
-using Server;
 using Server.Mobiles;
-using Server.Items;
 using Server.Commands;
-using Server.Targeting;
-using Server.Network;
 
 namespace Server.Misc
 {
@@ -36,11 +32,15 @@ namespace Server.Misc
 
         private int ReduceDelay(int delay)
         {
-            PlayerMobile source = Caster as PlayerMobile;
+            PlayerMobile target = TargetMobile as PlayerMobile;
 
-            int resistLevel = source.Feats.GetFeatLevel(FeatList.MagicResistance);
+            if (target != null)
+            {
+                int resistLevel = target.Feats.GetFeatLevel(FeatList.MagicResistance);
+                return delay - resistLevel;
+            }
 
-            return delay - resistLevel;
+            return delay;
         }
 		
 		public static void FinalEffect( Mobile caster, Mobile target, int hold )

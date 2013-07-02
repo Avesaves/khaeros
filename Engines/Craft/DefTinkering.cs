@@ -379,8 +379,8 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( Hammer ), 1044046, 1024138, 5.0, 20.0, typeof( CopperIngot ), 1044036, 2, 1044037 );
 			AddCraft( typeof( Tongs ), 1044046, 1024028, 5.0, 20.0, typeof( CopperIngot ), 1044036, 2, 1044037 );
 			AddCraft( typeof( SmithHammer ), 1044046, 1025091, 5.0, 20.0, typeof( CopperIngot ), 1044036, 2, 1044037 );
-            AddCraft(typeof(BlackSmithingHammer), 1044046, "weapon smithing hammer", 5.0, 20.0, typeof(CopperIngot), 1044036, 2, 1044037);
-            AddCraft(typeof(WeaponDismantler), 1044046, "weapon dismantler", 5.0, 20.0, typeof(CopperIngot), 1044036, 2, 1044037);
+            //AddCraft(typeof(BlackSmithingHammer), 1044046, "weapon smithing hammer", 5.0, 20.0, typeof(CopperIngot), 1044036, 2, 1044037);
+           // AddCraft(typeof(WeaponDismantler), 1044046, "weapon dismantler", 5.0, 20.0, typeof(CopperIngot), 1044036, 2, 1044037);
 			AddCraft( typeof( SledgeHammer ), 1044046, 1024021, 5.0, 20.0, typeof( CopperIngot ), 1044036, 3, 1044037 );
 			AddCraft( typeof( Inshave ), 1044046, 1024326, 5.0, 20.0, typeof( CopperIngot ), 1044036, 2, 1044037 );
 			AddCraft( typeof( Pickaxe ), 1044046, 1023718, 5.0, 20.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
