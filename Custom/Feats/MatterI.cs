@@ -19,7 +19,7 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Magery }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.MatterII }; } }
 		
-		public override string FirstDescription{ get{ return "This skill will allow you to cast matter-based spells from ancient scrolls you may " +
+		public override string FirstDescription{ get{ return "This skill will allow you to cast spells which affect the world from scrolls you " +
 					"find. It will also increase your mana regeneration rate."; } }
 		public override string SecondDescription{ get{ return "Improved effect."; } }
 		public override string ThirdDescription{ get{ return "Improved effect."; } }
@@ -34,10 +34,10 @@ namespace Server.FeatInfo
 		
 		public override bool MeetsOurRequirements( PlayerMobile m )
 		{
-			if( !m.CanBeMage )
-				return false;
+            	if (m.Feats.GetFeatLevel(FeatList.MindI) > 0 || m.Feats.GetFeatLevel(FeatList.DeathI) > 0 || m.Feats.GetFeatLevel(FeatList.ForcesI) > 0)
+                	return false;
 			
-			return base.MeetsOurRequirements( m );
+		return base.MeetsOurRequirements( m );
 		}
 		
 		public MatterI() {}
