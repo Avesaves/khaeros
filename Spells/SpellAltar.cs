@@ -35,6 +35,8 @@ namespace Khaeros.Scripts.Khaeros.Spells
 			    Mobile buyer = e.Mobile;
 			    Container backpack = buyer.Backpack;
 
+                Console.WriteLine(e.Speech);
+
                 BuySpells(speech, backpack, buyer);
 			}
         }
@@ -86,7 +88,7 @@ namespace Khaeros.Scripts.Khaeros.Spells
 
         bool PlayerIsInRange(SpeechEventArgs e)
         {
-            return !e.Handled && e.Mobile.InRange( this.Location, 4 );
+            return !e.Handled && e.Mobile.InRange( this.Location, 50 );
         }
 
         [Constructable]
