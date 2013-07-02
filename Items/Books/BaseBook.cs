@@ -4,6 +4,8 @@ using System.Text;
 using Server;
 using Server.Network;
 using Server.Gumps;
+using Server.Mobiles;
+using Server.FeatInfo;
 
 namespace Server.Items
 {
@@ -303,20 +305,27 @@ namespace Server.Items
 		
 		public override void OnDoubleClick ( Mobile from )
 		{
-			if ( m_Title == null && m_Author == null && m_Writable == true )
+		PlayerMobile m = from as PlayerMobile; 
+			if ( m.Feats.GetFeatLevel(FeatList.Linguistics) > 0 )
 			{
+				if ( m_Title == null && m_Author == null && m_Writable == true )
+				{
 				// MOD BEGIN
-				if ( !string.IsNullOrEmpty( Name ) )
-					Title = Name;
-				else
-					Title = "a book";
+					if ( !string.IsNullOrEmpty( Name ) )
+						Title = Name;
+					else
+						Title = "a book";
 				// END MOD
-				Author = from.Name;
-			}
+					Author = from.Name;
+				}
 
-			from.Send( new BookHeader( from, this ) );
-			from.Send( new BookPageDetails( this ) );
+				from.Send( new BookHeader( from, this ) );
+				from.Send( new BookPageDetails( this ) );
 		}
+			else
+				from.SendMessage( "You do not know how to read!" );
+		}
+		
 
 		public static void Initialize()
 		{
