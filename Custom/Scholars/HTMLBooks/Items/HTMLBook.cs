@@ -89,7 +89,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			PlayerMobile m = from as Playermobile; 
+			PlayerMobile m = from as PlayerMobile; 
 			if ( String.IsNullOrEmpty( Title ) )
 			{
 				if ( !String.IsNullOrEmpty( Name ) )
