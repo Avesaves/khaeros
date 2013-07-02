@@ -37,6 +37,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
 				Caster.Emote ("*Pours their life-force into a gemstone*");
 				Caster.Mana -= TotalCost;
                 Container pack = Caster.Backpack;
+                	PlayerMobile m = Caster.Mobile as PlayerMobile;
 				
 				if( TargetItem is Amethyst && Caster.RawInt > 19 )
                 {
@@ -52,7 +53,8 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
                     GlowingCitrine glow2 = new GlowingCitrine();
 					TargetItem.Delete();
                     pack.DropItem( glow2 );
-                    Caster.SendMessage ("You feel a little older.");
+                    m.Age += 5;
+                    Caster.SendMessage ("You feel a little older...");
 
                 }
 
