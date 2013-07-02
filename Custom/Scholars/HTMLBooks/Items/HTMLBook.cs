@@ -411,6 +411,8 @@ namespace Server.Items
 		{
 			if( mobile == null || mobile.Deleted || !( mobile is PlayerMobile ) )
 				return false;
+			if (PlayerMobile.Feats.GetFeatLevel(FeatList.Linguistics) = 0 )
+				return false;
 			return PlayerMobile.KnowsLanguage( ((PlayerMobile)mobile), LanguageToKnownLanguage(language) );
 		}
 
