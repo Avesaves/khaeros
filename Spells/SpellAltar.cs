@@ -11,7 +11,7 @@ namespace Khaeros.Scripts.Khaeros.Spells
 
         void AddSpellCosts()
         {
-            AddToSpellCosts(typeof(ShapeshiftScroll), new List<SpellScrollCost>
+            AddToSpellCosts(typeof(ShapeshiftScroll), new List<SpellScrollCost>()
                 {
                     CreateSpellCost(typeof(GlowingEmerald), 1),
                     CreateSpellCost(typeof(GlowingRuby), 1),
