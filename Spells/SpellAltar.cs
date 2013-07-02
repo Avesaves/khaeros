@@ -86,7 +86,7 @@ namespace Khaeros.Scripts.Khaeros.Spells
 
         bool PlayerIsInRange(SpeechEventArgs e)
         {
-            return !e.Handled && e.Mobile.InRange( this.Location, 4 );
+            return e.Mobile.InRange( this.Location, 4 );
         }
 
         [Constructable]
