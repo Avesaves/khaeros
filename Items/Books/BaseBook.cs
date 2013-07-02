@@ -305,7 +305,8 @@ namespace Server.Items
 		
 		public override void OnDoubleClick ( Mobile from )
 		{
-			if ( from.Feats.GetFeatLevel(FeatList.Linguistics) > 0 )
+		PlayerMobile m = from as PlayerMobile; 
+			if ( m.Feats.GetFeatLevel(FeatList.Linguistics) > 0 )
 			{
 				if ( m_Title == null && m_Author == null && m_Writable == true )
 				{
