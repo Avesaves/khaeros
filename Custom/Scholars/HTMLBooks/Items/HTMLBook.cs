@@ -409,9 +409,10 @@ namespace Server.Items
 		
 		public static bool UnderstandsLanguage( Language language, Mobile mobile )
 		{
+			PlayerMobile m = mobile as PlayerMobile; 
 			if( mobile == null || mobile.Deleted || !( mobile is PlayerMobile ) )
 				return false;
-			if (PlayerMobile.Feats.GetFeatLevel(FeatList.Linguistics) == 0 )
+			if (m.Feats.GetFeatLevel(FeatList.Linguistics) == 0 )
 				return false;
 			return PlayerMobile.KnowsLanguage( ((PlayerMobile)mobile), LanguageToKnownLanguage(language) );
 		}
