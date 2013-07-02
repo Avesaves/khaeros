@@ -5,6 +5,7 @@ using Server;
 using Server.Mobiles;
 using Server.Gumps;
 using Server.Network;
+using Server.FeatInfo
 
 namespace Server.Items
 {
