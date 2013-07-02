@@ -4,6 +4,8 @@ using System.Text;
 using Server;
 using Server.Network;
 using Server.Gumps;
+using Server.Mobiles;
+using Server.FeatInfo;
 
 namespace Server.Items
 {
