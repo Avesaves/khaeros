@@ -87,8 +87,9 @@ namespace Server.Items
                 list.Add(m_Seal);
 		}
 
-		public override void OnDoubleClick( PlayerMobile from )
+		public override void OnDoubleClick( Mobile from )
 		{
+			PlayerMobile m = from as Playermobile; 
 			if ( String.IsNullOrEmpty( Title ) )
 			{
 				if ( !String.IsNullOrEmpty( Name ) )
@@ -108,7 +109,7 @@ namespace Server.Items
 			{
 				if ( Writable == false && m_SealedBy != null && m_SealedBy != from ) // not sealed by the same person, only allow viewing
 				{
-					if ( UnderstandsLanguage( m_Language, from ) && from.Feats.GetFeatLevel(FeatList.Linguistics) > 0 )
+					if ( UnderstandsLanguage( m_Language, from ) && m.Feats.GetFeatLevel(FeatList.Linguistics) > 0 )
 					{
 						if ( Cypher.Length > 0 ) // encrypted
 							from.SendGump( new EnterCypherGump( this ) );
@@ -128,7 +129,7 @@ namespace Server.Items
 			{
 				if ( from.InRange( GetWorldLocation(), 2 ) && from.InLOS( this ) )
 				{
-					if ( UnderstandsLanguage( m_Language, from ) && from.Feats.GetFeatLevel(FeatList.Linguistics) > 0 )
+					if ( UnderstandsLanguage( m_Language, from ) && m.Feats.GetFeatLevel(FeatList.Linguistics) > 0 )
 					{
 						if ( Cypher.Length > 0 ) // encrypted
 							from.SendGump( new EnterCypherGump( this ) );
