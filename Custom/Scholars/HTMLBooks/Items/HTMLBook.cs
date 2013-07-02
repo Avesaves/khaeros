@@ -107,7 +107,7 @@ namespace Server.Items
 			{
 				if ( Writable == false && m_SealedBy != null && m_SealedBy != from ) // not sealed by the same person, only allow viewing
 				{
-					if ( UnderstandsLanguage( m_Language, from ) )
+					if ( UnderstandsLanguage( m_Language, from ) && from.Feats.GetFeatLevel(FeatList.Linguistics) > 0 )
 					{
 						if ( Cypher.Length > 0 ) // encrypted
 							from.SendGump( new EnterCypherGump( this ) );
@@ -115,7 +115,7 @@ namespace Server.Items
 							SpawnGump( from );
 					}
 					else
-						from.SendMessage( "It's all gibberish, as you don't know the language." );
+						from.SendMessage( "It's all gibberish, as you don't know how to read the language." );
 				}
 				else
 				{
@@ -127,7 +127,7 @@ namespace Server.Items
 			{
 				if ( from.InRange( GetWorldLocation(), 2 ) && from.InLOS( this ) )
 				{
-					if ( UnderstandsLanguage( m_Language, from ) )
+					if ( UnderstandsLanguage( m_Language, from ) && from.Feats.GetFeatLevel(FeatList.Linguistics) > 0 )
 					{
 						if ( Cypher.Length > 0 ) // encrypted
 							from.SendGump( new EnterCypherGump( this ) );
