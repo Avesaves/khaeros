@@ -94,6 +94,12 @@ namespace Server.ContextMenus
                 m_Mobile.Blessed = false;
                 m_Mobile.Frozen = false;
                 m_Mobile.Tamable = true;
+
+                if (m_Mobile is BaseBreedableCreature)
+                {
+                    BaseBreedableCreature pet = m_Mobile as BaseBreedableCreature;
+                    pet.UpdateSpeeds();
+                }
             }
 
             else if( m_Mobile.Blessed && m_Mobile.Frozen )

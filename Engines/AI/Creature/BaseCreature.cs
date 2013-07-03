@@ -6252,7 +6252,7 @@ namespace Server.Mobiles
 		}
 
 		[CommandProperty( AccessLevel.GameMaster )]
-		public double ActiveSpeed
+		public virtual double ActiveSpeed
 		{
 			get
 			{
@@ -6265,7 +6265,7 @@ namespace Server.Mobiles
 		}
 
 		[CommandProperty( AccessLevel.GameMaster )]
-		public double PassiveSpeed
+		public virtual double PassiveSpeed
 		{
 			get
 			{

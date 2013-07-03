@@ -253,7 +253,31 @@ namespace Server.Mobiles
             get{ return m_PetEvolution; }
             set{ m_PetEvolution = value; }
         }
-        
+
+        public void UpdateSpeeds()
+        {
+            if (this is Wolf)
+            {
+                PassiveSpeed = 0.350;
+                ActiveSpeed = 0.1;
+            }
+            else if (this is Serpent)
+            {
+                PassiveSpeed = 0.350;
+                ActiveSpeed = 0.175;
+            }
+            else if (this is Bear)
+            {
+                PassiveSpeed = 0.4;
+                ActiveSpeed = 0.2;
+            }
+            else if (this is WorkHorse)
+            {
+                ActiveSpeed = 0.2;
+                PassiveSpeed = 0.4;
+            }
+        }
+
         public List<int> MatesFeats
         {
             get

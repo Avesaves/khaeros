@@ -404,6 +404,8 @@ namespace Server.Misc
             		bbc.PetEvolution--;
             	}
             	
+                bbc.UpdateSpeeds();
+
             	if( ((BaseBreedableCreature)player).Lives < (8 + ((BaseBreedableCreature)player).ExtraLives) )
             		((BaseBreedableCreature)player).Lives++;
 
@@ -450,32 +452,7 @@ namespace Server.Misc
 
                         (player as WorkHorse).Backpack.Delete();
                         (player as WorkHorse).AddItem(newPack);
-
-                        if (player.Level >= 20)
-                        {
-                            player.ActiveSpeed = 0.2;
-                            player.PassiveSpeed = 0.4;
-                        }
                     }
-
-                if (player.Level >= 20)
-                {
-                    if (player is Wolf)
-                    {
-                        player.PassiveSpeed = 0.350;
-                        player.ActiveSpeed = 0.1;
-                    }
-                    else if (player is Serpent)
-                    {
-                        player.PassiveSpeed = 0.350;
-                        player.ActiveSpeed = 0.175;
-                    }
-                    else if (player is Bear)
-                    {
-                        player.PassiveSpeed = 0.4;
-                        player.ActiveSpeed = 0.2;
-                    }
-                }
             }
             
             else if( player.Controlled && player.Lives < 8 )
