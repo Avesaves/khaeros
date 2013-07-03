@@ -628,6 +628,29 @@ namespace Server.Mobiles
 			
 			return 0;
 		}
+
+        public static List<FeatList> GetAllowedPetFeats()
+        {
+            List<FeatList> feats = new List<FeatList>();
+
+            feats.Add(FeatList.BruteStrength);
+			feats.Add(FeatList.QuickReflexes);
+			feats.Add(FeatList.Cleave);
+			feats.Add(FeatList.Evade);
+			feats.Add(FeatList.DamageIgnore);
+			feats.Add(FeatList.FastHealing);
+			feats.Add(FeatList.CriticalStrike);
+			feats.Add(FeatList.SavageStrike);
+			feats.Add(FeatList.CripplingBlow);
+			feats.Add(FeatList.EnhancedDodge);
+			feats.Add(FeatList.Buildup);
+			feats.Add(FeatList.FlurryOfBlows);
+			feats.Add(FeatList.FocusedAttack);
+			feats.Add(FeatList.DefensiveStance);
+			feats.Add(FeatList.Rage);
+
+            return feats;
+        }
 		
 		public override void OnThink()
 		{
