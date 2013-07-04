@@ -1,4 +1,4 @@
-/*using System;
+using System;
 using Server;
 using Server.Network;
 using Server.Mobiles;
@@ -34,4 +34,4 @@ namespace Server.BackgroundInfo
 		
 		public Hardcore() {}
 	}
-}*/
+}
