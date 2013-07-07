@@ -182,7 +182,7 @@ namespace Server.Commands
         [Description("Takes you to the GM areas.")]
         private static void GoToGreenAcres_OnCommand(CommandEventArgs e)
         {
-            e.Mobile.Location = new Point3D(5364, 3473, 0);
+            e.Mobile.Location = new Point3D(5398, 3652, 0);
         }
 
         [Usage( "ClearAllyList" )]
