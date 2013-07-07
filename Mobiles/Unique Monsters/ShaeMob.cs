@@ -8,7 +8,7 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
     [CorpseName("Shae's corpse.")]
     public class ShaeMob : BaseCreature
     {
-        const int BaseDamage = 200;
+        const int BaseDamage = 50;
         int numberOfKills = 0;
 
         public ShaeMob(Serial serial) : base(serial)
@@ -56,6 +56,7 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
             VirtualArmor = 50;
         }
 
+        [CommandProperty(AccessLevel.GameMaster)]
         public int NumberOfKills { get { return numberOfKills; } set { numberOfKills = value; } }
 
         public override void OnGaveMeleeAttack(Mobile defender)
