@@ -287,6 +287,16 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
                 return true;
             }
 
+            public override void Serialize(GenericWriter writer)
+            {
+                base.Serialize(writer);
+            }
+
+            public override void Deserialize(GenericReader reader)
+            {
+                base.Deserialize(reader);
+            }
+
             public class DamageFieldTimer : Timer
             {
                 PlayerMobile target;
