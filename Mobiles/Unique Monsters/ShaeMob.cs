@@ -276,6 +276,11 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
 
         public class DamageField : Item
         {
+            public DamageField()
+            {
+                
+            }
+
             public DamageField(Serial serial) : base(serial)
 		    {
 		    }
