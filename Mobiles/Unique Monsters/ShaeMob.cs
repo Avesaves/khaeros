@@ -276,6 +276,10 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
 
         public class DamageField : Item
         {
+            public DamageField(Serial serial) : base(serial)
+		    {
+		    }
+
             public void CastOn(PlayerMobile target)
             {
                 new DamageFieldTimer(target, this).Start();
