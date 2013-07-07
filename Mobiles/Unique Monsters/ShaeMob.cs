@@ -5,6 +5,7 @@ using Server.Mobiles;
 
 namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
 {
+    [CorpseName("Shae's corpse.")]
     public class ShaeMob : BaseCreature
     {
         const int BaseDamage = 200;
@@ -13,7 +14,8 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
         public ShaeMob(Serial serial) : base(serial)
         {
         }
-
+        
+        [Constructable]
         public ShaeMob() : base(AIType.AI_Berserk, FightMode.Closest, 10, 1, 0.2, 0.4 )
         {
             Name = "SHAE";
