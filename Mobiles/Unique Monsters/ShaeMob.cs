@@ -10,6 +10,8 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
     {
         const int BaseDamage = 50;
         int numberOfKills = 0;
+        bool updateDamageOnMove;
+        bool castFireField;
 
         public ShaeMob(Serial serial) : base(serial)
         {
@@ -59,6 +61,12 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
         [CommandProperty(AccessLevel.GameMaster)]
         public int NumberOfKills { get { return numberOfKills; } set { numberOfKills = value; } }
 
+        [CommandProperty(AccessLevel.GameMaster)]
+        public bool UpdateDamageOnMove { get { return updateDamageOnMove; } set { updateDamageOnMove = value; } }
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public bool CastFireField { get { return castFireField; } set { castFireField = value; } }
+
         public override void OnGaveMeleeAttack(Mobile defender)
         {
             base.OnGaveMeleeAttack(defender);
@@ -69,6 +77,9 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
                 Mute(defender);
             if (0.10 >= Utility.RandomDouble())
                 Blind(defender);
+
+            if (0.20 >= Utility.RandomDouble() && CastFireField)
+                CastField(defender);
         }
 
         public override void OnDamage(int amount, Mobile from, bool willKill)
@@ -84,7 +95,8 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
 
         protected override bool OnMove(Direction d)
         {
-            ReduceDamageBasedOnNumberOfPlayersClose();
+            if (UpdateDamageOnMove)
+                ReduceDamageBasedOnNumberOfPlayersClose();
 
             return base.OnMove(d);
         }
@@ -123,6 +135,14 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
             }
 
             return list;
+        }
+
+        void CastField(Mobile target)
+        {
+            PlayerMobile defplayer = target as PlayerMobile;
+
+            if (defplayer != null)
+                new DamageField().CastOn(defplayer);
         }
 
         void Blind(Mobile defender)
@@ -251,6 +271,41 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
                     return;
 
                 ((IKhaerosMobile)this.target).MutenessTimer = null;
+            }
+        }
+
+        public class DamageField : Item
+        {
+            public void CastOn(PlayerMobile target)
+            {
+                new DamageFieldTimer(target, this).Start();
+            }
+
+            public override bool OnMoveOver(Mobile m)
+            {
+                m.Damage(30);
+                return true;
+            }
+
+            public class DamageFieldTimer : Timer
+            {
+                PlayerMobile target;
+                Item field;
+
+                public DamageFieldTimer(PlayerMobile target, Item field): base(TimeSpan.FromSeconds(20))
+                {
+                    this.field = field;
+                    this.target = target;
+                }
+
+                protected override void OnTick()
+                {
+                    if (target == null)
+                        return;
+
+                    field.Delete();
+                    Stop();
+                }
             }
         }
     }
