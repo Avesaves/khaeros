@@ -8,6 +8,7 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
     public class ShaeMob : BaseCreature
     {
         const int BaseDamage = 200;
+        int numberOfKills = 0;
 
         public ShaeMob(Serial serial) : base(serial)
         {
@@ -53,7 +54,7 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
             VirtualArmor = 50;
         }
 
-        public int NumberOfKills { get; set; }
+        public int NumberOfKills { get { return numberOfKills; } set { numberOfKills = value; } }
 
         public override void OnGaveMeleeAttack(Mobile defender)
         {
@@ -162,14 +163,14 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Unique_Monsters
 
         public override void Serialize(GenericWriter writer)
         {
-            writer.Write(NumberOfKills);
             base.Serialize(writer);
+            writer.Write(NumberOfKills);
         }
 
         public override void Deserialize(GenericReader reader)
         {
-            NumberOfKills = reader.ReadInt();
             base.Deserialize(reader);
+            NumberOfKills = reader.ReadInt();
         }
 
         public class ShaeMobBlindnessTimer : Timer
