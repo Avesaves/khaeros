@@ -221,11 +221,10 @@ namespace Server.Items
 
 	    string FormatTimeSpan(TimeSpan rotSpan)
 	    {
-	        return string.Format("{0:D2}d:{1:D2}h:{2:D2}m:{3:D3}s",
+	        return string.Format("{0:D2}d:{1:D2}h:{2:D2}m",
 	                             rotSpan.Days,        
 	                             rotSpan.Hours,
-	                             rotSpan.Minutes,
-	                             rotSpan.Seconds);
+	                             rotSpan.Minutes);
 	    }
 
 	    string GetTimeToMold()
