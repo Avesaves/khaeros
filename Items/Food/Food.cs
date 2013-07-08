@@ -128,16 +128,18 @@ namespace Server.Items
 			if ( m_RotStage != RotStage.None )
 				list.Add( 1060847, "{0}\t{1}", "  " + m_RotStage.ToString(), " " ); // ~1_val~ ~2_val~
 
+            if (m_RotStage == RotStage.None)
+                list.Add(1060847, "{0}\t{1}", "Time until moldy: ", GetTimeToMold());
+            else if (m_RotStage == RotStage.Moldy)
+                list.Add(1060847, "{0}\t{1}", "Time until rotten:  ", GetTimeToRot());
+
             if (RootParentEntity is PlayerMobile)
             {
                 PlayerMobile player = RootParentEntity as PlayerMobile;
 
                 if (player.Feats.GetFeatLevel(FeatList.Cooking) > 2)
                 {
-                    if (m_RotStage == RotStage.None)
-                        list.Add(1060847, "{0}\t{1}", "Time until moldy: ", GetTimeToMold());
-                    else if (m_RotStage == RotStage.Moldy)
-                        list.Add(1060847, "{0}\t{1}", "Time until rotten:  ", GetTimeToRot());
+                    
                 }
             }
 		}
