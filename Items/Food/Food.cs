@@ -221,7 +221,7 @@ namespace Server.Items
 
 	    string FormatTimeSpan(TimeSpan rotSpan)
 	    {
-	        return string.Format("{0:D2}h:{1:D2}m:{2:D2}s:{3:D3}ms",
+	        return string.Format("{0:D2}d:{1:D2}h:{2:D2}m:{3:D3}s",
 	                             rotSpan.Days,        
 	                             rotSpan.Hours,
 	                             rotSpan.Minutes,
