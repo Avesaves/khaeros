@@ -128,18 +128,16 @@ namespace Server.Items
 			if ( m_RotStage != RotStage.None )
 				list.Add( 1060847, "{0}\t{1}", "  " + m_RotStage.ToString(), " " ); // ~1_val~ ~2_val~
 
-            if (m_RotStage == RotStage.None)
-                list.Add(1060847, "{0}\t{1}", "Time until moldy: ", GetTimeToMold());
-            else if (m_RotStage == RotStage.Moldy)
-                list.Add(1060847, "{0}\t{1}", "Time until rotten:  ", GetTimeToRot());
-
             if (RootParentEntity is PlayerMobile)
             {
                 PlayerMobile player = RootParentEntity as PlayerMobile;
 
                 if (player.Feats.GetFeatLevel(FeatList.Cooking) > 2)
                 {
-                    
+                    if (m_RotStage == RotStage.None)
+                        list.Add(1060847, "{0}\t{1}", "Time until moldy: ", GetTimeToMold());
+                    else if (m_RotStage == RotStage.Moldy)
+                        list.Add(1060847, "{0}\t{1}", "Time until rotten:  ", GetTimeToRot());
                 }
             }
 		}
@@ -216,13 +214,26 @@ namespace Server.Items
         string GetTimeToRot()
         {
             DateTime rot = Creation.Add(RotTime);
-            return (rot - DateTime.Now).ToString();
+            TimeSpan rotSpan = (rot - DateTime.Now);
+
+            return FormatTimeSpan(rotSpan);
         }
 
-        string GetTimeToMold()
+	    string FormatTimeSpan(TimeSpan rotSpan)
+	    {
+	        return string.Format("{0:D2}h:{1:D2}m:{2:D2}s:{3:D3}ms",
+	                             rotSpan.Days,        
+	                             rotSpan.Hours,
+	                             rotSpan.Minutes,
+	                             rotSpan.Seconds);
+	    }
+
+	    string GetTimeToMold()
         {
-            DateTime mold = Creation.Add(MoldTime);
-            return (mold - DateTime.Now).ToString();
+            DateTime mold = (Creation.Add(MoldTime));
+	        TimeSpan moldSpan = (mold - DateTime.Now);
+
+	        return FormatTimeSpan(moldSpan);
         }
 
 		public void ApplyRotPoison( Mobile to )
