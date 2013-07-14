@@ -189,7 +189,7 @@ namespace Server.Gumps
 				case Nation.Alyrian:
 				{
 					m.RPTitle = "of the South";
-					m.Feats.SetFeatLevel( FeatList.MhordulLanguage, 3 );
+					m.Feats.SetFeatLevel( FeatList.AlyrianLanguage, 3 );
 					m.Height = 103;
 					m.Weight = 99;
 					
