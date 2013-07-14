@@ -773,15 +773,15 @@ namespace Server.Commands
 
             switch( language.ToLower() )
             {
-            	case "alyrian":
+            	case "lurieth":
             	{
-            		SettingLanguage( m, KnownLanguage.Alyrian, m.Feats.GetFeatLevel(FeatList.AlyrianLanguage), 3, "Alyrian" );
+            		SettingLanguage( m, KnownLanguage.Alyrian, m.Feats.GetFeatLevel(FeatList.AlyrianLanguage), 3, "Lurieth" );
             		break;
             	}
             	
-            	case "azhuran":
+            	case "keeper":
             	{
-            		SettingLanguage( m, KnownLanguage.Azhuran, m.Feats.GetFeatLevel(FeatList.AzhuranLanguage), 3, "Azhuran" );
+            		SettingLanguage( m, KnownLanguage.Azhuran, m.Feats.GetFeatLevel(FeatList.AzhuranLanguage), 3, "Keeper" );
             		break;
             	}
             		
@@ -791,9 +791,9 @@ namespace Server.Commands
             		break;
             	}
             		
-            	case "khemetar":
+            	case "ancient":
             	{
-            		SettingLanguage( m, KnownLanguage.Khemetar, m.Feats.GetFeatLevel(FeatList.KhemetarLanguage), 3, "Khemetar" );
+            		SettingLanguage( m, KnownLanguage.Khemetar, m.Feats.GetFeatLevel(FeatList.KhemetarLanguage), 3, "Ancient" );
             		break;
             	}
             		
@@ -809,9 +809,9 @@ namespace Server.Commands
             		break;
             	}
             		
-            	case "vhalurian":
+            	case "faithful":
             	{
-            		SettingLanguage( m, KnownLanguage.Vhalurian, m.Feats.GetFeatLevel(FeatList.VhalurianLanguage), 3, "Vhalurian" );
+            		SettingLanguage( m, KnownLanguage.Vhalurian, m.Feats.GetFeatLevel(FeatList.VhalurianLanguage), 3, "Faithful" );
             		break;
             	}
             		
