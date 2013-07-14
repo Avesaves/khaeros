@@ -9,9 +9,9 @@ namespace Server.FeatInfo
 {
 	public class AzhuranLanguage : BaseFeat
 	{
-		public override string Name{ get{ return "Azhuran Language"; } }
+		public override string Name{ get{ return "Keeper Language"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.AzhuranLanguage; } }
-		public override FeatCost CostLevel{ get{ return FeatCost.Low; } }
+		public override FeatCost CostLevel{ get{ return FeatCost.High; } }
 		
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
@@ -19,7 +19,7 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Linguistics }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
-		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Azhuran Language, which will " +
+		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Keeper's Language, which will " +
 					"give you a small chance, according to your skill, to understand things spoken in Azhuran and, at max level, to speak the " +
 					"language itself. [25% chance]"; } }
 		public override string SecondDescription{ get{ return "[60% chance]"; } }
