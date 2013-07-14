@@ -147,12 +147,12 @@ namespace Server.Gumps
 					{
 						case Nation.Alyrian:
 						{
-							hues = new int[]{2683,2708,2582,1436,2745,2741,-1,-1,-1,-1};
+							hues = new int[]{2683,2708,2582,1436,2745,2741,2764,2989,2835,2754};
 							break;
 						}
 						case Nation.Azhuran:
 						{
-							hues = new int[]{1133,2683,2657,2935,2724,2740	,-1,-1,-1,-1};
+							hues = new int[]{1133,2683,2657,2935,2724,2740,2881,1345,2585,2820};
 							break;
 						}
 						case Nation.Khemetar:
@@ -172,7 +172,7 @@ namespace Server.Gumps
 						}
 						case Nation.Vhalurian:
 						{
-							hues = new int[]{2935,1636,2604,2599,2621,2986,-1,-1,-1,-1};
+							hues = new int[]{2935,1636,2604,2599,2621,2986,2588,2795,2939,2798};
 							break;
 						}
 					}
