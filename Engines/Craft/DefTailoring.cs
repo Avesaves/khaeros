@@ -91,7 +91,7 @@ namespace Server.Engines.Craft
 			else if( from is PlayerMobile && itemType != null )
 			{
 				PlayerMobile m = from as PlayerMobile;
-				
+			/*	
 				if( itemType == typeof( Cap ) && !TestRace( m, Nation.Vhalurian, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
@@ -415,6 +415,7 @@ namespace Server.Engines.Craft
 				
 				else if( itemType == typeof( MhordulMedicineManBoneChest ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
+					*/
 			}
 
 			return 0;
