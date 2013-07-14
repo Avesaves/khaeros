@@ -13,7 +13,7 @@ namespace Server.Items
 		{ 
 			Movable = false; 
         	Hue = 1310; 
-        	Name = "Patron Deity"; 
+        	Name = "Main Ambition"; 
 		} 
 
 		public override void OnDoubleClick( Mobile m ) 
