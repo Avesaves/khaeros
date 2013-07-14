@@ -25,6 +25,7 @@ namespace Server.Items
 			Stackable = true;
 			Amount = amount;
             Hue = 1;
+            Name = "Jet";
 		}
 
 		public Jet( Serial serial ) : base( serial )
