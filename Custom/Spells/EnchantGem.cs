@@ -7,6 +7,7 @@ using Server.Targeting;
 using Server.Network;
 using Server.Misc;
 using Server.Engines.XmlSpawner2;
+using Server.BackgroundInfo;
 
 namespace Server.Misc
 {
@@ -38,6 +39,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
 				Caster.Mana -= TotalCost;
                 Container pack = Caster.Backpack;
                 	PlayerMobile m = Caster as PlayerMobile;
+                	
 				
 				if( TargetItem is Amethyst && Caster.RawInt > 19 )
                 {
