@@ -297,6 +297,12 @@ namespace Server.Items
 			this.Owner = null;
 			c.Frozen = false;
 			this.StabledDate = DateTime.MinValue;
+
+            if (c is BaseBreedableCreature)
+            {
+                BaseBreedableCreature pet = c as BaseBreedableCreature;
+                pet.UpdateSpeeds();
+            }
 		}
 
 		private class StablePostTarget : Target

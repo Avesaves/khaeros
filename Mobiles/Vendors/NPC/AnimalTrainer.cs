@@ -249,6 +249,12 @@ namespace Server.Mobiles
 				if ( pet.Summoned )
 					pet.SummonMaster = from;
 
+                if (pet is BaseBreedableCreature)
+                {
+                    BaseBreedableCreature breedable = pet as BaseBreedableCreature;
+                    breedable.UpdateSpeeds();
+                }
+
 				pet.ControlTarget = from;
 				pet.ControlOrder = OrderType.Follow;
 				pet.StabledOwner = null;

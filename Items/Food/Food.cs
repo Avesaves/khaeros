@@ -27,7 +27,6 @@ namespace Server.Items
         private Disease m_Disease;
 		private int m_FillFactor;
 
-// added by alari: food updates
 		private int M_HitsBonus;
 		private int M_ManaBonus;
 		private DateTime m_Creation;
@@ -60,7 +59,6 @@ namespace Server.Items
 					InvalidateProperties();
 			}
 		}
-// end add
 
 		[CommandProperty( AccessLevel.GameMaster )]
 		public Mobile Poisoner
@@ -129,6 +127,19 @@ namespace Server.Items
 
 			if ( m_RotStage != RotStage.None )
 				list.Add( 1060847, "{0}\t{1}", "  " + m_RotStage.ToString(), " " ); // ~1_val~ ~2_val~
+
+            if (RootParentEntity is PlayerMobile)
+            {
+                PlayerMobile player = RootParentEntity as PlayerMobile;
+
+                if (player.Feats.GetFeatLevel(FeatList.Cooking) > 2)
+                {
+                    if (m_RotStage == RotStage.None)
+                        list.Add(1060847, "{0}\t{1}", "Time until moldy: ", GetTimeToMold());
+                    else if (m_RotStage == RotStage.Moldy)
+                        list.Add(1060847, "{0}\t{1}", "Time until rotten:  ", GetTimeToRot());
+                }
+            }
 		}
 
 		public override void OnDoubleClick( Mobile from )
@@ -142,7 +153,6 @@ namespace Server.Items
 			}
 		}
 
-// modified by alari for new food system
 		private static void RotCallback( object state )
 		{
 			Food food = state as Food;
@@ -201,6 +211,30 @@ namespace Server.Items
 				Timer.DelayCall( nextCheck + TimeSpan.FromSeconds( 5 ), new TimerStateCallback( RotCallback ), this );
 		}
 		
+        string GetTimeToRot()
+        {
+            DateTime rot = Creation.Add(RotTime);
+            TimeSpan rotSpan = (rot - DateTime.Now);
+
+            return FormatTimeSpan(rotSpan);
+        }
+
+	    string FormatTimeSpan(TimeSpan rotSpan)
+	    {
+	        return string.Format("{0:D2}d:{1:D2}h:{2:D2}m",
+	                             rotSpan.Days,        
+	                             rotSpan.Hours,
+	                             rotSpan.Minutes);
+	    }
+
+	    string GetTimeToMold()
+        {
+            DateTime mold = (Creation.Add(MoldTime));
+	        TimeSpan moldSpan = (mold - DateTime.Now);
+
+	        return FormatTimeSpan(moldSpan);
+        }
+
 		public void ApplyRotPoison( Mobile to )
 		{
 			if ( m_RotStage == RotStage.None || to == null )
@@ -320,7 +354,6 @@ namespace Server.Items
 			return false;
 		}
 
-// modified for new food system
 		static public bool FillHunger( Mobile from, int fillFactor, int hitsbonus, int manabonus )  // added: int hitsbonus, int manabonus - alari
 		{
 			if( from is PlayerMobile && ((PlayerMobile)from).IsVampire)
@@ -328,7 +361,6 @@ namespace Server.Items
 			
 			if ( from.Hunger >= 20 )
 			{
-				//from.SendLocalizedMessage( 500867 ); // You are simply too full to eat any more!
                 from.SendLocalizedMessage( 500872 ); // You manage to eat the food, but you are stuffed!
 				return true;
 			}
@@ -336,12 +368,10 @@ namespace Server.Items
 			int iHunger = from.Hunger + fillFactor;
 			if ( from.Stam < from.StamMax )
 				from.Stam += Utility.Random( 6, 3 ) + fillFactor/5;//restore some stamina
-// added
 			if ( from.Hits < from.HitsMax && hitsbonus != 0 )
 				from.Hits += Utility.RandomMinMax( hitsbonus, fillFactor + hitsbonus );//restore some health
 			if ( from.Mana < from.ManaMax && manabonus != 0 )
 				from.Mana += Utility.RandomMinMax( manabonus, fillFactor + manabonus );//restore some mana
-// end add
 
 			if ( iHunger >= 20 )
 			{

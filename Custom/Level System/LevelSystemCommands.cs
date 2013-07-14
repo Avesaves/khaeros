@@ -130,6 +130,7 @@ namespace Server.Commands
             CommandSystem.Register( "DefensiveFury", AccessLevel.Player, new CommandEventHandler( DefensiveFury_OnCommand ) );
             CommandSystem.Register( "CraftingSpecialization", AccessLevel.Player, new CommandEventHandler( CraftingSpecialization_OnCommand ) );
             CommandSystem.Register("SecondWind", AccessLevel.Player, new CommandEventHandler(SecondWind_OnCommand));
+            CommandSystem.Register("GoToGreenAcres", AccessLevel.GameMaster, new CommandEventHandler(GoToGreenAcres_OnCommand));
         }
 		
 		
@@ -177,6 +178,13 @@ namespace Server.Commands
 			return "a spell";
 		}
         
+        [Usage("GoToGreenAcres")]
+        [Description("Takes you to the GM areas.")]
+        private static void GoToGreenAcres_OnCommand(CommandEventArgs e)
+        {
+            e.Mobile.Location = new Point3D(5398, 3652, 0);
+        }
+
         [Usage( "ClearAllyList" )]
         [Description( "Allows you to remove all mobiles from your ally list." )]
         private static void ClearAllyList_OnCommand( CommandEventArgs e )

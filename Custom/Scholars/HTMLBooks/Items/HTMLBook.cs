@@ -5,6 +5,7 @@ using Server;
 using Server.Mobiles;
 using Server.Gumps;
 using Server.Network;
+using Server.FeatInfo;
 
 namespace Server.Items
 {
@@ -88,6 +89,7 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
+			PlayerMobile m = from as PlayerMobile; 
 			if ( String.IsNullOrEmpty( Title ) )
 			{
 				if ( !String.IsNullOrEmpty( Name ) )
@@ -107,7 +109,7 @@ namespace Server.Items
 			{
 				if ( Writable == false && m_SealedBy != null && m_SealedBy != from ) // not sealed by the same person, only allow viewing
 				{
-					if ( UnderstandsLanguage( m_Language, from ) )
+					if ( UnderstandsLanguage( m_Language, from ) && m.Feats.GetFeatLevel(FeatList.Linguistics) > 0 )
 					{
 						if ( Cypher.Length > 0 ) // encrypted
 							from.SendGump( new EnterCypherGump( this ) );
@@ -115,7 +117,7 @@ namespace Server.Items
 							SpawnGump( from );
 					}
 					else
-						from.SendMessage( "It's all gibberish, as you don't know the language." );
+						from.SendMessage( "It's all gibberish, as you don't know how to read the language." );
 				}
 				else
 				{
@@ -127,7 +129,7 @@ namespace Server.Items
 			{
 				if ( from.InRange( GetWorldLocation(), 2 ) && from.InLOS( this ) )
 				{
-					if ( UnderstandsLanguage( m_Language, from ) )
+					if ( UnderstandsLanguage( m_Language, from ) && m.Feats.GetFeatLevel(FeatList.Linguistics) > 0 )
 					{
 						if ( Cypher.Length > 0 ) // encrypted
 							from.SendGump( new EnterCypherGump( this ) );
@@ -407,7 +409,10 @@ namespace Server.Items
 		
 		public static bool UnderstandsLanguage( Language language, Mobile mobile )
 		{
+			PlayerMobile m = mobile as PlayerMobile; 
 			if( mobile == null || mobile.Deleted || !( mobile is PlayerMobile ) )
+				return false;
+			if (m.Feats.GetFeatLevel(FeatList.Linguistics) == 0 )
 				return false;
 			return PlayerMobile.KnowsLanguage( ((PlayerMobile)mobile), LanguageToKnownLanguage(language) );
 		}

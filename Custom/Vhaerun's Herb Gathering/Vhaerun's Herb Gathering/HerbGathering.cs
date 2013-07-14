@@ -41,8 +41,8 @@ namespace Server.Engines.Harvest
 			herb.BankHeight = 1;
 
 			// Every bank holds from 20 to 45 logs
-			herb.MinTotal = 1;
-			herb.MaxTotal = 3;
+			herb.MinTotal = 2;
+			herb.MaxTotal = 6;
 
 			// A resource bank will respawn its content every 20 to 30 minutes
 			herb.MinRespawn = TimeSpan.FromMinutes( 5.0 );

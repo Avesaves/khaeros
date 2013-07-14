@@ -319,8 +319,10 @@ namespace Server.Misc
         		FeatList feat = (FeatList)reader.ReadInt();
         		int level = reader.ReadInt();
         		
-        		if( !creature || level > 1 )
+        		if(creature && BaseBreedableCreature.GetAllowedPetFeats().Contains(feat))
         			SetFeatLevel( feat, level );
+                else if (!creature || level > 1)
+                    SetFeatLevel(feat, level);
         	}
 		}
 

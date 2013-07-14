@@ -253,7 +253,31 @@ namespace Server.Mobiles
             get{ return m_PetEvolution; }
             set{ m_PetEvolution = value; }
         }
-        
+
+        public void UpdateSpeeds()
+        {
+            if (this is Wolf)
+            {
+                PassiveSpeed = 0.350;
+                ActiveSpeed = 0.1;
+            }
+            else if (this is Serpent)
+            {
+                PassiveSpeed = 0.350;
+                ActiveSpeed = 0.175;
+            }
+            else if (this is Bear)
+            {
+                PassiveSpeed = 0.4;
+                ActiveSpeed = 0.2;
+            }
+            else if (this is WorkHorse)
+            {
+                ActiveSpeed = 0.2;
+                PassiveSpeed = 0.4;
+            }
+        }
+
         public List<int> MatesFeats
         {
             get
@@ -604,6 +628,29 @@ namespace Server.Mobiles
 			
 			return 0;
 		}
+
+        public static List<FeatList> GetAllowedPetFeats()
+        {
+            List<FeatList> feats = new List<FeatList>();
+
+            feats.Add(FeatList.BruteStrength);
+			feats.Add(FeatList.QuickReflexes);
+			feats.Add(FeatList.Cleave);
+			feats.Add(FeatList.Evade);
+			feats.Add(FeatList.DamageIgnore);
+			feats.Add(FeatList.FastHealing);
+			feats.Add(FeatList.CriticalStrike);
+			feats.Add(FeatList.SavageStrike);
+			feats.Add(FeatList.CripplingBlow);
+			feats.Add(FeatList.EnhancedDodge);
+			feats.Add(FeatList.Buildup);
+			feats.Add(FeatList.FlurryOfBlows);
+			feats.Add(FeatList.FocusedAttack);
+			feats.Add(FeatList.DefensiveStance);
+			feats.Add(FeatList.Rage);
+
+            return feats;
+        }
 		
 		public override void OnThink()
 		{
