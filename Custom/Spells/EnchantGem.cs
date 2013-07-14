@@ -48,7 +48,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
                     Caster.SendMessage ("You feel a little more dull...");
                 }
                 
-                else if(TargetItem is Jet && m.Backgrounds.BackgroundDictionary[Disfigured].Level != 1; )
+                else if ( TargetItem is Jet && m.Backgrounds.BackgroundDictionary[Disfigured].Level != 1 )
                 {
                 	if (m.Backgrounds.BackgroundDictionary[Gorgeous].Level = 1;)
                 	{
@@ -59,7 +59,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
                 			TargetItem.Delete();
                 			pack.DropItem( glowJ );                		
                 	}
-                	else if (m.Backgrounds.BackgroundDictionary[GoodLooking].Level = 1;)
+                	else if (m.Backgrounds.BackgroundDictionary[GoodLooking].Level = 1 )
                 	{
                 		m.Backgrounds.BackgroundDictionary[GoodLooking].Level = 0;
                 		m.Backgrounds.BackgroundDictionary[Attractive].Level = 1;
@@ -68,7 +68,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
                 			TargetItem.Delete();
                 			pack.DropItem( glowJ );                		
                 	}
-                	else if (m.Backgrounds.BackgroundDictionary[Attractive].Level = 1;)
+                	else if (m.Backgrounds.BackgroundDictionary[Attractive].Level = 1 )
                 	{
                 		m.Backgrounds.BackgroundDictionary[Attractive].Level = 0;
                 		Caster.SendMessage ("You feel ugly.");
@@ -76,7 +76,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
                 			TargetItem.Delete();
                 			pack.DropItem( glowJ );                		
                 	}
-                	else if (m.Backgrounds.BackgroundDictionary[Homely].Level = 1;)
+                	else if (m.Backgrounds.BackgroundDictionary[Homely].Level = 1 )
                 	{
                 		m.Backgrounds.BackgroundDictionary[Homely].Level = 0;
                 		m.Backgrounds.BackgroundDictionary[Ugly].Level = 1;
@@ -85,7 +85,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
                 			TargetItem.Delete();
                 			pack.DropItem( glowJ );                		
                 	}
-                	else if (m.Backgrounds.BackgroundDictionary[Ugly].Level = 1;)
+                	else if (m.Backgrounds.BackgroundDictionary[Ugly].Level = 1 )
                 	{
                 		m.Backgrounds.BackgroundDictionary[Ugly].Level = 0;
                 		m.Backgrounds.BackgroundDictionary[Disfigured].Level = 1;
@@ -94,7 +94,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
                 			TargetItem.Delete();
                 			pack.DropItem( glowJ );
                 	}
-                	else if (m.Backgrounds.BackgroundDictionary[Disfigured].Level = 1;)
+                	else if (m.Backgrounds.BackgroundDictionary[Disfigured].Level = 1 )
                 	{
                 		Caster.SendMessage ("You just can't look any worse.");
                 	}                	
