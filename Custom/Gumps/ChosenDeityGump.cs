@@ -58,7 +58,7 @@ namespace Server.Gumps
 			AddButton( 72, 256, (from.ChosenDeity == ChosenDeity.Elysia ? 9723 : 9720), 9722, (int)Buttons.Elysia, GumpButtonType.Reply, 0 );
 			AddButton( 72, 291, (from.ChosenDeity == ChosenDeity.None ? 9723 : 9720), 9722, (int)Buttons.None, GumpButtonType.Reply, 0 );
 			AddLabel( 107, 86, 0, @"Knowledge" );
-			AddLabel( 107, 121, 0, @"Understanding" );
+			AddLabel( 107, 121, 0, @"Wealth" );
 			AddLabel( 107, 156, 0, @"Survival" );
 			AddLabel( 107, 191, 0, @"Power" );
 			AddLabel( 107, 226, 0, @"Honor" );
