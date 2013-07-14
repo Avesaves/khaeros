@@ -89,7 +89,7 @@ namespace Server.Engines.Craft
 			else if( from is PlayerMobile && itemType != null )
 			{
 				PlayerMobile m = from as PlayerMobile;
-				
+			/*	
 				if( itemType == typeof( AlyrianGiantBow ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
@@ -125,6 +125,7 @@ namespace Server.Engines.Craft
 				
 				else if( itemType == typeof( VhalurianLongbow ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
+					*/
 			}
 
 			return 0;
