@@ -97,7 +97,7 @@ namespace Server.Engines.Craft
 			else if( from is PlayerMobile && itemType != null )
 			{
 				PlayerMobile m = from as PlayerMobile;
-					
+				/*	
 				if( itemType == typeof( FootTrap ) && m.Feats.GetFeatLevel(FeatList.NonLethalTraps) < 1 )
 					return 1063492; // You lack the required feat.
 				
@@ -217,6 +217,7 @@ namespace Server.Engines.Craft
 
                 else if( itemType == typeof( LargeSilverNecklace ) && m.Feats.GetFeatLevel( FeatList.JewelryCrafting ) < 2 )
                     return 1063492; // You lack the required feat.
+                    */
 			}
 
 			return 0;
