@@ -9,7 +9,7 @@ namespace Server.FeatInfo
 {
 	public class VhalurianLanguage : BaseFeat
 	{
-		public override string Name{ get{ return "Vhalurian Language"; } }
+		public override string Name{ get{ return "Divine Union Language"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.VhalurianLanguage; } }
 		public override FeatCost CostLevel{ get{ return FeatCost.Low; } }
 		
@@ -19,7 +19,7 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Linguistics }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
-		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Vhalurian Language, which will " +
+		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Language of the Divine Union, which will " +
 					"give you a small chance, according to your skill, to understand things spoken in Vhalurian and, at max level, to speak the " +
 					"language itself. [25% chance]"; } }
 		public override string SecondDescription{ get{ return "[60% chance]"; } }
