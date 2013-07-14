@@ -7,7 +7,7 @@ using Server.Targeting;
 using Server.Network;
 using Server.Misc;
 using Server.Engines.XmlSpawner2;
-using Server.BackgroundInfo;
+
 
 namespace Server.Misc
 {
@@ -31,7 +31,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
 		{
 		}
 		
-		public override void Effect()
+		public override void Effect( CommandEventArgs e )
 		{
 			if( TargetCanBeAffected && CasterHasEnoughMana && TargetItem is IGem )
 			{
