@@ -325,7 +325,7 @@ namespace Server.Mobiles
                 }
             }
 
-            return false;
+            return true;
         }
 
         public BirdOfPrey(Serial serial)
