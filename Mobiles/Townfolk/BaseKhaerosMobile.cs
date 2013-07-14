@@ -819,25 +819,23 @@ namespace Server.Mobiles
 				case Nation.Alyrian:
 				{
 					if( female )
-					{
-						namelist = "Aideen,Aine,Anna,Arianwen,Blair,Brenda,Briana, " +
-							"Ceinwyn,Colleen,Dealla,Dervil,Devany,Eachna,Eavan,Ethna," +
-							"Eithne,Elatha,Eleanor,Fionna,Grania,Gwynne,Isleen,Kaitlin," +
-							"Keena,Liadan,Lynn,Maeve,Mell,Myrna,Naomh,Neala,Nessa," +
-							"Nevina,Nia,Nila,Nola,Ryann,Sinead,Taillte,Tara,Tullia," +
-							"Una,Vanora,Caireann,Alana";
-					}
-					
-					else
-					{
-						namelist = "Bran,Brennus,Brian,Caley,Calhoun,Casey,Cass,Cathal," +
-							"Ceallach,Conall,Conn,Craig,Culley,Daigh,Devine,Dolan,Donn," +
-							"Doran,Dow,Dumnorix,Eachan,Fearghus,Finnegan,Fionn,Gaeth," +
-							"Gair,Gallagher,Galloway,Gwent,Haley,Imar,Innis,Irv,Keelan," +
-							"Keenan,Keller,Kelvin,Kenneth,Labhraidh,Labras,Leannan,Lonn," +
-							"Mardbod,Murdock,Ossian,Quinn,Raegan,Ryan,Riddock,Sean,Trevor," +
-							"Logan,Liam,Daegan";
-					}
+			{
+				namelist = "Tallia,Nintinia,Hala,Pola,Gratumna,Cassia,Sulvia,Quatia,Pellia,Tunia,Traenia," +
+					"Plena,Lullia,Conia,Minia,Lina,Tillia,Pulvula,Sautia,Larania,Somaria,Purnia,Milinia," +
+					"Agrinia,Clena,Velva,Stallia,Agrutia,Stera,Cinia,Cessulvia,Closia,Punia,Rutallia,Dama," +
+					"Stravoria,Silia,Glatia,Pania,Ascia,Vala,Helina,Tramecia,Crilunia,Lutia," +
+					"Pullia,Claenia,Drullecia,Laenia,Pellia";
+			}
+			
+			else
+			{
+				namelist = "Quarto,Vintius,Varus,Vinnius,Quarrus,Nentius,Ganus,Quisius,Gaius,Caronius," +
+					"Fectius,Egnitis,Vallitus,Cuvonius,Trucius,Sorius,Maelius,Selius,Crevian,Durio," +
+					"Viralian,Stanus,Mectris,Aralius,Plasus,Ussius,Dentius,Frallerian,Delius,Atis," +
+					"Trellius,Migius,Armatius,Trasucian,Gelacius,Malchio,Gragavius,Pivius,Marotius," +
+					"Polimius,Allius,Aetirius,Castianus,Flagius,Audallirus,Atturus,Caerius," +
+					"Selus,Parius,Brunis";
+			}
 					
 					break;
 				}
@@ -846,24 +844,24 @@ namespace Server.Mobiles
 				{
 					if( female )
 					{
-						namelist = "Teolco,Tlilo,Xichua,Chihica,Malozua,Mella,Tamut," +
-							"Tallit,Ildja,Kulla,Tisa,Dihya,Takirri,Zahrit,Zenet,Tiri," +
-							"Chintal,Chintoci,Xuchtlia,Xichuatl,Tlinetzin,Huicinal," +
-							"Miyahuel,Yolxau,Tantico,Malinali,Itzamna,Ixchel,Ixchup," +
-							"Ixchab,Anacaona,Quilaco,Cusi,Canari,Viracocha,Catequil," +
-							"Mayta,Huayna,Atahualpa,Sayri,Amaru,Anas-Collque," +
-							"Cusi-Huarcay,Marca-Chimbo,Quispe-Sisa,Anta-Anclla," +
-							"Pinca-Huaco,Cura-Ocllo,Varanca,Sahuara";
+						namelist = "Esra,Vara,Xi,Zi,Chih,Lozua,Mela,Anixa,Ana" +
+							"Tali,Ildja,Kulla,Tisa,Dihya,Takirri,Zahrit,Zenet,Tiri," +
+							"Atla,Ata,Dia,Essa,Extia,Faris,Izela,Ixela,Fazria,Raza," +
+							"Hadia,Hala,Hani,Isa,Izra,Izza,Khadija,Lamia,Lamya,Khalifa," +
+							"Canari,Layla,Lina,Lixtli,Luffi,Maha,Maali,Maram,Mirza," +
+							"Muna,Nada,Nadya,Nura,Raisa,Ranya,Rana,Rua,Ruya,Safi,Sakina," +
+							"Sana,Sani,Sara,Saria,Zelesi,Shahrazad,Shazi,Thana,Uzma,Thaone," +
+							"Uzme,Exma,Yasmin,Zahra,Zaina,Zia,Aradia";
 					}
 					
 					else
 					{
-						namelist = "Coatl,Toztin,Toltex,Opazin,Huemal,Acotochtl,Zimoc," +
-							"Axocep,Xiuch,Telmoc,Xocitli,Ilchuitl,Oquitzin,Tzuicotl," +
-							"Zantli,Xichotl,Xocatl,Xotin,Chipetl,Centzon,Tlican,Pactli," +
-							"Hextli,Maxtli,Xiucan,Toa,Tangi,Tiru,Api,Piri,Kango,Temu," +
-							"Kamo,Maki,Kenaru,Kaerune,Reku,Utran,Amenzu,Usan,Mezruc," +
-							"Ikan,Menzu,Yun,Kannis,Zomalec,Apochtzin,Cuixico,Tipal,Ximal";
+						namelist = "Coatl,Ataxl,Camaxtli,Opazin,Coaxri,Atla,Diaxl," +
+							"Farix,Fakri,Raz,Ixandar,Jafar,Janan,Khalil,Maali,Malik," +
+							"Xalik,Mazin,Navid,Ra'lai,Raox,Raiz'ai,Ran'xia,Aran,Raotl" +
+							"Toa,Tariq,Sain,Zain,Mazin,Tarix,Farix,Feran,Exiti,Zulfiqar," +
+							"Usan,Maki,Zia,Thaon,Tirix,Canar,Aladl,Takir,Zenl,Aradl," +
+							"Cuixico,Xomal,Mehen,Ma'alai,Xin'alai,Zain'al";
 					}
 					
 					break;
