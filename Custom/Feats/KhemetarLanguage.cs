@@ -48,6 +48,23 @@ namespace Server.FeatInfo
         {
             return m.Nation == Nation.Khemetar;
         }
+               public override bool MeetsOurRequirements( PlayerMobile m )
+	{
+	
+	
+
+            if(((PlayerMobile)m).Feats.GetFeatLevel(FeatList.VhalurianLanguage) < 3)
+                return false;
+
+            if (((PlayerMobile)m).Feats.GetFeatLevel(FeatList.AlyrianLanguage) < 3)
+                return false;
+            if (((PlayerMobile)m).Feats.GetFeatLevel(FeatList.AzhuranLanguage) < 3)
+                return false;
+            if (((PlayerMobile)m).Feats.GetFeatLevel(FeatList.Inscription) < 3)
+                return false;
+
+	return base.MeetsOurRequirements( m );
+	}
 		
 		public KhemetarLanguage() {}
 	}
