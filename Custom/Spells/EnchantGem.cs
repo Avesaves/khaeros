@@ -47,8 +47,68 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
                     Caster.RawInt -= 10;
                     Caster.SendMessage ("You feel a little more dull...");
                 }
+                
+                else if(TargetItem is Jet && m.Backgrounds.BackgroundDictionary[Disfigured].Level != 1; )
+                {
+                	if (m.Backgrounds.BackgroundDictionary[Gorgeous].Level = 1;)
+                	{
+                		m.Backgrounds.BackgroundDictionary[Gorgeous].Level = 0;
+                		m.Backgrounds.BackgroundDictionary[GoodLooking].Level = 1;
+                		Caster.SendMessage ("You feel ugly.");
+                			GlowingJet glowJ = new GlowingJet();
+                			TargetItem.Delete();
+                			pack.DropItem( glowJ );                		
+                	}
+                	else if (m.Backgrounds.BackgroundDictionary[GoodLooking].Level = 1;)
+                	{
+                		m.Backgrounds.BackgroundDictionary[GoodLooking].Level = 0;
+                		m.Backgrounds.BackgroundDictionary[Attractive].Level = 1;
+                		Caster.SendMessage ("You feel ugly.");
+                			GlowingJet glowJ = new GlowingJet();
+                			TargetItem.Delete();
+                			pack.DropItem( glowJ );                		
+                	}
+                	else if (m.Backgrounds.BackgroundDictionary[Attractive].Level = 1;)
+                	{
+                		m.Backgrounds.BackgroundDictionary[Attractive].Level = 0;
+                		Caster.SendMessage ("You feel ugly.");
+                			GlowingJet glowJ = new GlowingJet();
+                			TargetItem.Delete();
+                			pack.DropItem( glowJ );                		
+                	}
+                	else if (m.Backgrounds.BackgroundDictionary[Homely].Level = 1;)
+                	{
+                		m.Backgrounds.BackgroundDictionary[Homely].Level = 0;
+                		m.Backgrounds.BackgroundDictionary[Ugly].Level = 1;
+                		Caster.SendMessage ("You feel ugly.");
+                			GlowingJet glowJ = new GlowingJet();
+                			TargetItem.Delete();
+                			pack.DropItem( glowJ );                		
+                	}
+                	else if (m.Backgrounds.BackgroundDictionary[Ugly].Level = 1;)
+                	{
+                		m.Backgrounds.BackgroundDictionary[Ugly].Level = 0;
+                		m.Backgrounds.BackgroundDictionary[Disfigured].Level = 1;
+                		Caster.SendMessage ("You feel ugly.");
+                		        GlowingJet glowJ = new GlowingJet();
+                			TargetItem.Delete();
+                			pack.DropItem( glowJ );
+                	}
+                	else if (m.Backgrounds.BackgroundDictionary[Disfigured].Level = 1;)
+                	{
+                		Caster.SendMessage ("You just can't look any worse.");
+                	}                	
+                	else
+                	{
+                		m.Backgrounds.BackgroundDictionary[Homely].Level = 1;
+                			Caster.SendMessage ("You feel ugly.");
+                			GlowingJet glowJ = new GlowingJet();
+                			TargetItem.Delete();
+                			pack.DropItem( glowJ );
+                	}
+                }
 
-                else if( TargetItem is Citrine )
+                else if( TargetItem is Citrine && m.Age < 70 )
                 {
                     GlowingCitrine glow2 = new GlowingCitrine();
 					TargetItem.Delete();
