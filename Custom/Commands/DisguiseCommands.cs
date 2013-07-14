@@ -212,27 +212,21 @@ namespace Server.Commands
                 nationchoice = nationchoice.ToLower();
                 Nation nation = Nation.None;
 
-                if (nationchoice == "alyrian")
+                if (nationchoice == "lurieth")
                     nation = Nation.Alyrian;
 
-                else if (nationchoice == "azhuran")
+                else if (nationchoice == "keeper")
                     nation = Nation.Azhuran;
 
-                else if (nationchoice == "khemetar")
-                    nation = Nation.Khemetar;
-
-                else if (nationchoice == "mhordul")
+                else if (nationchoice == "stranger")
                     nation = Nation.Mhordul;
 
-                else if (nationchoice == "tyrean")
-                    nation = Nation.Tyrean;
-
-                else if (nationchoice == "vhalurian")
+                else if (nationchoice == "faithful")
                     nation = Nation.Vhalurian;
 
                 else
                 {
-                    m.SendMessage("Usage example: .Disguise Alyrian");
+                    m.SendMessage("Usage example: .Disguise keeper");
                     return;
                 }
 
