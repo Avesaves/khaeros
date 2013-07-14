@@ -27,9 +27,9 @@ namespace Server.Mobiles
 
             switch(Nation)
             {
-                case Nation.Alyrian: advisorTitle = "Masnachwr"; break;
+                case Nation.Alyrian: advisorTitle = "Trader"; break;
                 case Nation.Azhuran: advisorTitle = "Makipuray"; break;
-                case Nation.Khemetar: advisorTitle = "Taajir"; break;
+                case Nation.Khemetar: advisorTitle = "Trader"; break;
                 case Nation.Mhordul: advisorTitle = "Qudaldughacin"; break;
                 case Nation.Tyrean: advisorTitle = "Selja"; break;
                 case Nation.Vhalurian: if (Female) { advisorTitle = "Tradeswoman"; } else { advisorTitle = "Tradesman"; } break;
