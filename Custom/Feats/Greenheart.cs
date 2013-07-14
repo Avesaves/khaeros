@@ -27,7 +27,7 @@ namespace Server.FeatInfo
 		public override string SecondCommand{ get{ return "None"; } }
 		public override string ThirdCommand{ get{ return "None"; } }
 		
-		public override Nation[] AllowedNations{ get{ return new Nation[]{ Nation.Alyrian }; } }
+
 		
 		public override string FullDescription{ get{ return GetFullDescription(this); } }
 		
