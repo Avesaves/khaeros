@@ -9,7 +9,7 @@ namespace Server.FeatInfo
 {
 	public class AlyrianLanguage : BaseFeat
 	{
-		public override string Name{ get{ return "Alyrian Language"; } }
+		public override string Name{ get{ return "Lurethian Language"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.AlyrianLanguage; } }
 		public override FeatCost CostLevel{ get{ return FeatCost.Low; } }
 		
@@ -19,7 +19,7 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Linguistics }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
-		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Alyrian Language, which will " +
+		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Language of Lurieth, which will " +
 					"give you a small chance, according to your skill, to understand things spoken in Alyrian and, at max level, to speak the " +
 					"language itself. [25% chance]"; } }
 		public override string SecondDescription{ get{ return "[60% chance]"; } }
