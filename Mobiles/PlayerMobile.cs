@@ -6956,11 +6956,11 @@ namespace Server.Mobiles
         	switch( m.SpokenLanguage )
         	{
         		case KnownLanguage.Alyrian: return 482;
-        		case KnownLanguage.Azhuran: return 622;
-        		case KnownLanguage.Khemetar: return 2964;
-        		case KnownLanguage.Mhordul: return 1;
+        		case KnownLanguage.Azhuran: return 2655;
+        		case KnownLanguage.Khemetar: return 1;
+        		case KnownLanguage.Mhordul: return 2964;
         		case KnownLanguage.Tyrean: return 2618;
-        		case KnownLanguage.Vhalurian: return 37;
+        		case KnownLanguage.Vhalurian: return 137;
         	}
         	return 0;
         }
@@ -8695,20 +8695,20 @@ namespace Server.Mobiles
             if( version < 145 )
             {
                 m_TitlePrefix = null;
-                m_RPTitle = "the Alyrian";
+                m_RPTitle = "of the South";
 
                 if( m_Nation == Nation.Alyrian )
-                    m_RPTitle = "the Alyrian";
+                    m_RPTitle = "of the South";
                 else if( m_Nation == Nation.Azhuran )
-                    m_RPTitle = "the Azhuran";
+                    m_RPTitle = "of the West";
                 else if( m_Nation == Nation.Khemetar )
                     m_RPTitle = "the Khemetar";
                 else if( m_Nation == Nation.Mhordul )
-                    m_RPTitle = "the Mhordul";
+                    m_RPTitle = "the Stranger";
                 else if( m_Nation == Nation.Tyrean )
                     m_RPTitle = "the Tyrean";
                 else if( m_Nation == Nation.Vhalurian )
-                    m_RPTitle = "the Vhalurian";
+                    m_RPTitle = "of the North";
             }
 			
 			m_Intimidated = 0;
