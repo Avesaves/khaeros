@@ -20,7 +20,7 @@ namespace Server.FeatInfo
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Language of Lurieth, which will " +
-					"give you a small chance, according to your skill, to understand things spoken in Alyrian and, at max level, to speak the " +
+					"give you a small chance, according to your skill, to understand things spoken in Lurethian and, at max level, to speak the " +
 					"language itself. [25% chance]"; } }
 		public override string SecondDescription{ get{ return "[60% chance]"; } }
 		public override string ThirdDescription{ get{ return "[100% chance]"; } }
