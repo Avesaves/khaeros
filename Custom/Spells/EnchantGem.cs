@@ -39,6 +39,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
 				Caster.Mana -= TotalCost;
                 Container pack = Caster.Backpack;
                 	PlayerMobile m = Caster as PlayerMobile;
+                	BackgroundList background = (BackgroundList)Enum.Parse( typeof(BackgroundList), e.Arguments[0].Trim(), true );
                 	
 				
 				if( TargetItem is Amethyst && Caster.RawInt > 19 )
@@ -50,12 +51,13 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
                     Caster.SendMessage ("You feel a little more dull...");
                 }
                 
-                else if ( TargetItem is Jet && m.Backgrounds.BackgroundDictionary[Disfigured].Level != 1 )
+                else if ( TargetItem is Jet )
                 {
                 	if (m.Backgrounds.BackgroundDictionary[Gorgeous].Level = 1)
                 	{
-                		m.Backgrounds.BackgroundDictionary[Gorgeous].Level = 0;
-                		m.Backgrounds.BackgroundDictionary[GoodLooking].Level = 1;
+         
+			        m.Target = new BackgroundTarget( Gorgeous, 0, true );
+			        m.Target = new BackgroundTarget( GoodLooking, 1, true );
                 		Caster.SendMessage ("You feel ugly.");
                 			GlowingJet glowJ = new GlowingJet();
                 			TargetItem.Delete();
@@ -219,6 +221,36 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
 			
 
 			}
+			        private class BackgroundTarget : Target
+{
+         BackgroundList m_Background;
+         int m_Level;
+         bool m_Setting;
+        
+public BackgroundTarget( BackgroundList background, int level, bool setting ) : base( 30, false, TargetFlags.None )
+{
+m_Background = background;
+m_Level = level;
+m_Setting = setting;
+}
+
+protected override void OnTarget( Mobile from, object targeted )
+{
+if( from == null || targeted == null || !(from is PlayerMobile) || !(targeted is PlayerMobile) )
+return;
+
+PlayerMobile target = targeted as PlayerMobile;
+
+if( m_Setting )
+{
+target.Backgrounds.BackgroundDictionary[m_Background].Level = m_Level;
+from.SendMessage( "Property has been set." );
+}
+
+else
+from.SendMessage( m_Background.ToString() + " = " + target.Backgrounds.BackgroundDictionary[m_Background].Level.ToString() );
+}
+        }
 
 		
 		public static void Initialize()
