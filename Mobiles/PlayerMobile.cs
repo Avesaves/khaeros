@@ -6956,7 +6956,7 @@ namespace Server.Mobiles
         	switch( m.SpokenLanguage )
         	{
         		case KnownLanguage.Alyrian: return 482;
-        		case KnownLanguage.Azhuran: return 1260;
+        		case KnownLanguage.Azhuran: return 1259;
         		case KnownLanguage.Khemetar: return 1;
         		case KnownLanguage.Mhordul: return 2964;
         		case KnownLanguage.Tyrean: return 2618;
