@@ -174,7 +174,7 @@ namespace Server.Engines.Craft
 			{
 				PlayerMobile m = from as PlayerMobile;
 				
-				if( itemType == typeof( AlyrianChainGorget ) && !TestRace( m, Nation.Alyrian ) )
+		/*		if( itemType == typeof( AlyrianChainGorget ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( AlyrianChainChest ) && !TestRace( m, Nation.Alyrian ) )
@@ -497,6 +497,7 @@ namespace Server.Engines.Craft
 				
 				else if( itemType == typeof( Cervelliere ) && TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
+					*/
 			}
 
 			bool anvil, forge;
