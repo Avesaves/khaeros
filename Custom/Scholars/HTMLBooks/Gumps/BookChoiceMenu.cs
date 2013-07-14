@@ -135,13 +135,11 @@ namespace Server.Gumps
 			Simple,
 			Moderate,
 			Complex,
-			Alyrian,
-			Azhuran,
+			Southern,
+			Western,
 			Common,
-			Khemetar,
-			Mhordul,
-			Tyrean,
-			Vhalurian,
+			Ancient,
+			Northern,
 			DoTranslate,
 			DoDecrypt,
 			DoEncrypt,
@@ -229,7 +227,7 @@ namespace Server.Gumps
 					break;
 				}
 				
-				case (int)Buttons.Vhalurian:
+				case (int)Buttons.Northern:
 				{
 					if ( HTMLBook.UnderstandsLanguage( Language.Vhalurian, from ) && HTMLBook.UnderstandsLanguage( m_Book.Language, from ))
 						m_Language = Language.Vhalurian;
@@ -240,18 +238,9 @@ namespace Server.Gumps
 					break;
 				}
 				
-				case (int)Buttons.Mhordul:
-				{
-					if ( HTMLBook.UnderstandsLanguage( Language.Mhordul, from ) && HTMLBook.UnderstandsLanguage( m_Book.Language, from ))
-						m_Language = Language.Mhordul;
-					else
-						from.SendMessage( "You don't know that language!" );
-					
-					from.SendGump( new BookChoiceMenu( m_Book, m_Menu, m_EncryptionLevel, m_Language ) );
-					break;
-				}
+			
 				
-				case (int)Buttons.Khemetar:
+				case (int)Buttons.Ancient:
 				{
 					if ( HTMLBook.UnderstandsLanguage( Language.Khemetar, from ) && HTMLBook.UnderstandsLanguage( m_Book.Language, from ))
 						m_Language = Language.Khemetar;
@@ -262,18 +251,9 @@ namespace Server.Gumps
 					break;
 				}
 				
-				case (int)Buttons.Tyrean:
-				{
-					if ( HTMLBook.UnderstandsLanguage( Language.Tyrean, from ) && HTMLBook.UnderstandsLanguage( m_Book.Language, from ))
-						m_Language = Language.Tyrean;
-					else
-						from.SendMessage( "You don't know that language!" );
-					
-					from.SendGump( new BookChoiceMenu( m_Book, m_Menu, m_EncryptionLevel, m_Language ) );
-					break;
-				}
+
 				
-				case (int)Buttons.Alyrian:
+				case (int)Buttons.Southern:
 				{
 					if ( HTMLBook.UnderstandsLanguage( Language.Alyrian, from ) && HTMLBook.UnderstandsLanguage( m_Book.Language, from ))
 						m_Language = Language.Alyrian;
@@ -284,7 +264,7 @@ namespace Server.Gumps
 					break;
 				}
 				
-				case (int)Buttons.Azhuran:
+				case (int)Buttons.Western:
 				{
 					if ( HTMLBook.UnderstandsLanguage( Language.Azhuran, from ) && HTMLBook.UnderstandsLanguage( m_Book.Language, from ))
 						m_Language = Language.Azhuran;
