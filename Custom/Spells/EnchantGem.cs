@@ -31,7 +31,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
 		{
 		}
 		
-		public override void Effect( CommandEventArgs e )
+		public override void Effect( )
 		{
 			if( TargetCanBeAffected && CasterHasEnoughMana && TargetItem is IGem )
 			{
@@ -39,7 +39,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
 				Caster.Mana -= TotalCost;
                 Container pack = Caster.Backpack;
                 	PlayerMobile m = Caster as PlayerMobile;
-                	BackgroundList background = (BackgroundList)Enum.Parse( typeof(BackgroundList), e.Arguments[0].Trim(), true );
+                
                 	
 				
 				if( TargetItem is Amethyst && Caster.RawInt > 19 )
@@ -51,7 +51,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
                     Caster.SendMessage ("You feel a little more dull...");
                 }
                 
-                else if ( TargetItem is Jet )
+              /*  else if ( TargetItem is Jet )
                 {
                 	if (m.Backgrounds.BackgroundDictionary[Gorgeous].Level = 1)
                 	{
@@ -111,7 +111,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
                 			pack.DropItem( glowJ );
                 	}
                 }
-
+*/
                 else if( TargetItem is Citrine && m.Age < 70 )
                 {
                     GlowingCitrine glow2 = new GlowingCitrine();
