@@ -50,7 +50,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
                 
                 else if ( TargetItem is Jet && m.Backgrounds.BackgroundDictionary[Disfigured].Level != 1 )
                 {
-                	if (m.Backgrounds.BackgroundDictionary[Gorgeous].Level = 1;)
+                	if (m.Backgrounds.BackgroundDictionary[Gorgeous].Level = 1)
                 	{
                 		m.Backgrounds.BackgroundDictionary[Gorgeous].Level = 0;
                 		m.Backgrounds.BackgroundDictionary[GoodLooking].Level = 1;
