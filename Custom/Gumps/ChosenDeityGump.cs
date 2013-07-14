@@ -11,10 +11,10 @@ namespace Server.Gumps
     {
         public static void Initialize()
         {
-            CommandSystem.Register( "ChosenDeity", AccessLevel.Player, new CommandEventHandler(ChosenDeity_OnCommand) );
+            CommandSystem.Register( "Ambition", AccessLevel.Player, new CommandEventHandler(ChosenDeity_OnCommand) );
         }
 
-        [Usage( "ChosenDeity" )]
+        [Usage( "Ambition" )]
         [Description( "Makes a call to your custom gump." )]
         public static void ChosenDeity_OnCommand( CommandEventArgs e )
         {
@@ -25,9 +25,9 @@ namespace Server.Gumps
             	string deity = m.ChosenDeity.ToString();
             	
             	if( m.ChosenDeity == ChosenDeity.Mahtet )
-            		deity = "Mah'tet";
+            		deity = "Survival";
             	
-            	m.SendMessage( "You have already chosen " + deity + " as your patron deity." );
+            	m.SendMessage( "You have already chosen this as your central ambition." );
             }
             
             else
@@ -49,7 +49,7 @@ namespace Server.Gumps
 			AddPage( 0 );
 			AddBackground( 42, 23, 202, 331, 9270 );
 			AddBackground( 58, 39, 169, 298, 3500 );
-			AddLabel( 101, 51, 2010, @"Patron Deity" );
+			AddLabel( 101, 51, 2010, @"Main Ambition" );
 			AddButton( 72, 81, (from.ChosenDeity == ChosenDeity.Arianthynt ? 9723 : 9720), 9722, (int)Buttons.Arianthynt, GumpButtonType.Reply, 0 );
 			AddButton( 72, 116, (from.ChosenDeity == ChosenDeity.Xipotec ? 9723 : 9720), 9722, (int)Buttons.Xipotec, GumpButtonType.Reply, 0 );
 			AddButton( 72, 151, (from.ChosenDeity == ChosenDeity.Mahtet ? 9723 : 9720), 9722, (int)Buttons.Mahtet, GumpButtonType.Reply, 0 );
@@ -57,12 +57,12 @@ namespace Server.Gumps
 			AddButton( 72, 221, (from.ChosenDeity == ChosenDeity.Ohlm ? 9723 : 9720), 9722, (int)Buttons.Ohlm, GumpButtonType.Reply, 0 );
 			AddButton( 72, 256, (from.ChosenDeity == ChosenDeity.Elysia ? 9723 : 9720), 9722, (int)Buttons.Elysia, GumpButtonType.Reply, 0 );
 			AddButton( 72, 291, (from.ChosenDeity == ChosenDeity.None ? 9723 : 9720), 9722, (int)Buttons.None, GumpButtonType.Reply, 0 );
-			AddLabel( 107, 86, 0, @"Arianthynt" );
-			AddLabel( 107, 121, 0, @"Xipotec" );
-			AddLabel( 107, 156, 0, @"Mah'tet" );
-			AddLabel( 107, 191, 0, @"Xorgoth" );
-			AddLabel( 107, 226, 0, @"Ohlm" );
-			AddLabel( 107, 261, 0, @"Elysia" );
+			AddLabel( 107, 86, 0, @"Knowledge" );
+			AddLabel( 107, 121, 0, @"Understanding" );
+			AddLabel( 107, 156, 0, @"Survival" );
+			AddLabel( 107, 191, 0, @"Power" );
+			AddLabel( 107, 226, 0, @"Honor" );
+			AddLabel( 107, 261, 0, @"Love" );
 			AddLabel( 107, 296, 0, @"None for now" );
         }
 
