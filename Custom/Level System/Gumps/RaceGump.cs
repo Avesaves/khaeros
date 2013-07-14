@@ -116,7 +116,7 @@ namespace Server.Gumps
 
 			
 			this.AddPage(5);
-			this.AddHtml( 99, 219, 307, 147, "<center>????</center><br><br>" +
+			this.AddHtml( 99, 219, 307, 147, "<center>???? [locked]</center><br><br>" +
 			             "Just by looking at you, it is hard to see where you come from. " +
 			             "Perhaps, after the terrible events, your ancestors lived " +
 			             "in caves, or perhaps you are descendant from bandits. " +
@@ -125,7 +125,7 @@ namespace Server.Gumps
 			             "although this may change. Your past is a mystery. " +
 
 			             "<br><br><a href=\"http://www.khaeros.net/khaeros.htm\">Further Information</a><br>", (bool)true, (bool)true);
-			this.AddButton(371, 46, 1153, 1155, 10, GumpButtonType.Reply, 0);
+		//	this.AddButton(371, 46, 1153, 1155, 10, GumpButtonType.Reply, 0);
 
             this.AddButton(90, 81, 9720, 9722, 1, GumpButtonType.Page, 2);
             this.AddButton(90, 118, 9720, 9722, 2, GumpButtonType.Page, 3);
