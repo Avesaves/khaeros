@@ -5,9 +5,9 @@ using Server.Mobiles;
 
 namespace Server.Items
 {
-	public class MhordulBoneBow : BaseRanged, IBoneArmour
+	public class BoneBow : BaseRanged, IBoneArmour
 	{
-		public override string NameType{ get{ return "Mhordul Bone Bow"; } }
+		public override string NameType{ get{ return "bone Bow"; } }
 		
 		public override int EffectID{ get{ return 0xF42; } }
 		public override Type AmmoType{ get{ return typeof( Arrow ); } }
@@ -38,14 +38,14 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.ShootBow; } }
 
 		[Constructable]
-		public MhordulBoneBow() : base( 0x3E10 )
+		public BoneBow() : base( 0x3E10 )
 		{
 			Weight = 6.0;
-			Name = "Mhordul Bone Bow";
+			Name = "bone Bow";
 			AosElementDamages.Piercing = 100;
 		}
 
-		public MhordulBoneBow( Serial serial ) : base( serial )
+		public BoneBow( Serial serial ) : base( serial )
 		{
 		}
 

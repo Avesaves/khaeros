@@ -5,12 +5,12 @@ using Server.Items;
 namespace Server.Items
 {
 	[FlipableAttribute( 0x26CE, 0x26CF )]
-	public class AlyrianClaymore : BaseSword
+	public class Claymore : BaseSword
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.CrushingBlow; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ParalyzingBlow; } }
 
-		public override string NameType { get { return "Alyrian Claymore"; } }
+		public override string NameType { get { return "claymore"; } }
 		public override int SheathedMaleBackID{ get{ return 15193; } }
 		public override int SheathedFemaleBackID{ get{ return 15194; } }
 		
@@ -36,17 +36,17 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.Slash2H; } }
 
 		[Constructable]
-		//public AlyrianClaymore() : base( 0x26CE )
-		public AlyrianClaymore() : base( 0x3CDC )
+		//public Claymore() : base( 0x26CE )
+		public Claymore() : base( 0x3CDC )
 		{
 			Weight = 9.0;
 			Layer = Layer.TwoHanded;
 			AosElementDamages.Slashing = 80;
 			AosElementDamages.Blunt = 20;
-			Name = "Alyrian Claymore";
+			Name = "claymore";
 		}
 
-		public AlyrianClaymore( Serial serial ) : base( serial )
+		public Claymore( Serial serial ) : base( serial )
 		{
 		}
 

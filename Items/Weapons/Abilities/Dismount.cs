@@ -6,7 +6,7 @@ namespace Server.Items
 	/// <summary>
 	/// Perfect for the foot-soldier, the Dismount special attack can unseat a mounted opponent.
 	/// The fighter using this ability must be on his own two feet and not in the saddle of a steed
-	/// (with one exception: players may use a VhalurianLance to dismount other players while mounted).
+	/// (with one exception: players may use a Lance to dismount other players while mounted).
 	/// If it works, the target will be knocked off his own mount and will take some extra damage from the fall!
 	/// </summary>
 	public class Dismount : WeaponAbility
@@ -22,7 +22,7 @@ namespace Server.Items
 			if ( !base.Validate( from ) )
 				return false;
 
-			if ( from.Mounted && !(from.Weapon is VhalurianLance) )
+			if ( from.Mounted && !(from.Weapon is Lance) )
 			{
 				from.SendLocalizedMessage( 1061283 ); // You cannot perform that attack while mounted!
 				return false;
@@ -39,7 +39,7 @@ namespace Server.Items
 			if ( !Validate( attacker ) )
 				return;
 
-			if ( attacker.Mounted && !(defender.Weapon is VhalurianLance) ) // TODO: Should there be a message here?
+			if ( attacker.Mounted && !(defender.Weapon is Lance) ) // TODO: Should there be a message here?
 				return;
 
 			ClearCurrentAbility( attacker );

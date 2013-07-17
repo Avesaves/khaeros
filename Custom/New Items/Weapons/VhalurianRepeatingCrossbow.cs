@@ -7,9 +7,9 @@ using Server.Mobiles;
 namespace Server.Items
 {
 	[FlipableAttribute( 0x26C3, 0x26CD )]
-	public class VhalurianRepeatingCrossbow : BaseRanged
+	public class RepeatingCrossbow : BaseRanged
 	{
-		public override string NameType{ get{ return "Vhalurian Repeating Crossbow"; } }
+		public override string NameType{ get{ return "repeating crossbow"; } }
 		
 		public override int EffectID{ get{ return 0x1BFE; } }
 		public override Type AmmoType{ get{ return typeof( Bolt ); } }
@@ -35,14 +35,14 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 80; } }
 
 		[Constructable]
-		public VhalurianRepeatingCrossbow() : base( 0x26C3 )
+		public RepeatingCrossbow() : base( 0x26C3 )
 		{
 			Weight = 8.0;
 			AosElementDamages.Piercing = 100;
-			Name = "Vhalurian Repeating Crossbow";
+			Name = "repeating crossbow";
 		}
 
-		public VhalurianRepeatingCrossbow( Serial serial ) : base( serial )
+		public RepeatingCrossbow( Serial serial ) : base( serial )
 		{
 		}
 

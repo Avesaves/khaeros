@@ -27,7 +27,7 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( Helmet ), 18, 20, 0x140B, 0 ) );
 				Add( new GenericBuyInfo( typeof( NorseHelm ), 18, 20, 0x140E, 0 ) );
 				Add( new GenericBuyInfo( typeof( NorseHelm ), 18, 20, 0x140F, 0 ) );
-				Add( new GenericBuyInfo( typeof( VhalurianBascinet ), 18, 20, 0x140C, 0 ) );
+				Add( new GenericBuyInfo( typeof( Bascinet ), 18, 20, 0x140C, 0 ) );
 				Add( new GenericBuyInfo( typeof( PlateHelm ), 21, 20, 0x1419, 0 ) );
 			}
 		}
@@ -36,7 +36,7 @@ namespace Server.Mobiles
 		{
 			public InternalSellInfo()
 			{
-				Add( typeof( VhalurianBascinet ), 9 );
+				Add( typeof( Bascinet ), 9 );
 				Add( typeof( CloseHelm ), 9 );
 				Add( typeof( Helmet ), 9 );
 				Add( typeof( NorseHelm ), 9 );

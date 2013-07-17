@@ -1364,7 +1364,7 @@ namespace Server.Items
 
 			if ( attacker.Weapon is BaseRanged )
 			{
-				if ( attacker.Weapon is HeavyCrossbow || attacker.Weapon is VhalurianRepeatingCrossbow || attacker.Weapon is Crossbow )
+				if ( attacker.Weapon is HeavyCrossbow || attacker.Weapon is RepeatingCrossbow || attacker.Weapon is Crossbow )
 					bonus += 10*((IKhaerosMobile)attacker).Feats.GetFeatLevel(FeatList.CrossbowMastery);
 				else if ( !(attacker.Weapon is AzhuranBoomerang) ) // this can only be a bow of some sort
 					bonus += 10*((IKhaerosMobile)attacker).Feats.GetFeatLevel(FeatList.BowMastery);
@@ -1562,7 +1562,7 @@ namespace Server.Items
             if( featuser.DisabledRightArmTimer != null )
                 return true;
 
-            if( attacker.Weapon is VhalurianLance && !attacker.Mounted )
+            if( attacker.Weapon is Lance && !attacker.Mounted )
                 return true;
             
             if( featuser.IsTired() )

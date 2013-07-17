@@ -4,9 +4,9 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class MhordulSpear : BasePoleArm
+	public class BarbarianSpear : BasePoleArm
 	{
-		public override string NameType{ get{ return "Mhordul Spear"; } }
+		public override string NameType{ get{ return "barbarian's spear"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ArmorIgnore; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ParalyzingBlow; } }
@@ -39,15 +39,15 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.Pierce2H; } }
 
 		[Constructable]
-		public MhordulSpear() : base( 0x3DDA )
+		public BarbarianSpear() : base( 0x3DDA )
 		{
 			Weight = 7.0;
-			Name = "Mhordul Spear";
+			Name = "barbarian's spear";
 			AosElementDamages.Piercing = 100;
 			MaxRange = 2;
 		}
 
-		public MhordulSpear( Serial serial ) : base( serial )
+		public BarbarianSpear( Serial serial ) : base( serial )
 		{
 		}
 

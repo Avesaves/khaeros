@@ -3,7 +3,7 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class AlyrianChainGorget : BaseArmor
+	public class SplintedMailGorget : BaseArmor
 	{
         public override ArmourWeight ArmourType { get { return ArmourWeight.Medium; } }
 
@@ -29,13 +29,13 @@ namespace Server.Items
 		public override ArmorMaterialType MaterialType{ get{ return ArmorMaterialType.Plate; } }
 
 		[Constructable]
-		public AlyrianChainGorget() : base( 0x3BDC )
+		public SplintedMailGorget() : base( 0x3BDC )
 		{
 			Weight = 2.0;
-			Name = "Alyrian Chain Gorget";
+			Name = "splinted mail Gorget";
 		}
 
-		public AlyrianChainGorget( Serial serial ) : base( serial )
+		public SplintedMailGorget( Serial serial ) : base( serial )
 		{
 		}
 		

@@ -41,7 +41,7 @@ namespace Server.Factions
 			AddItem( Immovable( Rehued( new BodySash(), 1645 ) ) );
 			AddItem( Immovable( Rehued( new Kilt(), 1645 ) ) );
 			AddItem( Immovable( Rehued( new Sandals(), 1645 ) ) );
-			AddItem( Newbied( new TyreanDoubleAxe() ) );
+			AddItem( Newbied( new BeardedDoubleAxe() ) );
 
 			HairItemID = 0x2047; // Afro
 			HairHue = 0x29;

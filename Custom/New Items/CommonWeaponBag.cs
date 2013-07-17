@@ -25,8 +25,8 @@ namespace Server.Items
 			DropItem( new SerratedSword() );
 			DropItem( new Axe() );
 			DropItem( new BattleAxe() );
-			DropItem( new TyreanDoubleAxe() );
-			DropItem( new AzhuranAxe() );
+			DropItem( new BeardedDoubleAxe() );
+			DropItem( new HaftedAxe() );
 			DropItem( new Hatchet() );
 			DropItem( new LargeBattleAxe() );
 			DropItem( new Pickaxe() );
@@ -40,7 +40,7 @@ namespace Server.Items
 			DropItem( new HammerPick() );
 			DropItem( new Mace() );
 			DropItem( new Maul() );
-			DropItem( new MhordulScepter() );
+			DropItem( new BarbarianScepter() );
 			DropItem( new WarHammer() );
 			DropItem( new WarMace() );
 			DropItem( new CompositeLongbow() );
@@ -56,13 +56,13 @@ namespace Server.Items
 			DropItem( new Crossbow() );
 			DropItem( new HeavyCrossbow() );
 			DropItem( new SpikedClub() );
-			DropItem( new AzhuranBladedStaff() );
+			DropItem( new Glaive() );
 			DropItem( new DoubleBladedStaff() );
 			DropItem( new Pike() );
 			DropItem( new Pitchfork() );
 			DropItem( new ShortSpear() );
 			DropItem( new Spear() );
-			DropItem( new MhordulWarFork() );
+			DropItem( new WarFork() );
 			DropItem( new BlackStaff() );
 			DropItem( new GnarledStaff() );
 			DropItem( new QuarterStaff() );
@@ -72,7 +72,7 @@ namespace Server.Items
 			DropItem( new Cutlass() );
 			DropItem( new Kryss() );
 			DropItem( new Longsword() );
-			DropItem( new KhemetarScimitar() );
+			DropItem( new Scimitar() );
 					
 			Name = "Common Weapon Bag";
 		} 

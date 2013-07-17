@@ -3,13 +3,13 @@ using Server;
 
 namespace Server.Items
 {
-	public class VhalurianBascinet : BaseArmor
+	public class Bascinet : BaseArmor
 	{
         public override ArmourWeight ArmourType { get { return ArmourWeight.Heavy; } }
 
         public override int BaseBluntResistance{ get{ return 3; } }
 		public override int BasePiercingResistance{ get{ return 4; } }
-		public override int BaseSlashingResistance{ get{ return 3; } }
+		public override int BaseSlashingResistance{ get{ return 4; } }
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 2; } }
 		public override int BaseColdResistance{ get{ return 2; } }
@@ -27,13 +27,13 @@ namespace Server.Items
 		public override ArmorMaterialType MaterialType{ get{ return ArmorMaterialType.Plate; } }
 
 		[Constructable]
-		public VhalurianBascinet() : base( 0x140C )
+		public Bascinet() : base( 0x140C )
 		{
 			Weight = 5.0;
-			Name = "Vhalurian Bascinet";
+			Name = "bascinet";
 		}
 
-		public VhalurianBascinet( Serial serial ) : base( serial )
+		public Bascinet( Serial serial ) : base( serial )
 		{
 		}
 		

@@ -45,7 +45,7 @@ namespace Server.Mobiles
 			if ( item == null )
 				AddItem( new Server.Items.FullApron() );
 
-			AddItem( new Server.Items.VhalurianBascinet() );
+			AddItem( new Server.Items.Bascinet() );
 			AddItem( new Server.Items.SmithHammer() );
 		}
 

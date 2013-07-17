@@ -6,9 +6,9 @@ using Server.Misc;
 
 namespace Server.Items
 {
-	public class AlyrianCompositeShortbow : BaseRanged
+	public class CompositeRecurveBow : BaseRanged
 	{
-		public override string NameType{ get{ return "Alyrian Composite Shortbow"; } }
+		public override string NameType{ get{ return "composite recurve bow"; } }
 		public override int EffectID{ get{ return 0xF42; } }
 		public override Type AmmoType{ get{ return typeof( Arrow ); } }
 		public override Item Ammo{ get{ return new Arrow(); } }
@@ -38,14 +38,14 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.ShootBow; } }
 
 		[Constructable]
-		public AlyrianCompositeShortbow() : base( 0x3E14 )
+		public CompositeRecurveBow() : base( 0x3E14 )
 		{
 			Weight = 5.0;
-			Name = "Alyrian Composite Shortbow";
+			Name = "composite recurve bow";
 			AosElementDamages.Piercing = 100;
 		}
 
-		public AlyrianCompositeShortbow( Serial serial ) : base( serial )
+		public CompositeRecurveBow( Serial serial ) : base( serial )
 		{
 		}
 

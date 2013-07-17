@@ -65,7 +65,7 @@ namespace Server.Items
 
             if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Azhuran)// )
             {
-                AzhuranBroadsword weapon = new AzhuranBroadsword();
+                Flamberge weapon = new Flamberge();
                 weapon.NewCrafting = true;
                 weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
                 weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -107,7 +107,7 @@ namespace Server.Items
             }
             if (m_Blade is MediumBlade && ((PlayerMobile)from).Nation == Nation.Vhalurian)
             {
-                VhalurianBroadsword weapon = new VhalurianBroadsword();
+                CavalrySword weapon = new CavalrySword();
                 weapon.NewCrafting = true;
                 weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
                 weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -149,7 +149,7 @@ namespace Server.Items
             }
             if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Vhalurian)
             {
-                VhalurianBastardSword weapon = new VhalurianBastardSword();
+                BastardSword weapon = new BastardSword();
                 weapon.NewCrafting = true;
                 weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
                 weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -191,7 +191,7 @@ namespace Server.Items
             }
             if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Tyrean)
             {
-                TyreanBastardSword weapon = new TyreanBastardSword();
+                HandAndAHalfSword weapon = new HandAndAHalfSword();
                 weapon.NewCrafting = true;
                 weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
                 weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -233,7 +233,7 @@ namespace Server.Items
             }
             if (m_Blade is CurvedBlade && ((IKhaerosMobile)from).Feats.GetFeatLevel(FeatList.Bone) >= 3 && from.Backpack.ConsumeTotal(typeof(Bone), 10))
             {
-                MhordulBoneSword weapon = new MhordulBoneSword();
+                BoneSword weapon = new BoneSword();
                 weapon.NewCrafting = true;
                 weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage + 2;
                 weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed + 4;
@@ -275,7 +275,7 @@ namespace Server.Items
             }
             if (m_Blade is ShortBlade && ((PlayerMobile)from).Nation == Nation.Azhuran)
             {
-                AzhuranShortsword weapon = new AzhuranShortsword();
+                Kutar weapon = new Kutar();
                 weapon.NewCrafting = true;
                 weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
                 weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;

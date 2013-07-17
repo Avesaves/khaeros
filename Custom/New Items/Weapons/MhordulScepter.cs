@@ -5,12 +5,12 @@ using Server.Items;
 namespace Server.Items
 {
 	[FlipableAttribute( 0x26BC, 0x26C6 )]
-	public class MhordulScepter : BaseBashing
+	public class BarbarianScepter : BaseBashing
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.CrushingBlow; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.MortalStrike; } }
 
-		public override string NameType { get { return "Mhordul Scepter"; } }
+		public override string NameType { get { return "barbarian scepter"; } }
 		
 		public override int AosStrengthReq{ get{ return 35; } }
 		public override double OverheadPercentage{ get{ return 0.4; } }
@@ -30,14 +30,14 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 110; } }
 
 		[Constructable]
-		public MhordulScepter() : base( 0x26BC )
+		public BarbarianScepter() : base( 0x26BC )
 		{
 			Weight = 6.0;
 			AosElementDamages.Blunt = 100;
-			Name = "Mhordul Scepter";
+			Name = "barbarian scepter";
 		}
 
-		public MhordulScepter( Serial serial ) : base( serial )
+		public BarbarianScepter( Serial serial ) : base( serial )
 		{
 		}
 

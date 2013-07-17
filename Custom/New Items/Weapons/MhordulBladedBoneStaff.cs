@@ -6,7 +6,7 @@ namespace Server.Items
 {
 	public class MhordulBladedBoneStaff : BaseSpear, IBoneArmour
 	{
-		public override string NameType{ get{ return "Mhordul Bone Bladed Staff"; } }
+		public override string NameType{ get{ return "bone Bladed Staff"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.DoubleStrike; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.InfectiousStrike; } }

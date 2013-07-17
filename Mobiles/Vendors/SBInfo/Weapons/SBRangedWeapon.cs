@@ -24,7 +24,7 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( HeavyCrossbow ), 55, 20, 0x13FD, 0 ) );
 				if( Core.AOS )
 				{
-					Add( new GenericBuyInfo( typeof( VhalurianRepeatingCrossbow ), 46, 20, 0x26C3, 0 ) );
+					Add( new GenericBuyInfo( typeof( RepeatingCrossbow ), 46, 20, 0x26C3, 0 ) );
 					Add( new GenericBuyInfo( typeof( CompositeBow ), 45, 20, 0x26C2, 0 ) );
 				}
 				Add( new GenericBuyInfo( typeof( Bolt ), 2, Utility.Random( 30, 60 ), 0x1BFB, 0 ) );
@@ -51,7 +51,7 @@ namespace Server.Mobiles
 				if( Core.AOS )
 				{
 					Add( typeof( CompositeBow ), 23 );
-					Add( typeof( VhalurianRepeatingCrossbow ), 22 );
+					Add( typeof( RepeatingCrossbow ), 22 );
 				}
 			}
 		}

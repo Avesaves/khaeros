@@ -23,9 +23,9 @@ namespace Server.FeatInfo
 					"over a longer distance. [You can throw any weapon and gain +1 range]"; } }
 		public override string SecondDescription{ get{ return "[+2 range]"; } }
 		public override string ThirdDescription{ get{ return "[You can throw any weapon and gain +3 range. Additionally, you can " +
-					"auto equip new daggers or tyrean throwing axes when you throw one of those. Use " +
+					"auto equip new daggers or throwing axes when you throw one of those. Use " +
 					".CraftContainer to set up a bag as a craft container in your backpack, then " +
-					"place your daggers or tyrean throwing axes inside for the auto-equip skillure.]"; } }
+					"place your daggers or throwing axes inside for the auto-equip skillure.]"; } }
 
 		public override string FirstCommand{ get{ return ".Throw"; } }
 		public override string SecondCommand{ get{ return ".Throw"; } }

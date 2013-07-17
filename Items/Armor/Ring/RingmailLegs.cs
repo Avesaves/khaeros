@@ -6,9 +6,9 @@ namespace Server.Items
 	[FlipableAttribute( 0x13f0, 0x13f1 )]
 	public class RingmailLegs : BaseArmor
 	{
-		public override int BaseBluntResistance{ get{ return 5; } }
-		public override int BaseSlashingResistance{ get{ return 8; } }
-		public override int BasePiercingResistance{ get{ return 7; } }
+		public override int BaseBluntResistance{ get{ return 6; } }
+		public override int BaseSlashingResistance{ get{ return 9; } }
+		public override int BasePiercingResistance{ get{ return 8; } }
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 3; } }
 		public override int BaseColdResistance{ get{ return 1; } }

@@ -48,7 +48,7 @@ namespace Server.Mobiles
 
 			AddItem( new Broadsword() );
 
-			Item shield = new VhalurianMetalKiteShield();
+			Item shield = new KiteShield();
 
 			shield.Hue = Utility.RandomNondyedHue();
 

@@ -5,7 +5,7 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class AzhuranShortsword : BaseSword
+	public class Kutar : BaseSword
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.InfectiousStrike; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ShadowStrike; } }
@@ -13,7 +13,7 @@ namespace Server.Items
 		public override int SheathedMaleWaistID{ get{ return 15212; } }
 		public override int SheathedFemaleWaistID{ get{ return 15213; } }
 
-		public override string NameType{ get{ return "Azhuran Shortsword"; } }
+		public override string NameType{ get{ return "kutar"; } }
 		
 		public override int AosStrengthReq{ get{ return 15; } }
 		public override double OverheadPercentage{ get{ return 0.2; } }
@@ -36,14 +36,14 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 40; } }
 
 		[Constructable]
-		public AzhuranShortsword() : base( 0x3CF1 )
+		public Kutar() : base( 0x3CF1 )
 		{
 			Weight = 3.0;
-			Name = "Azhuran Shortsword";
+			Name = "kutar";
 			AosElementDamages.Slashing = 100;
 		}
 
-		public AzhuranShortsword( Serial serial ) : base( serial )
+		public Kutar( Serial serial ) : base( serial )
 		{
 		}
 

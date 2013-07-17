@@ -5,9 +5,9 @@ using Server.Engines.Harvest;
 
 namespace Server.Items
 {
-	public class MhordulBoneScythe : BasePoleArm, IBoneArmour
+	public class BoneScythe : BasePoleArm, IBoneArmour
 	{
-		public override string NameType{ get{ return "Mhordul Bone Scythe"; } }
+		public override string NameType{ get{ return "bone Scythe"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.BleedAttack; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ParalyzingBlow; } }
@@ -38,10 +38,10 @@ namespace Server.Items
 		//public override HarvestSystem HarvestSystem{ get{ return null; } }
 
 		[Constructable]
-		public MhordulBoneScythe() : base( 0x3CD6 )
+		public BoneScythe() : base( 0x3CD6 )
 		{
 			Weight = 8.0;
-			Name = "Mhordul Bone Scythe";
+			Name = "bone Scythe";
 			AosElementDamages.Piercing = 30;
 			AosElementDamages.Slashing = 70;
 		}
@@ -51,7 +51,7 @@ namespace Server.Items
 			return true;
 		}
 
-		public MhordulBoneScythe( Serial serial ) : base( serial )
+		public BoneScythe( Serial serial ) : base( serial )
 		{
 		}
 

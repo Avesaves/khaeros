@@ -5,9 +5,9 @@ using Server.Items;
 namespace Server.Items
 {
 
-	public class VhalurianMaul : BaseBashing
+	public class TwoHandedMaul : BaseBashing
 	{
-		public override string NameType{ get{ return "Vhalurian Maul"; } }
+		public override string NameType{ get{ return "two-handed maul"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.WhirlwindAttack; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.CrushingBlow; } }
@@ -34,15 +34,15 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.Bash2H; } }
 
 		[Constructable]
-		public VhalurianMaul() : base( 0x3DE4 )
+		public TwoHandedMaul() : base( 0x3DE4 )
 		{
 			Weight = 9.0;
 			Layer = Layer.TwoHanded;
-			Name = "Vhalurian Maul";
+			Name = "two-handed maul";
 			AosElementDamages.Blunt = 100;
 		}
 
-		public VhalurianMaul( Serial serial ) : base( serial )
+		public TwoHandedMaul( Serial serial ) : base( serial )
 		{
 		}
 

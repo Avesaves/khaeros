@@ -5,14 +5,14 @@ using Server.Items;
 namespace Server.Items
 {
 	[FlipableAttribute( 0x2D33, 0x2D27 )]
-	public class KhemetarHeavyKhopesh : BaseSword
+	public class HeavyKhopesh : BaseSword
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.WhirlwindAttack; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.Bladeweave; } }
 		public override int SheathedMaleBackID{ get{ return 15193; } }
 		public override int SheathedFemaleBackID{ get{ return 15194; } }
 
-		public override string NameType { get { return "Khemetar Heavy Khopesh"; } }
+		public override string NameType { get { return "heavy khopesh"; } }
 		
 		public override int AosStrengthReq{ get{ return 45; } }
 		public override double OverheadPercentage{ get{ return 0.4; } }
@@ -35,15 +35,15 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 60; } }
 
 		[Constructable]
-		public KhemetarHeavyKhopesh() : base( 0x2D33 )
+		public HeavyKhopesh() : base( 0x2D33 )
 		{
 			Weight = 7.0;
-			Name = "Khemetar Heavy Khopesh";
+			Name = "heavy khopesh";
 			AosElementDamages.Slashing = 100;
 			Layer = Layer.TwoHanded;
 		}
 
-		public KhemetarHeavyKhopesh( Serial serial ) : base( serial )
+		public HeavyKhopesh( Serial serial ) : base( serial )
 		{
 		}
 

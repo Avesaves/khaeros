@@ -5,11 +5,11 @@ using Server.Items;
 namespace Server.Items
 {
 	[FlipableAttribute( 0x1405, 0x1404 )]
-	public class MhordulWarFork : BaseSpear
+	public class WarFork : BaseSpear
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.BleedAttack; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.Disarm; } }
-		public override string NameType { get { return "Mhordul War Fork"; } }
+		public override string NameType { get { return "war fork"; } }
 		public override int SheathedMaleBackID{ get{ return 15181; } }
 		public override int SheathedFemaleBackID{ get{ return 15182; } }
 
@@ -36,15 +36,15 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.Pierce1H; } }
 
 		[Constructable]
-		public MhordulWarFork() : base( 0x1405 )
+		public WarFork() : base( 0x1405 )
 		{
 			Weight = 6.0;
 			AosElementDamages.Piercing = 90;
 			AosElementDamages.Slashing = 10;
-			Name = "Mhordul War Fork";
+			Name = "war fork";
 		}
 
-		public MhordulWarFork( Serial serial ) : base( serial )
+		public WarFork( Serial serial ) : base( serial )
 		{
 		}
 

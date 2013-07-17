@@ -3,7 +3,7 @@ using Server;
 
 namespace Server.Items
 {
-	public class AlyrianLeafShield : BaseShield
+	public class NotchedShield : BaseShield
 	{
 		public override ArmourWeight ArmourType { get { return ArmourWeight.Heavy; } }
 		
@@ -27,13 +27,13 @@ namespace Server.Items
 		public override int ArmorBase{ get{ return 23; } }
 
 		[Constructable]
-		public AlyrianLeafShield() : base( 0x3D38 )
+		public NotchedShield() : base( 0x3D38 )
 		{
 			Weight = 8.0;
-			Name = "Alyrian Leaf Shield";
+			Name = "notched shield";
 		}
 
-		public AlyrianLeafShield( Serial serial ) : base(serial)
+		public NotchedShield( Serial serial ) : base(serial)
 		{
 		}
 

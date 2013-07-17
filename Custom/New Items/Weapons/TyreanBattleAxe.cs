@@ -5,9 +5,9 @@ using Server.Engines.Harvest;
 
 namespace Server.Items
 {
-	public class TyreanBattleAxe : BaseAxe
+	public class HeavyBattleAxe : BaseAxe
 	{
-		public override string NameType{ get{ return "Tyrean Battle Axe"; } }
+		public override string NameType{ get{ return "heavy battle axe"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ArmorIgnore; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.BleedAttack; } }
@@ -37,15 +37,15 @@ namespace Server.Items
 		public override HarvestSystem HarvestSystem{ get{ return null; } }
 
 		[Constructable]
-		public TyreanBattleAxe() : base( 0x3CBE )
+		public HeavyBattleAxe() : base( 0x3CBE )
 		{
 			Weight = 7.0;
-			Name = "Tyrean Battle Axe";
+			Name = "heavy battle axe";
 			AosElementDamages.Blunt = 10;
 			AosElementDamages.Slashing = 90;
 		}
 
-		public TyreanBattleAxe( Serial serial ) : base( serial )
+		public HeavyBattleAxe( Serial serial ) : base( serial )
 		{
 		}
 

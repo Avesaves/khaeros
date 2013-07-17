@@ -9,7 +9,7 @@ namespace Server.Items
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ArmorIgnore; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ParalyzingBlow; } }
-		public override string NameType { get { return "Spear"; } }
+		public override string NameType { get { return "spear"; } }
 
 		public override int AosStrengthReq{ get{ return 45; } }
 		public override double OverheadPercentage{ get{ return 0.1; } }

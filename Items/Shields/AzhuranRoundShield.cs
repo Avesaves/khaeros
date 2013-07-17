@@ -3,7 +3,7 @@ using Server;
 
 namespace Server.Items
 {
-	public class AzhuranRoundShield : BaseShield
+	public class RoundedFaceShield : BaseShield
 	{
 		public override int SheathedMaleBackID{ get{ return 15160; } }
 		public override int SheathedFemaleBackID{ get{ return 15161; } }
@@ -27,13 +27,13 @@ namespace Server.Items
 		public override int ArmorBase{ get{ return 10; } }
 
 		[Constructable]
-		public AzhuranRoundShield() : base( 0x3D2E )
+		public RoundedFaceShield() : base( 0x3D2E )
 		{
 			Weight = 6.0;
-			Name = "Azhuran Round Shield";
+			Name = "rounded face shield";
 		}
 
-		public AzhuranRoundShield( Serial serial ) : base(serial)
+		public RoundedFaceShield( Serial serial ) : base(serial)
 		{
 		}
 

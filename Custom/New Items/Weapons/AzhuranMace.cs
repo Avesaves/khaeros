@@ -6,7 +6,7 @@ namespace Server.Items
 {
 	public class AzhuranMace : BaseBashing
 	{
-		public override string NameType{ get{ return "Azhuran Mace"; } }
+		public override string NameType{ get{ return "primitive mace"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ConcussionBlow; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.Disarm; } }
@@ -32,7 +32,7 @@ namespace Server.Items
 		public AzhuranMace() : base( 0x3DE9 )
 		{
 			Weight = 4.0;
-			Name = "Azhuran Mace";
+			Name = "primitive mace";
 			AosElementDamages.Piercing = 30;
 			AosElementDamages.Blunt = 70;
 		}

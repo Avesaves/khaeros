@@ -4,9 +4,9 @@ using Server.Network;
 
 namespace Server.Items
 {
-	public class AlyrianTwoHandedAxe : BaseAxe
+	public class HeavyDoubleAxe : BaseAxe
 	{
-		public override string NameType{ get{ return "Alyrian Two-Handed Axe"; } }
+		public override string NameType{ get{ return "heavy double axe"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.DoubleStrike; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.WhirlwindAttack; } }
@@ -30,15 +30,15 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 110; } }
 
 		[Constructable]
-		public AlyrianTwoHandedAxe() : base( 0x3CB8 )
+		public HeavyDoubleAxe() : base( 0x3CB8 )
 		{
 			Weight = 9.0;
-			Name = "Alyrian Two-Handed Axe";
+			Name = "heavy double axe";
 			AosElementDamages.Slashing = 60;
 			AosElementDamages.Blunt = 40;
 		}
 
-		public AlyrianTwoHandedAxe( Serial serial ) : base( serial )
+		public HeavyDoubleAxe( Serial serial ) : base( serial )
 		{
 		}
 

@@ -41,7 +41,7 @@ namespace Server.Mobiles
 			{
 				EquipItem( new RaggedBra( hue ) );
 				EquipItem( new SmallRaggedSkirt( hue ) );
-				EquipItem( new MhordulBoneBow() );
+				EquipItem( new BoneBow() );
 				PackItem( new Arrow( Utility.RandomMinMax( 10, 20 ) ) );
 				AI = AIType.AI_Archer;
 			}
@@ -60,13 +60,13 @@ namespace Server.Mobiles
 						
 					case 1: 
 					{
-						EquipItem( new MhordulHeavyBattleAxe() );
+						EquipItem( new BarbarianHeavyAxe() );
 						break;
 					}
 						
 					case 2: 
 					{
-						EquipItem( new MhordulMace() );
+						EquipItem( new BarbarianMace() );
 						EquipItem( new WoodenShield() );
 						break;
 					}
@@ -74,7 +74,7 @@ namespace Server.Mobiles
 				EquipItem( new WaistCloth() );
 			}
 			
-			MhordulRogueMask mask = new MhordulRogueMask();
+			ExecutionerMask mask = new ExecutionerMask();
 			//mask.Hue = hue;
 			EquipItem( mask );
 			EquipItem( new Sandals() );

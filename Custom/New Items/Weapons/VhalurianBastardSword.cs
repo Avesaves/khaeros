@@ -4,7 +4,7 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class VhalurianBastardSword : BaseSword
+	public class BastardSword : BaseSword
 	{
         private enum WieldingStyle
         {
@@ -14,7 +14,7 @@ namespace Server.Items
 
         private WieldingStyle wieldingStyle;
 
-		public override string NameType{ get{ return "Vhalurian Bastard Sword"; } }
+		public override string NameType{ get{ return "bastard sword"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ArmorIgnore; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ConcussionBlow; } }
@@ -63,23 +63,23 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 110; } }
 
 		[Constructable]
-		public VhalurianBastardSword() : base( 0x3CFD )
+		public BastardSword() : base( 0x3CFD )
 		{
 			Weight = 7.0;
-			Name = "Vhalurian Bastard Sword";
+			Name = "bastard sword";
 			AosElementDamages.Slashing = 100;
             this.wieldingStyle = WieldingStyle.OneHanded;
             this.Layer = Layer.OneHanded;
 		}
 
-		public VhalurianBastardSword( Serial serial ) : base( serial )
+		public BastardSword( Serial serial ) : base( serial )
 		{
 		}
 
         public override void OnDoubleClick(Mobile from)
         {
             this.ChangeWieldingStyle();
-            from.SendMessage("Wielding Vhalurian bastard swords in " + this.HandsUsedToWield() + ".");
+            from.SendMessage("Wielding bastard swords in " + this.HandsUsedToWield() + ".");
         }
 
         private string HandsUsedToWield()

@@ -3,7 +3,7 @@ using Server;
 
 namespace Server.Items
 {
-	public class AlyrianBuckler : BaseShield
+	public class RunicBuckler : BaseShield
 	{
 		public override int SheathedMaleBackID{ get{ return 15158; } }
 		public override int SheathedFemaleBackID{ get{ return 15159; } }
@@ -25,13 +25,13 @@ namespace Server.Items
 		public override int ArmorBase{ get{ return 7; } }
 
 		[Constructable]
-		public AlyrianBuckler() : base( 0x3D4E )
+		public RunicBuckler() : base( 0x3D4E )
 		{
 			Weight = 5.0;
-			Name = "Alyrian Buckler";
+			Name = "runic buckler";
 		}
 
-		public AlyrianBuckler( Serial serial ) : base(serial)
+		public RunicBuckler( Serial serial ) : base(serial)
 		{
 		}
 

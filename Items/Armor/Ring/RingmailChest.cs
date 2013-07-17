@@ -6,9 +6,9 @@ namespace Server.Items
     [FlipableAttribute(0x13ec, 0x13ed)]
     public class RingmailChest : BaseArmor
     {
-        public override int BaseBluntResistance { get { return 12; } }
-        public override int BaseSlashingResistance { get { return 16; } }
-        public override int BasePiercingResistance { get { return 14; } }
+        public override int BaseBluntResistance { get { return 13; } }
+        public override int BaseSlashingResistance { get { return 17; } }
+        public override int BasePiercingResistance { get { return 13; } }
         public override int BasePhysicalResistance { get { return 0; } }
         public override int BaseFireResistance { get { return 3; } }
         public override int BaseColdResistance { get { return 1; } }

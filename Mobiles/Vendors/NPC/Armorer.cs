@@ -71,7 +71,7 @@ namespace Server.Mobiles
 			base.InitOutfit();
 
 			AddItem( new Server.Items.HalfApron( Utility.RandomYellowHue() ) );
-			AddItem( new Server.Items.VhalurianBascinet() );
+			AddItem( new Server.Items.Bascinet() );
 		}
 
 		public Armorer( Serial serial ) : base( serial )

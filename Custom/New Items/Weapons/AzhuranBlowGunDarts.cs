@@ -5,7 +5,7 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-	public class AzhuranBlowGunDarts : Item, IUsesRemaining, ICraftable
+	public class BlowGunDarts : Item, IUsesRemaining, ICraftable
 	{
 		private int m_UsesRemaining;
 
@@ -36,20 +36,20 @@ namespace Server.Items
 		public bool ShowUsesRemaining{ get{ return true; } set{} }
 
 		[Constructable]
-		public AzhuranBlowGunDarts() : this( 1 )
+		public BlowGunDarts() : this( 1 )
 		{
 		}
 
 		[Constructable]
-		public AzhuranBlowGunDarts( int amount ) : base( 0x2806 )
+		public BlowGunDarts( int amount ) : base( 0x2806 )
 		{
 			Weight = 1.0;
 
 			m_UsesRemaining = amount;
-			Name = "Azhuran Blow Gun Darts";
+			Name = "blow gun Darts";
 		}
 
-		public AzhuranBlowGunDarts( Serial serial ) : base( serial )
+		public BlowGunDarts( Serial serial ) : base( serial )
 		{
 		}
 

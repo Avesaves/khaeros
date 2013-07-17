@@ -4,9 +4,9 @@ using Server.Network;
 
 namespace Server.Items
 {
-	public class TyreanWingedAxe : BaseAxe
+	public class WingedAxe : BaseAxe
 	{
-		public override string NameType{ get{ return "Tyrean Winged Axe"; } }
+		public override string NameType{ get{ return "winged axe"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.DoubleStrike; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.WhirlwindAttack; } }
@@ -31,15 +31,15 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 110; } }
 
 		[Constructable]
-		public TyreanWingedAxe() : base( 0x3CB0)
+		public WingedAxe() : base( 0x3CB0)
 		{
 			Weight = 10.0;
-			Name = "Tyrean Winged Axe";
+			Name = "winged axe";
 			AosElementDamages.Slashing = 80;
 			AosElementDamages.Blunt = 20;
 		}
 
-		public TyreanWingedAxe( Serial serial ) : base( serial )
+		public WingedAxe( Serial serial ) : base( serial )
 		{
 		}
 

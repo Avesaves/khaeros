@@ -4,9 +4,9 @@ using Server.Network;
 
 namespace Server.Items
 {
-	public class VhalurianWarAxe : BaseAxe
+	public class HorsemanAxe : BaseAxe
 	{
-		public override string NameType{ get{ return "Vhalurian War Axe"; } }
+		public override string NameType{ get{ return "horseman's axe"; } }
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.WhirlwindAttack; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.BleedAttack; } }
 		public override int SheathedMaleBackID{ get{ return 15172; } }
@@ -29,16 +29,16 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 70; } }
 
 		[Constructable]
-		public VhalurianWarAxe() : base( 0x3CAF )
+		public HorsemanAxe() : base( 0x3CAF )
 		{
 			Weight = 7.0;
-			Name = "Vhalurian War Axe";
+			Name = "horseman's axe";
 			AosElementDamages.Blunt = 20;
 			AosElementDamages.Slashing = 80;
 
 		}
 
-		public VhalurianWarAxe( Serial serial ) : base( serial )
+		public HorsemanAxe( Serial serial ) : base( serial )
 		{
 		}
 

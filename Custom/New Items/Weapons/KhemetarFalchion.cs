@@ -4,9 +4,9 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class KhemetarFalchion : BaseSword
+	public class Falchion : BaseSword
 	{
-		public override string NameType{ get{ return "Khemetar Falchion"; } }
+		public override string NameType{ get{ return "falchion"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ArmorIgnore; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ConcussionBlow; } }
@@ -35,14 +35,14 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 110; } }
 
 		[Constructable]
-		public KhemetarFalchion() : base( 0x3CF7 )
+		public Falchion() : base( 0x3CF7 )
 		{
 			Weight = 7.0;
-			Name = "Khemetar Falchion";
+			Name = "falchion";
 			AosElementDamages.Slashing = 100;
 		}
 
-		public KhemetarFalchion( Serial serial ) : base( serial )
+		public Falchion( Serial serial ) : base( serial )
 		{
 		}
 

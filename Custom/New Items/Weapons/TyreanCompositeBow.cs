@@ -5,9 +5,9 @@ using Server.Mobiles;
 
 namespace Server.Items
 {
-	public class TyreanCompositeBow : BaseRanged
+	public class RecurveLongBow : BaseRanged
 	{
-		public override string NameType{ get{ return "Tyrean Composite Bow"; } }
+		public override string NameType{ get{ return "recurve longbow"; } }
 		
 		public override int EffectID{ get{ return 0xF42; } }
 		public override Type AmmoType{ get{ return typeof( Arrow ); } }
@@ -39,14 +39,14 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.ShootBow; } }
 
 		[Constructable]
-		public TyreanCompositeBow() : base( 0x3E1B )
+		public RecurveLongBow() : base( 0x3E1B )
 		{
 			Weight = 7.0;
-			Name = "Tyrean Composite Bow";
+			Name = "recurve longbow";
 			AosElementDamages.Piercing = 100;
 		}
 
-		public TyreanCompositeBow( Serial serial ) : base( serial )
+		public RecurveLongBow( Serial serial ) : base( serial )
 		{
 		}
 

@@ -1141,7 +1141,7 @@ namespace Server.Engines.XmlSpawner2
                 charger.LastCharge = DateTime.Now;
                 if (charger.Mounted)
                 {
-                    if (charger.Weapon is VhalurianLance)
+                    if (charger.Weapon is Lance)
                         charger.ChargeCooldown = 5;
                     else
                         charger.ChargeCooldown = 10;
@@ -1836,7 +1836,7 @@ namespace Server.Engines.XmlSpawner2
 				m_ErrorMessage = "You are too close.";
 				return false;
 			}
-            else if( ( weapon is Fists || ( weapon is BaseRanged && !( weapon is AzhuranBoomerang ) ) || weapon is VhalurianLance ) && !m_OffHand )
+            else if( ( weapon is Fists || ( weapon is BaseRanged && !( weapon is AzhuranBoomerang ) ) || weapon is Lance ) && !m_OffHand )
 			{
 				m_ErrorMessage = "That weapon cannot be thrown.";
 				return false;
@@ -2940,7 +2940,7 @@ namespace Server.Engines.XmlSpawner2
 								defender.AddToBackpack( weapon ); // Nigga stole my ______!
 							
 							// auto-equipping
-                            if( ( weapon is Dagger || weapon is TyreanThrowingAxe ) && !m_OffHand && attacker is PlayerMobile && ( (PlayerMobile)attacker ).Feats.GetFeatLevel( FeatList.ThrowingMastery ) > 2 )
+                            if( ( weapon is Dagger || weapon is ThrowingAxe ) && !m_OffHand && attacker is PlayerMobile && ( (PlayerMobile)attacker ).Feats.GetFeatLevel( FeatList.ThrowingMastery ) > 2 )
 							{
 								PlayerMobile m = attacker as PlayerMobile;
 								
@@ -3900,7 +3900,7 @@ namespace Server.Engines.XmlSpawner2
 			// so ultimately I had to compile a list.
 			return ( item is Bardiche || item is Halberd || item is Pitchfork || item is QuarterStaff || item is ClericCrook || 
 				item is BlackStaff || item is GnarledStaff || item is WarHammer || item is BattleAxe || item is Hatchet ||
-				item is LargeBattleAxe || item is TwoHandedAxe || item is AzhuranAxe || item is TyreanDoubleAxe );
+				item is LargeBattleAxe || item is TwoHandedAxe || item is HaftedAxe || item is BeardedDoubleAxe );
 		}
 		
 		private static Dictionary<Mobile, BonusTableEntry> m_FightingStyleTable = new Dictionary<Mobile, BonusTableEntry>();

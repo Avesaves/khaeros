@@ -41,7 +41,7 @@ namespace Server.Mobiles
 			{
 				EquipItem( new WaistCloth( hue ) );
 				EquipItem( new MetallicBra() );
-				EquipItem( new AzhuranShortbow() );
+				EquipItem( new ShortBow() );
 				PackItem( new Arrow( Utility.RandomMinMax( 10, 20 ) ) );
 				AI = AIType.AI_Archer;
 			}
@@ -55,14 +55,14 @@ namespace Server.Mobiles
 				{
 					case 0: 
 					{
-						EquipItem( new AzhuranWarMace() );
+						EquipItem( new SpikedMace() );
 						EquipItem( new Buckler() );
 						break;
 					}
 						
 					case 1: 
 					{
-						EquipItem( new AzhuranSpear() );
+						EquipItem( new PrimitiveSpear() );
 						break;
 					}
 						
@@ -75,7 +75,7 @@ namespace Server.Mobiles
 				}
 			}
 			
-			AzhuranRogueMask mask = new AzhuranRogueMask();
+			RogueMask mask = new RogueMask();
 			//mask.Hue = hue;
 			EquipItem( mask );
 			EquipItem( new Sandals() );

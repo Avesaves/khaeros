@@ -4,9 +4,9 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class VhalurianWarHammer : BaseBashing
+	public class HorsemanWarhammer : BaseBashing
 	{
-		public override string NameType { get { return "Vhalurian War Hammer"; } }
+		public override string NameType { get { return "horseman's war hammer"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.WhirlwindAttack; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.CrushingBlow; } }
@@ -29,14 +29,14 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 110; } }
 
 		[Constructable]
-		public VhalurianWarHammer() : base( 0x3DE7 )
+		public HorsemanWarhammer() : base( 0x3DE7 )
 		{
 			Weight = 8.0;
-			Name = "Vhalurian War Hammer";
+			Name = "horseman's war hammer";
 			AosElementDamages.Blunt = 100;
 		}
 
-		public VhalurianWarHammer( Serial serial ) : base( serial )
+		public HorsemanWarhammer( Serial serial ) : base( serial )
 		{
 		}
 

@@ -40,7 +40,7 @@ namespace Server.Mobiles
 			if( this.Female )
 			{
 				EquipItem( new Shirt() );
-				EquipItem( new KhemetarLongbow() );
+				EquipItem( new Hijazi() );
 				PackItem( new Arrow( Utility.RandomMinMax( 10, 20 ) ) );
 				AI = AIType.AI_Archer;
 			}
@@ -53,7 +53,7 @@ namespace Server.Mobiles
 				{
 					case 0: 
 					{
-						EquipItem( new KhemetarAxe() );
+						EquipItem( new Tabarzin() );
 						break;
 					}
 						
@@ -65,14 +65,14 @@ namespace Server.Mobiles
 						
 					case 2: 
 					{
-						EquipItem( new KhemetarThinScimitar() );
+						EquipItem( new Shamshir() );
 						EquipItem( new Buckler() );
 						break;
 					}
 				}
 			}
 			
-			KhemetarRogueTurban mask = new KhemetarRogueTurban();
+			Turban mask = new Turban();
 			//mask.Hue = hue;
 			EquipItem( mask );
 			EquipItem( new BaggyPants() );

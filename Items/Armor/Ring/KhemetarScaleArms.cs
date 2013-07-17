@@ -3,7 +3,7 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class KhemetarScaleArms : BaseArmor
+	public class ScaleArmorArms : BaseArmor
 	{
 		public override int BaseBluntResistance{ get{ return 4; } }
 		public override int BaseSlashingResistance{ get{ return 9; } }
@@ -27,13 +27,13 @@ namespace Server.Items
 		public override ArmorMaterialType MaterialType{ get{ return ArmorMaterialType.Ringmail; } }
 
 		[Constructable]
-		public KhemetarScaleArms() : base( 0x3BD1 )
+		public ScaleArmorArms() : base( 0x3BD1 )
 		{
 			Weight = 15.0;
-			Name = "Khemetar Scale Arms";
+			Name = "scale armor Arms";
 		}
 
-		public KhemetarScaleArms( Serial serial ) : base( serial )
+		public ScaleArmorArms( Serial serial ) : base( serial )
 		{
 		}
 		

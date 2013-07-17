@@ -4,9 +4,9 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class AzhuranSpear : BasePoleArm
+	public class PrimitiveSpear : BasePoleArm
 	{
-		public override string NameType{ get{ return "Azhuran Spear"; } }
+		public override string NameType{ get{ return "primitive spear"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ArmorIgnore; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ParalyzingBlow; } }
@@ -39,15 +39,15 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.Pierce2H; } }
 
 		[Constructable]
-		public AzhuranSpear() : base( 0x3DCE )
+		public PrimitiveSpear() : base( 0x3DCE )
 		{
 			Weight = 7.0;
-			Name = "Azhuran Spear";
+			Name = "primitive spear";
 			AosElementDamages.Piercing = 100;
 			MaxRange = 2;
 		}
 
-		public AzhuranSpear( Serial serial ) : base( serial )
+		public PrimitiveSpear( Serial serial ) : base( serial )
 		{
 		}
 

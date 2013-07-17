@@ -739,7 +739,7 @@ namespace Server.Items
 				new FillableEntry( 1, typeof( PlateGorget ) ),
 				new FillableEntry( 1, typeof( BronzeShield ) ),
 				new FillableEntry( 1, typeof( Buckler ) ),
-				new FillableEntry( 2, typeof( VhalurianMetalKiteShield ) ),
+				new FillableEntry( 2, typeof( KiteShield ) ),
 				new FillableEntry( 2, typeof( HeaterShield ) ),
 				new FillableEntry( 1, typeof( WoodenShield ) ),
 				new FillableEntry( 1, typeof( MetalShield ) )

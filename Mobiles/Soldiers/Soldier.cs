@@ -158,7 +158,7 @@ namespace Server.Mobiles
             {
                 case Armament.Light:
                     {                            
-                        AlyrianClaymore sword = new AlyrianClaymore();
+                        Claymore sword = new Claymore();
                         sword.Resource = CraftResource.Bronze;                            
                         m.EquipItem(sword);
 
@@ -186,24 +186,24 @@ namespace Server.Mobiles
                     }
                 case Armament.Medium:
                     {                        
-                        AlyrianRoundShield shield = new AlyrianRoundShield();
+                        RoundShield shield = new RoundShield();
                         shield.Resource = CraftResource.Bronze;
                         m.EquipItem(shield);
 
-                        AlyrianLongsword sword = new AlyrianLongsword();
+                        ArmingSword sword = new ArmingSword();
                         sword.Resource = CraftResource.Bronze;
                         m.EquipItem(sword);
 
-                        AlyrianChainChest chest = new AlyrianChainChest();
+                        SplintedMailChest chest = new SplintedMailChest();
                         chest.Resource = CraftResource.Bronze;
 
-                        AlyrianChainLegs legs = new AlyrianChainLegs();
+                        SplintedMailLegs legs = new SplintedMailLegs();
                         legs.Resource = CraftResource.Bronze;
 
-                        AlyrianChainArms arms = new AlyrianChainArms();
+                        SplintedMailArms arms = new SplintedMailArms();
                         arms.Resource = CraftResource.Bronze;
 
-                        AlyrianChainGorget gorget = new AlyrianChainGorget();
+                        SplintedMailGorget gorget = new SplintedMailGorget();
                         gorget.Resource = CraftResource.Bronze;
 
                         HardenedFurBoots boots = new HardenedFurBoots();
@@ -226,15 +226,15 @@ namespace Server.Mobiles
                     }
                 case Armament.Heavy:
                     {                            
-                        AlyrianLeafShield shield = new AlyrianLeafShield();
+                        NotchedShield shield = new NotchedShield();
                         shield.Resource = CraftResource.Bronze;
                         m.EquipItem(shield);       
 
-                        AlyrianSabre sabre = new AlyrianSabre();
+                        Falcata sabre = new Falcata();
                         sabre.Resource = CraftResource.Bronze;
                         m.EquipItem(sabre);
 
-                        AlyrianChainChest chest = new AlyrianChainChest();
+                        SplintedMailChest chest = new SplintedMailChest();
                         chest.Resource = CraftResource.Bronze;
                         m.EquipItem(chest);
 
@@ -269,13 +269,13 @@ namespace Server.Mobiles
                         bool WeaponChance = Utility.RandomBool();
                         if (WeaponChance)
                         {
-                            AlyrianLongbow bow = new AlyrianLongbow();
+                            OrnateLongBow bow = new OrnateLongBow();
                             bow.Resource = CraftResource.Redwood;
                             m.EquipItem(bow);
                         }
                         else
                         {
-                            AlyrianGiantBow bow = new AlyrianGiantBow();
+                            WarBow bow = new WarBow();
                             bow.Resource = CraftResource.Redwood;
                             m.EquipItem(bow);
                         }
@@ -326,7 +326,7 @@ namespace Server.Mobiles
                         lg.Resource = CraftResource.ScaledLeather;
                         m.EquipItem(lg);
 
-                        AzhuranJesterMask mask = new AzhuranJesterMask();
+                        TribalWarriorMask mask = new TribalWarriorMask();
                         mask.Hue = 2810;
                         m.EquipItem(mask);
 
@@ -345,16 +345,16 @@ namespace Server.Mobiles
                     }
                 case Armament.Medium:
                     {
-                        AzhuranLeatherTunic chest = new AzhuranLeatherTunic();
+                        SoftLeatherTunic chest = new SoftLeatherTunic();
                         chest.Resource = CraftResource.BeastLeather;
 
-                        AzhuranLeatherPauldrons pauldrons = new AzhuranLeatherPauldrons();
+                        SoftLeatherPauldrons pauldrons = new SoftLeatherPauldrons();
                         pauldrons.Resource = CraftResource.BeastLeather;
 
-                        AzhuranLeatherBoots boots = new AzhuranLeatherBoots();
+                        SoftLeatherBoots boots = new SoftLeatherBoots();
                         boots.Resource = CraftResource.BeastLeather;
 
-                        AzhuranLeatherLegs legs = new AzhuranLeatherLegs();
+                        SoftLeatherLegs legs = new SoftLeatherLegs();
                         legs.Resource = CraftResource.BeastLeather;
 
                         LeatherGloves gloves = new LeatherGloves();
@@ -363,7 +363,7 @@ namespace Server.Mobiles
                         LeatherArms arms = new LeatherArms();
                         arms.Resource = CraftResource.BeastLeather;
 
-                        AzhuranSpear spear = new AzhuranSpear();
+                        PrimitiveSpear spear = new PrimitiveSpear();
                         spear.Resource = CraftResource.Bronze;
 
                         m.EquipItem(chest);
@@ -378,10 +378,10 @@ namespace Server.Mobiles
                     }
                 case Armament.Heavy:
                     {
-                        AzhuranHelm helm = new AzhuranHelm();
+                        EagleHelm helm = new EagleHelm();
                         helm.Resource = CraftResource.Bronze;
 
-                        AzhuranSpikedChainChest chest = new AzhuranSpikedChainChest();
+                        SpikedChest chest = new SpikedChest();
                         chest.Resource = CraftResource.Bronze;
 
                         RingmailArms arms = new RingmailArms();
@@ -406,10 +406,10 @@ namespace Server.Mobiles
 
                         if (m.Female)
                         {
-                            AzhuranKiteShield shield = new AzhuranKiteShield();
+                            TallFaceShield shield = new TallFaceShield();
                             shield.Resource = CraftResource.Bronze;
 
-                            AzhuranHookedClub club = new AzhuranHookedClub();
+                            HookedClub club = new HookedClub();
                             club.Resource = CraftResource.Bronze;
 
                             m.EquipItem(shield);
@@ -419,10 +419,10 @@ namespace Server.Mobiles
 
                         else
                         {
-                            AzhuranRoundShield shield = new AzhuranRoundShield();
+                            RoundedFaceShield shield = new RoundedFaceShield();
                             shield.Resource = CraftResource.Bronze;
 
-                            AzhuranBroadsword sword = new AzhuranBroadsword();
+                            Flamberge sword = new Flamberge();
                             sword.Resource = CraftResource.Bronze;
 
                             m.EquipItem(shield);
@@ -440,7 +440,7 @@ namespace Server.Mobiles
 
                         if (m.Female)
                         {
-                            AzhuranShortbow bow = new AzhuranShortbow();
+                            ShortBow bow = new ShortBow();
                             bow.Resource = CraftResource.Redwood;
 
                             m.EquipItem(bow);
@@ -488,22 +488,22 @@ namespace Server.Mobiles
                         sand.Hue = 2947;
                         m.EquipItem(sand);
 
-                        KhemetarScaleChest chest = new KhemetarScaleChest();
+                        ScaleArmorChest chest = new ScaleArmorChest();
                         chest.Resource = CraftResource.Bronze;
                         chest.Hue = 2947;
                         m.EquipItem(chest);
 
-                        KhemetarScaleLegs legs = new KhemetarScaleLegs();
+                        ScaleArmorLegs legs = new ScaleArmorLegs();
                         legs.Resource = CraftResource.Bronze;
                         legs.Hue = 2947;
                         m.EquipItem(legs);
 
-                        KhemetarScaleHelmet helmet = new KhemetarScaleHelmet();
+                        ScaleArmorHelmet helmet = new ScaleArmorHelmet();
                         helmet.Resource = CraftResource.Bronze;
                         helmet.Hue = 2947;
                         m.EquipItem(helmet);
 
-                        KhemetarKukri k = new KhemetarKukri();
+                        Kukri k = new Kukri();
                         k.Resource = CraftResource.Iron;
                         m.EquipItem(k);
 
@@ -534,17 +534,17 @@ namespace Server.Mobiles
                         boots.Hue = 2947;
                         m.EquipItem(boots);
 
-                        KhemetarScaleChest chest = new KhemetarScaleChest();
+                        ScaleArmorChest chest = new ScaleArmorChest();
                         chest.Resource = CraftResource.Bronze;
                         chest.Hue = 2947;
                         m.EquipItem(chest);
 
-                        KhemetarScaleLegs legs = new KhemetarScaleLegs();
+                        ScaleArmorLegs legs = new ScaleArmorLegs();
                         legs.Resource = CraftResource.Bronze;
                         legs.Hue = 2947;
                         m.EquipItem(legs);
 
-                        KhemetarScaleArms arms = new KhemetarScaleArms();
+                        ScaleArmorArms arms = new ScaleArmorArms();
                         arms.Resource = CraftResource.Bronze;
                         arms.Hue = 2947;
                         m.EquipItem(arms);
@@ -554,12 +554,12 @@ namespace Server.Mobiles
                         gloves.Hue = 2947;
                         m.EquipItem(gloves);
 
-                        KhemetarScaleHelmet helmet = new KhemetarScaleHelmet();
+                        ScaleArmorHelmet helmet = new ScaleArmorHelmet();
                         helmet.Resource = CraftResource.Bronze;
                         helmet.Hue = 2947;
                         m.EquipItem(helmet);
 
-                        KhemetarKhopesh sword = new KhemetarKhopesh();
+                        Khopesh sword = new Khopesh();
                         sword.Resource = CraftResource.Bronze;
                         m.EquipItem(sword);
 
@@ -586,7 +586,7 @@ namespace Server.Mobiles
                     }
                 case Armament.Heavy:
                     {
-                        KhemetarScaleChest chest = new KhemetarScaleChest();
+                        ScaleArmorChest chest = new ScaleArmorChest();
                         chest.Resource = CraftResource.Bronze;
                         chest.Hue = 2947;
                         m.EquipItem(chest);
@@ -611,7 +611,7 @@ namespace Server.Mobiles
                         gloves.Hue = 2947;
                         m.EquipItem(gloves);
 
-                        KhemetarScaleHelmet helmet = new KhemetarScaleHelmet();
+                        ScaleArmorHelmet helmet = new ScaleArmorHelmet();
                         helmet.Resource = CraftResource.Bronze;
                         helmet.Hue = 2947;
                         m.EquipItem(helmet);
@@ -620,7 +620,7 @@ namespace Server.Mobiles
                         cloak.Hue = 2795;
                         m.EquipItem(cloak);
 
-                        KhemetarAxe axe = new KhemetarAxe();
+                        Tabarzin axe = new Tabarzin();
                         axe.Resource = CraftResource.Bronze;
                         m.EquipItem(axe);
 
@@ -642,7 +642,7 @@ namespace Server.Mobiles
                     }
                 case Armament.Ranged:
                     {
-                        KhemetarRogueTurban turban = new KhemetarRogueTurban();
+                        Turban turban = new Turban();
                         turban.Resource = CraftResource.Cotton;
                         turban.Hue = 2795;
                         m.EquipItem(turban);
@@ -659,17 +659,17 @@ namespace Server.Mobiles
 
                         m.EquipItem(new Sandals());
 
-                        KhemetarScaleChest chest = new KhemetarScaleChest();
+                        ScaleArmorChest chest = new ScaleArmorChest();
                         chest.Resource = CraftResource.Bronze;
                         chest.Hue = 2947;
                         m.EquipItem(chest);
 
-                        KhemetarScaleArms arms = new KhemetarScaleArms();
+                        ScaleArmorArms arms = new ScaleArmorArms();
                         arms.Resource = CraftResource.Bronze;
                         arms.Hue = 2947;
                         m.EquipItem(arms);
 
-                        KhemetarLongbow bow = new KhemetarLongbow();
+                        Hijazi bow = new Hijazi();
                         bow.Resource = CraftResource.Redwood;
                         m.EquipItem(bow);
 
@@ -712,7 +712,7 @@ namespace Server.Mobiles
             sandals.Hue = 1194;
             m.EquipItem(sandals);
 
-            MhordulBoneArms mba = new MhordulBoneArms();
+            BoneArms mba = new BoneArms();
             mba.Hue = 2101;
             m.EquipItem(mba);
 
@@ -720,7 +720,7 @@ namespace Server.Mobiles
             {
                 case Armament.Light:
                     {
-                        MhordulBoneHelm mbh = new MhordulBoneHelm();
+                        BoneHelm mbh = new BoneHelm();
                         mbh.Hue = 2101;
                         m.EquipItem(mbh);
 
@@ -735,30 +735,30 @@ namespace Server.Mobiles
                         }
                         else
                         {
-                            MhordulMedicineManBoneChest bc = new MhordulMedicineManBoneChest();
+                            MedicineManBoneChest bc = new MedicineManBoneChest();
                             bc.Hue = 2101;
                             m.EquipItem(bc);
                         }
 
-                        MhordulBoneSword mbs = new MhordulBoneSword();
+                        BoneSword mbs = new BoneSword();
                         m.EquipItem(mbs);
 
-                        MhordulBoneShield shield = new MhordulBoneShield();
+                        BoneShield shield = new BoneShield();
                         m.EquipItem(shield);
 
                         break;
                     }
                 case Armament.Medium:
                     {
-                        MhordulBoneHelm mbh = new MhordulBoneHelm();
+                        BoneHelm mbh = new BoneHelm();
                         mbh.Hue = 2101;
                         m.EquipItem(mbh);
 
-                        MhordulBoneLegs mbl = new MhordulBoneLegs();
+                        BoneLegs mbl = new BoneLegs();
                         mbl.Hue = 2101;
                         m.EquipItem(mbl);
 
-                        MhordulBoneGloves mbg = new MhordulBoneGloves();
+                        BoneGloves mbg = new BoneGloves();
                         mbg.Hue = 2101;
                         m.EquipItem(mbg);
 
@@ -774,9 +774,9 @@ namespace Server.Mobiles
                             m.EquipItem(new WaistCloth(1194));
 
                         if (Utility.RandomBool())
-                            m.EquipItem(new MhordulBoneSpear());
+                            m.EquipItem(new BoneSpear());
                         else
-                            m.EquipItem(new MhordulBoneScythe());
+                            m.EquipItem(new BoneScythe());
 
                         break;
                     }
@@ -786,19 +786,19 @@ namespace Server.Mobiles
                         mhsh.Hue = 2101;
                         m.EquipItem(mhsh);
 
-                        MhordulBoneChest mbc = new MhordulBoneChest();
+                        BoneChest mbc = new BoneChest();
                         mbc.Hue = 2101;
                         m.EquipItem(mbc);
 
-                        MhordulBoneLegs mbl = new MhordulBoneLegs();
+                        BoneLegs mbl = new BoneLegs();
                         mbl.Hue = 2101;
                         m.EquipItem(mbl);
 
-                        MhordulBoneGloves mbg = new MhordulBoneGloves();
+                        BoneGloves mbg = new BoneGloves();
                         mbg.Hue = 2101;
                         m.EquipItem(mbg);
 
-                        MhordulBoneShield mbs = new MhordulBoneShield();
+                        BoneShield mbs = new BoneShield();
                         mbs.Hue = 2101;
                         m.EquipItem(mbs);
                         
@@ -807,23 +807,23 @@ namespace Server.Mobiles
 
                         if (Utility.RandomBool())
                         {
-                            MhordulWarFork mwf = new MhordulWarFork();
+                            WarFork mwf = new WarFork();
                             mwf.Resource = CraftResource.Iron;
                             m.EquipItem(mwf);
                         }
 
                         else
-                            m.EquipItem(new MhordulBoneAxe());
+                            m.EquipItem(new BoneAxe());
 
                         break;
                     }
                 case Armament.Ranged:
                     {
-                        MhordulBoneHelm mbh = new MhordulBoneHelm();
+                        BoneHelm mbh = new BoneHelm();
                         mbh.Hue = 2101;
                         m.EquipItem(mbh);
 
-                        m.EquipItem(new MhordulBoneBow());
+                        m.EquipItem(new BoneBow());
 
                         if (m.Female)
                         {
@@ -897,7 +897,7 @@ namespace Server.Mobiles
                         boots.Hue = 2741;
                         m.EquipItem(boots);
 
-                        TyreanThrowingAxe tta = new TyreanThrowingAxe();
+                        ThrowingAxe tta = new ThrowingAxe();
                         tta.Resource = CraftResource.Bronze;
                         m.EquipItem(tta);
 
@@ -929,7 +929,7 @@ namespace Server.Mobiles
                         rg.Hue = 1899;
                         m.EquipItem(rg);
 
-                        TyreanHornedHelm thh = new TyreanHornedHelm();
+                        HornedHelm thh = new HornedHelm();
                         thh.Resource = CraftResource.Bronze;
                         thh.Hue = 1899;
                         m.EquipItem(thh);
@@ -943,7 +943,7 @@ namespace Server.Mobiles
 
                         if (WeaponChance)
                         {
-                            TyreanHarpoon weapon = new TyreanHarpoon();
+                            Angon weapon = new Angon();
                             weapon.Resource = CraftResource.Bronze;
 
                             m.EquipItem(weapon);
@@ -951,7 +951,7 @@ namespace Server.Mobiles
 
                         else
                         {
-                            TyreanBattleAxe weapon = new TyreanBattleAxe();
+                            HeavyBattleAxe weapon = new HeavyBattleAxe();
                             weapon.Resource = CraftResource.Bronze;
 
                             m.EquipItem(weapon);
@@ -961,44 +961,44 @@ namespace Server.Mobiles
                     }
                 case Armament.Heavy:
                     {
-                        TyreanHalfPlateChest thpc = new TyreanHalfPlateChest();
+                        HalfPlateChest thpc = new HalfPlateChest();
                         thpc.Resource = CraftResource.Bronze;
                         thpc.Hue = 1899;
                         m.EquipItem(thpc);
 
-                        TyreanHalfPlateLegs thpl = new TyreanHalfPlateLegs();
+                        HalfPlateLegs thpl = new HalfPlateLegs();
                         thpl.Resource = CraftResource.Bronze;
                         thpl.Hue = 1899;
                         m.EquipItem(thpl);
 
-                        TyreanHalfPlateSabatons thps = new TyreanHalfPlateSabatons();
+                        HalfPlateSabatons thps = new HalfPlateSabatons();
                         thps.Resource = CraftResource.Bronze;
                         thps.Hue = 1899;
                         m.EquipItem(thps);
 
-                        TyreanHalfPlateArms thpa = new TyreanHalfPlateArms();
+                        HalfPlateArms thpa = new HalfPlateArms();
                         thpa.Resource = CraftResource.Bronze;
                         thpa.Hue = 1899;
                         m.EquipItem(thpa);
 
-                        TyreanHalfPlateGloves thpg = new TyreanHalfPlateGloves();
+                        HalfPlateGloves thpg = new HalfPlateGloves();
                         thpg.Resource = CraftResource.Bronze;
                         thpg.Hue = 1899;
                         m.EquipItem(thpg);
 
-                        TyreanHalfPlateGorget thpo = new TyreanHalfPlateGorget();
+                        HalfPlateGorget thpo = new HalfPlateGorget();
                         thpo.Resource = CraftResource.Bronze;
                         thpo.Hue = 1899;
                         m.EquipItem(thpo);
 
-                        TyreanKiteShield tks = new TyreanKiteShield();
+                        DragonKiteShield tks = new DragonKiteShield();
                         tks.Resource = CraftResource.Bronze;
                         tks.Hue = 1899;
                         m.EquipItem(tks);
 
                         m.EquipItem(new Cloak(1445));
 
-                        TyreanWingedHelm twh = new TyreanWingedHelm();
+                        WingedHelm twh = new WingedHelm();
                         twh.Resource = CraftResource.Bronze;
                         twh.Hue = 1899;
                         m.EquipItem(twh);
@@ -1006,7 +1006,7 @@ namespace Server.Mobiles
                         bool WeaponChance = Utility.RandomBool();
                         if (WeaponChance)
                         {
-                            TyreanWarAxe axe = new TyreanWarAxe();
+                            BroadAxe axe = new BroadAxe();
                             axe.Resource = CraftResource.Bronze;
 
                             m.EquipItem(axe);
@@ -1014,7 +1014,7 @@ namespace Server.Mobiles
 
                         else
                         {
-                            TyreanOrnateAxe axe = new TyreanOrnateAxe();
+                            OrnateAxe axe = new OrnateAxe();
                             axe.Resource = CraftResource.Bronze;
 
                             m.EquipItem(axe);
@@ -1051,7 +1051,7 @@ namespace Server.Mobiles
 
                         m.EquipItem(new Cloak(1445));
 
-                        TyreanCompositeBow bow = new TyreanCompositeBow();
+                        RecurveLongBow bow = new RecurveLongBow();
                         bow.Resource = CraftResource.Redwood;
                         m.EquipItem(bow);
 
@@ -1114,7 +1114,7 @@ namespace Server.Mobiles
                         so.Hue = 2101;
                         m.EquipItem(so);
 
-                        VhalurianMace vm = new VhalurianMace();
+                        HorsemanMace vm = new HorsemanMace();
                         vm.Resource = CraftResource.Iron;
                         vm.Hue = 0;
                         m.EquipItem(vm);
@@ -1184,17 +1184,17 @@ namespace Server.Mobiles
                     }
                 case Armament.Heavy:
                     {
-                        TyreanHalfPlateChest vopc = new TyreanHalfPlateChest();
+                        HalfPlateChest vopc = new HalfPlateChest();
                         vopc.Resource = CraftResource.Steel;
                         vopc.Hue = 2101;
                         m.EquipItem(vopc);
 
-                        TyreanHalfPlateLegs vopl = new TyreanHalfPlateLegs();
+                        HalfPlateLegs vopl = new HalfPlateLegs();
                         vopl.Resource = CraftResource.Steel;
                         vopl.Hue = 2101;
                         m.EquipItem(vopl);
 
-                        VhalurianOrnatePlateGorget vopo = new VhalurianOrnatePlateGorget();
+                        OrnatePlateGorget vopo = new OrnatePlateGorget();
                         vopo.Resource = CraftResource.Steel;
                         vopo.Hue = 2101;
                         m.EquipItem(vopo);
@@ -1204,12 +1204,12 @@ namespace Server.Mobiles
                         ps.Hue = 2105;
                         m.EquipItem(ps);
 
-                        TyreanHalfPlateArms vopa = new TyreanHalfPlateArms();
+                        HalfPlateArms vopa = new HalfPlateArms();
                         vopa.Resource = CraftResource.Steel;
                         vopa.Hue = 2101;
                         m.EquipItem(vopa);
 
-                        TyreanHalfPlateGloves vopg = new TyreanHalfPlateGloves();
+                        HalfPlateGloves vopg = new HalfPlateGloves();
                         vopg.Resource = CraftResource.Steel;
                         vopg.Hue = 2101;
                         m.EquipItem(vopg);
@@ -1220,7 +1220,7 @@ namespace Server.Mobiles
                         m.EquipItem(voks);
                        
 
-                            VhalurianBastardSword sword = new VhalurianBastardSword();
+                            BastardSword sword = new BastardSword();
                             sword.Resource = CraftResource.Steel;
                             m.EquipItem(sword);
 
@@ -1268,7 +1268,7 @@ namespace Server.Mobiles
                         lg.Hue = 2101;
                         m.EquipItem(lg);
 
-                        TyreanCompositeBow bow = new TyreanCompositeBow();
+                        RecurveLongBow bow = new RecurveLongBow();
                         bow.Resource = CraftResource.Yew;
                         m.EquipItem(bow);
                         if (m.Female)
@@ -1385,12 +1385,12 @@ namespace Server.Mobiles
                         co.Hue = 1899;
                         m.EquipItem(co);
 
-                        TyreanHalfPlateArms ra = new TyreanHalfPlateArms();
+                        HalfPlateArms ra = new HalfPlateArms();
                         ra.Resource = CraftResource.Iron;
                         ra.Hue = 1899;
                         m.EquipItem(ra);
 
-                        TyreanHalfPlateGloves rg = new TyreanHalfPlateGloves();
+                        HalfPlateGloves rg = new HalfPlateGloves();
                         rg.Resource = CraftResource.Iron;
                         rg.Hue = 1899;
                         m.EquipItem(rg);
@@ -1426,12 +1426,12 @@ namespace Server.Mobiles
                     }
                 case Armament.Heavy:
                     {
-                        VhalurianOrnatePlateLegs vopl = new VhalurianOrnatePlateLegs();
+                        OrnatePlateLegs vopl = new OrnatePlateLegs();
                         vopl.Resource = CraftResource.Steel;
                         vopl.Hue = 1899;
                         m.EquipItem(vopl);
 
-                        VhalurianOrnatePlateGorget vopo = new VhalurianOrnatePlateGorget();
+                        OrnatePlateGorget vopo = new OrnatePlateGorget();
                         vopo.Resource = CraftResource.Steel;
                         vopo.Hue = 1899;
                         m.EquipItem(vopo);
@@ -1441,33 +1441,33 @@ namespace Server.Mobiles
                         ps.Hue = 1899;
                         m.EquipItem(ps);
 
-                        VhalurianOrnatePlateChest thpc = new VhalurianOrnatePlateChest();
+                        OrnatePlateChest thpc = new OrnatePlateChest();
                         thpc.Resource = CraftResource.Steel;
                         thpc.Hue = 1899;
                         m.EquipItem(thpc);
 
-                        VhalurianOrnatePlateArms thpa = new VhalurianOrnatePlateArms();
+                        OrnatePlateArms thpa = new OrnatePlateArms();
                         thpa.Resource = CraftResource.Steel;
                         thpa.Hue = 1899;
                         m.EquipItem(thpa);
 
-                        VhalurianOrnatePlateGloves thpg = new VhalurianOrnatePlateGloves();
+                        OrnatePlateGloves thpg = new OrnatePlateGloves();
                         thpg.Resource = CraftResource.Steel;
                         thpg.Hue = 1899;
                         m.EquipItem(thpg);
 
-                        TyreanWingedHelm twh = new TyreanWingedHelm();
+                        WingedHelm twh = new WingedHelm();
                         twh.Resource = CraftResource.Steel;
                         twh.Hue = 1899;
                         m.EquipItem(twh);
 
-                        VhalurianOrnateKiteShield voks = new VhalurianOrnateKiteShield();
+                        OrnateKiteShield voks = new OrnateKiteShield();
                         voks.Resource = CraftResource.Steel;
                         voks.Hue = 2102;
                         m.EquipItem(voks);
                        
 
-                            TyreanBastardSword sword = new TyreanBastardSword();
+                            HandAndAHalfSword sword = new HandAndAHalfSword();
                             sword.Resource = CraftResource.Steel;
                             m.EquipItem(sword);
 
@@ -1661,7 +1661,7 @@ namespace Server.Mobiles
                         ss.Resource = CraftResource.Bronze;
                         m.EquipItem(ss);
 
-                        VhalurianMetalKiteShield shield = new VhalurianMetalKiteShield();
+                        KiteShield shield = new KiteShield();
                         shield.Resource = CraftResource.Bronze;
                         shield.Name = "Society of Rymaliel Kite Shield";
                         shield.Hue = 2413;
@@ -1692,7 +1692,7 @@ namespace Server.Mobiles
                         gloves.Resource = CraftResource.Bronze;
                         gloves.Hue = 2830;
 
-                        VhalurianMetalKiteShield shield = new VhalurianMetalKiteShield();
+                        KiteShield shield = new KiteShield();
                         shield.Resource = CraftResource.Bronze;
                         shield.Name = "Society of Rymaliel Kite Shield";
                         shield.Hue = 2413;
@@ -1744,7 +1744,7 @@ namespace Server.Mobiles
                         helm.Resource = CraftResource.Bronze;
                         helm.Hue = 2830;
 
-                        VhalurianMetalKiteShield shield = new VhalurianMetalKiteShield();
+                        KiteShield shield = new KiteShield();
                         shield.Resource = CraftResource.Bronze;
                         shield.Name = "Society of Rymaliel Kite Shield";
                         shield.Hue = 2413;
@@ -1845,7 +1845,7 @@ namespace Server.Mobiles
                         doub.Name = "A Ceremonial Tunic";
                         doub.Hue = 2707;
 
-                        KhemetarRogueTurban gorget = new KhemetarRogueTurban();
+                        Turban gorget = new Turban();
                         gorget.Hue = 2990;
 
                         PlateGloves gloves = new PlateGloves();
@@ -1898,7 +1898,7 @@ namespace Server.Mobiles
 						doub.ItemID = 15502;
                         doub.Hue = 2707;
 
-                        KhemetarRogueTurban gorget = new KhemetarRogueTurban();
+                        Turban gorget = new Turban();
                         gorget.Layer = Layer.Neck;
                         gorget.Hue = 2990;
 
@@ -1910,7 +1910,7 @@ namespace Server.Mobiles
                         boots.Resource = CraftResource.BeastLeather;
                         boots.Hue = 2990;
 						
-						TyreanHornedPlateHelm helm = new TyreanHornedPlateHelm();
+						HornedPlateHelm helm = new HornedPlateHelm();
                         helm.Resource = CraftResource.Bronze;
 						helm.Name = "A Horned Helmet";
                         helm.Hue = 2990;
@@ -1949,7 +1949,7 @@ namespace Server.Mobiles
 						dress.Layer = Layer.InnerTorso;
                         dress.Hue = 2707;
 						
-						TyreanHalfPlateChest chest = new TyreanHalfPlateChest();
+						HalfPlateChest chest = new HalfPlateChest();
                         chest.Name = "A Ceremonial Breastplate";
 						chest.Layer = Layer.MiddleTorso;
                         chest.Hue = 2990;
@@ -1970,7 +1970,7 @@ namespace Server.Mobiles
                         boots.Resource = CraftResource.BeastLeather;
                         boots.Hue = 2990;
 						
-						TyreanHornedHelm helm = new TyreanHornedHelm();
+						HornedHelm helm = new HornedHelm();
                         helm.Resource = CraftResource.Bronze;
 						helm.Name = "A Horned Helmet";
                         helm.Hue = 2707;
@@ -2018,7 +2018,7 @@ namespace Server.Mobiles
                         doub.Name = "A Ceremonial Tunic";
                         doub.Hue = 2707;
 
-                        KhemetarRogueTurban gorget = new KhemetarRogueTurban();
+                        Turban gorget = new Turban();
                         gorget.Layer = Layer.Neck;
                         gorget.Hue = 2990;
 
@@ -2029,7 +2029,7 @@ namespace Server.Mobiles
                         boots.Resource = CraftResource.BeastLeather;
                         boots.Hue = 2990;
 						
-						KhemetarScaleHelmet helm = new KhemetarScaleHelmet();
+						ScaleArmorHelmet helm = new ScaleArmorHelmet();
                         helm.Resource = CraftResource.Bronze;
 						helm.Name = "A Ceremonial Helmet";
                         helm.Hue = 2990;
@@ -2049,7 +2049,7 @@ namespace Server.Mobiles
 						m.EquipItem(belt);
 						m.EquipItem(glasses);
 
-                        AlyrianGiantBow bow = new AlyrianGiantBow();
+                        WarBow bow = new WarBow();
                         bow.Resource = CraftResource.Oak;
 
                         m.EquipItem(bow);
@@ -2123,7 +2123,7 @@ namespace Server.Mobiles
             m.EquipItem(cc);
             PlateArms pa = new PlateArms();
             m.EquipItem(pa);
-            TyreanHalfPlateGloves thpg = new TyreanHalfPlateGloves();
+            HalfPlateGloves thpg = new HalfPlateGloves();
             m.EquipItem(thpg);
             PlateGorget pg = new PlateGorget();
             m.EquipItem(pg);

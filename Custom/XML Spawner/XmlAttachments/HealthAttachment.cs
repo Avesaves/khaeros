@@ -1376,7 +1376,7 @@ namespace Server.Engines.XmlSpawner2
             foreach (Item i in m_Player.Items)
             {
                 #region Clothing Resistance Bonuses
-                if (i is AlyrianRogueMask)
+                if (i is RogueMask)
                     clothingResist += 0.2;
                 else if (i is SurgicalMask)
                     clothingResist += 0.5;
@@ -1386,7 +1386,7 @@ namespace Server.Engines.XmlSpawner2
                     clothingResist += 0.15;
                 else if (i is SmallScarf)
                     clothingResist += 0.1;
-                else if (i is KhemetarRogueTurban)
+                else if (i is Turban)
                     clothingResist += 0.33;
                 else if (i is HatWithMask)
                     clothingResist += 0.25;

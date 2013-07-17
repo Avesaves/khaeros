@@ -41,7 +41,7 @@ namespace Server.Mobiles
 			{
 				EquipItem( new LongOrnateDress( hue ) );
 				EquipItem( new Sandals() );
-				EquipItem( new VhalurianLongbow() );
+				EquipItem( new LongBow() );
 				PackItem( new Arrow( Utility.RandomMinMax( 10, 20 ) ) );
 				AI = AIType.AI_Archer;
 			}
@@ -55,7 +55,7 @@ namespace Server.Mobiles
 				{
 					case 0: 
 					{
-						EquipItem( new VhalurianWarAxe() );
+						EquipItem( new HorsemanAxe() );
 						break;
 					}
 						
@@ -76,7 +76,7 @@ namespace Server.Mobiles
 				EquipItem( new BeltedPants( Utility.RandomNeutralHue() ) );
 			}
 			
-			VhalurianRogueCowl mask = new VhalurianRogueCowl();
+			RogueCowl mask = new RogueCowl();
 			mask.Hue = hue;
 			EquipItem( mask );
 		}

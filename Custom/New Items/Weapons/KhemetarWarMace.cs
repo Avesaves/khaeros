@@ -4,9 +4,9 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class KhemetarWarMace : BaseBashing
+	public class Macana : BaseBashing
 	{
-		public override string NameType { get { return "Khemetar War Mace"; } }
+		public override string NameType { get { return "macana"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ConcussionBlow; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.Disarm; } }
@@ -29,15 +29,15 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 70; } }
 
 		[Constructable]
-		public KhemetarWarMace() : base( 0x3DE3 )
+		public Macana() : base( 0x3DE3 )
 		{
 			Weight = 7.0;
-			Name = "Khemetar War Mace";
+			Name = "macana";
 			AosElementDamages.Blunt = 80;
 			AosElementDamages.Piercing = 20;
 		}
 
-		public KhemetarWarMace( Serial serial ) : base( serial )
+		public Macana( Serial serial ) : base( serial )
 		{
 		}
 

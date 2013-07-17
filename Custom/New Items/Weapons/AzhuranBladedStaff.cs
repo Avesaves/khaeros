@@ -5,11 +5,11 @@ using Server.Items;
 namespace Server.Items
 {
 	[FlipableAttribute( 0x26BD, 0x26C7 )]
-	public class AzhuranBladedStaff : BasePoleArm
+	public class Glaive : BasePoleArm
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ArmorIgnore; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.Dismount; } }
-		public override string NameType { get { return "Azhuran Bladed Staff"; } }
+		public override string NameType { get { return "glaive"; } }
 
 		public override int AosStrengthReq{ get{ return 55; } }
 		public override double OverheadPercentage{ get{ return 0.2; } }
@@ -37,16 +37,16 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.Pierce2H; } }
 
 		[Constructable]
-		public AzhuranBladedStaff() : base( 0x26BD )
+		public Glaive() : base( 0x26BD )
 		{
 			Weight = 8.0;
 			MaxRange = 2;
 			AosElementDamages.Slashing = 70;
 			AosElementDamages.Piercing = 30;
-			Name = "Azhuran Bladed Staff";
+			Name = "glaive";
 		}
 
-		public AzhuranBladedStaff( Serial serial ) : base( serial )
+		public Glaive( Serial serial ) : base( serial )
 		{
 		}
 

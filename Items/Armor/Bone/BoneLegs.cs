@@ -4,7 +4,7 @@ using Server.Items;
 namespace Server.Items
 {
     [FlipableAttribute(0x1452, 0x1457)]
-    public class MhordulBoneLegs : BaseArmor, IBoneArmour
+    public class BoneLegs : BaseArmor, IBoneArmour
     {
         public override int BaseBluntResistance { get { return 9; } }
         public override int BasePiercingResistance { get { return 6; } }
@@ -30,14 +30,14 @@ namespace Server.Items
         public override CraftResource DefaultResource { get { return CraftResource.RegularLeather; } }
 
         [Constructable]
-        public MhordulBoneLegs()
+        public BoneLegs()
             : base(0x1452)
         {
             Weight = 3.0;
-            Name = "Mhordul Bone Legs";
+            Name = "bone Legs";
         }
 
-        public MhordulBoneLegs(Serial serial)
+        public BoneLegs(Serial serial)
             : base(serial)
         {
         }

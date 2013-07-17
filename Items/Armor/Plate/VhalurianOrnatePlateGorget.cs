@@ -3,7 +3,7 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class VhalurianOrnatePlateGorget : BaseArmor
+	public class OrnatePlateGorget : BaseArmor
 	{
         public override ArmourWeight ArmourType { get { return ArmourWeight.Heavy; } }
 
@@ -29,14 +29,14 @@ namespace Server.Items
 		public override ArmorMaterialType MaterialType{ get{ return ArmorMaterialType.Plate; } }
 
 		[Constructable]
-		public VhalurianOrnatePlateGorget() : base( 0x3B1C )
+		public OrnatePlateGorget() : base( 0x3B1C )
 		{
 			Weight = 2.0;
-			Name = "Vhalurian Ornate Plate Gorget";
+			Name = "ornate Plate Gorget";
 			Layer = Layer.Neck;
 		}
 
-		public VhalurianOrnatePlateGorget( Serial serial ) : base( serial )
+		public OrnatePlateGorget( Serial serial ) : base( serial )
 		{
 		}
 		

@@ -33,27 +33,27 @@ namespace Server.Mobiles
 			this.FightMode = FightMode.Closest;
 			int hue = Utility.RandomNeutralHue();
 			
-			VhalurianOrnatePlateArms arms = new VhalurianOrnatePlateArms();
+			OrnatePlateArms arms = new OrnatePlateArms();
 			arms.Hue = 1;
 			EquipItem( arms );
 			
-			VhalurianOrnatePlateChest chest = new VhalurianOrnatePlateChest();
+			OrnatePlateChest chest = new OrnatePlateChest();
 			chest.Hue = 1;
 			EquipItem( chest );
 			
-			VhalurianOrnatePlateLegs legs = new VhalurianOrnatePlateLegs();
+			OrnatePlateLegs legs = new OrnatePlateLegs();
 			legs.Hue = 1;
 			EquipItem( legs );
 			
-			VhalurianOrnatePlateGloves gloves = new VhalurianOrnatePlateGloves();
+			OrnatePlateGloves gloves = new OrnatePlateGloves();
 			gloves.Hue = 1;
 			EquipItem( gloves );
 			
-			VhalurianOrnatePlateGorget gorget = new VhalurianOrnatePlateGorget();
+			OrnatePlateGorget gorget = new OrnatePlateGorget();
 			gorget.Hue = 1;
 			EquipItem( gorget );
 			
-			TyreanWingedHelm helm = new TyreanWingedHelm();
+			WingedHelm helm = new WingedHelm();
 			helm.Hue = 1;
 			EquipItem( helm );
 			

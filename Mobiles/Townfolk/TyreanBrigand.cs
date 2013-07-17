@@ -41,7 +41,7 @@ namespace Server.Mobiles
 			{
 				EquipItem( new Skirt( hue ) );
 				EquipItem( new Boots() );
-				EquipItem( new TyreanCompositeBow() );
+				EquipItem( new RecurveLongBow() );
 				PackItem( new Arrow( Utility.RandomMinMax( 10, 20 ) ) );
 				AI = AIType.AI_Archer;
 			}
@@ -55,20 +55,20 @@ namespace Server.Mobiles
 					case 0: 
 					{
 						EquipItem( new MetalShield() );
-						EquipItem( new TyreanBastardSword() );
+						EquipItem( new HandAndAHalfSword() );
 						break;
 					}
 						
 					case 1: 
 					{
-						EquipItem( new TyreanWarMace() );
+						EquipItem( new HeavyWarMace() );
 						EquipItem( new MetalShield() );
 						break;
 					}
 						
 					case 2: 
 					{
-						EquipItem( new TyreanDoubleAxe() );
+						EquipItem( new BeardedDoubleAxe() );
 						break;
 					}
 				}
@@ -78,7 +78,7 @@ namespace Server.Mobiles
 				EquipItem( new LongPants( Utility.RandomNeutralHue() ) );
 			}
 			
-			TyreanRogueMask mask = new TyreanRogueMask();
+			CeremonialMask mask = new CeremonialMask();
 			//mask.Hue = hue;
 			EquipItem( mask );
 			EquipItem( new FancyShirt() );

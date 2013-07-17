@@ -21,25 +21,25 @@ namespace Server
 
 		private static Type[] m_AosWeaponTypes = new Type[]
 			{
-				typeof( Scythe ),				typeof( HandScythe ),		typeof( MhordulScepter ),
-				typeof( AzhuranBladedStaff ),			typeof( Pike ),					typeof( DoubleBladedStaff ),
-				typeof( VhalurianLance ),				typeof( MhordulCrescentBlade )
+				typeof( Scythe ),				typeof( HandScythe ),		typeof( BarbarianScepter ),
+				typeof( Glaive ),			typeof( Pike ),					typeof( DoubleBladedStaff ),
+				typeof( Lance ),				typeof( CrescentBlade )
 			};
 
 		public static Type[] AosWeaponTypes{ get{ return m_AosWeaponTypes; } }
 
 		private static Type[] m_WeaponTypes = new Type[]
 			{
-				typeof( Axe ),					typeof( BattleAxe ),			typeof( TyreanDoubleAxe ),
-				typeof( AzhuranAxe ),		typeof( Hatchet ),				typeof( LargeBattleAxe ),
+				typeof( Axe ),					typeof( BattleAxe ),			typeof( BeardedDoubleAxe ),
+				typeof( HaftedAxe ),		typeof( Hatchet ),				typeof( LargeBattleAxe ),
 				typeof( TwoHandedAxe ),			typeof( WarAxe ),				typeof( Club ),
 				typeof( Mace ),					typeof( Maul ),					typeof( WarHammer ),
 				typeof( WarMace ),				typeof( Bardiche ),				typeof( Halberd ),
 				typeof( Spear ),				typeof( ShortSpear ),			typeof( Pitchfork ),
-				typeof( MhordulWarFork ),				typeof( BlackStaff ),			typeof( GnarledStaff ),
+				typeof( WarFork ),				typeof( BlackStaff ),			typeof( GnarledStaff ),
 				typeof( QuarterStaff ),			typeof( Broadsword ),			typeof( Cutlass ),
 				typeof( Katana ),				typeof( Kryss ),				typeof( Longsword ),
-				typeof( KhemetarScimitar ),				typeof( TyreanBroadsword ),			typeof( Pickaxe ),
+				typeof( Scimitar ),				typeof( Broadsword ),			typeof( Pickaxe ),
 				typeof( HammerPick ),			typeof( ButcherKnife ),			typeof( Cleaver ),
 				typeof( Dagger ),				typeof( SkinningKnife ),		typeof( ClericCrook )
 			};
@@ -48,14 +48,14 @@ namespace Server
 
 		private static Type[] m_SERangedWeaponTypes = new Type[]
 			{
-				typeof( AlyrianGiantBow )
+				typeof( WarBow )
 			};
 
 		public static Type[] SERangedWeaponTypes{ get{ return m_SERangedWeaponTypes; } }
 
 		private static Type[] m_AosRangedWeaponTypes = new Type[]
 			{
-				typeof( CompositeBow ),			typeof( VhalurianRepeatingCrossbow )
+				typeof( CompositeBow ),			typeof( RepeatingCrossbow )
 			};
 
 		public static Type[] AosRangedWeaponTypes{ get{ return m_AosRangedWeaponTypes; } }
@@ -70,9 +70,9 @@ namespace Server
 
 		private static Type[] m_ArmorTypes = new Type[]
 			{
-				typeof( MhordulBoneArms ),				typeof( MhordulBoneChest ),			typeof( MhordulBoneGloves ),
-				typeof( MhordulBoneLegs ),				typeof( MhordulBoneHelm ),				typeof( ChainChest ),
-				typeof( ChainLegs ),			typeof( ChainCoif ),			typeof( VhalurianBascinet ),
+				typeof( BoneArms ),				typeof( BoneChest ),			typeof( BoneGloves ),
+				typeof( BoneLegs ),				typeof( BoneHelm ),				typeof( ChainChest ),
+				typeof( ChainLegs ),			typeof( ChainCoif ),			typeof( Bascinet ),
 				typeof( CloseHelm ),			typeof( Helmet ),				typeof( NorseHelm ),
 				typeof( OrcHelm ),				typeof( FemaleLeatherChest ),	typeof( LeatherArms ),
 				typeof( LeatherBustierArms ),	typeof( LeatherChest ),			typeof( LeatherGloves ),
@@ -98,7 +98,7 @@ namespace Server
 		private static Type[] m_ShieldTypes = new Type[]
 			{
 				typeof( BronzeShield ),			typeof( Buckler ),				typeof( HeaterShield ),
-				typeof( MetalShield ),			typeof( VhalurianMetalKiteShield ),		typeof( WoodenKiteShield ),
+				typeof( MetalShield ),			typeof( KiteShield ),		typeof( WoodenKiteShield ),
 				typeof( WoodenShield )
 			};
 

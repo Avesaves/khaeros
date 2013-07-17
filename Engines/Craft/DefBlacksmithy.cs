@@ -174,289 +174,289 @@ namespace Server.Engines.Craft
 			{
 				PlayerMobile m = from as PlayerMobile;
 				
-		/*		if( itemType == typeof( AlyrianChainGorget ) && !TestRace( m, Nation.Alyrian ) )
+		/*		if( itemType == typeof( SplintedMailGorget ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianChainChest ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( SplintedMailChest ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianChainLegs ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( SplintedMailLegs ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianChainArms ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( SplintedMailArms ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianBuckler ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( RunicBuckler ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianRoundShield ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( RoundShield ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianLeafShield ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( NotchedShield ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianClaymore ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( Claymore ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianSabre ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( Falcata ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianHandScythe ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( Billhook ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianLongsword ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( ArmingSword ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianTwoHandedAxe ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( HeavyDoubleAxe ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianBattleHammer ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( BattleHammer ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranSpikedChainChest ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( SpikedChest ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranHelm ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( EagleHelm ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranRoundShield ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( RoundedFaceShield ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranKiteShield ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( TallFaceShield ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranShortsword ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( Kutar ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranLongsword ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( Tepatl ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranBroadsword ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( Flamberge ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranAxe ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( HaftedAxe ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranBladedStaff ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( Glaive ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranSpear ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( PrimitiveSpear ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( AzhuranMace ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranWarMace ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( SpikedMace ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranHookedClub ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( HookedClub ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarScaleLegs ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( ScaleArmorLegs ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarScaleArms ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( ScaleArmorArms ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarScaleChest ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( ScaleArmorChest ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarScimitar ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( Scimitar ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarHeavyKhopesh ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( HeavyKhopesh ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarKukri ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( Kukri ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarFalchion ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( Falchion ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarKhopesh ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( Khopesh ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarThinScimitar ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( Shamshir ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarCrescentSword ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( Sabre ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarLargeCrescentSword ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( Talwar ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarAxe ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( Tabarzin ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarWarMace ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( Macana ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulCrescentBlade ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( CrescentBlade ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulBoneScythe ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BoneScythe ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulAxe ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BarbarianAxe ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulHeavyBattleAxe ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BarbarianHeavyAxe ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulBoneSword ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BoneSword ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulBoneSpear ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BoneSpear ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulBoneAxe ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BoneAxe ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( MhordulBladedBoneStaff ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulSpear ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BarbarianSpear ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulWarFork ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( WarFork ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulScepter ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BarbarianScepter ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulMace ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BarbarianMace ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanHalfPlateArms ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( HalfPlateArms ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanHalfPlateGorget ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( HalfPlateGorget ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanHalfPlateLegs ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( HalfPlateLegs ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanHalfPlateSabatons ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( HalfPlateSabatons ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanHalfPlateChest ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( HalfPlateChest ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanHalfPlateGloves ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( HalfPlateGloves ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarScaleHelmet ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( ScaleArmorHelmet ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 
                 else if( itemType == typeof( Helmet ) && !TestRace( m, Nation.Alyrian, Nation.Tyrean ) )
                     return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanHornedHelm ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( HornedHelm ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanHornedPlateHelm ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( HornedPlateHelm ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanWingedHelm ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( WingedHelm ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanKiteShield ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( DragonKiteShield ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanBroadsword ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( Broadsword ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanBastardSword ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( HandAndAHalfSword ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanOrnateAxe ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( OrnateAxe ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanWarAxe ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( BroadAxe ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanDoubleAxe ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( BeardedDoubleAxe ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanBattleAxe ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( HeavyBattleAxe ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanWingedAxe ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( WingedAxe ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanThrowingAxe ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( ThrowingAxe ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanHarpoon ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( Angon ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanWarMace ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( HeavyWarMace ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanBattleHammer ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( HeavyBattleHammer ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianOrnatePlateChest ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnatePlateChest ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianOrnatePlateArms ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnatePlateArms ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianOrnatePlateLegs ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnatePlateLegs ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianOrnatePlateGorget ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnatePlateGorget ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianOrnatePlateGloves ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnatePlateGloves ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianOrnateHelm ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnateHelm ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianOrnatePlateHelm ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnatePlateHelm ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianOrnateNorseHelm ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnateNorseHelm ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianOrnateKiteShield ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnateKiteShield ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianGladius ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( Gladius ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianBroadsword ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( CavalrySword ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianBastardSword ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( BastardSword ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianWarAxe ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( HorsemanAxe ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianLance ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( Lance ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianMace ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( HorsemanMace ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianWarHammer ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( HorsemanWarhammer ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianMaul ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( TwoHandedMaul ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianHeavyMaul ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( HeavyMaul ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianBascinet ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( Bascinet ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( WoodenKiteShield ) && !TestRace( m, Nation.Mhordul, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianMetalKiteShield ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( KiteShield ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( PriestStaff ) && !TestRace( m, Nation.Khemetar ) )
@@ -591,9 +591,9 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( RingmailGorget ), 1011076, "ringmail gorget", 5.0, 15.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
 			
 			AddCraft( typeof( RingmailChest ), 1011076, "ringmail chest", 20.0, 40.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
-			AddCraft( typeof( KhemetarScaleLegs ), 1011076, "khemetar scale legs", 80.0, 120.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
-			AddCraft( typeof( KhemetarScaleArms ), 1011076, "khemetar scale arms", 80.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			AddCraft( typeof( KhemetarScaleChest ), 1011076, "khemetar scale chest", 80.0, 120.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
+			AddCraft( typeof( ScaleArmorLegs ), 1011076, "scale armor legs", 80.0, 120.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
+			AddCraft( typeof( ScaleArmorArms ), 1011076, "scale armor arms", 80.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+			AddCraft( typeof( ScaleArmorChest ), 1011076, "scale armor chest", 80.0, 120.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
 			
 			#endregion
 
@@ -607,11 +607,11 @@ namespace Server.Engines.Craft
 			
 			AddCraft( typeof( ChainChest ), 1011077, "chain chest", 40.0, 90.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
 			
-			AddCraft( typeof( AlyrianChainGorget ), 1011077, "alyrian chain gorget", 80.0, 120.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
-			AddCraft( typeof( AlyrianChainLegs ), 1011077, "alyrian chain legs", 80.0, 120.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
-			AddCraft( typeof( AlyrianChainChest ), 1011077, "alyrian chain chest", 80.0, 120.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
-			AddCraft( typeof( AlyrianChainArms ), 1011077, "alyrian chain arms", 80.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			AddCraft( typeof( AzhuranSpikedChainChest ), 1011077, "azhuran spiked chain chest", 80.0, 120.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
+			AddCraft( typeof( SplintedMailGorget ), 1011077, "splinted mail gorget", 80.0, 120.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
+			AddCraft( typeof( SplintedMailLegs ), 1011077, "splinted mail legs", 80.0, 120.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
+			AddCraft( typeof( SplintedMailChest ), 1011077, "splinted mail chest", 80.0, 120.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
+			AddCraft( typeof( SplintedMailArms ), 1011077, "splinted mail arms", 80.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+
 
 			#endregion
 
@@ -625,39 +625,38 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( PlateChest ), 1011078, "plate chest", 80.0, 120.0, typeof( CopperIngot ), 1044036, 25, 1044037 );
 			AddCraft( typeof( PlateSabatons ), 1011078, "plate sabatons", 80.0, 120.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
 			AddCraft( typeof( FemalePlateChest ), 1011078, "female plate chest", 75.0, 115.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
-			AddCraft( typeof( TyreanHalfPlateArms ), 1011078, "tyrean half-plate arms", 80.0, 120.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
-			AddCraft( typeof( TyreanHalfPlateGloves ), 1011078, "tyrean half-plate gloves", 80.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			AddCraft( typeof( TyreanHalfPlateGorget ), 1011078, "tyrean half-plate gorget", 80.0, 120.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
-			AddCraft( typeof( TyreanHalfPlateLegs ), 1011078, "tyrean half-plate legs", 80.0, 120.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
-			AddCraft( typeof( TyreanHalfPlateChest ), 1011078, "tyrean half-plate chest", 80.0, 120.0, typeof( CopperIngot ), 1044036, 25, 1044037 );
-			AddCraft( typeof( TyreanHalfPlateSabatons ), 1011078, "tyrean half-plate sabatons", 80.0, 120.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
-			AddCraft( typeof( VhalurianOrnatePlateArms ), 1011078, "vhalurian ornate plate arms", 80.0, 120.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
-			AddCraft( typeof( VhalurianOrnatePlateGloves ), 1011078, "vhalurian ornate plate gloves", 80.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			AddCraft( typeof( VhalurianOrnatePlateGorget ), 1011078, "vhalurian ornate plate gorget", 80.0, 120.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
-			AddCraft( typeof( VhalurianOrnatePlateLegs ), 1011078, "vhalurian ornate plate legs", 80.0, 120.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
-			AddCraft( typeof( VhalurianOrnatePlateChest ), 1011078, "vhalurian ornate plate chest", 80.0, 120.0, typeof( CopperIngot ), 1044036, 25, 1044037 );
+			AddCraft( typeof( HalfPlateArms ), 1011078, "half-plate arms", 80.0, 120.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
+			AddCraft( typeof( HalfPlateGloves ), 1011078, "half-plate gloves", 80.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( HalfPlateGorget ), 1011078, "half-plate gorget", 80.0, 120.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
+			AddCraft( typeof( HalfPlateLegs ), 1011078, "half-plate legs", 80.0, 120.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
+			AddCraft( typeof( HalfPlateChest ), 1011078, "half-plate chest", 80.0, 120.0, typeof( CopperIngot ), 1044036, 25, 1044037 );
+			AddCraft( typeof( HalfPlateSabatons ), 1011078, "half-plate sabatons", 80.0, 120.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
+			AddCraft( typeof( OrnatePlateArms ), 1011078, "ornate plate arms", 80.0, 120.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
+			AddCraft( typeof( OrnatePlateGloves ), 1011078, "ornate plate gloves", 80.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( OrnatePlateGorget ), 1011078, "ornate plate gorget", 80.0, 120.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
+			AddCraft( typeof( OrnatePlateLegs ), 1011078, "ornate plate legs", 80.0, 120.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
+			AddCraft( typeof( OrnatePlateChest ), 1011078, "ornate plate chest", 80.0, 120.0, typeof( CopperIngot ), 1044036, 25, 1044037 );
 			AddCraft( typeof( AG_HorseBardingAddonDeed ), 1011078, "horse barding", 80.0, 120.0, typeof( CopperIngot ), 1044036, 80, 1044037 );
 
 			#endregion
 
 			#region Helmets			
 			AddCraft( typeof( CloseHelm ), 1011079, "close helm", 60.0, 110.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
-			AddCraft( typeof( Helmet ), 1011079, "antlered helm", 35.0, 85.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
 			AddCraft( typeof( NorseHelm ), 1011079, "norse helm", 60.0, 110.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
 			AddCraft( typeof( PlateHelm ), 1011079, "plate helm", 60.0, 110.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
 			AddCraft( typeof( Cervelliere ), 1011079, "cervelliere", 60.0, 110.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
 			AddCraft( typeof( Sallet ), 1011079, "sallet", 60.0, 110.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
 			AddCraft( typeof( SkullCapHelmet ), 1011079, "skull cap helm", 60.0, 110.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
 			AddCraft( typeof( Barbute ), 1011079, "barbute", 60.0, 110.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
-			AddCraft( typeof( AzhuranHelm ), 1011079, "azhuran helm", 80.0, 120.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
-			AddCraft( typeof( KhemetarScaleHelmet ), 1011079, "khemetar scale helmet", 60.0, 100.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
-			AddCraft( typeof( TyreanHornedPlateHelm ), 1011079, "tyrean horned plate helm", 80.0, 120.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
-			AddCraft( typeof( TyreanHornedHelm ), 1011079, "tyrean horned helm", 80.0, 120.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
-			AddCraft( typeof( TyreanWingedHelm ), 1011079, "tyrean winged helm", 80.0, 120.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
-			AddCraft( typeof( VhalurianBascinet ), 1011079, "vhalurian bascinet", 10.0, 60.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
-			AddCraft( typeof( VhalurianOrnateHelm ), 1011079, "vhalurian ornate helm", 80.0, 120.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
-			AddCraft( typeof( VhalurianOrnateNorseHelm ), 1011079, "vhalurian ornate norse helm", 80.0, 120.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
-			AddCraft( typeof( VhalurianOrnatePlateHelm ), 1011079, "vhalurian ornate plate helm", 80.0, 120.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
+			AddCraft( typeof( EagleHelm ), 1011079, "eagle helm", 80.0, 120.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
+			AddCraft( typeof( ScaleArmorHelmet ), 1011079, "scale armor helmet", 60.0, 100.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
+			AddCraft( typeof( HornedPlateHelm ), 1011079, "horned plate helm", 80.0, 120.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
+			AddCraft( typeof( HornedHelm ), 1011079, "horned helm", 80.0, 120.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
+			AddCraft( typeof( WingedHelm ), 1011079, "winged helm", 80.0, 120.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
+			AddCraft( typeof( Bascinet ), 1011079, "bascinet", 10.0, 60.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
+			AddCraft( typeof( OrnateHelm ), 1011079, "ornate helm", 80.0, 120.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
+			AddCraft( typeof( OrnateNorseHelm ), 1011079, "ornate norse helm", 80.0, 120.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
+			AddCraft( typeof( OrnatePlateHelm ), 1011079, "ornate plate helm", 80.0, 120.0, typeof( CopperIngot ), 1044036, 15, 1044037 );
 
 			#endregion
 
@@ -666,14 +665,12 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( BronzeShield ), 1011080, "bronze shield", 0.0, 65.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
 			AddCraft( typeof( HeaterShield ), 1011080, "heater shield", 80.0, 120.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
 			AddCraft( typeof( MetalShield ), 1011080, "metal shield", 0.0, 80.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			AddCraft( typeof( AlyrianBuckler ), 1011080, "alyrian buckler", 80.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			AddCraft( typeof( AlyrianRoundShield ), 1011080, "alyrian round shield", 80.0, 120.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
-			AddCraft( typeof( AlyrianLeafShield ), 1011080, "alyrian leaf shield", 80.0, 120.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
-			AddCraft( typeof( AzhuranRoundShield ), 1011080, "azhuran round shield", 80.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			AddCraft( typeof( AzhuranKiteShield ), 1011080, "azhuran kite shield", 80.0, 120.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
-			AddCraft( typeof( TyreanKiteShield ), 1011080, "tyrean kite shield", 80.0, 120.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
-			AddCraft( typeof( VhalurianOrnateKiteShield ), 1011080, "vhalurian ornate kite shield", 80.0, 120.0, typeof( CopperIngot ), 1044036, 25, 1044037 );
-			AddCraft( typeof( VhalurianMetalKiteShield ), 1011080, "vhalurian metal kite shield", 80.0, 120.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
+			AddCraft( typeof( RunicBuckler ), 1011080, "runic buckler", 80.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( RoundShield ), 1011080, "round shield", 80.0, 120.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
+			AddCraft( typeof( NotchedShield ), 1011080, "notched shield", 80.0, 120.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
+			AddCraft( typeof( DragonKiteShield ), 1011080, "dragon kite shield", 80.0, 120.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
+			AddCraft( typeof( OrnateKiteShield ), 1011080, "ornate kite shield", 80.0, 120.0, typeof( CopperIngot ), 1044036, 25, 1044037 );
+			AddCraft( typeof( KiteShield ), 1011080, "kite shield", 80.0, 120.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
 			
 			#endregion
 
@@ -692,29 +689,24 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( Greatsword ), 1011081, "greatsword", 60.0, 100.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
 			AddCraft( typeof( Rapier ), 1011081, "rapier", 70.0, 110.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
 			AddCraft( typeof( DoubleBladedStaff ), 1011081, "double bladed staff", 70.0, 110.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			AddCraft( typeof( AlyrianClaymore ), 1011081, "alyrian claymore", 80.0, 120.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
-			AddCraft( typeof( AlyrianSabre ), 1011081, "alyrian sabre", 70.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			AddCraft( typeof( AlyrianHandScythe ), 1011081, "alyrian hand scythe", 40.0, 80.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
-			AddCraft( typeof( AlyrianLongsword ), 1011081, "alyrian longsword", 80.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			AddCraft( typeof( AzhuranShortsword ), 1011081, "azhuran shortsword", 60.0, 100.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
-			AddCraft( typeof( AzhuranLongsword ), 1011081, "azhuran longsword", 70.0, 120.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
-			AddCraft( typeof( AzhuranBroadsword ), 1011081, "azhuran broadsword", 70.0, 120.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
-			AddCraft( typeof( KhemetarScimitar ), 1011081, "khemetar scimitar", 30.0, 80.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
-			AddCraft( typeof( KhemetarHeavyKhopesh ), 1011081, "khemetar heavy khopesh", 75.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			AddCraft( typeof( KhemetarKukri ), 1011081, "khemetar kukri", 70.0, 120.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
-			AddCraft( typeof( KhemetarFalchion ), 1011081, "khemetar falchion", 70.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			AddCraft( typeof( KhemetarKhopesh ), 1011081, "khemetar khopesh", 70.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			AddCraft( typeof( KhemetarThinScimitar ), 1011081, "khemetar thin scimitar", 50.0, 100.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
-			AddCraft( typeof( KhemetarCrescentSword ), 1011081, "khemetar crescent sword", 70.0, 120.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
-			AddCraft( typeof( KhemetarLargeCrescentSword ), 1011081, "khemetar large crescent sword", 70.0, 120.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
-			AddCraft( typeof( MhordulCrescentBlade ), 1011081, "mhordul crescent blade", 45.0, 95.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			index = AddCraft( typeof( MhordulBoneSword ), 1011081, "mhordul bone sword", 40.0, 90.0, typeof( CopperIngot ), 1044036, 2, 1044037 );
-			AddRes( index, typeof( Bone ), 1049064, 6, 1049063 );
-			AddCraft( typeof( TyreanBroadsword ), 1011081, "tyrean broadsword", 50.0, 80.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			AddCraft( typeof( TyreanBastardSword ), 1011081, "tyrean bastard sword", 80.0, 120.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
-			AddCraft( typeof( VhalurianGladius ), 1011081, "vhalurian gladius", 50.0, 80.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
-			AddCraft( typeof( VhalurianBroadsword ), 1011081, "vhalurian broadsword", 70.0, 100.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			AddCraft( typeof( VhalurianBastardSword ), 1011081, "vhalurian bastard sword", 90.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+			AddCraft( typeof( Claymore ), 1011081, "claymore", 80.0, 120.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
+			AddCraft( typeof( Falcata ), 1011081, "falcata", 70.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( Billhook ), 1011081, "billhook", 40.0, 80.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
+			AddCraft( typeof( ArmingSword ), 1011081, "arming sword", 80.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( Kutar ), 1011081, "kutar", 60.0, 100.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
+			AddCraft( typeof( Flamberge ), 1011081, "flamberge", 70.0, 120.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
+			AddCraft( typeof( Scimitar ), 1011081, "scimitar", 30.0, 80.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
+			AddCraft( typeof( HeavyKhopesh ), 1011081, "heavy khopesh", 75.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+			AddCraft( typeof( Kukri ), 1011081, "kukri", 70.0, 120.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
+			AddCraft( typeof( Falchion ), 1011081, "falchion", 70.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+			AddCraft( typeof( Khopesh ), 1011081, "khopesh", 70.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( Shamshir ), 1011081, "shamshir", 50.0, 100.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
+			AddCraft( typeof( Sabre ), 1011081, "sabre", 70.0, 120.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
+			AddCraft( typeof( Talwar ), 1011081, "talwar", 70.0, 120.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
+			AddCraft( typeof( Broadsword ), 1011081, "broadsword", 50.0, 80.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+			AddCraft( typeof( HandAndAHalfSword ), 1011081, "hand-and-a-half sword", 80.0, 120.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
+			AddCraft( typeof( CavalrySword ), 1011081, "cavalry sword", 70.0, 100.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( BastardSword ), 1011081, "bastard sword", 90.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
             		AddCraft( typeof( DualSwords ), 1011081, "dual swords", 75.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
 
 			#endregion
@@ -726,20 +718,16 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( TwoHandedAxe ), 1011082, "two-handed axe", 30.0, 80.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
 			AddCraft( typeof( LargeBattleAxe ), 1011082, "large battle axe", 30.0, 80.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
 			AddCraft( typeof( DualPicks ), 1011082, "dual picks", 80.0, 120.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
-			AddCraft( typeof( AlyrianTwoHandedAxe ), 1011082, "alyrian two-handed axe", 75.0, 115.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
-			AddCraft( typeof( AzhuranAxe ), 1011082, "azhuran axe", 35.0, 85.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
-			AddCraft( typeof( KhemetarAxe ), 1011082, "khemetar axe", 35.0, 85.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
-			AddCraft( typeof( MhordulAxe ), 1011082, "mhordul axe", 50.0, 100.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
-			AddCraft( typeof( MhordulHeavyBattleAxe ), 1011082, "mhordul heavy battle axe", 80.0, 120.0, typeof( CopperIngot ), 1044036, 22, 1044037 );
-			index = AddCraft( typeof( MhordulBoneAxe ), 1011082, "mhordul bone axe", 40.0, 90.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
-			AddRes( index, typeof( Bone ), 1049064, 10, 1049063 );
-			AddCraft( typeof( TyreanOrnateAxe ), 1011082, "tyrean ornate axe", 80.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			AddCraft( typeof( TyreanDoubleAxe ), 1011082, "tyrean double axe", 60.0, 100.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
-			AddCraft( typeof( TyreanWarAxe ), 1011082, "tyrean war axe", 80.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			AddCraft( typeof( TyreanBattleAxe ), 1011082, "tyrean battle axe", 50.0, 100.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			AddCraft( typeof( TyreanWingedAxe ), 1011082, "tyrean winged axe", 80.0, 120.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
-			AddCraft( typeof( TyreanThrowingAxe ), 1011082, "tyrean throwing axe", 50.0, 100.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
-			AddCraft( typeof( VhalurianWarAxe ), 1011082, "vhalurian war axe", 30.0, 80.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+			AddCraft( typeof( HeavyDoubleAxe ), 1011082, "heavy double axe", 75.0, 115.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
+			AddCraft( typeof( HaftedAxe ), 1011082, "hafted axe", 35.0, 85.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
+			AddCraft( typeof( Tabarzin ), 1011082, "tabarzin", 35.0, 85.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
+			AddCraft( typeof( OrnateAxe ), 1011082, "ornate axe", 80.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+			AddCraft( typeof( BeardedDoubleAxe ), 1011082, "bearded double axe", 60.0, 100.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
+			AddCraft( typeof( BroadAxe ), 1011082, "broad axe", 80.0, 120.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+			AddCraft( typeof( HeavyBattleAxe ), 1011082, "heavy battle axe", 50.0, 100.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+			AddCraft( typeof( WingedAxe ), 1011082, "winged axe", 80.0, 120.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
+			AddCraft( typeof( ThrowingAxe ), 1011082, "throwing axe", 50.0, 100.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
+			AddCraft( typeof( HorsemanAxe ), 1011082, "horseman's axe", 30.0, 80.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
 			
 			#endregion
 
@@ -751,18 +739,10 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( Scythe ), 1011083, "scythe", 40.0, 90.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
 			AddCraft( typeof( Spear ), 1011083, "spear", 50.0, 100.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
 			AddCraft( typeof( Pitchfork ), 1011083, "pitchfork", 35.0, 85.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			AddCraft( typeof( AzhuranBladedStaff ), 1011083, "azhuran bladed staff", 40.0, 90.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
-			AddCraft( typeof( AzhuranSpear ), 1011083, "azhuran spear", 40.0, 90.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			AddCraft( typeof( MhordulWarFork ), 1011083, "mhordul war fork", 40.9, 90.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			AddCraft( typeof( MhordulSpear ), 1011083, "mhordul spear", 50.0, 100.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			index = AddCraft( typeof( MhordulBoneSpear ), 1011083, "mhordul bone spear", 50.0, 100.0, typeof( CopperIngot ), 1044036, 2, 1044037 );
-			AddRes( index, typeof( Bone ), 1049064, 10, 1049063 );
-			index = AddCraft( typeof( MhordulBladedBoneStaff ), 1011083, "mhordul bladed bone staff", 40.0, 90.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
-			AddRes( index, typeof( Bone ), 1049064, 10, 1049063 );
-			index = AddCraft( typeof( MhordulBoneScythe ), 1011083, "mhordul bone scythe", 40.0, 90.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
-			AddRes( index, typeof( Bone ), 1049064, 12, 1049063 );
-			AddCraft( typeof( TyreanHarpoon ), 1011083, "tyrean harpoon", 40.0, 90.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			AddCraft( typeof( VhalurianLance ), 1011083, "vhalurian lance", 50.0, 100.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
+			AddCraft( typeof( Glaive ), 1011083, "glaive", 40.0, 90.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
+			AddCraft( typeof( WarFork ), 1011083, "war fork", 40.9, 90.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( Angon ), 1011083, "angon", 40.0, 90.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( Lance ), 1011083, "lance", 50.0, 100.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
 				
 			#endregion
 
@@ -776,19 +756,16 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( FlangedMace ), 1011084, "flanged mace", 80.0, 120.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
 			AddCraft( typeof( ShamanStaff ), 1011084, "shaman's staff", 80.0, 120.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
 			AddCraft( typeof( PriestStaff ), 1011084, "priest's staff", 80.0, 120.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
-			AddCraft( typeof( AlyrianBattleHammer ), 1011084, "alyrian battle hammer", 50.0, 90.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
-			AddCraft( typeof( AzhuranWarMace ), 1011084, "azhuran war mace", 40.0, 90.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			AddCraft( typeof( AzhuranHookedClub ), 1011084, "azhuran hooked club", 40.0, 90.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
-			AddCraft( typeof( AzhuranMace ), 1011084, "azhuran mace", 40.0, 90.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
-			AddCraft( typeof( KhemetarWarMace ), 1011084, "khemetar war mace", 40.0, 90.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			AddCraft( typeof( MhordulScepter ), 1011084, "mhordul scepter", 20.0, 70.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			AddCraft( typeof( MhordulMace ), 1011084, "mhordul mace", 40.0, 90.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
-			AddCraft( typeof( TyreanWarMace ), 1011084, "tyrean war mace", 60.0, 100.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
-			AddCraft( typeof( TyreanBattleHammer ), 1011084, "tyrean battle hammer", 50.0, 90.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
-			AddCraft( typeof( VhalurianMace ), 1011084, "vhalurian mace", 40.0, 80.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
-			AddCraft( typeof( VhalurianWarHammer ), 1011084, "vhalurian war hammer", 50.0, 90.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
-			AddCraft( typeof( VhalurianMaul ), 1011084, "vhalurian maul", 60.0, 100.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
-			AddCraft( typeof( VhalurianHeavyMaul ), 1011084, "vhalurian heavy maul", 70.0, 110.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
+			AddCraft( typeof( BattleHammer ), 1011084, "battle hammer", 50.0, 90.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
+			AddCraft( typeof( SpikedMace ), 1011084, "spiked mace", 40.0, 90.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( HookedClub ), 1011084, "hooked club", 40.0, 90.0, typeof( CopperIngot ), 1044036, 10, 1044037 );
+			AddCraft( typeof( Macana ), 1011084, "macana", 40.0, 90.0, typeof( CopperIngot ), 1044036, 14, 1044037 );
+			AddCraft( typeof( HeavyWarMace ), 1011084, "heavy war mace", 60.0, 100.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
+			AddCraft( typeof( HeavyBattleHammer ), 1011084, "heavy battle hammer", 50.0, 90.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
+			AddCraft( typeof( HorsemanMace ), 1011084, "horseman's mace", 40.0, 80.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
+			AddCraft( typeof( HorsemanWarhammer ), 1011084, "horseman's war hammer", 50.0, 90.0, typeof( CopperIngot ), 1044036, 16, 1044037 );
+			AddCraft( typeof( TwoHandedMaul ), 1011084, "two-handed maul", 60.0, 100.0, typeof( CopperIngot ), 1044036, 18, 1044037 );
+			AddCraft( typeof( HeavyMaul ), 1011084, "heavy maul", 70.0, 110.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
 
 			#endregion
 			

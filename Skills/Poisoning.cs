@@ -56,7 +56,7 @@ namespace Server.SkillHandlers
 
 					bool startTimer = false;
 
-					if ( targeted is Food || targeted is AzhuranBlowGun || targeted is Shuriken )
+					if ( targeted is Food || targeted is BlowGun || targeted is Shuriken )
 					{
 						startTimer = true;
 					}
@@ -123,19 +123,19 @@ namespace Server.SkillHandlers
 								((BaseWeapon)m_Target).Poison = m_Poison;
 								((BaseWeapon)m_Target).PoisonCharges = 18 - (m_Poison.Level * 2);
 							}
-							/*else if ( m_Target is AzhuranBlowGunDarts )
+							/*else if ( m_Target is BlowGunDarts )
 							{
-								((AzhuranBlowGunDarts)m_Target).Poison = m_Poison;
-								((AzhuranBlowGunDarts)m_Target).PoisonCharges = Math.Min( 18 - (m_Poison.Level * 2), ((AzhuranBlowGunDarts)m_Target).UsesRemaining );
+								((BlowGunDarts)m_Target).Poison = m_Poison;
+								((BlowGunDarts)m_Target).PoisonCharges = Math.Min( 18 - (m_Poison.Level * 2), ((BlowGunDarts)m_Target).UsesRemaining );
 							}*/
-                            else if( m_Target is AzhuranBlowGun )
+                            else if( m_Target is BlowGun )
                             {
-                                AzhuranBlowGun gun = m_Target as AzhuranBlowGun;
+                                BlowGun gun = m_Target as BlowGun;
 
                                 if( gun.UsesRemaining > 0 )
                                 {
                                     gun.Poison = m_Poison;
-                                    gun.PoisonCharges = Math.Min( 18 - ( m_Poison.Level * 2 ), ( (AzhuranBlowGunDarts)m_Target ).UsesRemaining );
+                                    gun.PoisonCharges = Math.Min( 18 - ( m_Poison.Level * 2 ), ( (BlowGunDarts)m_Target ).UsesRemaining );
                                 }
                             }
 							else if ( m_Target is Shuriken )

@@ -4,9 +4,9 @@ using Server.Network;
 
 namespace Server.Items
 {
-	public class MhordulHeavyBattleAxe : BaseAxe
+	public class BarbarianHeavyAxe : BaseAxe
 	{
-		public override string NameType{ get{ return "Mhordul Heavy Battle Axe"; } }
+		public override string NameType{ get{ return "barbarian's heavy axe"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.DoubleStrike; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.WhirlwindAttack; } }
@@ -31,15 +31,15 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 110; } }
 
 		[Constructable]
-		public MhordulHeavyBattleAxe() : base( 0x3CB1 )
+		public BarbarianHeavyAxe() : base( 0x3CB1 )
 		{
 			Weight = 11.0;
-			Name = "Mhordul Heavy Battle Axe";
+			Name = "barbarian's heavy axe";
 			AosElementDamages.Blunt = 40;
 			AosElementDamages.Slashing = 60;
 		}
 
-		public MhordulHeavyBattleAxe( Serial serial ) : base( serial )
+		public BarbarianHeavyAxe( Serial serial ) : base( serial )
 		{
 		}
 

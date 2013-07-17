@@ -5,11 +5,11 @@ using Server.Items;
 namespace Server.Items
 {
 	[FlipableAttribute( 0x26C1, 0x26CB )]
-	public class MhordulCrescentBlade : BaseSword
+	public class CrescentBlade : BaseSword
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.DoubleStrike; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.MortalStrike; } }
-		public override string NameType { get { return "Mhordul Crescent Blade"; } }
+		public override string NameType { get { return "crescent blade"; } }
 
         public override int AosStrengthReq{ get{ return 45; } }
 		public override double OverheadPercentage{ get{ return 0.3; } }
@@ -34,15 +34,15 @@ namespace Server.Items
 		public override SkillName DefSkill{ get{ return SkillName.ExoticWeaponry; } }
 
 		[Constructable]
-		public MhordulCrescentBlade() : base( 0x26C1 )
+		public CrescentBlade() : base( 0x26C1 )
 		{
 			Weight = 7.0;
 			AosElementDamages.Slashing = 85;
 			AosElementDamages.Piercing = 15;
-			Name = "Mhordul Crescent Blade";
+			Name = "crescent blade";
 		}
 
-		public MhordulCrescentBlade( Serial serial ) : base( serial )
+		public CrescentBlade( Serial serial ) : base( serial )
 		{
 		}
 

@@ -7,7 +7,7 @@ namespace Server.Items
 	public class LeatherGloves : BaseArmor, IArcaneEquip
 	{
 		public override int BaseBluntResistance{ get{ return 2; } }
-		public override int BaseSlashingResistance{ get{ return 0; } }
+		public override int BaseSlashingResistance{ get{ return 1; } }
 		public override int BasePiercingResistance{ get{ return 2; } }
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 4; } }

@@ -8,7 +8,7 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-	public class AzhuranBlowGun : Item, IUsesRemaining
+	public class BlowGun : Item, IUsesRemaining
 	{
 		private bool m_Using;
 		private int m_UsesRemaining;
@@ -40,14 +40,14 @@ namespace Server.Items
 		public bool ShowUsesRemaining{ get{ return true; } set{} }
 
 		[Constructable]
-		public AzhuranBlowGun() : base( 0x2805 )
+		public BlowGun() : base( 0x2805 )
 		{
 			Weight = 4.0;
 			Layer = Layer.OneHanded;
-			Name = "Azhuran Blow Gun";
+			Name = "blow gun";
 		}
 
-		public AzhuranBlowGun( Serial serial ) : base( serial )
+		public BlowGun( Serial serial ) : base( serial )
 		{
 		}
 
@@ -72,17 +72,17 @@ namespace Server.Items
 
 			if ( m_UsesRemaining < 1 )
 			{
-				// You have no AzhuranBlowGun darts!
+				// You have no BlowGun darts!
 				from.SendMessage( "You have no blow gun darts in the weapon." );
 			}
 			else if ( m_Using )
 			{
-				// You are already using that AzhuranBlowGun.
+				// You are already using that BlowGun.
 				from.SendMessage( "You are already using that blow gun." );
 			}
 			else if ( !BasePotion.HasFreeHand( from ) )
 			{
-				// You must have a free hand to use a AzhuranBlowGun.
+				// You must have a free hand to use a BlowGun.
 				from.SendMessage( "You must have a free hand to use a blow gun." );
 			}
 			else
@@ -98,17 +98,17 @@ namespace Server.Items
 
 			if ( m_UsesRemaining < 1 )
 			{
-				// You have no AzhuranBlowGun darts!
+				// You have no BlowGun darts!
 				from.SendMessage( "You have no blow gun darts in the weapon." );
 			}
 			else if ( m_Using )
 			{
-				// You are already using that AzhuranBlowGun.
+				// You are already using that BlowGun.
 				from.SendMessage( "You are already using that blow gun." );
 			}
 			else if ( !BasePotion.HasFreeHand( from ) )
 			{
-				// You must have a free hand to use a AzhuranBlowGun.
+				// You must have a free hand to use a BlowGun.
 				from.SendMessage( "You must have a free hand to use a blow gun." );
 			}
 			else if ( from.CanBeHarmful( target ) )
@@ -195,7 +195,7 @@ namespace Server.Items
 			if ( UsesRemaining < 1 )
 				return;
 
-			AzhuranBlowGunDarts darts = new AzhuranBlowGunDarts( UsesRemaining );
+			BlowGunDarts darts = new BlowGunDarts( UsesRemaining );
 
 			darts.Poison = m_Poison;
 			darts.PoisonCharges = m_PoisonCharges;
@@ -222,7 +222,7 @@ namespace Server.Items
             if( UsesRemaining < 1 )
                 return;
 
-            AzhuranBlowGunDarts darts = new AzhuranBlowGunDarts( UsesRemaining );
+            BlowGunDarts darts = new BlowGunDarts( UsesRemaining );
 
             from.AddToBackpack( darts );
 
@@ -238,13 +238,13 @@ namespace Server.Items
             InvalidateProperties();
         }
 
-        public void Reload( Mobile from, AzhuranBlowGunDarts darts )
+        public void Reload( Mobile from, BlowGunDarts darts )
         {
             int need = ( MaxUses - m_UsesRemaining );
 
             if( need <= 0 )
             {
-                // You cannot add anymore AzhuranBlowGun darts
+                // You cannot add anymore BlowGun darts
                 from.SendLocalizedMessage( 1063330 );
             }
             else if( darts.UsesRemaining > 0 )
@@ -276,13 +276,13 @@ namespace Server.Items
             }
         }
 
-		/*public void Reload( Mobile from, AzhuranBlowGunDarts darts )
+		/*public void Reload( Mobile from, BlowGunDarts darts )
 		{
 			int need = ( MaxUses - m_UsesRemaining );
 
 			if ( need <= 0 )
 			{
-				// You cannot add anymore AzhuranBlowGun darts
+				// You cannot add anymore BlowGun darts
 				from.SendLocalizedMessage( 1063330 );
 			}
 			else if ( darts.UsesRemaining > 0 )
@@ -348,8 +348,8 @@ namespace Server.Items
 
 			if ( obj is Mobile )
 				Shoot( from, (Mobile) obj );
-			else if ( obj is AzhuranBlowGunDarts )
-				Reload( from, (AzhuranBlowGunDarts) obj );
+			else if ( obj is BlowGunDarts )
+				Reload( from, (BlowGunDarts) obj );
 			else
 				from.SendMessage( "You can only load blow gun darts." );
 		}
@@ -367,35 +367,35 @@ namespace Server.Items
 
 		private class LoadEntry : ContextMenuEntry
 		{
-			private AzhuranBlowGun m_AzhuranBlowGun;
+			private BlowGun m_BlowGun;
 
-			public LoadEntry( AzhuranBlowGun AzhuranBlowGun ) : base( 6224, 0 )
+			public LoadEntry( BlowGun BlowGun ) : base( 6224, 0 )
 			{
-				m_AzhuranBlowGun = AzhuranBlowGun;
+				m_BlowGun = BlowGun;
 			}
 
 			public override void OnClick()
 			{
-				if ( !m_AzhuranBlowGun.Deleted && m_AzhuranBlowGun.IsChildOf( Owner.From ) )
-					Owner.From.BeginTarget( 5, false, TargetFlags.Harmful, new TargetCallback( m_AzhuranBlowGun.OnTarget ) );
+				if ( !m_BlowGun.Deleted && m_BlowGun.IsChildOf( Owner.From ) )
+					Owner.From.BeginTarget( 5, false, TargetFlags.Harmful, new TargetCallback( m_BlowGun.OnTarget ) );
 			}
 		}
 
 		private class UnloadEntry : ContextMenuEntry
 		{
-			private AzhuranBlowGun m_AzhuranBlowGun;
+			private BlowGun m_BlowGun;
 
-			public UnloadEntry( AzhuranBlowGun AzhuranBlowGun ) : base( 6225, 0 )
+			public UnloadEntry( BlowGun BlowGun ) : base( 6225, 0 )
 			{
-				m_AzhuranBlowGun = AzhuranBlowGun;
+				m_BlowGun = BlowGun;
 
-				Enabled = ( AzhuranBlowGun.UsesRemaining > 0 );
+				Enabled = ( BlowGun.UsesRemaining > 0 );
 			}
 
 			public override void OnClick()
 			{
-				if ( !m_AzhuranBlowGun.Deleted && m_AzhuranBlowGun.IsChildOf( Owner.From ) )
-					m_AzhuranBlowGun.Unload( Owner.From );
+				if ( !m_BlowGun.Deleted && m_BlowGun.IsChildOf( Owner.From ) )
+					m_BlowGun.Unload( Owner.From );
 			}
 		}
 

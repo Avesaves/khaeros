@@ -6,7 +6,7 @@ using Server.ContextMenus;
 
 namespace Server.Items
 {
-	public class TyreanBastardSword : BaseSword
+	public class HandAndAHalfSword : BaseSword
 	{
         private enum WieldingStyle
         {
@@ -16,7 +16,7 @@ namespace Server.Items
 
         private WieldingStyle wieldingStyle;
 
-		public override string NameType{ get{ return "Tyrean Bastard Sword"; } }
+		public override string NameType{ get{ return "hand-and-a-half sword"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ArmorIgnore; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ConcussionBlow; } }
@@ -64,24 +64,24 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 110; } }
 
 		[Constructable]
-		public TyreanBastardSword() : base( 0x3D03 )
+		public HandAndAHalfSword() : base( 0x13B9 )
 		{
 			Weight = 8.0;
-			Name = "Tyrean Bastard Sword";
+			Name = "hand-and-a-half sword";
 			AosElementDamages.Slashing = 90;
 			AosElementDamages.Blunt = 10;
             this.wieldingStyle = WieldingStyle.OneHanded;
             this.Layer = Layer.OneHanded;
 		}
 
-		public TyreanBastardSword( Serial serial ) : base( serial )
+		public HandAndAHalfSword( Serial serial ) : base( serial )
 		{
 		}
 
         public override void OnDoubleClick(Mobile from)
         {           
             this.ChangeWieldingStyle();
-            from.SendMessage("Wielding Tyrean bastard swords in " + this.HandsUsedToWield() + ".");
+            from.SendMessage("Wielding hand-and-a-half swords in " + this.HandsUsedToWield() + ".");
         }
 
         private string HandsUsedToWield()

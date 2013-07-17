@@ -385,7 +385,7 @@ namespace Server.Commands
             {
                 foreach( Item item in m.CraftContainer.Items )
                 {
-                    if( item is Dagger || item is TyreanThrowingAxe )
+                    if( item is Dagger || item is ThrowingAxe )
                     {
                         m.OffHandWeapon = (BaseWeapon)item;
                         break;
@@ -395,7 +395,7 @@ namespace Server.Commands
 
             if( m.OffHandWeapon == null )
             {
-                m.SendMessage( "Please set up a container in your backpack with .CraftContainer, then drop a dagger or a tyrean throwing axe inside it." );
+                m.SendMessage( "Please set up a container in your backpack with .CraftContainer, then drop a dagger or a throwing axe inside it." );
                 return false;
             }
 

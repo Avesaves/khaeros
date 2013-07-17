@@ -41,7 +41,7 @@ namespace Server.Mobiles
 			{
 				EquipItem( new Shirt() );
 				EquipItem( new LongSkirt( hue ) );
-				EquipItem( new AlyrianCompositeShortbow() );
+				EquipItem( new CompositeRecurveBow() );
 				PackItem( new Arrow( Utility.RandomMinMax( 10, 20 ) ) );
 				AI = AIType.AI_Archer;
 			}
@@ -55,7 +55,7 @@ namespace Server.Mobiles
 				{
 					case 0: 
 					{
-						EquipItem( new AlyrianBattleHammer() );
+						EquipItem( new BattleHammer() );
 						break;
 					}
 						
@@ -74,7 +74,7 @@ namespace Server.Mobiles
 				}
 			}
 			
-			AlyrianRogueMask mask = new AlyrianRogueMask();
+			RogueMask mask = new RogueMask();
 			mask.Hue = hue;
 			EquipItem( mask );
 			EquipItem( new Sandals() );

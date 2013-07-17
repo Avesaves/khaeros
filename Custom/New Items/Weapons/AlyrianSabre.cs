@@ -5,7 +5,7 @@ using Server.Items;
 namespace Server.Items
 {
 	[FlipableAttribute( 0x2D2F, 0x2D23 )]
-	public class AlyrianSabre : BaseKnife
+	public class Falcata : BaseKnife
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.Disarm; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.Bladeweave; } }
@@ -14,7 +14,7 @@ namespace Server.Items
 		public override int SheathedMaleBackID{ get{ return 15197; } }
 		public override int SheathedFemaleBackID{ get{ return 15198; } }
 
-		public override string NameType { get { return "Alyrian Sabre"; } }
+		public override string NameType { get { return "falcata"; } }
 		
 		public override int AosStrengthReq{ get{ return 35; } }
 		public override double OverheadPercentage{ get{ return 0.4; } }
@@ -37,14 +37,14 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 60; } }
 
 		[Constructable]
-		public AlyrianSabre() : base( 0x2D2F )
+		public Falcata() : base( 0x2D2F )
 		{
 			Weight = 6.0;
-			Name = "Alyrian Sabre";
+			Name = "falcata";
 			AosElementDamages.Slashing = 100;
 		}
 
-		public AlyrianSabre( Serial serial ) : base( serial )
+		public Falcata( Serial serial ) : base( serial )
 		{
 		}
 

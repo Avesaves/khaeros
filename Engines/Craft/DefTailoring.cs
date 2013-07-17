@@ -137,28 +137,28 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( LeatherSkirt ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulJesterMask ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( FleshMask ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranJesterMask ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( TribalWarriorMask ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( JesterMask ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianRogueCowl ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( RogueCowl ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanRogueMask ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( CeremonialMask ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianRogueMask ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( RogueMask ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarRogueTurban ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( Turban ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulRogueMask ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( ExecutionerMask ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( AzhuranRogueMask ) && !TestRace( m, Nation.Azhuran ) )
@@ -380,31 +380,31 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( SmallDress ) && !TestRace( m, Nation.Vhalurian, Nation.Alyrian, Nation.Tyrean, Nation.Khemetar, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranLeatherPauldrons ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( SoftLeatherPauldrons ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranLeatherBoots ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( SoftLeatherBoots ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranLeatherTunic ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( SoftLeatherTunic ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranLeatherLegs ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( SoftLeatherLegs ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulBoneGloves ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BoneGloves ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulBoneChest ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BoneChest ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulBoneArms ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BoneArms ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulBoneLegs ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BoneLegs ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulBoneHelm ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BoneHelm ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( MhordulHornedBoneHelm ) && !TestRace( m, Nation.Mhordul ) )
@@ -413,7 +413,7 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( MhordulHornedSkullHelm ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulMedicineManBoneChest ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( MedicineManBoneChest ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 					*/
 			}
@@ -482,23 +482,19 @@ namespace Server.Engines.Craft
 			SetUseSubRes2( index, true );
 			index = AddCraft( typeof( JesterMask ), 1011375, "jester mask", 5.0, 30.0, typeof( Cloth ), 1063525, 15, 1044287 );
 			SetUseSubRes2( index, true );
-			index = AddCraft( typeof( AzhuranJesterMask ), 1011375, "azhuran jester mask", 5.0, 30.0, typeof( Cloth ), 1063525, 15, 1044287 );
-			SetUseSubRes2( index, true );
-			index = AddCraft( typeof( MhordulJesterMask ), 1011375, "mhordul jester mask", 5.0, 30.0, typeof( Cloth ), 1063525, 15, 1044287 );
+			index = AddCraft( typeof( TribalWarriorMask ), 1011375, "tribal warrior's mask", 5.0, 30.0, typeof( Cloth ), 1063525, 15, 1044287 );
 			SetUseSubRes2( index, true );
 			index = AddCraft( typeof( Cowl ), 1011375, "cowl", 60, 100, typeof( Cloth ), 1063525, 15, 1044287 );
 			SetUseSubRes2( index, true );
-			index = AddCraft( typeof( VhalurianRogueCowl ), 1011375, "vhalurian rogue cowl", 5.0, 30.0, typeof( Cloth ), 1063525, 15, 1044287 );
+			index = AddCraft( typeof( RogueCowl ), 1011375, "rogue's cowl", 5.0, 30.0, typeof( Cloth ), 1063525, 15, 1044287 );
 			SetUseSubRes2( index, true );
-			index = AddCraft( typeof( KhemetarRogueTurban ), 1011375, "khemetar rogue Turban", 5.0, 30.0, typeof( Cloth ), 1063525, 15, 1044287 );
+			index = AddCraft( typeof( Turban ), 1011375, "turban", 5.0, 30.0, typeof( Cloth ), 1063525, 15, 1044287 );
 			SetUseSubRes2( index, true );
-			index = AddCraft( typeof( AzhuranRogueMask ), 1011375, "azhuran rogue mask", 5.0, 30.0, typeof( Cloth ), 1063525, 15, 1044287 );
+			index = AddCraft( typeof( RogueMask ), 1011375, "rogue's mask", 5.0, 30.0, typeof( Cloth ), 1063525, 15, 1044287 );
 			SetUseSubRes2( index, true );
-			index = AddCraft( typeof( AlyrianRogueMask ), 1011375, "alyrian rogue mask", 5.0, 30.0, typeof( Cloth ), 1063525, 15, 1044287 );
+			index = AddCraft( typeof( CeremonialMask ), 1011375, "ceremonial mask", 5.0, 30.0, typeof( Cloth ), 1063525, 15, 1044287 );
 			SetUseSubRes2( index, true );
-			index = AddCraft( typeof( TyreanRogueMask ), 1011375, "tyrean rogue mask", 5.0, 30.0, typeof( Cloth ), 1063525, 15, 1044287 );
-			SetUseSubRes2( index, true );
-			index = AddCraft( typeof( MhordulRogueMask ), 1011375, "mhordul rogue mask", 5.0, 30.0, typeof( Cloth ), 1063525, 15, 1044287 );
+			index = AddCraft( typeof( ExecutionerMask ), 1011375, "executioner's mask", 5.0, 30.0, typeof( Cloth ), 1063525, 15, 1044287 );
 			SetUseSubRes2( index, true );
 			index = AddCraft( typeof( Beret ), 1011375, "beret", 40, 80, typeof( Cloth ), 1063525, 5, 1044287 );
 			SetUseSubRes2( index, true );
@@ -598,9 +594,6 @@ namespace Server.Engines.Craft
 			index = AddCraft( typeof( PlainLongVest ), 1015269, "plain long dress", 20.0, 60.0, typeof( Cloth ), 1063525, 12, 1044287 );
 			SetUseSubRes2( index, true );
 			index = AddCraft( typeof( ClericRobe ), 1015269, "cleric robe", 60.0, 105.0, typeof( Cloth ), 1063525, 12, 1044287 );
-			SetUseSubRes2( index, true );
-			index = AddCraft( typeof( MhordulMedicineManBoneChest ), 1015269, "medicine man bone chest", 80.0, 120.0, typeof( Cloth ), 1063525, 2, 1044287 );
-			AddRes( index, typeof( Bone ), 1049064, 10, 1049063 );
 			SetUseSubRes2( index, true );
 			index = AddCraft( typeof( ShamanRobe ), 1015269, "shaman robe", 60.0, 105.0, typeof( Cloth ), 1063525, 12, 1044287 );
 			SetUseSubRes2( index, true );
@@ -859,10 +852,10 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( LeatherLegs ), 1015293, 1025067, 65.0, 90.0, typeof( Leather ), 1044462, 10, 1044463 );
 			AddCraft( typeof( LeatherChest ), 1015293, 1025068, 70.0, 95.0, typeof( Leather ), 1044462, 12, 1044463 );
 
-			AddCraft( typeof( AzhuranLeatherBoots ), 1015293, "azhuran leather boots", 80.0, 120.0, typeof( Leather ), 1044462, 3, 1044463 );
-			AddCraft( typeof( AzhuranLeatherPauldrons ), 1015293, "azhuran leather pauldrons", 80.0, 120.0, typeof( Leather ), 1044462, 8, 1044463 );
-			AddCraft( typeof( AzhuranLeatherLegs ), 1015293, "azhuran leather legs", 80.0, 120.0, typeof( Leather ), 1044462, 10, 1044463 );
-			AddCraft( typeof( AzhuranLeatherTunic ), 1015293, "azhuran leather tunic", 80.0, 120.0, typeof( Leather ), 1044462, 12, 1044463 );
+			AddCraft( typeof( SoftLeatherBoots ), 1015293, "soft leather boots", 80.0, 120.0, typeof( Leather ), 1044462, 3, 1044463 );
+			AddCraft( typeof( SoftLeatherPauldrons ), 1015293, "soft leather pauldrons", 80.0, 120.0, typeof( Leather ), 1044462, 8, 1044463 );
+			AddCraft( typeof( SoftLeatherLegs ), 1015293, "soft leather legs", 80.0, 120.0, typeof( Leather ), 1044462, 10, 1044463 );
+			AddCraft( typeof( SoftLeatherTunic ), 1015293, "soft leather tunic", 80.0, 120.0, typeof( Leather ), 1044462, 12, 1044463 );
             AddCraft( typeof( LeatherCowl ), 1015293, "leather cowl", 5.0, 30.0, typeof( Leather ), 1044462, 4, 1044463 );
             AddCraft( typeof( HardenedLeatherCowl ), 1015293, "hardened leather cowl", 5.0, 30.0, typeof( Leather ), 1044462, 6, 1044463 );
 
@@ -884,30 +877,6 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( StuddedBustierArms ), 1015306, 1027180, 60.0, 100.0, typeof( Leather ), 1044462, 8, 1044463 );
 			AddCraft( typeof( FemaleLeatherChest ), 1015306, 1027174, 60.0, 100.0, typeof( Leather ), 1044462, 8, 1044463 );
 			AddCraft( typeof( FemaleStuddedChest ), 1015306, 1027170, 60.0, 100.0, typeof( Leather ), 1044462, 10, 1044463 );
-			#endregion
-
-			#region Bone Armor
-			index = AddCraft( typeof( MhordulBoneHelm ), 1049149, "mhordul bone helm", 80.0, 120.0, typeof( Leather ), 1044462, 2, 1044463 );
-			AddRes( index, typeof( Bone ), 1049064, 2, 1049063 );
-			
-			index = AddCraft( typeof( MhordulBoneGloves ), 1049149, "mhordul bone gloves", 80.0, 120.0, typeof( Leather ), 1044462, 2, 1044463 );
-			AddRes( index, typeof( Bone ), 1049064, 2, 1049063 );
-
-			index = AddCraft( typeof( MhordulBoneArms ), 1049149, "mhordul bone arms", 80.0, 120.0, typeof( Leather ), 1044462, 2, 1044463 );
-			AddRes( index, typeof( Bone ), 1049064, 4, 1049063 );
-
-			index = AddCraft( typeof( MhordulBoneLegs ), 1049149, "mhordul bone legs", 80.0, 120.0, typeof( Leather ), 1044462, 2, 1044463 );
-			AddRes( index, typeof( Bone ), 1049064, 6, 1049063 );
-		
-			index = AddCraft( typeof( MhordulBoneChest ), 1049149, "mhordul bone chest", 80.0, 120.0, typeof( Leather ), 1044462, 2, 1044463 );
-			AddRes( index, typeof( Bone ), 1049064, 10, 1049063 );
-			
-			index = AddCraft( typeof( MhordulHornedBoneHelm ), 1049149, "mhordul horned bone helm", 80.0, 120.0, typeof( Leather ), 1044462, 2, 1044463 );
-			AddRes( index, typeof( Bone ), 1049064, 10, 1049063 );
-			
-			index = AddCraft( typeof( MhordulHornedSkullHelm ), 1049149, "mhordul horned skull helm", 80.0, 120.0, typeof( Leather ), 1044462, 2, 1044463 );
-			AddRes( index, typeof( Bone ), 1049064, 10, 1049063 );
-			
 			#endregion
 
 			// Set the overridable material

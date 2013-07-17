@@ -4,9 +4,9 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class VhalurianBroadsword : BaseSword
+	public class CavalrySword : BaseSword
 	{
-		public override string NameType{ get{ return "Vhalurian Broadsword"; } }
+		public override string NameType{ get{ return "cavalry sword"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ArmorIgnore; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ConcussionBlow; } }
@@ -35,14 +35,14 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 110; } }
 
 		[Constructable]
-		public VhalurianBroadsword() : base( 0x3CF5 )
+		public CavalrySword() : base( 0x3D03 )
 		{
 			Weight = 6.0;
-			Name = "Vhalurian Broadsword";
+			Name = "cavalry sword";
 			AosElementDamages.Slashing = 100;
 		}
 
-		public VhalurianBroadsword( Serial serial ) : base( serial )
+		public CavalrySword( Serial serial ) : base( serial )
 		{
 		}
 

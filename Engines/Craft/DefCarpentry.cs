@@ -130,7 +130,7 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( SpikedClub ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulBoneStaff ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BoneStaff ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( DruidStaff ) && !TestRace( m, Nation.Alyrian ) )
@@ -244,7 +244,7 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( LargeDragonBoatDeed ) && m.Nation != Nation.Tyrean )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulBoneShield ) && m.Nation != Nation.Mhordul )
+				else if( itemType == typeof( BoneShield ) && m.Nation != Nation.Mhordul )
 					return 1063491; // Your race cannot craft that item.
 					*/
 			}
@@ -382,10 +382,6 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( ClericCrook ), 1044295, "cleric's crook", 80.0, 105.0, typeof( Log ), 1044041, 12, 1044351 );
 			AddCraft( typeof( ProphetDiviningRod ), 1044295, "prophet's divining rod", 80.0, 120.0, typeof( Log ), 1044041, 8, 1044351 );
 			AddCraft( typeof( DruidStaff ), 1044295, "druid's staff", 80.0, 120.0, typeof( Log ), 1044041, 12, 1044351 );
-			index = AddCraft( typeof( MedicineManFetish ), 1044295, "medicine man's fetish", 80.0, 120.0, typeof( Log ), 1044041, 4, 1044351 );
-			AddRes( index, typeof( Bone ), 1049064, 4, 1049063 );
-			index = AddCraft( typeof( MhordulBoneStaff ), 1044295, "mhordul bone staff", 80.0, 120.0, typeof( Log ), 1044041, 4, 1044351 );
-			AddRes( index, typeof( Bone ), 1049064, 10, 1049063 );
 			AddCraft( typeof( QuarterStaff ), 1044295, 1023721, 75.0, 90.0, typeof( Log ), 1044041, 12, 1044351 );
 			AddCraft( typeof( GnarledStaff ), 1044295, 1025112, 80.0, 105.0, typeof( Log ), 1044041, 12, 1044351 );
 			AddCraft( typeof( BlackStaff ), 1044295, "black staff", 80.0, 105.0, typeof( Log ), 1044041, 12, 1044351 );
@@ -394,16 +390,12 @@ namespace Server.Engines.Craft
 			AddRes( index, typeof( Leather ), 1044462, 4, 1044463 );
 			index = AddCraft( typeof( BoiledLeatherShield ), 1044295, "boiled leather shield", 80.0, 120.0, typeof( Log ), 1044041, 4, 1044351 );
 			AddRes( index, typeof( Leather ), 1044462, 4, 1044463 );
-			AddCraft( typeof( WoodenKiteShield ), 1044295, "wooden kite shield", 60.0, 95.0, typeof( Log ), 1044041, 10, 1044351 );
-			index = AddCraft( typeof( MhordulBoneShield ), 1044295, "mhordul bone shield", 60.0, 100.0, typeof( Log ), 1044041, 4, 1044351 );
-			AddRes( index, typeof( Bone ), 1049064, 8, 1049063 );
-			
+			AddCraft( typeof( WoodenKiteShield ), 1044295, "wooden kite shield", 60.0, 95.0, typeof( Log ), 1044041, 10, 1044351 );			
 			index = AddCraft( typeof( SpikedClub ), 1044295, "spiked club", 55.0, 70.0, typeof( Log ), 1044041, 12, 1044351 );
 			AddRes( index, typeof( IronIngot ), 1044036, 5, 1044037 );
 			AddCraft( typeof( Club ), 1044295, "club", 45.0, 60.0, typeof( Log ), 1044041, 12, 1044351 );
 			
-			
-			AddCraft( typeof( AzhuranBoomerang ), 1044295, "azhuran boomerang", 80.0, 120.0, typeof( Log ), 1044041, 4, 1044351 );
+		
 
 			// Instruments
 			index = AddCraft( typeof( LapHarp ), 1044293, 1023762, 65.0, 90.0, typeof( Log ), 1044041, 20, 1044351 );

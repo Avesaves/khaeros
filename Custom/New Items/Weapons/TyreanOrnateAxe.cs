@@ -5,14 +5,14 @@ using Server.Items;
 namespace Server.Items
 {
 	[FlipableAttribute( 0x2D28, 0x2D34 )]
-	public class TyreanOrnateAxe : BaseAxe
+	public class OrnateAxe : BaseAxe
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.Disarm; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.CrushingBlow; } }
 		public override int SheathedMaleBackID{ get{ return 15179; } }
 		public override int SheathedFemaleBackID{ get{ return 15180; } }
 
-		public override string NameType { get { return "Tyrean Ornate Axe"; } }
+		public override string NameType { get { return "ornate axe"; } }
 		
 		public override int AosStrengthReq{ get{ return 45; } }
 		public override double OverheadPercentage{ get{ return 0.5; } }
@@ -37,16 +37,16 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.Slash2H; } }
 
 		[Constructable]
-		public TyreanOrnateAxe() : base( 0x2D28 )
+		public OrnateAxe() : base( 0x2D28 )
 		{
 			Weight = 7.0;
 			Layer = Layer.OneHanded;
 			AosElementDamages.Slashing = 90;
 			AosElementDamages.Blunt = 10;
-			Name = "Tyrean Ornate Axe";
+			Name = "ornate axe";
 		}
 
-		public TyreanOrnateAxe( Serial serial ) : base( serial )
+		public OrnateAxe( Serial serial ) : base( serial )
 		{
 		}
 

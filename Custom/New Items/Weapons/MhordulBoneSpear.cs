@@ -4,9 +4,9 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class MhordulBoneSpear : BasePoleArm, IBoneArmour
+	public class BoneSpear : BasePoleArm, IBoneArmour
 	{
-		public override string NameType{ get{ return "Mhordul Bone Spear"; } }
+		public override string NameType{ get{ return "bone Spear"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ArmorIgnore; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ParalyzingBlow; } }
@@ -41,15 +41,15 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.Pierce2H; } }
 
 		[Constructable]
-		public MhordulBoneSpear() : base( 0x3DD2 )
+		public BoneSpear() : base( 0x3DD2 )
 		{
 			Weight = 6.0;
-			Name = "Mhordul Bone Spear";
+			Name = "bone Spear";
 			AosElementDamages.Piercing = 100;
 			MaxRange = 2;
 		}
 
-		public MhordulBoneSpear( Serial serial ) : base( serial )
+		public BoneSpear( Serial serial ) : base( serial )
 		{
 		}
 

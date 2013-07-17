@@ -4,7 +4,7 @@ using Server.Items;
 namespace Server.Items
 {
 	[FlipableAttribute( 0x2B08, 0x2B09 )]
-	public class TyreanHalfPlateChest : BaseArmor
+	public class HalfPlateChest : BaseArmor
 	{
         public override ArmourWeight ArmourType { get { return ArmourWeight.Heavy; } }
 
@@ -30,13 +30,13 @@ namespace Server.Items
 		public override ArmorMaterialType MaterialType{ get{ return ArmorMaterialType.Plate; } }
 
 		[Constructable]
-		public TyreanHalfPlateChest() : base( 0x2B08 )
+		public HalfPlateChest() : base( 0x2B08 )
 		{
 			Weight = 10.0;
-			Name = "Tyrean Half-Plate Chest";
+			Name = "half-plate Chest";
 		}
 
-		public TyreanHalfPlateChest( Serial serial ) : base( serial )
+		public HalfPlateChest( Serial serial ) : base( serial )
 		{
 		}
 		

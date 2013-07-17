@@ -35,19 +35,19 @@ namespace Server.Mobiles
 
 				if( Core.AOS )
 				{
-					Add( new GenericBuyInfo( typeof( MhordulScepter ), 39, 20, 0x26BC, 0 ) );
-					Add( new GenericBuyInfo( typeof( AzhuranBladedStaff ), 40, 20, 0x26BD, 0 ) );
+					Add( new GenericBuyInfo( typeof( BarbarianScepter ), 39, 20, 0x26BC, 0 ) );
+					Add( new GenericBuyInfo( typeof( Glaive ), 40, 20, 0x26BD, 0 ) );
 				}
 
 				Add( new GenericBuyInfo( typeof( Hatchet ), 25, 20, 0xF44, 0 ) );
 				Add( new GenericBuyInfo( typeof( Hatchet ), 27, 20, 0xF43, 0 ) );
-				Add( new GenericBuyInfo( typeof( MhordulWarFork ), 32, 20, 0x1405, 0 ) );
+				Add( new GenericBuyInfo( typeof( WarFork ), 32, 20, 0x1405, 0 ) );
 
             			switch ( Utility.Random( 3 )) 
             			{ 
 					case 0:
 					{
-						Add( new GenericBuyInfo( typeof( AzhuranAxe ), 30, 20, 0xF45, 0 ) );
+						Add( new GenericBuyInfo( typeof( HaftedAxe ), 30, 20, 0xF45, 0 ) );
 						Add( new GenericBuyInfo( typeof( Bardiche ), 60, 20, 0xF4D, 0 ) );
 						Add( new GenericBuyInfo( typeof( BattleAxe ), 26, 20, 0xF47, 0 ) );
 						Add( new GenericBuyInfo( typeof( TwoHandedAxe ), 32, 20, 0x1443, 0 ) );
@@ -70,16 +70,16 @@ namespace Server.Mobiles
 						Add( new GenericBuyInfo( typeof( Broadsword ), 35, 20, 0xF5E, 0 ) );
 						Add( new GenericBuyInfo( typeof( Longsword ), 55, 20, 0xF61, 0 ) );
 						Add( new GenericBuyInfo( typeof( ThinLongsword ), 27, 20, 0x13B8, 0 ) );
-						Add( new GenericBuyInfo( typeof( TyreanBroadsword ), 55, 20, 0x13B9, 0 ) );
+						Add( new GenericBuyInfo( typeof( Broadsword ), 55, 20, 0x13B9, 0 ) );
 
 						Add( new GenericBuyInfo( typeof( Cleaver ), 15, 20, 0xEC3, 0 ) );
 						Add( new GenericBuyInfo( typeof( Axe ), 40, 20, 0xF49, 0 ) );
-						Add( new GenericBuyInfo( typeof( TyreanDoubleAxe ), 52, 20, 0xF4B, 0 ) );
+						Add( new GenericBuyInfo( typeof( BeardedDoubleAxe ), 52, 20, 0xF4B, 0 ) );
 						Add( new GenericBuyInfo( typeof( Pickaxe ), 22, 20, 0xE86, 0 ) );
 
 						Add( new GenericBuyInfo( typeof( Pitchfork ), 19, 20, 0xE87, 0 ) );
 
-						Add( new GenericBuyInfo( typeof( KhemetarScimitar ), 36, 20, 0x13B6, 0 ) );
+						Add( new GenericBuyInfo( typeof( Scimitar ), 36, 20, 0x13B6, 0 ) );
 
 						Add( new GenericBuyInfo( typeof( SkinningKnife ), 14, 20, 0xEC4, 0 ) );
 
@@ -89,13 +89,13 @@ namespace Server.Mobiles
 						if ( Core.AOS )
 						{
 							Add( new GenericBuyInfo( typeof( HandScythe ), 35, 20, 0x26BB, 0 ) );
-							Add( new GenericBuyInfo( typeof( MhordulCrescentBlade ), 37, 20, 0x26C1, 0 ) );
+							Add( new GenericBuyInfo( typeof( CrescentBlade ), 37, 20, 0x26C1, 0 ) );
 							Add( new GenericBuyInfo( typeof( DoubleBladedStaff ), 35, 20, 0x26BF, 0 ) );
-							Add( new GenericBuyInfo( typeof( VhalurianLance ), 34, 20, 0x26C0, 0 ) );
+							Add( new GenericBuyInfo( typeof( Lance ), 34, 20, 0x26C0, 0 ) );
 							Add( new GenericBuyInfo( typeof( Pike ), 39, 20, 0x26BE, 0 ) );
 							Add( new GenericBuyInfo( typeof( Scythe ), 39, 20, 0x26BA, 0 ) );
 							Add( new GenericBuyInfo( typeof( CompositeBow ), 50, 20, 0x26C2, 0 ) );
-							Add( new GenericBuyInfo( typeof( VhalurianRepeatingCrossbow ), 57, 20, 0x26C3, 0 ) );
+							Add( new GenericBuyInfo( typeof( RepeatingCrossbow ), 57, 20, 0x26C3, 0 ) );
 						}
 
 						break;
@@ -111,8 +111,8 @@ namespace Server.Mobiles
 			public InternalSellInfo() 
 			{ 	
 				Add( typeof( BattleAxe ), 13 );
-				Add( typeof( TyreanDoubleAxe ), 26 );
-				Add( typeof( AzhuranAxe ), 15 );
+				Add( typeof( BeardedDoubleAxe ), 26 );
+				Add( typeof( HaftedAxe ), 15 );
 				Add( typeof( LargeBattleAxe ),16 );
 				Add( typeof( Pickaxe ), 11 );
 				Add( typeof( TwoHandedAxe ), 16 );
@@ -141,17 +141,17 @@ namespace Server.Mobiles
 				if( Core.AOS )
 				{
 					Add( typeof( CompositeBow ), 25 );
-					Add( typeof( VhalurianRepeatingCrossbow ), 28 );
-					Add( typeof( MhordulScepter ), 20 );
-					Add( typeof( AzhuranBladedStaff ), 20 );
+					Add( typeof( RepeatingCrossbow ), 28 );
+					Add( typeof( BarbarianScepter ), 20 );
+					Add( typeof( Glaive ), 20 );
 					Add( typeof( Scythe ), 19 );
 					Add( typeof( HandScythe ), 17 );
-					Add( typeof( MhordulScepter ), 18 );
-					Add( typeof( AzhuranBladedStaff ), 16 );
+					Add( typeof( BarbarianScepter ), 18 );
+					Add( typeof( Glaive ), 16 );
 					Add( typeof( Pike ), 19 );
 					Add( typeof( DoubleBladedStaff ), 17 );
-					Add( typeof( VhalurianLance ), 17 );
-					Add( typeof( MhordulCrescentBlade ), 18 );
+					Add( typeof( Lance ), 17 );
+					Add( typeof( CrescentBlade ), 18 );
 				}
 
 				Add( typeof( Spear ), 15 );
@@ -170,12 +170,12 @@ namespace Server.Mobiles
 				Add( typeof( Katana ), 16 );
 				Add( typeof( Kryss ), 16 );
 				Add( typeof( Longsword ), 27 );
-				Add( typeof( KhemetarScimitar ), 18 );
+				Add( typeof( Scimitar ), 18 );
 				Add( typeof( ThinLongsword ), 13 );
-				Add( typeof( TyreanBroadsword ), 27 );
+				Add( typeof( Broadsword ), 27 );
 
 				Add( typeof( Hatchet ), 13 );
-				Add( typeof( MhordulWarFork ), 16 );
+				Add( typeof( WarFork ), 16 );
 			} 
 		} 
 	} 

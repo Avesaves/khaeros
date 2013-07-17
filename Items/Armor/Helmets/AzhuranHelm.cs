@@ -3,7 +3,7 @@ using Server;
 
 namespace Server.Items
 {
-	public class AzhuranHelm : BaseArmor
+	public class EagleHelm : BaseArmor
 	{
         public override ArmourWeight ArmourType { get { return ArmourWeight.Medium; } }
 
@@ -27,13 +27,13 @@ namespace Server.Items
 		public override ArmorMaterialType MaterialType{ get{ return ArmorMaterialType.Ringmail; } }
 
 		[Constructable]
-		public AzhuranHelm() : base( 0x3169 )
+		public EagleHelm() : base( 0x3169 )
 		{
 			Weight = 5.0;
-			Name = "Azhuran Helm";
+			Name = "eagle helm";
 		}
 
-		public AzhuranHelm( Serial serial ) : base( serial )
+		public EagleHelm( Serial serial ) : base( serial )
 		{
 		}
 		

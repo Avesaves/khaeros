@@ -8,7 +8,7 @@ namespace Server.Items
     }
 
     [FlipableAttribute(0x144f, 0x1454)]
-    public class MhordulBoneChest : BaseArmor, IBoneArmour
+    public class BoneChest : BaseArmor, IBoneArmour
     {
         public override int BaseBluntResistance { get { return 16; } }
         public override int BasePiercingResistance { get { return 14; } }
@@ -34,14 +34,14 @@ namespace Server.Items
         public override CraftResource DefaultResource { get { return CraftResource.RegularLeather; } }
 
         [Constructable]
-        public MhordulBoneChest()
+        public BoneChest()
             : base(0x144F)
         {
             Weight = 6.0;
-            Name = "Mhordul Bone Chest";
+            Name = "bone Chest";
         }
 
-        public MhordulBoneChest(Serial serial)
+        public BoneChest(Serial serial)
             : base(serial)
         {
         }

@@ -4,7 +4,7 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class AzhuranBroadsword : BaseSword
+	public class Flamberge : BaseSword
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ArmorIgnore; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ConcussionBlow; } }
@@ -14,7 +14,7 @@ namespace Server.Items
 		public override int SheathedMaleBackID{ get{ return 15156; } }
 		public override int SheathedFemaleBackID{ get{ return 15157; } }
 
-		public override string NameType{ get{ return "Azhuran Broadsword"; } }
+		public override string NameType{ get{ return "flamberge"; } }
 		
 		public override int AosStrengthReq{ get{ return 20; } }
 		public override double OverheadPercentage{ get{ return 0.3; } }
@@ -37,14 +37,14 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 110; } }
 
 		[Constructable]
-		public AzhuranBroadsword() : base( 0x3CF9 )
+		public Flamberge() : base( 0x3CF9 )
 		{
 			Weight = 4.0;
-			Name = "Azhuran Broadsword";
+			Name = "flamberge";
 			AosElementDamages.Slashing = 100;
 		}
 
-		public AzhuranBroadsword( Serial serial ) : base( serial )
+		public Flamberge( Serial serial ) : base( serial )
 		{
 		}
 

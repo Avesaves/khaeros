@@ -109,7 +109,7 @@ namespace Server.Mobiles
 					helm.Resource = CraftResource.Bronze;
 					helm.Hue = 2830;
 					
-					VhalurianMetalKiteShield shield = new VhalurianMetalKiteShield();
+					KiteShield shield = new KiteShield();
 					shield.Resource = CraftResource.Bronze;
 					shield.Name = "Society of Rymaliel Kite Shield";
 					shield.Hue = 2413;
@@ -148,7 +148,7 @@ namespace Server.Mobiles
 					gloves.Resource = CraftResource.BeastLeather;
 					gloves.Hue = 2830;
 					
-					VhalurianMetalKiteShield shield = new VhalurianMetalKiteShield();
+					KiteShield shield = new KiteShield();
 					shield.Resource = CraftResource.Bronze;
 					shield.Name = "Society of Rymaliel Kite Shield";
 					shield.Hue = 2413;

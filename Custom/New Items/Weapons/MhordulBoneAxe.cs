@@ -4,9 +4,9 @@ using Server.Network;
 
 namespace Server.Items
 {
-	public class MhordulBoneAxe : BaseAxe, IBoneArmour
+	public class BoneAxe : BaseAxe, IBoneArmour
 	{
-		public override string NameType{ get{ return "Mhordul Bone Axe"; } }
+		public override string NameType{ get{ return "bone Axe"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.CrushingBlow; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.Dismount; } }
@@ -32,15 +32,15 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 110; } }
 
 		[Constructable]
-		public MhordulBoneAxe() : base( 0x3CC8 )
+		public BoneAxe() : base( 0x3CC8 )
 		{
 			Weight = 7.0;
-			Name = "Mhordul Bone Axe";
+			Name = "bone Axe";
 			AosElementDamages.Slashing = 20;
 			AosElementDamages.Blunt = 80;
 		}
 
-		public MhordulBoneAxe( Serial serial ) : base( serial )
+		public BoneAxe( Serial serial ) : base( serial )
 		{
 		}
 

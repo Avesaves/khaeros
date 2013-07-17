@@ -108,7 +108,7 @@ namespace Server.Gumps
 			if( obj is ICanBeStained || obj is BaseRanged || obj is WoodenKiteShield ||
 			    obj is WoodenShield || obj is ClericCrook || obj is DruidStaff || obj is ProphetDiviningRod ||
 			    obj is QuarterStaff || obj is GnarledStaff || obj is SpikedClub ||
-			    obj is AzhuranBoomerang || obj is BlackStaff || obj is MhordulBoneShield ||
+			    obj is AzhuranBoomerang || obj is BlackStaff || obj is BoneShield ||
 			    obj is BoiledLeatherShield || obj is LeatherShield )
 			{
 				return true;

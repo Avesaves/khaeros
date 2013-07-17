@@ -191,12 +191,12 @@ namespace Server.Mobiles
 			{
 				case 0:
 				{
-					VhalurianOrnatePlateLegs vopl = new VhalurianOrnatePlateLegs();
+					OrnatePlateLegs vopl = new OrnatePlateLegs();
 					vopl.Resource = CraftResource.Bronze;
 					vopl.Hue = 1899;
 					m.EquipItem( vopl );
 					
-					VhalurianOrnatePlateGorget vopo = new VhalurianOrnatePlateGorget();
+					OrnatePlateGorget vopo = new OrnatePlateGorget();
 					vopo.Resource = CraftResource.Bronze;
 					vopo.Hue = 1899;
 					m.EquipItem( vopo );
@@ -206,31 +206,31 @@ namespace Server.Mobiles
 					ps.Hue = 1899;
 					m.EquipItem( ps );
 					
-					VhalurianOrnateKiteShield voks = new VhalurianOrnateKiteShield();
+					OrnateKiteShield voks = new OrnateKiteShield();
 					voks.Resource = CraftResource.Bronze;
 					voks.Hue = 1899;
 					m.EquipItem( voks );
 					
-					VhalurianWarHammer hammer = new VhalurianWarHammer();
+					HorsemanWarhammer hammer = new HorsemanWarhammer();
 					hammer.Resource = CraftResource.Iron;
 				    m.EquipItem( hammer );
 				    
-				    TyreanHalfPlateChest thpc = new TyreanHalfPlateChest();
+				    HalfPlateChest thpc = new HalfPlateChest();
 					thpc.Resource = CraftResource.Bronze;
 					thpc.Hue = 1899;
 					m.EquipItem( thpc );
 					
-					TyreanHalfPlateArms thpa = new TyreanHalfPlateArms();
+					HalfPlateArms thpa = new HalfPlateArms();
 					thpa.Resource = CraftResource.Bronze;
 					thpa.Hue = 1899;
 					m.EquipItem( thpa );
 					
-					TyreanHalfPlateGloves thpg = new TyreanHalfPlateGloves();
+					HalfPlateGloves thpg = new HalfPlateGloves();
 					thpg.Resource = CraftResource.Bronze;
 					thpg.Hue = 1899;
 					m.EquipItem( thpg );
 					
-					TyreanWingedHelm twh = new TyreanWingedHelm();
+					WingedHelm twh = new WingedHelm();
 	            	twh.Resource = CraftResource.Bronze;
 	            	twh.Hue = 1899;
 					m.EquipItem( twh );
@@ -265,7 +265,7 @@ namespace Server.Mobiles
 					rg.Hue = 1899;
 					m.EquipItem( rg );
 					
-					TyreanKiteShield vmks = new TyreanKiteShield();
+					DragonKiteShield vmks = new DragonKiteShield();
 					vmks.Resource = CraftResource.Bronze;
 					vmks.Hue = 1899;
 					m.EquipItem( vmks );
@@ -275,7 +275,7 @@ namespace Server.Mobiles
 					boots.Hue = 1899;
 					m.EquipItem( boots );
 					
-					TyreanOrnateAxe axe = new TyreanOrnateAxe();
+					OrnateAxe axe = new OrnateAxe();
 					axe.Resource = CraftResource.Iron;
 					m.EquipItem( axe );
 					
@@ -318,7 +318,7 @@ namespace Server.Mobiles
 					so.Hue = 1899;
 					m.EquipItem( so );
 					
-					VhalurianLongbow bow = new VhalurianLongbow();
+					LongBow bow = new LongBow();
 					bow.Resource = CraftResource.Redwood;
 					bow.Hue = 0;
 					

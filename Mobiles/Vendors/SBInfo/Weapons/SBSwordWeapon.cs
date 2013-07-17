@@ -26,15 +26,15 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( Broadsword ), 35, 20, 0xF5E, 0 ) );
 				Add( new GenericBuyInfo( typeof( Longsword ), 55, 20, 0xF61, 0 ) );
 				Add( new GenericBuyInfo( typeof( ThinLongsword ), 27, 20, 0x13B8, 0 ) );
-				Add( new GenericBuyInfo( typeof( TyreanBroadsword ), 55, 20, 0x13B9, 0 ) );
-				Add( new GenericBuyInfo( typeof( KhemetarScimitar ), 36, 20, 0x13B6, 0 ) );
+				Add( new GenericBuyInfo( typeof( Broadsword ), 55, 20, 0x13B9, 0 ) );
+				Add( new GenericBuyInfo( typeof( Scimitar ), 36, 20, 0x13B6, 0 ) );
 
 				if ( Core.AOS )
 				{
 					Add( new GenericBuyInfo( typeof( HandScythe ), 35, 20, 0x26BB, 0 ) );
-					Add( new GenericBuyInfo( typeof( MhordulCrescentBlade ), 37, 20, 0x26C1, 0 ) );
+					Add( new GenericBuyInfo( typeof( CrescentBlade ), 37, 20, 0x26C1, 0 ) );
 					Add( new GenericBuyInfo( typeof( DoubleBladedStaff ), 35, 20, 0x26BF, 0 ) );
-					Add( new GenericBuyInfo( typeof( VhalurianLance ), 34, 20, 0x26C0, 0 ) );
+					Add( new GenericBuyInfo( typeof( Lance ), 34, 20, 0x26C0, 0 ) );
 					Add( new GenericBuyInfo( typeof( Pike ), 39, 20, 0x26BE, 0 ) );
 					Add( new GenericBuyInfo( typeof( Scythe ), 39, 20, 0x26BA, 0 ) );
 				}
@@ -52,20 +52,20 @@ namespace Server.Mobiles
 				Add( typeof( Katana ), 16 );
 				Add( typeof( Kryss ), 16 );
 				Add( typeof( Longsword ), 27 );
-				Add( typeof( KhemetarScimitar ), 18 );
+				Add( typeof( Scimitar ), 18 );
 				Add( typeof( ThinLongsword ), 13 );
-				Add( typeof( TyreanBroadsword ), 27 );
+				Add( typeof( Broadsword ), 27 );
 
 				if ( Core.AOS )
 				{
 					Add( typeof( Scythe ), 19 );
 					Add( typeof( HandScythe ), 17 );
-					Add( typeof( MhordulScepter ), 18 );
-					Add( typeof( AzhuranBladedStaff ), 16 );
+					Add( typeof( BarbarianScepter ), 18 );
+					Add( typeof( Glaive ), 16 );
 					Add( typeof( Pike ), 19 );
 					Add( typeof( DoubleBladedStaff ), 17 );
-					Add( typeof( VhalurianLance ), 17 );
-					Add( typeof( MhordulCrescentBlade ), 18 );
+					Add( typeof( Lance ), 17 );
+					Add( typeof( CrescentBlade ), 18 );
 				}
 			}
 		}

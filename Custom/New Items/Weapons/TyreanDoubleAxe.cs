@@ -5,14 +5,14 @@ using Server.Network;
 namespace Server.Items
 {
 	[FlipableAttribute( 0xf4b, 0xf4c )]
-	public class TyreanDoubleAxe : BaseAxe
+	public class BeardedDoubleAxe : BaseAxe
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.DoubleStrike; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.WhirlwindAttack; } }
 		public override int SheathedMaleBackID{ get{ return 15170; } }
 		public override int SheathedFemaleBackID{ get{ return 15171; } }
 		
-		public override string NameType { get { return "Tyrean Double Axe"; } }
+		public override string NameType { get { return "bearded double axe"; } }
 		public override int AosStrengthReq{ get{ return 65; } }
 		public override double OverheadPercentage{ get{ return 0.4; } }
 		public override double SwingPercentage{ get{ return 0.5; } }
@@ -31,16 +31,16 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 110; } }
 
 		[Constructable]
-		public TyreanDoubleAxe() : base( 0xF4B )
+		public BeardedDoubleAxe() : base( 0xF4B )
 		{
 			Weight = 9.0;
 			Layer = Layer.TwoHanded;
 			AosElementDamages.Blunt = 30;
             AosElementDamages.Slashing = 70;
-            Name = "Tyrean Double Axe";
+            Name = "bearded double axe";
 		}
 
-		public TyreanDoubleAxe( Serial serial ) : base( serial )
+		public BeardedDoubleAxe( Serial serial ) : base( serial )
 		{
 		}
 

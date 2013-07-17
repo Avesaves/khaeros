@@ -22,7 +22,7 @@ namespace Server.Mobiles
 			{
 				Add( new GenericBuyInfo( typeof( BronzeShield ), 66, 20, 0x1B72, 0 ) );
 				Add( new GenericBuyInfo( typeof( Buckler ), 50, 20, 0x1B73, 0 ) );
-				Add( new GenericBuyInfo( typeof( VhalurianMetalKiteShield ), 123, 20, 0x1B74, 0 ) );
+				Add( new GenericBuyInfo( typeof( KiteShield ), 123, 20, 0x1B74, 0 ) );
 				Add( new GenericBuyInfo( typeof( HeaterShield ), 231, 20, 0x1B76, 0 ) );
 				Add( new GenericBuyInfo( typeof( WoodenKiteShield ), 70, 20, 0x1B78, 0 ) );
 				Add( new GenericBuyInfo( typeof( MetalShield ), 121, 20, 0x1B7B, 0 ) );
@@ -37,7 +37,7 @@ namespace Server.Mobiles
 				Add( typeof( Buckler ), 25 );
 				Add( typeof( BronzeShield ), 33 );
 				Add( typeof( MetalShield ), 60 );
-				Add( typeof( VhalurianMetalKiteShield ), 62 );
+				Add( typeof( KiteShield ), 62 );
 				Add( typeof( HeaterShield ), 115 );
 				Add( typeof( WoodenKiteShield ), 35 );
 			}

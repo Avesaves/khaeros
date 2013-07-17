@@ -46,7 +46,7 @@ namespace Server.Items
 
         public override void OnDoubleClick(Mobile from)
         {
-            if (((IKhaerosMobile)from).Feats.GetFeatLevel(FeatList.Blacksmithing) > 1 && !(this is PriestStaff) && !(this is ShamanStaff) && !(this is MhordulBoneStaff))
+            if (((IKhaerosMobile)from).Feats.GetFeatLevel(FeatList.Blacksmithing) > 1 && !(this is PriestStaff) && !(this is ShamanStaff) && !(this is BoneStaff))
                 from.Target = new StaffTarget(this);
         }
 
@@ -229,7 +229,7 @@ namespace Server.Items
 
             if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Azhuran)
             {
-                AzhuranBladedStaff weapon = new AzhuranBladedStaff();
+                Glaive weapon = new Glaive();
                 weapon.NewCrafting = true;
                 weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
                 weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
@@ -272,7 +272,7 @@ namespace Server.Items
 
             if (m_Blade is MediumBlade && ((PlayerMobile)from).Nation == Nation.Azhuran)
             {
-                AzhuranSpear weapon = new AzhuranSpear();
+                PrimitiveSpear weapon = new PrimitiveSpear();
                 weapon.NewCrafting = true;
                 weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
                 weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
@@ -318,7 +318,7 @@ namespace Server.Items
 
             if (m_Blade is MaceHead && ((IKhaerosMobile)from).Feats.GetFeatLevel(FeatList.Bone) > 2 && from.Backpack.ConsumeTotal(typeof(Bone), 10) )
             {
-                MhordulBoneStaff weapon = new MhordulBoneStaff();
+                BoneStaff weapon = new BoneStaff();
                 weapon.NewCrafting = true;
                 weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
                 weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
@@ -382,8 +382,8 @@ namespace Server.Items
             if (((IKhaerosMobile)from).Feats.GetFeatLevel(FeatList.Bone) > 2)
             {
                 from.SendMessage(" 5 - Mhordul Bladed Bone Staff ");
-                from.SendMessage(" 6 - Mhordul Bone Spear ");
-                from.SendMessage(" 7 - Mhordul Bone Scythe ");
+                from.SendMessage(" 6 - bone Spear ");
+                from.SendMessage(" 7 - bone Scythe ");
             }
         }
 
@@ -420,11 +420,11 @@ namespace Server.Items
                         break;
                     case 6: 
                         if (from.Backpack.ConsumeTotal(typeof(Bone), 10))
-                            MakeMhordulBoneSpear(from); 
+                            MakeBoneSpear(from); 
                         break;
                     case 7: 
                         if (from.Backpack.ConsumeTotal(typeof(Bone), 10))
-                            MakeMhordulBoneScythe(from); 
+                            MakeBoneScythe(from); 
                         break;
                         /*from.Target = new DoubleBladedStaffTarget(m_Hilt, m_Blade);
                         break;*/
@@ -561,9 +561,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeMhordulBoneSpear(Mobile from)
+        public void MakeBoneSpear(Mobile from)
         {
-            MhordulBoneSpear weapon = new MhordulBoneSpear();
+            BoneSpear weapon = new BoneSpear();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
@@ -604,9 +604,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeMhordulBoneScythe(Mobile from)
+        public void MakeBoneScythe(Mobile from)
         {
-            MhordulBoneScythe weapon = new MhordulBoneScythe();
+            BoneScythe weapon = new BoneScythe();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
@@ -829,9 +829,9 @@ namespace Server.Items
             from.SendMessage(" 3 - Short Spear ");
 
             if (((PlayerMobile)from).Nation == Nation.Mhordul)
-                from.SendMessage(" 4 - Mhordul Spear ");
+                from.SendMessage(" 4 - barbarian's spear ");
             if (((PlayerMobile)from).Nation == Nation.Tyrean)
-                from.SendMessage(" 5 - Tyrean Harpoon ");
+                from.SendMessage(" 5 - angon ");
         }
 
         public override void OnResponse(Mobile from, string text)
@@ -857,15 +857,15 @@ namespace Server.Items
                         break;
                     case 2: MakePike(from); break;
                     case 3: MakeShortSpear(from); break;
-                    case 4: MakeMhordulSpear(from); break;
-                    case 5: MakeTyreanHarpoon(from); break;
+                    case 4: MakeBarbarianSpear(from); break;
+                    case 5: MakeAngon(from); break;
                 }
             }
         }
 
-        public void MakeTyreanHarpoon(Mobile from)
+        public void MakeAngon(Mobile from)
         {
-            TyreanHarpoon weapon = new TyreanHarpoon();
+            Angon weapon = new Angon();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;
@@ -992,9 +992,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeMhordulSpear(Mobile from)
+        public void MakeBarbarianSpear(Mobile from)
         {
-            MhordulSpear weapon = new MhordulSpear();            
+            BarbarianSpear weapon = new BarbarianSpear();            
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.GetDamageBonus() / 2 + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.GetSpeedBonus() / 2 + m_Blade.Speed;

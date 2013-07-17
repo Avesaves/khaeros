@@ -4,9 +4,9 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class MhordulBoneStaff : BaseStaff, IBoneArmour
+	public class BoneStaff : BaseStaff, IBoneArmour
 	{
-		public override string NameType{ get{ return "Mhordul Bone Staff"; } }
+		public override string NameType{ get{ return "bone Staff"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.DoubleStrike; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ConcussionBlow; } }
@@ -31,14 +31,14 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 60; } }
 
 		[Constructable]
-		public MhordulBoneStaff() : base( 0x3DC9 )
+		public BoneStaff() : base( 0x3DC9 )
 		{
 			Weight = 7.0;
-			Name = "Mhordul Bone Staff";
+			Name = "bone Staff";
 			AosElementDamages.Blunt = 100;
 		}
 
-		public MhordulBoneStaff( Serial serial ) : base( serial )
+		public BoneStaff( Serial serial ) : base( serial )
 		{
 		}
 

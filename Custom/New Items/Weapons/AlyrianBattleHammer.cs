@@ -4,9 +4,9 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class AlyrianBattleHammer : BaseBashing
+	public class BattleHammer : BaseBashing
 	{
-		public override string NameType { get { return "Alyrian Battle Hammer"; } }
+		public override string NameType { get { return "battle hammer"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.WhirlwindAttack; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.CrushingBlow; } }
@@ -33,15 +33,15 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.Bash2H; } }
 
 		[Constructable]
-		public AlyrianBattleHammer() : base( 0x3DE2 )
+		public BattleHammer() : base( 0x3DE2 )
 		{
 			Weight = 9.0;
 			Layer = Layer.TwoHanded;
-			Name = "Alyrian Battle Hammer";
+			Name = "battle hammer";
 			AosElementDamages.Blunt = 100;
 		}
 
-		public AlyrianBattleHammer( Serial serial ) : base( serial )
+		public BattleHammer( Serial serial ) : base( serial )
 		{
 		}
 

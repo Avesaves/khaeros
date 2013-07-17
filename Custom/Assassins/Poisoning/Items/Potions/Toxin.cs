@@ -144,9 +144,9 @@ namespace Server.Items
 					m_Potion.Consume( 1 );
 					from.SendMessage( "You apply the toxin onto the weapon." );
 				}
-				else if ( targ is Food || targ is BaseBeverage || targ is DrinkPotion || targ is AzhuranBlowGun )
+				else if ( targ is Food || targ is BaseBeverage || targ is DrinkPotion || targ is BlowGun )
 				{
-                    if( targ is AzhuranBlowGun && ( (AzhuranBlowGun)targ ).UsesRemaining < 1 )
+                    if( targ is BlowGun && ( (BlowGun)targ ).UsesRemaining < 1 )
                     {
                         from.SendMessage( "You cannot poison an empty blowgun." );
                         return;

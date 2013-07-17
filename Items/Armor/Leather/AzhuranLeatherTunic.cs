@@ -3,7 +3,7 @@ using Server.Items;
 
 namespace Server.Items
 {
-    public class AzhuranLeatherTunic : BaseArmor
+    public class SoftLeatherTunic : BaseArmor
     {
         public override int BaseBluntResistance { get { return 15; } }
         public override int BaseSlashingResistance { get { return 12; } }
@@ -28,14 +28,14 @@ namespace Server.Items
         public override ArmorMeditationAllowance DefMedAllowance { get { return ArmorMeditationAllowance.All; } }
 
         [Constructable]
-        public AzhuranLeatherTunic()
+        public SoftLeatherTunic()
             : base(0x3BF2)
         {
             Weight = 6.0;
-            Name = "Azhuran Leather Tunic";
+            Name = "soft leather Tunic";
         }
 
-        public AzhuranLeatherTunic(Serial serial)
+        public SoftLeatherTunic(Serial serial)
             : base(serial)
         {
         }

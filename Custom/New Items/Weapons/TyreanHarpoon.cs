@@ -4,9 +4,9 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class TyreanHarpoon : BasePoleArm
+	public class Angon : BasePoleArm
 	{
-		public override string NameType{ get{ return "Tyrean Harpoon"; } }
+		public override string NameType{ get{ return "angon"; } }
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.DoubleStrike; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ConcussionBlow; } }
 
@@ -37,15 +37,15 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.Pierce2H; } }
 
 		[Constructable]
-		public TyreanHarpoon() : base( 0x3DBC )
+		public Angon() : base( 0x3DBC )
 		{
 			Weight = 6.0;
-			Name = "Tyrean Harpoon";
+			Name = "angon";
 			AosElementDamages.Piercing = 100;
 			MaxRange = 2;
 		}
 
-		public TyreanHarpoon( Serial serial ) : base( serial )
+		public Angon( Serial serial ) : base( serial )
 		{
 		}
 

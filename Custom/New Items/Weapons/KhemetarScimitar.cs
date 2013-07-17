@@ -5,7 +5,7 @@ using Server.Items;
 namespace Server.Items
 {
 	[FlipableAttribute( 0x13B6, 0x13B5 )]
-	public class KhemetarScimitar : BaseSword
+	public class Scimitar : BaseSword
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.DoubleStrike; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ParalyzingBlow; } }
@@ -15,7 +15,7 @@ namespace Server.Items
 		public override int SheathedFemaleWaistID{ get{ return 15215; } }
 		
 		
-		public override string NameType { get { return "Khemetar Scimitar"; } }
+		public override string NameType { get { return "scimitar"; } }
 
 		public override int AosStrengthReq{ get{ return 25; } }
 		public override double OverheadPercentage{ get{ return 0.4; } }
@@ -38,14 +38,14 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 90; } }
 
 		[Constructable]
-		public KhemetarScimitar() : base( 0x13B6 )
+		public Scimitar() : base( 0x13B6 )
 		{
 			Weight = 5.0;
 			AosElementDamages.Slashing = 100;
-			Name = "Khemetar Scimitar";
+			Name = "scimitar";
 		}
 
-		public KhemetarScimitar( Serial serial ) : base( serial )
+		public Scimitar( Serial serial ) : base( serial )
 		{
 		}
 

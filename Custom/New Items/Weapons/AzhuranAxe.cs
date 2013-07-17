@@ -5,14 +5,14 @@ using Server.Network;
 namespace Server.Items
 {
 	[FlipableAttribute( 0xf45, 0xf46 )]
-	public class AzhuranAxe : BaseAxe
+	public class HaftedAxe : BaseAxe
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.BleedAttack; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.MortalStrike; } }
 		public override int SheathedMaleBackID{ get{ return 15179; } }
 		public override int SheathedFemaleBackID{ get{ return 15180; } }
 		
-		public override string NameType { get { return "Azhuran Axe"; } }
+		public override string NameType { get { return "hafted axe"; } }
 		public override int AosStrengthReq{ get{ return 55; } }
 		public override double OverheadPercentage{ get{ return 0.3; } }
 		public override double SwingPercentage{ get{ return 0.4; } }
@@ -31,16 +31,16 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 70; } }
 
 		[Constructable]
-		public AzhuranAxe() : base( 0xF45 )
+		public HaftedAxe() : base( 0xF45 )
 		{
 			Weight = 8.0;
 			Layer = Layer.TwoHanded;
 			AosElementDamages.Blunt = 15;
             AosElementDamages.Slashing = 85;
-            Name = "Azhuran Axe";
+            Name = "hafted axe";
 		}
 
-		public AzhuranAxe( Serial serial ) : base( serial )
+		public HaftedAxe( Serial serial ) : base( serial )
 		{
 		}
 

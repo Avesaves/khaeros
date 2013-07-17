@@ -218,7 +218,7 @@ namespace Server.Items
 
             from.SendMessage("Please type in the code for the weapon you would like to make:");
             from.SendMessage(" 1 - Longsword ");
-            from.SendMessage(" 2 - Tyrean Broadsword ");
+            from.SendMessage(" 2 - broadsword ");
         }
 
         public override void OnResponse(Mobile from, string text)
@@ -280,7 +280,7 @@ namespace Server.Items
                 }
                 else if (index == 2)
                 {
-                    TyreanBroadsword weapon = new TyreanBroadsword();
+                    Broadsword weapon = new Broadsword();
                     weapon.NewCrafting = true;
                     weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
                     weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -340,7 +340,7 @@ namespace Server.Items
 
             from.SendMessage("Please type in the code for the sword you would like to make:");
             from.SendMessage(" 1 - Shortsword ");
-            from.SendMessage(" 2 - Vhalurian Gladius ");
+            from.SendMessage(" 2 - gladius ");
         }
 
         public override void OnResponse(Mobile from, string text)
@@ -403,7 +403,7 @@ namespace Server.Items
 
                 if (index == 2)
                 {
-                    VhalurianGladius weapon = new VhalurianGladius();
+                    Gladius weapon = new Gladius();
                     weapon.NewCrafting = true;
                     weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
                     weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -462,8 +462,8 @@ namespace Server.Items
             m_Blade = blade;
 
             from.SendMessage("Please type the code for the type of sword you would like to make:");
-            from.SendMessage(" 1 - Khemetar Khopesh ");
-            from.SendMessage(" 2 - Khemetar Scimitar ");
+            from.SendMessage(" 1 - khopesh ");
+            from.SendMessage(" 2 - scimitar ");
         }
 
         public override void OnResponse(Mobile from, string text)
@@ -483,7 +483,7 @@ namespace Server.Items
 
                 if (index == 1)
                 {
-                    KhemetarKhopesh weapon = new KhemetarKhopesh();
+                    Khopesh weapon = new Khopesh();
                     weapon.NewCrafting = true;
                     weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
                     weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -525,7 +525,7 @@ namespace Server.Items
                 }
                 if (index == 2)
                 {
-                    KhemetarScimitar weapon = new KhemetarScimitar();
+                    Scimitar weapon = new Scimitar();
                     weapon.NewCrafting = true;
                     weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
                     weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;

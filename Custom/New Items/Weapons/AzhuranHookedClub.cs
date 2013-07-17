@@ -4,9 +4,9 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class AzhuranHookedClub : BaseBashing
+	public class HookedClub : BaseBashing
 	{
-		public override string NameType{ get{ return "Azhuran Hooked Club"; } }
+		public override string NameType{ get{ return "hooked club"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ShadowStrike; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.Dismount; } }
@@ -29,15 +29,15 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 40; } }
 
 		[Constructable]
-		public AzhuranHookedClub() : base( 0x3DEA )
+		public HookedClub() : base( 0x3DEA )
 		{
 			Weight = 5.0;
-			Name = "Azhuran Hooked Club";
+			Name = "hooked club";
 			AosElementDamages.Piercing = 50;
 			AosElementDamages.Blunt = 50;
 		}
 
-		public AzhuranHookedClub( Serial serial ) : base( serial )
+		public HookedClub( Serial serial ) : base( serial )
 		{
 		}
 

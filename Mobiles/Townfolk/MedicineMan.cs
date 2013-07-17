@@ -47,7 +47,7 @@ namespace Server.Mobiles
 				EquipItem( new RaggedSkirt() );
 			
 			EquipItem( new MedicineManFetish() );
-			EquipItem( new MhordulMedicineManBoneChest() );
+			EquipItem( new MedicineManBoneChest() );
 			EquipItem( new MonsterMask() );
 			EquipItem( new Sandals() );
 		}

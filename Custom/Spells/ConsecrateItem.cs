@@ -92,9 +92,9 @@ namespace Server.Misc
 					Success = true;
 				}
 				
-				else if( caster.Nation == Nation.Mhordul && caster.Feats.GetFeatLevel(FeatList.ConsecrateItem) > 2 && TargetItem is MhordulMedicineManBoneChest )
+				else if( caster.Nation == Nation.Mhordul && caster.Feats.GetFeatLevel(FeatList.ConsecrateItem) > 2 && TargetItem is MedicineManBoneChest )
 				{
-					MhordulMedicineManBoneChest armor = TargetItem as MhordulMedicineManBoneChest;
+					MedicineManBoneChest armor = TargetItem as MedicineManBoneChest;
 					armor.Attributes.RegenMana = 2;
 					armor.Attributes.RegenHits = 1;
 					armor.Owner = caster;

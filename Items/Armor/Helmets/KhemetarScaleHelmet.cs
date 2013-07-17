@@ -3,7 +3,7 @@ using Server;
 
 namespace Server.Items
 {
-	public class KhemetarScaleHelmet : BaseArmor
+	public class ScaleArmorHelmet : BaseArmor
 	{
         public override ArmourWeight ArmourType { get { return ArmourWeight.Light; } }
 
@@ -29,13 +29,13 @@ namespace Server.Items
 		public override ArmorMaterialType MaterialType{ get{ return ArmorMaterialType.Plate; } }
 
 		[Constructable]
-		public KhemetarScaleHelmet() : base( 0x2B10 )
+		public ScaleArmorHelmet() : base( 0x2B10 )
 		{
 			Weight = 5.0;
-			Name = "Khemetar Scale Helmet";
+			Name = "scale armor Helmet";
 		}
 
-		public KhemetarScaleHelmet( Serial serial ) : base( serial )
+		public ScaleArmorHelmet( Serial serial ) : base( serial )
 		{
 		}
 		

@@ -5,9 +5,9 @@ using Server.Engines.Harvest;
 
 namespace Server.Items
 {
-	public class AlyrianHandScythe : BaseBoline
+	public class Billhook : BaseBoline
 	{
-		public override string NameType{ get{ return "Alyrian Hand Scythe"; } }
+		public override string NameType{ get{ return "billhook"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.BleedAttack; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ParalyzingBlow; } }
@@ -39,15 +39,15 @@ namespace Server.Items
 		//public override HarvestSystem HarvestSystem{ get{ return null; } }
 
 		[Constructable]
-		public AlyrianHandScythe() : base( 0x3DD8 )
+		public Billhook() : base( 0x3DD8 )
 		{
 			Weight = 3.0;
-			Name = "Alyrian Hand Scythe";
+			Name = "billhook";
 			AosElementDamages.Slashing = 90;
 			AosElementDamages.Piercing = 10;
 		}
 
-		public AlyrianHandScythe( Serial serial ) : base( serial )
+		public Billhook( Serial serial ) : base( serial )
 		{
 		}
 

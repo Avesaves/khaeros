@@ -90,40 +90,40 @@ namespace Server.Engines.Craft
 			{
 				PlayerMobile m = from as PlayerMobile;
 			/*	
-				if( itemType == typeof( AlyrianGiantBow ) && !TestRace( m, Nation.Alyrian ) )
+				if( itemType == typeof( WarBow ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianShortbow ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( FlatBow ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianLongbow ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( OrnateLongBow ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianCompositeShortbow ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( CompositeRecurveBow ) && !TestRace( m, Nation.Alyrian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranShortbow ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( ShortBow ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranBlowGunDarts ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( BlowGunDarts ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranBlowGun ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( BlowGun ) && !TestRace( m, Nation.Azhuran ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KhemetarLongbow ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( Hijazi ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MhordulBoneBow ) && !TestRace( m, Nation.Mhordul ) )
+				else if( itemType == typeof( BoneBow ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TyreanCompositeBow ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( RecurveLongBow ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianRepeatingCrossbow ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( RepeatingCrossbow ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( VhalurianLongbow ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( LongBow ) && !TestRace( m, Nation.Vhalurian ) )
 					return 1063491; // Your race cannot craft that item.
 					*/
 			}
@@ -186,10 +186,6 @@ namespace Server.Engines.Craft
 			AddRes( index, typeof( Feather ), 1044562, 1, 1044563 );
 			SetUseAllRes( index, true );
 			
-			index = AddCraft( typeof( AzhuranBlowGunDarts ), 1044565, "azhuran blow gun darts", 0.0, 25.0, typeof( Shaft ), 1044560, 1, 1044561 );
-			AddRes( index, typeof( Feather ), 1044562, 1, 1044563 );
-			SetUseAllRes( index, true );
-			
 			// Weapons
 			AddCraft( typeof( Bow ), 1044566, 1025042, 0.0, 40.0, typeof( Log ), 1044041, 12, 1044351 );
 			AddCraft( typeof( CompositeShortbow ), 1044566, "composite shortbow", 80.0, 80.0, typeof( Log ), 1044041, 12, 1044351 );
@@ -198,23 +194,19 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( Crossbow ), 1044566, 1023919, 60.0, 80.0, typeof( Log ), 1044041, 14, 1044351 );
 			AddCraft( typeof( HeavyCrossbow ), 1044566, 1025117, 70.0, 80.0, typeof( Log ), 1044041, 16, 1044351 );
 		
-			AddCraft( typeof( AlyrianGiantBow ), 1044566, "alyrian giant bow", 80.0, 80.0, typeof( Log ), 1044041, 18, 1044351 );
-			AddCraft( typeof( AlyrianCompositeShortbow ), 1044566, "alyrian composite shortbow", 60.0, 80.0, typeof( Log ), 1044041, 10, 1044351 );
-			AddCraft( typeof( AlyrianShortbow ), 1044566, "alyrian shortbow", 60.0, 80.0, typeof( Log ), 1044041, 10, 1044351 );
-			AddCraft( typeof( AlyrianLongbow ), 1044566, "alyrian longbow", 60.0, 80.0, typeof( Log ), 1044041, 12, 1044351 );
+			AddCraft( typeof( WarBow ), 1044566, "war bow", 80.0, 80.0, typeof( Log ), 1044041, 18, 1044351 );
+			AddCraft( typeof( CompositeRecurveBow ), 1044566, "composite recurve bow", 60.0, 80.0, typeof( Log ), 1044041, 10, 1044351 );
+			AddCraft( typeof( FlatBow ), 1044566, "flatbow", 60.0, 80.0, typeof( Log ), 1044041, 10, 1044351 );
+			AddCraft( typeof( OrnateLongBow ), 1044566, "ornate longbow", 60.0, 80.0, typeof( Log ), 1044041, 12, 1044351 );
 			
-			AddCraft( typeof( AzhuranShortbow ), 1044566, "azhuran shortbow", 60.0, 80.0, typeof( Log ), 1044041, 10, 1044351 );
-			AddCraft( typeof( AzhuranBlowGun ), 1044566, "azhuran blow gun", 60.0, 80.0, typeof( Log ), 1044041, 6, 1044351 );
+			AddCraft( typeof( ShortBow ), 1044566, "shortbow", 60.0, 80.0, typeof( Log ), 1044041, 10, 1044351 );
 
-			AddCraft( typeof( KhemetarLongbow ), 1044566, "khemetar longbow", 60.0, 80.0, typeof( Log ), 1044041, 12, 1044351 );
-
-			index = AddCraft( typeof( MhordulBoneBow ), 1044566, "mhordul bone bow", 60.0, 80.0, typeof( Log ), 1044041, 2, 1044351 );
-			AddRes( index, typeof( Bone ), 1049064, 10, 1049063 );
+			AddCraft( typeof( Hijazi ), 1044566, "hijazi", 60.0, 80.0, typeof( Log ), 1044041, 12, 1044351 );
 			
-			AddCraft( typeof( TyreanCompositeBow ), 1044566, "tyrean composite bow", 60.0, 80.0, typeof( Log ), 1044041, 14, 1044351 );
+			AddCraft( typeof( RecurveLongBow ), 1044566, "recurve longbow", 60.0, 80.0, typeof( Log ), 1044041, 14, 1044351 );
 
-			AddCraft( typeof( VhalurianRepeatingCrossbow ), 1044566, "vhalurian repeating crossbow", 60.0, 80.0, typeof( Log ), 1044041, 16, 1044351 );
-			AddCraft( typeof( VhalurianLongbow ), 1044566, "vhalurian longbow", 60.0, 80.0, typeof( Log ), 1044041, 14, 1044351 );
+			AddCraft( typeof( RepeatingCrossbow ), 1044566, "repeating crossbow", 60.0, 80.0, typeof( Log ), 1044041, 16, 1044351 );
+			AddCraft( typeof( LongBow ), 1044566, "longbow", 60.0, 80.0, typeof( Log ), 1044041, 14, 1044351 );
 
 			SetSubRes( typeof( Log ), 1063506 );
 			

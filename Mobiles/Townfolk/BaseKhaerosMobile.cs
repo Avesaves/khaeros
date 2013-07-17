@@ -1644,7 +1644,7 @@ namespace Server.Mobiles
 							
 							case 2:
 							{
-								m.EquipItem( new AzhuranLeatherTunic() ); 
+								m.EquipItem( new SoftLeatherTunic() ); 
 								break;
 							}
 						}
@@ -2006,16 +2006,16 @@ namespace Server.Mobiles
 					{
 						case 0:
 						{
-							AlyrianChainChest chest = new AlyrianChainChest();
+							SplintedMailChest chest = new SplintedMailChest();
 							chest.Resource = CraftResource.Bronze;
 							
-							AlyrianChainLegs legs = new AlyrianChainLegs();
+							SplintedMailLegs legs = new SplintedMailLegs();
 							legs.Resource = CraftResource.Bronze;
 							
-							AlyrianChainArms arms = new AlyrianChainArms();
+							SplintedMailArms arms = new SplintedMailArms();
 							arms.Resource = CraftResource.Bronze;
 							
-							AlyrianChainGorget gorget = new AlyrianChainGorget();
+							SplintedMailGorget gorget = new SplintedMailGorget();
 							gorget.Resource = CraftResource.Bronze;
 							
 							m.EquipItem( chest );
@@ -2026,10 +2026,10 @@ namespace Server.Mobiles
 							            
 				            if( m.Female )
 				            {
-				            	AlyrianLeafShield shield = new AlyrianLeafShield();
+				            	NotchedShield shield = new NotchedShield();
 								shield.Resource = CraftResource.Bronze;
 								
-								AlyrianSabre sabre = new AlyrianSabre();
+								Falcata sabre = new Falcata();
 								sabre.Resource = CraftResource.Bronze;
 				            	
 				            	m.EquipItem( shield ); 
@@ -2039,7 +2039,7 @@ namespace Server.Mobiles
 				            
 				            else
 				            {
-				            	AlyrianTwoHandedAxe axe = new AlyrianTwoHandedAxe();
+				            	HeavyDoubleAxe axe = new HeavyDoubleAxe();
 								axe.Resource = CraftResource.Bronze;
 								
 				            	m.EquipItem( axe ); 
@@ -2053,10 +2053,10 @@ namespace Server.Mobiles
 						{ 
 				            if( m.Female )
 				            {
-				            	AlyrianRoundShield shield = new AlyrianRoundShield();
+				            	RoundShield shield = new RoundShield();
 								shield.Resource = CraftResource.Bronze;
 								
-								AlyrianLongsword sword = new AlyrianLongsword();
+								ArmingSword sword = new ArmingSword();
 								sword.Resource = CraftResource.Bronze;
 								
 				            	m.EquipItem( shield ); 
@@ -2068,7 +2068,7 @@ namespace Server.Mobiles
 				            
 				            else
 				            {
-				            	AlyrianClaymore sword = new AlyrianClaymore();
+				            	Claymore sword = new Claymore();
 								sword.Resource = CraftResource.Bronze;
 								
 				            	m.EquipItem( sword ); 
@@ -2083,7 +2083,7 @@ namespace Server.Mobiles
 						{ 
 				            if( m.Female )
 				            {
-				            	AlyrianLongbow bow = new AlyrianLongbow();
+				            	OrnateLongBow bow = new OrnateLongBow();
 								bow.Resource = CraftResource.Redwood;
 								
 				            	m.EquipItem( bow ); 
@@ -2094,7 +2094,7 @@ namespace Server.Mobiles
 				            
 				            else
 				            {
-				            	AlyrianGiantBow bow = new AlyrianGiantBow();
+				            	WarBow bow = new WarBow();
 								bow.Resource = CraftResource.Redwood;
 								
 				            	m.EquipItem( bow ); 
@@ -2123,10 +2123,10 @@ namespace Server.Mobiles
 					{
 						case 0:
 						{
-							AzhuranHelm helm = new AzhuranHelm();
+							EagleHelm helm = new EagleHelm();
 							helm.Resource = CraftResource.Bronze;
 							
-							AzhuranSpikedChainChest chest = new AzhuranSpikedChainChest();
+							SpikedChest chest = new SpikedChest();
 							chest.Resource = CraftResource.Bronze;
 							
 							RingmailArms arms = new RingmailArms();
@@ -2151,10 +2151,10 @@ namespace Server.Mobiles
 							            
 				            if( m.Female )
 				            {
-				            	AzhuranKiteShield shield = new AzhuranKiteShield();
+				            	TallFaceShield shield = new TallFaceShield();
 								shield.Resource = CraftResource.Bronze;
 								
-								AzhuranShortsword sword = new AzhuranShortsword();
+								Kutar sword = new Kutar();
 								sword.Resource = CraftResource.Bronze;
 								
 				            	m.EquipItem( shield ); 
@@ -2164,10 +2164,10 @@ namespace Server.Mobiles
 				            
 				            else
 				            {
-				            	AzhuranRoundShield shield = new AzhuranRoundShield();
+				            	RoundedFaceShield shield = new RoundedFaceShield();
 								shield.Resource = CraftResource.Bronze;
 								
-								AzhuranBroadsword sword = new AzhuranBroadsword();
+								Flamberge sword = new Flamberge();
 								sword.Resource = CraftResource.Bronze;
 								
 				            	m.EquipItem( shield ); 
@@ -2179,16 +2179,16 @@ namespace Server.Mobiles
 							
 						case 1:
 						{ 
-							AzhuranLeatherTunic chest = new AzhuranLeatherTunic();
+							SoftLeatherTunic chest = new SoftLeatherTunic();
 							chest.Resource = CraftResource.BeastLeather;
 							
-							AzhuranLeatherPauldrons pauldrons = new AzhuranLeatherPauldrons();
+							SoftLeatherPauldrons pauldrons = new SoftLeatherPauldrons();
 							pauldrons.Resource = CraftResource.BeastLeather;
 							
-							AzhuranLeatherBoots boots = new AzhuranLeatherBoots();
+							SoftLeatherBoots boots = new SoftLeatherBoots();
 							boots.Resource = CraftResource.BeastLeather;
 							
-							AzhuranLeatherLegs legs = new AzhuranLeatherLegs();
+							SoftLeatherLegs legs = new SoftLeatherLegs();
 							legs.Resource = CraftResource.BeastLeather;
 							
 							LeatherGloves gloves = new LeatherGloves();
@@ -2197,7 +2197,7 @@ namespace Server.Mobiles
 							LeatherArms arms = new LeatherArms();
 							arms.Resource = CraftResource.BeastLeather;
 							
-							AzhuranSpear spear = new AzhuranSpear();
+							PrimitiveSpear spear = new PrimitiveSpear();
 							spear.Resource = CraftResource.Bronze;
 								
 			            	m.EquipItem( chest ); 
@@ -2220,7 +2220,7 @@ namespace Server.Mobiles
 				            
 							if( m.Female )
 				            {
-								AzhuranShortbow bow = new AzhuranShortbow();
+								ShortBow bow = new ShortBow();
 								bow.Resource = CraftResource.Redwood;
 							
 				            	m.EquipItem( bow ); 
@@ -2259,7 +2259,7 @@ namespace Server.Mobiles
 					{
 						case 0:
 						{
-							KhemetarScaleChest chest = new KhemetarScaleChest();
+							ScaleArmorChest chest = new ScaleArmorChest();
 							chest.Resource = CraftResource.Bronze;
 							chest.Hue = 2947;
 							m.EquipItem( chest );
@@ -2284,7 +2284,7 @@ namespace Server.Mobiles
 							gloves.Hue = 2947;
 							m.EquipItem( gloves );
 							
-							KhemetarScaleHelmet helmet = new KhemetarScaleHelmet();
+							ScaleArmorHelmet helmet = new ScaleArmorHelmet();
 							helmet.Resource = CraftResource.Bronze;
 							helmet.Hue = 2947;
 							m.EquipItem( helmet );
@@ -2293,7 +2293,7 @@ namespace Server.Mobiles
 							cloak.Hue = 2795;
 							m.EquipItem( cloak );
 							
-							KhemetarAxe axe = new KhemetarAxe();
+							Tabarzin axe = new Tabarzin();
 							axe.Resource = CraftResource.Bronze;
 							m.EquipItem( axe );
 							            
@@ -2321,17 +2321,17 @@ namespace Server.Mobiles
 							boots.Hue = 2947;
 							m.EquipItem( boots ); 
 							
-							KhemetarScaleChest chest = new KhemetarScaleChest();
+							ScaleArmorChest chest = new ScaleArmorChest();
 							chest.Resource = CraftResource.Bronze;
 							chest.Hue = 2947;
 							m.EquipItem( chest );
 							
-							KhemetarScaleLegs legs = new KhemetarScaleLegs();
+							ScaleArmorLegs legs = new ScaleArmorLegs();
 							legs.Resource = CraftResource.Bronze;
 							legs.Hue = 2947;
 							m.EquipItem( legs );
 							
-							KhemetarScaleArms arms = new KhemetarScaleArms();
+							ScaleArmorArms arms = new ScaleArmorArms();
 							arms.Resource = CraftResource.Bronze;
 							arms.Hue = 2947;
 							m.EquipItem( arms );
@@ -2341,7 +2341,7 @@ namespace Server.Mobiles
 							gloves.Hue = 2947;
 							m.EquipItem( gloves );
 							
-							KhemetarScaleHelmet helmet = new KhemetarScaleHelmet();
+							ScaleArmorHelmet helmet = new ScaleArmorHelmet();
 							helmet.Resource = CraftResource.Bronze;
 							helmet.Hue = 2947;
 							m.EquipItem( helmet );
@@ -2350,7 +2350,7 @@ namespace Server.Mobiles
 							cloak.Hue = 2795;
 							m.EquipItem( cloak );
 							
-							KhemetarKhopesh sword = new KhemetarKhopesh();
+							Khopesh sword = new Khopesh();
 							sword.Resource = CraftResource.Bronze;
 							m.EquipItem( sword );
 							
@@ -2383,17 +2383,17 @@ namespace Server.Mobiles
 							sandals.Hue = 2947;
 							m.EquipItem( sandals ); 
 							
-							KhemetarScaleChest chest = new KhemetarScaleChest();
+							ScaleArmorChest chest = new ScaleArmorChest();
 							chest.Resource = CraftResource.Bronze;
 							chest.Hue = 2947;
 							m.EquipItem( chest );
 							
-							KhemetarScaleLegs legs = new KhemetarScaleLegs();
+							ScaleArmorLegs legs = new ScaleArmorLegs();
 							legs.Resource = CraftResource.Bronze;
 							legs.Hue = 2947;
 							m.EquipItem( legs );
 							
-							KhemetarScaleHelmet helmet = new KhemetarScaleHelmet();
+							ScaleArmorHelmet helmet = new ScaleArmorHelmet();
 							helmet.Resource = CraftResource.Bronze;
 							helmet.Hue = 2947;
 							m.EquipItem( helmet );
@@ -2402,7 +2402,7 @@ namespace Server.Mobiles
 							cloak.Hue = 2795;
 							m.EquipItem( cloak );
 							
-							KhemetarLongbow bow = new KhemetarLongbow();
+							Hijazi bow = new Hijazi();
 							bow.Resource = CraftResource.Redwood;
 							m.EquipItem( bow );
 			            	
@@ -2442,7 +2442,7 @@ namespace Server.Mobiles
 					sandals.Hue = 1194;
 					m.EquipItem( sandals );
 					
-					MhordulBoneArms mba = new MhordulBoneArms();
+					BoneArms mba = new BoneArms();
 					mba.Hue = 2101;
 					m.EquipItem( mba );
 							
@@ -2454,31 +2454,31 @@ namespace Server.Mobiles
 							mhsh.Hue = 2101;
 							m.EquipItem( mhsh );
 							
-							MhordulBoneChest mbc = new MhordulBoneChest();
+							BoneChest mbc = new BoneChest();
 							mbc.Hue = 2101;
 							m.EquipItem( mbc );
 							
-							MhordulBoneLegs mbl = new MhordulBoneLegs();
+							BoneLegs mbl = new BoneLegs();
 							mbl.Hue = 2101;
 							m.EquipItem( mbl );
 							
-							MhordulBoneGloves mbg = new MhordulBoneGloves();
+							BoneGloves mbg = new BoneGloves();
 							mbg.Hue = 2101;
 							m.EquipItem( mbg );
 							
-							MhordulBoneShield mbs = new MhordulBoneShield();
+							BoneShield mbs = new BoneShield();
 							mbs.Hue = 2101;
 							m.EquipItem( mbs );
 							            
 				            if( m.Female )
 				            {
-				            	m.EquipItem( new MhordulBoneSword() ); 
+				            	m.EquipItem( new BoneSword() ); 
 				            	m.EquipItem( new SmallRaggedSkirt( 1194 ) );
 				            }
 				            
 				            else
 				            {
-				            	m.EquipItem( new MhordulBoneAxe() ); 
+				            	m.EquipItem( new BoneAxe() ); 
 				            }
 				            
 							break;
@@ -2486,28 +2486,28 @@ namespace Server.Mobiles
 							
 						case 1:
 						{ 
-			            	MhordulBoneHelm mbh = new MhordulBoneHelm();
+			            	BoneHelm mbh = new BoneHelm();
 							mbh.Hue = 2101;
 							m.EquipItem( mbh );
 							
-							MhordulBoneLegs mbl = new MhordulBoneLegs();
+							BoneLegs mbl = new BoneLegs();
 							mbl.Hue = 2101;
 							m.EquipItem( mbl );
 							
-							MhordulBoneGloves mbg = new MhordulBoneGloves();
+							BoneGloves mbg = new BoneGloves();
 							mbg.Hue = 2101;
 							m.EquipItem( mbg );
 							            
 				            if( m.Female )
 				            {
-				            	m.EquipItem( new MhordulBoneSpear() ); 
+				            	m.EquipItem( new BoneSpear() ); 
 				            	m.EquipItem( new SmallRaggedSkirt( 1194 ) );
 				            	m.EquipItem( new RaggedBra( 1194 ) );
 				            }
 				            
 				            else
 				            {
-				            	m.EquipItem( new MhordulBoneScythe() ); 
+				            	m.EquipItem( new BoneScythe() ); 
 				            	m.EquipItem( new WaistCloth( 1194 ) );
 				            }
 				            
@@ -2516,11 +2516,11 @@ namespace Server.Mobiles
 							
 						case 2:
 						{ 
-							MhordulBoneHelm mbh = new MhordulBoneHelm();
+							BoneHelm mbh = new BoneHelm();
 							mbh.Hue = 2101;
 							m.EquipItem( mbh );
 							
-							m.EquipItem( new MhordulBoneBow() );
+							m.EquipItem( new BoneBow() );
 							
 							if( m.Female )
 							{
@@ -2557,51 +2557,51 @@ namespace Server.Mobiles
 					{
 						case 0:
 						{
-							TyreanHalfPlateChest thpc = new TyreanHalfPlateChest();
+							HalfPlateChest thpc = new HalfPlateChest();
 							thpc.Resource = CraftResource.Bronze;
 							thpc.Hue = 1899;
 							m.EquipItem( thpc );
 							
-							TyreanHalfPlateLegs thpl = new TyreanHalfPlateLegs();
+							HalfPlateLegs thpl = new HalfPlateLegs();
 							thpl.Resource = CraftResource.Bronze;
                             thpl.Hue = 1899;
 							m.EquipItem( thpl );
 							
-							TyreanHalfPlateSabatons thps = new TyreanHalfPlateSabatons();
+							HalfPlateSabatons thps = new HalfPlateSabatons();
 							thps.Resource = CraftResource.Bronze;
                             thps.Hue = 1899;
 							m.EquipItem( thps );
 							
-							TyreanHalfPlateArms thpa = new TyreanHalfPlateArms();
+							HalfPlateArms thpa = new HalfPlateArms();
 							thpa.Resource = CraftResource.Bronze;
                             thpa.Hue = 1899;
 							m.EquipItem( thpa );
 							
-							TyreanHalfPlateGloves thpg = new TyreanHalfPlateGloves();
+							HalfPlateGloves thpg = new HalfPlateGloves();
 							thpg.Resource = CraftResource.Bronze;
                             thpg.Hue = 1899;
 							m.EquipItem( thpg );
 							
-							TyreanHalfPlateGorget thpo = new TyreanHalfPlateGorget();
+							HalfPlateGorget thpo = new HalfPlateGorget();
 							thpo.Resource = CraftResource.Bronze;
                             thpo.Hue = 1899;
 							m.EquipItem( thpo );
 							
-							TyreanKiteShield tks = new TyreanKiteShield();
+							DragonKiteShield tks = new DragonKiteShield();
 							tks.Resource = CraftResource.Bronze;
                             tks.Hue = 1899;
 							m.EquipItem( tks );
 							
 							m.EquipItem( new Cloak( 1445 ) );
 							
-							TyreanWingedHelm twh = new TyreanWingedHelm();
+							WingedHelm twh = new WingedHelm();
 			            	twh.Resource = CraftResource.Bronze;
                             twh.Hue = 1899;
 							m.EquipItem( twh );
 							            
 				            if( m.Female )
 				            {
-				            	TyreanWarAxe axe = new TyreanWarAxe();
+				            	BroadAxe axe = new BroadAxe();
 								axe.Resource = CraftResource.Bronze;
 							
 				            	m.EquipItem( axe ); 
@@ -2609,7 +2609,7 @@ namespace Server.Mobiles
 				            
 				            else
 				            {
-				            	TyreanOrnateAxe axe = new TyreanOrnateAxe();
+				            	OrnateAxe axe = new OrnateAxe();
 								axe.Resource = CraftResource.Bronze;
 							
 				            	m.EquipItem( axe ); 
@@ -2640,7 +2640,7 @@ namespace Server.Mobiles
                             rg.Hue = 1899;
 							m.EquipItem( rg );
 							
-							TyreanHornedHelm thh = new TyreanHornedHelm();
+							HornedHelm thh = new HornedHelm();
 							thh.Resource = CraftResource.Bronze;
                             thh.Hue = 1899;
 							m.EquipItem( thh );
@@ -2653,7 +2653,7 @@ namespace Server.Mobiles
 							            
 				            if( m.Female )
 				            {
-				            	TyreanHarpoon weapon = new TyreanHarpoon();
+				            	Angon weapon = new Angon();
 								weapon.Resource = CraftResource.Bronze;
 							
 				            	m.EquipItem( weapon ); 
@@ -2661,7 +2661,7 @@ namespace Server.Mobiles
 				            
 				            else
 				            {
-				            	TyreanBattleAxe weapon = new TyreanBattleAxe();
+				            	HeavyBattleAxe weapon = new HeavyBattleAxe();
 								weapon.Resource = CraftResource.Bronze;
 							
 				            	m.EquipItem( weapon ); 
@@ -2707,7 +2707,7 @@ namespace Server.Mobiles
                             boots.Hue = 2741;
 							m.EquipItem( boots );
 							
-							TyreanCompositeBow bow = new TyreanCompositeBow();
+							RecurveLongBow bow = new RecurveLongBow();
 							bow.Resource = CraftResource.Redwood;
 							m.EquipItem( bow );
 							
@@ -2737,17 +2737,17 @@ namespace Server.Mobiles
 					{
 						case 0:
 						{
-							VhalurianOrnatePlateChest vopc = new VhalurianOrnatePlateChest();
+							OrnatePlateChest vopc = new OrnatePlateChest();
 							vopc.Resource = CraftResource.Bronze;
 							vopc.Hue = 2101;
 							m.EquipItem( vopc );
 							
-							VhalurianOrnatePlateLegs vopl = new VhalurianOrnatePlateLegs();
+							OrnatePlateLegs vopl = new OrnatePlateLegs();
 							vopl.Resource = CraftResource.Bronze;
 							vopl.Hue = 2101;
 							m.EquipItem( vopl );
 							
-							VhalurianOrnatePlateGorget vopo = new VhalurianOrnatePlateGorget();
+							OrnatePlateGorget vopo = new OrnatePlateGorget();
 							vopo.Resource = CraftResource.Bronze;
 							vopo.Hue = 2101;
 							m.EquipItem( vopo );
@@ -2757,17 +2757,17 @@ namespace Server.Mobiles
 							ps.Hue = 2105;
 							m.EquipItem( ps );
 							
-							VhalurianOrnatePlateArms vopa = new VhalurianOrnatePlateArms();
+							OrnatePlateArms vopa = new OrnatePlateArms();
 							vopa.Resource = CraftResource.Bronze;
 							vopa.Hue = 2101;
 							m.EquipItem( vopa );
 							
-							VhalurianOrnatePlateGloves vopg = new VhalurianOrnatePlateGloves();
+							OrnatePlateGloves vopg = new OrnatePlateGloves();
 							vopg.Resource = CraftResource.Bronze;
 							vopg.Hue = 2101;
 							m.EquipItem( vopg );
 							
-							VhalurianOrnateKiteShield voks = new VhalurianOrnateKiteShield();
+							OrnateKiteShield voks = new OrnateKiteShield();
 							voks.Resource = CraftResource.Bronze;
 							voks.Hue = 2102;
 							m.EquipItem( voks );
@@ -2776,12 +2776,12 @@ namespace Server.Mobiles
 							            
 				            if( m.Female )
 				            {
-				            	VhalurianMace mace = new VhalurianMace();
+				            	HorsemanMace mace = new HorsemanMace();
 								mace.Resource = CraftResource.Bronze;
 							
 				            	m.EquipItem( mace ); 
 				            	
-				            	VhalurianOrnateHelm voh = new VhalurianOrnateHelm();
+				            	OrnateHelm voh = new OrnateHelm();
 				            	voh.Resource = CraftResource.Bronze;
 								voh.Hue = 2102;
 								m.EquipItem( voh );
@@ -2789,12 +2789,12 @@ namespace Server.Mobiles
 				            
 				            else
 				            {
-				            	VhalurianWarHammer mace = new VhalurianWarHammer();
+				            	HorsemanWarhammer mace = new HorsemanWarhammer();
 								mace.Resource = CraftResource.Bronze;
 							
 				            	m.EquipItem( mace );
 				            	
-				            	VhalurianOrnatePlateHelm voph = new VhalurianOrnatePlateHelm();
+				            	OrnatePlateHelm voph = new OrnatePlateHelm();
 				            	voph.Resource = CraftResource.Bronze;
 								voph.Hue = 2102;
 								m.EquipItem( voph );
@@ -2830,7 +2830,7 @@ namespace Server.Mobiles
 							rg.Hue = 2101;
 							m.EquipItem( rg );
 							
-							VhalurianMetalKiteShield vmks = new VhalurianMetalKiteShield();
+							KiteShield vmks = new KiteShield();
 							vmks.Resource = CraftResource.Bronze;
 							vmks.Hue = 2101;
 							m.EquipItem( vmks );
@@ -2843,7 +2843,7 @@ namespace Server.Mobiles
 							            
 				            if( m.Female )
 				            {
-				            	VhalurianGladius sword = new VhalurianGladius();
+				            	Gladius sword = new Gladius();
 								sword.Resource = CraftResource.Bronze;
 							
 				            	m.EquipItem( sword );
@@ -2851,7 +2851,7 @@ namespace Server.Mobiles
 				            
 				            else
 				            {
-				            	VhalurianBroadsword sword = new VhalurianBroadsword();
+				            	CavalrySword sword = new CavalrySword();
 								sword.Resource = CraftResource.Bronze;
 							
 				            	m.EquipItem( sword );
@@ -2897,7 +2897,7 @@ namespace Server.Mobiles
 							so.Hue = 2101;
 							m.EquipItem( so );
 							
-							VhalurianLongbow bow = new VhalurianLongbow();
+							LongBow bow = new LongBow();
 							bow.Resource = CraftResource.Redwood;
 							
 							m.EquipItem( bow );

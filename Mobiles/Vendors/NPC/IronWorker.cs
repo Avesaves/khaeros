@@ -68,7 +68,7 @@ namespace Server.Mobiles
 			if ( item == null )
 				AddItem( new FullApron( RandomBrightHue() ) );
 
-			AddItem( new VhalurianBascinet() );
+			AddItem( new Bascinet() );
 			AddItem( new SmithHammer() );
 
 			item = FindItemOnLayer( Layer.Pants );

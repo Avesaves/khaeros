@@ -5,9 +5,9 @@ using Server.Mobiles;
 
 namespace Server.Items
 {
-	public class AlyrianLongbow : BaseRanged
+	public class OrnateLongBow : BaseRanged
 	{
-		public override string NameType{ get{ return "Alyrian Longbow"; } }
+		public override string NameType{ get{ return "ornate longbow"; } }
 		public override int EffectID{ get{ return 0xF42; } }
 		public override Type AmmoType{ get{ return typeof( Arrow ); } }
 		public override Item Ammo{ get{ return new Arrow(); } }
@@ -38,14 +38,14 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.ShootBow; } }
 
 		[Constructable]
-		public AlyrianLongbow() : base( 0x3DF7 )
+		public OrnateLongBow() : base( 0x3DF7 )
 		{
 			Weight = 6.0;
-			Name = "Alyrian Longbow";
+			Name = "ornate longbow";
 			AosElementDamages.Piercing = 100;
 		}
 
-		public AlyrianLongbow( Serial serial ) : base( serial )
+		public OrnateLongBow( Serial serial ) : base( serial )
 		{
 		}
 

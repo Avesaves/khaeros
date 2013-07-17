@@ -5363,7 +5363,7 @@ namespace Server.Mobiles
 						) );
 					}
 					
-					if ( twohander is HeavyCrossbow || twohander is Crossbow || twohander is VhalurianRepeatingCrossbow )
+					if ( twohander is HeavyCrossbow || twohander is Crossbow || twohander is RepeatingCrossbow )
 					{
 						if ( Feats.GetFeatLevel(FeatList.CrossbowMastery) > 0 )
 						{

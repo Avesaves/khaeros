@@ -111,7 +111,7 @@ namespace Server.Items
                 from.Prompt = new SHMaceHeadPrompt(from, m_Hilt, (MaceHead)m_Blade);
             if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Azhuran)
             {
-                AzhuranLongsword weapon = new AzhuranLongsword();
+                Tepatl weapon = new Tepatl();
                 weapon.NewCrafting = true;
                 weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
                 weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -153,7 +153,7 @@ namespace Server.Items
             }
             if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Vhalurian)
             {
-                VhalurianLance weapon = new VhalurianLance();
+                Lance weapon = new Lance();
                 weapon.NewCrafting = true;
                 weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
                 weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -219,16 +219,16 @@ namespace Server.Items
 
                 if (((PlayerMobile)from).Nation == Nation.Alyrian)
                 {
-                    from.SendMessage(" 2 - Alyrian Hand Scythe ");
-                    from.SendMessage(" 3 - Alyrian Sabre ");
+                    from.SendMessage(" 2 - billhook ");
+                    from.SendMessage(" 3 - falcata ");
                 }
                 if (((PlayerMobile)from).Nation == Nation.Khemetar)
                 {
-                    from.SendMessage(" 4 - Khemetar Crescent Sword ");
-                    from.SendMessage(" 5 - Khemetar Thin Scimitar ");
+                    from.SendMessage(" 4 - shamshir ");
+                    from.SendMessage(" 5 - shamshir ");
                 }
                 if (((PlayerMobile)from).Nation == Nation.Mhordul)
-                    from.SendMessage(" 6 - Mhordul Crescent Blade ");
+                    from.SendMessage(" 6 - crescent blade ");
             }
         }
 
@@ -250,11 +250,11 @@ namespace Server.Items
                 switch (index)
                 {
                     case 1: MakeMachete(from); break;
-                    case 2: MakeAlyrianHandScythe(from); break;
-                    case 3: MakeAlyrianSabre(from); break;
-                    case 4: MakeKhemetarCrescentSword(from); break;
-                    case 5: MakeKhemetarThinScimitar(from); break;
-                    case 6: from.SendMessage("Add another curved blade"); from.Target = new MhordulCrescentBladeTarget(m_Hilt, m_Blade); break;
+                    case 2: MakeBillhook(from); break;
+                    case 3: MakeFalcata(from); break;
+                    case 4: MakeSabre(from); break;
+                    case 5: MakeShamshir(from); break;
+                    case 6: from.SendMessage("Add another curved blade"); from.Target = new CrescentBladeTarget(m_Hilt, m_Blade); break;
                 }
             }
         }
@@ -302,9 +302,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeAlyrianHandScythe(Mobile from)
+        public void MakeBillhook(Mobile from)
         {
-            AlyrianHandScythe weapon = new AlyrianHandScythe();
+            Billhook weapon = new Billhook();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -345,9 +345,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeAlyrianSabre(Mobile from)
+        public void MakeFalcata(Mobile from)
         {
-            AlyrianSabre weapon = new AlyrianSabre();
+            Falcata weapon = new Falcata();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -388,9 +388,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeKhemetarCrescentSword(Mobile from)
+        public void MakeSabre(Mobile from)
         {
-            KhemetarCrescentSword weapon = new KhemetarCrescentSword();
+            Sabre weapon = new Sabre();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -431,9 +431,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeKhemetarThinScimitar(Mobile from)
+        public void MakeShamshir(Mobile from)
         {
-            KhemetarThinScimitar weapon = new KhemetarThinScimitar();
+            Shamshir weapon = new Shamshir();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -475,12 +475,12 @@ namespace Server.Items
         }
     }
 
-    public class MhordulCrescentBladeTarget : Target
+    public class CrescentBladeTarget : Target
     {
         private SmallHandle m_Hilt;
         private CurvedBlade m_Blade;
 
-        public MhordulCrescentBladeTarget(SmallHandle hilt, CurvedBlade blade)
+        public CrescentBladeTarget(SmallHandle hilt, CurvedBlade blade)
             : base(2, false, TargetFlags.None)
         {
             m_Hilt = hilt;
@@ -493,7 +493,7 @@ namespace Server.Items
                 return;
 
             CurvedBlade xtraBlade = targeted as CurvedBlade;
-            MhordulCrescentBlade weapon = new MhordulCrescentBlade();
+            CrescentBlade weapon = new CrescentBlade();
             weapon.NewCrafting = true;
             int quality = (int)(m_Blade.Damage * 0.6 + xtraBlade.Damage * 0.6 + m_Hilt.Damage * 0.9);
             weapon.QualityDamage = quality;
@@ -561,8 +561,8 @@ namespace Server.Items
 
             if (((PlayerMobile)from).Nation == Nation.Azhuran)
             {
-                from.SendMessage(" 4 - Azhuran Mace ");
-                from.SendMessage(" 5 - Azhuran War Mace ");
+                from.SendMessage(" 4 - primitive mace ");
+                from.SendMessage(" 5 - spiked mace ");
             }
         }
 
@@ -587,7 +587,7 @@ namespace Server.Items
                     case 2: MakeMace(from); break;
                     case 3: MakeWarMace(from); break;
                     case 4: MakeAzhuranMace(from); break;
-                    case 5: MakeAzhuranWarMace(from); break;
+                    case 5: MakeSpikedMace(from); break;
                 }
             }
         }
@@ -764,9 +764,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeAzhuranWarMace(Mobile from)
+        public void MakeSpikedMace(Mobile from)
         {
-            AzhuranWarMace weapon = new AzhuranWarMace();
+            SpikedMace weapon = new SpikedMace();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -828,7 +828,7 @@ namespace Server.Items
             from.SendMessage(" 3 - Skinning Knife ");
 
             if (((PlayerMobile)from).Nation == Nation.Khemetar)
-                from.SendMessage(" 4 - Khemetar Kukri ");
+                from.SendMessage(" 4 - kukri ");
         }
 
         public override void OnResponse(Mobile from, string text)
@@ -851,7 +851,7 @@ namespace Server.Items
                     case 1: MakeButcherKnife(from); break;
                     case 2: MakeCleaver(from); break;
                     case 3: MakeSkinningKnife(from); break;
-                    case 4: MakeKhemetarKukri(from); break;
+                    case 4: MakeKukri(from); break;
                 }
             }
         }
@@ -985,9 +985,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeKhemetarKukri(Mobile from)
+        public void MakeKukri(Mobile from)
         {
-            KhemetarKukri weapon = new KhemetarKukri();
+            Kukri weapon = new Kukri();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;

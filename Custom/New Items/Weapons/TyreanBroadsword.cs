@@ -5,11 +5,11 @@ using Server.Items;
 namespace Server.Items
 {
 	[FlipableAttribute( 0x13B9, 0x13Ba )]
-	public class TyreanBroadsword : BaseSword
+	public class Broadsword : BaseSword
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.CrushingBlow; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ParalyzingBlow; } }
-		public override string NameType { get { return "Tyrean Broadsword"; } }
+		public override string NameType { get { return "broadsword"; } }
 		
 		public override int SheathedMaleWaistID{ get{ return 15218; } }
 		public override int SheathedFemaleWaistID{ get{ return 15219; } }
@@ -36,16 +36,16 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.Slash2H; } }
 
 		[Constructable]
-		public TyreanBroadsword() : base( 0x13B9 )
+		public Broadsword() : base( 0x3CF5 )
 		{
 			Weight = 7.0;
 			AosElementDamages.Slashing = 90;
 			AosElementDamages.Blunt = 10;
 			Layer = Layer.OneHanded;
-			Name = "Tyrean Broadsword";
+			Name = "broadsword";
 		}
 
-		public TyreanBroadsword( Serial serial ) : base( serial )
+		public Broadsword( Serial serial ) : base( serial )
 		{
 		}
 

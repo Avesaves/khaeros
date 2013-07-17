@@ -4,9 +4,9 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class AzhuranWarMace : BaseBashing
+	public class SpikedMace : BaseBashing
 	{
-		public override string NameType{ get{ return "Azhuran War Mace"; } }
+		public override string NameType{ get{ return "spiked mace"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ConcussionBlow; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.Disarm; } }
@@ -31,15 +31,15 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 70; } }
 
 		[Constructable]
-		public AzhuranWarMace() : base( 0x3DEF )
+		public SpikedMace() : base( 0x3DEF )
 		{
 			Weight = 6.0;
-			Name = "Azhuran War Mace";
+			Name = "spiked mace";
 			AosElementDamages.Blunt = 40;
 			AosElementDamages.Slashing = 60;
 		}
 
-		public AzhuranWarMace( Serial serial ) : base( serial )
+		public SpikedMace( Serial serial ) : base( serial )
 		{
 		}
 

@@ -5,12 +5,12 @@ using Server.Items;
 namespace Server.Items
 {
 	[FlipableAttribute( 0x2D20, 0x2D2C )]
-	public class KhemetarKukri : BaseKnife
+	public class Kukri : BaseKnife
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.PsychicAttack; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.BleedAttack; } }
 
-		public override string NameType { get { return "Khemetar Kukri"; } }
+		public override string NameType { get { return "kukri"; } }
 		
 		public override int SheathedMaleWaistID{ get{ return 15212; } }
 		public override int SheathedFemaleWaistID{ get{ return 15213; } }
@@ -39,16 +39,16 @@ namespace Server.Items
 		public override SkillName DefSkill{ get{ return SkillName.ExoticWeaponry; } }
 
 		[Constructable]
-		public KhemetarKukri() : base( 0x2D20 )
+		public Kukri() : base( 0x2D20 )
 		{
 			Weight = 2.0;
 			Layer = Layer.OneHanded;
-			Name = "Khemetar Kukri";
+			Name = "kukri";
 			AosElementDamages.Piercing = 30;
 			AosElementDamages.Slashing = 70;
 		}
 
-		public KhemetarKukri( Serial serial ) : base( serial )
+		public Kukri( Serial serial ) : base( serial )
 		{
 		}
 

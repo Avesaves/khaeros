@@ -4,9 +4,9 @@ using Server.Network;
 
 namespace Server.Items
 {
-	public class KhemetarAxe : BaseAxe
+	public class Tabarzin : BaseAxe
 	{
-		public override string NameType{ get{ return "Khemetar Axe"; } }
+		public override string NameType{ get{ return "tabarzin"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.DoubleStrike; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.WhirlwindAttack; } }
@@ -32,15 +32,15 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 110; } }
 
 		[Constructable]
-		public KhemetarAxe() : base( 0x3CB7)
+		public Tabarzin() : base( 0x3CB7)
 		{
 			Weight = 8.0;
-			Name = "Khemetar Axe";
+			Name = "tabarzin";
 			AosElementDamages.Slashing = 85;
 			AosElementDamages.Blunt = 15;
 		}
 
-		public KhemetarAxe( Serial serial ) : base( serial )
+		public Tabarzin( Serial serial ) : base( serial )
 		{
 		}
 

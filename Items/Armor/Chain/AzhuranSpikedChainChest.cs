@@ -3,7 +3,7 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class AzhuranSpikedChainChest : BaseArmor
+	public class SpikedChest : BaseArmor
 	{
         public override ArmourWeight ArmourType { get { return ArmourWeight.Medium; } }
 
@@ -29,13 +29,13 @@ namespace Server.Items
 		public override ArmorMaterialType MaterialType{ get{ return ArmorMaterialType.Chainmail; } }
 
 		[Constructable]
-		public AzhuranSpikedChainChest() : base( 0x3BDE )
+		public SpikedChest() : base( 0x3BDE )
 		{
 			Weight = 7.0;
-			Name = "Azhuran Spiked Chain Chest";
+			Name = "Spiked Chest";
 		}
 
-		public AzhuranSpikedChainChest( Serial serial ) : base( serial )
+		public SpikedChest( Serial serial ) : base( serial )
 		{
 		}
 		

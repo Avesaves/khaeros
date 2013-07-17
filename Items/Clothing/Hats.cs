@@ -1107,7 +1107,7 @@ namespace Server.Items
 		}
 	}
 	
-	public class AzhuranJesterMask : BaseHat
+	public class TribalWarriorMask : BaseHat
 	{
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 0; } }
@@ -1119,13 +1119,13 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 40; } }
 
 		[Constructable]
-		public AzhuranJesterMask() : base( 0x3BB0 )
+		public TribalWarriorMask() : base( 0x3BB0 )
 		{
 			Weight = 2.0;
-			Name = "Azhuran Jester Mask";
+			Name = "tribal warrior's mask";
 		}
 
-		public AzhuranJesterMask( Serial serial ) : base( serial )
+		public TribalWarriorMask( Serial serial ) : base( serial )
 		{
 		}
 		
@@ -1142,7 +1142,7 @@ namespace Server.Items
 		}
 	}
 	
-	public class MhordulJesterMask : BaseHat
+	public class FleshMask : BaseHat
 	{
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 0; } }
@@ -1154,13 +1154,13 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 40; } }
 
 		[Constructable]
-		public MhordulJesterMask() : base( 0x3BB4 )
+		public FleshMask() : base( 0x3BB4 )
 		{
 			Weight = 2.0;
-			Name = "Mhordul Jester Mask";
+			Name = "flesh mask";
 		}
 
-		public MhordulJesterMask( Serial serial ) : base( serial )
+		public FleshMask( Serial serial ) : base( serial )
 		{
 		}
 		
@@ -1212,7 +1212,7 @@ namespace Server.Items
 		}
 	}
 	
-	public class VhalurianRogueCowl : BaseHat
+	public class RogueCowl : BaseHat
 	{
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 0; } }
@@ -1224,13 +1224,13 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 40; } }
 
 		[Constructable]
-		public VhalurianRogueCowl() : base( 0x3C2B )
+		public RogueCowl() : base( 0x3C2B )
 		{
 			Weight = 2.0;
 			Name = "Rogue Cowl";
 		}
 
-		public VhalurianRogueCowl( Serial serial ) : base( serial )
+		public RogueCowl( Serial serial ) : base( serial )
 		{
 		}
 		
@@ -1352,7 +1352,7 @@ namespace Server.Items
 		}
 	}
 	
-	public class KhemetarRogueTurban : BaseHat
+	public class Turban : BaseHat
 	{
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 0; } }
@@ -1364,13 +1364,13 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 40; } }
 
 		[Constructable]
-		public KhemetarRogueTurban() : base( 0x3BAD )
+		public Turban() : base( 0x3BAD )
 		{
 			Weight = 2.0;
 			Name = "Rogue Turban";
 		}
 
-		public KhemetarRogueTurban( Serial serial ) : base( serial )
+		public Turban( Serial serial ) : base( serial )
 		{
 		}
 		
@@ -1457,7 +1457,7 @@ namespace Server.Items
 		}
 	}
 	
-	public class AlyrianRogueMask : BaseHat
+	public class RogueMask : BaseHat
 	{
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 0; } }
@@ -1469,14 +1469,14 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 40; } }
 
 		[Constructable]
-		public AlyrianRogueMask() : base( 0x3BAF )
+		public RogueMask() : base( 0x3BAF )
 		{
 			Weight = 1.0;
 			Name = "Rogue Mask";
 			Layer = Layer.Earrings;
 		}
 
-		public AlyrianRogueMask( Serial serial ) : base( serial )
+		public RogueMask( Serial serial ) : base( serial )
 		{
 		}
 		
@@ -1508,7 +1508,7 @@ namespace Server.Items
 		}
 	}
 	
-	public class TyreanRogueMask : BaseHat
+	public class CeremonialMask : BaseHat
 	{
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 0; } }
@@ -1520,13 +1520,13 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 40; } }
 
 		[Constructable]
-		public TyreanRogueMask() : base( 0x3B2E )
+		public CeremonialMask() : base( 0x3B2E )
 		{
 			Weight = 1.0;
 			Name = "Rogue Mask";
 		}
 
-		public TyreanRogueMask( Serial serial ) : base( serial )
+		public CeremonialMask( Serial serial ) : base( serial )
 		{
 		}
 		
@@ -1543,7 +1543,7 @@ namespace Server.Items
 		}
 	}
 	
-	public class MhordulRogueMask : BaseHat
+	public class ExecutionerMask : BaseHat
 	{
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 0; } }
@@ -1555,13 +1555,13 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 40; } }
 
 		[Constructable]
-		public MhordulRogueMask() : base( 0x3BAE )
+		public ExecutionerMask() : base( 0x3BAE )
 		{
 			Weight = 1.0;
 			Name = "Rogue Mask";
 		}
 
-		public MhordulRogueMask( Serial serial ) : base( serial )
+		public ExecutionerMask( Serial serial ) : base( serial )
 		{
 		}
 		
@@ -1683,7 +1683,7 @@ namespace Server.Items
 		}
 	}
 	
-	public class TyreanCrown : BaseHat
+	public class MajesticCrown : BaseHat
 	{
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 0; } }
@@ -1695,13 +1695,13 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 40; } }
 
 		[Constructable]
-		public TyreanCrown() : base( 0x3BEE )
+		public MajesticCrown() : base( 0x3BEE )
 		{
 			Weight = 1.0;
-			Name = "Tyrean Crown";
+			Name = "majestic crown";
 		}
 
-		public TyreanCrown( Serial serial ) : base( serial )
+		public MajesticCrown( Serial serial ) : base( serial )
 		{
 		}
 		

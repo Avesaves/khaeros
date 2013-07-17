@@ -6,7 +6,7 @@ namespace Server.Items
 	public class BaseLeatherShoes : BaseArmor
 	{
 		public override int BaseBluntResistance{ get{ return 3; } }
-		public override int BaseSlashingResistance{ get{ return 0; } }
+		public override int BaseSlashingResistance{ get{ return 1; } }
 		public override int BasePiercingResistance{ get{ return 0; } }
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 4; } }

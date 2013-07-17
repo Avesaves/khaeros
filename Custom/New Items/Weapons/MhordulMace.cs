@@ -4,9 +4,9 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class MhordulMace : BaseBashing
+	public class BarbarianMace : BaseBashing
 	{
-		public override string NameType{ get{ return "Mhordul Mace"; } }
+		public override string NameType{ get{ return "barbarian mace"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ConcussionBlow; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.Disarm; } }
@@ -29,15 +29,15 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 70; } }
 
 		[Constructable]
-		public MhordulMace() : base( 0x3DF3 )
+		public BarbarianMace() : base( 0x3DF3 )
 		{
 			Weight = 7.0;
-			Name = "Mhordul Mace";
+			Name = "barbarian mace";
 			AosElementDamages.Blunt = 90;
 			AosElementDamages.Piercing = 10;
 		}
 
-		public MhordulMace( Serial serial ) : base( serial )
+		public BarbarianMace( Serial serial ) : base( serial )
 		{
 		}
 

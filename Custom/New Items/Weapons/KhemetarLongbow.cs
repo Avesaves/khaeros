@@ -5,9 +5,9 @@ using Server.Mobiles;
 
 namespace Server.Items
 {
-	public class KhemetarLongbow : BaseRanged
+	public class Hijazi : BaseRanged
 	{
-		public override string NameType{ get{ return "Khemetar Longbow"; } }
+		public override string NameType{ get{ return "hijazi"; } }
 		
 		public override int EffectID{ get{ return 0xF42; } }
 		public override Type AmmoType{ get{ return typeof( Arrow ); } }
@@ -39,14 +39,14 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.ShootBow; } }
 
 		[Constructable]
-		public KhemetarLongbow() : base( 0x3DF8 )
+		public Hijazi() : base( 0x3DF8 )
 		{
 			Weight = 6.0;
-			Name = "Khemetar Longbow";
+			Name = "hijazi";
 			AosElementDamages.Piercing = 100;
 		}
 
-		public KhemetarLongbow( Serial serial ) : base( serial )
+		public Hijazi( Serial serial ) : base( serial )
 		{
 		}
 

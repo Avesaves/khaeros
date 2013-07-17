@@ -3,7 +3,7 @@ using Server;
 
 namespace Server.Items
 {
-	public class TyreanKiteShield : BaseShield
+	public class DragonKiteShield : BaseShield
 	{
 		public override ArmourWeight ArmourType { get { return ArmourWeight.Heavy; } }
 		
@@ -27,13 +27,13 @@ namespace Server.Items
 		public override int ArmorBase{ get{ return 10; } }
 
 		[Constructable]
-		public TyreanKiteShield() : base( 0x3D6F )
+		public DragonKiteShield() : base( 0x3D6F )
 		{
 			Weight = 6.0;
-			Name = "Tyrean Kite Shield";
+			Name = "dragon kite shield";
 		}
 
-		public TyreanKiteShield( Serial serial ) : base(serial)
+		public DragonKiteShield( Serial serial ) : base(serial)
 		{
 		}
 

@@ -20,10 +20,10 @@ namespace Server.Mobiles
 		{
 			public InternalBuyInfo()
 			{
-				Add( new GenericBuyInfo( typeof( AlyrianGiantBow ), 53, 20, 0x27A5, 0 ) );
-				Add( new GenericBuyInfo( typeof( AzhuranBlowGun ), 20, 20, 0x27AA, 0 ) );
+				Add( new GenericBuyInfo( typeof( WarBow ), 53, 20, 0x27A5, 0 ) );
+				Add( new GenericBuyInfo( typeof( BlowGun ), 20, 20, 0x27AA, 0 ) );
 				Add( new GenericBuyInfo( typeof( Nunchaku ), 35, 20, 0x27AE, 0 ) );
-				Add( new GenericBuyInfo( typeof( AzhuranBlowGunDarts ), 3, 20, 0x2806, 0 ) );
+				Add( new GenericBuyInfo( typeof( BlowGunDarts ), 3, 20, 0x2806, 0 ) );
 				Add( new GenericBuyInfo( typeof( Bokuto ), 21, 20, 0x27A8, 0 ) );
 			}
 		}
@@ -32,10 +32,10 @@ namespace Server.Mobiles
 		{
 			public InternalSellInfo()
 			{
-				Add( typeof( AlyrianGiantBow ), 26 );
-				Add( typeof( AzhuranBlowGun ), 10 );
+				Add( typeof( WarBow ), 26 );
+				Add( typeof( BlowGun ), 10 );
 				Add( typeof( Nunchaku ), 17 );
-				Add( typeof( AzhuranBlowGunDarts ), 1 );
+				Add( typeof( BlowGunDarts ), 1 );
 				Add( typeof( Bokuto ), 10 );
 			}
 		}

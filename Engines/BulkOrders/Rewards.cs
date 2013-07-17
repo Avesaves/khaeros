@@ -269,9 +269,9 @@ namespace Server.Engines.BulkOrders
 
 				// Weapons
 				new RewardType( 200, typeof( Bardiche ), typeof( Halberd ) ),
-				new RewardType( 300, typeof( Dagger ), typeof( ShortSpear ), typeof( Spear ), typeof( MhordulWarFork ), typeof( Kryss ) ),	//OSI put the dagger in there.  Odd, ain't it.
-				new RewardType( 350, typeof( Axe ), typeof( BattleAxe ), typeof( TyreanDoubleAxe ), typeof( AzhuranAxe ), typeof( LargeBattleAxe ), typeof( TwoHandedAxe ) ),
-				new RewardType( 350, typeof( Broadsword ), typeof( Cutlass ), typeof( Katana ), typeof( Longsword ), typeof( KhemetarScimitar ), typeof( ThinLongsword ), typeof( TyreanBroadsword ) ),
+				new RewardType( 300, typeof( Dagger ), typeof( ShortSpear ), typeof( Spear ), typeof( WarFork ), typeof( Kryss ) ),	//OSI put the dagger in there.  Odd, ain't it.
+				new RewardType( 350, typeof( Axe ), typeof( BattleAxe ), typeof( BeardedDoubleAxe ), typeof( HaftedAxe ), typeof( LargeBattleAxe ), typeof( TwoHandedAxe ) ),
+				new RewardType( 350, typeof( Broadsword ), typeof( Cutlass ), typeof( Katana ), typeof( Longsword ), typeof( Scimitar ), typeof( ThinLongsword ), typeof( Broadsword ) ),
 				new RewardType( 350, typeof( WarAxe ), typeof( HammerPick ), typeof( Mace ), typeof( Maul ), typeof( WarHammer ), typeof( WarMace ) )
 			};
 

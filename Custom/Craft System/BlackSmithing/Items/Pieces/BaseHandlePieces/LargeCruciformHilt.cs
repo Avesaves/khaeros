@@ -75,8 +75,8 @@ namespace Server.Items
             m_Blade = blade;
 
             from.SendMessage("Please type the code for the kind of sword you would like to make:");
-            from.SendMessage(" 1 - Alyrian Claymore ");
-            from.SendMessage(" 2 - Alyrian Longsword ");
+            from.SendMessage(" 1 - claymore ");
+            from.SendMessage(" 2 - arming sword ");
         }
 
         public override void OnResponse(Mobile from, string text)
@@ -97,18 +97,18 @@ namespace Server.Items
                 switch (index)
                 {
                     case 1:
-                        MakeAlyrianClaymore(from);
+                        MakeClaymore(from);
                         break;
                     case 2:
-                        MakeAlyrianLongsword(from);
+                        MakeArmingSword(from);
                         break;
                 }
             }
         }
 
-        public void MakeAlyrianClaymore(Mobile from)
+        public void MakeClaymore(Mobile from)
         {
-            AlyrianClaymore weapon = new AlyrianClaymore();
+            Claymore weapon = new Claymore();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -149,9 +149,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeAlyrianLongsword(Mobile from)
+        public void MakeArmingSword(Mobile from)
         {
-            AlyrianLongsword weapon = new AlyrianLongsword();
+            ArmingSword weapon = new ArmingSword();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;

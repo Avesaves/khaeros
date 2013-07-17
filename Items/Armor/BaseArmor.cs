@@ -2340,8 +2340,8 @@ namespace Server.Items
                 this.Delete();
             }
 
-            if ((this is MhordulBoneChest || this is MhordulBoneArms || this is MhordulBoneLegs || this is MhordulBoneGloves
-               || this is MhordulBoneHelm || this is MhordulHornedBoneHelm || this is MhordulHornedSkullHelm)
+            if ((this is BoneChest || this is BoneArms || this is BoneLegs || this is BoneGloves
+               || this is BoneHelm || this is MhordulHornedBoneHelm || this is MhordulHornedSkullHelm)
                && ((PlayerMobile)from).Feats.GetFeatLevel(FeatList.Bone) < 3)
             {
                 from.SendMessage(60, "You do not know how to use bone and have ruined your craft.");

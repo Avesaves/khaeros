@@ -6,11 +6,11 @@ using Server.Mobiles;
 namespace Server.Items
 {
 	[FlipableAttribute( 0x26C0, 0x26CA )]
-	public class VhalurianLance : BasePoleArm
+	public class Lance : BasePoleArm
 	{
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.Dismount; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ConcussionBlow; } }
-		public override string NameType { get { return "Vhalurian Lance"; } }
+		public override string NameType { get { return "lance"; } }
 
 		public override int AosStrengthReq{ get{ return 75; } }
 		public override double OverheadPercentage{ get{ return 0.1; } }
@@ -42,16 +42,16 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.Pierce1H; } }
 
 		[Constructable]
-		public VhalurianLance() : base( 0x26C0 )
+		public Lance() : base( 0x26C0 )
 		{
 			Weight = 10.0;
 			AosElementDamages.Piercing = 70;
 			AosElementDamages.Blunt = 30;
 			MaxRange = 2;
-			Name = "Vhalurian Lance";
+			Name = "lance";
 		}
 
-		public VhalurianLance( Serial serial ) : base( serial )
+		public Lance( Serial serial ) : base( serial )
 		{
 		}
 

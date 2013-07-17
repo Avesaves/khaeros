@@ -4,7 +4,7 @@ using Server.Items;
 namespace Server.Items
 {
 	[FlipableAttribute( 0x1410, 0x1417 )]
-	public class AlyrianChainArms : BaseArmor
+	public class SplintedMailArms : BaseArmor
 	{
         public override ArmourWeight ArmourType { get { return ArmourWeight.Medium; } }
 
@@ -30,13 +30,13 @@ namespace Server.Items
 		public override ArmorMaterialType MaterialType{ get{ return ArmorMaterialType.Plate; } }
 
 		[Constructable]
-		public AlyrianChainArms() : base( 0x3BD9 )
+		public SplintedMailArms() : base( 0x3BD9 )
 		{
 			Weight = 5.0;
-			Name = "Alyrian Chain Arms";
+			Name = "splinted mail Arms";
 		}
 
-		public AlyrianChainArms( Serial serial ) : base( serial )
+		public SplintedMailArms( Serial serial ) : base( serial )
 		{
 		}
 		

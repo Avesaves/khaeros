@@ -22,7 +22,7 @@ namespace Server.Mobiles
 			{
 				Add( new GenericBuyInfo( typeof( Bokuto ), 21, 20, 0x27A8, 0 ) );
 				Add( new GenericBuyInfo( typeof( SpikedClub ), 43, 20, 0x27A6, 0 ) );
-				Add( new GenericBuyInfo( typeof( AzhuranBlowGun ), 20, 20, 0x27AA, 0 ) );
+				Add( new GenericBuyInfo( typeof( BlowGun ), 20, 20, 0x27AA, 0 ) );
 				Add( new GenericBuyInfo( typeof( BambooFlute ), 21, 20, 0x2805, 0 ) );
 				Add( new GenericBuyInfo( typeof( BambooFlute ), 21, 20, 0x2805, 0 ) );
 			}
@@ -33,7 +33,7 @@ namespace Server.Mobiles
 			public InternalSellInfo()
 			{
 				Add( typeof( SpikedClub ), 21 );
-				Add( typeof( AzhuranBlowGun ), 10 );
+				Add( typeof( BlowGun ), 10 );
 				Add( typeof( BambooFlute ), 10 );
 				Add( typeof( Bokuto ), 10 );
 			}

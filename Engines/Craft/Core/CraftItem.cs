@@ -357,7 +357,7 @@ namespace Server.Engines.Craft
 					typeof( DragonBardingDeed ),
 					typeof( BaseTool ),
 					typeof( BaseHarvestTool ),
-					typeof( AzhuranBlowGunDarts ), typeof( Shuriken ),
+					typeof( BlowGunDarts ), typeof( Shuriken ),
 					typeof( Spellbook ), typeof( Runebook )
 				};
 		#endregion

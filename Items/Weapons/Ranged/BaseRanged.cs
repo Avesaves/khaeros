@@ -132,7 +132,7 @@ namespace Server.Items
             else
                 waitTime = 1;
 
-            if (this is VhalurianRepeatingCrossbow)
+            if (this is RepeatingCrossbow)
             {
                 if (this.Quality == WeaponQuality.Masterwork)
                     waitTime = 0.0;

@@ -3,7 +3,7 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class AzhuranLeatherLegs : BaseArmor
+	public class SoftLeatherLegs : BaseArmor
 	{
 		public override int BaseBluntResistance{ get{ return 10; } }
 		public override int BaseSlashingResistance{ get{ return 4; } }
@@ -28,13 +28,13 @@ namespace Server.Items
 		public override ArmorMeditationAllowance DefMedAllowance{ get{ return ArmorMeditationAllowance.All; } }
 
 		[Constructable]
-		public AzhuranLeatherLegs() : base( 0x3BF0 )
+		public SoftLeatherLegs() : base( 0x3BF0 )
 		{
 			Weight = 4.0;
-			Name = "Azhuran Leather Legs";
+			Name = "soft leather Legs";
 		}
 
-		public AzhuranLeatherLegs( Serial serial ) : base( serial )
+		public SoftLeatherLegs( Serial serial ) : base( serial )
 		{
 		}
 		

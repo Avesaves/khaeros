@@ -75,7 +75,7 @@ namespace Server.Items
                 from.Prompt = new LHMaceHeadPrompt(from, m_Hilt, (MaceHead)m_Blade);
             else if (m_Blade is ShortBlade && ((PlayerMobile)from).Nation == Nation.Mhordul)
             {
-                MhordulMace weapon = new MhordulMace();
+                BarbarianMace weapon = new BarbarianMace();
                 weapon.NewCrafting = true;
                 weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
                 weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -138,12 +138,12 @@ namespace Server.Items
                 from.SendMessage(" 1 - Hand Scythe ");
 
                 if (((PlayerMobile)from).Nation == Nation.Azhuran)
-                    from.SendMessage(" 2 - Azhuran Hooked Club ");
+                    from.SendMessage(" 2 - hooked club ");
                 if (((PlayerMobile)from).Nation == Nation.Khemetar)
                 {
-                    from.SendMessage(" 3 - Khemetar Heavy Khopesh ");
-                    from.SendMessage(" 4 - Khemetar Falchion ");
-                    from.SendMessage(" 5 - Khemetar Large Crescent Sword ");
+                    from.SendMessage(" 3 - heavy khopesh ");
+                    from.SendMessage(" 4 - falchion ");
+                    from.SendMessage(" 5 - talwar ");
                 }
                 if (((PlayerMobile)from).Nation == Nation.Mhordul)
                     from.SendMessage(" 6 - Mhordul Warfork ");
@@ -171,20 +171,20 @@ namespace Server.Items
                         MakeHandScythe(from);
                         break;
                     case 2:
-                        MakeAzhuranHookedClub(from);
+                        MakeHookedClub(from);
                         break;
                     case 3:
-                        MakeKhemetarHeavyKhopesh(from);
+                        MakeHeavyKhopesh(from);
                         break;
                     case 4:
-                        MakeKhemetarFalchion(from);
+                        MakeFalchion(from);
                         break;
                     case 5:
-                        MakeKhemetarLargeCrescentSword(from);
+                        MakeTalwar(from);
                         break;
                     case 6:
                         from.SendMessage("Add another curved blade");
-                        from.Target = new MhordulWarForkTarget(m_Hilt, m_Blade);
+                        from.Target = new WarForkTarget(m_Hilt, m_Blade);
                         break;
                 }
             }
@@ -233,9 +233,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeAzhuranHookedClub(Mobile from)
+        public void MakeHookedClub(Mobile from)
         {
-            AzhuranHookedClub weapon = new AzhuranHookedClub();
+            HookedClub weapon = new HookedClub();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -276,9 +276,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeKhemetarHeavyKhopesh(Mobile from)
+        public void MakeHeavyKhopesh(Mobile from)
         {
-            KhemetarHeavyKhopesh weapon = new KhemetarHeavyKhopesh();
+            HeavyKhopesh weapon = new HeavyKhopesh();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -319,9 +319,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeKhemetarFalchion(Mobile from)
+        public void MakeFalchion(Mobile from)
         {
-            KhemetarFalchion weapon = new KhemetarFalchion();
+            Falchion weapon = new Falchion();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -362,9 +362,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeKhemetarLargeCrescentSword(Mobile from)
+        public void MakeTalwar(Mobile from)
         {
-            KhemetarLargeCrescentSword weapon = new KhemetarLargeCrescentSword();
+            Talwar weapon = new Talwar();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -406,12 +406,12 @@ namespace Server.Items
         }
     }
 
-    public class MhordulWarForkTarget : Target
+    public class WarForkTarget : Target
     {
         private LargeHandle m_Hilt;
         private CurvedBlade m_Blade;
 
-        public MhordulWarForkTarget(LargeHandle hilt, CurvedBlade blade)
+        public WarForkTarget(LargeHandle hilt, CurvedBlade blade)
             : base(2, false, TargetFlags.None)
         {
             m_Hilt = hilt;
@@ -425,7 +425,7 @@ namespace Server.Items
 
             CurvedBlade xtraBlade = targeted as CurvedBlade;
 
-            MhordulWarFork weapon = new MhordulWarFork();
+            WarFork weapon = new WarFork();
             weapon.NewCrafting = true;
             int quality = (int)(m_Blade.Damage * 0.55 + xtraBlade.Damage * 0.55);
             weapon.QualityDamage = m_Hilt.Damage + quality;
@@ -497,9 +497,9 @@ namespace Server.Items
                 from.SendMessage(" 5 - Tyrean BattleHammer ");
             if (((PlayerMobile)from).Nation == Nation.Vhalurian)
             {
-                from.SendMessage(" 6 - Vhalurian Heavy Maul ");
-                from.SendMessage(" 7 - Vhalurian Maul ");
-				from.SendMessage(" 8 - Vhalurian War Hammer ");
+                from.SendMessage(" 6 - heavy maul ");
+                from.SendMessage(" 7 - two-handed maul ");
+				from.SendMessage(" 8 - horseman's war hammer ");
             }
         }
 
@@ -524,23 +524,23 @@ namespace Server.Items
                     case 2: MakeLightHammer(from); break;
                     case 3: MakeWarHammer(from); break;
                     case 4:
-                        MakeAlyrianBattleHammer(from);
+                        MakeBattleHammer(from);
                         break;
                     case 5:
-                        MakeTyreanBattleHammer(from);
+                        MakeHeavyBattleHammer(from);
                         break;
                     case 6: goto case 7;                       
                     case 7:
-                        MakeVhalurianMaul(from, index);
+                        MakeTwoHandedMaul(from, index);
                         break;
-					case 8: MakeVhalurianWarHammer(from); break;
+					case 8: MakeHorsemanWarhammer(from); break;
                 }
             }
         }
 		
-		public void MakeVhalurianWarHammer(Mobile from)
+		public void MakeHorsemanWarhammer(Mobile from)
 		{
-			VhalurianWarHammer weapon = new VhalurianWarHammer();
+			HorsemanWarhammer weapon = new HorsemanWarhammer();
 			weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -710,9 +710,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeAlyrianBattleHammer(Mobile from)
+        public void MakeBattleHammer(Mobile from)
         {
-            AlyrianBattleHammer weapon = new AlyrianBattleHammer();
+            BattleHammer weapon = new BattleHammer();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -753,9 +753,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeTyreanBattleHammer(Mobile from)
+        public void MakeHeavyBattleHammer(Mobile from)
         {
-            TyreanBattleHammer weapon = new TyreanBattleHammer();
+            HeavyBattleHammer weapon = new HeavyBattleHammer();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -796,11 +796,11 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeVhalurianMaul(Mobile from, int index)
+        public void MakeTwoHandedMaul(Mobile from, int index)
         {
             if (index == 3)
             {
-                VhalurianHeavyMaul weapon = new VhalurianHeavyMaul();
+                HeavyMaul weapon = new HeavyMaul();
                 weapon.NewCrafting = true;
                 weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
                 weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -842,7 +842,7 @@ namespace Server.Items
             }
             else
             {
-                VhalurianMaul weapon = new VhalurianMaul();
+                TwoHandedMaul weapon = new TwoHandedMaul();
                 weapon.NewCrafting = true;
                 weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
                 weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -907,11 +907,11 @@ namespace Server.Items
                 from.SendMessage(" 1 - Maul ");
 
                 if (((PlayerMobile)from).Nation == Nation.Khemetar)
-                    from.SendMessage(" 2 - Khemetar War Mace ");
+                    from.SendMessage(" 2 - macana ");
                 if (((PlayerMobile)from).Nation == Nation.Tyrean)
-                    from.SendMessage(" 3 - Tyrean War Mace ");
+                    from.SendMessage(" 3 - heavy war mace ");
                 if (((PlayerMobile)from).Nation == Nation.Vhalurian)
-                    from.SendMessage(" 4 - Vhalurian Mace ");
+                    from.SendMessage(" 4 - horseman's mace ");
             }
         }
 
@@ -933,9 +933,9 @@ namespace Server.Items
                 switch (index)
                 {
                     case 1: MakeMaul(from); break;
-                    case 2: MakeKhemetarWarMace(from); break;
-                    case 3: MakeTyreanWarMace(from); break;
-                    case 4: MakeVhalurianMace(from); break;
+                    case 2: MakeMacana(from); break;
+                    case 3: MakeHeavyWarMace(from); break;
+                    case 4: MakeHorsemanMace(from); break;
                 }
             }
         }
@@ -983,9 +983,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeKhemetarWarMace(Mobile from)
+        public void MakeMacana(Mobile from)
         {
-            KhemetarWarMace weapon = new KhemetarWarMace();
+            Macana weapon = new Macana();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -1026,9 +1026,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeTyreanWarMace(Mobile from)
+        public void MakeHeavyWarMace(Mobile from)
         {
-            TyreanWarMace weapon = new TyreanWarMace();
+            HeavyWarMace weapon = new HeavyWarMace();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -1069,9 +1069,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeVhalurianMace(Mobile from)
+        public void MakeHorsemanMace(Mobile from)
         {
-            VhalurianMace weapon = new VhalurianMace();
+            HorsemanMace weapon = new HorsemanMace();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -1133,18 +1133,18 @@ namespace Server.Items
             
 
             if (((PlayerMobile)from).Nation == Nation.Alyrian)
-                from.SendMessage(" 3 - Alyrian Two-Handed Axe ");
+                from.SendMessage(" 3 - heavy double axe ");
             if (((PlayerMobile)from).Nation == Nation.Khemetar)
-                from.SendMessage(" 4 - Khemetar Axe ");
+                from.SendMessage(" 4 - tabarzin ");
             if (((PlayerMobile)from).Nation == Nation.Mhordul)
             {
-                from.SendMessage(" 5 - Mhordul Axe ");
-                from.SendMessage(" 6 - Mhordul Heavy Battle Axe ");
+                from.SendMessage(" 5 - barbarian's axe ");
+                from.SendMessage(" 6 - barbarian's heavy axe ");
             }
             if (((PlayerMobile)from).Nation == Nation.Tyrean)
             {
-                from.SendMessage(" 7 - Tyrean Winged Axe ");
-                from.SendMessage(" 8 - Tyrean Double Axe ");
+                from.SendMessage(" 7 - winged axe ");
+                from.SendMessage(" 8 - bearded double axe ");
             }
             
         }
@@ -1168,12 +1168,12 @@ namespace Server.Items
                 {
                     case 1: MakeLargeBattleAxe(from); break;
                     case 2: MakeTwoHandedAxe(from); break;
-                    case 3: MakeAlyrianTwoHandedAxe(from); break;
-                    case 4: MakeKhemetarAxe(from); break;
-                    case 5: MakeMhordulAxe(from); break;
-                    case 6: MakeMhordulHeavyBattleAxe(from); break;
-                    case 7: MakeTyreanWingedAxe(from); break;
-                    case 8: MakeTyreanDoubleAxe(from); break;                    
+                    case 3: MakeHeavyDoubleAxe(from); break;
+                    case 4: MakeTabarzin(from); break;
+                    case 5: MakeBarbarianAxe(from); break;
+                    case 6: MakeBarbarianHeavyAxe(from); break;
+                    case 7: MakeWingedAxe(from); break;
+                    case 8: MakeBeardedDoubleAxe(from); break;                    
                 }
             }
         }
@@ -1264,9 +1264,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeAlyrianTwoHandedAxe(Mobile from)
+        public void MakeHeavyDoubleAxe(Mobile from)
         {
-            AlyrianTwoHandedAxe weapon = new AlyrianTwoHandedAxe();
+            HeavyDoubleAxe weapon = new HeavyDoubleAxe();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -1307,9 +1307,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeKhemetarAxe(Mobile from)
+        public void MakeTabarzin(Mobile from)
         {
-            KhemetarAxe weapon = new KhemetarAxe();
+            Tabarzin weapon = new Tabarzin();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -1350,9 +1350,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeMhordulAxe(Mobile from)
+        public void MakeBarbarianAxe(Mobile from)
         {
-            MhordulAxe weapon = new MhordulAxe();
+            BarbarianAxe weapon = new BarbarianAxe();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -1393,9 +1393,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeMhordulHeavyBattleAxe(Mobile from)
+        public void MakeBarbarianHeavyAxe(Mobile from)
         {
-            MhordulHeavyBattleAxe weapon = new MhordulHeavyBattleAxe();
+            BarbarianHeavyAxe weapon = new BarbarianHeavyAxe();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -1436,9 +1436,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeTyreanWingedAxe(Mobile from)
+        public void MakeWingedAxe(Mobile from)
         {
-            TyreanWingedAxe weapon = new TyreanWingedAxe();
+            WingedAxe weapon = new WingedAxe();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -1479,9 +1479,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeTyreanDoubleAxe(Mobile from)
+        public void MakeBeardedDoubleAxe(Mobile from)
         {
-            TyreanDoubleAxe weapon = new TyreanDoubleAxe();
+            BeardedDoubleAxe weapon = new BeardedDoubleAxe();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -1545,17 +1545,17 @@ namespace Server.Items
             from.SendMessage(" 3 - War Axe ");
 
             if (((PlayerMobile)from).Nation == Nation.Azhuran)
-                from.SendMessage(" 4 - Azhuran Axe ");
+                from.SendMessage(" 4 - hafted axe ");
             if (((IKhaerosMobile)from).Feats.GetFeatLevel(FeatList.Bone) > 2)
-                from.SendMessage(" 5 - Mhordul Bone Axe - (Requires 10 bones) ");
+                from.SendMessage(" 5 - bone Axe - (Requires 10 bones) ");
             if (((PlayerMobile)from).Nation == Nation.Tyrean)
             {
-                from.SendMessage(" 6 - Tyrean Ornate Axe ");
-                from.SendMessage(" 7 - Tyrean Throwing Axe ");
-                from.SendMessage(" 8 - Tyrean War Axe ");
+                from.SendMessage(" 6 - ornate axe ");
+                from.SendMessage(" 7 - throwing axe ");
+                from.SendMessage(" 8 - broad axe ");
             }
             if (((PlayerMobile)from).Nation == Nation.Vhalurian)
-                from.SendMessage(" 9 - Vhalurian War Axe ");
+                from.SendMessage(" 9 - horseman's axe ");
         }
 
         public override void OnResponse(Mobile from, string text)
@@ -1578,12 +1578,12 @@ namespace Server.Items
                     case 1: MakeAxe(from); break;
                     case 2: MakeBattleAxe(from); break;
                     case 3: MakeWarAxe(from); break;
-                    case 4: MakeAzhuranAxe(from); break;
-                    case 5: MakeMhordulBoneAxe(from); break;
-                    case 6: MakeTyreanOrnateAxe(from); break;
-                    case 7: MakeTyreanThrowingAxe(from); break;
-                    case 8: MakeTyreanWarAxe(from); break;
-                    case 9: MakeVhalurianWarAxe(from); break;
+                    case 4: MakeHaftedAxe(from); break;
+                    case 5: MakeBoneAxe(from); break;
+                    case 6: MakeOrnateAxe(from); break;
+                    case 7: MakeThrowingAxe(from); break;
+                    case 8: MakeBroadAxe(from); break;
+                    case 9: MakeHorsemanAxe(from); break;
                 }
             }
         }
@@ -1717,9 +1717,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeAzhuranAxe(Mobile from)
+        public void MakeHaftedAxe(Mobile from)
         {
-            AzhuranAxe weapon = new AzhuranAxe();
+            HaftedAxe weapon = new HaftedAxe();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -1760,11 +1760,11 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeMhordulBoneAxe(Mobile from)
+        public void MakeBoneAxe(Mobile from)
         {
             if (from.Backpack.ConsumeTotal(typeof(Bone), 10))
             {
-                MhordulBoneAxe weapon = new MhordulBoneAxe();
+                BoneAxe weapon = new BoneAxe();
                 weapon.NewCrafting = true;
                 weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage +2;
                 weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed + 4;
@@ -1806,9 +1806,9 @@ namespace Server.Items
             }
         }
 
-        public void MakeTyreanOrnateAxe(Mobile from)
+        public void MakeOrnateAxe(Mobile from)
         {
-            TyreanOrnateAxe weapon = new TyreanOrnateAxe();
+            OrnateAxe weapon = new OrnateAxe();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -1849,9 +1849,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeTyreanThrowingAxe(Mobile from)
+        public void MakeThrowingAxe(Mobile from)
         {
-            TyreanThrowingAxe weapon = new TyreanThrowingAxe();
+            ThrowingAxe weapon = new ThrowingAxe();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -1892,9 +1892,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeTyreanWarAxe(Mobile from)
+        public void MakeBroadAxe(Mobile from)
         {
-            TyreanWarAxe weapon = new TyreanWarAxe();
+            BroadAxe weapon = new BroadAxe();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;
@@ -1935,9 +1935,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeVhalurianWarAxe(Mobile from)
+        public void MakeHorsemanAxe(Mobile from)
         {
-            VhalurianWarAxe weapon = new VhalurianWarAxe();
+            HorsemanAxe weapon = new HorsemanAxe();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;

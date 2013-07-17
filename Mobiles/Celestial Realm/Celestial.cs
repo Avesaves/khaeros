@@ -61,7 +61,7 @@ namespace Server.Mobiles
 
 			VirtualArmor = 50;
 			
-			TyreanHalfPlateChest armour = new TyreanHalfPlateChest();
+			HalfPlateChest armour = new HalfPlateChest();
 			armour.Name = "Celestial Armour";
 			armour.Resource = CraftResource.Starmetal;
 			armour.Hue = 2104;

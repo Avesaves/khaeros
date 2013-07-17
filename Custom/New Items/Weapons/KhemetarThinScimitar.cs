@@ -4,9 +4,9 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class KhemetarThinScimitar : BaseSword
+	public class Shamshir : BaseSword
 	{
-		public override string NameType{ get{ return "Khemetar Thin Scimitar"; } }
+		public override string NameType{ get{ return "shamshir"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.DoubleStrike; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ArmorIgnore; } }
@@ -34,14 +34,14 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 90; } }
 
 		[Constructable]
-		public KhemetarThinScimitar() : base( 0x3CFB )
+		public Shamshir() : base( 0x3CFB )
 		{
 			Weight = 5.0;
-			Name = "Khemetar Thin Scimitar";
+			Name = "shamshir";
 			AosElementDamages.Slashing = 100;
 		}
 
-		public KhemetarThinScimitar( Serial serial ) : base( serial )
+		public Shamshir( Serial serial ) : base( serial )
 		{
 		}
 

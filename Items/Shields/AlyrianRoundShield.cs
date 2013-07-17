@@ -3,7 +3,7 @@ using Server;
 
 namespace Server.Items
 {
-	public class AlyrianRoundShield : BaseShield
+	public class RoundShield : BaseShield
 	{
 		public override ArmourWeight ArmourType { get { return ArmourWeight.Medium; } }
 		
@@ -27,13 +27,13 @@ namespace Server.Items
 		public override int ArmorBase{ get{ return 10; } }
 
 		[Constructable]
-		public AlyrianRoundShield() : base( 0x3D53 )
+		public RoundShield() : base( 0x3D53 )
 		{
 			Weight = 6.0;
-			Name = "Alyrian Round Shield";
+			Name = "round shield";
 		}
 
-		public AlyrianRoundShield( Serial serial ) : base(serial)
+		public RoundShield( Serial serial ) : base(serial)
 		{
 		}
 

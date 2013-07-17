@@ -5,9 +5,9 @@ using Server.Mobiles;
 
 namespace Server.Items
 {
-	public class AzhuranShortbow : BaseRanged
+	public class ShortBow : BaseRanged
 	{
-		public override string NameType{ get{ return "Azhuran Shortbow"; } }
+		public override string NameType{ get{ return "shortbow"; } }
 		public override int EffectID{ get{ return 0xF42; } }
 		public override Type AmmoType{ get{ return typeof( Arrow ); } }
 		public override Item Ammo{ get{ return new Arrow(); } }
@@ -37,14 +37,14 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.ShootBow; } }
 
 		[Constructable]
-		public AzhuranShortbow() : base( 0x3E11 )
+		public ShortBow() : base( 0x3E11 )
 		{
 			Weight = 5.0;
-			Name = "Azhuran Shortbow";
+			Name = "shortbow";
 			AosElementDamages.Piercing = 100;
 		}
 
-		public AzhuranShortbow( Serial serial ) : base( serial )
+		public ShortBow( Serial serial ) : base( serial )
 		{
 		}
 

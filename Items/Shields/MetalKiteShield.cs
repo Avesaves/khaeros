@@ -3,7 +3,7 @@ using Server;
 
 namespace Server.Items
 {
-	public class VhalurianMetalKiteShield : BaseShield, IDyable
+	public class KiteShield : BaseShield, IDyable
 	{
 		public override ArmourWeight ArmourType { get { return ArmourWeight.Heavy; } }
 		
@@ -27,13 +27,13 @@ namespace Server.Items
 		public override int ArmorBase{ get{ return 16; } }
 
 		[Constructable]
-		public VhalurianMetalKiteShield() : base( 0x1B74 )
+		public KiteShield() : base( 0x1B74 )
 		{
 			Weight = 7.0;
-			Name = "Vhalurian Metal Kite Shield";
+			Name = "kite shield";
 		}
 
-		public VhalurianMetalKiteShield( Serial serial ) : base(serial)
+		public KiteShield( Serial serial ) : base(serial)
 		{
 		}
 

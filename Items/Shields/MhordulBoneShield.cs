@@ -3,7 +3,7 @@ using Server;
 
 namespace Server.Items
 {
-	public class MhordulBoneShield : BaseShield, IBoneArmour
+	public class BoneShield : BaseShield, IBoneArmour
 	{
 		public override int SheathedMaleBackID{ get{ return 15162; } }
 		public override int SheathedFemaleBackID{ get{ return 15163; } }
@@ -25,13 +25,13 @@ namespace Server.Items
 		public override int ArmorBase{ get{ return 10; } }
 
 		[Constructable]
-		public MhordulBoneShield() : base( 0x3D2D )
+		public BoneShield() : base( 0x3D2D )
 		{
 			Weight = 6.0;
-			Name = "Mhordul Bone Shield";
+			Name = "bone Shield";
 		}
 
-		public MhordulBoneShield( Serial serial ) : base(serial)
+		public BoneShield( Serial serial ) : base(serial)
 		{
 		}
 

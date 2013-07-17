@@ -6,7 +6,7 @@ namespace Server.Items
 	[FlipableAttribute( 0x13cb, 0x13d2 )]
 	public class LeatherLegs : BaseArmor
 	{
-		public override int BaseBluntResistance{ get{ return 9; } }
+		public override int BaseBluntResistance{ get{ return 10; } }
 		public override int BaseSlashingResistance{ get{ return 4; } }
 		public override int BasePiercingResistance{ get{ return 7; } }
 		public override int BasePhysicalResistance{ get{ return 0; } }

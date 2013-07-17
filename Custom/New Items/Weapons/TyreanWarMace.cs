@@ -5,9 +5,9 @@ using Server.Items;
 namespace Server.Items
 {
 
-	public class TyreanWarMace : BaseBashing
+	public class HeavyWarMace : BaseBashing
 	{
-		public override string NameType{ get{ return "Tyrean War Mace"; } }
+		public override string NameType{ get{ return "heavy war mace"; } }
 		
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ConcussionBlow; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.Disarm; } }
@@ -32,15 +32,15 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 70; } }
 
 		[Constructable]
-		public TyreanWarMace() : base( 0x3DF1 )
+		public HeavyWarMace() : base( 0x3DF1 )
 		{
 			Weight = 9.0;
-			Name = "Tyrean War Mace";
+			Name = "heavy war mace";
 			AosElementDamages.Blunt = 60;
 			AosElementDamages.Piercing = 40;
 		}
 
-		public TyreanWarMace( Serial serial ) : base( serial )
+		public HeavyWarMace( Serial serial ) : base( serial )
 		{
 		}
 

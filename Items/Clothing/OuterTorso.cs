@@ -1542,22 +1542,22 @@ namespace Server.Items
 		}
 	}
 	
-	public class MhordulMedicineManBoneChest : BaseOuterTorso
+	public class MedicineManBoneChest : BaseOuterTorso
 	{
 		[Constructable]
-		public MhordulMedicineManBoneChest() : this( 0 )
+		public MedicineManBoneChest() : this( 0 )
 		{
 		}
 
 		[Constructable]
-		public MhordulMedicineManBoneChest( int hue ) : base( 0x3CA9, hue )
+		public MedicineManBoneChest( int hue ) : base( 0x3CA9, hue )
 		{
 			Weight = 3.0;
 			Name = "Medicine Man Bone Chest";
 			Layer = Layer.MiddleTorso;
 		}
 
-		public MhordulMedicineManBoneChest( Serial serial ) : base( serial )
+		public MedicineManBoneChest( Serial serial ) : base( serial )
 		{
 		}
 

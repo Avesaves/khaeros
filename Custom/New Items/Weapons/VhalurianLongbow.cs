@@ -5,9 +5,9 @@ using Server.Mobiles;
 
 namespace Server.Items
 {
-	public class VhalurianLongbow : BaseRanged
+	public class LongBow : BaseRanged
 	{
-		public override string NameType{ get{ return "Vhalurian Longbow"; } }
+		public override string NameType{ get{ return "longbow"; } }
 		
 		public override int EffectID{ get{ return 0xF42; } }
 		public override Type AmmoType{ get{ return typeof( Arrow ); } }
@@ -38,14 +38,14 @@ namespace Server.Items
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.ShootBow; } }
 
 		[Constructable]
-		public VhalurianLongbow() : base( 0x3E1C )
+		public LongBow() : base( 0x3E1C )
 		{
 			Weight = 7.0;
-			Name = "Vhalurian Longbow";
+			Name = "longbow";
 			AosElementDamages.Piercing = 100;
 		}
 
-		public VhalurianLongbow( Serial serial ) : base( serial )
+		public LongBow( Serial serial ) : base( serial )
 		{
 		}
 

@@ -101,7 +101,7 @@ namespace Server.Mobiles
 			helm.Hue = 2591;
 			helm.ItemID = 15380;
 			
-			AzhuranBladedStaff staff = new AzhuranBladedStaff();
+			Glaive staff = new Glaive();
 			staff.Resource = CraftResource.Bronze;
 								
 			EquipItem( chest ); 

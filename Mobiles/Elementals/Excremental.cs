@@ -98,7 +98,7 @@ namespace Server.Mobiles
                             {
                                 case 1:
                                     {
-                                        AzhuranBladedStaff artifact = new AzhuranBladedStaff();
+                                        Glaive artifact = new Glaive();
                                         artifact.QualityAccuracy = 3;
                                         artifact.Quality = WeaponQuality.Extraordinary;
                                         artifact.Resource = CraftResource.Obsidian;
