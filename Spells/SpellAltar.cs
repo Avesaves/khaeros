@@ -31,6 +31,7 @@ namespace Khaeros.Scripts.Khaeros.Spells
         {
 			if (PlayerIsInRange(e))
 			{
+                e.Mobile.SendMessage("You talked in range!");
 			    string speech = e.Speech;
 			    Mobile buyer = e.Mobile;
 			    Container backpack = buyer.Backpack;
