@@ -1,11 +1,30 @@
 ﻿using Server;
-using Server.Items;
 using Server.Mobiles;
 
 namespace Khaeros.Scripts.Khaeros.Mobiles.Soldiers
 {
     public class Guard : Soldier
     {
+        [Constructable]
+        public Guard()
+        {}
+
+        public Guard(Serial serial) : base(serial){}
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+
+            writer.Write((int)0); // version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+
+            int version = reader.ReadInt();
+        }
+
         public override void OnSpeech(SpeechEventArgs e)
         {
             BaseCreature creature = this.AIObject.m_Mobile;
