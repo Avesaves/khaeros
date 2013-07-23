@@ -233,6 +233,7 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Soldiers
                         }
                     }
                 }
+                base.OnSpeech(e);
             }
             else
             {
@@ -275,6 +276,7 @@ namespace Khaeros.Scripts.Khaeros.Mobiles.Soldiers
                         }
                     }
                 }
+                base.OnSpeech(e);
             }
         }
     }
