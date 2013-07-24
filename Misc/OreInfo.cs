@@ -624,7 +624,7 @@ namespace Server.Items
                 new CraftResourceInfo( 0x579, 1053102, "Steel",	    	CraftAttributeInfo.Steel,   	CraftResource.Steel,			typeof( SteelIngot ),	    typeof( SteelOre ),		    typeof( SteelGranite ) ),
 				new CraftResourceInfo( 0x836, 1053101, "Tin",	    	CraftAttributeInfo.Tin,   	    CraftResource.Tin,			    typeof( TinIngot ),	        typeof( TinOre ),		    typeof( SteelGranite ) ),
 				new CraftResourceInfo( 0xB10, 1053108, "Starmetal",	    CraftAttributeInfo.Starmetal,   CraftResource.Starmetal,		typeof( StarmetalIngot ),   typeof( StarmetalOre ),		typeof( Granite ) ),
-				new CraftResourceInfo( 0xA6D, 1053110, "Electrum",			CraftAttributeInfo.Electrum,		CraftResource.Electrum,				typeof( ElectrumIngot ),		typeof( ElectrumOre )			typeof( ElectrumGranite ) )
+				new CraftResourceInfo( 0xA6D, 1053110, "Electrum",			CraftAttributeInfo.Electrum,		CraftResource.Electrum,				typeof( ElectrumIngot ),		typeof( ElectrumOre ),			typeof( ElectrumGranite ) )
 			};
 
 		private static CraftResourceInfo[] m_ScaleInfo = new CraftResourceInfo[]
