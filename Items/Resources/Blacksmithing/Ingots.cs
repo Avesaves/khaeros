@@ -110,7 +110,17 @@ namespace Server.Items
 						from.AddToBackpack( new CopperOre( m_Ingot.Amount / 2 ) );
 						from.AddToBackpack( new TinOre( m_Ingot.Amount / 2 ) );
 					}
-					
+					if( m_Ingot is ElectrumIngot )
+					{
+						if( m_Ingot.Amount < 2 )
+						{
+							from.SendMessage( "Not enough Electrum to smelt." );
+							return;
+						}
+						
+						from.AddToBackpack( new GoldOre( m_Ingot.Amount / 2 ) );
+						from.AddToBackpack( new SilverOre( m_Ingot.Amount / 2 ) );
+					}
 					if( m_Ingot is SteelIngot )
 						from.AddToBackpack( new SteelOre( m_Ingot.Amount ) );
 					
@@ -171,6 +181,7 @@ namespace Server.Items
 						case 6: info = OreInfo.Steel; break;
 						case 7: info = OreInfo.Tin; break;
 						case 8: info = OreInfo.Starmetal; break;
+						case 9: info = OreInfo.Electrum; break;
 						default: info = null; break;
 					}
 
@@ -189,6 +200,8 @@ namespace Server.Items
 				
 				if( this.Hue == 2418 )
 					this.Resource = CraftResource.Bronze;
+				if( this.Hue == 2669 )
+					this.Resource = CraftResource.Electrum;
 			}
 		}
 
@@ -447,7 +460,40 @@ namespace Server.Items
 				Weight = 2.0;
 		}
 	}
+	[FlipableAttribute( 0x1BF2, 0x1BEF )]
+	public class ElectrumIngot : BaseIngot
+	{
+		[Constructable]
+		public ElectrumIngot() : this( 1 )
+		{
+		}
 
+		[Constructable]
+		public ElectrumIngot( int amount ) : base( CraftResource.Electrum, amount )
+		{
+		}
+
+		public ElectrumIngot( Serial serial ) : base( serial )
+		{
+		}
+
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+
+			writer.Write( (int) 1 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+
+			int version = reader.ReadInt();
+			
+			if( version < 1 )
+				Weight = 2.0;
+		}
+	}
 	//[FlipableAttribute( 0x1BF2, 0x1BEF )]
 	public class ObsidianIngot : BaseIngot
 	{
