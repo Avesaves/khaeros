@@ -778,7 +778,7 @@ namespace Server.Engines.Craft
 			AddSubRes( typeof( ObsidianIngot ),		1044029, 95.0, 1044036, 1044268 );
 			AddSubRes( typeof( SteelIngot ),		1044030, 99.0, 1044036, 1044268 );
 			AddSubRes( typeof( StarmetalIngot ),	1044024, 99.0, 1044036, 1044268 );
-			AddSubRes( typeof( ElectrumIngot ),		1044025, 85.0, 1044036, 1044268 );
+			AddSubRes( typeof( ElectrumIngot ),		1044023, 85.0, 1044036, 1044268 );
 			Resmelt = true;
 			Repair = true;
 			MarkOption = true;
