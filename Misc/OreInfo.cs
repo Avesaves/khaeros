@@ -15,6 +15,7 @@ namespace Server.Items
         Steel = 7,
         Tin = 8,
         Starmetal = 9,
+        Electrum = 10,
 
 		RegularLeather = 101,
 		ThickLeather,
@@ -121,7 +122,7 @@ namespace Server.Items
 		}
 
 		public static readonly CraftAttributeInfo Blank;
-		public static readonly CraftAttributeInfo Copper, Bronze, Iron, Golden, Silver, Obsidian, Steel, Tin, Starmetal;
+		public static readonly CraftAttributeInfo Copper, Bronze, Iron, Golden, Silver, Obsidian, Steel, Tin, Starmetal, Electrum;
 		public static readonly CraftAttributeInfo Regular, Thick, Beast, Scaled;
 		public static readonly CraftAttributeInfo RedScales, YellowScales, BlackScales, GreenScales, WhiteScales, BlueScales;
 		public static readonly CraftAttributeInfo Oak, Yew, Redwood, Ash, Greenheart;
@@ -286,7 +287,7 @@ namespace Server.Items
 			starmetal.ArmorPiercingResist = 2;
 			starmetal.ArmorPhysicalResist = 0;
 			starmetal.ArmorColdResist = 1;
-			starmetal.ArmorFireResist = 1;
+			starmetal.ArmorFireResist = 0;
 			starmetal.ArmorPoisonResist = 0;
 			starmetal.ArmorEnergyResist = 1;
 			starmetal.ArmorDurability = 100;
@@ -299,6 +300,25 @@ namespace Server.Items
 			starmetal.RunicMaxAttributes = 0;
 			starmetal.RunicMinIntensity = 0;
 			starmetal.RunicMaxIntensity = 0;
+			
+			CraftAttributeInfo electrum = Electrum = new CraftAttributeInfo();
+			
+			electrum.ArmorBluntResist = 0;
+			electrum.ArmorSlashingResist = 0;
+			electrum.ArmorPiercingResist = 0;
+			electrum.ArmorPhysicalResist = 0;
+			electrum.ArmorDurability = 70;
+			electrum.WeaponDurability = 70;
+			electrum.ArmorFireResist = 10;
+			electrum.ArmorColdResist = 10;
+			electrum.ArmorPoisonResist = 0;
+			electrum.ArmorEnergyResist = 10;
+			electrum.WeaponPoisonDamage = 0;
+			electrum.WeaponEnergyDamage = 0;
+			electrum.RunicMinAttributes = 0;
+			electrum.RunicMaxAttributes = 0;
+			electrum.RunicMinIntensity = 0;
+			electrum.RunicMaxIntensity = 0;
 
 			CraftAttributeInfo regular = Regular = new CraftAttributeInfo();
 
@@ -603,7 +623,8 @@ namespace Server.Items
 				new CraftResourceInfo( 0xBAD, 1053103, "Obsidian",		CraftAttributeInfo.Obsidian,	CraftResource.Obsidian,			typeof( ObsidianIngot ),	typeof( ObsidianOre ),		typeof( ObsidianGranite ) ),
                 new CraftResourceInfo( 0x579, 1053102, "Steel",	    	CraftAttributeInfo.Steel,   	CraftResource.Steel,			typeof( SteelIngot ),	    typeof( SteelOre ),		    typeof( SteelGranite ) ),
 				new CraftResourceInfo( 0x836, 1053101, "Tin",	    	CraftAttributeInfo.Tin,   	    CraftResource.Tin,			    typeof( TinIngot ),	        typeof( TinOre ),		    typeof( SteelGranite ) ),
-				new CraftResourceInfo( 0xB10, 1053108, "Starmetal",	    CraftAttributeInfo.Starmetal,   CraftResource.Starmetal,		typeof( StarmetalIngot ),   typeof( StarmetalOre ),		typeof( Granite ) )
+				new CraftResourceInfo( 0xB10, 1053108, "Starmetal",	    CraftAttributeInfo.Starmetal,   CraftResource.Starmetal,		typeof( StarmetalIngot ),   typeof( StarmetalOre ),		typeof( Granite ) ),
+				new CraftResourceInfo( 0xA6D, 1053110, "Electrum",			CraftAttributeInfo.Electrum,		CraftResource.Electrum,				typeof( ElectrumIngot ),		typeof( ElectrumOre )			typeof( ElectrumGranite ) ),
 			};
 
 		private static CraftResourceInfo[] m_ScaleInfo = new CraftResourceInfo[]
@@ -720,7 +741,7 @@ namespace Server.Items
 		/// </summary>
 		public static CraftResourceType GetType( CraftResource resource )
 		{
-			if ( resource >= CraftResource.Copper && resource <= CraftResource.Starmetal )
+			if ( resource >= CraftResource.Copper && resource <= CraftResource.Electrum )
 				return CraftResourceType.Metal;
 
 			if ( resource >= CraftResource.RegularLeather && resource <= CraftResource.ScaledLeather )
@@ -831,6 +852,8 @@ namespace Server.Items
 				return CraftResource.Tin;
 			else if ( info.Level == 8 )
 				return CraftResource.Starmetal;
+			else if ( info.Level == 9 )
+				return CraftResource.Electrum;
 			
 			if ( info.Level == 301 )
 				return CraftResource.Oak;
@@ -896,6 +919,7 @@ namespace Server.Items
 		public static readonly OreInfo Steel		= new OreInfo( 6, 0x579, "Steel" );
         public static readonly OreInfo Tin          = new OreInfo( 7, 0x836, "Tin" );
         public static readonly OreInfo Starmetal    = new OreInfo( 8, 0xB10, "Starmetal" );
+        public static readonly OreInfo Electrum    = new OreInfo( 9, 0xA6D, "Electrum" );
         
         public static readonly OreInfo Oak			= new OreInfo( 301, 0x000, "Oak" );
 		public static readonly OreInfo Yew			= new OreInfo( 302, 0x96D, "Yew" );
