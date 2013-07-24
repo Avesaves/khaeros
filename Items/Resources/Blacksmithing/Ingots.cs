@@ -280,6 +280,9 @@ namespace Server.Items
 				
 				if( m_Resource == CraftResource.Starmetal )
 					return 1042685;
+				if( m_Resource == CraftResource.Electrum )
+					return 1038042;	
+				
 				
 				return 1042692;
 			}
