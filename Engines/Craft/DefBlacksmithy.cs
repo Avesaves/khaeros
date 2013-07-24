@@ -769,16 +769,16 @@ namespace Server.Engines.Craft
 
 			#endregion
 			
-			SetSubRes( typeof( IronIngot ), 1044026 );
+			SetSubRes( typeof( BronzeIngot ), 1044026 );
 			//AddSubRes( typeof( CopperIngot ),		1044025, 00.0, 1044036, 1044267 );
-			AddSubRes( typeof( BronzeIngot ),		1044026, 30.0, 1044036, 1044268 );
+			AddSubRes( typeof( BronzeIngot ),		1044026, 30.0, 1044036, 1044267 );
 			AddSubRes( typeof( IronIngot ),			1044022, 60.0, 1044036, 1044268 );
 			AddSubRes( typeof( SilverIngot ),		1044028, 90.0, 1044036, 1044268 );
 			AddSubRes( typeof( GoldIngot ),			1044027, 85.0, 1044036, 1044268 );
 			AddSubRes( typeof( ObsidianIngot ),		1044029, 95.0, 1044036, 1044268 );
 			AddSubRes( typeof( SteelIngot ),		1044030, 99.0, 1044036, 1044268 );
 			AddSubRes( typeof( StarmetalIngot ),	1044024, 99.0, 1044036, 1044268 );
-			AddSubRes( typeof( ElectrumIngot ),		1044031, 85.0, 1044036, 1044268 );
+			AddSubRes( typeof( ElectrumIngot ),		1044025, 85.0, 1044036, 1044268 );
 			Resmelt = true;
 			Repair = true;
 			MarkOption = true;
