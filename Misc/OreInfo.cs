@@ -309,10 +309,10 @@ namespace Server.Items
 			electrum.ArmorPhysicalResist = 0;
 			electrum.ArmorDurability = 70;
 			electrum.WeaponDurability = 70;
-			electrum.ArmorFireResist = 10;
-			electrum.ArmorColdResist = 10;
+			electrum.ArmorFireResist = 8;
+			electrum.ArmorColdResist = 8;
 			electrum.ArmorPoisonResist = 0;
-			electrum.ArmorEnergyResist = 10;
+			electrum.ArmorEnergyResist = 8;
 			electrum.WeaponPoisonDamage = 0;
 			electrum.WeaponEnergyDamage = 0;
 			electrum.RunicMinAttributes = 0;
