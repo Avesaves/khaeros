@@ -230,7 +230,7 @@ namespace Server.Gumps
 			
 			if( ba.Resource == CraftResource.Copper || ba.Resource == CraftResource.Bronze || ba.Resource == CraftResource.Iron ||
 			   ba.Resource == CraftResource.Silver || ba.Resource == CraftResource.Gold || ba.Resource == CraftResource.Steel ||
-			   ba.Resource == CraftResource.Obsidian || ba.Resource == CraftResource.Starmetal )
+			   ba.Resource == CraftResource.Obsidian || ba.Resource == CraftResource.Starmetal || ba.Resource == CraftResource.Electrum )
 				return true;
 			
 			return false;
