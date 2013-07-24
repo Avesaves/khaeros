@@ -67,6 +67,7 @@ namespace Server.Items
 						case 6: info = OreInfo.Steel; break;
 						case 7: info = OreInfo.Tin; break;
 						case 8: info = OreInfo.Starmetal; break;
+						case 9: info = OreInfo.Electrum; break;
 						default: info = null; break;
 					}
 
@@ -85,6 +86,8 @@ namespace Server.Items
 				
 				if( this.Hue == 2418 )
 					this.Resource = CraftResource.Bronze;
+				if( this.Hue == 2669 )
+					this.Resource = CraftResource.Electrum;
 			}
 		}
 
@@ -133,7 +136,7 @@ namespace Server.Items
 		{
 			get
 			{
-				if ( m_Resource >= CraftResource.Iron && m_Resource <= CraftResource.Starmetal )
+				if ( m_Resource >= CraftResource.Iron && m_Resource <= CraftResource.Electrum )
 					return 1042845 + (int)(m_Resource - CraftResource.Copper);
 
 				return 1042853; // iron ore;
@@ -248,7 +251,46 @@ namespace Server.Items
 						}
 					}
 				}
-				
+				if( ( targeted is SilverOre && m_Ore is GoldOre ) || ( targeted is GoldOre && m_Ore is SilverOre ) )
+				{
+					bool anvil, forge;
+					
+					DefBlacksmithy.CheckAnvilAndForge( from, 2, out anvil, out forge );
+
+					if ( !forge )
+					{
+						from.SendMessage( 60, "You must be standing near a forge in order to do that" );
+						return;
+					}
+					
+					if( from.CheckTargetSkill( SkillName.Mining, targeted, 20.0, 80.0 ) )
+					{
+						int toConsume = m_Ore.Amount;
+
+						if ( toConsume <= 0 )
+						{
+							from.SendLocalizedMessage( 501987 ); // There is not enough metal-bearing ore in this pile to make an ingot.
+						}
+						else
+						{
+							if ( toConsume > 30000 )
+								toConsume = 30000;
+							
+							toConsume = Math.Min( m_Ore.Amount, ( (BaseOre) targeted ).Amount );
+
+							ElectrumIngot ingot = new ElectrumIngot();
+							ingot.Amount = toConsume + toConsume;
+
+							m_Ore.Consume( toConsume );
+							( (BaseOre)targeted ).Consume( toConsume );
+							from.AddToBackpack( ingot );
+							from.PlaySound( 43 );
+
+
+							from.SendLocalizedMessage( 501988 ); // You smelt the ore removing the impurities and put the metal in your backpack.
+						}
+					}
+				}
 				if( targeted is Coal && m_Ore is IronOre )
 				{
 					if( from is PlayerMobile )
@@ -312,7 +354,7 @@ namespace Server.Items
 					{
 						default: difficulty = 0.0; break;
 						case CraftResource.Copper: difficulty = 0.0; break;
-						case CraftResource.Bronze: difficulty = 0.0; break;
+						case CraftResource.Bronze: difficulty = 50.0; break;
 						case CraftResource.Gold: difficulty = 90.0; break;
 						case CraftResource.Silver: difficulty = 80.0; break;
 						case CraftResource.Obsidian: difficulty = 70.0; break;
@@ -320,6 +362,7 @@ namespace Server.Items
 						case CraftResource.Tin: difficulty = 0.0; break;
 						case CraftResource.Iron: difficulty = 70.0; break;
 						case CraftResource.Starmetal: difficulty = 100.0; break;
+						case CraftResource.Electrum: difficulty = 75.0; break;
 					}
 
 					double minSkill = difficulty - 25.0;
@@ -493,6 +536,47 @@ namespace Server.Items
 		}
 	}
 
+	public class ElectrumOre : BaseOre
+	{
+		[Constructable]
+		public ElectrumOre() : this( 1 )
+		{
+		}
+
+		[Constructable]
+		public ElectrumOre( int amount ) : base( CraftResource.Electrum, amount )
+		{
+		}
+
+		public ElectrumOre( Serial serial ) : base( serial )
+		{
+		}
+
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+
+			writer.Write( (int) 1 ); // version
+
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+
+			int version = reader.ReadInt();
+			
+			if( version < 1 )
+				Weight = 2.0;
+		}
+
+		
+
+		public override BaseIngot GetIngot()
+		{
+			return new ElectrumIngot();
+		}
+	}
 	public class GoldOre : BaseOre
 	{
 		[Constructable]
@@ -534,7 +618,6 @@ namespace Server.Items
 			return new GoldIngot();
 		}
 	}
-
 	public class SilverOre : BaseOre
 	{
 		[Constructable]
