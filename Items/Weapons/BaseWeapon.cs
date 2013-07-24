@@ -620,6 +620,7 @@ namespace Server.Items
         		case CraftResource.Obsidian: return 8;
         		case CraftResource.Greenheart: return 8;
         		case CraftResource.Starmetal: return 10;
+        		case CraftResource.Electrum: return 2;
         		default: return (this is IBoneArmour) == true ? 2 : 0;
         	}
     	}
@@ -632,6 +633,7 @@ namespace Server.Items
         		case CraftResource.Obsidian: return 8;
         		case CraftResource.Greenheart: return 4;
         		case CraftResource.Starmetal: return 10;
+        		case CraftResource.Electrum: return 5;
         		default: return (this is IBoneArmour) == true ? 6 : 0;
         	}
     	}
@@ -724,7 +726,7 @@ namespace Server.Items
         		case CraftResource.Steel: return 4;
         		case CraftResource.Obsidian: return 3;
         		case CraftResource.Starmetal: return 5;
-        		
+        		case CraftResource.Electrum: return 0;
         		case CraftResource.Oak: return 0;
         		case CraftResource.Yew: return 4;
         		case CraftResource.Redwood: return 2;
@@ -748,7 +750,7 @@ namespace Server.Items
         		case CraftResource.Steel: return 2;
         		case CraftResource.Obsidian: return 4;
         		case CraftResource.Starmetal: return 5;
-        		
+        		case CraftResource.Electrum: return 3;
         		case CraftResource.Oak: return 3;
         		case CraftResource.Yew: return 0;
         		case CraftResource.Redwood: return 3;
@@ -4362,6 +4364,9 @@ namespace Server.Items
 				
 				if( this.Hue == 2418 )
 					this.Resource = CraftResource.Bronze;
+					
+				if( this.Hue == 2669 )
+					this.Resource = CraftResource.Electrum;					
 			}
 			
 			if( version < 18 )
@@ -4483,8 +4488,8 @@ namespace Server.Items
 			
 			else
 			{
-				this.Resource = CraftResource.Copper;
-				this.Hue = 2413;
+				this.Resource = CraftResource.Iron;
+				this.Hue = 0;
 			}
 			
 			if( this is IBoneArmour )
@@ -4645,6 +4650,7 @@ namespace Server.Items
 				case CraftResource.Steel:	    	oreType = 1053102; break; // valorite
 				case CraftResource.Tin:	    		oreType = 1053101; break; // valorite
 				case CraftResource.Starmetal:	   	oreType = 1053108; break; // valorite
+				case CraftResource.Electrum:	   	oreType = 1053110; break;
 				case CraftResource.ThickLeather:	oreType = 1061118; break; // Thick
 				case CraftResource.BeastLeather:	oreType = 1061117; break; // Beast
 				case CraftResource.ScaledLeather:	oreType = 1061116; break; // Scaled
@@ -5256,7 +5262,7 @@ namespace Server.Items
 				
 				if( Resource == CraftResource.Copper || Resource == CraftResource.Iron || Resource == CraftResource.Bronze || 
 				   Resource == CraftResource.Silver || Resource == CraftResource.Gold || Resource == CraftResource.Steel ||
-				   Resource == CraftResource.Obsidian || Resource == CraftResource.Starmetal )
+				   Resource == CraftResource.Obsidian || Resource == CraftResource.Starmetal || Resource == CraftResource.Electrum )
 					skill = "Blacksmithing";
 				
 				else if( (this is AzhuranBoomerang || !(this is BaseRanged)) )
