@@ -118,7 +118,7 @@ namespace Server.Items
 							return;
 						}
 						
-						from.AddToBackpack( new GoldOre( m_Ingot.Amount / 2 ) );
+						from.AddToBackpack( new GoldenOre( m_Ingot.Amount / 2 ) );
 						from.AddToBackpack( new SilverOre( m_Ingot.Amount / 2 ) );
 					}
 					if( m_Ingot is SteelIngot )
