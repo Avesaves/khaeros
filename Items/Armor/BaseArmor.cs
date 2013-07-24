@@ -207,6 +207,7 @@ namespace Server.Items
                     case CraftResource.Copper: ar += 6; break;
                     case CraftResource.Yew: ar += 6; break;
                     case CraftResource.Bronze: ar += 8; break;
+                    case CraftResource.Electrum: ar += 8; break;
                     case CraftResource.Redwood: ar += 8; break;
                     case CraftResource.Gold: ar += 0; break;
                     case CraftResource.Silver: ar += 0; break;
@@ -1277,6 +1278,7 @@ namespace Server.Items
                                 case 5: info = OreInfo.Obsidian; break;
                                 case 6: info = OreInfo.Tin; break;
                                 case 7: info = OreInfo.Starmetal; break;
+                                case 8: info = OreInfo.Electrum; break;
                             }
 
                             m_Resource = CraftResources.GetFromOreInfo(info, mat);
@@ -1428,11 +1430,11 @@ namespace Server.Items
             if ((this is WoodenShield || this is LeatherShield || this is BoiledLeatherShield) && this.Resource == CraftResource.Iron)
                 this.Resource = CraftResource.Oak;
 
-            else if (this.Resource == CraftResource.Iron)
-            {
-                this.Resource = CraftResource.Copper;
-                this.Hue = 0x96D;
-            }
+        //    else if (this.Resource == CraftResource.Iron)
+         //   {
+         //       this.Resource = CraftResource.Copper;
+         //       this.Hue = 0x96D;
+         //   }
 
             if (this is IBoneArmour)
             {
@@ -1850,6 +1852,7 @@ namespace Server.Items
                         case CraftResource.Starmetal: if (Utility.RandomBool()) this.HitPoints -= Utility.Random(2); break;
                         case CraftResource.Silver: this.HitPoints -= Utility.Random(5); break;
                         case CraftResource.Gold: this.HitPoints -= Utility.Random(6); break;
+                        case CraftResource.Electrum: this.HitPoints -= Utility.Random(3); break;
 
                         case CraftResource.Oak: this.HitPoints -= Utility.Random(4); break;
                         case CraftResource.Redwood: this.HitPoints -= Utility.Random(3); break;
@@ -1927,6 +1930,7 @@ namespace Server.Items
                         case CraftResource.Starmetal: if (Utility.RandomBool()) itemDmg += Utility.Random(2); break;
                         case CraftResource.Silver: itemDmg += Utility.Random(10); break;
                         case CraftResource.Gold: itemDmg += Utility.Random(12); break;
+                        case CraftResource.Electrum: itemDmg += Utility.Random(6); break;
 
                         case CraftResource.Oak: itemDmg += Utility.Random(8); break;
                         case CraftResource.Redwood: itemDmg += Utility.Random(6); break;
@@ -2030,6 +2034,7 @@ namespace Server.Items
                 case CraftResource.Steel: oreType = 1053102; break; // valorite
                 case CraftResource.Tin: oreType = 1053101; break; // valorite
                 case CraftResource.Starmetal: oreType = 1053108; break; // valorite
+                case CraftResource.Electrum: oreType = 1053110; break; // uhhhh idk
                 case CraftResource.RegularLeather: oreType = 1062235; break; // leather  
                 case CraftResource.ThickLeather: oreType = 1061116; break; // Thick  
                 case CraftResource.BeastLeather: oreType = 1061117; break; // Beast
@@ -2470,7 +2475,7 @@ namespace Server.Items
 
                 if (Resource == CraftResource.Copper || Resource == CraftResource.Iron || Resource == CraftResource.Bronze ||
                    Resource == CraftResource.Silver || Resource == CraftResource.Gold || Resource == CraftResource.Steel ||
-                   Resource == CraftResource.Obsidian || Resource == CraftResource.Starmetal)
+                   Resource == CraftResource.Obsidian || Resource == CraftResource.Starmetal || Resource == CraftResource.Electrum )
                     skill = "Blacksmithing";
 
                 else if (Resource == CraftResource.RegularLeather || Resource == CraftResource.ThickLeather || Resource == CraftResource.ScaledLeather ||
