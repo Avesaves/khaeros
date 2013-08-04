@@ -144,10 +144,15 @@ namespace Server.Misc
         			
         			else if( player.Level < 30 )
         				a = (int)(a * 1.75);
-        			
+
+        			else if( player.Level > 49 )
+        				a = (int)(a * 0.5);
+        				
         			else
         				a = (int)(a * 1.5);
         		}
+        		if (player.XPFromLearning && player.Level > 49 )
+        			a = (int)(a * 0.2);
 
                 if ((a > player.Level * 40) && (player.IsHardcore))
                     a = player.Level * 40;
