@@ -500,6 +500,7 @@ namespace Server.Misc
                 firstTier = Math.Max(0, (100 - (m.NumberOfItemsCookedRecently * 5)));
                 secondTier = Math.Max(0, (90 - (m.NumberOfItemsCookedRecently * 5)));
                 thirdTier = Math.Max(0, (80 - (m.NumberOfItemsCookedRecently * 5)));
+                fourthTier = Math.Max(0, (10 - (m.NumberOfItemsCookedRecently * 5)));
             }
 
             m.CookingXpLastAwardedOn = DateTime.Now;
