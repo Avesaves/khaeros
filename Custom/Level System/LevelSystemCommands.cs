@@ -3526,7 +3526,7 @@ namespace Server.Commands
     
             		if( m.m_Students.Count < level )
             		{
-            			if( m.CanTeach(mob) )
+            			if( m.CanTeach(mob) && mob.Level < 50 )
             			{
             				if( !mob.m_WantsTeaching )
             				{
