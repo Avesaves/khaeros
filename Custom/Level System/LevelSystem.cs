@@ -43,6 +43,9 @@ namespace Server.Misc
         		
         		else if( player.Level > 38 )
         			a = (int)( a * 0.2 );
+        			
+        		else if( player.Level > 49 )
+        			a = (int)( a * 0.01);
         		
         		if( a < ( player.Level * 5 ) )
         			a = (int)( a * 0.5 );
@@ -57,7 +60,7 @@ namespace Server.Misc
             if (player.IsHardcore)
                 a = (a + a);
 
-        	if( player.Level < 50 )
+        	if( player.Level < 60 )
             	player.XP += a;
         	
             player.LastXP = a;
@@ -78,7 +81,7 @@ namespace Server.Misc
 					bcowner = mob as PlayerMobile;
 			}
 			
-			if ( player.Level < 50 )
+			if ( player.Level < 60 )
 			{
                 /*if( player is BaseMount && bcowner != null )
                 {
@@ -179,7 +182,7 @@ namespace Server.Misc
 			    player.NextLevel = 1000;
 			}
 			
-			if ( player.XP >= player.NextLevel && player.Level < 50 )
+			if ( player.XP >= player.NextLevel && player.Level < 60 )
 			    LevelUp( player );
 		}
 
@@ -191,7 +194,7 @@ namespace Server.Misc
 			    player.Level = 1;
 			}
 			
-			if ( player.XP >= player.NextLevel && player.Level < 50 )
+			if ( player.XP >= player.NextLevel && player.Level < 60 )
 			    LevelUp( player );
 		}
 
@@ -206,7 +209,7 @@ namespace Server.Misc
 			player.SendMessage( 13, "You have reached level " + player.Level + "! Use .statpoints in order to spend your newly acquired bonus points." );
 			player.StatPoints += 10;
 				
-			if( player.Level < 50 )
+			if( player.Level < 60 )
 				CheckLevel( player );
 		}
 
@@ -482,12 +485,14 @@ namespace Server.Misc
             int firstTier;
             int secondTier;
             int thirdTier;
+            int fourthTier;
 
             if (m.CookingXpLastAwardedOn.AddMinutes(10) < DateTime.Now)
             {
                 firstTier = 100;
                 secondTier = 90;
                 thirdTier = 80;
+                fourthTier = 10;
                 m.NumberOfItemsCookedRecently = 0;
             }
             else
@@ -512,6 +517,11 @@ namespace Server.Misc
                 LevelSystem.AwardExp(m, Math.Min((m.Int * 100), secondTier));
                 LevelSystem.AwardCP(m, Math.Min((m.Int * 20), (secondTier / 5)));
             }
+                        else if (m.Level > 49)
+            {
+                LevelSystem.AwardExp(m, Math.Min((m.Int * 100), fourthTier));
+                LevelSystem.AwardCP(m, Math.Min((m.Int * 20), (fourthTier / 5)));
+            }
 
             else
             {
@@ -529,12 +539,14 @@ namespace Server.Misc
         	int firstTier = 100;
         	int secondTier = 90;
         	int thirdTier = 80;
+        	int fourthTier = 10;
         	
         	if( taming )
         	{
         		firstTier *= 2;
         		secondTier *= 2;
         		thirdTier *= 2;
+        		fourthTier *= 2;
         	}
         	
 			if( m.Level < 20 )
@@ -548,6 +560,12 @@ namespace Server.Misc
 			{
 				LevelSystem.AwardExp( m, Math.Min( ( m.Int * 100 ), secondTier ) );
 				LevelSystem.AwardCP( m, Math.Min( ( m.Int * 20 ), (secondTier / 5) ) );
+			}
+			
+			else if( m.Level > 49 )
+			{
+				LevelSystem.AwardExp( m, Math.Min( ( m.Int * 100 ), fourthTier ) );
+				LevelSystem.AwardCP( m, Math.Min( ( m.Int * 20 ), (fourthTier / 5) ) );
 			}
 			
 			else
@@ -874,7 +892,7 @@ namespace Server.Misc
             from.RecreateCP = Math.Max( 0, (from.CPSpent + from.CP - 10000) );
 			from.RecreateXP = from.XP;
             from.XP = 0;
-            from.CP = 10000;
+            from.CP = 20000;
             from.NextLevel = 1000;
             from.Level = 1;
             from.SkillPoints = 0;
