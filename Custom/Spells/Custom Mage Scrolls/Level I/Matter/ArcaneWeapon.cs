@@ -10,13 +10,13 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-    public class DecoyII : CustomSpellScroll
+    public class ArcaneWeaponScroll : CustomSpellScroll
     {
         public override CustomMageSpell Spell
         {
             get
             {
-                return new DecoyIISpell();
+                return new ArcaneWeaponSpell();
             }
             set
             {
@@ -24,11 +24,11 @@ namespace Server.Items
         }
 
         [Constructable]
-        public DecoyII()
+        public ArcaneWeaponScroll()
             : base()
         {
             Hue = 2990;
-            Name = "A Decoy II scroll";
+            Name = "An Arcane Weapon II scroll";
         }
 
         public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
@@ -43,10 +43,10 @@ namespace Server.Items
             if( !IsMageCheck( m, true ) )
                 return;
 
-            BaseCustomSpell.SpellInitiator( new DecoyIISpell( m, 1 ) );
+            BaseCustomSpell.SpellInitiator( new ArcaneWeaponSpell( m, 1 ) );
         }
 
-        public DecoyII( Serial serial )
+        public ArcaneWeaponScroll( Serial serial )
             : base( serial )
         {
         }
@@ -65,58 +65,60 @@ namespace Server.Items
     }
 
     [PropertyObject]
-    public class DecoyIISpell : CustomMageSpell
+    public class ArcaneWeaponSpell : CustomMageSpell
     {
         public override CustomMageSpell GetNewInstance()
         {
-            return new DecoyIISpell();
+            return new ArcaneWeaponSpell();
         }
 
         public override bool CustomScripted { get { return true; } }
 		public override bool IsMageSpell { get { return true; } }
         public override Type ScrollType { get { return typeof( OrigamiPaper ); } }
         public override bool CanTargetSelf { get { return false; } }
-        public override bool AffectsMobiles { get { return true; } }
+        public override bool AffectsMobiles { get { return false; } }
         public override bool IsHarmful { get { return false; } }
         public override bool UsesTarget { get { return false; } }
         public override FeatList Feat { get { return FeatList.CustomMageSpell; } }
-        public override string Name { get { return "Decoy II"; } }
+        public override string Name { get { return "Arcane Weapon II"; } }
         public override int ManaCost { get { return 50; } }
         public override int BaseRange { get { return 0; } }
 
-        public DecoyIISpell()
+        public ArcaneWeaponSpell()
             : this( null, 1 )
         {
         }
 
-        public DecoyIISpell( Mobile caster, int featLevel )
+        public ArcaneWeaponSpell( Mobile caster, int featLevel )
             : base( caster, featLevel )
         {
-            IconID = 6128;
+            IconID = 6023;
             Range = 0;
-            CustomName = "Decoy II";
+            CustomName = "Arc. Weap. II";
         }
 
         public override bool CanBeCast
         {
             get
             {
-                return base.CanBeCast && HasRequiredArcanas( new FeatList[] { FeatList.MindII } );
+                return base.CanBeCast && HasRequiredArcanas( new FeatList[] {  
+				FeatList.MatterI } );
             }
         }
 
         public override void Effect()
         {
-            if( CasterHasEnoughMana )
-            {
-                Caster.Mana -= TotalCost;
-				new Clone( Caster ).MoveToWorld( Caster.Location, Caster.Map );
-                Caster.FixedParticles( 0x376A, 1, 14, 0x13B5, EffectLayer.Waist );
-                Success = true;
-            }
-
-            else
-                Caster.SendMessage( "You do not have enough mana to cast this spell!" );
+		if( CasterHasEnoughMana )
+		{
+            Caster.Mana -= TotalCost;
+            Caster.PlaySound( 655 );
+			Caster.Emote ("*shadows form in their hand, taking the form of a blade*");
+            Caster.ClearHands();
+            ArcaneWeapon weapon = new ArcaneWeapon();
+            weapon.DelayDelete();
+            Caster.EquipItem( weapon );
+            Success = true;
+		}
         }
     }
 }

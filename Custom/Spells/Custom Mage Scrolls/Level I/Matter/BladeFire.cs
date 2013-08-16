@@ -10,13 +10,13 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-    public class ArcaneWeaponScroll : CustomSpellScroll
+    public class BladeFireScroll : CustomSpellScroll
     {
         public override CustomMageSpell Spell
         {
             get
             {
-                return new ArcaneWeaponSpell();
+                return new BladeFireSpell();
             }
             set
             {
@@ -24,11 +24,11 @@ namespace Server.Items
         }
 
         [Constructable]
-        public ArcaneWeaponScroll()
+        public BladeFireScroll()
             : base()
         {
-            Hue = 2990;
-            Name = "An Arcane Weapon II scroll";
+            Hue = 2687;
+            Name = "An Blade Fire scroll";
         }
 
         public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
@@ -43,10 +43,10 @@ namespace Server.Items
             if( !IsMageCheck( m, true ) )
                 return;
 
-            BaseCustomSpell.SpellInitiator( new ArcaneWeaponSpell( m, 1 ) );
+            BaseCustomSpell.SpellInitiator( new BladeFireSpell( m, 1 ) );
         }
 
-        public ArcaneWeaponScroll( Serial serial )
+        public BladeFireScroll( Serial serial )
             : base( serial )
         {
         }
@@ -65,11 +65,11 @@ namespace Server.Items
     }
 
     [PropertyObject]
-    public class ArcaneWeaponSpell : CustomMageSpell
+    public class BladeFireSpell : CustomMageSpell
     {
         public override CustomMageSpell GetNewInstance()
         {
-            return new ArcaneWeaponSpell();
+            return new BladeFireSpell();
         }
 
         public override bool CustomScripted { get { return true; } }
@@ -80,46 +80,74 @@ namespace Server.Items
         public override bool IsHarmful { get { return false; } }
         public override bool UsesTarget { get { return false; } }
         public override FeatList Feat { get { return FeatList.CustomMageSpell; } }
-        public override string Name { get { return "Arcane Weapon II"; } }
+        public override string Name { get { return "Blade Fire"; } }
         public override int ManaCost { get { return 50; } }
         public override int BaseRange { get { return 0; } }
 
-        public ArcaneWeaponSpell()
+        public BladeFireSpell()
             : this( null, 1 )
         {
         }
 
-        public ArcaneWeaponSpell( Mobile caster, int featLevel )
+        public BladeFireSpell( Mobile caster, int featLevel )
             : base( caster, featLevel )
         {
-            IconID = 6023;
+            IconID = 6117;
             Range = 0;
-            CustomName = "Arc. Weap. II";
+            CustomName = "Blade Fire";
         }
 
         public override bool CanBeCast
         {
             get
             {
-                return base.CanBeCast && HasRequiredArcanas( new FeatList[] {  
-				FeatList.MatterI,
-				FeatList.MatterII } );
+                return base.CanBeCast && HasRequiredArcanas( new FeatList[] { 
+				FeatList.MatterI
+				} );
             }
         }
 
         public override void Effect()
         {
-		if( CasterHasEnoughMana )
+		
+			Item ArcWeap = Caster.FindItemOnLayer( Layer.FirstValid ); 
+			Item BurnTorch = Caster.FindItemOnLayer( Layer.TwoHanded );
+			
+		if (CasterHasEnoughMana)
 		{
-            Caster.Mana -= TotalCost;
-            Caster.PlaySound( 655 );
-			Caster.Emote ("*shadows form in their hand, taking the form of a blade*");
-            Caster.ClearHands();
-            ArcaneWeapon weapon = new ArcaneWeapon();
-            weapon.DelayDelete();
-            Caster.EquipItem( weapon );
-            Success = true;
+			
+			if (BurnTorch is Torch && (ArcWeap is ArcaneWeapon || ArcWeap is LesserArcaneWeapon))
+			{
+					ArcWeap.Delete();
+					Caster.Mana -= TotalCost;
+					Caster.PlaySound( 838 );
+					Caster.Emote ("*holds their blade into the burning flame*");
+				
+					if (ArcWeap is ArcaneWeapon)
+					{
+					FieryArcaneWeapon weapon = new FieryArcaneWeapon();
+					weapon.DelayDelete();
+					Caster.EquipItem( weapon );
+					Success = true;
+					}
+				
+					if (ArcWeap is LesserArcaneWeapon)
+					{
+					FieryLesserArcaneWeapon weapon = new FieryLesserArcaneWeapon();
+					weapon.DelayDelete();
+					Caster.EquipItem( weapon );
+					Success = true;
+					}
+			}
+			
+			else
+			{
+			Success = false;	
+			Caster.SendMessage ("You need a torch and an arcane weapon in your hands to complete this incantation.");
+			return;
+			}
 		}
-        }
+		}
     }
 }
+

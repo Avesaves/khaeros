@@ -10,13 +10,13 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-    public class RotScroll : CustomSpellScroll
+    public class BloodSportScroll : CustomSpellScroll
     {
         public override CustomMageSpell Spell
         {
             get
             {
-                return new RotSpell();
+                return new BloodSportSpell();
             }
             set
             {
@@ -24,10 +24,10 @@ namespace Server.Items
         }
 
         [Constructable]
-        public RotScroll() : base()
+        public BloodSportScroll() : base()
         {
-            Hue = 2964;
-            Name = "A Rot scroll";
+            Hue = 37;
+            Name = "A Blood Sport scroll";
         }
 
         public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
@@ -42,10 +42,10 @@ namespace Server.Items
             if( !IsMageCheck( m, true ) )
                 return;
 
-            BaseCustomSpell.SpellInitiator( new RotSpell( m, 1 ) );
+            BaseCustomSpell.SpellInitiator( new BloodSportSpell( m, 1 ) );
         }
 
-        public RotScroll( Serial serial )
+        public BloodSportScroll( Serial serial )
             : base( serial )
         {
         }
@@ -64,11 +64,11 @@ namespace Server.Items
     }
 
     [PropertyObject]
-    public class RotSpell : CustomMageSpell
+    public class BloodSportSpell : CustomMageSpell
     {
         public override CustomMageSpell GetNewInstance()
         {
-            return new RotSpell();
+            return new BloodSportSpell();
         }
 
         public override bool CustomScripted { get { return true; } }
@@ -76,82 +76,62 @@ namespace Server.Items
         public override Type ScrollType { get { return typeof( OrigamiPaper ); } }
 		public override bool CanTargetSelf { get { return false; } }
         public override bool AffectsItems { get { return true; } }
-		public override bool AffectsMobiles { get { return false; } }
-        public override bool IsHarmful { get { return false; } }
+		public override bool AffectsMobiles { get { return true; } }
+        public override bool IsHarmful { get { return true; } }
         public override bool UsesTarget { get { return true; } }
 		public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
-        public override string Name { get { return "Rot"; } }
-        public override int ManaCost { get { return 10; } }
+        public override string Name { get { return "Blood Sport"; } }
+        public override int ManaCost { get { return 50; } }
         public override int BaseRange { get { return 12; } }
 
-        public RotSpell()
+        public BloodSportSpell()
             : this( null, 1 )
         {
         }
 
-        public RotSpell( Mobile caster, int featLevel ) 
+        public BloodSportSpell( Mobile caster, int featLevel ) 
             : base( caster, featLevel )
         {
-            IconID = 6114;
+            IconID = 6166;
             Range = 12;
-            CustomName = "Rot";
+            CustomName = "Blood Sport";
         }
 
         public override bool CanBeCast
         {
             get
             {                     
-                return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.ForcesI } );
+                return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.DeathI } );
             }
         }
 		
         public override void Effect()
         {		
-			if (TargetItem.Parent is Mobile)
+			if (TargetMobile is Mobile && CasterHasEnoughMana )
 			{
-				Caster.SendMessage("You cannot use that on an equipped item.");
-				Success = false;
-				return;
-			}
-			
-			if (TargetItem.IsChildOf( Caster.Backpack ))
-			{
-				Caster.SendMessage("You cannot use that on an item in your pack.");
-				Success = false;
-				return;
-			}
-				
-            if( TargetCanBeAffected && CasterHasEnoughMana && TargetItem is Food )
-            {
-				Food door = TargetItem as Food;
-				Caster.Mana -= TotalCost;
-				
-				if (door.RotStage == RotStage.None)
-				{
-                Caster.Emote("*Points at the food*");
-				door.RotStage = RotStage.Rotten;
-				Success = true;
-				Timer.DelayCall( TimeSpan.FromSeconds( 1 ), new TimerCallback( Flare ) );
-				return;
-				}
-				
-				else
-				{
-				return;
-				}
-            }
-        }
-		
-		private void Flare()
-		{
-			if ( Caster == null )
-				return;
-				
-			if (TargetItem == null || TargetItem.Deleted)
-				return;
-				
-			 TargetItem.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*Emits a foul odor*" );
+				Mobile targ = TargetMobile as Mobile;
 
-		}				
+				
+				Caster.Mana -= TotalCost;
+				Success = true;
+
+                Caster.PlaySound(0x175);
+
+                Caster.FixedParticles(0x375A, 1, 17, 9919, 33, 7, EffectLayer.Waist);
+                Caster.FixedParticles(0x3728, 1, 13, 9502, 33, 7, (EffectLayer)255);
+
+                targ.FixedParticles(0x375A, 1, 17, 9919, 33, 7, EffectLayer.Waist);
+                targ.FixedParticles(0x3728, 1, 13, 9502, 33, 7, (EffectLayer)255);
+                if (targ is PlayerMobile)
+                    AOS.Damage(targ, Caster, 50, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
+                else
+                    AOS.Damage(targ, Caster, 100, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
+                if (targ.Hits > 25)
+                    Caster.Hits += 25;
+                Caster.Emote("*looks healthier*");
+                targ.Emote("*gasps in pain*");
+						return;
+				}
+			}
 	}
 }

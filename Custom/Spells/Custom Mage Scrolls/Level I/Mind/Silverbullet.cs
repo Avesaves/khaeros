@@ -144,9 +144,11 @@ namespace Server.Items
                     Caster.MovingParticles(targ, 0xF1B, 7, 0, false, true, 3043, 4043, 0x211);
                     targ.FixedParticles(0x377A, 244, 25, 9950, 31, 0, EffectLayer.Waist);
                     if ( targ is IUndead )
-                        AOS.Damage(targ, Caster, 100, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
-                    else
+                        AOS.Damage(targ, Caster, 150, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
+                    else if (targ is PlayerMobile )
                         AOS.Damage(targ, Caster, 50, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
+                    else
+                        AOS.Damage(targ, Caster, 100, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
                     Caster.Emote("*magically sends a silver coin flying through the air!*");
 
                     return;

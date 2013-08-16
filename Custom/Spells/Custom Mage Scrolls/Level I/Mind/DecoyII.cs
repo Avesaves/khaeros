@@ -10,13 +10,13 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-    public class ExtendBoneScroll : CustomSpellScroll
+    public class DecoyII : CustomSpellScroll
     {
         public override CustomMageSpell Spell
         {
             get
             {
-                return new ExtendBoneSpell();
+                return new DecoyIISpell();
             }
             set
             {
@@ -24,11 +24,11 @@ namespace Server.Items
         }
 
         [Constructable]
-        public ExtendBoneScroll()
+        public DecoyII()
             : base()
         {
-            Hue = 834;
-            Name = "An Extend Bones Scroll";
+            Hue = 2990;
+            Name = "A Decoy II scroll";
         }
 
         public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
@@ -43,10 +43,10 @@ namespace Server.Items
             if( !IsMageCheck( m, true ) )
                 return;
 
-            BaseCustomSpell.SpellInitiator( new ExtendBoneSpell( m, 1 ) );
+            BaseCustomSpell.SpellInitiator( new DecoyIISpell( m, 1 ) );
         }
 
-        public ExtendBoneScroll( Serial serial )
+        public DecoyII( Serial serial )
             : base( serial )
         {
         }
@@ -65,69 +65,58 @@ namespace Server.Items
     }
 
     [PropertyObject]
-    public class ExtendBoneSpell : CustomMageSpell
+    public class DecoyIISpell : CustomMageSpell
     {
         public override CustomMageSpell GetNewInstance()
         {
-            return new ExtendBoneSpell();
+            return new DecoyIISpell();
         }
 
         public override bool CustomScripted { get { return true; } }
 		public override bool IsMageSpell { get { return true; } }
         public override Type ScrollType { get { return typeof( OrigamiPaper ); } }
         public override bool CanTargetSelf { get { return false; } }
-        public override bool AffectsMobiles { get { return false; } }
+        public override bool AffectsMobiles { get { return true; } }
         public override bool IsHarmful { get { return false; } }
         public override bool UsesTarget { get { return false; } }
         public override FeatList Feat { get { return FeatList.CustomMageSpell; } }
-        public override string Name { get { return "Extend Bones"; } }
-        public override int ManaCost { get { return 80; } }
+        public override string Name { get { return "Decoy II"; } }
+        public override int ManaCost { get { return 50; } }
         public override int BaseRange { get { return 0; } }
 
-        public ExtendBoneSpell()
+        public DecoyIISpell()
             : this( null, 1 )
         {
         }
 
-        public ExtendBoneSpell( Mobile caster, int featLevel )
+        public DecoyIISpell( Mobile caster, int featLevel )
             : base( caster, featLevel )
         {
-            IconID = 6075;
+            IconID = 6128;
             Range = 0;
-            CustomName = "Extend Bones";
+            CustomName = "Decoy II";
         }
 
         public override bool CanBeCast
         {
             get
             {
-                return base.CanBeCast && HasRequiredArcanas( new FeatList[] { 
-				FeatList.MatterI, 
-				FeatList.MatterII
-				} );
+                return base.CanBeCast && HasRequiredArcanas( new FeatList[] { FeatList.MindI } );
             }
         }
 
         public override void Effect()
         {
-		 if( CasterHasEnoughMana )
-		 {
-             
+            if( CasterHasEnoughMana )
+            {
+                Caster.Mana -= TotalCost;
+				new Clone( Caster ).MoveToWorld( Caster.Location, Caster.Map );
+                Caster.FixedParticles( 0x376A, 1, 14, 0x13B5, EffectLayer.Waist );
+                Success = true;
+            }
 
-            Item gloves = Caster.FindItemOnLayer(Layer.Gloves);
-
-            if (gloves != null)
-                 Caster.Backpack.DropItem(gloves);
-
-            Caster.Mana -= TotalCost;
-            Caster.PlaySound(86);
-            Caster.Emote("*monstrous claws grow from the tips of their fingers!*");
-            Caster.ClearHands();
-            VampireClaws claws = new VampireClaws();
-            claws.DelayDelete();
-            Caster.EquipItem( claws );
-            Success = true;
-			}
+            else
+                Caster.SendMessage( "You do not have enough mana to cast this spell!" );
         }
     }
 }

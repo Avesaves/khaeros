@@ -10,13 +10,13 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-    public class BladeFireScroll : CustomSpellScroll
+    public class DecoyI : CustomSpellScroll
     {
         public override CustomMageSpell Spell
         {
             get
             {
-                return new BladeFireSpell();
+                return new DecoyISpell();
             }
             set
             {
@@ -24,11 +24,11 @@ namespace Server.Items
         }
 
         [Constructable]
-        public BladeFireScroll()
+        public DecoyI()
             : base()
         {
             Hue = 2687;
-            Name = "An Blade Fire scroll";
+            Name = "A Decoy I scroll";
         }
 
         public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
@@ -43,10 +43,10 @@ namespace Server.Items
             if( !IsMageCheck( m, true ) )
                 return;
 
-            BaseCustomSpell.SpellInitiator( new BladeFireSpell( m, 1 ) );
+            BaseCustomSpell.SpellInitiator( new DecoyISpell( m, 1 ) );
         }
 
-        public BladeFireScroll( Serial serial )
+        public DecoyI( Serial serial )
             : base( serial )
         {
         }
@@ -65,90 +65,60 @@ namespace Server.Items
     }
 
     [PropertyObject]
-    public class BladeFireSpell : CustomMageSpell
+    public class DecoyISpell : CustomMageSpell
     {
         public override CustomMageSpell GetNewInstance()
         {
-            return new BladeFireSpell();
+            return new DecoyISpell();
         }
 
         public override bool CustomScripted { get { return true; } }
 		public override bool IsMageSpell { get { return true; } }
         public override Type ScrollType { get { return typeof( OrigamiPaper ); } }
         public override bool CanTargetSelf { get { return false; } }
-        public override bool AffectsMobiles { get { return false; } }
+        public override bool AffectsMobiles { get { return true; } }
         public override bool IsHarmful { get { return false; } }
         public override bool UsesTarget { get { return false; } }
         public override FeatList Feat { get { return FeatList.CustomMageSpell; } }
-        public override string Name { get { return "Blade Fire"; } }
+        public override string Name { get { return "Decoy I"; } }
         public override int ManaCost { get { return 50; } }
         public override int BaseRange { get { return 0; } }
 
-        public BladeFireSpell()
+        public DecoyISpell()
             : this( null, 1 )
         {
         }
 
-        public BladeFireSpell( Mobile caster, int featLevel )
+        public DecoyISpell( Mobile caster, int featLevel )
             : base( caster, featLevel )
         {
-            IconID = 6117;
+            IconID = 6128;
             Range = 0;
-            CustomName = "Blade Fire";
+            CustomName = "Decoy I";
         }
 
         public override bool CanBeCast
         {
             get
             {
-                return base.CanBeCast && HasRequiredArcanas( new FeatList[] { 
-				FeatList.ForcesI, 
-				FeatList.MatterI
-				} );
+                return base.CanBeCast && HasRequiredArcanas( new FeatList[] {  FeatList.MindI  } );
             }
         }
 
         public override void Effect()
         {
-		
-			Item ArcWeap = Caster.FindItemOnLayer( Layer.FirstValid ); 
-			Item BurnTorch = Caster.FindItemOnLayer( Layer.TwoHanded );
-			
-		if (CasterHasEnoughMana)
-		{
-			
-			if (BurnTorch is Torch && (ArcWeap is ArcaneWeapon || ArcWeap is LesserArcaneWeapon))
-			{
-					ArcWeap.Delete();
-					Caster.Mana -= TotalCost;
-					Caster.PlaySound( 838 );
-					Caster.Emote ("*holds their blade into the burning flame*");
-				
-					if (ArcWeap is ArcaneWeapon)
-					{
-					FieryArcaneWeapon weapon = new FieryArcaneWeapon();
-					weapon.DelayDelete();
-					Caster.EquipItem( weapon );
-					Success = true;
-					}
-				
-					if (ArcWeap is LesserArcaneWeapon)
-					{
-					FieryLesserArcaneWeapon weapon = new FieryLesserArcaneWeapon();
-					weapon.DelayDelete();
-					Caster.EquipItem( weapon );
-					Success = true;
-					}
-			}
-			
-			else
-			{
-			Success = false;	
-			Caster.SendMessage ("You need a torch and an arcane weapon in your hands to complete this incantation.");
-			return;
-			}
-		}
-		}
+            if( CasterHasEnoughMana )
+            {
+                Caster.Mana -= TotalCost;
+				new Clone( Caster ).MoveToWorld( Caster.Location, Caster.Map );
+                Caster.FixedParticles( 0x376A, 1, 14, 0x13B5, EffectLayer.Waist );
+				Caster.FixedParticles( 0x376A, 1, 14, 0x13B5, EffectLayer.Head );
+				Caster.PlaySound( 534 );
+                Success = true;
+            }
+
+            else
+                Caster.SendMessage( "You do not have enough mana to cast this spell!" );
+        }
     }
 }
-

@@ -10,13 +10,13 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-    public class SpiritSteedScroll : CustomSpellScroll
+    public class ExtendBoneScroll : CustomSpellScroll
     {
         public override CustomMageSpell Spell
         {
             get
             {
-                return new SpiritSteedSpell();
+                return new ExtendBoneSpell();
             }
             set
             {
@@ -24,11 +24,11 @@ namespace Server.Items
         }
 
         [Constructable]
-        public SpiritSteedScroll()
+        public ExtendBoneScroll()
             : base()
         {
-            Hue = 2687;
-            Name = "A Spirit Steed scroll";
+            Hue = 834;
+            Name = "An Extend Bones Scroll";
         }
 
         public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
@@ -43,10 +43,10 @@ namespace Server.Items
             if( !IsMageCheck( m, true ) )
                 return;
 
-            BaseCustomSpell.SpellInitiator( new SpiritSteedSpell( m, 1 ) );
+            BaseCustomSpell.SpellInitiator( new ExtendBoneSpell( m, 1 ) );
         }
 
-        public SpiritSteedScroll( Serial serial )
+        public ExtendBoneScroll( Serial serial )
             : base( serial )
         {
         }
@@ -65,11 +65,11 @@ namespace Server.Items
     }
 
     [PropertyObject]
-    public class SpiritSteedSpell : CustomMageSpell
+    public class ExtendBoneSpell : CustomMageSpell
     {
         public override CustomMageSpell GetNewInstance()
         {
-            return new SpiritSteedSpell();
+            return new ExtendBoneSpell();
         }
 
         public override bool CustomScripted { get { return true; } }
@@ -80,45 +80,53 @@ namespace Server.Items
         public override bool IsHarmful { get { return false; } }
         public override bool UsesTarget { get { return false; } }
         public override FeatList Feat { get { return FeatList.CustomMageSpell; } }
-        public override string Name { get { return "Spirit Steed"; } }
-        public override int ManaCost { get { return 50; } }
+        public override string Name { get { return "Extend Bones"; } }
+        public override int ManaCost { get { return 80; } }
         public override int BaseRange { get { return 0; } }
 
-        public SpiritSteedSpell()
+        public ExtendBoneSpell()
             : this( null, 1 )
         {
         }
 
-        public SpiritSteedSpell( Mobile caster, int featLevel )
+        public ExtendBoneSpell( Mobile caster, int featLevel )
             : base( caster, featLevel )
         {
-            IconID = 6063;
+            IconID = 6075;
             Range = 0;
-            CustomName = "Spirit Steed";
+            CustomName = "Extend Bones";
         }
 
         public override bool CanBeCast
         {
             get
             {
-                return base.CanBeCast && HasRequiredArcanas( new FeatList[] { FeatList.ForcesI, FeatList.SpiritI } );
+                return base.CanBeCast && HasRequiredArcanas( new FeatList[] { 
+				FeatList.MatterI
+				} );
             }
         }
 
         public override void Effect()
         {
-            if( Caster.Followers < Caster.FollowersMax && CasterHasEnoughMana )
-            {
-                Caster.Mana -= TotalCost;
-                VhalurianHorse horse = new VhalurianHorse();
-                horse.Hue = 12345678;
-                horse.Name = "a spirit steed";
-                Summon( Caster, horse, 60, 535 );
-                Success = true;
-            }
+		 if( CasterHasEnoughMana )
+		 {
+             
 
-            else
-                Caster.SendMessage( "You do not have enough follower slots to do that." );
+            Item gloves = Caster.FindItemOnLayer(Layer.Gloves);
+
+            if (gloves != null)
+                 Caster.Backpack.DropItem(gloves);
+
+            Caster.Mana -= TotalCost;
+            Caster.PlaySound(86);
+            Caster.Emote("*monstrous claws grow from the tips of their fingers!*");
+            Caster.ClearHands();
+            VampireClaws claws = new VampireClaws();
+            claws.DelayDelete();
+            Caster.EquipItem( claws );
+            Success = true;
+			}
         }
     }
 }

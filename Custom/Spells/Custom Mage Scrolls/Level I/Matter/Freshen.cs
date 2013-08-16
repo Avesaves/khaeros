@@ -10,13 +10,13 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-    public class ExplodeCorpseScroll : CustomSpellScroll
+    public class FreshenScroll : CustomSpellScroll
     {
         public override CustomMageSpell Spell
         {
             get
             {
-                return new ExplodeCorpseSpell();
+                return new FreshenSpell();
             }
             set
             {
@@ -24,10 +24,10 @@ namespace Server.Items
         }
 
         [Constructable]
-        public ExplodeCorpseScroll() : base()
+        public FreshenScroll() : base()
         {
-            Hue = 2687;
-            Name = "An Explode Corpse scroll";
+            Hue = 2964;
+            Name = "A Freshen scroll";
         }
 
         public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
@@ -42,10 +42,10 @@ namespace Server.Items
             if( !IsMageCheck( m, true ) )
                 return;
 
-            BaseCustomSpell.SpellInitiator( new ExplodeCorpseSpell( m, 1 ) );
+            BaseCustomSpell.SpellInitiator( new FreshenSpell( m, 1 ) );
         }
 
-        public ExplodeCorpseScroll( Serial serial )
+        public FreshenScroll( Serial serial )
             : base( serial )
         {
         }
@@ -64,11 +64,11 @@ namespace Server.Items
     }
 
     [PropertyObject]
-    public class ExplodeCorpseSpell : CustomMageSpell
+    public class FreshenSpell : CustomMageSpell
     {
         public override CustomMageSpell GetNewInstance()
         {
-            return new ExplodeCorpseSpell();
+            return new FreshenSpell();
         }
 
         public override bool CustomScripted { get { return true; } }
@@ -80,73 +80,78 @@ namespace Server.Items
         public override bool IsHarmful { get { return false; } }
         public override bool UsesTarget { get { return true; } }
 		public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
-        public override string Name { get { return "Explode Corpse"; } }
-        public override int ManaCost { get { return 25; } }
+        public override string Name { get { return "Freshen"; } }
+        public override int ManaCost { get { return 10; } }
         public override int BaseRange { get { return 12; } }
 
-        public ExplodeCorpseSpell()
+        public FreshenSpell()
             : this( null, 1 )
         {
         }
 
-        public ExplodeCorpseSpell( Mobile caster, int featLevel ) 
+        public FreshenSpell( Mobile caster, int featLevel ) 
             : base( caster, featLevel )
         {
-            IconID = 6153;
+            IconID = 6114;
             Range = 12;
-            CustomName = "Explode Corpse";
+            CustomName = "Freshen";
         }
 
         public override bool CanBeCast
         {
             get
             {                     
-                return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.ForcesI } );
+                return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.MatterI } );
             }
         }
 		
         public override void Effect()
         {		
-			if (TargetItem is Corpse && CasterHasEnoughMana )
+			if (TargetItem.Parent is Mobile)
 			{
-				Corpse cp = TargetItem as Corpse;
-
-				if ( cp.Owner is PlayerMobile  )
+				Caster.SendMessage("You cannot use that on an equipped item.");
+				Success = false;
+				return;
+			}
+			
+			if (TargetItem.IsChildOf( Caster.Backpack ))
+			{
+				Caster.SendMessage("You cannot use that on an item in your pack.");
+				Success = false;
+				return;
+			}
+				
+            if( TargetCanBeAffected && CasterHasEnoughMana && TargetItem is Food )
+            {
+				Food door = TargetItem as Food;
+				Caster.Mana -= TotalCost;
+				
+				if (door.RotStage != RotStage.None)
 				{
-					Caster.SendMessage("You cannot use this spell on player corpses.");
-					return;
+                Caster.Emote("*Points at the food*");
+				door.RotStage = RotStage.None;
+				Success = true;
+				Timer.DelayCall( TimeSpan.FromSeconds( 1 ), new TimerCallback( Flare ) );
+				return;
 				}
 				
-				Caster.Mana -= TotalCost;
-				Success = true;
-				Blood bd = new Blood();
-				Map map = cp.Map;
-				Point3D m_loc = new Point3D( cp.X, cp.Y, cp.Z );
-				bd.MoveToWorld( m_loc, map );
-
-						ArrayList targets = new ArrayList();
-
-						IPooledEnumerable eable = map.GetMobilesInRange( new Point3D( m_loc ), 4 );
-
-						foreach ( Mobile md in eable )
-						{
-							if( md != Caster && md.AccessLevel < AccessLevel.GameMaster )
-								targets.Add( md );
-						}
-						for ( int i = 0; i < targets.Count; ++i )
-						{
-							Mobile mb = (Mobile)targets[i];
-							mb.DoHarmful( mb );
-							mb.Emote ("*is enveloped with corpse gasses*");
-							mb.FixedEffect( 0x376A, 1, 12, 1685, 30 ); // At player
-							AOS.Damage( mb, Caster, Utility.RandomMinMax( 25, 50 ), 0, 0, 0, 100, 0, 0, 0, 0 );
-						}
-
-						Effects.SendLocationEffect( m_loc, map, 0x3915, 17 );
-						Caster.PlaySound( 560 );
-						cp.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*releases a cloud of noxious fumes*" );
-						return;
+				else
+				{
+				return;
 				}
-			}
+            }
+        }
+		
+		private void Flare()
+		{
+			if ( Caster == null )
+				return;
+				
+			if (TargetItem == null || TargetItem.Deleted)
+				return;
+				
+			 TargetItem.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*Seems to grow fresher...*" );
+
+		}				
 	}
 }

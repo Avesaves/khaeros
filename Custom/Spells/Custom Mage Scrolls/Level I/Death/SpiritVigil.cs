@@ -1,4 +1,5 @@
 ﻿using System;
+using Server.Targeting;
 using System.Collections;
 using System.Collections.Generic;
 using Server.Items;
@@ -10,13 +11,13 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-    public class FreshenScroll : CustomSpellScroll
+    public class SpiritVigilScroll : CustomSpellScroll
     {
         public override CustomMageSpell Spell
         {
             get
             {
-                return new FreshenSpell();
+                return new SpiritVigilSpell();
             }
             set
             {
@@ -24,10 +25,10 @@ namespace Server.Items
         }
 
         [Constructable]
-        public FreshenScroll() : base()
+        public SpiritVigilScroll() : base()
         {
-            Hue = 2964;
-            Name = "A Freshen scroll";
+            Hue = 2687;
+            Name = "A Spirit Vigil scroll";
         }
 
         public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
@@ -42,10 +43,10 @@ namespace Server.Items
             if( !IsMageCheck( m, true ) )
                 return;
 
-            BaseCustomSpell.SpellInitiator( new FreshenSpell( m, 1 ) );
+            BaseCustomSpell.SpellInitiator( new SpiritVigilSpell( m, 1 ) );
         }
 
-        public FreshenScroll( Serial serial )
+        public SpiritVigilScroll( Serial serial )
             : base( serial )
         {
         }
@@ -64,94 +65,65 @@ namespace Server.Items
     }
 
     [PropertyObject]
-    public class FreshenSpell : CustomMageSpell
+    public class SpiritVigilSpell : CustomMageSpell
     {
         public override CustomMageSpell GetNewInstance()
         {
-            return new FreshenSpell();
+            return new SpiritVigilSpell();
         }
 
         public override bool CustomScripted { get { return true; } }
 		public override bool IsMageSpell { get { return true; } }
         public override Type ScrollType { get { return typeof( OrigamiPaper ); } }
 		public override bool CanTargetSelf { get { return false; } }
-        public override bool AffectsItems { get { return true; } }
+        public override bool AffectsItems { get { return false; } }
 		public override bool AffectsMobiles { get { return false; } }
         public override bool IsHarmful { get { return false; } }
-        public override bool UsesTarget { get { return true; } }
+        public override bool UsesTarget { get { return false; } }
 		public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
-        public override string Name { get { return "Freshen"; } }
-        public override int ManaCost { get { return 10; } }
-        public override int BaseRange { get { return 12; } }
+        public override string Name { get { return "Spirit Vigil"; } }
+        public override int ManaCost { get { return 50; } }
+        public override int BaseRange { get { return 0; } }
 
-        public FreshenSpell()
+        public SpiritVigilSpell()
             : this( null, 1 )
         {
         }
 
-        public FreshenSpell( Mobile caster, int featLevel ) 
+        public SpiritVigilSpell( Mobile caster, int featLevel ) 
             : base( caster, featLevel )
         {
-            IconID = 6114;
+            IconID = 6067;
             Range = 12;
-            CustomName = "Freshen";
+            CustomName = "Spirit Vigil";
         }
 
         public override bool CanBeCast
         {
             get
             {                     
-                return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.ForcesI } );
+                return base.CanBeCast && HasRequiredArcanas( new FeatList[]{  FeatList.DeathI } );
             }
         }
 		
         public override void Effect()
         {		
-			if (TargetItem.Parent is Mobile)
-			{
-				Caster.SendMessage("You cannot use that on an equipped item.");
-				Success = false;
-				return;
-			}
 			
-			if (TargetItem.IsChildOf( Caster.Backpack ))
-			{
-				Caster.SendMessage("You cannot use that on an item in your pack.");
-				Success = false;
-				return;
-			}
-				
-            if( TargetCanBeAffected && CasterHasEnoughMana && TargetItem is Food )
+            if( CasterHasEnoughMana )
             {
-				Food door = TargetItem as Food;
 				Caster.Mana -= TotalCost;
-				
-				if (door.RotStage != RotStage.None)
-				{
-                Caster.Emote("*Points at the food*");
-				door.RotStage = RotStage.None;
 				Success = true;
-				Timer.DelayCall( TimeSpan.FromSeconds( 1 ), new TimerCallback( Flare ) );
-				return;
-				}
+				int tx = Caster.Location.X;
+				int ty = Caster.Location.Y;
+				int tz = Caster.Location.Z;
+				Caster.PlaySound(586);
+				Caster.SendMessage("You summon forth an invisible spirit to guard the area for the next few hours...");
+				Point3D loc = new Point3D( tx, ty, tz);
+				SpiritVigilTrap trap = new SpiritVigilTrap(Caster);
+				trap.MoveToWorld( loc, Caster.Map );
+				Effects.SendLocationParticles( trap, 0x376A, 9, 10, 5025 );
 				
-				else
-				{
-				return;
-				}
-            }
+			}
         }
-		
-		private void Flare()
-		{
-			if ( Caster == null )
-				return;
-				
-			if (TargetItem == null || TargetItem.Deleted)
-				return;
-				
-			 TargetItem.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*Seems to grow fresher...*" );
-
-		}				
 	}
 }

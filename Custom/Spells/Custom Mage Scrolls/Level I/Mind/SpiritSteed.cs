@@ -1,5 +1,4 @@
 ﻿using System;
-using Server.Targeting;
 using System.Collections;
 using System.Collections.Generic;
 using Server.Items;
@@ -11,13 +10,13 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-    public class SpiritVigilScroll : CustomSpellScroll
+    public class SpiritSteedScroll : CustomSpellScroll
     {
         public override CustomMageSpell Spell
         {
             get
             {
-                return new SpiritVigilSpell();
+                return new SpiritSteedSpell();
             }
             set
             {
@@ -25,10 +24,11 @@ namespace Server.Items
         }
 
         [Constructable]
-        public SpiritVigilScroll() : base()
+        public SpiritSteedScroll()
+            : base()
         {
             Hue = 2687;
-            Name = "A Spirit Vigil scroll";
+            Name = "A Spirit Steed scroll";
         }
 
         public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
@@ -43,10 +43,10 @@ namespace Server.Items
             if( !IsMageCheck( m, true ) )
                 return;
 
-            BaseCustomSpell.SpellInitiator( new SpiritVigilSpell( m, 1 ) );
+            BaseCustomSpell.SpellInitiator( new SpiritSteedSpell( m, 1 ) );
         }
 
-        public SpiritVigilScroll( Serial serial )
+        public SpiritSteedScroll( Serial serial )
             : base( serial )
         {
         }
@@ -65,65 +65,60 @@ namespace Server.Items
     }
 
     [PropertyObject]
-    public class SpiritVigilSpell : CustomMageSpell
+    public class SpiritSteedSpell : CustomMageSpell
     {
         public override CustomMageSpell GetNewInstance()
         {
-            return new SpiritVigilSpell();
+            return new SpiritSteedSpell();
         }
 
         public override bool CustomScripted { get { return true; } }
 		public override bool IsMageSpell { get { return true; } }
         public override Type ScrollType { get { return typeof( OrigamiPaper ); } }
-		public override bool CanTargetSelf { get { return false; } }
-        public override bool AffectsItems { get { return false; } }
-		public override bool AffectsMobiles { get { return false; } }
+        public override bool CanTargetSelf { get { return false; } }
+        public override bool AffectsMobiles { get { return false; } }
         public override bool IsHarmful { get { return false; } }
         public override bool UsesTarget { get { return false; } }
-		public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
-        public override string Name { get { return "Spirit Vigil"; } }
+        public override FeatList Feat { get { return FeatList.CustomMageSpell; } }
+        public override string Name { get { return "Spirit Steed"; } }
         public override int ManaCost { get { return 50; } }
         public override int BaseRange { get { return 0; } }
 
-        public SpiritVigilSpell()
+        public SpiritSteedSpell()
             : this( null, 1 )
         {
         }
 
-        public SpiritVigilSpell( Mobile caster, int featLevel ) 
+        public SpiritSteedSpell( Mobile caster, int featLevel )
             : base( caster, featLevel )
         {
-            IconID = 6067;
-            Range = 12;
-            CustomName = "Spirit Vigil";
+            IconID = 6063;
+            Range = 0;
+            CustomName = "Spirit Steed";
         }
 
         public override bool CanBeCast
         {
             get
-            {                     
-                return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.SpiritI, FeatList.MatterI, FeatList.DeathI } );
+            {
+                return base.CanBeCast && HasRequiredArcanas( new FeatList[] { FeatList.MindI } );
             }
         }
-		
+
         public override void Effect()
-        {		
-			
-            if( CasterHasEnoughMana )
+        {
+            if( Caster.Followers < Caster.FollowersMax && CasterHasEnoughMana )
             {
-				Caster.Mana -= TotalCost;
-				Success = true;
-				int tx = Caster.Location.X;
-				int ty = Caster.Location.Y;
-				int tz = Caster.Location.Z;
-				Caster.PlaySound(586);
-				Caster.SendMessage("You summon forth an invisible spirit to guard the area for the next few hours...");
-				Point3D loc = new Point3D( tx, ty, tz);
-				SpiritVigilTrap trap = new SpiritVigilTrap(Caster);
-				trap.MoveToWorld( loc, Caster.Map );
-				Effects.SendLocationParticles( trap, 0x376A, 9, 10, 5025 );
-				
-			}
+                Caster.Mana -= TotalCost;
+                VhalurianHorse horse = new VhalurianHorse();
+                horse.Hue = 12345678;
+                horse.Name = "a spirit steed";
+                Summon( Caster, horse, 60, 535 );
+                Success = true;
+            }
+
+            else
+                Caster.SendMessage( "You do not have enough follower slots to do that." );
         }
-	}
+    }
 }

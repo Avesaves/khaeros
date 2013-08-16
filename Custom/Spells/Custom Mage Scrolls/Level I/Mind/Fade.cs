@@ -10,13 +10,13 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-    public class DecoyI : CustomSpellScroll
+    public class FadeScroll : CustomSpellScroll
     {
         public override CustomMageSpell Spell
         {
             get
             {
-                return new DecoyISpell();
+                return new FadeSpell();
             }
             set
             {
@@ -24,11 +24,10 @@ namespace Server.Items
         }
 
         [Constructable]
-        public DecoyI()
-            : base()
+        public FadeScroll() : base()
         {
-            Hue = 2687;
-            Name = "A Decoy I scroll";
+            Hue = 2980;
+            Name = "A Fade scroll";
         }
 
         public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
@@ -43,10 +42,10 @@ namespace Server.Items
             if( !IsMageCheck( m, true ) )
                 return;
 
-            BaseCustomSpell.SpellInitiator( new DecoyISpell( m, 1 ) );
+            BaseCustomSpell.SpellInitiator( new FadeSpell( m, 1 ) );
         }
 
-        public DecoyI( Serial serial )
+        public FadeScroll( Serial serial )
             : base( serial )
         {
         }
@@ -65,60 +64,67 @@ namespace Server.Items
     }
 
     [PropertyObject]
-    public class DecoyISpell : CustomMageSpell
+    public class FadeSpell : CustomMageSpell
     {
         public override CustomMageSpell GetNewInstance()
         {
-            return new DecoyISpell();
+            return new FadeSpell();
         }
 
         public override bool CustomScripted { get { return true; } }
 		public override bool IsMageSpell { get { return true; } }
         public override Type ScrollType { get { return typeof( OrigamiPaper ); } }
-        public override bool CanTargetSelf { get { return false; } }
-        public override bool AffectsMobiles { get { return true; } }
+		public override bool CanTargetSelf { get { return true; } }
+        public override bool AffectsItems { get { return false; } }
+		public override bool AffectsMobiles { get { return true; } }
         public override bool IsHarmful { get { return false; } }
         public override bool UsesTarget { get { return false; } }
-        public override FeatList Feat { get { return FeatList.CustomMageSpell; } }
-        public override string Name { get { return "Decoy I"; } }
-        public override int ManaCost { get { return 50; } }
+		public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
+        public override string Name { get { return "Fade"; } }
+        public override int ManaCost { get { return 30; } }
         public override int BaseRange { get { return 0; } }
 
-        public DecoyISpell()
+        public FadeSpell()
             : this( null, 1 )
         {
         }
 
-        public DecoyISpell( Mobile caster, int featLevel )
+        public FadeSpell( Mobile caster, int featLevel ) 
             : base( caster, featLevel )
         {
-            IconID = 6128;
-            Range = 0;
-            CustomName = "Decoy I";
+            IconID = 6027;
+            Range = 12;
+            CustomName = "Fade";
         }
 
         public override bool CanBeCast
         {
             get
-            {
-                return base.CanBeCast && HasRequiredArcanas( new FeatList[] { FeatList.ForcesI, FeatList.PrimeI, FeatList.MatterI, FeatList.SpaceI  } );
+            {                     
+                return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.MindI } );
             }
         }
-
+		
         public override void Effect()
-        {
+        {		
+			
             if( CasterHasEnoughMana )
             {
-                Caster.Mana -= TotalCost;
-				new Clone( Caster ).MoveToWorld( Caster.Location, Caster.Map );
-                Caster.FixedParticles( 0x376A, 1, 14, 0x13B5, EffectLayer.Waist );
-				Caster.FixedParticles( 0x376A, 1, 14, 0x13B5, EffectLayer.Head );
-				Caster.PlaySound( 534 );
-                Success = true;
+				Caster.Mana -= TotalCost;
+				Success = true;
+				Caster.FixedParticles( 0x376a, 1, 30, 9904, 1108, 6, EffectLayer.RightFoot );
+				Caster.PlaySound( 0x3C4 );
+				Caster.Emote( "*Fades away...*" );
+				Timer.DelayCall( TimeSpan.FromSeconds( 2 ), new TimerCallback( Flare1 ) );
             }
-
-            else
-                Caster.SendMessage( "You do not have enough mana to cast this spell!" );
         }
-    }
+		
+		private void Flare1()
+		{
+			if ( Caster == null )
+				return;
+				
+			Caster.Hidden = true;
+		}	
+	}
 }

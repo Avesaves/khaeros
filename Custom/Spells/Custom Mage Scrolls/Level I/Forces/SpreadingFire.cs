@@ -101,7 +101,7 @@ namespace Server.Items
         {
             get
             {                     
-                return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.ForcesI, FeatList.ForcesII } );
+                return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.ForcesI } );
             }
         }
 		
@@ -139,13 +139,17 @@ namespace Server.Items
 							mb.DoHarmful( mb );
 							mb.Emote ("*Is engulfed by fire!*");
 							mb.FixedEffect( 0x398C, 0, 30, 0, 0 ); // At player
-							AOS.Damage( mb, Caster, Utility.RandomMinMax( 100, 200 ), 0, 0, 0, 100, 0, 0, 0, 0 );
+                            if (mb is PlayerMobile)
+                                AOS.Damage(mb, Caster, Utility.RandomMinMax(50, 120), 0, 100, 0, 0, 0, 0, 0, 0);
+                            else
+							    AOS.Damage( mb, Caster, Utility.RandomMinMax( 100, 200 ), 0, 100, 0, 0, 0, 0, 0, 0 );
 						}
 
 						Effects.SendLocationEffect( m_loc, map, 0x36A0, 17 );
 						Caster.PlaySound( 560 );
 						cp.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*Expands outwards in a field of flames*" );
-                        cp.Kill();
+                        if (cp.Controlled = true)
+                            cp.Kill();
 						return;
 				}
 			}
