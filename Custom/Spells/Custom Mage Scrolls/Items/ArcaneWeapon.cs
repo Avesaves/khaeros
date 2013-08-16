@@ -47,7 +47,7 @@ namespace Server.Items
             att.Chance = 100;
             att.EnergyDamage = 15;
             Engines.XmlSpawner2.XmlAttach.AttachTo( this, att );
-            Resource = CraftResource.Satin;
+            Resource = CraftResource.Obsidian;
             Hue = 2992;
         }
 

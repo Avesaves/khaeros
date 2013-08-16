@@ -48,7 +48,7 @@ namespace Server.Items
             att.Chance = 100;
             att.FireDamage = 15;
             Engines.XmlSpawner2.XmlAttach.AttachTo( this, att );
-            Resource = CraftResource.Satin;
+            Resource = CraftResource.Obsidian;
             Hue = 2992;
 			m_Timer = new RotTimer(this);
             m_Timer.Start();

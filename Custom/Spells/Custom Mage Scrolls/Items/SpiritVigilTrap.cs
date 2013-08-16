@@ -29,6 +29,7 @@ namespace Server.Items
 			m_trapper.SendMessage("A dull moaning reaches your ears; something has disturbed your ghastly vigil!");
 			ItemID = 0x3735;
 			m_trapper.PlaySound(383);
+            AOS.Damage(from, m_trapper, 45, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
 			Timer.DelayCall( TimeSpan.FromSeconds( 2.0 ), new TimerCallback( Trigger ) );
 		}
 		
