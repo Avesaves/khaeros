@@ -553,7 +553,10 @@ namespace Server.Misc
             	if( !m_target.Alive || m_target.Blessed || m_target.Deleted )
             		return;
             	
-            	AOS.Damage( m_target, m_caster, Convert.ToInt32( m_damage ), false, 0, 0, 0, 0, 100, 0, 0, 0, false );
+                if (m_target is Playermobile)
+            	    AOS.Damage( m_target, m_caster, Convert.ToInt32( m_damage ), false, 0, 0, 0, 0, 100, 0, 0, 0, false );
+                else
+                    AOS.Damage(m_target, m_caster, Convert.ToInt32(m_damage)*2, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
             }
         }
 		
