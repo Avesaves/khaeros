@@ -110,6 +110,7 @@ namespace Server.Items
 			if (TargetMobile is Mobile && CasterHasEnoughMana )
 			{
 				Mobile cp = TargetMobile as Mobile;
+				BaseCreature vp = TargetMobile as BaseCreature;
 
 				if ( cp.BodyValue != 15  )
 				{
@@ -148,8 +149,8 @@ namespace Server.Items
 						Effects.SendLocationEffect( m_loc, map, 0x36A0, 17 );
 						Caster.PlaySound( 560 );
 						cp.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*Expands outwards in a field of flames*" );
-                        if (cp.Controlled = true)
-                            cp.Kill();
+                        if (vp.Controlled = true)
+                            vp.Kill();
 						return;
 				}
 			}
