@@ -1510,8 +1510,7 @@ namespace Server.Items
 
             if (from.AccessLevel < AccessLevel.GameMaster)
             {
-            	if (this.Resource == CraftResource.Electrum && m.Feats.GetFeatLevel(FeatList.Magery) == 0)
-            		from.SendMessage("No! Bad!");
+
                 if (RequiredRace != null && from.Race != RequiredRace)
                 {
                     if (RequiredRace == Race.Elf)
