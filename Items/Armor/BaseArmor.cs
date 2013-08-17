@@ -1997,8 +1997,7 @@ namespace Server.Items
 
         public override bool AllowEquipedCast(Mobile from)
         {
-            if (base.CraftResource == Electrum)
-            	return false;
+
             if (base.AllowEquipedCast(from))
                 return true;
 
