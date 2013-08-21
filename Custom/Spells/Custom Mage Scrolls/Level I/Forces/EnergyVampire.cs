@@ -117,9 +117,9 @@ namespace Server.Items
 						new ResistanceMod( ResistanceType.Fire, -70 ),
 						new ResistanceMod( ResistanceType.Poison, -70 ),
 						new ResistanceMod( ResistanceType.Cold, -70 ),
-                        new ResistanceMod( ResistanceType.Slash, -70 ),
+                        new ResistanceMod( ResistanceType.Slashing, -70 ),
                         new ResistanceMod( ResistanceType.Blunt, -70 ),
-                        new ResistanceMod( ResistanceType.Pierce, -70 )
+                        new ResistanceMod( ResistanceType.Piercing, -70 )
 					};
                     for (int i = 0; i < mods.Length; ++i)
                         Caster.AddResistanceMod(mods[i]);
@@ -250,7 +250,7 @@ namespace Server.Items
 
                         targ.MovingParticles(Caster, 0x37B9, 7, 0, false, false, 0, 0, 3043, 4043, 0x211, 0x100);
 
-                        for (int i = 0; i < Caster.Length; ++i)
+                        for (int i = 0; i < m_Mods.Length; ++i)
                             Caster.RemoveResistanceMod(m_Mods[i]);
 
                         Caster.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
