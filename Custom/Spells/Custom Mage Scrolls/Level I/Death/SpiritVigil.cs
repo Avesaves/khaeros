@@ -109,7 +109,7 @@ namespace Server.Items
         public override void Effect()
         {		
 			
-            if( CasterHasEnoughMana )
+            if( CasterHasEnoughMana && Caster.Followers < 4 )
             {
 				Caster.Mana -= TotalCost;
 				Success = true;
@@ -122,8 +122,9 @@ namespace Server.Items
 				SpiritVigilTrap trap = new SpiritVigilTrap(Caster);
 				trap.MoveToWorld( loc, Caster.Map );
 				Effects.SendLocationParticles( trap, 0x376A, 9, 10, 5025 );
+                Caster.Followers += 2;
 
-				
+	
 			}
         }
 	}
