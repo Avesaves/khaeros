@@ -30,6 +30,7 @@ namespace Server.Items
 			ItemID = 0x3735;
 			m_trapper.PlaySound(383);
             AOS.Damage(from, m_trapper, 45, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
+            m_trapper.Followers -= 2;
 			Timer.DelayCall( TimeSpan.FromSeconds( 2.0 ), new TimerCallback( Trigger ) );
 		}
 		
@@ -38,12 +39,15 @@ namespace Server.Items
 			if ( this == null || this.Deleted)
 				return;
 				
+
 			else
 			{
 				if ( m_trapper != null )
 				m_trapper.SendMessage("Your spectral summon returns to the underword...");
-				
+                
+                m_trapper.Followers -= 2;
 				this.Delete();
+
 			}
 		}	
 
