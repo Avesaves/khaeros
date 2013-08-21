@@ -112,6 +112,7 @@ namespace Server.Items
 			{
 
                     Mobile targ = TargetMobile as Mobile;
+<<<<<<< HEAD
                     ResistanceMod[] mods = new ResistanceMod[6]
 					{
 						new ResistanceMod( ResistanceType.Fire, -70 ),
@@ -123,6 +124,9 @@ namespace Server.Items
 					};
                     for (int i = 0; i < mods.Length; ++i)
                         Caster.AddResistanceMod(mods[i]);
+=======
+
+>>>>>>> parent of f262a94... 
                     
                     Caster.Mana -= TotalCost;
                     Success = true;
@@ -235,7 +239,6 @@ namespace Server.Items
                     }
                     return;
                 }
-        private ResistanceMod[] m_Mods;
                                 	private void Flare5()
                     {
                         Mobile targ = TargetMobile as Mobile;
@@ -250,9 +253,12 @@ namespace Server.Items
 
                         targ.MovingParticles(Caster, 0x37B9, 7, 0, false, false, 0, 0, 3043, 4043, 0x211, 0x100);
 
+<<<<<<< HEAD
                         for (int i = 0; i < m_Mods.Length; ++i)
                             Caster.RemoveResistanceMod(m_Mods[i]);
 
+=======
+>>>>>>> parent of f262a94... 
                         Caster.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
                         targ.FixedParticles(0x3967, 244, 25, 9950, 0, 0, EffectLayer.Waist);
                         Caster.Emote("*Glows...*");
