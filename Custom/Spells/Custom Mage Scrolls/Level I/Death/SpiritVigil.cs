@@ -122,6 +122,7 @@ namespace Server.Items
 				SpiritVigilTrap trap = new SpiritVigilTrap(Caster);
 				trap.MoveToWorld( loc, Caster.Map );
 				Effects.SendLocationParticles( trap, 0x376A, 9, 10, 5025 );
+
 				
 			}
         }
