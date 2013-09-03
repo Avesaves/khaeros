@@ -392,17 +392,20 @@ namespace Server.Mobiles
                         cloth.Hue = 2581;
                         m.EquipItem(cloth);
                         
-                        Cowl cow = new Cowl();
-                        cow.Hue = 2581;
-                        m.EquipItem(cow);
+
                         
                         ScaleArmorArms arm = new ScaleArmorArms();
                         arm.Hue = 2935;
                         m.EquipItem(arm);
 
                         SkullMask mask = new SkullMask();
+                        mask.Layer = Earrings;
                         mask.Hue = 2935;
                         m.EquipItem(mask);
+                        
+                        Cowl cow = new Cowl();
+                        cow.Hue = 2581;
+                        m.EquipItem(cow);
 
                         Flamberge sword = new Flamberge();
                        	
