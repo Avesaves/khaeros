@@ -313,150 +313,188 @@ namespace Server.Mobiles
             {
                 case Armament.Light:
                     {
-                        Sandals sandals = new Sandals();
+                        BlackLeatherBoots sandals = new BlackLeatherBoots();
                         sandals.Resource = CraftResource.BeastLeather;
-                        sandals.Hue = 2810;
+                        sandals.Hue = 2581;
                         m.EquipItem(sandals);
 
                         LeatherLegs ll = new LeatherLegs();
                         ll.Resource = CraftResource.ScaledLeather;
                         m.EquipItem(ll);
 
-                        LeatherGloves lg = new LeatherGloves();
-                        lg.Resource = CraftResource.ScaledLeather;
+                        PlateGloves lg = new PlateGloves();
+                        lg.Resource = CraftResource.Steel;
+                        lg.Hue = 2581;
                         m.EquipItem(lg);
+                        
+                        ScaleArmorArms arm = new ScaleArmorArms();
+                        arm.Hue = 2935;
+                        m.EquipItem(arm);
+                        
+                        Robe rober = new Robe();
+                        rober.Hue = 2581;
+                        m.EquipItem(rober);
+                        
+                        Cloak cloa = new Cloak();
+                        cloa.Hue = 2935;
+                        m.EquipItem(cloa);
+                        
+                        WaistCloth cloth = new WaistCloth();
+                        cloth.Hue = 2581;
+                        m.EquipItem(cloth);
 
-                        TribalWarriorMask mask = new TribalWarriorMask();
-                        mask.Hue = 2810;
+                        SkullMask mask = new SkullMask();
+                        mask.Hue = 2935;
                         m.EquipItem(mask);
 
-                        Shortsword sword = new Shortsword();
+                        Kukri sword = new Kukri();
+                       	
                         if (Utility.Random(100) + 1 > 99)
                             sword.Resource = CraftResource.Obsidian;
                         else
                             sword.Resource = CraftResource.Bronze;
                         m.EquipItem(sword);
 
-                        BoiledLeatherShield shield = new BoiledLeatherShield();
-                        shield.Resource = CraftResource.Ash;
+                        Buckler shield = new Buckler();
+                        shield.Hue = 2935;
+                        shield.Resource = CraftResource.Bronze;
                         m.EquipItem(shield);
 
                         break;
                     }
                 case Armament.Medium:
                     {
-                        SoftLeatherTunic chest = new SoftLeatherTunic();
-                        chest.Resource = CraftResource.BeastLeather;
+                        BlackLeatherBoots sandals = new BlackLeatherBoots();
+                        sandals.Resource = CraftResource.BeastLeather;
+                        sandals.Hue = 2581;
+                        m.EquipItem(sandals);
 
-                        SoftLeatherPauldrons pauldrons = new SoftLeatherPauldrons();
-                        pauldrons.Resource = CraftResource.BeastLeather;
+                        ScaleArmorLegs lb = new ScaleArmorLegs();
+                        lb.Resource = CraftResource.Bronze;
+                        lb.Hue = 2935;
+                        m.EquipItem(lb);
 
-                        SoftLeatherBoots boots = new SoftLeatherBoots();
-                        boots.Resource = CraftResource.BeastLeather;
-
-                        SoftLeatherLegs legs = new SoftLeatherLegs();
-                        legs.Resource = CraftResource.BeastLeather;
-
-                        LeatherGloves gloves = new LeatherGloves();
-                        gloves.Resource = CraftResource.BeastLeather;
-
-                        LeatherArms arms = new LeatherArms();
-                        arms.Resource = CraftResource.BeastLeather;
-
-                        PrimitiveSpear spear = new PrimitiveSpear();
-                        spear.Resource = CraftResource.Bronze;
-
+                        PlateGloves lg = new PlateGloves();
+                        lg.Resource = CraftResource.Steel;
+                        lg.Hue = 2581;
+                        m.EquipItem(lg);
+                        
+                        ScaleArmorChest chest = new ScaleArmorChest();
+                        chest.Hue = 2935;
                         m.EquipItem(chest);
-                        m.EquipItem(pauldrons);
-                        m.EquipItem(new Bandana(2810));
-                        m.EquipItem(spear);
-                        m.EquipItem(boots);
-                        m.EquipItem(legs);
-                        m.EquipItem(gloves);
-                        m.EquipItem(arms);
+                        
+                        Cloak cloa = new Cloak();
+                        cloa.Hue = 2935;
+                        m.EquipItem(cloa);
+                        
+                        WaistCloth cloth = new WaistCloth();
+                        cloth.Hue = 2581;
+                        m.EquipItem(cloth);
+                        
+                        Cowl cow = new Cowl();
+                        cow.Hue = 2581;
+                        m.EquipItem(cow);
+                        
+                        ScaleArmorArms arm = new ScaleArmorArms();
+                        arm.Hue = 2935;
+                        m.EquipItem(arm);
+
+                        SkullMask mask = new SkullMask();
+                        mask.Hue = 2935;
+                        m.EquipItem(mask);
+
+                        Flamberge sword = new Flamberge();
+                       	
+                        if (Utility.Random(100) + 1 > 99)
+                            sword.Resource = CraftResource.Obsidian;
+                        else
+                            sword.Resource = CraftResource.Bronze;
+                        m.EquipItem(sword);
+
+                        MetalShield shield = new MetalShield();
+                        shield.Resource = CraftResource.Bronze;                       
+                        shield.Hue = 2935;
+
+                        m.EquipItem(shield);
                         break;
                     }
                 case Armament.Heavy:
                     {
-                        EagleHelm helm = new EagleHelm();
-                        helm.Resource = CraftResource.Bronze;
-
-                        SpikedChest chest = new SpikedChest();
-                        chest.Resource = CraftResource.Bronze;
-
-                        RingmailArms arms = new RingmailArms();
-                        arms.Resource = CraftResource.Bronze;
-
-                        ChainLegs legs = new ChainLegs();
-                        legs.Resource = CraftResource.Bronze;
-
-                        RingmailGloves gloves = new RingmailGloves();
-                        gloves.Resource = CraftResource.Bronze;
-
-                        m.EquipItem(helm);
-                        m.EquipItem(chest);
-                        Sandals sandals = new Sandals();
+                        BlackLeatherBoots sandals = new BlackLeatherBoots();
                         sandals.Resource = CraftResource.BeastLeather;
-                        sandals.Hue = 2810;
+                        sandals.Hue = 2581;
                         m.EquipItem(sandals);
-                        m.EquipItem(gloves);
-                        m.EquipItem(arms);
-                        m.EquipItem(legs);
-                        m.EquipItem(new Cloak(2810));
 
-                        if (m.Female)
-                        {
-                            TallFaceShield shield = new TallFaceShield();
-                            shield.Resource = CraftResource.Bronze;
+                        ScaleArmorLegs lb = new ScaleArmorLegs();
+                        lb.Resource = CraftResource.Bronze;
+                        lb.Hue = 2581;
+                        m.EquipItem(lb);
 
-                            HookedClub club = new HookedClub();
-                            club.Resource = CraftResource.Bronze;
+                        PlateGloves lg = new PlateGloves();
+                        lg.Resource = CraftResource.Steel;
+                        lg.Hue = 2581;
+                        m.EquipItem(lg);
+                        
+                        SpikedChest chest = new SpikedChest();
+                        chest.Hue = 2581;
+                        m.EquipItem(chest);
+                        
+                        Cloak cloa = new Cloak();
+                        cloa.Hue = 2935;
+                        m.EquipItem(cloa);
+                        
+                        HalfPlateArms arm = new HalfPlateArms();
+                        arm.Hue = 2581;
+                        m.EquipItem(arm);
+                        
+                        WaistCloth cloth = new WaistCloth();
+                        cloth.Hue = 2581;
+                        m.EquipItem(cloth);
+                        
 
-                            m.EquipItem(shield);
-                            m.EquipItem(club);
-                            m.EquipItem(new ElegantWaistCloth(2810));
-                        }
 
+                        SkullMask mask = new SkullMask();
+                        mask.Hue = 2935;
+                        m.EquipItem(mask);
+
+                        Flamberge sword = new Flamberge();
+                       	
+                        if (Utility.Random(100) + 1 > 99)
+                            sword.Resource = CraftResource.Obsidian;
                         else
-                        {
-                            RoundedFaceShield shield = new RoundedFaceShield();
-                            shield.Resource = CraftResource.Bronze;
-
-                            Flamberge sword = new Flamberge();
                             sword.Resource = CraftResource.Bronze;
+                        m.EquipItem(sword);
 
-                            m.EquipItem(shield);
-                            m.EquipItem(sword);
-                        }
+
+                        break;
 
                         break;
                     }
                 case Armament.Ranged:
                     {
-                        Sandals sandals = new Sandals();
+                        HardenedThighBoots sandals = new HardenedThighBoots();
                         sandals.Resource = CraftResource.BeastLeather;
-                        sandals.Hue = 2810;
+                        sandals.Hue = 2935;
                         m.EquipItem(sandals);
 
-                        if (m.Female)
-                        {
-                            ShortBow bow = new ShortBow();
-                            bow.Resource = CraftResource.Redwood;
+                        FancyGlasses fancy = new FancyGlasses();
+                        fancy.Hue = 2581;
+                        m.EquipItem(fancy);
+                        
+                        PaddedVest pad = new PaddedVest();
+                        pad.Hue = 2935;
+                        m.EquipItem(pad);
+                        
+                        LargeScarf scar = new LargeScarf();
+                        scar.Hue = 2581;
+                        m.EquipItem(scar);
+                        
+                        CompositeBow com = new CompositeBow();
+                        com.Resource = CraftResource.Ash;
+                        com.Hue = 2935;
 
-                            m.EquipItem(bow);
-                            m.EquipItem(new MetallicBra());
-                            m.EquipItem(new WaistCloth(2810));
-                        }
-
-                        else
-                        {
-                            AzhuranBoomerang bow = new AzhuranBoomerang();
-                            bow.Resource = CraftResource.Redwood;
-
-                            m.EquipItem(bow);
-                            m.EquipItem(new LoinCloth(2810));
-                        }
-
+                        m.EquipItem(com);
+                        
                         if (m is BaseCreature)
                         {
                             BaseCreature bc = m as BaseCreature;
