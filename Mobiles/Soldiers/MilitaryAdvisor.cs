@@ -28,12 +28,12 @@ namespace Server.Mobiles
 
             switch (Nation)
             {
-                case Nation.Alyrian: advisorTitle = "Advisor"; Soldier.EquipAlyrian((Armament)1, this); break;
+                case Nation.Alyrian: advisorTitle = "Tribune"; Soldier.EquipAlyrian((Armament)1, this); break;
                 case Nation.Azhuran: advisorTitle = "Keeper"; Soldier.EquipAzhuran((Armament)1, this); break;
                 case Nation.Khemetar: advisorTitle = "Havildar"; Soldier.EquipKhemetar((Armament)1, this); break;
                 case Nation.Mhordul: advisorTitle = "Bambaici"; Soldier.EquipMhordul((Armament)1, this); break;
                 case Nation.Tyrean: advisorTitle = "Drengr"; Soldier.EquipTyrean((Armament)1, this); break;
-                case Nation.Vhalurian: if (Female) { advisorTitle = "Lady"; } else { advisorTitle = "Sir"; } Soldier.EquipVhalurian((Armament)1, this); break;
+                case Nation.Vhalurian: if (Female) { advisorTitle = "Sister"; } else { advisorTitle = "Brother"; } Soldier.EquipVhalurian((Armament)1, this); break;
                 case Nation.Imperial: advisorTitle = "Tribune"; Soldier.EquipImperial((Armament)1, this); break;
                 case Nation.Sovereign: if (Female) { advisorTitle = "Warmistress"; } else { advisorTitle = "Warmaster"; } Soldier.EquipSovereign((Armament)1, this); break;
                 case Nation.Society: advisorTitle = "Advisor"; Soldier.EquipSociety((Armament)1, this); break;

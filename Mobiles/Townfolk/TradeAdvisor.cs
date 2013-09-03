@@ -27,12 +27,12 @@ namespace Server.Mobiles
 
             switch(Nation)
             {
-                case Nation.Alyrian: advisorTitle = "Trader"; break;
+                case Nation.Alyrian: advisorTitle = "Argentarii"; break;
                 case Nation.Azhuran: advisorTitle = "Makipuray"; break;
                 case Nation.Khemetar: advisorTitle = "Trader"; break;
                 case Nation.Mhordul: advisorTitle = "Qudaldughacin"; break;
                 case Nation.Tyrean: advisorTitle = "Selja"; break;
-                case Nation.Vhalurian: if (Female) { advisorTitle = "Tradeswoman"; } else { advisorTitle = "Tradesman"; } break;
+                case Nation.Vhalurian: advisorTitle = "Bursar"; break;
                 case Nation.Imperial: advisorTitle = "Agent"; break;
                 case Nation.Sovereign: if(Female) { advisorTitle = "Quartermistress"; } else { advisorTitle = "Quartermaster"; } break;
                 case Nation.Society: if(Female) { advisorTitle = "Cellaress"; } else { advisorTitle = "Cellarer"; } break;

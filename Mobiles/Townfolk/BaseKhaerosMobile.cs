@@ -983,17 +983,6 @@ namespace Server.Mobiles
 
             switch (nation)
             {
-                case Nation.Alyrian:
-                    {
-                        if (female)
-                            surname += " verch ";
-                        else
-                            surname += " ap ";
-
-                        surname += RandomName(nation, false);
-
-                        return surname;
-                    }
                 case Nation.Mhordul:
                     {
                         if (Utility.Random(100) > 24) // Only 25% of Mhordul will have the title.
