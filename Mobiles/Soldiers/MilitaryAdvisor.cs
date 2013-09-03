@@ -28,8 +28,8 @@ namespace Server.Mobiles
 
             switch (Nation)
             {
-                case Nation.Alyrian: advisorTitle = "Kern"; Soldier.EquipAlyrian((Armament)1, this); break;
-                case Nation.Azhuran: advisorTitle = "Tlacateccatl"; Soldier.EquipAzhuran((Armament)1, this); break;
+                case Nation.Alyrian: advisorTitle = "Advisor"; Soldier.EquipAlyrian((Armament)1, this); break;
+                case Nation.Azhuran: advisorTitle = "Keeper"; Soldier.EquipAzhuran((Armament)1, this); break;
                 case Nation.Khemetar: advisorTitle = "Havildar"; Soldier.EquipKhemetar((Armament)1, this); break;
                 case Nation.Mhordul: advisorTitle = "Bambaici"; Soldier.EquipMhordul((Armament)1, this); break;
                 case Nation.Tyrean: advisorTitle = "Drengr"; Soldier.EquipTyrean((Armament)1, this); break;
@@ -80,7 +80,7 @@ namespace Server.Mobiles
                                         case Nation.Alyrian:
                                             Say("Fight the good fight."); break;
                                         case Nation.Azhuran:
-                                            Say("May it please Xipotec."); break;
+                                            Say("All to preserve the Balance."); break;
                                         case Nation.Khemetar:
                                             Say("I have compiled my spies' reports."); break;
                                         case Nation.Mhordul:
