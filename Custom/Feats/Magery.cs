@@ -11,7 +11,7 @@ namespace Server.FeatInfo
 	{
 		public override string Name{ get{ return "Black Magic"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.Magery; } }
-		public override FeatCost CostLevel{ get{ return FeatCost.Medium; } }
+		public override FeatCost CostLevel{ get{ return FeatCost.High; } }
 		
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ SkillName.Magery }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ FeatList.CureFamine }; } }
