@@ -399,7 +399,7 @@ namespace Server.Mobiles
                         m.EquipItem(arm);
 
                         SkullMask mask = new SkullMask();
-                        mask.Layer = Earrings;
+                        mask.Layer = Layer.Earrings;
                         mask.Hue = 2935;
                         m.EquipItem(mask);
                         
