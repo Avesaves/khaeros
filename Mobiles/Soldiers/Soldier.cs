@@ -2558,8 +2558,8 @@ namespace Server.Mobiles
                     {
                         switch (rank)
                         {
-                            case 1: Name = "Newyddian " + BaseName; break;
-                            case 2: Name = "Milwyr " + BaseName; break;
+                            case 1: Name = " " + BaseName; break;
+                            case 2: Name = " " + BaseName; break;
                         }
                         break;
                     }
@@ -2567,8 +2567,8 @@ namespace Server.Mobiles
                     {
                         switch (rank)
                         {
-                            case 1: Name = "Agulepoc " + BaseName; break;
-                            case 2: Name = "B'alepoc " + BaseName; break;
+                            case 1: Name = "Keeper " + BaseName; break;
+                            case 2: Name = "Keeper " + BaseName; break;
                         }
                         break;
                     }
@@ -3952,14 +3952,14 @@ namespace Server.Mobiles
                         {
                             switch (randomAttackPhrase)
                             {
-                                case 1: { s.SpeechInterval = DateTime.Now; return "Victory to Xipotec, the Azhurans are here!"; }
-                                case 2: { s.SpeechInterval = DateTime.Now; return "A fine sacrifice."; }
-                                case 3: { s.SpeechInterval = DateTime.Now; return "Stop right there, criminal scum!"; }
-                                case 4: { s.SpeechInterval = DateTime.Now; return "Xipotec is great!"; }
-                                case 5: { s.SpeechInterval = DateTime.Now; return "Long live the Ataloa!"; }
+                                case 1: { s.SpeechInterval = DateTime.Now; return "For the Dawn Princess!"; }
+                                case 2: { s.SpeechInterval = DateTime.Now; return "This will form my Balance."; }
+                                case 3: { s.SpeechInterval = DateTime.Now; return "Stop right there!"; }
+                                case 4: { s.SpeechInterval = DateTime.Now; return "For the preservation of Light!"; }
+                                case 5: { s.SpeechInterval = DateTime.Now; return "Forward!"; }
                                 case 6: { s.SpeechInterval = DateTime.Now; return "You'll know only darkness."; }
-                                case 7: { s.SpeechInterval = DateTime.Now; return "Ua! Ua! Ua!"; }
-                                case 8: { s.SpeechInterval = DateTime.Now; return "Xipotec! Xipotec! Xipotec!"; }
+                                case 7: { s.SpeechInterval = DateTime.Now; return "Death! Death! Death!"; }
+                                case 8: { s.SpeechInterval = DateTime.Now; return "I will sweep you away like the wind."; }
                             }
                         }
 
