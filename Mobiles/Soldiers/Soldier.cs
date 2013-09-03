@@ -356,8 +356,9 @@ namespace Server.Mobiles
                         m.EquipItem(sword);
 
                         Buckler shield = new Buckler();
-                        shield.Hue = 2935;
                         shield.Resource = CraftResource.Bronze;
+                        shield.Hue = 2935;
+
                         m.EquipItem(shield);
 
                         break;
@@ -457,7 +458,7 @@ namespace Server.Mobiles
                         mask.Hue = 2935;
                         m.EquipItem(mask);
 
-                        Flamberge sword = new Flamberge();
+                        HeavyKhopesh sword = new HeavyKhopesh();
                        	
                         if (Utility.Random(100) + 1 > 99)
                             sword.Resource = CraftResource.Obsidian;
@@ -476,6 +477,12 @@ namespace Server.Mobiles
                         sandals.Resource = CraftResource.BeastLeather;
                         sandals.Hue = 2935;
                         m.EquipItem(sandals);
+                        
+                        ScaleArmorLegs lb = new ScaleArmorLegs();
+                        lb.Resource = CraftResource.Bronze;
+                        lb.Hue = 2581;
+                        m.EquipItem(lb);
+                        
 
                         FancyGlasses fancy = new FancyGlasses();
                         fancy.Hue = 2581;
@@ -488,6 +495,10 @@ namespace Server.Mobiles
                         LargeScarf scar = new LargeScarf();
                         scar.Hue = 2581;
                         m.EquipItem(scar);
+                        
+                        WaistCloth cloth = new WaistCloth();
+                        cloth.Hue = 2581;
+                        m.EquipItem(cloth);
                         
                         CompositeBow com = new CompositeBow();
                         com.Resource = CraftResource.Ash;
