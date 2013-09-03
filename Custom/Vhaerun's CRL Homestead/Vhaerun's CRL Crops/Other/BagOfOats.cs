@@ -1,9 +1,8 @@
-using System;
-using Server.Network;
+using Khaeros.Scripts.Khaeros.Custom.Vhaerun_s_CRL_Homestead.Vhaerun_s_CRL_Cooking.Base_Cooking;
 
 namespace Server.Items
 {
-	public class BagOfOats : Item
+    public class BagOfOats : ItemWithMultipleUses
 	{
 
 		[Constructable]

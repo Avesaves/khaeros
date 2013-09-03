@@ -259,7 +259,7 @@ namespace Server.Misc
 	            BackgroundDictionary[BackgroundList.Unlucky].Level = reader.ReadInt();
 	            BackgroundDictionary[BackgroundList.Homely].Level = reader.ReadInt();
 	            BackgroundDictionary[BackgroundList.Ugly].Level = reader.ReadInt();
-	            BackgroundDictionary[BackgroundList.Disfigured].Level = reader.ReadInt();
+	            BackgroundDictionary[BackgroundList.Hideous].Level = reader.ReadInt();
 	            BackgroundDictionary[BackgroundList.Mute].Level = reader.ReadInt();
 	            BackgroundDictionary[BackgroundList.Deaf].Level = reader.ReadInt();
 	            test = reader.ReadInt();

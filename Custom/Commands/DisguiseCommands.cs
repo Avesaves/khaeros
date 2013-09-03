@@ -393,8 +393,8 @@ namespace Server.Commands
                     {
                         string newstring = e.ArgString.ToLower();
 
-                        if (newstring == "disfigured")
-                            m.Target = new FineDisguiseTarget("Disfigured", false, false, false, false, true);
+                        if (newstring == "hideous")
+                            m.Target = new FineDisguiseTarget("Hideous", false, false, false, false, true);
                         else if (newstring == "ugly")
                             m.Target = new FineDisguiseTarget("Ugly", false, false, false, false, true);
                         else if (newstring == "homely")
@@ -410,7 +410,7 @@ namespace Server.Commands
                         else
                         {
                             m.SendMessage("Invalid usage. Options:");
-                            m.SendMessage(".DisguiseLooks disfigured");
+                            m.SendMessage(".DisguiseLooks hideous");
                             m.SendMessage(".DisguiseLooks ugly");
                             m.SendMessage(".DisguiseLooks homely");
                             m.SendMessage(".DisguiseLooks average-looking");
@@ -616,7 +616,7 @@ namespace Server.Commands
                     int newlooks = 0;
 
                     
-                    if(  disguised.GetBackgroundLevel(BackgroundList.Disfigured) > 0 )
+                    if(  disguised.GetBackgroundLevel(BackgroundList.Hideous) > 0 )
                         looks = -3;
                     else if( disguised.GetBackgroundLevel(BackgroundList.Ugly) > 0 )
                         looks = -2;
@@ -629,7 +629,7 @@ namespace Server.Commands
                     else if( disguised.GetBackgroundLevel(BackgroundList.Gorgeous) > 0 )
                         looks = 3;
 
-                    if( m_newstring == "Disfigured" )
+                    if( m_newstring == "Hideous" )
                         newlooks = -3;
                     else if( m_newstring == "Ugly" )
                         newlooks = -2;

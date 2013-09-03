@@ -216,12 +216,6 @@ namespace Server.Gumps
                 
                 if( IsWoodenItem( obj ) )
                 {
-                	if( ( (Item)obj ).RootParentEntity != pm )
-	                {
-	                	pm.SendMessage( 60, "That must be in your backpack for you to stain it." );
-	                	return;
-	                }
-                	
                     ( (Item)obj ).Hue = m_hue;
                     m.PlaySound( 0x23E );
                 }

@@ -62,8 +62,8 @@ namespace Server.Gumps
                 else if( self.GetBackgroundLevel(BackgroundList.Ugly) > 0 )
                     beauty = "Ugly";
 
-                else if( self.GetBackgroundLevel(BackgroundList.Disfigured) > 0 )
-                    beauty = "Disfigured";
+                else if( self.GetBackgroundLevel(BackgroundList.Hideous) > 0 )
+                    beauty = "Hideous";
 
                 string age = "Teenager";
 

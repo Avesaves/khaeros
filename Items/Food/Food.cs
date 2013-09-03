@@ -174,7 +174,7 @@ namespace Server.Items
 		
 		public virtual void CheckRot()
 		{
-			if( RootParentEntity != null && RootParentEntity is PlayerVendor )
+			/*if( RootParentEntity != null && RootParentEntity is PlayerVendor )
 			{
 				Timer.DelayCall(TimeSpan.FromHours( 1 ), new TimerStateCallback( RotCallback ), this );
 				return;
@@ -208,7 +208,7 @@ namespace Server.Items
 			}
 			
 			if ( nextCheck != TimeSpan.Zero )
-				Timer.DelayCall( nextCheck + TimeSpan.FromSeconds( 5 ), new TimerStateCallback( RotCallback ), this );
+				Timer.DelayCall( nextCheck + TimeSpan.FromSeconds( 5 ), new TimerStateCallback( RotCallback ), this );*/
 		}
 		
         string GetTimeToRot()

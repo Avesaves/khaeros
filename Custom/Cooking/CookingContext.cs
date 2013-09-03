@@ -254,6 +254,15 @@ namespace Server.Engines.Craft
                                     (i as SackFlour).Quantity--;
                                 }
                             }
+                            else if (i is IHasQuantity)
+                            {
+                                IHasQuantity itemWithQuantity = i as IHasQuantity;
+                                if (itemWithQuantity.Quantity > 0)
+                                {
+                                    RemoveQuantity(itemWithQuantity);
+                                    ingredientNames.Add(RemoveBagOfPrefix(i.Name));
+                                }
+                            }
                             else
                             {
                                 if (i.Name != null)
@@ -317,6 +326,16 @@ namespace Server.Engines.Craft
                 return;
             }
         }
+
+        static void RemoveQuantity(IHasQuantity item)
+        {
+            item.Quantity--;
+        }
+
+        static string RemoveBagOfPrefix(string item)
+        {
+            return item.Replace("Bag of ", String.Empty);
+        }
     }
 
     public class CustomFood : Food
@@ -341,6 +360,7 @@ namespace Server.Engines.Craft
                 base.HitsBonus = value;
             }
         }
+
         public override int ManaBonus
         {
             get

@@ -1,13 +1,10 @@
-using System;
-using Server.Targeting;
-using Server.Items;
-using Server.Network;
+using Khaeros.Scripts.Khaeros.Custom.Vhaerun_s_CRL_Homestead.Vhaerun_s_CRL_Cooking.Base_Cooking;
 
 namespace Server.Items
 {
 	// ********** SackFlour **********
 	[TypeAlias( "Server.Items.SackFlourOpen" )]
-	public class SackFlour : Item, IHasQuantity
+    public class SackFlour : ItemWithMultipleUses, IHasQuantity
 	{
 		private int m_Quantity;
 

@@ -3,7 +3,7 @@ using Server;
 
 namespace Server.Items
 {
-	public class CandleShort : BaseLight
+	public class CandleShort : BaseLight, IDyable
 	{
 		public override int LitItemID{ get { return 0x142C; } }
 		public override int UnlitItemID{ get { return 0x142F; } }
@@ -36,5 +36,17 @@ namespace Server.Items
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
 		}
+
+        public virtual bool Dye(Mobile from, DyeTub sender)
+        {
+            if (Deleted)
+                return false;
+            else if (RootParent is Mobile && from != RootParent)
+                return false;
+
+            Hue = sender.DyedHue;
+
+            return true;
+        }
 	}
 }

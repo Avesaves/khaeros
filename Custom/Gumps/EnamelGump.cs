@@ -202,12 +202,6 @@ namespace Server.Gumps
                 
                 if( (obj is BaseArmor && EnamelGump.IsMetal((BaseArmor)obj)) || ( obj is Item && ( (Item)obj ).ItemID == 4984 ) || ( obj is WarHorse && ( ( (WarHorse)obj ).IsPetFriend( m ) || ( (WarHorse)obj ).ControlMaster == m ) && ( (WarHorse)obj ).BodyValue == 284 ) )
                 {
-                	if( obj is Item && ( (Item)obj ).RootParentEntity != pm )
-	                {
-	                	pm.SendMessage( 60, "That must be in your backpack for you to enamel it." );
-	                	return;
-	                }
-                	
                 	if( obj is Item )
                     	( (Item)obj ).Hue = m_hue;
                 	

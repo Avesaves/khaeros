@@ -1978,7 +1978,7 @@ namespace Server.Engines.XmlSpawner2
                 else if (viewed.GetBackgroundLevel(BackgroundList.Ugly) > 0)
                     appearance = "Appears ugly";
 
-                else if (viewed.GetBackgroundLevel(BackgroundList.Disfigured) > 0)
+                else if (viewed.GetBackgroundLevel(BackgroundList.Hideous) > 0)
                     appearance = "Appears disfigured";
                 #endregion
             }

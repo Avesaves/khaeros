@@ -85,8 +85,8 @@ namespace Server.BackgroundInfo
 			if( !warned &&  ListName != BackgroundList.Ugly )
 				warned = !TestBackgroundForPurchase( m, BackgroundList.Ugly, message );
 			
-			if( !warned && ListName != BackgroundList.Disfigured )
-				warned = !TestBackgroundForPurchase( m, BackgroundList.Disfigured, message );
+			if( !warned && ListName != BackgroundList.Hideous )
+				warned = !TestBackgroundForPurchase( m, BackgroundList.Hideous, message );
 			
 			return warned;
 		}

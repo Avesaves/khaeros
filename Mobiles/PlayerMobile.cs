@@ -123,7 +123,7 @@ namespace Server.Mobiles
 		Gorgeous,
 		Homely,
 		Ugly,
-		Disfigured,
+		Hideous,
 		Mute,
 		Deaf,
 		Lame,

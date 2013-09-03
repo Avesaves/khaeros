@@ -248,12 +248,6 @@ namespace Server.Gumps
             		return;
                 }
              
-            	if( !(obj is AddonComponent) && ( (Item)obj ).RootParentEntity != pm )
-                {
-                	pm.SendMessage( 60, "That must be in your backpack for you to enamel it." );
-                	return;
-                }
-
                 if( obj is AddonComponent )
                 {
                     AddonComponent component = obj as AddonComponent;
