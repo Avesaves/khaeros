@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Faith, FeatList.Magery, FeatList.MagicResistance }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Faith, FeatList.Magery }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will allow you to tap into the energy of Khaeros, " +
 					"give you access to more magic powers if you are worthy, and lower your enemies' chance of resisting your spells. [20% skill]"; } }
