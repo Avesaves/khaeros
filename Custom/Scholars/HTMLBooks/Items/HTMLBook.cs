@@ -12,12 +12,12 @@ namespace Server.Items
 	public enum Language
 	{
 		Common = 1,
-		Vhalurian,
+		Northern,
 		Mhordul,
-		Azhuran,
+		Western,
 		Khemetar,
 		Tyrean,
-		Alyrian
+		Southern
 	}
 
 	public abstract class HTMLBook : BaseBook
@@ -391,18 +391,18 @@ namespace Server.Items
 		{
 			KnownLanguage kl = KnownLanguage.Common;
 			
-			if( language == Language.Alyrian )
-				kl = KnownLanguage.Alyrian;
-			else if( language == Language.Azhuran )
-				kl = KnownLanguage.Azhuran;
+			if( language == Language.Southern )
+				kl = KnownLanguage.Southern;
+			else if( language == Language.Western )
+				kl = KnownLanguage.Western;
 			else if( language == Language.Khemetar )
 				kl = KnownLanguage.Khemetar;
 			else if( language == Language.Mhordul )
 				kl = KnownLanguage.Mhordul;
 			else if( language == Language.Tyrean )
 				kl = KnownLanguage.Tyrean;
-			else if( language == Language.Vhalurian )
-				kl = KnownLanguage.Vhalurian;
+			else if( language == Language.Northern )
+				kl = KnownLanguage.Northern;
 			
 			return kl;
 		}

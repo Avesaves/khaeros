@@ -3,18 +3,18 @@ using Server;
 
 namespace Server.Items
 {
-	public class AlyrianWashBasinEastAddon : BaseAddon
+	public class SouthernWashBasinEastAddon : BaseAddon
 	{
-		public override BaseAddonDeed Deed{ get{ return new AlyrianWashBasinEastDeed(); } }
+		public override BaseAddonDeed Deed{ get{ return new SouthernWashBasinEastDeed(); } }
 
 		[Constructable]
-		public AlyrianWashBasinEastAddon()
+		public SouthernWashBasinEastAddon()
 		{
 			AddComponent( new AddonComponent( 0x30DF ), 0, -1, 0 );
 			AddComponent( new AddonComponent( 0x30E0 ), 0, 0, 0 );
 		}
 
-		public AlyrianWashBasinEastAddon( Serial serial ) : base( serial )
+		public SouthernWashBasinEastAddon( Serial serial ) : base( serial )
 		{
 		}
 
@@ -33,17 +33,17 @@ namespace Server.Items
 		}
 	}
 
-	public class AlyrianWashBasinEastDeed : BaseAddonDeed
+	public class SouthernWashBasinEastDeed : BaseAddonDeed
 	{
-		public override BaseAddon Addon{ get{ return new AlyrianWashBasinEastAddon(); } }
+		public override BaseAddon Addon{ get{ return new SouthernWashBasinEastAddon(); } }
 		public override int LabelNumber{ get{ return 1073387; } } // elven wash basin (east)
 
 		[Constructable]
-		public AlyrianWashBasinEastDeed()
+		public SouthernWashBasinEastDeed()
 		{
 		}
 
-		public AlyrianWashBasinEastDeed( Serial serial ) : base( serial )
+		public SouthernWashBasinEastDeed( Serial serial ) : base( serial )
 		{
 		}
 

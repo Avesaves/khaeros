@@ -3,12 +3,12 @@ using Server;
 
 namespace Server.Items
 {
-	public class TallAlyrianBedSouthAddon : BaseAddon
+	public class TallSouthernBedSouthAddon : BaseAddon
 	{
-		public override BaseAddonDeed Deed{ get{ return new TallAlyrianBedSouthDeed(); } }
+		public override BaseAddonDeed Deed{ get{ return new TallSouthernBedSouthDeed(); } }
 
 		[Constructable]
-		public TallAlyrianBedSouthAddon()
+		public TallSouthernBedSouthAddon()
 		{
 			AddComponent( new AddonComponent( 0x3058 ),  0,  0, 0 ); // angolo alto sx
 			AddComponent( new AddonComponent( 0x3057 ), -1,  1, 0 ); // angolo basso sx
@@ -16,7 +16,7 @@ namespace Server.Items
 			AddComponent( new AddonComponent( 0x3056 ),  0,  1, 0 ); // angolo basso dx
 		}
 
-		public TallAlyrianBedSouthAddon( Serial serial ) : base( serial )
+		public TallSouthernBedSouthAddon( Serial serial ) : base( serial )
 		{
 		}
 
@@ -35,17 +35,17 @@ namespace Server.Items
 		}
 	}
 
-	public class TallAlyrianBedSouthDeed : BaseAddonDeed
+	public class TallSouthernBedSouthDeed : BaseAddonDeed
 	{
-		public override BaseAddon Addon{ get{ return new TallAlyrianBedSouthAddon(); } }
+		public override BaseAddon Addon{ get{ return new TallSouthernBedSouthAddon(); } }
 		public override int LabelNumber{ get{ return 1072858; } } // tall elven bed (south)
 
 		[Constructable]
-		public TallAlyrianBedSouthDeed()
+		public TallSouthernBedSouthDeed()
 		{
 		}
 
-		public TallAlyrianBedSouthDeed( Serial serial ) : base( serial )
+		public TallSouthernBedSouthDeed( Serial serial ) : base( serial )
 		{
 		}
 

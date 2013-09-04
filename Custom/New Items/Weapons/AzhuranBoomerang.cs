@@ -4,13 +4,13 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class AzhuranBoomerang : BaseRanged
+	public class Boomerang : BaseRanged
 	{
-		public override string NameType{ get{ return "Azhuran Boomerang"; } }
+		public override string NameType{ get{ return "Boomerang"; } }
 		
 		public override int EffectID{ get{ return 0x2AF2; } }
-		public override Type AmmoType{ get{ return typeof( AzhuranBoomerang ); } }
-		public override Item Ammo{ get{ return new AzhuranBoomerang(); } }
+		public override Type AmmoType{ get{ return typeof( Boomerang ); } }
+		public override Item Ammo{ get{ return new Boomerang(); } }
 
 		//public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.ArmorIgnore; } }
 		//public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.MovingShot; } }
@@ -41,14 +41,14 @@ namespace Server.Items
 		public override int DefMissSound{ get{ return 0x238; } }
 
 		[Constructable]
-		public AzhuranBoomerang() : base( 0x3B27 )
+		public Boomerang() : base( 0x3B27 )
 		{
 			Weight = 2.0;
-			Name = "Azhuran Boomerang";
+			Name = "Boomerang";
 			AosElementDamages.Blunt = 100;
 		}
 
-		public AzhuranBoomerang( Serial serial ) : base( serial )
+		public Boomerang( Serial serial ) : base( serial )
 		{
 		}
 		

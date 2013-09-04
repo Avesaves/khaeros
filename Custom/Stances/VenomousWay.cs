@@ -48,7 +48,7 @@ namespace Server.Misc
 		}
 		
 		[Usage( "VenomousWay" )]
-        [Description( "Allows the user to change their combat stance to Vhalurians' racial style." )]
+        [Description( "Allows the user to change their combat stance to Northerns' racial style." )]
         private static void VenomousWay_OnCommand( CommandEventArgs e )
         {
             PlayerMobile m = e.Mobile as PlayerMobile;

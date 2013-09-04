@@ -244,7 +244,7 @@ namespace Server.Mobiles
             #region Title Assignment
             switch (Government.Nation)
             {
-                case Nation.Alyrian:
+                case Nation.Southern:
                     {
                         if(IsSlave)
                             Title = "the Drudge";
@@ -252,7 +252,7 @@ namespace Server.Mobiles
                             Title = "the Artisan";
                         break;
                     }
-                case Nation.Azhuran:
+                case Nation.Western:
                     {
                         if(IsSlave)
                             Title = "the Toiler";
@@ -284,7 +284,7 @@ namespace Server.Mobiles
                             Title = "the Hired Hand";
                         break;
                     }
-                case Nation.Vhalurian:
+                case Nation.Northern:
                     {
                         if(IsSlave)
                             Title = "the Serf";

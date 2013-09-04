@@ -109,7 +109,7 @@ namespace Server.Items
                 from.Prompt = new SCrucHCurvedBladePrompt(from, m_Hilt, (CurvedBlade)m_Blade);
             if (m_Blade is MediumBlade)
             {
-                if (((PlayerMobile)from).Nation == Nation.Vhalurian)
+                if (((PlayerMobile)from).Nation == Nation.Northern)
                     from.Prompt = new SCrucHMediumBladePrompt(from, m_Hilt, (MediumBlade)m_Blade);
                 else
                 {

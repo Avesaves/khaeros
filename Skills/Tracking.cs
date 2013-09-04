@@ -344,7 +344,7 @@ namespace Server.SkillHandlers
 			{
 				PlayerMobile pm = m as PlayerMobile;
 				
-				if( pm.Nation == Nation.Azhuran )
+				if( pm.Nation == Nation.Western )
 					mBonus = 25;
 
                 if( pm.IsVampire && pm.Feats.GetFeatLevel( FeatList.Obfuscate ) > 0 )

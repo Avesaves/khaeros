@@ -150,27 +150,27 @@ namespace Server.Gumps
 				
 				//if( !myself && self.Disguise.Nation != null )
                     //race = "Appears to be of " + self.Disguise.Nation + " ancestory";
-		if (self.GetDisguisedNation().ToString() == "Vhalurian")
+		if (self.GetDisguisedNation().ToString() == "Northern")
 			race = "Exhibits Northern qualities";
 			
-		else if (self.GetDisguisedNation().ToString() == "Azhuran")
+		else if (self.GetDisguisedNation().ToString() == "Western")
 			race = "Exhibits Western qualities";
 
-		else if (self.GetDisguisedNation().ToString() == "Alyrian")
+		else if (self.GetDisguisedNation().ToString() == "Southern")
 			race = "Exhibits Southern qualities";
 			
 		else if (self.GetDisguisedNation().ToString() == "Mhordul")
 			race = "Exhibits foreign qualities";			
                 	//race = "Exhibits " + self.GetDisguisedNation().ToString() + " qualities";
 
-                //if (self.Nation == Nation.Vhalurian)
-                //    race = "Exhibits Vhalurian qualities";
+                //if (self.Nation == Nation.Northern)
+                //    race = "Exhibits Northern qualities";
 
-                //else if (self.Nation == Nation.Alyrian)
-                //    race = "Exhibits Alyrian qualities";
+                //else if (self.Nation == Nation.Southern)
+                //    race = "Exhibits Southern qualities";
 
-                //else if (self.Nation == Nation.Azhuran)
-                //    race = "Exhibits Azhuran qualities";
+                //else if (self.Nation == Nation.Western)
+                //    race = "Exhibits Western qualities";
 
                 //else if (self.Nation == Nation.Khemetar)
                 //    race = "Exhibits Khemetar qualities";

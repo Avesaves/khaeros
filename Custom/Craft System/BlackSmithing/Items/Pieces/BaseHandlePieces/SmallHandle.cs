@@ -109,7 +109,7 @@ namespace Server.Items
             }
             if (m_Blade is MaceHead)
                 from.Prompt = new SHMaceHeadPrompt(from, m_Hilt, (MaceHead)m_Blade);
-            if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Azhuran)
+            if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Western)
             {
                 Tepatl weapon = new Tepatl();
                 weapon.NewCrafting = true;
@@ -151,7 +151,7 @@ namespace Server.Items
                 weapon.AddItem(m_Blade);
                 weapon.AddItem(m_Hilt);
             }
-            if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Vhalurian)
+            if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Northern)
             {
                 Lance weapon = new Lance();
                 weapon.NewCrafting = true;
@@ -210,14 +210,14 @@ namespace Server.Items
             m_Hilt = hilt;
             m_Blade = blade;
 
-            if (((PlayerMobile)from).Nation != Nation.Alyrian && ((PlayerMobile)from).Nation != Nation.Khemetar && ((PlayerMobile)from).Nation != Nation.Mhordul)
+            if (((PlayerMobile)from).Nation != Nation.Southern && ((PlayerMobile)from).Nation != Nation.Khemetar && ((PlayerMobile)from).Nation != Nation.Mhordul)
                 OnResponse(from, "1");
             else
             {
                 from.SendMessage("Please type in the code for the type of weapon you would like to make:");
                 from.SendMessage(" 1 - Machete ");
 
-                if (((PlayerMobile)from).Nation == Nation.Alyrian)
+                if (((PlayerMobile)from).Nation == Nation.Southern)
                 {
                     from.SendMessage(" 2 - billhook ");
                     from.SendMessage(" 3 - falcata ");
@@ -241,7 +241,7 @@ namespace Server.Items
 
             if (int.TryParse(text, out index))
             {
-                if (index < 1 || index > 6 || ((index == 2 || index == 3) && ((PlayerMobile)from).Nation != Nation.Alyrian) || ((index == 4 || index == 5) && ((PlayerMobile)from).Nation != Nation.Khemetar) || (index == 6 && ((PlayerMobile)from).Nation != Nation.Mhordul))
+                if (index < 1 || index > 6 || ((index == 2 || index == 3) && ((PlayerMobile)from).Nation != Nation.Southern) || ((index == 4 || index == 5) && ((PlayerMobile)from).Nation != Nation.Khemetar) || (index == 6 && ((PlayerMobile)from).Nation != Nation.Mhordul))
                 {
                     from.SendMessage("Invalide code.");
                     return;
@@ -559,7 +559,7 @@ namespace Server.Items
             from.SendMessage(" 2 - Mace ");
             from.SendMessage(" 3 - War Mace");
 
-            if (((PlayerMobile)from).Nation == Nation.Azhuran)
+            if (((PlayerMobile)from).Nation == Nation.Western)
             {
                 from.SendMessage(" 4 - primitive mace ");
                 from.SendMessage(" 5 - spiked mace ");
@@ -575,7 +575,7 @@ namespace Server.Items
 
             if (int.TryParse(text, out index))
             {
-                if (index < 1 || index > 5 || ((index == 4 || index == 5) && ((PlayerMobile)from).Nation != Nation.Azhuran))
+                if (index < 1 || index > 5 || ((index == 4 || index == 5) && ((PlayerMobile)from).Nation != Nation.Western))
                 {
                     from.SendMessage("Invalid code.");
                     return;
@@ -586,7 +586,7 @@ namespace Server.Items
                     case 1: MakeFlangedMace(from); break;
                     case 2: MakeMace(from); break;
                     case 3: MakeWarMace(from); break;
-                    case 4: MakeAzhuranMace(from); break;
+                    case 4: MakeWesternMace(from); break;
                     case 5: MakeSpikedMace(from); break;
                 }
             }
@@ -721,9 +721,9 @@ namespace Server.Items
             weapon.AddItem(m_Hilt);
         }
 
-        public void MakeAzhuranMace(Mobile from)
+        public void MakeWesternMace(Mobile from)
         {
-            AzhuranMace weapon = new AzhuranMace();
+            WesternMace weapon = new WesternMace();
             weapon.NewCrafting = true;
             weapon.QualityDamage = m_Hilt.Damage + m_Blade.Damage;
             weapon.QualitySpeed = m_Hilt.Speed + m_Blade.Speed;

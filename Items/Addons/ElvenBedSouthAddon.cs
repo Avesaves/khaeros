@@ -3,18 +3,18 @@ using Server;
 
 namespace Server.Items
 {
-	public class AlyrianBedSouthAddon : BaseAddon
+	public class SouthernBedSouthAddon : BaseAddon
 	{
-		public override BaseAddonDeed Deed{ get{ return new AlyrianBedSouthDeed(); } }
+		public override BaseAddonDeed Deed{ get{ return new SouthernBedSouthDeed(); } }
 
 		[Constructable]
-		public AlyrianBedSouthAddon()
+		public SouthernBedSouthAddon()
 		{
 			AddComponent( new AddonComponent( 0x3050 ), 0, 0, 0 );
 			AddComponent( new AddonComponent( 0x3051 ), 0, -1, 0 );
 		}
 
-		public AlyrianBedSouthAddon( Serial serial ) : base( serial )
+		public SouthernBedSouthAddon( Serial serial ) : base( serial )
 		{
 		}
 
@@ -33,17 +33,17 @@ namespace Server.Items
 		}
 	}
 
-	public class AlyrianBedSouthDeed : BaseAddonDeed
+	public class SouthernBedSouthDeed : BaseAddonDeed
 	{
-		public override BaseAddon Addon{ get{ return new AlyrianBedSouthAddon(); } }
+		public override BaseAddon Addon{ get{ return new SouthernBedSouthAddon(); } }
 		public override int LabelNumber{ get{ return 1072860; } } // elven bed (south)
 
 		[Constructable]
-		public AlyrianBedSouthDeed()
+		public SouthernBedSouthDeed()
 		{
 		}
 
-		public AlyrianBedSouthDeed( Serial serial ) : base( serial )
+		public SouthernBedSouthDeed( Serial serial ) : base( serial )
 		{
 		}
 

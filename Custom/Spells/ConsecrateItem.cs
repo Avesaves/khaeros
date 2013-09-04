@@ -53,10 +53,10 @@ namespace Server.Misc
 				}
 				
 				else if( caster.Feats.GetFeatLevel(FeatList.ConsecrateItem) > 1 && (
-				         ( caster.Nation == Nation.Vhalurian && TargetItem is ClericCrook ) || 
-				         ( caster.Nation == Nation.Azhuran && TargetItem is ShamanStaff ) || 
+				         ( caster.Nation == Nation.Northern && TargetItem is ClericCrook ) || 
+				         ( caster.Nation == Nation.Western && TargetItem is ShamanStaff ) || 
 				         ( caster.Nation == Nation.Tyrean && TargetItem is ProphetDiviningRod ) ||
-				         ( caster.Nation == Nation.Alyrian && TargetItem is DruidStaff ) || 
+				         ( caster.Nation == Nation.Southern && TargetItem is DruidStaff ) || 
 				         ( caster.Nation == Nation.Khemetar && TargetItem is PriestStaff ) ||
 				         ( caster.Nation == Nation.Mhordul && TargetItem is MedicineManFetish ) ) )
 				{
@@ -73,10 +73,10 @@ namespace Server.Misc
 				}
 				
 				else if( caster.Feats.GetFeatLevel(FeatList.ConsecrateItem) > 2 && (
-				         ( caster.Nation == Nation.Vhalurian && TargetItem is ClericRobe ) || 
-				         ( caster.Nation == Nation.Azhuran && TargetItem is ShamanRobe ) || 
+				         ( caster.Nation == Nation.Northern && TargetItem is ClericRobe ) || 
+				         ( caster.Nation == Nation.Western && TargetItem is ShamanRobe ) || 
 				         ( caster.Nation == Nation.Tyrean && TargetItem is ProphetRobe ) ||
-				         ( caster.Nation == Nation.Alyrian && TargetItem is DruidRobe ) || 
+				         ( caster.Nation == Nation.Southern && TargetItem is DruidRobe ) || 
 				         ( caster.Nation == Nation.Khemetar && TargetItem is PriestessGown ) || 
 				         ( caster.Nation == Nation.Khemetar && TargetItem is PriestRobe ) ) )
 				{
@@ -144,7 +144,7 @@ namespace Server.Misc
 					PlayerMobile m = from as PlayerMobile;
 					bool worked = false;
 					
-					if( m.Nation == Nation.Vhalurian && 
+					if( m.Nation == Nation.Northern && 
 					( text == "Elysia" || text == "Xhenos" || text == "Solian"
 					|| text == "Khaliana" || text == "Drachus" || text == "Vhariel" ) )
 					{
@@ -160,7 +160,7 @@ namespace Server.Misc
 						necklace.ItemID = 15234;
 					}
 					
-					if( m.Nation == Nation.Alyrian && 
+					if( m.Nation == Nation.Southern && 
 					( text == "Arianthynt" || text == "Gwenhun" || text == "Braichmor"
 					|| text == "Eurdrych" || text == "Cariadawyr" || text == "Haearnduw" ) )
 					{
@@ -184,7 +184,7 @@ namespace Server.Misc
 						necklace.ItemID = 15241;
 					}
 					
-					if( m.Nation == Nation.Azhuran && 
+					if( m.Nation == Nation.Western && 
 					( text == "Xipotec" || text == "Lahti" || text == "Tlaloc"
 					|| text == "Kalia" || text == "Camatli" || text == "Omchali" ) )
 					{

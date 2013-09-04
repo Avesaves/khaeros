@@ -339,7 +339,7 @@ namespace Server.Mobiles
 	{
 	}
 	
-	public interface IAzhuranFavoredEnemy
+	public interface IWesternFavoredEnemy
 	{
 	}
 	
@@ -479,11 +479,11 @@ namespace Server.Mobiles
 	{
 	}
 	
-	public interface IAlyrian
+	public interface ISouthern
 	{
 	}
 	
-	public interface IAzhuran
+	public interface IWestern
 	{
 	}
 	
@@ -499,7 +499,7 @@ namespace Server.Mobiles
 	{
 	}
 	
-	public interface IVhalurian
+	public interface INorthern
 	{
 	}
 	
@@ -1879,7 +1879,7 @@ namespace Server.Mobiles
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
-        public virtual bool AlyrianName
+        public virtual bool SouthernName
         {
             get{ return false; }
             
@@ -1888,12 +1888,12 @@ namespace Server.Mobiles
             	FixGender();
             		
             	if( value == true )
-            		this.Name = BaseKhaerosMobile.RandomName( Nation.Alyrian, this.Female );
+            		this.Name = BaseKhaerosMobile.RandomName( Nation.Southern, this.Female );
             }
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
-        public virtual bool AzhuranName
+        public virtual bool WesternName
         {
             get{ return false; }
             
@@ -1902,7 +1902,7 @@ namespace Server.Mobiles
             	FixGender();
             	
             	if( value == true )
-            		this.Name = BaseKhaerosMobile.RandomName( Nation.Azhuran, this.Female );
+            		this.Name = BaseKhaerosMobile.RandomName( Nation.Western, this.Female );
             }
         }
         
@@ -1949,7 +1949,7 @@ namespace Server.Mobiles
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
-        public virtual bool VhalurianName
+        public virtual bool NorthernName
         {
             get{ return false; }
             
@@ -1958,7 +1958,7 @@ namespace Server.Mobiles
             	FixGender();
             	
             	if( value == true )
-            		this.Name = BaseKhaerosMobile.RandomName( Nation.Vhalurian, this.Female );
+            		this.Name = BaseKhaerosMobile.RandomName( Nation.Northern, this.Female );
             }
         }
         
@@ -1977,26 +1977,26 @@ namespace Server.Mobiles
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
-        public virtual bool TurnAlyrian
+        public virtual bool TurnSouthern
         {
             get{ return false; }
             
             set
             {
             	if( value == true )
-            		ProcessLooks( Nation.Alyrian );
+            		ProcessLooks( Nation.Southern );
             }
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
-        public virtual bool TurnAzhuran
+        public virtual bool TurnWestern
         {
             get{ return false; }
             
             set
             {
             	if( value == true )
-            		ProcessLooks( Nation.Azhuran );
+            		ProcessLooks( Nation.Western );
             }
         }
         
@@ -2037,14 +2037,14 @@ namespace Server.Mobiles
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
-        public virtual bool TurnVhalurian
+        public virtual bool TurnNorthern
         {
             get{ return false; }
             
             set
             {
             	if( value == true )
-            		ProcessLooks( Nation.Vhalurian );
+            		ProcessLooks( Nation.Northern );
             }
         }
         

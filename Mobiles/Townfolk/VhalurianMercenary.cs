@@ -6,14 +6,14 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	public class VhalurianMercenary : Mercenary, IVhalurian
+	public class NorthernMercenary : Mercenary, INorthern
 	{
 		[Constructable]
-		public VhalurianMercenary() : base( Nation.Vhalurian )
+		public NorthernMercenary() : base( Nation.Northern )
 		{
 		}
 
-		public VhalurianMercenary(Serial serial) : base(serial)
+		public NorthernMercenary(Serial serial) : base(serial)
 		{
 		}
 

@@ -160,7 +160,7 @@ namespace Server.Misc.BreedingSystem
         	
         	if( e.Length < 1 || e.Arguments[0].Trim().Length < 1 )
         	{
-        		m.SendMessage( "Correct usage example: .Brand \"Vhalurian Royal Stables\"." );
+        		m.SendMessage( "Correct usage example: .Brand \"Northern Royal Stables\"." );
         		m.SendMessage( "Reminder: make sure to use \"s for composite names, such as the one on the example above." );
         		return;
         	}

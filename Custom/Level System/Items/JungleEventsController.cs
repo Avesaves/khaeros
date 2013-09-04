@@ -28,7 +28,7 @@ namespace Server.Items
 				
 				if( m.Hits < ( m.HitsMax / 2 ) )
 				{
-					if( m.Nation == Nation.Azhuran )
+					if( m.Nation == Nation.Western )
 					{
 						if( m.AccessLevel > AccessLevel.Player )
 							m.SendMessage( "Staff-only Debug Message: avoided being damaged by the jungle's diseases due to racial merit." );

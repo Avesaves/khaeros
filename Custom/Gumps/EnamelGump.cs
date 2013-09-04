@@ -131,12 +131,12 @@ namespace Server.Gumps
 				{
 					switch( m.Nation )
 					{
-						case Nation.Alyrian:
+						case Nation.Southern:
 						{
 							hues = new int[]{1454,2708,2683,2591,2745,2741,2751,2585,2751,2765};
 							break;
 						}
-						case Nation.Azhuran:
+						case Nation.Western:
 						{
 							hues = new int[]{2935,2598,2711,2745,2605,2724,2864,2739,2753,2583};
 							break;
@@ -156,7 +156,7 @@ namespace Server.Gumps
 							hues = new int[]{2864,2739,2753,2583,2751,2765,-1,-1,-1,-1};
 							break;
 						}
-						case Nation.Vhalurian:
+						case Nation.Northern:
 						{
 							hues = new int[]{2869,2723,2599,2934,2621,2986,2404,2656,2757,2600};
 							break;

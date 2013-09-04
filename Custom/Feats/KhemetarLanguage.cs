@@ -16,7 +16,7 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Linguistics, FeatList.AzhuranLanguage, FeatList.VhalurianLanguage, FeatList.AlyrianLanguage }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Linguistics, FeatList.WesternLanguage, FeatList.NorthernLanguage, FeatList.SouthernLanguage }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in Archaic languages, which will " +
@@ -53,12 +53,12 @@ namespace Server.FeatInfo
 	
 	
 
-            if(((PlayerMobile)m).Feats.GetFeatLevel(FeatList.VhalurianLanguage) < 3)
+            if(((PlayerMobile)m).Feats.GetFeatLevel(FeatList.NorthernLanguage) < 3)
                 return false;
 
-            if (((PlayerMobile)m).Feats.GetFeatLevel(FeatList.AlyrianLanguage) < 3)
+            if (((PlayerMobile)m).Feats.GetFeatLevel(FeatList.SouthernLanguage) < 3)
                 return false;
-            if (((PlayerMobile)m).Feats.GetFeatLevel(FeatList.AzhuranLanguage) < 3)
+            if (((PlayerMobile)m).Feats.GetFeatLevel(FeatList.WesternLanguage) < 3)
                 return false;
             if (((PlayerMobile)m).Feats.GetFeatLevel(FeatList.Inscription) < 3)
                 return false;

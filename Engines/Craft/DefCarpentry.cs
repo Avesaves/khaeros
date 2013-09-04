@@ -133,10 +133,10 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( BoneStaff ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( DruidStaff ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( DruidStaff ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ClericCrook ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( ClericCrook ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( ProphetDiviningRod ) && !TestRace( m, Nation.Tyrean ) )
@@ -145,13 +145,13 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( MedicineManFetish ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranBoomerang ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( Boomerang ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( BoiledLeatherShield ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( BoiledLeatherShield ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( LeatherShield ) && !TestRace( m, Nation.Mhordul ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( LeatherShield ) && !TestRace( m, Nation.Mhordul ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( BoatPart ) && m.Feats.GetFeatLevel(FeatList.Shipwright) < 1 )
@@ -175,55 +175,55 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( LargeBoatDeed ) && m.Nation == Nation.Tyrean )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianLowChair ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( SouthernLowChair ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnateAlyrianChair ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( OrnateSouthernChair ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( CozyAlyrianChair ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( CozySouthernChair ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianBedEastDeed ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( SouthernBedEastDeed ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianBedSouthDeed ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( SouthernBedSouthDeed ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TallAlyrianBedEastDeed ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( TallSouthernBedEastDeed ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TallAlyrianBedSouthDeed ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( TallSouthernBedSouthDeed ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianDresserEastDeed ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( SouthernDresserEastDeed ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianDresserSouthDeed ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( SouthernDresserSouthDeed ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianBenchEastDeed ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( SouthernBenchEastDeed ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianBenchSouthDeed ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( SouthernBenchSouthDeed ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( FancyAlyrianTableEastDeed ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( FancySouthernTableEastDeed ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( FancyAlyrianTableSouthDeed ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( FancySouthernTableSouthDeed ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnateAlyrianTableEastDeed ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( OrnateSouthernTableEastDeed ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnateAlyrianTableSouthDeed ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( OrnateSouthernTableSouthDeed ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianWashBasinEastDeed ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( SouthernWashBasinEastDeed ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AlyrianWashBasinSouthDeed ) && m.Nation != Nation.Alyrian )
+				else if( itemType == typeof( SouthernWashBasinSouthDeed ) && m.Nation != Nation.Southern )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( SmallDragonBoatDeed ) && m.Feats.GetFeatLevel(FeatList.Shipwright) < 1 )
@@ -351,9 +351,9 @@ namespace Server.Engines.Craft
 			
 			AddCraft( typeof( ElegantLowTable ),			1044291, 1030265,	80.0, 105.0,	typeof( Log ), 1044041, 20, 1044351 );
 			AddCraft( typeof( PlainLowTable ),				1044291, 1030266,	80.0, 105.0,	typeof( Log ), 1044041, 20, 1044351 );
-			AddCraft( typeof( OrnateAlyrianChair ),			1044291, "ornate alyrian chair",	80.0, 105.0,	typeof( Log ), 1044041, 12, 1044351 );
-			AddCraft( typeof( CozyAlyrianChair ),				1044291, "cozy alyrian chair",	80.0, 105.0,	typeof( Log ), 1044041, 13, 1044351 );
-			AddCraft( typeof( AlyrianLowChair ),			1044291, "alyrian low chair",	80.0, 105.0,	typeof( Log ), 1044041, 12, 1044351 );
+			AddCraft( typeof( OrnateSouthernChair ),			1044291, "ornate Southern chair",	80.0, 105.0,	typeof( Log ), 1044041, 12, 1044351 );
+			AddCraft( typeof( CozySouthernChair ),				1044291, "cozy Southern chair",	80.0, 105.0,	typeof( Log ), 1044041, 13, 1044351 );
+			AddCraft( typeof( SouthernLowChair ),			1044291, "Southern low chair",	80.0, 105.0,	typeof( Log ), 1044041, 12, 1044351 );
 
 			// Containers
 			AddCraft( typeof( WoodenBox ),					1044292, 1023709,	20.0,  45.0,	typeof( Log ), 1044041, 10, 1044351 );
@@ -432,24 +432,24 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( PlayerBBEast ), 1044290, 1062420, 85.0, 110.0, typeof( Log ), 1044041, 50, 1044351 );
 			AddCraft( typeof( PlayerBBSouth ), 1044290, 1062421, 85.0, 110.0, typeof( Log ), 1044041, 50, 1044351 );
 			
-			index = AddCraft( typeof( AlyrianBedEastDeed ), 1044290, "alyrian bed (east)", 95.0, 115.0, typeof( Log ), 1044041, 100, 1044351 );
+			index = AddCraft( typeof( SouthernBedEastDeed ), 1044290, "Southern bed (east)", 95.0, 115.0, typeof( Log ), 1044041, 100, 1044351 );
 			AddRes( index, typeof( Cloth ), 1044286, 100, 1044287 );
-			index = AddCraft( typeof( AlyrianBedSouthDeed ), 1044290, "alyrian bed (south)", 95.0, 115.0, typeof( Log ), 1044041, 100, 1044351 );
+			index = AddCraft( typeof( SouthernBedSouthDeed ), 1044290, "Southern bed (south)", 95.0, 115.0, typeof( Log ), 1044041, 100, 1044351 );
 			AddRes( index, typeof( Cloth ), 1044286, 100, 1044287 );
-			index = AddCraft( typeof( TallAlyrianBedEastDeed ), 1044290, "ornate alyrian bed (east)", 95.0, 115.0, typeof( Log ), 1044041, 150, 1044351 );
+			index = AddCraft( typeof( TallSouthernBedEastDeed ), 1044290, "ornate Southern bed (east)", 95.0, 115.0, typeof( Log ), 1044041, 150, 1044351 );
 			AddRes( index, typeof( Cloth ), 1044286, 150, 1044287 );
-			index = AddCraft( typeof( TallAlyrianBedSouthDeed ), 1044290, "ornate alyrian bed (south)", 95.0, 115.0, typeof( Log ), 1044041, 150, 1044351 );
+			index = AddCraft( typeof( TallSouthernBedSouthDeed ), 1044290, "ornate Southern bed (south)", 95.0, 115.0, typeof( Log ), 1044041, 150, 1044351 );
 			AddRes( index, typeof( Cloth ), 1044286, 150, 1044287 );
-			AddCraft( typeof( AlyrianDresserEastDeed ), 1044290, "alyrian dresser (east)", 95.0, 115.0, typeof( Log ), 1044041, 35, 1044351 );
-			AddCraft( typeof( AlyrianDresserSouthDeed ), 1044290, "alyrian dresser (south)", 95.0, 115.0, typeof( Log ), 1044041, 35, 1044351 );
-			AddCraft( typeof( AlyrianBenchEastDeed ), 1044290, "alyrian bench (east)", 95.0, 115.0, typeof( Log ), 1044041, 20, 1044351 );
-			AddCraft( typeof( AlyrianBenchSouthDeed ), 1044290, "alyrian bench (south)", 95.0, 115.0, typeof( Log ), 1044041, 20, 1044351 );
-			AddCraft( typeof( FancyAlyrianTableEastDeed ), 1044290, "fancy alyrian table (east)", 95.0, 115.0, typeof( Log ), 1044041, 40, 1044351 );
-			AddCraft( typeof( FancyAlyrianTableSouthDeed ), 1044290, "fancy alyrian table (south)", 95.0, 115.0, typeof( Log ), 1044041, 40, 1044351 );
-			AddCraft( typeof( OrnateAlyrianTableEastDeed ), 1044290, "ornate alyrian table (east)", 95.0, 115.0, typeof( Log ), 1044041, 40, 1044351 );
-			AddCraft( typeof( OrnateAlyrianTableSouthDeed ), 1044290, "ornate alyrian table (south)", 95.0, 115.0, typeof( Log ), 1044041, 40, 1044351 );
-			AddCraft( typeof( AlyrianWashBasinEastDeed ), 1044290, "alyrian wash basin (east)", 95.0, 115.0, typeof( Log ), 1044041, 50, 1044351 );
-			AddCraft( typeof( AlyrianWashBasinSouthDeed ), 1044290, "alyrian wash basin (south)", 95.0, 115.0, typeof( Log ), 1044041, 50, 1044351 );
+			AddCraft( typeof( SouthernDresserEastDeed ), 1044290, "Southern dresser (east)", 95.0, 115.0, typeof( Log ), 1044041, 35, 1044351 );
+			AddCraft( typeof( SouthernDresserSouthDeed ), 1044290, "Southern dresser (south)", 95.0, 115.0, typeof( Log ), 1044041, 35, 1044351 );
+			AddCraft( typeof( SouthernBenchEastDeed ), 1044290, "Southern bench (east)", 95.0, 115.0, typeof( Log ), 1044041, 20, 1044351 );
+			AddCraft( typeof( SouthernBenchSouthDeed ), 1044290, "Southern bench (south)", 95.0, 115.0, typeof( Log ), 1044041, 20, 1044351 );
+			AddCraft( typeof( FancySouthernTableEastDeed ), 1044290, "fancy Southern table (east)", 95.0, 115.0, typeof( Log ), 1044041, 40, 1044351 );
+			AddCraft( typeof( FancySouthernTableSouthDeed ), 1044290, "fancy Southern table (south)", 95.0, 115.0, typeof( Log ), 1044041, 40, 1044351 );
+			AddCraft( typeof( OrnateSouthernTableEastDeed ), 1044290, "ornate Southern table (east)", 95.0, 115.0, typeof( Log ), 1044041, 40, 1044351 );
+			AddCraft( typeof( OrnateSouthernTableSouthDeed ), 1044290, "ornate Southern table (south)", 95.0, 115.0, typeof( Log ), 1044041, 40, 1044351 );
+			AddCraft( typeof( SouthernWashBasinEastDeed ), 1044290, "Southern wash basin (east)", 95.0, 115.0, typeof( Log ), 1044041, 50, 1044351 );
+			AddCraft( typeof( SouthernWashBasinSouthDeed ), 1044290, "Southern wash basin (south)", 95.0, 115.0, typeof( Log ), 1044041, 50, 1044351 );
 
             AddCraft( typeof( RightPegleg ), 1044295, "pegleg (right)", 80.0, 120.0, typeof( Log ), 1044041, 8, 1044351 );
             AddCraft( typeof( LeftPegleg ), 1044295, "pegleg (left)", 80.0, 120.0, typeof( Log ), 1044041, 8, 1044351 );

@@ -110,7 +110,7 @@ namespace Server.Items
             if( Caster.Followers < Caster.FollowersMax && CasterHasEnoughMana )
             {
                 Caster.Mana -= TotalCost;
-                VhalurianHorse horse = new VhalurianHorse();
+                NorthernHorse horse = new NorthernHorse();
                 horse.Hue = 12345678;
                 horse.Name = "a spirit steed";
                 Summon( Caster, horse, 60, 535 );

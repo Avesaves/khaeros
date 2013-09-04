@@ -1368,7 +1368,7 @@ namespace Server.Items
 			{
 				if ( attacker.Weapon is HeavyCrossbow || attacker.Weapon is RepeatingCrossbow || attacker.Weapon is Crossbow )
 					bonus += 10*((IKhaerosMobile)attacker).Feats.GetFeatLevel(FeatList.CrossbowMastery);
-				else if ( !(attacker.Weapon is AzhuranBoomerang) ) // this can only be a bow of some sort
+				else if ( !(attacker.Weapon is Boomerang) ) // this can only be a bow of some sort
 					bonus += 10*((IKhaerosMobile)attacker).Feats.GetFeatLevel(FeatList.BowMastery);
 			}
 			
@@ -4480,7 +4480,7 @@ namespace Server.Items
 			m_AosSkillBonuses = new AosSkillBonuses( this );
 			m_AosElementDamages = new AosElementAttributes( this );
 			
-			if( this is BaseRanged || this is AzhuranBoomerang ||
+			if( this is BaseRanged || this is Boomerang ||
 			    this is DruidStaff || this is ProphetDiviningRod || this is ClericCrook || 
 			    this is QuarterStaff || this is GnarledStaff || this is SpikedClub || this is Club ||
 			    this is BlackStaff )
@@ -5265,7 +5265,7 @@ namespace Server.Items
 				   Resource == CraftResource.Obsidian || Resource == CraftResource.Starmetal || Resource == CraftResource.Electrum )
 					skill = "Blacksmithing";
 				
-				else if( (this is AzhuranBoomerang || !(this is BaseRanged)) )
+				else if( (this is Boomerang || !(this is BaseRanged)) )
 					skill = "Carpentry";
 				
 				else

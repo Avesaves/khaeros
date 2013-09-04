@@ -541,12 +541,12 @@ namespace Server.Engines.XmlSpawner2
 			// we haven't taken any defensive action yet
 			if ( m_Body.InRange( opponent, myRange ) && csa.CanBeginAttack() && ( m_Attack || weapon is BaseRanged ) )
 			{
-				if ( weapon is BaseRanged && !(weapon is AzhuranBoomerang) )
+				if ( weapon is BaseRanged && !(weapon is Boomerang) )
 				{
 					if ( AttemptRangedAttack() )
 						return;
 				}
-				else if ( weapon is AzhuranBoomerang )
+				else if ( weapon is Boomerang )
 				{
 					if ( AttemptThrownAttack() )
 						return;

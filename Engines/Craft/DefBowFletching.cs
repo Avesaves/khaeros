@@ -90,25 +90,25 @@ namespace Server.Engines.Craft
 			{
 				PlayerMobile m = from as PlayerMobile;
 			/*	
-				if( itemType == typeof( WarBow ) && !TestRace( m, Nation.Alyrian ) )
+				if( itemType == typeof( WarBow ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( FlatBow ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( FlatBow ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnateLongBow ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( OrnateLongBow ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( CompositeRecurveBow ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( CompositeRecurveBow ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ShortBow ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( ShortBow ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( BlowGunDarts ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( BlowGunDarts ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( BlowGun ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( BlowGun ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( Hijazi ) && !TestRace( m, Nation.Khemetar ) )
@@ -120,10 +120,10 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( RecurveLongBow ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( RepeatingCrossbow ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( RepeatingCrossbow ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( LongBow ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( LongBow ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 					*/
 			}

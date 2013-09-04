@@ -4,7 +4,7 @@ using Server.Items;
 namespace Server.Mobiles
 {
 	[CorpseName( "a gambol corpse" )]
-	public class Gambol : BaseCreature, ILargePredator, IJungleCreature, IAzhuranFavoredEnemy, IEnraged
+	public class Gambol : BaseCreature, ILargePredator, IJungleCreature, IWesternFavoredEnemy, IEnraged
 	{
 		[Constructable]
 		public Gambol() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )

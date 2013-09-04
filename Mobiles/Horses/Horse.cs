@@ -73,17 +73,17 @@ namespace Server.Mobiles
 			
 			switch( breed )
 			{
-				case "Alyrian Horse":
+				case "Southern Horse":
 				{
-					this.Name = "an Alyrian Horse";
+					this.Name = "an Southern Horse";
 					this.BodyValue = 228;
 					this.ItemID = 0x3EA1;
 					break;
 				}
 					
-				case "Azhuran Horse":
+				case "Western Horse":
 				{
-					this.Name = "an Azhuran Horse";
+					this.Name = "an Western Horse";
 					this.BodyValue = 204;
 					this.ItemID = 0x3EA2;
 					break;
@@ -113,9 +113,9 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case "Vhalurian Horse":
+				case "Northern Horse":
 				{
-					this.Name = "a Vhalurian Horse";
+					this.Name = "a Northern Horse";
 					this.BodyValue = 226;
 					this.ItemID = 0x3EA0;
 					break;

@@ -87,12 +87,12 @@ namespace Server.Mobiles
 	public enum KnownLanguage
 	{
 		Common,
-		Alyrian,
-		Azhuran,
+		Southern,
+		Western,
 		Khemetar,
 		Mhordul,
 		Tyrean,
-		Vhalurian,
+		Northern,
 		Shorthand
 	}
 	
@@ -146,8 +146,8 @@ namespace Server.Mobiles
         RopeTrick,
         NonLethalTraps,
         EscortPrisoner,
-        AlyrianLanguage,
-        AzhuranLanguage,
+        SouthernLanguage,
+        WesternLanguage,
         KhemetarLanguage,
         MhordulLanguage,
         Intimidate,
@@ -219,7 +219,7 @@ namespace Server.Mobiles
         DogBreeding,
         ExtraPetFeats,
         RacialMounts,
-        VhalurianLanguage,
+        NorthernLanguage,
         AnimalTraining,
         PetFeats,
         AnimalControl,
@@ -517,11 +517,11 @@ namespace Server.Mobiles
 	public enum Nation
 	{
 		None,
-		Azhuran,
+		Western,
 		Mhordul,
-		Vhalurian,
+		Northern,
 		Tyrean,
-		Alyrian,
+		Southern,
 		Khemetar,
 		Imperial,
         Society,
@@ -627,12 +627,12 @@ namespace Server.Mobiles
         public Timer m_CharInfoTimer;
         private int m_HearAll;
         private DateTime m_NextFeatUse;
-        private bool m_AlyrianGuard;
-        private bool m_AzhuranGuard;
+        private bool m_SouthernGuard;
+        private bool m_WesternGuard;
         private bool m_KhemetarGuard;
         private bool m_MhordulGuard;
         private bool m_TyreanGuard;
-        private bool m_VhalurianGuard;
+        private bool m_NorthernGuard;
         private bool m_ImperialGuard;
         private string m_DayOfBirth;
         private string m_MonthOfBirth;
@@ -2130,17 +2130,17 @@ namespace Server.Mobiles
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
-        public bool AlyrianGuard
+        public bool SouthernGuard
         {
-            get { return m_AlyrianGuard; }
-            set { m_AlyrianGuard = value; }
+            get { return m_SouthernGuard; }
+            set { m_SouthernGuard = value; }
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
-        public bool AzhuranGuard
+        public bool WesternGuard
         {
-            get { return m_AzhuranGuard; }
-            set { m_AzhuranGuard = value; }
+            get { return m_WesternGuard; }
+            set { m_WesternGuard = value; }
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
@@ -2165,10 +2165,10 @@ namespace Server.Mobiles
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
-        public bool VhalurianGuard
+        public bool NorthernGuard
         {
-            get { return m_VhalurianGuard; }
-            set { m_VhalurianGuard = value; }
+            get { return m_NorthernGuard; }
+            set { m_NorthernGuard = value; }
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
@@ -4000,13 +4000,13 @@ namespace Server.Mobiles
 		
 		public bool RaciallyCompatible( Nation nation )
 		{
-			if( (this.Nation == Nation.Azhuran || this.Nation == Nation.Khemetar) && (nation == Nation.Azhuran || nation == Nation.Khemetar) )
+			if( (this.Nation == Nation.Western || this.Nation == Nation.Khemetar) && (nation == Nation.Western || nation == Nation.Khemetar) )
 				return true;
 			
-			if( (this.Nation == Nation.Vhalurian || this.Nation == Nation.Tyrean) && (nation == Nation.Vhalurian || nation == Nation.Tyrean) )
+			if( (this.Nation == Nation.Northern || this.Nation == Nation.Tyrean) && (nation == Nation.Northern || nation == Nation.Tyrean) )
 				return true;
 			
-			if( (this.Nation == Nation.Mhordul || this.Nation == Nation.Alyrian) && (nation == Nation.Mhordul || nation == Nation.Alyrian) )
+			if( (this.Nation == Nation.Mhordul || this.Nation == Nation.Southern) && (nation == Nation.Mhordul || nation == Nation.Southern) )
 				return true;
 			
 			return false;
@@ -4268,12 +4268,12 @@ namespace Server.Mobiles
 	
 				switch( m.Nation )
 				{
-					case Nation.Alyrian: dexcap += 30; stamcap += 20; break;
-					case Nation.Azhuran: dexcap += 50; stamcap += 10; break;
+					case Nation.Southern: dexcap += 30; stamcap += 20; break;
+					case Nation.Western: dexcap += 50; stamcap += 10; break;
 					case Nation.Khemetar: dexcap += 40; stamcap += 0; break;
 					case Nation.Mhordul: dexcap += 20; stamcap += 30; break;
 					case Nation.Tyrean: dexcap += 0; stamcap += 40; break;
-					case Nation.Vhalurian: dexcap += 10; stamcap += 50; break;
+					case Nation.Northern: dexcap += 10; stamcap += 50; break;
 				}
 			
 				int dexoffset = m.RawDex - dexcap;
@@ -5385,7 +5385,7 @@ namespace Server.Mobiles
 							) );
 						}
 					}
-					else if ( !(twohander is AzhuranBoomerang) ) // must be a bow
+					else if ( !(twohander is Boomerang) ) // must be a bow
 					{
 						if ( Feats.GetFeatLevel(FeatList.BowMastery) > 0 )
 						{
@@ -6608,7 +6608,7 @@ namespace Server.Mobiles
 		
 		public void HandleAwardsOnKill()
 		{
-			 if( Nation == Nation.Azhuran )
+			 if( Nation == Nation.Western )
             	Mana += Feats.GetFeatLevel(FeatList.DivineConsecration);
 		}
 		
@@ -6910,12 +6910,12 @@ namespace Server.Mobiles
 			m_ChampionTitles = new ChampionTitleInfo();
 
             m_CrimesList = new Dictionary<Mobiles.Nation, int>();
-            m_CrimesList.Add(Nation.Alyrian, 0);
-            m_CrimesList.Add(Nation.Azhuran, 0);
+            m_CrimesList.Add(Nation.Southern, 0);
+            m_CrimesList.Add(Nation.Western, 0);
             m_CrimesList.Add(Nation.Khemetar, 0);
             m_CrimesList.Add(Nation.Mhordul, 0);
             m_CrimesList.Add(Nation.Tyrean, 0);
-            m_CrimesList.Add(Nation.Vhalurian, 0);
+            m_CrimesList.Add(Nation.Northern, 0);
             m_CrimesList.Add(Nation.Imperial, 0);
             m_CrimesList.Add(Nation.Sovereign, 0);
             m_CrimesList.Add(Nation.Society, 0);
@@ -6968,12 +6968,12 @@ namespace Server.Mobiles
         {
         	switch( m.SpokenLanguage )
         	{
-        		case KnownLanguage.Alyrian: return 482;
-        		case KnownLanguage.Azhuran: return 1258;
+        		case KnownLanguage.Southern: return 482;
+        		case KnownLanguage.Western: return 1258;
         		case KnownLanguage.Khemetar: return 1;
         		case KnownLanguage.Mhordul: return 2964;
         		case KnownLanguage.Tyrean: return 2618;
-        		case KnownLanguage.Vhalurian: return 138;
+        		case KnownLanguage.Northern: return 138;
         	}
         	return 0;
         }
@@ -7411,12 +7411,12 @@ namespace Server.Mobiles
 			
 			switch( language )
 			{
-				case KnownLanguage.Alyrian: feat = m.Feats.GetFeatLevel(FeatList.AlyrianLanguage); break;
-				case KnownLanguage.Azhuran: feat = m.Feats.GetFeatLevel(FeatList.AzhuranLanguage); break;
+				case KnownLanguage.Southern: feat = m.Feats.GetFeatLevel(FeatList.SouthernLanguage); break;
+				case KnownLanguage.Western: feat = m.Feats.GetFeatLevel(FeatList.WesternLanguage); break;
 				case KnownLanguage.Khemetar: feat = m.Feats.GetFeatLevel(FeatList.KhemetarLanguage); break;
 				case KnownLanguage.Mhordul: feat = m.Feats.GetFeatLevel(FeatList.MhordulLanguage); break;
 				case KnownLanguage.Tyrean: feat = m.Feats.GetFeatLevel(FeatList.TyreanLanguage); break;
-				case KnownLanguage.Vhalurian: feat = m.Feats.GetFeatLevel(FeatList.VhalurianLanguage); break;
+				case KnownLanguage.Northern: feat = m.Feats.GetFeatLevel(FeatList.NorthernLanguage); break;
 			}
 			
 			if( feat == 1 )
@@ -7441,10 +7441,10 @@ namespace Server.Mobiles
             if (RPTitle != null)
             {
                 if (RPTitle.Contains("of the South") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Mhordul))
-                    nation = Nation.Alyrian;
+                    nation = Nation.Southern;
 
-                else if (RPTitle.Contains("of the West") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Azhuran))
-                    nation = Nation.Azhuran;
+                else if (RPTitle.Contains("of the West") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Western))
+                    nation = Nation.Western;
 
                 else if (RPTitle.Contains("the Khemetar") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Khemetar))
                     nation = Nation.Khemetar;
@@ -7452,8 +7452,8 @@ namespace Server.Mobiles
                 else if (RPTitle.Contains("the Tyrean") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Tyrean))
                     nation = Nation.Tyrean;
 
-                else if (RPTitle.Contains("of the North") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Vhalurian))
-                    nation = Nation.Vhalurian;
+                else if (RPTitle.Contains("of the North") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Northern))
+                    nation = Nation.Northern;
                     
                   
             }
@@ -8064,12 +8064,12 @@ namespace Server.Mobiles
 				}
 				case 77:
 				{
-					m_AlyrianGuard = reader.ReadBool();
-					m_AzhuranGuard = reader.ReadBool();
+					m_SouthernGuard = reader.ReadBool();
+					m_WesternGuard = reader.ReadBool();
 					m_KhemetarGuard = reader.ReadBool();
 					m_MhordulGuard = reader.ReadBool();
 					m_TyreanGuard = reader.ReadBool();
-					m_VhalurianGuard = reader.ReadBool();
+					m_NorthernGuard = reader.ReadBool();
 					goto case 76;
 				}
 				case 76:
@@ -8589,12 +8589,12 @@ namespace Server.Mobiles
                     if (version < 148)
                     {
                         m_CrimesList = new Dictionary<Mobiles.Nation, int>();
-                        m_CrimesList.Add(Nation.Alyrian, 0);
-                        m_CrimesList.Add(Nation.Azhuran, 0);
+                        m_CrimesList.Add(Nation.Southern, 0);
+                        m_CrimesList.Add(Nation.Western, 0);
                         m_CrimesList.Add(Nation.Khemetar, 0);
                         m_CrimesList.Add(Nation.Mhordul, 0);
                         m_CrimesList.Add(Nation.Tyrean, 0);
-                        m_CrimesList.Add(Nation.Vhalurian, 0);
+                        m_CrimesList.Add(Nation.Northern, 0);
                         m_CrimesList.Add(Nation.Imperial, 0);
                         m_CrimesList.Add(Nation.Sovereign, 0);
                         m_CrimesList.Add(Nation.Society, 0);
@@ -8713,9 +8713,9 @@ namespace Server.Mobiles
                 m_TitlePrefix = null;
                 m_RPTitle = "of the South";
 
-                if( m_Nation == Nation.Alyrian )
+                if( m_Nation == Nation.Southern )
                     m_RPTitle = "of the South";
-                else if( m_Nation == Nation.Azhuran )
+                else if( m_Nation == Nation.Western )
                     m_RPTitle = "of the West";
                 else if( m_Nation == Nation.Khemetar )
                     m_RPTitle = "the Khemetar";
@@ -8723,7 +8723,7 @@ namespace Server.Mobiles
                     m_RPTitle = "the Stranger";
                 else if( m_Nation == Nation.Tyrean )
                     m_RPTitle = "the Tyrean";
-                else if( m_Nation == Nation.Vhalurian )
+                else if( m_Nation == Nation.Northern )
                     m_RPTitle = "of the North";
             }
 			
@@ -9028,12 +9028,12 @@ namespace Server.Mobiles
 			writer.Write( (string) m_MonthOfBirth );
 			writer.Write( (string) m_YearOfBirth );
 			
-			writer.Write( (bool) m_AlyrianGuard );
-			writer.Write( (bool) m_AzhuranGuard );
+			writer.Write( (bool) m_SouthernGuard );
+			writer.Write( (bool) m_WesternGuard );
 			writer.Write( (bool) m_KhemetarGuard );
 			writer.Write( (bool) m_MhordulGuard );
 			writer.Write( (bool) m_TyreanGuard );
-			writer.Write( (bool) m_VhalurianGuard );
+			writer.Write( (bool) m_NorthernGuard );
 			
 			writer.Write( (int) m_HearAll );
 			
@@ -9270,12 +9270,12 @@ namespace Server.Mobiles
             if (m_CrimesList == null)
             {                
                 m_CrimesList = new Dictionary<Mobiles.Nation, int>();
-                m_CrimesList.Add(Nation.Alyrian,    0);
-                m_CrimesList.Add(Nation.Azhuran,    0);
+                m_CrimesList.Add(Nation.Southern,    0);
+                m_CrimesList.Add(Nation.Western,    0);
                 m_CrimesList.Add(Nation.Khemetar,   0);
                 m_CrimesList.Add(Nation.Mhordul,    0);
                 m_CrimesList.Add(Nation.Tyrean,     0);
-                m_CrimesList.Add(Nation.Vhalurian,  0);
+                m_CrimesList.Add(Nation.Northern,  0);
                 m_CrimesList.Add(Nation.Imperial,   0);
                 m_CrimesList.Add(Nation.Sovereign,  0);
                 m_CrimesList.Add(Nation.Society,    0);

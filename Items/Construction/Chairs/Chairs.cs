@@ -161,15 +161,15 @@ namespace Server.Items
 
 	[DynamicFliping]
 	[Flipable( 0x2DE3, 0x2DE4, 0x2DE5, 0x2DE6 )]
-	public class OrnateAlyrianChair : Item, ICanBeStained
+	public class OrnateSouthernChair : Item, ICanBeStained
 	{
 		[Constructable]
-		public OrnateAlyrianChair() : base( 0x2DE3 )
+		public OrnateSouthernChair() : base( 0x2DE3 )
 		{
 			Weight = 1.0;
 		}
 
-		public OrnateAlyrianChair( Serial serial ) : base( serial )
+		public OrnateSouthernChair( Serial serial ) : base( serial )
 		{
 		}
 
@@ -190,14 +190,14 @@ namespace Server.Items
 
 	[DynamicFliping]
 	[Flipable( 0x2DEB, 0x2DEC, 0x2DED, 0x2DEE )]
-	public class CozyAlyrianChair : Item, ICanBeStained
+	public class CozySouthernChair : Item, ICanBeStained
 	{
 		[Constructable]
-		public CozyAlyrianChair() : base( 0x2DEB )
+		public CozySouthernChair() : base( 0x2DEB )
 		{
 		}
 
-		public CozyAlyrianChair( Serial serial ) : base( serial )
+		public CozySouthernChair( Serial serial ) : base( serial )
 		{
 		}
 
@@ -218,14 +218,14 @@ namespace Server.Items
 
 	[DynamicFliping]
 	[Flipable( 0x2DF5, 0x2DF6 )]
-	public class AlyrianLowChair : Item, ICanBeStained
+	public class SouthernLowChair : Item, ICanBeStained
 	{
 		[Constructable]
-		public AlyrianLowChair() : base( 0x2DF5 )
+		public SouthernLowChair() : base( 0x2DF5 )
 		{
 		}
 
-		public AlyrianLowChair( Serial serial ) : base( serial )
+		public SouthernLowChair( Serial serial ) : base( serial )
 		{
 		}
 

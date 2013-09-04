@@ -4,7 +4,7 @@ using Server.Items;
 
 namespace Server.Items
 {
-	public class AzhuranMace : BaseBashing
+	public class WesternMace : BaseBashing
 	{
 		public override string NameType{ get{ return "primitive mace"; } }
 		
@@ -29,7 +29,7 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 70; } }
 
 		[Constructable]
-		public AzhuranMace() : base( 0x3DE9 )
+		public WesternMace() : base( 0x3DE9 )
 		{
 			Weight = 4.0;
 			Name = "primitive mace";
@@ -37,7 +37,7 @@ namespace Server.Items
 			AosElementDamages.Blunt = 70;
 		}
 
-		public AzhuranMace( Serial serial ) : base( serial )
+		public WesternMace( Serial serial ) : base( serial )
 		{
 		}
 

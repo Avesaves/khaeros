@@ -703,9 +703,9 @@ namespace Server.Items
 
         public override void OnResponse(Mobile from, string text)
         {
-            if (text == "Alyrian" || text == "Azhuran" ||
+            if (text == "Southern" || text == "Western" ||
                 text == "Khemetar" || text == "Mhordul" ||
-                text == "Tyrean" || text == "Vhalurian" ||
+                text == "Tyrean" || text == "Northern" ||
                 text == "Imperial" || text == "Sovereign" ||
                 text == "Society" ||
                 text == "Insularii")
@@ -742,7 +742,7 @@ namespace Server.Items
             }
 
             else
-                from.SendMessage(text + " is not a valid nationality. Try Alyrian, Azhuran, Khemetar, Mhordul, Tyrean or Vhalurian.");
+                from.SendMessage(text + " is not a valid nationality. Try Southern, Western, Khemetar, Mhordul, Tyrean or Northern.");
         }
     }
 
@@ -759,9 +759,9 @@ namespace Server.Items
 
         public override void OnResponse(Mobile from, string text)
         {
-            if (text == "Alyrian" || text == "Azhuran" ||
+            if (text == "Southern" || text == "Western" ||
                 text == "Khemetar" || text == "Mhordul" ||
-                text == "Tyrean" || text == "Vhalurian")
+                text == "Tyrean" || text == "Northern")
             {
 
                 switch (m_Option)
@@ -795,7 +795,7 @@ namespace Server.Items
             }
 
             else
-                from.SendMessage(text + " is not a valid nationality. Try Alyrian, Azhuran, Khemetar, Mhordul, Tyrean or Vhalurian.");
+                from.SendMessage(text + " is not a valid nationality. Try Southern, Western, Khemetar, Mhordul, Tyrean or Northern.");
         }
     }
 

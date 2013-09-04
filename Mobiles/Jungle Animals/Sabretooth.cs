@@ -4,7 +4,7 @@ using Server.Items;
 namespace Server.Mobiles
 {
 	[CorpseName( "a sabretooth corpse" )]
-	public class Sabretooth : BaseCreature, IMediumPredator, IJungleCreature, IAzhuranFavoredEnemy, IEnraged, IFeline
+	public class Sabretooth : BaseCreature, IMediumPredator, IJungleCreature, IWesternFavoredEnemy, IEnraged, IFeline
 	{
 		public override bool ParryDisabled{ get{ return true; } }
 		public override WeaponAbility GetWeaponAbility()

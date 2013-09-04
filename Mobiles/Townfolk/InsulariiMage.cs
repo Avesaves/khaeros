@@ -9,19 +9,19 @@ namespace Server.Mobiles
 	public class InsulariiMage : BaseKhaerosMobile, IFaction, IInsularii
 	{
 		[Constructable]
-		public InsulariiMage() : base( Nation.Alyrian ) 
+		public InsulariiMage() : base( Nation.Southern ) 
 		{
 			int chance = Utility.RandomMinMax( 1, 6 );
-			Nation nation = Nation.Alyrian;
+			Nation nation = Nation.Southern;
 			
 			switch( chance )
 			{
-				case 1: nation = Nation.Alyrian; break;
-				case 2: nation = Nation.Azhuran; break;
+				case 1: nation = Nation.Southern; break;
+				case 2: nation = Nation.Western; break;
 				case 3: nation = Nation.Khemetar; break;
 				case 4: nation = Nation.Mhordul; break;
 				case 5: nation = Nation.Tyrean; break;
-				case 6: nation = Nation.Vhalurian; break;
+				case 6: nation = Nation.Northern; break;
 			}
 			
 			Hue = BaseKhaerosMobile.AssignRacialHue( nation );

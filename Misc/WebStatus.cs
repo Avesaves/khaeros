@@ -164,11 +164,11 @@ namespace Server.Misc
 				op.WriteLine( "<area shape=\"rect\" coords=\"0, 85, 120, 105\" target=\"_self\" href=\"http://www.khaeros.com/forums\">" );
 				op.WriteLine( "<area shape=\"rect\" coords=\"0, 105, 120, 125\" target=\"_self\" href=\"http://server.khaeros.com/Status.htm\">" );
 				op.WriteLine( "<area shape=\"rect\" coords=\"0, 125, 120, 147\" target=\"_self\" href=\"http://www.khaeros.com/classes.htm\">" );
-				op.WriteLine( "<area shape=\"rect\" coords=\"0, 195, 120, 215\" target=\"_self\" href=\"http://www.khaeros.com/vhalurian.htm\">" );
+				op.WriteLine( "<area shape=\"rect\" coords=\"0, 195, 120, 215\" target=\"_self\" href=\"http://www.khaeros.com/Northern.htm\">" );
 				op.WriteLine( "<area shape=\"rect\" coords=\"0, 215, 120, 240\" target=\"_self\" href=\"http://www.khaeros.com/tyrean.htm\">" );
-				op.WriteLine( "<area shape=\"rect\" coords=\"0, 240, 120, 260\" target=\"_self\" href=\"http://www.khaeros.com/alyrian.htm\">" );
+				op.WriteLine( "<area shape=\"rect\" coords=\"0, 240, 120, 260\" target=\"_self\" href=\"http://www.khaeros.com/Southern.htm\">" );
 				op.WriteLine( "<area shape=\"rect\" coords=\"0, 260, 120, 283\" target=\"_self\" href=\"http://www.khaeros.com/khemetar.htm\">" );
-				op.WriteLine( "<area shape=\"rect\" coords=\"0, 283, 120, 305\" target=\"_self\" href=\"http://www.khaeros.com/azhuran.htm\">" );
+				op.WriteLine( "<area shape=\"rect\" coords=\"0, 283, 120, 305\" target=\"_self\" href=\"http://www.khaeros.com/Western.htm\">" );
 				op.WriteLine( "<area shape=\"rect\" coords=\"0, 305, 120, 325\" target=\"_self\" href=\"http://www.khaeros.com/mhordul.htm\">" );
 				op.WriteLine( "<area shape=\"rect\" coords=\"0, 350, 120, 370\" target=\"_self\" href=\"http://www.khaeros.com/shop.htm\">" );
 				op.WriteLine( "<area shape=\"rect\" coords=\"0, 370, 120, 390\" target=\"_self\" href=\"http://www.khaeros.com/donations.htm\">" );

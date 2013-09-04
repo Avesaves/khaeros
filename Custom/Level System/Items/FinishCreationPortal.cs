@@ -79,10 +79,10 @@ namespace Server.Items
 						LevelSystemCommands.RemoveEquippedItems( from );
 						BaseKhaerosMobile.RandomPoorClothes( from, from.Nation );
 						
-						if( from.Nation == Nation.Azhuran )
+						if( from.Nation == Nation.Western )
 							m.Location = new Point3D( 5352, 487, 0 );
 						
-						else if( from.Nation == Nation.Alyrian )
+						else if( from.Nation == Nation.Southern )
 							m.Location = new Point3D( 5352, 479, 0 );
 						
 						else if( from.Nation == Nation.Khemetar )
@@ -94,7 +94,7 @@ namespace Server.Items
 						else if( from.Nation == Nation.Tyrean )
 							m.Location = new Point3D( 5362, 471, 0 );
 						
-						else if( from.Nation == Nation.Vhalurian )
+						else if( from.Nation == Nation.Northern )
 							m.Location = new Point3D( 5352, 468, 0 );
 						
 						from.MaxAge = Utility.RandomMinMax( 0, 10 ) + GetMaxAge( from ) - Utility.RandomMinMax( 0, 10 );
@@ -140,7 +140,7 @@ namespace Server.Items
 		{
 			int racialmaxage = 100;
 			
-			if( from.Nation == Nation.Azhuran )
+			if( from.Nation == Nation.Western )
 				racialmaxage -= 25;
 			
 			if( from.Nation == Nation.Khemetar )
@@ -152,7 +152,7 @@ namespace Server.Items
 			if( from.Nation == Nation.Tyrean )
 				racialmaxage -= 30;
 			
-			if( from.Nation == Nation.Vhalurian )
+			if( from.Nation == Nation.Northern )
 				racialmaxage -= 20;
 			
 			return racialmaxage;

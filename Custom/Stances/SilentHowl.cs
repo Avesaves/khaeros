@@ -47,7 +47,7 @@ namespace Server.Misc
 		}
 		
 		[Usage( "SilentHowl" )]
-        [Description( "Allows the user to change their combat stance to Alyrians' racial style." )]
+        [Description( "Allows the user to change their combat stance to Southerns' racial style." )]
         private static void SilentHowl_OnCommand( CommandEventArgs e )
         {
             PlayerMobile m = e.Mobile as PlayerMobile;

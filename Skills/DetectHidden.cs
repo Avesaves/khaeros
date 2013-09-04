@@ -64,7 +64,7 @@ namespace Server.SkillHandlers
 							{
 								PlayerMobile pm = trg as PlayerMobile;
 								
-								if( pm.Nation == Nation.Azhuran )
+								if( pm.Nation == Nation.Western )
 									bonus = 5.0;
 
                                 if( pm.IsVampire && pm.Feats.GetFeatLevel( FeatList.Obfuscate ) > 0 )

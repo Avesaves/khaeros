@@ -47,7 +47,7 @@ namespace Server.Items
             if (range > 1)
                 waitTime = ((double)range);
 
-            if (!(this is AzhuranBoomerang)) // Editing ARCHERY to be more of a support build.
+            if (!(this is Boomerang)) // Editing ARCHERY to be more of a support build.
             {
                 double waitReduction = 0;
 
@@ -155,7 +155,7 @@ namespace Server.Items
 
 		public override void OnHit( Mobile attacker, Mobile defender, double damageBonus )
 		{
-            if( attacker.Weapon is AzhuranBoomerang )
+            if( attacker.Weapon is Boomerang )
         	{
         		base.OnHit( attacker, defender, damageBonus );
         		return;
@@ -172,7 +172,7 @@ namespace Server.Items
 
 		public override void OnMiss( Mobile attacker, Mobile defender )
 		{
-            if( attacker.Weapon is AzhuranBoomerang )
+            if( attacker.Weapon is Boomerang )
         	{
         		base.OnMiss( attacker, defender );
         		return;

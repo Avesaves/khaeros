@@ -6,23 +6,23 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	public class VhalurianBloodhound : Dog, IPlainsCreature
+	public class BloodHound : Dog, IPlainsCreature
 	{
 		public override int[] Hues{ get{ return new int[]{2822,2816,2821}; } }
 		
 		[Constructable]
-		public VhalurianBloodhound() : base()
+		public BloodHound() : base()
 		{
-			NewBreed = "Vhalurian Bloodhound";
+			NewBreed = "bloodhound";
 		}
 
-		public VhalurianBloodhound(Serial serial) : base(serial)
+		public BloodHound(Serial serial) : base(serial)
 		{
 		}
 		
 		public override void PrepareToGiveBirth()
 		{
-			GiveBirth( new VhalurianBloodhound() );
+			GiveBirth( new BloodHound() );
 		}
 
 		public override void Serialize(GenericWriter writer)

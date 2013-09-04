@@ -226,13 +226,13 @@ namespace Server.Mobiles
 		
 		public bool RaciallyCompatible( Nation nation )
 		{
-			if( (this.Nation == Nation.Azhuran || this.Nation == Nation.Khemetar) && (nation == Nation.Azhuran || nation == Nation.Khemetar) )
+			if( (this.Nation == Nation.Western || this.Nation == Nation.Khemetar) && (nation == Nation.Western || nation == Nation.Khemetar) )
 				return true;
 			
-			if( (this.Nation == Nation.Vhalurian || this.Nation == Nation.Tyrean) && (nation == Nation.Vhalurian || nation == Nation.Tyrean) )
+			if( (this.Nation == Nation.Northern || this.Nation == Nation.Tyrean) && (nation == Nation.Northern || nation == Nation.Tyrean) )
 				return true;
 			
-			if( (this.Nation == Nation.Mhordul || this.Nation == Nation.Alyrian) && (nation == Nation.Mhordul || nation == Nation.Alyrian) )
+			if( (this.Nation == Nation.Mhordul || this.Nation == Nation.Southern) && (nation == Nation.Mhordul || nation == Nation.Southern) )
 				return true;
 			
 			return false;

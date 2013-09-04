@@ -3,19 +3,19 @@ using Server;
 
 namespace Server.Items
 {
-	public class OrnateAlyrianTableEastAddon : BaseAddon
+	public class OrnateSouthernTableEastAddon : BaseAddon
 	{
-		public override BaseAddonDeed Deed{ get{ return new OrnateAlyrianTableEastDeed(); } }
+		public override BaseAddonDeed Deed{ get{ return new OrnateSouthernTableEastDeed(); } }
 
 		[Constructable]
-		public OrnateAlyrianTableEastAddon()
+		public OrnateSouthernTableEastAddon()
 		{
 			AddComponent( new AddonComponent( 0x308E ), -1, 0, 0 );
 			AddComponent( new AddonComponent( 0x308D ), 0, 0, 0 );
 			AddComponent( new AddonComponent( 0x308C ), 1, 0, 0 );
 		}
 
-		public OrnateAlyrianTableEastAddon( Serial serial ) : base( serial )
+		public OrnateSouthernTableEastAddon( Serial serial ) : base( serial )
 		{
 		}
 
@@ -34,17 +34,17 @@ namespace Server.Items
 		}
 	}
 
-	public class OrnateAlyrianTableEastDeed : BaseAddonDeed
+	public class OrnateSouthernTableEastDeed : BaseAddonDeed
 	{
-		public override BaseAddon Addon{ get{ return new OrnateAlyrianTableEastAddon(); } }
+		public override BaseAddon Addon{ get{ return new OrnateSouthernTableEastAddon(); } }
 		public override int LabelNumber{ get{ return 1073384; } } // ornate table (east)
 
 		[Constructable]
-		public OrnateAlyrianTableEastDeed()
+		public OrnateSouthernTableEastDeed()
 		{
 		}
 
-		public OrnateAlyrianTableEastDeed( Serial serial ) : base( serial )
+		public OrnateSouthernTableEastDeed( Serial serial ) : base( serial )
 		{
 		}
 

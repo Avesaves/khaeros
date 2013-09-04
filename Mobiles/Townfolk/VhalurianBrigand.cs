@@ -6,10 +6,10 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	public class VhalurianBrigand : BaseKhaerosMobile, IBrigand
+	public class NorthernBrigand : BaseKhaerosMobile, IBrigand
 	{
 		[Constructable]
-		public VhalurianBrigand() : base( Nation.Vhalurian ) 
+		public NorthernBrigand() : base( Nation.Northern ) 
 		{
 			SetStr( 100 );
 			SetDex( 50 );
@@ -81,7 +81,7 @@ namespace Server.Mobiles
 			EquipItem( mask );
 		}
 
-		public VhalurianBrigand(Serial serial) : base(serial)
+		public NorthernBrigand(Serial serial) : base(serial)
 		{
 		}
 

@@ -3091,13 +3091,13 @@ namespace Server.Mobiles
 			if( guard is ITyrean && m.RPTitle.ToLower().Contains( "tyrean" ) )
 				return true;
 			
-			if( guard is IVhalurian && m.RPTitle.ToLower().Contains( "north" ) )
+			if( guard is INorthern && m.RPTitle.ToLower().Contains( "north" ) )
 				return true;
 			
-			if( guard is IAzhuran && m.RPTitle.ToLower().Contains( "west" ) )
+			if( guard is IWestern && m.RPTitle.ToLower().Contains( "west" ) )
 				return true;
 			
-			if( guard is IAlyrian && m.RPTitle.ToLower().Contains( "south" ) )
+			if( guard is ISouthern && m.RPTitle.ToLower().Contains( "south" ) )
 				return true;
 			
 			return false;

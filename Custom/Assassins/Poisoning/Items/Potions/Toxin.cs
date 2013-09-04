@@ -135,7 +135,7 @@ namespace Server.Items
 				int actualOilDuration = (int)((skill/100.0) * m_Potion.m_Duration);
 				ToxinAttachment toxAtt = new ToxinAttachment( m_Potion.Effects, m_Potion.PoisonDuration, m_Potion.ActingSpeed, actualOilDuration, m_Potion.Corrosivity );
 				
-				if ( (targ is BaseAxe || targ is BaseKnife || targ is BasePoleArm || targ is BaseSword || targ is BaseSpear) && !(targ is AzhuranBoomerang) )
+				if ( (targ is BaseAxe || targ is BaseKnife || targ is BasePoleArm || targ is BaseSword || targ is BaseSpear) && !(targ is Boomerang) )
 				{
 					XmlAttach.AttachTo( targ, toxAtt );
 					from.PlaySound( 0x4F );

@@ -54,7 +54,7 @@ namespace Server.Misc
         			a -= (int)(( a - (player.Level * 15) ) * 0.5 );
         	}
 
-        	if( a > 0 && player.Nation == Nation.Vhalurian )
+        	if( a > 0 && player.Nation == Nation.Northern )
 				a++;
 
             if (player.IsHardcore)
@@ -159,7 +159,7 @@ namespace Server.Misc
                 else if ((a > player.Level * 20) && (player.IsHardcore == false))
                     a = player.Level * 20;
         		
-	        	if( player.Nation == Nation.Vhalurian )
+	        	if( player.Nation == Nation.Northern )
 					a++;
 
 	        	int cpcap = 175000 + player.ExtraCPRewards;
@@ -355,12 +355,12 @@ namespace Server.Misc
                 {
                     switch (((PlayerMobile)player.ControlMaster).Nation)
                     {
-                        case Nation.Alyrian: { if (Utility.RandomBool()) player.RawDex += Utility.Random(player.StatScale); else player.RawInt += Utility.Random(player.StatScale); break; }
-                        case Nation.Azhuran: { player.RawDex += Utility.Random(player.StatScale); break; }
+                        case Nation.Southern: { if (Utility.RandomBool()) player.RawDex += Utility.Random(player.StatScale); else player.RawInt += Utility.Random(player.StatScale); break; }
+                        case Nation.Western: { player.RawDex += Utility.Random(player.StatScale); break; }
                         case Nation.Khemetar: { player.RawInt += Utility.Random(player.StatScale); break; }
                         case Nation.Mhordul: { player.RawStr += Utility.Random(player.StatScale); break; }
                         case Nation.Tyrean: { if (Utility.RandomBool()) player.RawStr += Utility.Random(player.StatScale); else player.RawStam += Utility.Random(player.StatScale); break; }
-                        case Nation.Vhalurian: { player.RawHits += Utility.Random(player.StatScale); break; }
+                        case Nation.Northern: { player.RawHits += Utility.Random(player.StatScale); break; }
                     }
                 }
             }
@@ -790,24 +790,24 @@ namespace Server.Misc
 			{
 				switch( from.Nation )
 				{
-					case Nation.Alyrian: return from.Female == true ? "Sorceress" : "Sorcerer";
-					case Nation.Azhuran: return "Diviner";
+					case Nation.Southern: return from.Female == true ? "Sorceress" : "Sorcerer";
+					case Nation.Western: return "Diviner";
 					case Nation.Khemetar: return from.Female == true ? "Enchantress" : "Enchanter";
 					case Nation.Mhordul: return from.Female == true ? "Warlock" : "Witch";
 					case Nation.Tyrean: return "Wizard";
-					case Nation.Vhalurian: return "Mage";
+					case Nation.Northern: return "Mage";
 				}
 			}
 			else if( from.Class == Class.Cleric )
 			{
 				switch( from.Nation )
 				{
-					case Nation.Alyrian: return from.Female == true ? "Druidess" : "Druid";
-					case Nation.Azhuran: return "Shaman";
+					case Nation.Southern: return from.Female == true ? "Druidess" : "Druid";
+					case Nation.Western: return "Shaman";
 					case Nation.Khemetar: return from.Female == true ? "Priestess" : "Priest";
 					case Nation.Mhordul: return from.Female == true ? "Medicine Woman" : "Medicine Man";
 					case Nation.Tyrean: return "Prophet";
-					case Nation.Vhalurian: return "Cleric";
+					case Nation.Northern: return "Cleric";
 				}
 			}
 			
@@ -852,12 +852,12 @@ namespace Server.Misc
 			{
 				switch( from.Nation )
 				{
-					case Nation.Alyrian: return from.Female == true ? "Druidess" : "Druid";
-					case Nation.Azhuran: return "Shaman";
+					case Nation.Southern: return from.Female == true ? "Druidess" : "Druid";
+					case Nation.Western: return "Shaman";
 					case Nation.Khemetar: return from.Female == true ? "Priestess" : "Priest";
 					case Nation.Mhordul: return from.Female == true ? "Medicine Woman" : "Medicine Man";
 					case Nation.Tyrean: return "Prophet";
-					case Nation.Vhalurian: return "Cleric";
+					case Nation.Northern: return "Cleric";
 				}
 			}
 			
@@ -955,11 +955,11 @@ namespace Server.Misc
 			
 			if( from.Reforging && !from.OldMapChar )
 			{
-				if( from.Nation == Nation.Alyrian )
-					from.Feats.SetFeatLevel(FeatList.AlyrianLanguage, 3);
+				if( from.Nation == Nation.Southern )
+					from.Feats.SetFeatLevel(FeatList.SouthernLanguage, 3);
 				
-				else if( from.Nation == Nation.Azhuran )
-					from.Feats.SetFeatLevel(FeatList.AzhuranLanguage, 3);
+				else if( from.Nation == Nation.Western )
+					from.Feats.SetFeatLevel(FeatList.WesternLanguage, 3);
 				
 				else if( from.Nation == Nation.Khemetar )
 					from.Feats.SetFeatLevel(FeatList.KhemetarLanguage, 3);
@@ -970,8 +970,8 @@ namespace Server.Misc
 				else if( from.Nation == Nation.Tyrean )
 					from.Feats.SetFeatLevel(FeatList.TyreanLanguage, 3);
 				
-				else if( from.Nation == Nation.Vhalurian )
-					from.Feats.SetFeatLevel(FeatList.VhalurianLanguage, 3);
+				else if( from.Nation == Nation.Northern )
+					from.Feats.SetFeatLevel(FeatList.NorthernLanguage, 3);
 			}
 		}
 	}

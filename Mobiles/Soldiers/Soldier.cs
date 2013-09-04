@@ -132,12 +132,12 @@ namespace Server.Mobiles
 
             switch (n)
             {
-                case Nation.Alyrian: SetRank(1); TrainSoldier(a); SetDex(Dex + 20); EquipAlyrian(a, this); break;
-                case Nation.Azhuran: SetRank(1); TrainSoldier(a); SetDex(Dex + 20); EquipAzhuran(a, this); break;
+                case Nation.Southern: SetRank(1); TrainSoldier(a); SetDex(Dex + 20); EquipSouthern(a, this); break;
+                case Nation.Western: SetRank(1); TrainSoldier(a); SetDex(Dex + 20); EquipWestern(a, this); break;
                 case Nation.Khemetar: SetRank(1); TrainSoldier(a); SetInt(Int + 20); EquipKhemetar(a, this); break;
                 case Nation.Mhordul: SetRank(1); TrainSoldier(a); SetStr(Str + 20); EquipMhordul(a, this); break;
                 case Nation.Tyrean: SetRank(1); TrainSoldier(a); SetStr(Str + 20); EquipTyrean(a, this); break;
-                case Nation.Vhalurian: SetRank(1); TrainSoldier(a); SetHits(Hits + 20); EquipVhalurian(a, this); break;
+                case Nation.Northern: SetRank(1); TrainSoldier(a); SetHits(Hits + 20); EquipNorthern(a, this); break;
                 case Nation.Imperial: SetRank(1); TrainSoldier(a); SetHits(Hits + 10); SetStr(Str + 10); EquipImperial(a, this); break;
                 case Nation.Sovereign: TrainSoldier(a); SetStr(Str + 10); SetDex(Dex + 10); EquipSovereign(a, this); SetRank(1); break;
                 case Nation.Society: SetRank(1); TrainSoldier(a); SetStr(Str + 10); SetInt(Int + 10); EquipSociety(a, this); break;
@@ -147,7 +147,7 @@ namespace Server.Mobiles
             }
         }
 
-        public static void EquipAlyrian(Armament a, Mobile m)
+        public static void EquipSouthern(Armament a, Mobile m)
         {
             if (a == Armament.LightCavalry)
                 a = (Armament)1;
@@ -276,7 +276,7 @@ namespace Server.Mobiles
             }   
         }
 
-        public static void EquipAzhuran(Armament a, Mobile m)
+        public static void EquipWestern(Armament a, Mobile m)
         {
             if (a == Armament.LightCavalry)
                 a = (Armament)1;
@@ -1093,7 +1093,7 @@ namespace Server.Mobiles
             }
         }
 
-        public static void EquipVhalurian(Armament a, Mobile m)
+        public static void EquipNorthern(Armament a, Mobile m)
        {
             if (a == Armament.LightCavalry)
                 a = (Armament)1;
@@ -1350,7 +1350,7 @@ namespace Server.Mobiles
                         {
                             m.Body = 0x190;
                             m.Female = false;
-                        m.Name = "Brother " + RandomName(Nation.Vhalurian, m.Female) + RandomSurname(Nation.Vhalurian, m.Female);
+                        m.Name = "Brother " + RandomName(Nation.Northern, m.Female) + RandomSurname(Nation.Northern, m.Female);
                         }
                         else
                         { 
@@ -1406,7 +1406,7 @@ namespace Server.Mobiles
                         {
                             m.Body = 0x190;
                             m.Female = false;
-                        m.Name = "Brother " + RandomName(Nation.Vhalurian, m.Female) + RandomSurname(Nation.Vhalurian, m.Female);
+                        m.Name = "Brother " + RandomName(Nation.Northern, m.Female) + RandomSurname(Nation.Northern, m.Female);
                         }
                         else
                         { 
@@ -1468,7 +1468,7 @@ namespace Server.Mobiles
                         {
                             m.Body = 0x190;
                             m.Female = false;
-                        m.Name = "Brother " + RandomName(Nation.Vhalurian, m.Female) + RandomSurname(Nation.Vhalurian, m.Female);
+                        m.Name = "Brother " + RandomName(Nation.Northern, m.Female) + RandomSurname(Nation.Northern, m.Female);
                         }
                         else
                         { 
@@ -1525,7 +1525,7 @@ namespace Server.Mobiles
                         {
                             m.Body = 0x190;
                             m.Female = false;
-                        m.Name = "Brother " + RandomName(Nation.Vhalurian, m.Female) + RandomSurname(Nation.Vhalurian, m.Female);
+                        m.Name = "Brother " + RandomName(Nation.Northern, m.Female) + RandomSurname(Nation.Northern, m.Female);
                         }
                         else
                         { 
@@ -2160,16 +2160,16 @@ namespace Server.Mobiles
                 a = (Armament)3;
 
             int chance = Utility.RandomMinMax(1, 6);
-            Nation nation = Nation.Vhalurian;
+            Nation nation = Nation.Northern;
 
             switch (chance)
             {
-                case 1: nation = Nation.Alyrian; break;
-                case 2: nation = Nation.Azhuran; break;
+                case 1: nation = Nation.Southern; break;
+                case 2: nation = Nation.Western; break;
                 case 3: nation = Nation.Khemetar; break;
                 case 4: nation = Nation.Mhordul; break;
                 case 5: nation = Nation.Tyrean; break;
-                case 6: nation = Nation.Vhalurian; break;
+                case 6: nation = Nation.Northern; break;
             }
 
             m.Language = "Common";
@@ -2461,7 +2461,7 @@ namespace Server.Mobiles
                         PassiveSpeed -= 0.05;
                         ActiveSpeed -= 0.1;
 
-                        if (Nation == Nation.Mhordul || Nation == Nation.Azhuran || Nation == Nation.Insularii)
+                        if (Nation == Nation.Mhordul || Nation == Nation.Western || Nation == Nation.Insularii)
                         {
                             GiveFeat = "QuickReflexes 3";
                             GiveFeat = "BruteStrength 3";
@@ -2547,7 +2547,7 @@ namespace Server.Mobiles
                         SetDex(Dex + 25);
                         SetInt(Int + 100);
 
-                        if (Nation == Nation.Alyrian || Nation == Nation.Insularii )
+                        if (Nation == Nation.Southern || Nation == Nation.Insularii )
                         {
                             GiveFeat = "Evade 3";
                             GiveFeat = "Dodge 3";
@@ -2581,7 +2581,7 @@ namespace Server.Mobiles
                         SetInt(Int + 15);
                         SetStam(Stam + 50);
 
-                        if (Nation == Nation.Vhalurian || Nation == Nation.Insularii )
+                        if (Nation == Nation.Northern || Nation == Nation.Insularii )
                         {
                             SetStr(Str + 50);
                             SetHits(Hits + 100);
@@ -2602,7 +2602,7 @@ namespace Server.Mobiles
         {
             switch (Nation)
             {
-                case Nation.Alyrian:
+                case Nation.Southern:
                     {
                         switch (rank)
                         {
@@ -2611,7 +2611,7 @@ namespace Server.Mobiles
                         }
                         break;
                     }
-                case Nation.Azhuran:
+                case Nation.Western:
                     {
                         switch (rank)
                         {
@@ -2647,7 +2647,7 @@ namespace Server.Mobiles
                         }
                         break;
                     }
-                case Nation.Vhalurian:
+                case Nation.Northern:
                     {
                         switch (rank)
                         {
@@ -2741,16 +2741,16 @@ namespace Server.Mobiles
         {
             switch (Nation)
             {
-                case Nation.Alyrian:
+                case Nation.Southern:
                     {
-                        AlyrianHorse alyrianhorse = new AlyrianHorse();
-                        alyrianhorse.Rider = this;
+                        SouthernHorse Southernhorse = new SouthernHorse();
+                        Southernhorse.Rider = this;
                         break;
                     }
-                case Nation.Azhuran:
+                case Nation.Western:
                     {
-                        AzhuranHorse azhuranhorse = new AzhuranHorse();
-                        azhuranhorse.Rider = this;
+                        WesternHorse Westernhorse = new WesternHorse();
+                        Westernhorse.Rider = this;
                         break;
                     }
                 case Nation.Khemetar:
@@ -2771,12 +2771,12 @@ namespace Server.Mobiles
                         tyreanhorse.Rider = this;
                         break;
                     }
-                case Nation.Vhalurian:
+                case Nation.Northern:
                     {
                         if (Utility.RandomBool())
                         {
-                            VhalurianHorse vhalurianhorse = new VhalurianHorse();
-                            vhalurianhorse.Rider = this;
+                            NorthernHorse Northernhorse = new NorthernHorse();
+                            Northernhorse.Rider = this;
                         }
                         else
                         {
@@ -2789,7 +2789,7 @@ namespace Server.Mobiles
                     {
                         if (Utility.RandomBool())
                         {
-                            VhalurianHorse vhorse = new VhalurianHorse();
+                            NorthernHorse vhorse = new NorthernHorse();
                             vhorse.Rider = this;
                         }
                         else
@@ -2808,7 +2808,7 @@ namespace Server.Mobiles
                         }
                         else
                         {
-                            AlyrianHorse ahorse = new AlyrianHorse();
+                            SouthernHorse ahorse = new SouthernHorse();
                             ahorse.Rider = this;
                         }
                         break;
@@ -2822,7 +2822,7 @@ namespace Server.Mobiles
                         }
                         else
                         {
-                            AzhuranHorse azhorse = new AzhuranHorse();
+                            WesternHorse azhorse = new WesternHorse();
                             azhorse.Rider = this;
                         }
                         break;
@@ -2939,12 +2939,12 @@ namespace Server.Mobiles
 
             switch (n)
             {
-                case Nation.Alyrian:    alertMessage = "The Southerners have been alerted of your deeds!";     break;
-                case Nation.Azhuran:    alertMessage = "The Keepers have been alerted of your deeds!";     break;
+                case Nation.Southern:    alertMessage = "The Southerners have been alerted of your deeds!";     break;
+                case Nation.Western:    alertMessage = "The Keepers have been alerted of your deeds!";     break;
                 case Nation.Khemetar:   alertMessage = "The Khemetar have been alerted of your deeds!";     break;
                 case Nation.Mhordul:    alertMessage = "The Mhordul have been alerted of your deeds!";      break;
                 case Nation.Tyrean:     alertMessage = "The Tyreans have been alerted of your deeds!";      break;
-                case Nation.Vhalurian:  alertMessage = "The Northerners have been alerted of your deeds!";   break;
+                case Nation.Northern:  alertMessage = "The Northerners have been alerted of your deeds!";   break;
                 case Nation.Imperial:   alertMessage = "The Northerners have been alerted of your deeds!";        break;
                 case Nation.Sovereign:  alertMessage = "The Sovereign have been alerted of your deeds!";    break;
                 case Nation.Society:    alertMessage = "The Society has been alerted of your deeds!";       break;
@@ -3975,7 +3975,7 @@ namespace Server.Mobiles
             int randomAttackPhrase = Utility.RandomMinMax(1, 16);
             switch (s.Nation)
             {
-                case Nation.Alyrian:
+                case Nation.Southern:
                     {
                         if (DateTime.Now >= (s.SpeechInterval + TimeSpan.FromSeconds(Utility.RandomMinMax(120, 600))))
                         {
@@ -3994,7 +3994,7 @@ namespace Server.Mobiles
 
                         return null;
                     }
-                case Nation.Azhuran:
+                case Nation.Western:
                     {
                         if (DateTime.Now >= (s.SpeechInterval + TimeSpan.FromSeconds(Utility.RandomMinMax(120, 600))))
                         {
@@ -4070,7 +4070,7 @@ namespace Server.Mobiles
 
                         return null;
                     }
-                case Nation.Vhalurian:
+                case Nation.Northern:
                     {
                         if (DateTime.Now >= (s.SpeechInterval + TimeSpan.FromSeconds(Utility.RandomMinMax(120, 600))))
                         {

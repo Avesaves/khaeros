@@ -8,18 +8,18 @@ using System.Collections;
 
 namespace Server.Mobiles
 {
-	public class AzhuranGuard : BaseKhaerosMobile, IRacialGuard, IAzhuran
+	public class WesternGuard : BaseKhaerosMobile, IRacialGuard, IWestern
 	{
         private DateTime m_speechInterval;
         private Nation guardNation;
 
 		[Constructable]
-        public AzhuranGuard() : this( 0 )
+        public WesternGuard() : this( 0 )
         {
         }
         
 		[Constructable]
-		public AzhuranGuard( int choice ) : base( Nation.Azhuran ) 
+		public WesternGuard( int choice ) : base( Nation.Western ) 
 		{
 			SetStr( 150 );
 			SetDex( 75 );
@@ -53,10 +53,10 @@ namespace Server.Mobiles
 			if( choice > 3 || choice < 1 )
 				choice = 0;
 			
-			BaseKhaerosMobile.RandomGuardEquipment( this, Nation.Azhuran, choice );
+			BaseKhaerosMobile.RandomGuardEquipment( this, Nation.Western, choice );
             m_speechInterval = DateTime.Now; // Initiatlizing speech delay in the constructor for criminal recognition system.
             ((IKhaerosMobile)this).Feats.SetFeatLevel(FeatList.Alertness, Utility.Random(4)); // Giving guards the potential to detect hidden mobiles.
-            guardNation = Nation.Azhuran;
+            guardNation = Nation.Western;
 		}
 
         // Criminal recognition begins here.
@@ -106,7 +106,7 @@ namespace Server.Mobiles
                     if (((PlayerMobile)m).CriminalActivity) // Is the seen PlayerMobile participating in criminal activity?
                     {
                         XmlAttach.AttachTo(m, new XmlCriminal(guardNation));
-                        m.SendMessage("The Azhurans have been alerted of your crimes!");
+                        m.SendMessage("The Westerns have been alerted of your crimes!");
 
                         ((PlayerMobile)m).CriminalActivity = false;
                     }
@@ -124,7 +124,7 @@ namespace Server.Mobiles
                         if ((currentCombatant.Nation == guardNation) && (((PlayerMobile)m).Nation != guardNation))
                         {
                             XmlAttach.AttachTo(m, new XmlCriminal(guardNation));
-                            m.SendMessage("The Azhurans have been alerted of your assault!");
+                            m.SendMessage("The Westerns have been alerted of your assault!");
                         }
                     }
                 }
@@ -154,7 +154,7 @@ namespace Server.Mobiles
             {
                 switch (randomAttackPhrase)
                 {
-                    case 1: { m_speechInterval = DateTime.Now; return "Victory to Xipotec, the Azhurans are here!"; }
+                    case 1: { m_speechInterval = DateTime.Now; return "Victory to Xipotec, the Westerns are here!"; }
                     case 2: { m_speechInterval = DateTime.Now; return "A fine sacrifice."; }
                     case 3: { m_speechInterval = DateTime.Now; return "Stop right there, criminal scum!"; }
                     case 4: { m_speechInterval = DateTime.Now; return "Xipotec is great!"; }
@@ -169,7 +169,7 @@ namespace Server.Mobiles
         }
         //End of criminal recognition system.
 
-		public AzhuranGuard(Serial serial) : base(serial)
+		public WesternGuard(Serial serial) : base(serial)
 		{
 		}
 

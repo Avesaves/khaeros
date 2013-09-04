@@ -7,10 +7,10 @@ using Server.Mobiles;
 
 namespace Server.FeatInfo
 {
-	public class VhalurianLanguage : BaseFeat
+	public class NorthernLanguage : BaseFeat
 	{
 		public override string Name{ get{ return "Divine Union Language"; } }
-		public override FeatList ListName{ get{ return Mobiles.FeatList.VhalurianLanguage; } }
+		public override FeatList ListName{ get{ return Mobiles.FeatList.NorthernLanguage; } }
 		public override FeatCost CostLevel{ get{ return FeatCost.High; } }
 		
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
@@ -31,11 +31,11 @@ namespace Server.FeatInfo
 		
 		public override string FullDescription{ get{ return GetFullDescription(this); } }
 		
-		public static void Initialize(){ WriteWebpage(new VhalurianLanguage()); }
+		public static void Initialize(){ WriteWebpage(new NorthernLanguage()); }
 		
 		public override bool CanBeRemovedFrom( PlayerMobile m )
 		{
-			if( m.Nation == Nation.Vhalurian )
+			if( m.Nation == Nation.Northern )
 			{
 				m.SendMessage( "You cannot unlearn your first language." );
 				return false;
@@ -46,9 +46,9 @@ namespace Server.FeatInfo
 
         public override bool IgnoreThisFeatWhenRemovingParent( PlayerMobile m )
         {
-            return m.Nation == Nation.Vhalurian;
+            return m.Nation == Nation.Northern;
         }
 		
-		public VhalurianLanguage() {}
+		public NorthernLanguage() {}
 	}
 }

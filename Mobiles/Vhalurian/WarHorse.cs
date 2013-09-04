@@ -184,7 +184,7 @@ namespace Server.Mobiles
                 string attackMessage = "";
                 Mobile damaged = null;
 
-                if (m_Horse.Rider is PlayerMobile && (m_Horse.Rider as PlayerMobile).Nation != Nation.Vhalurian)
+                if (m_Horse.Rider is PlayerMobile && (m_Horse.Rider as PlayerMobile).Nation != Nation.Northern)
                     if (Utility.RandomBool())
                         return;
 
@@ -310,7 +310,7 @@ namespace Server.Mobiles
                     damaged.Damage(dmg, m_Horse, true);
                 }
 
-                if (m_Horse.Rider != null && !m_Horse.Rider.Deleted && m_Horse.Rider is PlayerMobile && (m_Horse.Rider as PlayerMobile).Nation == Nation.Vhalurian)
+                if (m_Horse.Rider != null && !m_Horse.Rider.Deleted && m_Horse.Rider is PlayerMobile && (m_Horse.Rider as PlayerMobile).Nation == Nation.Northern)
                     Interval = System.TimeSpan.FromSeconds(Utility.RandomMinMax(60 - (m_Horse.XPScale * Utility.RandomMinMax(m_Horse.XPScale,10)), 300 - Utility.RandomMinMax(m_Horse.XPScale * 2, m_Horse.Level * 2)));
                 else
                     Interval = System.TimeSpan.FromSeconds(Utility.RandomMinMax(60 - (m_Horse.XPScale * Utility.Random(10)), 300 - Utility.Random(m_Horse.Level)));

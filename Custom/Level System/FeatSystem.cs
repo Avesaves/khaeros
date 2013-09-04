@@ -563,13 +563,13 @@ namespace Server.Misc
 					{
 						switch( m.Nation )
 						{
-							case Nation.Alyrian:
+							case Nation.Southern:
 							{
 								m.Feats.GetFeatLevel(FeatList.SilentHowl)++;
 								break;
 							}
 								
-							case Nation.Azhuran:
+							case Nation.Western:
 							{
 								m.Feats.GetFeatLevel(FeatList.SwipingClaws)++;
 								break;
@@ -593,7 +593,7 @@ namespace Server.Misc
 								break;
 							}
 								
-							case Nation.Vhalurian:
+							case Nation.Northern:
 							{
 								m.Feats.GetFeatLevel(FeatList.ThunderingHooves)++;
 								break;
@@ -606,13 +606,13 @@ namespace Server.Misc
 					{
 						switch( m.Nation )
 						{
-							case Nation.Alyrian:
+							case Nation.Southern:
 							{
 								m.Feats.GetFeatLevel(FeatList.Greenheart)++;
 								break;
 							}
 								
-							case Nation.Azhuran:
+							case Nation.Western:
 							{
 								m.Feats.GetFeatLevel(FeatList.Obsidian)++;
 								break;
@@ -636,7 +636,7 @@ namespace Server.Misc
 								break;
 							}
 								
-							case Nation.Vhalurian:
+							case Nation.Northern:
 							{
 								m.Feats.GetFeatLevel(FeatList.Pusantia)++;
 								break;

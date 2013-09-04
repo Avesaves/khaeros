@@ -111,8 +111,8 @@ namespace Server.Mobiles
                                             "and fractured across the blade. It is, however, surprisingly light, even for its material; combined with its " +
                                             "length, the wielder would be able to swing this quite far. A skull shorn in half adorns where the blade meets " +
                                             "the haft, and a fierce dog clenches its teeth around the butt of the haft.";
-                                        artifact.Engraved2 = "Historians of Azhuran history and weaponology would recognize this as a xoloitzcuintle, one of the " +
-                                            "blades mass-produced during the last days of the battle with Memnon by the renowned Azhuran Stonesmith, " +
+                                        artifact.Engraved2 = "Historians of Western history and weaponology would recognize this as a xoloitzcuintle, one of the " +
+                                            "blades mass-produced during the last days of the battle with Memnon by the renowned Western Stonesmith, " +
                                             "Xilomantzin. Most of them were lost in the destruction of Azhur, along with the smith's life; how this one " +
                                             "found its way into your hands is surely an interesting story.";
 

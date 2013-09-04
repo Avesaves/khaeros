@@ -25,7 +25,7 @@ namespace Server.Items
 
         public override void OnDoubleClick(Mobile from)
         {
-            if (((IKhaerosMobile)from).Feats.GetFeatLevel(FeatList.Blacksmithing) > 1 && ((PlayerMobile)from).Nation == Nation.Alyrian)
+            if (((IKhaerosMobile)from).Feats.GetFeatLevel(FeatList.Blacksmithing) > 1 && ((PlayerMobile)from).Nation == Nation.Southern)
                 from.Target = new LargeCruciformHiltTarget(this);
         }
 

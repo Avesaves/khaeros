@@ -196,7 +196,7 @@ namespace Server.Engines.Harvest
 				if( pm.GemHarvesting && pm.Feats.GetFeatLevel(FeatList.GemHarvesting) > 0 && Utility.RandomMinMax( 1, 100 ) > 99 )
 					item = new Amber();
 				
-				if( pm.Nation != Nation.Alyrian )
+				if( pm.Nation != Nation.Southern )
 					pm.LastOffenseToNature = DateTime.Now;
 				
 				if( (item is Amber && pm.Feats.GetFeatLevel(FeatList.GemHarvesting) < 1) || (item is GreenheartLog && pm.Feats.GetFeatLevel(FeatList.Greenheart) < 1) )

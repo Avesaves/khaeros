@@ -5,7 +5,7 @@ using Server.Items;
 
 namespace Server.Mobiles
 {
-    public class FenceNPC: BaseVendor, IVhalurian
+    public class FenceNPC: BaseVendor, INorthern
     {
         private ArrayList m_SBInfos = new ArrayList();
 
@@ -32,18 +32,18 @@ namespace Server.Mobiles
 
         public override void InitBody()
         {
-            Hue = BaseKhaerosMobile.AssignRacialHue(Mobiles.Nation.Vhalurian);
-            HairItemID = BaseKhaerosMobile.AssignRacialHair(Mobiles.Nation.Vhalurian, this.Female);
-            int hairhue = BaseKhaerosMobile.AssignRacialHairHue(Mobiles.Nation.Vhalurian);
+            Hue = BaseKhaerosMobile.AssignRacialHue(Mobiles.Nation.Northern);
+            HairItemID = BaseKhaerosMobile.AssignRacialHair(Mobiles.Nation.Northern, this.Female);
+            int hairhue = BaseKhaerosMobile.AssignRacialHairHue(Mobiles.Nation.Northern);
             HairHue = hairhue;
 
             Body = 0x190;
-            Name = BaseKhaerosMobile.RandomName(Mobiles.Nation.Vhalurian, false) + BaseKhaerosMobile.RandomSurname(Mobiles.Nation.Vhalurian, false);
+            Name = BaseKhaerosMobile.RandomName(Mobiles.Nation.Northern, false) + BaseKhaerosMobile.RandomSurname(Mobiles.Nation.Northern, false);
         }
 
         public override void InitOutfit()
         {
-            BaseKhaerosMobile.RandomCrafterClothes(this, Mobiles.Nation.Vhalurian);
+            BaseKhaerosMobile.RandomCrafterClothes(this, Mobiles.Nation.Northern);
             PackGold(1000, 2000);
         }
 

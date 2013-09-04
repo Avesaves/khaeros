@@ -60,10 +60,10 @@ namespace Server.Misc.BreedingSystem
 		{
 			bool valid = true;
 			
-			if( (creat is RedWolf || creat is AlyrianHorse || creat is AlyrianShepherd || creat is ForestStrider) && owner.Nation != Nation.Alyrian )
+			if( (creat is RedWolf || creat is SouthernHorse || creat is AlyrianShepherd || creat is ForestStrider) && owner.Nation != Nation.Southern )
 				valid = false;
 			
-			else if( (creat is ManedWolf || creat is AzhuranHorse || creat is AzhuranRetriever || creat is Ridgeraptor) && owner.Nation != Nation.Azhuran )
+			else if( (creat is ManedWolf || creat is WesternHorse || creat is AzhuranRetriever || creat is Ridgeraptor) && owner.Nation != Nation.Western )
 				valid = false;
 			
 			else if( (creat is Jackal || creat is KhemetarHorse || creat is KhemetarSaluki || creat is GiantScarab) && owner.Nation != Nation.Khemetar )
@@ -75,7 +75,7 @@ namespace Server.Misc.BreedingSystem
 			else if( (creat is SnowWolf || creat is TyreanHorse || creat is TyreanHusky || creat is DireBear) && owner.Nation != Nation.Tyrean )
 				valid = false;
 			
-			else if( (creat is GrayWolf || creat is VhalurianHorse || creat is VhalurianBloodhound || creat is WarHorse) && owner.Nation != Nation.Vhalurian )
+			else if( (creat is GrayWolf || creat is NorthernHorse || creat is BloodHound || creat is WarHorse) && owner.Nation != Nation.Northern )
 				valid = false;
 
             if (creat is Serpent && owner.Nation != Nation.Khemetar)

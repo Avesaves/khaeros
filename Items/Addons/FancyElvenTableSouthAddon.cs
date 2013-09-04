@@ -3,19 +3,19 @@ using Server;
 
 namespace Server.Items
 {
-	public class FancyAlyrianTableSouthAddon : BaseAddon
+	public class FancySouthernTableSouthAddon : BaseAddon
 	{
-		public override BaseAddonDeed Deed{ get{ return new FancyAlyrianTableSouthDeed(); } }
+		public override BaseAddonDeed Deed{ get{ return new FancySouthernTableSouthDeed(); } }
 
 		[Constructable]
-		public FancyAlyrianTableSouthAddon()
+		public FancySouthernTableSouthAddon()
 		{
 			AddComponent( new AddonComponent( 0x3095 ), 0, 1, 0 );
 			AddComponent( new AddonComponent( 0x3096 ), 0, 0, 0 );
 			AddComponent( new AddonComponent( 0x3097 ), 0, -1, 0 );
 		}
 
-		public FancyAlyrianTableSouthAddon( Serial serial ) : base( serial )
+		public FancySouthernTableSouthAddon( Serial serial ) : base( serial )
 		{
 		}
 
@@ -34,17 +34,17 @@ namespace Server.Items
 		}
 	}
 
-	public class FancyAlyrianTableSouthDeed : BaseAddonDeed
+	public class FancySouthernTableSouthDeed : BaseAddonDeed
 	{
-		public override BaseAddon Addon{ get{ return new FancyAlyrianTableSouthAddon(); } }
+		public override BaseAddon Addon{ get{ return new FancySouthernTableSouthAddon(); } }
 		public override int LabelNumber{ get{ return 1073385; } } // hardwood table (south)
 
 		[Constructable]
-		public FancyAlyrianTableSouthDeed()
+		public FancySouthernTableSouthDeed()
 		{
 		}
 
-		public FancyAlyrianTableSouthDeed( Serial serial ) : base( serial )
+		public FancySouthernTableSouthDeed( Serial serial ) : base( serial )
 		{
 		}
 

@@ -216,7 +216,7 @@ namespace Server.Gumps
 		{
 			switch( nation )
 			{
-				case Nation.Alyrian:
+				case Nation.Southern:
 				{
 					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
 					this.AddLabel(115, 214, 0, @"Long Beard");
@@ -255,7 +255,7 @@ namespace Server.Gumps
 					break;
 				}
 					
-				case Nation.Azhuran:
+				case Nation.Western:
 				{
 					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
 					this.AddLabel(115, 214, 0, @"Long Beard");
@@ -366,7 +366,7 @@ namespace Server.Gumps
 					break;
 				}
 					
-				case Nation.Vhalurian:
+				case Nation.Northern:
 				{
 					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
 					this.AddLabel(115, 214, 0, @"Long Beard");

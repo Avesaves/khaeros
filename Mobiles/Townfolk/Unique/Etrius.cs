@@ -9,7 +9,7 @@ namespace Server.Mobiles
 	public class Etrius : BaseKhaerosMobile, IFaction, IInsularii
 	{
 		[Constructable]
-		public Etrius() : base( Nation.Vhalurian ) 
+		public Etrius() : base( Nation.Northern ) 
 		{
 			Hue = 1038;
 			HairItemID = 12751;

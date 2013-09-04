@@ -130,14 +130,14 @@ namespace Server.Items
             m_Hilt = hilt;
             m_Blade = blade;
 
-            if (((PlayerMobile)from).Nation != Nation.Azhuran && ((PlayerMobile)from).Nation != Nation.Khemetar && ((PlayerMobile)from).Nation != Nation.Mhordul)
+            if (((PlayerMobile)from).Nation != Nation.Western && ((PlayerMobile)from).Nation != Nation.Khemetar && ((PlayerMobile)from).Nation != Nation.Mhordul)
                 OnResponse(from, "1");
             else
             {
                 from.SendMessage("Please type the code for the kind of weapon you would like to make:");
                 from.SendMessage(" 1 - Hand Scythe ");
 
-                if (((PlayerMobile)from).Nation == Nation.Azhuran)
+                if (((PlayerMobile)from).Nation == Nation.Western)
                     from.SendMessage(" 2 - hooked club ");
                 if (((PlayerMobile)from).Nation == Nation.Khemetar)
                 {
@@ -159,7 +159,7 @@ namespace Server.Items
 
             if (int.TryParse(text, out index))
             {
-                if (index < 1 || index > 6 || (index == 2 && ((PlayerMobile)from).Nation != Nation.Azhuran) || ((index > 2 && index < 6) && ((PlayerMobile)from).Nation != Nation.Khemetar) || (index == 6 && ((PlayerMobile)from).Nation != Nation.Mhordul))
+                if (index < 1 || index > 6 || (index == 2 && ((PlayerMobile)from).Nation != Nation.Western) || ((index > 2 && index < 6) && ((PlayerMobile)from).Nation != Nation.Khemetar) || (index == 6 && ((PlayerMobile)from).Nation != Nation.Mhordul))
                 {
                     from.SendMessage("Invalid code.");
                     return;
@@ -491,11 +491,11 @@ namespace Server.Items
             from.SendMessage(" 2 - Light Hammer ");
             from.SendMessage(" 3 - War Hammer ");
 
-            if (((PlayerMobile)from).Nation == Nation.Alyrian)
-                from.SendMessage(" 4 - Alyrian BattleHammer ");
+            if (((PlayerMobile)from).Nation == Nation.Southern)
+                from.SendMessage(" 4 - Southern BattleHammer ");
             if (((PlayerMobile)from).Nation == Nation.Tyrean)
                 from.SendMessage(" 5 - Tyrean BattleHammer ");
-            if (((PlayerMobile)from).Nation == Nation.Vhalurian)
+            if (((PlayerMobile)from).Nation == Nation.Northern)
             {
                 from.SendMessage(" 6 - heavy maul ");
                 from.SendMessage(" 7 - two-handed maul ");
@@ -512,7 +512,7 @@ namespace Server.Items
 
             if (int.TryParse(text, out index))
             {
-                if (index < 1 || index > 8 || (index == 4 && ((PlayerMobile)from).Nation != Nation.Alyrian) || (index == 5 && ((PlayerMobile)from).Nation != Nation.Tyrean) || ((index > 5 && index < 9) && ((PlayerMobile)from).Nation != Nation.Vhalurian))
+                if (index < 1 || index > 8 || (index == 4 && ((PlayerMobile)from).Nation != Nation.Southern) || (index == 5 && ((PlayerMobile)from).Nation != Nation.Tyrean) || ((index > 5 && index < 9) && ((PlayerMobile)from).Nation != Nation.Northern))
                 {
                     from.SendMessage("Invalid code.");
                     return;
@@ -899,7 +899,7 @@ namespace Server.Items
             m_Hilt = hilt;
             m_Blade = blade;
 
-            if (((PlayerMobile)from).Nation != Nation.Khemetar && ((PlayerMobile)from).Nation != Nation.Tyrean && ((PlayerMobile)from).Nation != Nation.Vhalurian)
+            if (((PlayerMobile)from).Nation != Nation.Khemetar && ((PlayerMobile)from).Nation != Nation.Tyrean && ((PlayerMobile)from).Nation != Nation.Northern)
                 OnResponse(from, "1");
             else
             {
@@ -910,7 +910,7 @@ namespace Server.Items
                     from.SendMessage(" 2 - macana ");
                 if (((PlayerMobile)from).Nation == Nation.Tyrean)
                     from.SendMessage(" 3 - heavy war mace ");
-                if (((PlayerMobile)from).Nation == Nation.Vhalurian)
+                if (((PlayerMobile)from).Nation == Nation.Northern)
                     from.SendMessage(" 4 - horseman's mace ");
             }
         }
@@ -924,7 +924,7 @@ namespace Server.Items
 
             if (int.TryParse(text, out index))
             {
-                if (index < 1 || index > 4 || (index == 2 && ((PlayerMobile)from).Nation != Nation.Khemetar) || (index == 3 && ((PlayerMobile)from).Nation != Nation.Tyrean) || (index == 4 && ((PlayerMobile)from).Nation != Nation.Vhalurian))
+                if (index < 1 || index > 4 || (index == 2 && ((PlayerMobile)from).Nation != Nation.Khemetar) || (index == 3 && ((PlayerMobile)from).Nation != Nation.Tyrean) || (index == 4 && ((PlayerMobile)from).Nation != Nation.Northern))
                 {
                     from.SendMessage("Invalid code.");
                     return;
@@ -1132,7 +1132,7 @@ namespace Server.Items
             from.SendMessage(" 2 - Two-Handed Axe ");
             
 
-            if (((PlayerMobile)from).Nation == Nation.Alyrian)
+            if (((PlayerMobile)from).Nation == Nation.Southern)
                 from.SendMessage(" 3 - heavy double axe ");
             if (((PlayerMobile)from).Nation == Nation.Khemetar)
                 from.SendMessage(" 4 - tabarzin ");
@@ -1158,7 +1158,7 @@ namespace Server.Items
 
             if (int.TryParse(text, out index))
             {
-                if (index < 1 || index > 8 || (index == 3 && ((PlayerMobile)from).Nation != Nation.Alyrian) || (index == 4 && ((PlayerMobile)from).Nation != Nation.Khemetar) || ((index == 5 || index == 6) && ((PlayerMobile)from).Nation != Nation.Mhordul) || ((index == 8 || index == 7) && ((PlayerMobile)from).Nation != Nation.Tyrean) )
+                if (index < 1 || index > 8 || (index == 3 && ((PlayerMobile)from).Nation != Nation.Southern) || (index == 4 && ((PlayerMobile)from).Nation != Nation.Khemetar) || ((index == 5 || index == 6) && ((PlayerMobile)from).Nation != Nation.Mhordul) || ((index == 8 || index == 7) && ((PlayerMobile)from).Nation != Nation.Tyrean) )
                 {
                     from.SendMessage("Invalid code.");
                     return;
@@ -1544,7 +1544,7 @@ namespace Server.Items
             from.SendMessage(" 2 - Battle Axe ");
             from.SendMessage(" 3 - War Axe ");
 
-            if (((PlayerMobile)from).Nation == Nation.Azhuran)
+            if (((PlayerMobile)from).Nation == Nation.Western)
                 from.SendMessage(" 4 - hafted axe ");
             if (((IKhaerosMobile)from).Feats.GetFeatLevel(FeatList.Bone) > 2)
                 from.SendMessage(" 5 - bone Axe - (Requires 10 bones) ");
@@ -1554,7 +1554,7 @@ namespace Server.Items
                 from.SendMessage(" 7 - throwing axe ");
                 from.SendMessage(" 8 - broad axe ");
             }
-            if (((PlayerMobile)from).Nation == Nation.Vhalurian)
+            if (((PlayerMobile)from).Nation == Nation.Northern)
                 from.SendMessage(" 9 - horseman's axe ");
         }
 
@@ -1567,7 +1567,7 @@ namespace Server.Items
 
             if (int.TryParse(text, out index))
             {
-                if (index < 1 || index > 9 || (index == 4 && ((PlayerMobile)from).Nation != Nation.Azhuran) || (index == 5 && ((IKhaerosMobile)from).Feats.GetFeatLevel(FeatList.Bone) < 3) || ((index > 5 && index < 9) && ((PlayerMobile)from).Nation != Nation.Tyrean) || (index == 9 && ((PlayerMobile)from).Nation != Nation.Vhalurian))
+                if (index < 1 || index > 9 || (index == 4 && ((PlayerMobile)from).Nation != Nation.Western) || (index == 5 && ((IKhaerosMobile)from).Feats.GetFeatLevel(FeatList.Bone) < 3) || ((index > 5 && index < 9) && ((PlayerMobile)from).Nation != Nation.Tyrean) || (index == 9 && ((PlayerMobile)from).Nation != Nation.Northern))
                 {
                     from.SendMessage("Invalid code.");
                     return;

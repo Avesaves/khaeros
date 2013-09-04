@@ -63,7 +63,7 @@ namespace Server.Items
 
             m_Blade = targeted as BaseAttackPiece;
 
-            if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Azhuran)// )
+            if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Western)// )
             {
                 Flamberge weapon = new Flamberge();
                 weapon.NewCrafting = true;
@@ -105,7 +105,7 @@ namespace Server.Items
                 weapon.AddItem(m_Blade);
                 weapon.AddItem(m_Hilt);
             }
-            if (m_Blade is MediumBlade && ((PlayerMobile)from).Nation == Nation.Vhalurian)
+            if (m_Blade is MediumBlade && ((PlayerMobile)from).Nation == Nation.Northern)
             {
                 CavalrySword weapon = new CavalrySword();
                 weapon.NewCrafting = true;
@@ -147,7 +147,7 @@ namespace Server.Items
                 weapon.AddItem(m_Blade);
                 weapon.AddItem(m_Hilt);
             }
-            if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Vhalurian)
+            if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Northern)
             {
                 BastardSword weapon = new BastardSword();
                 weapon.NewCrafting = true;
@@ -273,7 +273,7 @@ namespace Server.Items
                 weapon.AddItem(m_Blade);
                 weapon.AddItem(m_Hilt);
             }
-            if (m_Blade is ShortBlade && ((PlayerMobile)from).Nation == Nation.Azhuran)
+            if (m_Blade is ShortBlade && ((PlayerMobile)from).Nation == Nation.Western)
             {
                 Kutar weapon = new Kutar();
                 weapon.NewCrafting = true;

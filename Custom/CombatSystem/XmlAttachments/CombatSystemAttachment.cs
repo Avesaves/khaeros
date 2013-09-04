@@ -315,7 +315,7 @@ namespace Server.Engines.XmlSpawner2
 			else if ( atk == AttackType.Overhead )
 				return wep.OverheadPercentage;
 			else if ( atk == AttackType.Throw )
-				return ( wep is AzhuranBoomerang ? wep.RangedPercentage : GetBestDirectionDamage() );
+				return ( wep is Boomerang ? wep.RangedPercentage : GetBestDirectionDamage() );
 			else if ( atk == AttackType.ShieldBash )
 				return 1.0;
 			else
@@ -1831,17 +1831,17 @@ namespace Server.Engines.XmlSpawner2
 				return false;
 			}
 					
-			if ( m_Opponent.InRange( attacker, 1 ) && !(weapon is AzhuranBoomerang) )
+			if ( m_Opponent.InRange( attacker, 1 ) && !(weapon is Boomerang) )
 			{
 				m_ErrorMessage = "You are too close.";
 				return false;
 			}
-            else if( ( weapon is Fists || ( weapon is BaseRanged && !( weapon is AzhuranBoomerang ) ) || weapon is Lance ) && !m_OffHand )
+            else if( ( weapon is Fists || ( weapon is BaseRanged && !( weapon is Boomerang ) ) || weapon is Lance ) && !m_OffHand )
 			{
 				m_ErrorMessage = "That weapon cannot be thrown.";
 				return false;
 			}
-			else if ( !weapon.Throwable && km.Feats.GetFeatLevel(FeatList.ThrowingMastery) <= 0 && !(weapon is AzhuranBoomerang) )
+			else if ( !weapon.Throwable && km.Feats.GetFeatLevel(FeatList.ThrowingMastery) <= 0 && !(weapon is Boomerang) )
 			{
 				m_ErrorMessage = "That weapon cannot be thrown.";
 				return false;
@@ -1851,17 +1851,17 @@ namespace Server.Engines.XmlSpawner2
 				m_ErrorMessage = "You must be in combat with someone.";
 				return false;
 			}
-			else if ( !m_Opponent.InRange( attacker, 3 + km.Feats.GetFeatLevel(FeatList.ThrowingMastery) ) && !(weapon is AzhuranBoomerang) )
+			else if ( !m_Opponent.InRange( attacker, 3 + km.Feats.GetFeatLevel(FeatList.ThrowingMastery) ) && !(weapon is Boomerang) )
 			{
 				m_ErrorMessage = "You are out of range.";
 				return false;
 			}
-			else if ( m_Opponent.InRange( attacker, 1 ) && !(weapon is AzhuranBoomerang) )
+			else if ( m_Opponent.InRange( attacker, 1 ) && !(weapon is Boomerang) )
 			{
 				m_ErrorMessage = "You are too close.";
 				return false;
 			}
-			else if ( weapon is AzhuranBoomerang && !m_Opponent.InRange( attacker, myRange ) )
+			else if ( weapon is Boomerang && !m_Opponent.InRange( attacker, myRange ) )
 			{
 				m_ErrorMessage = "You are out of range.";
 				return false;
@@ -1946,7 +1946,7 @@ namespace Server.Engines.XmlSpawner2
 				
 				if ( !CanThrow() )
 					return false;
-				if ( weapon is AzhuranBoomerang ) // requires still time
+				if ( weapon is Boomerang ) // requires still time
 				{
 					if ( !((BaseRanged)weapon).IsStill( attacker ) )
 					{
@@ -2051,7 +2051,7 @@ namespace Server.Engines.XmlSpawner2
 				
 			if ( attacktype == AttackType.Throw )
 			{
-				if ( !(weapon is AzhuranBoomerang) ) // otherwise the duration is already calculated
+				if ( !(weapon is Boomerang) ) // otherwise the duration is already calculated
 					delay = 0.5;
 			}
 			int animspeed = (int)(delay*2);
@@ -2857,7 +2857,7 @@ namespace Server.Engines.XmlSpawner2
 				}
 				else if ( type == AttackType.Throw && defender != null && defender.Alive ) // throw attacks, this can't be spinning so who cares
 				{
-                    if( weapon is AzhuranBoomerang && !m_OffHand ) // this isn't really "thrown" mechanically
+                    if( weapon is Boomerang && !m_OffHand ) // this isn't really "thrown" mechanically
 					{
 						if ( defender.InRange( attacker, myRange ) && attacker.CanSee( defender ) && attacker.InLOS( defender ) )
 						{
@@ -3283,7 +3283,7 @@ namespace Server.Engines.XmlSpawner2
 				m_ErrorMessage = "Only ranged weapons can perform this attack.";
 				return false;
 			}
-			else if ( mob.Weapon is AzhuranBoomerang )
+			else if ( mob.Weapon is Boomerang )
 			{
 				m_ErrorMessage = "Boomerangs use the throw attack, not the ranged one.";
 				return false;

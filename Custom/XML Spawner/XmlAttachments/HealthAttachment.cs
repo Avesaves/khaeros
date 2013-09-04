@@ -55,7 +55,7 @@ namespace Server.Engines.XmlSpawner2
         Diptheria = 3,
         Dysentery = 4,
         Consumption = 5, // Tuberculosis
-        AzhuranFever = 6, // Malaria
+        WesternFever = 6, // Malaria
         Bile = 7, // Cholera
         Leprosy = 8,
         TyreanDisease = 9 // Syphilis
@@ -1307,7 +1307,7 @@ namespace Server.Engines.XmlSpawner2
                             return true;
                         return false;
                     }
-                case Disease.AzhuranFever:
+                case Disease.WesternFever:
                     {
                         if (m_LastCaught[d] + TimeSpan.FromDays(20) < DateTime.Now)
                             return true;
@@ -1563,7 +1563,7 @@ namespace Server.Engines.XmlSpawner2
                     case Disease.Dysentery: dis.RecoveryCount++; break;
                     case Disease.Influenza: dis.RecoveryCount++; break;
                     case Disease.Diptheria: dis.RecoveryCount++; break;
-                    case Disease.AzhuranFever: dis.RecoveryCount++; break;
+                    case Disease.WesternFever: dis.RecoveryCount++; break;
                     case Disease.HundredDaysCough: dis.RecoveryCount++; break;
                     default: break;
                 }
@@ -1772,12 +1772,12 @@ namespace Server.Engines.XmlSpawner2
                         DiseaseMessage(dis);
                         return true;
                     }
-                case Disease.AzhuranFever:
+                case Disease.WesternFever:
                     {
                         List<StatMod> removeMod = new List<StatMod>();
                         foreach (StatMod mod in m_Player.StatMods)
                         {
-                            if (mod.Name.Contains("[AzhuranFever]"))
+                            if (mod.Name.Contains("[WesternFever]"))
                                 removeMod.Add(mod);
                         }
 
@@ -1792,16 +1792,16 @@ namespace Server.Engines.XmlSpawner2
 
                         int stamamount =(m_Player.StamMax / 3) * -1;
                         int stramount = (m_Player.Str / 4) * -1;
-                        XmlStam azhuranStam = new XmlStam(stamamount, 60);
-                        XmlStr azhuranStr = new XmlStr(stramount, 60);
+                        XmlStam WesternStam = new XmlStam(stamamount, 60);
+                        XmlStr WesternStr = new XmlStr(stramount, 60);
 
-                        yellowFever.Name = " [Disease] [AzhuranFever] [1] ";
-                        azhuranStam.Name = " [Disease] [AzhuranFever] [2] ";
-                        azhuranStr.Name = " [Disease] [AzhuranFever] [3] ";
+                        yellowFever.Name = " [Disease] [WesternFever] [1] ";
+                        WesternStam.Name = " [Disease] [WesternFever] [2] ";
+                        WesternStr.Name = " [Disease] [WesternFever] [3] ";
 
                         XmlAttach.AttachTo(m_Player, yellowFever);
-                        XmlAttach.AttachTo(m_Player, azhuranStam);
-                        XmlAttach.AttachTo(m_Player, azhuranStr);
+                        XmlAttach.AttachTo(m_Player, WesternStam);
+                        XmlAttach.AttachTo(m_Player, WesternStr);
                         DiseaseMessage(dis);
                         return true;
                     }
@@ -1926,7 +1926,7 @@ namespace Server.Engines.XmlSpawner2
                 case Disease.Diptheria: m_Player.SendMessage("It's hard to breathe..."); return;
                 case Disease.Dysentery: m_Player.SendMessage("Your stomache aches..."); return;
                 case Disease.Consumption: m_Player.SendMessage("You feel fatigued..."); return;
-                case Disease.AzhuranFever: m_Player.SendMessage("You feel hot..."); return;
+                case Disease.WesternFever: m_Player.SendMessage("You feel hot..."); return;
                 case Disease.Bile: m_Player.SendMessage("You feel sick to your stomache..."); return;
                 case Disease.Leprosy: m_Player.SendMessage("You feel numb..."); return;
                 case Disease.TyreanDisease: m_Player.SendMessage("You feel dizzy..."); return;
@@ -2358,7 +2358,7 @@ namespace Server.Engines.XmlSpawner2
                     case Disease.Diptheria: return 20;
                     case Disease.Dysentery: return 40;
                     case Disease.Consumption: return 150;
-                    case Disease.AzhuranFever: return 30;
+                    case Disease.WesternFever: return 30;
                     case Disease.Bile: return 50;
                     case Disease.Leprosy: return 250;
                     case Disease.TyreanDisease: return 350;
@@ -2376,7 +2376,7 @@ namespace Server.Engines.XmlSpawner2
                     case Disease.Diptheria: return true;
                     case Disease.Dysentery: return true;
                     case Disease.Consumption: return false;
-                    case Disease.AzhuranFever: return true;
+                    case Disease.WesternFever: return true;
                     case Disease.Bile: return true;
                     case Disease.Leprosy: return false;
                     case Disease.TyreanDisease: return false;
@@ -2393,7 +2393,7 @@ namespace Server.Engines.XmlSpawner2
                 case Disease.Diptheria: return TimeSpan.FromDays(2);
                 case Disease.Dysentery: return TimeSpan.FromHours(6);
                 case Disease.Consumption: return TimeSpan.FromDays(Utility.RandomMinMax(15, 30));
-                case Disease.AzhuranFever: return TimeSpan.FromHours(1);
+                case Disease.WesternFever: return TimeSpan.FromHours(1);
                 case Disease.Bile: return TimeSpan.FromHours(Utility.RandomMinMax(6, 12));
                 case Disease.Leprosy: return TimeSpan.FromDays(Utility.RandomMinMax(15, 30));
                 case Disease.TyreanDisease: return TimeSpan.FromDays(Utility.RandomMinMax(30, 60));
@@ -2434,7 +2434,7 @@ namespace Server.Engines.XmlSpawner2
                             diag = "Subject suffers from violent, prolonged coughing fits; has difficulty breathing; blood and other matter may be found in expelled fluids.";
                             break;
                         }
-                    case Disease.AzhuranFever:
+                    case Disease.WesternFever:
                         {
                             diag = "Subject suffers from yellow, discolored skin and eyes; intense sweating; delirium; weakness; pain in joints.";
                             break;
@@ -2492,9 +2492,9 @@ namespace Server.Engines.XmlSpawner2
                             name = "Consumption";
                             break;
                         }
-                    case Disease.AzhuranFever:
+                    case Disease.WesternFever:
                         {
-                            name = "Azhuran Fever";
+                            name = "Western Fever";
                             break;
                         }
                     case Disease.Bile:
@@ -2527,7 +2527,7 @@ namespace Server.Engines.XmlSpawner2
                 case Disease.Diptheria: return TimeSpan.FromHours(Utility.RandomMinMax(3, 6));
                 case Disease.Dysentery: return TimeSpan.FromHours(Utility.RandomMinMax(1, 2));
                 case Disease.Consumption: return TimeSpan.FromMinutes(Utility.RandomMinMax(10, 20));
-                case Disease.AzhuranFever: return TimeSpan.FromMinutes(Utility.RandomMinMax(3, 5));
+                case Disease.WesternFever: return TimeSpan.FromMinutes(Utility.RandomMinMax(3, 5));
                 case Disease.Bile: return TimeSpan.FromHours(Utility.RandomMinMax(3, 6));
                 case Disease.Leprosy: return TimeSpan.FromDays(Utility.RandomMinMax(1, 3));
                 case Disease.TyreanDisease: return TimeSpan.FromDays(Utility.RandomMinMax(6, 12));

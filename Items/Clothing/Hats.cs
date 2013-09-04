@@ -1387,7 +1387,7 @@ namespace Server.Items
 		}
 	}
 	
-	public class AzhuranCrown : BaseHat
+	public class WesternCrown : BaseHat
 	{
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 0; } }
@@ -1399,13 +1399,13 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 40; } }
 
 		[Constructable]
-		public AzhuranCrown() : base( 0x3B9A )
+		public WesternCrown() : base( 0x3B9A )
 		{
 			Weight = 1.0;
-			Name = "Azhuran Crown";
+			Name = "Western Crown";
 		}
 
-		public AzhuranCrown( Serial serial ) : base( serial )
+		public WesternCrown( Serial serial ) : base( serial )
 		{
 		}
 		
@@ -1422,7 +1422,7 @@ namespace Server.Items
 		}
 	}
 	
-	public class AzhuranRogueMask : BaseHat
+	public class WesternRogueMask : BaseHat
 	{
 		public override int BasePhysicalResistance{ get{ return 0; } }
 		public override int BaseFireResistance{ get{ return 0; } }
@@ -1434,13 +1434,13 @@ namespace Server.Items
 		public override int InitMaxHits{ get{ return 40; } }
 
 		[Constructable]
-		public AzhuranRogueMask() : base( 0x3BB0 )
+		public WesternRogueMask() : base( 0x3BB0 )
 		{
 			Weight = 1.0;
 			Name = "Rogue Mask";
 		}
 
-		public AzhuranRogueMask( Serial serial ) : base( serial )
+		public WesternRogueMask( Serial serial ) : base( serial )
 		{
 		}
 		

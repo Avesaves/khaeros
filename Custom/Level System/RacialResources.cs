@@ -16,25 +16,25 @@ namespace Server.Misc
 			return "...";
         }
         
-        private int m_Alyrian;
-        private int m_Azhuran;
+        private int m_Southern;
+        private int m_Western;
         private int m_Khemetar;
         private int m_Mhordul;
         private int m_Tyrean;
-        private int m_Vhalurian;
+        private int m_Northern;
 
         [CommandProperty( AccessLevel.GameMaster )]
-        public int Alyrian
+        public int Southern
         {
-            get { return m_Alyrian; }
-            set { m_Alyrian = value; }
+            get { return m_Southern; }
+            set { m_Southern = value; }
         }
 
         [CommandProperty( AccessLevel.GameMaster )]
-        public int Azhuran
+        public int Western
         {
-            get { return m_Azhuran; }
-            set { m_Azhuran = value; }
+            get { return m_Western; }
+            set { m_Western = value; }
         }
 
         [CommandProperty( AccessLevel.GameMaster )]
@@ -59,10 +59,10 @@ namespace Server.Misc
         }
 
         [CommandProperty( AccessLevel.GameMaster )]
-        public int Vhalurian
+        public int Northern
         {
-            get { return m_Vhalurian; }
-            set { m_Vhalurian = value; }
+            get { return m_Northern; }
+            set { m_Northern = value; }
         }
 
         public RacialResources()
@@ -73,24 +73,24 @@ namespace Server.Misc
 		{
 			int version = reader.ReadInt();
 
-            m_Alyrian = reader.ReadInt();
-            m_Azhuran = reader.ReadInt();
+            m_Southern = reader.ReadInt();
+            m_Western = reader.ReadInt();
             m_Khemetar = reader.ReadInt();
             m_Mhordul = reader.ReadInt();
             m_Tyrean = reader.ReadInt();
-            m_Vhalurian = reader.ReadInt();
+            m_Northern = reader.ReadInt();
 		}
 
         public static void Serialize( GenericWriter writer, RacialResources info )
 		{
 			writer.Write( (int) 1 ); // version
 
-            writer.Write( (int)info.m_Alyrian );
-            writer.Write( (int)info.m_Azhuran );
+            writer.Write( (int)info.m_Southern );
+            writer.Write( (int)info.m_Western );
             writer.Write( (int)info.m_Khemetar );
             writer.Write( (int)info.m_Mhordul );
             writer.Write( (int)info.m_Tyrean );
-            writer.Write( (int)info.m_Vhalurian );
+            writer.Write( (int)info.m_Northern );
 		}
     }
 }

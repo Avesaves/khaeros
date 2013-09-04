@@ -166,7 +166,7 @@ namespace Server.Commands
 					return "Consecrate Weapon";
 				}
 					
-				case Nation.Vhalurian:
+				case Nation.Northern:
 				{
 					if( featname == FeatList.SummonProtector )
 						return "Summon Divine Protector";
@@ -783,13 +783,13 @@ namespace Server.Commands
             {
             	case "lurieth":
             	{
-            		SettingLanguage( m, KnownLanguage.Alyrian, m.Feats.GetFeatLevel(FeatList.AlyrianLanguage), 3, "Lurieth" );
+            		SettingLanguage( m, KnownLanguage.Southern, m.Feats.GetFeatLevel(FeatList.SouthernLanguage), 3, "Lurieth" );
             		break;
             	}
             	
             	case "keeper":
             	{
-            		SettingLanguage( m, KnownLanguage.Azhuran, m.Feats.GetFeatLevel(FeatList.AzhuranLanguage), 3, "Keeper" );
+            		SettingLanguage( m, KnownLanguage.Western, m.Feats.GetFeatLevel(FeatList.WesternLanguage), 3, "Keeper" );
             		break;
             	}
             		
@@ -819,7 +819,7 @@ namespace Server.Commands
             		
             	case "faithful":
             	{
-            		SettingLanguage( m, KnownLanguage.Vhalurian, m.Feats.GetFeatLevel(FeatList.VhalurianLanguage), 3, "Faithful" );
+            		SettingLanguage( m, KnownLanguage.Northern, m.Feats.GetFeatLevel(FeatList.NorthernLanguage), 3, "Faithful" );
             		break;
             	}
             		
@@ -2647,63 +2647,63 @@ namespace Server.Commands
 
             switch( language.ToLower() )
             {
-            	case "alyrian":
+            	case "Southern":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Alyrian, false, false, false, false );
+            		m.Target = new TurnIntoTarget( Nation.Southern, false, false, false, false );
             		break;
             	}
             		
-            	case "alyrianpoor":
+            	case "Southernpoor":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Alyrian, true, false, false, false );
+            		m.Target = new TurnIntoTarget( Nation.Southern, true, false, false, false );
             		break;
             	}
             		
-            	case "alyrianrich":
+            	case "Southernrich":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Alyrian, false, true, false, false );
+            		m.Target = new TurnIntoTarget( Nation.Southern, false, true, false, false );
             		break;
             	}
             		
-            	case "alyriancrafter":
+            	case "Southerncrafter":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Alyrian, false, false, true, false );
+            		m.Target = new TurnIntoTarget( Nation.Southern, false, false, true, false );
             		break;
             	}
             	
-            	case "alyrianguard":
+            	case "Southernguard":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Alyrian, false, false, false, true );
+            		m.Target = new TurnIntoTarget( Nation.Southern, false, false, false, true );
             		break;
             	}
             	
-            	case "azhuran":
+            	case "Western":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Azhuran, false, false, false, false );
+            		m.Target = new TurnIntoTarget( Nation.Western, false, false, false, false );
             		break;
             	}
             		
-            	case "azhuranpoor":
+            	case "Westernpoor":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Azhuran, true, false, false, false );
+            		m.Target = new TurnIntoTarget( Nation.Western, true, false, false, false );
             		break;
             	}
             		
-            	case "azhuranrich":
+            	case "Westernrich":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Azhuran, false, true, false, false );
+            		m.Target = new TurnIntoTarget( Nation.Western, false, true, false, false );
             		break;
             	}
             		
-            	case "azhurancrafter":
+            	case "Westerncrafter":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Azhuran, false, false, true, false );
+            		m.Target = new TurnIntoTarget( Nation.Western, false, false, true, false );
             		break;
             	}
             		
-            	case "azhuranguard":
+            	case "Westernguard":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Azhuran, false, false, false, true );
+            		m.Target = new TurnIntoTarget( Nation.Western, false, false, false, true );
             		break;
             	}
             		
@@ -2797,39 +2797,39 @@ namespace Server.Commands
             		break;
             	}
             		
-            	case "vhalurian":
+            	case "Northern":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Vhalurian, false, false, false, false );
+            		m.Target = new TurnIntoTarget( Nation.Northern, false, false, false, false );
             		break;
             	}
             		
-            	case "vhalurianpoor":
+            	case "Northernpoor":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Vhalurian, true, false, false, false );
+            		m.Target = new TurnIntoTarget( Nation.Northern, true, false, false, false );
             		break;
             	}
             		
-            	case "vhalurianrich":
+            	case "Northernrich":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Vhalurian, false, true, false, false );
+            		m.Target = new TurnIntoTarget( Nation.Northern, false, true, false, false );
             		break;
             	}
             		
-            	case "vhaluriancrafter":
+            	case "Northerncrafter":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Vhalurian, false, false, true, false );
+            		m.Target = new TurnIntoTarget( Nation.Northern, false, false, true, false );
             		break;
             	}
             		
-            	case "vhalurianguard":
+            	case "Northernguard":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Vhalurian, false, false, false, true );
+            		m.Target = new TurnIntoTarget( Nation.Northern, false, false, false, true );
             		break;
             	}
             		
             	case "imperialguard":
             	{
-            		m.Target = new TurnIntoTarget( Utility.RandomBool() == true ? Nation.Vhalurian : Nation.Tyrean, false, false, false, true, "imperial" );
+            		m.Target = new TurnIntoTarget( Utility.RandomBool() == true ? Nation.Northern : Nation.Tyrean, false, false, false, true, "imperial" );
             		break;
             	}
             }
@@ -3116,11 +3116,11 @@ namespace Server.Commands
             	nationchoice = nationchoice.ToLower();
             	Nation nation = Nation.None;
                 	
-                if( nationchoice == "alyrian" )
-                	nation = Nation.Alyrian;
+                if( nationchoice == "Southern" )
+                	nation = Nation.Southern;
                 	
-            	else if( nationchoice == "azhuran" )
-            		nation = Nation.Azhuran;
+            	else if( nationchoice == "Western" )
+            		nation = Nation.Western;
             	
             	else if( nationchoice == "khemetar" )
             		nation = Nation.Khemetar;
@@ -3131,12 +3131,12 @@ namespace Server.Commands
             	else if( nationchoice == "tyrean" )
             		nation = Nation.Tyrean;
             	
-            	else if( nationchoice == "vhalurian" )
-            		nation = Nation.Vhalurian;
+            	else if( nationchoice == "Northern" )
+            		nation = Nation.Northern;
             	
             	else
             	{
-            		m.SendMessage( "Usage example: .CustomNPC Alyrian" );
+            		m.SendMessage( "Usage example: .CustomNPC Southern" );
             		return;
             	}
             	

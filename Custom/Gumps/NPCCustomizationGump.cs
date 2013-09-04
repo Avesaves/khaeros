@@ -73,7 +73,7 @@ namespace Server.Gumps
         public static KeyValuePair<string, int> longplaited = new KeyValuePair<string, int>( "Long Plaited", 12746 );
         public static KeyValuePair<string, int> longmessy = new KeyValuePair<string, int>( "Long Messy", 12747 );
         public static KeyValuePair<string, int> mediumdreads = new KeyValuePair<string, int>( "Medium Dreads", 12748 );
-        public static KeyValuePair<string, int> longalyrian = new KeyValuePair<string, int>( "Long Alyrian", 12750 );
+        public static KeyValuePair<string, int> longSouthern = new KeyValuePair<string, int>( "Long Southern", 12750 );
 
 		public static int hairhue1;
 		public static int hairhue2;
@@ -257,7 +257,7 @@ namespace Server.Gumps
 						this.AddLabel(233, 283, 0, @"Thin Beard & Mustache");
 						facialhair11 = thinbeardmustache;
 						
-						if( nation != Nation.Azhuran )
+						if( nation != Nation.Western )
 						{
 							this.AddButton(215, 307, 1209, 1210, 112, GumpButtonType.Reply, 0);
 							this.AddLabel(233, 306, 0, @"Full Beard");
@@ -370,7 +370,7 @@ namespace Server.Gumps
 		{
 			switch( nation )
 			{
-				case Nation.Alyrian:
+				case Nation.Southern:
 				{
 					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
 					this.AddLabel(115, 214, 0, @"Long Beard");
@@ -457,7 +457,7 @@ namespace Server.Gumps
 					break;
 				}
 					
-				case Nation.Vhalurian:
+				case Nation.Northern:
 				{
 					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
 					this.AddLabel(115, 214, 0, @"Long Beard");
@@ -556,10 +556,10 @@ namespace Server.Gumps
 
             switch( nation )
             {
-                case Nation.Alyrian:
+                case Nation.Southern:
                 {
                     gump.hair13 = shouldershort;
-                    gump.hair14 = longalyrian;
+                    gump.hair14 = longSouthern;
                     gump.hair15 = fancyshort;
                     gump.hair16 = thinshort;
 
@@ -574,7 +574,7 @@ namespace Server.Gumps
                     break;
                 }
 
-                case Nation.Azhuran:
+                case Nation.Western:
                 {
                     gump.hair13 = topknot;
                     gump.hair14 = shouldershort;
@@ -639,7 +639,7 @@ namespace Server.Gumps
                     break;
                 }
 
-                case Nation.Vhalurian:
+                case Nation.Northern:
                 {
                     gump.hair13 = fancyshort;
                     gump.hair14 = thinshort;
@@ -1293,7 +1293,7 @@ namespace Server.Gumps
 		{
 			switch ( nation )
 			{		
-				case Nation.Azhuran:
+				case Nation.Western:
 				{
 					hairhue1 = 2801;
 					hairhue2 = 2411;
@@ -1345,7 +1345,7 @@ namespace Server.Gumps
 					break;
 				}
 					
-				case Nation.Vhalurian:
+				case Nation.Northern:
 				{
 					hairhue1 = 2990;
 					hairhue2 = 1147;
@@ -1397,7 +1397,7 @@ namespace Server.Gumps
 					break;
 				}
 					
-				case Nation.Alyrian:
+				case Nation.Southern:
 				{
 					hairhue1 = 2107;
 					hairhue2 = 1149;

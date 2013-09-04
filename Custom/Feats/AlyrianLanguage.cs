@@ -7,10 +7,10 @@ using Server.Mobiles;
 
 namespace Server.FeatInfo
 {
-	public class AlyrianLanguage : BaseFeat
+	public class SouthernLanguage : BaseFeat
 	{
 		public override string Name{ get{ return "Lurethian Language"; } }
-		public override FeatList ListName{ get{ return Mobiles.FeatList.AlyrianLanguage; } }
+		public override FeatList ListName{ get{ return Mobiles.FeatList.SouthernLanguage; } }
 		public override FeatCost CostLevel{ get{ return FeatCost.High; } }
 		
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
@@ -31,11 +31,11 @@ namespace Server.FeatInfo
 		
 		public override string FullDescription{ get{ return GetFullDescription(this); } }
 		
-		public static void Initialize(){ WriteWebpage(new AlyrianLanguage()); }
+		public static void Initialize(){ WriteWebpage(new SouthernLanguage()); }
 		
 		public override bool CanBeRemovedFrom( PlayerMobile m )
 		{
-			if( m.Nation == Nation.Alyrian )
+			if( m.Nation == Nation.Southern )
 			{
 				m.SendMessage( "You cannot unlearn your first language." );
 				return false;
@@ -46,9 +46,9 @@ namespace Server.FeatInfo
 
         public override bool IgnoreThisFeatWhenRemovingParent( PlayerMobile m )
         {
-            return m.Nation == Nation.Alyrian;
+            return m.Nation == Nation.Southern;
         }
 		
-		public AlyrianLanguage() {}
+		public SouthernLanguage() {}
 	}
 }

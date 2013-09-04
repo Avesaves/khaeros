@@ -174,82 +174,82 @@ namespace Server.Engines.Craft
 			{
 				PlayerMobile m = from as PlayerMobile;
 				
-		/*		if( itemType == typeof( SplintedMailGorget ) && !TestRace( m, Nation.Alyrian ) )
+		/*		if( itemType == typeof( SplintedMailGorget ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( SplintedMailChest ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( SplintedMailChest ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( SplintedMailLegs ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( SplintedMailLegs ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( SplintedMailArms ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( SplintedMailArms ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( RunicBuckler ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( RunicBuckler ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( RoundShield ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( RoundShield ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( NotchedShield ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( NotchedShield ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Claymore ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( Claymore ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Falcata ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( Falcata ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Billhook ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( Billhook ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ArmingSword ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( ArmingSword ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( HeavyDoubleAxe ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( HeavyDoubleAxe ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( BattleHammer ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( BattleHammer ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( SpikedChest ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( SpikedChest ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( EagleHelm ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( EagleHelm ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( RoundedFaceShield ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( RoundedFaceShield ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TallFaceShield ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( TallFaceShield ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Kutar ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( Kutar ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Tepatl ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( Tepatl ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Flamberge ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( Flamberge ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( HaftedAxe ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( HaftedAxe ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Glaive ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( Glaive ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( PrimitiveSpear ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( PrimitiveSpear ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranMace ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( WesternMace ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( SpikedMace ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( SpikedMace ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( HookedClub ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( HookedClub ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( ScaleArmorLegs ) && !TestRace( m, Nation.Khemetar ) )
@@ -348,7 +348,7 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( ScaleArmorHelmet ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 
-                else if( itemType == typeof( Helmet ) && !TestRace( m, Nation.Alyrian, Nation.Tyrean ) )
+                else if( itemType == typeof( Helmet ) && !TestRace( m, Nation.Southern, Nation.Tyrean ) )
                     return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( HornedHelm ) && !TestRace( m, Nation.Tyrean ) )
@@ -396,73 +396,73 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( HeavyBattleHammer ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnatePlateChest ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnatePlateChest ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnatePlateArms ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnatePlateArms ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnatePlateLegs ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnatePlateLegs ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnatePlateGorget ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnatePlateGorget ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnatePlateGloves ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnatePlateGloves ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnateHelm ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnateHelm ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnatePlateHelm ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnatePlateHelm ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnateNorseHelm ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnateNorseHelm ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnateKiteShield ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( OrnateKiteShield ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Gladius ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( Gladius ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( CavalrySword ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( CavalrySword ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( BastardSword ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( BastardSword ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( HorsemanAxe ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( HorsemanAxe ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Lance ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( Lance ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( HorsemanMace ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( HorsemanMace ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( HorsemanWarhammer ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( HorsemanWarhammer ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TwoHandedMaul ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( TwoHandedMaul ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( HeavyMaul ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( HeavyMaul ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Bascinet ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( Bascinet ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( WoodenKiteShield ) && !TestRace( m, Nation.Mhordul, Nation.Azhuran ) )
+				else if( itemType == typeof( WoodenKiteShield ) && !TestRace( m, Nation.Mhordul, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( KiteShield ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( KiteShield ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( PriestStaff ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ShamanStaff ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( ShamanStaff ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( PlateSabatons ) && TestRace( m, Nation.Mhordul ) )

@@ -9,10 +9,10 @@ using Server.Spells;
 
 namespace Server.Mobiles
 {
-	public class Druid : BaseKhaerosMobile, IAlyrian
+	public class Druid : BaseKhaerosMobile, ISouthern
 	{
 		[Constructable]
-		public Druid() : base( Nation.Alyrian ) 
+		public Druid() : base( Nation.Southern ) 
 		{
 			SetStr( 100 );
 			SetDex( 50 );
@@ -81,7 +81,7 @@ namespace Server.Mobiles
 		            	if( m == null || m.Deleted || m.Map != this.Map || !m.Alive || !this.CanSee( m ) || !this.CanBeHarmful( m ) || m.Combatant == this )
 		                    continue;
 		                
-		            	if( ( m is IAlyrian || ( m is PlayerMobile && ( (PlayerMobile)m ).Nation == Nation.Alyrian ) ) && this.InLOS( m ) )
+		            	if( ( m is ISouthern || ( m is PlayerMobile && ( (PlayerMobile)m ).Nation == Nation.Southern ) ) && this.InLOS( m ) )
 		                    targets.Add( m );
 		            }
 		        }

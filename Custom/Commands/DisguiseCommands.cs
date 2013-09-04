@@ -47,12 +47,12 @@ namespace Server.Commands
             int hue = 0;
             switch(m.Nation)
             {
-                case Nation.Alyrian: hue = 2001; break;
-                case Nation.Azhuran: hue = 1358; break;
+                case Nation.Southern: hue = 2001; break;
+                case Nation.Western: hue = 1358; break;
                 case Nation.Khemetar: hue = 1057; break;
                 case Nation.Mhordul: hue = 1157; break;
                 case Nation.Tyrean: hue = 2406; break;
-                case Nation.Vhalurian: hue = 1156; break;
+                case Nation.Northern: hue = 1156; break;
             }
 
             for (int i = 0; i < m.MyDisguises.Disguises.Length; i++)
@@ -213,16 +213,16 @@ namespace Server.Commands
                 Nation nation = Nation.None;
 
                 if (nationchoice == "lurieth")
-                    nation = Nation.Alyrian;
+                    nation = Nation.Southern;
 
                 else if (nationchoice == "keeper")
-                    nation = Nation.Azhuran;
+                    nation = Nation.Western;
 
                 else if (nationchoice == "stranger")
                     nation = Nation.Mhordul;
 
                 else if (nationchoice == "faithful")
-                    nation = Nation.Vhalurian;
+                    nation = Nation.Northern;
 
                 else
                 {
@@ -448,7 +448,7 @@ namespace Server.Commands
 
                         else
                         {
-                            m.SendMessage("Usage example: .DisguiseTitle the Vhalurian Soldier");
+                            m.SendMessage("Usage example: .DisguiseTitle the Northern Soldier");
                             return;
                         }
                     }

@@ -152,19 +152,19 @@ namespace Server.Gumps
 			
 				case 7: 
 				{
-					m.Nation = Nation.Azhuran;
+					m.Nation = Nation.Western;
 					break;
 				}
 					
 				case 8: 
 				{
-					m.Nation = Nation.Alyrian;
+					m.Nation = Nation.Southern;
 					break;
 				}
 				
 				case 9: 
 				{
-					m.Nation = Nation.Vhalurian;
+					m.Nation = Nation.Northern;
 					break;
 				}
 					
@@ -186,10 +186,10 @@ namespace Server.Gumps
 			
 			switch( m.Nation )
 			{
-				case Nation.Alyrian:
+				case Nation.Southern:
 				{
 					m.RPTitle = "of the South";
-					m.Feats.SetFeatLevel( FeatList.AlyrianLanguage, 3 );
+					m.Feats.SetFeatLevel( FeatList.SouthernLanguage, 3 );
 					m.Height = 103;
 					m.Weight = 99;
 					
@@ -199,10 +199,10 @@ namespace Server.Gumps
 					break;
 				}
 					
-				case Nation.Azhuran:
+				case Nation.Western:
 				{
 					m.RPTitle = "of the West";
-					m.Feats.SetFeatLevel( FeatList.AzhuranLanguage, 3 );
+					m.Feats.SetFeatLevel( FeatList.WesternLanguage, 3 );
 					m.Height = 100;
 					m.Weight = 95;
 					
@@ -250,10 +250,10 @@ namespace Server.Gumps
 					break;
 				}
 					
-				case Nation.Vhalurian:
+				case Nation.Northern:
 				{
 					m.RPTitle = "of the North";
-					m.Feats.SetFeatLevel( FeatList.VhalurianLanguage, 3 );
+					m.Feats.SetFeatLevel( FeatList.NorthernLanguage, 3 );
                     m.Height = 106;
                     m.Weight = 93;
 					

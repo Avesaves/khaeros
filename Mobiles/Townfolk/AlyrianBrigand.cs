@@ -6,10 +6,10 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	public class AlyrianBrigand : BaseKhaerosMobile, IBrigand
+	public class SouthernBrigand : BaseKhaerosMobile, IBrigand
 	{
 		[Constructable]
-		public AlyrianBrigand() : base( Nation.Alyrian ) 
+		public SouthernBrigand() : base( Nation.Southern ) 
 		{
 			SetStr( 100 );
 			SetDex( 50 );
@@ -85,7 +85,7 @@ namespace Server.Mobiles
 			AddLoot( LootPack.Poor );
 		}
 
-		public AlyrianBrigand(Serial serial) : base(serial)
+		public SouthernBrigand(Serial serial) : base(serial)
 		{
 		}
 

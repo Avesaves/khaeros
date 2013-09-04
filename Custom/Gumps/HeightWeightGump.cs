@@ -119,11 +119,11 @@ namespace Server.Gumps
 
         public static int GetAverageNationalHeight( Nation nation )
         {
-        	if( nation == Nation.Azhuran )
+        	if( nation == Nation.Western )
         		return 90;
         	if( nation == Nation.Khemetar )
         		return 93;
-        	if( nation == Nation.Alyrian )
+        	if( nation == Nation.Southern )
         		return 103;
         	if( nation == Nation.Tyrean )
         		return 106;

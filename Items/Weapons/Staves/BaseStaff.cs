@@ -227,7 +227,7 @@ namespace Server.Items
                 }
             }
 
-            if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Azhuran)
+            if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Western)
             {
                 Glaive weapon = new Glaive();
                 weapon.NewCrafting = true;
@@ -270,7 +270,7 @@ namespace Server.Items
                 weapon.AddItem(m_Hilt);
             }
 
-            if (m_Blade is MediumBlade && ((PlayerMobile)from).Nation == Nation.Azhuran)
+            if (m_Blade is MediumBlade && ((PlayerMobile)from).Nation == Nation.Western)
             {
                 PrimitiveSpear weapon = new PrimitiveSpear();
                 weapon.NewCrafting = true;

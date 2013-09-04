@@ -105,17 +105,17 @@ namespace Server.Gumps
 			{
 				this.AddBackground(328, 61, 146, 205, 2620);
 				this.AddLabel(364, 71, 337, "Translation");
-				this.AddLabel(366, 101, ( m_Language == Language.Alyrian ? 56 : 95 ), "Southern");
+				this.AddLabel(366, 101, ( m_Language == Language.Southern ? 56 : 95 ), "Southern");
 				this.AddButton(370, 253, 239, 240, (int)Buttons.DoTranslate, GumpButtonType.Reply, 0);
-				this.AddButton(350, 105, 2362, 2361, (int)Buttons.Alyrian, GumpButtonType.Reply, 0);
-				this.AddLabel(366, 121, ( m_Language == Language.Azhuran ? 56 : 95 ), "Western");
-				this.AddButton(350, 125, 2362, 2361, (int)Buttons.Azhuran, GumpButtonType.Reply, 0);
+				this.AddButton(350, 105, 2362, 2361, (int)Buttons.Southern, GumpButtonType.Reply, 0);
+				this.AddLabel(366, 121, ( m_Language == Language.Western ? 56 : 95 ), "Western");
+				this.AddButton(350, 125, 2362, 2361, (int)Buttons.Western, GumpButtonType.Reply, 0);
 				this.AddLabel(366, 141, ( m_Language == Language.Common ? 56 : 95 ), "Common");
 				this.AddButton(350, 145, 2362, 2361, (int)Buttons.Common, GumpButtonType.Reply, 0);
 				this.AddLabel(366, 161, ( m_Language == Language.Khemetar ? 56 : 95 ), "Ancient");
 				this.AddButton(350, 165, 2362, 2361, (int)Buttons.Khemetar, GumpButtonType.Reply, 0);
-				this.AddLabel(366, 181, ( m_Language == Language.Vhalurian ? 56 : 95 ), "Northern");
-				this.AddButton(350, 185, 2362, 2361, (int)Buttons.Vhalurian, GumpButtonType.Reply, 0);
+				this.AddLabel(366, 181, ( m_Language == Language.Northern ? 56 : 95 ), "Northern");
+				this.AddButton(350, 185, 2362, 2361, (int)Buttons.Northern, GumpButtonType.Reply, 0);
 
 			}
 		}
@@ -132,11 +132,11 @@ namespace Server.Gumps
 			Simple,
 			Moderate,
 			Complex,
-			Alyrian,
-			Azhuran,
+			Southern,
+			Western,
 			Common,
 			Khemetar,
-			Vhalurian,
+			Northern,
 			DoTranslate,
 			DoDecrypt,
 			DoEncrypt,
@@ -224,10 +224,10 @@ namespace Server.Gumps
 					break;
 				}
 				
-				case (int)Buttons.Vhalurian:
+				case (int)Buttons.Northern:
 				{
-					if ( HTMLBook.UnderstandsLanguage( Language.Vhalurian, from ) && HTMLBook.UnderstandsLanguage( m_Book.Language, from ))
-						m_Language = Language.Vhalurian;
+					if ( HTMLBook.UnderstandsLanguage( Language.Northern, from ) && HTMLBook.UnderstandsLanguage( m_Book.Language, from ))
+						m_Language = Language.Northern;
 					else
 						from.SendMessage( "You don't know that language!" );
 					
@@ -250,10 +250,10 @@ namespace Server.Gumps
 				
 
 				
-				case (int)Buttons.Alyrian:
+				case (int)Buttons.Southern:
 				{
-					if ( HTMLBook.UnderstandsLanguage( Language.Alyrian, from ) && HTMLBook.UnderstandsLanguage( m_Book.Language, from ))
-						m_Language = Language.Alyrian;
+					if ( HTMLBook.UnderstandsLanguage( Language.Southern, from ) && HTMLBook.UnderstandsLanguage( m_Book.Language, from ))
+						m_Language = Language.Southern;
 					else
 						from.SendMessage( "You don't know that language!" );
 					
@@ -261,10 +261,10 @@ namespace Server.Gumps
 					break;
 				}
 				
-				case (int)Buttons.Azhuran:
+				case (int)Buttons.Western:
 				{
-					if ( HTMLBook.UnderstandsLanguage( Language.Azhuran, from ) && HTMLBook.UnderstandsLanguage( m_Book.Language, from ))
-						m_Language = Language.Azhuran;
+					if ( HTMLBook.UnderstandsLanguage( Language.Western, from ) && HTMLBook.UnderstandsLanguage( m_Book.Language, from ))
+						m_Language = Language.Western;
 					else
 						from.SendMessage( "You don't know that language!" );
 					

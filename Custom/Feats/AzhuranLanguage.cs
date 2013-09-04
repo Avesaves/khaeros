@@ -7,10 +7,10 @@ using Server.Mobiles;
 
 namespace Server.FeatInfo
 {
-	public class AzhuranLanguage : BaseFeat
+	public class WesternLanguage : BaseFeat
 	{
 		public override string Name{ get{ return "Keeper Language"; } }
-		public override FeatList ListName{ get{ return Mobiles.FeatList.AzhuranLanguage; } }
+		public override FeatList ListName{ get{ return Mobiles.FeatList.WesternLanguage; } }
 		public override FeatCost CostLevel{ get{ return FeatCost.High; } }
 		
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
@@ -31,11 +31,11 @@ namespace Server.FeatInfo
 		
 		public override string FullDescription{ get{ return GetFullDescription(this); } }
 		
-		public static void Initialize(){ WriteWebpage(new AzhuranLanguage()); }
+		public static void Initialize(){ WriteWebpage(new WesternLanguage()); }
 		
 		public override bool CanBeRemovedFrom( PlayerMobile m )
 		{
-			if( m.Nation == Nation.Azhuran )
+			if( m.Nation == Nation.Western )
 			{
 				m.SendMessage( "You cannot unlearn your first language." );
 				return false;
@@ -46,9 +46,9 @@ namespace Server.FeatInfo
 
         public override bool IgnoreThisFeatWhenRemovingParent( PlayerMobile m )
         {
-            return m.Nation == Nation.Azhuran;
+            return m.Nation == Nation.Western;
         }
 		
-		public AzhuranLanguage() {}
+		public WesternLanguage() {}
 	}
 }

@@ -9,10 +9,10 @@ using Server.Spells;
 
 namespace Server.Mobiles
 {
-	public class Cleric : BaseKhaerosMobile, IVhalurian
+	public class Cleric : BaseKhaerosMobile, INorthern
 	{
 		[Constructable]
-		public Cleric() : base( Nation.Vhalurian ) 
+		public Cleric() : base( Nation.Northern ) 
 		{
 			SetStr( 100 );
 			SetDex( 50 );
@@ -86,7 +86,7 @@ namespace Server.Mobiles
 		            	if( m == null || m.Deleted || m.Map != this.Map || !m.Alive || !this.CanSee( m ) || !this.CanBeHarmful( m ) || m.Combatant == this )
 		                    continue;
 		                
-		            	if( ( m is IVhalurian || ( m is PlayerMobile && ( (PlayerMobile)m ).Nation == Nation.Vhalurian ) ) && this.InLOS( m ) )
+		            	if( ( m is INorthern || ( m is PlayerMobile && ( (PlayerMobile)m ).Nation == Nation.Northern ) ) && this.InLOS( m ) )
 		                    targets.Add( m );
 		            }
 		        }

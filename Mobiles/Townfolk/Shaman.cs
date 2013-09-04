@@ -9,10 +9,10 @@ using Server.Spells;
 
 namespace Server.Mobiles
 {
-	public class Shaman : BaseKhaerosMobile, IAzhuran
+	public class Shaman : BaseKhaerosMobile, IWestern
 	{
 		[Constructable]
-		public Shaman() : base( Nation.Azhuran ) 
+		public Shaman() : base( Nation.Western ) 
 		{
 			SetStr( 100 );
 			SetDex( 50 );
@@ -84,7 +84,7 @@ namespace Server.Mobiles
 		            	if( m is BaseCreature && ((BaseCreature)m).ControlMaster != null )
 	            			continue;
 		                
-		            	if( ( m is IAzhuran || ( m is PlayerMobile && ( (PlayerMobile)m ).Nation == Nation.Azhuran ) ) && this.InLOS( m ) )
+		            	if( ( m is IWestern || ( m is PlayerMobile && ( (PlayerMobile)m ).Nation == Nation.Western ) ) && this.InLOS( m ) )
 		                    targets.Add( m );
 		            }
 		        }

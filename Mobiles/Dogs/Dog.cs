@@ -63,9 +63,9 @@ namespace Server.Mobiles
 			
 			switch( breed )
 			{
-				case "Alyrian Shepherd":
+				case "Southern Shepherd":
 				{
-					this.Name = "an Alyrian Shepherd";
+					this.Name = "an Southern Shepherd";
 					break;
 				}
 					
@@ -93,9 +93,9 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case "Vhalurian Bloodhound":
+				case "bloodhound":
 				{
-					this.Name = "a Vhalurian Bloodhound";
+					this.Name = "a bloodhound";
 					break;
 				}
 			}

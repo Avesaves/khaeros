@@ -312,16 +312,16 @@ namespace Server.Mobiles
             if (tamer is PlayerMobile)
             {
                 PlayerMobile pm = tamer as PlayerMobile;
-                if (pm.Nation == Nation.Alyrian)
+                if (pm.Nation == Nation.Southern)
                     return true;
                 switch (b.Breed)
                 {
                     case "Falcon":  if (pm.Nation == Nation.Khemetar) return true; break;
                     case "Osprey":  if (pm.Nation == Nation.Tyrean) return true; break;
-                    case "Hawk":    if (pm.Nation == Nation.Vhalurian) return true; break;
-                    case "Owl":     if (pm.Nation == Nation.Alyrian) return true; break;
+                    case "Hawk":    if (pm.Nation == Nation.Northern) return true; break;
+                    case "Owl":     if (pm.Nation == Nation.Southern) return true; break;
                     case "Harrier": if (pm.Nation == Nation.Mhordul) return true; break;
-                    case "Kite":    if (pm.Nation == Nation.Azhuran) return true; break;
+                    case "Kite":    if (pm.Nation == Nation.Western) return true; break;
                 }
             }
 

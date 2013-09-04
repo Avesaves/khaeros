@@ -25,18 +25,18 @@ namespace Server.BackgroundInfo
 		public override void OnAddedTo( PlayerMobile m )
 		{
 			m.IsXenophobe = true;
-			if( m.Nation == Nation.Alyrian )
-				m.SpokenLanguage = KnownLanguage.Alyrian;
-			else if( m.Nation == Nation.Azhuran )
-				m.SpokenLanguage = KnownLanguage.Azhuran;
+			if( m.Nation == Nation.Southern )
+				m.SpokenLanguage = KnownLanguage.Southern;
+			else if( m.Nation == Nation.Western )
+				m.SpokenLanguage = KnownLanguage.Western;
 			else if( m.Nation == Nation.Khemetar )
 				m.SpokenLanguage = KnownLanguage.Khemetar;
 			else if( m.Nation == Nation.Mhordul )
 				m.SpokenLanguage = KnownLanguage.Mhordul;				
 			else if( m.Nation == Nation.Tyrean )
 				m.SpokenLanguage = KnownLanguage.Tyrean;	
-			else if( m.Nation == Nation.Vhalurian )
-				m.SpokenLanguage = KnownLanguage.Vhalurian;
+			else if( m.Nation == Nation.Northern )
+				m.SpokenLanguage = KnownLanguage.Northern;
 		}
 		
 		public override void OnRemovedFrom( PlayerMobile m )

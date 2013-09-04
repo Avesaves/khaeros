@@ -108,7 +108,7 @@ namespace Server.Gumps
 			if( obj is ICanBeStained || obj is BaseRanged || obj is WoodenKiteShield ||
 			    obj is WoodenShield || obj is ClericCrook || obj is DruidStaff || obj is ProphetDiviningRod ||
 			    obj is QuarterStaff || obj is GnarledStaff || obj is SpikedClub ||
-			    obj is AzhuranBoomerang || obj is BlackStaff || obj is BoneShield ||
+			    obj is Boomerang || obj is BlackStaff || obj is BoneShield ||
 			    obj is BoiledLeatherShield || obj is LeatherShield )
 			{
 				return true;
@@ -145,12 +145,12 @@ namespace Server.Gumps
 				{
 					switch( m.Nation )
 					{
-						case Nation.Alyrian:
+						case Nation.Southern:
 						{
 							hues = new int[]{2683,2708,2582,1436,2745,2741,2764,2989,2835,2754};
 							break;
 						}
-						case Nation.Azhuran:
+						case Nation.Western:
 						{
 							hues = new int[]{1133,2683,2657,2935,2724,2740,2881,1345,2585,2820};
 							break;
@@ -170,7 +170,7 @@ namespace Server.Gumps
 							hues = new int[]{2881,1345,2585,2820,2764,2989,-1,-1,-1,-1};
 							break;
 						}
-						case Nation.Vhalurian:
+						case Nation.Northern:
 						{
 							hues = new int[]{2935,1636,2604,2599,2621,2986,2588,2795,2939,2798};
 							break;

@@ -21,18 +21,18 @@ namespace Server.Mobiles
 		{
             if (!(this is Soldier))
             {
-                if (this is IAlyrian)
-                    this.Nation = Nation.Alyrian;
-                else if (this is IAzhuran)
-                    this.Nation = Nation.Azhuran;
+                if (this is ISouthern)
+                    this.Nation = Nation.Southern;
+                else if (this is IWestern)
+                    this.Nation = Nation.Western;
                 else if (this is IKhemetar)
                     this.Nation = Nation.Khemetar;
                 else if (this is IMhordul)
                     this.Nation = Nation.Mhordul;
                 else if (this is ITyrean)
                     this.Nation = Nation.Tyrean;
-                else if (this is IVhalurian)
-                    this.Nation = Nation.Vhalurian;
+                else if (this is INorthern)
+                    this.Nation = Nation.Northern;
                 else if (this is IImperial)
                     this.Nation = Nation.Imperial;
             }
@@ -48,15 +48,15 @@ namespace Server.Mobiles
                         int raceChance = Utility.Random(7);
                         switch (raceChance)
                         {
-                            case 0: nation = Nation.Vhalurian; break;
-                            case 1: nation = Nation.Vhalurian; break;
-                            case 2: nation = Nation.Vhalurian; break;
+                            case 0: nation = Nation.Northern; break;
+                            case 1: nation = Nation.Northern; break;
+                            case 2: nation = Nation.Northern; break;
                             case 3: nation = Nation.Tyrean; break;
                             case 4: nation = Nation.Tyrean; break;
                             case 5: nation = Nation.Tyrean; break;
                             case 6: nation = Nation.Khemetar; break;
 
-                            default: nation = Nation.Vhalurian; break;
+                            default: nation = Nation.Northern; break;
                         }
 
                         break;
@@ -69,10 +69,10 @@ namespace Server.Mobiles
                             case 0: nation = Nation.Mhordul; break;
                             case 1: nation = Nation.Mhordul; break;
                             case 2: nation = Nation.Mhordul; break;
-                            case 3: nation = Nation.Alyrian; break;
-                            case 4: nation = Nation.Alyrian; break;
-                            case 5: nation = Nation.Alyrian; break;
-                            case 6: nation = Nation.Azhuran; break;
+                            case 3: nation = Nation.Southern; break;
+                            case 4: nation = Nation.Southern; break;
+                            case 5: nation = Nation.Southern; break;
+                            case 6: nation = Nation.Western; break;
 
                             default: nation = Nation.Mhordul; break;
                         }
@@ -85,12 +85,12 @@ namespace Server.Mobiles
 
                         switch (raceChance)
                         {
-                            case 0: nation = Nation.Alyrian; break;
-                            case 1: nation = Nation.Azhuran; break;
+                            case 0: nation = Nation.Southern; break;
+                            case 1: nation = Nation.Western; break;
                             case 2: nation = Nation.Khemetar; break;
                             case 3: nation = Nation.Mhordul; break;
                             case 4: nation = Nation.Tyrean; break;
-                            case 5: nation = Nation.Vhalurian; break;
+                            case 5: nation = Nation.Northern; break;
 
                             default: nation = Nation.Khemetar; break;
                         }
@@ -103,14 +103,14 @@ namespace Server.Mobiles
 
                         switch (raceChance)
                         {
-                            case 0: nation = Nation.Vhalurian; break;
-                            case 1: nation = Nation.Vhalurian; break;
+                            case 0: nation = Nation.Northern; break;
+                            case 1: nation = Nation.Northern; break;
                             case 2: nation = Nation.Khemetar; break;
                             case 3: nation = Nation.Mhordul; break;
-                            case 4: nation = Nation.Alyrian; break;
-                            case 5: nation = Nation.Vhalurian; break;
+                            case 4: nation = Nation.Southern; break;
+                            case 5: nation = Nation.Northern; break;
 
-                            default: nation = Nation.Vhalurian; break;
+                            default: nation = Nation.Northern; break;
                         }
 
                         break;
@@ -209,12 +209,12 @@ namespace Server.Mobiles
 			
 			switch( nation )
 			{
-				case Nation.Alyrian: options = 16; break;
-				case Nation.Azhuran: options = 17; break;
+				case Nation.Southern: options = 16; break;
+				case Nation.Western: options = 17; break;
 				case Nation.Khemetar: options = 15; break;
 				case Nation.Mhordul: options = 14; break;
 				case Nation.Tyrean: options = 13; break;
-				case Nation.Vhalurian: options = 13; break;
+				case Nation.Northern: options = 13; break;
 			}
 			
 			switch( Utility.Random( options ) )
@@ -232,12 +232,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 12738;
-						case Nation.Azhuran: return 12738;
+						case Nation.Southern: return 12738;
+						case Nation.Western: return 12738;
 						case Nation.Khemetar: return 12738;
 						case Nation.Mhordul: return 12747;
 						case Nation.Tyrean: return 12749;
-						case Nation.Vhalurian: return 12749;
+						case Nation.Northern: return 12749;
 					}
 					break;
 				}
@@ -245,12 +245,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 12749;
-						case Nation.Azhuran: return 12741;
+						case Nation.Southern: return 12749;
+						case Nation.Western: return 12741;
 						case Nation.Khemetar: return 12746;
 						case Nation.Mhordul: return 12757;
 						case Nation.Tyrean: return 12757;
-						case Nation.Vhalurian: return 8261;
+						case Nation.Northern: return 8261;
 					}
 					break;
 				}
@@ -258,12 +258,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 12750;
-						case Nation.Azhuran: return 12748;
+						case Nation.Southern: return 12750;
+						case Nation.Western: return 12748;
 						case Nation.Khemetar: return 12748;
 						case Nation.Mhordul: return 12241;
 						case Nation.Tyrean: hair = 8262; break;
-						case Nation.Vhalurian: hair = 8262; break;
+						case Nation.Northern: hair = 8262; break;
 					}
 					break;
 				}
@@ -271,12 +271,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 12757;
-						case Nation.Azhuran: return 12745;
+						case Nation.Southern: return 12757;
+						case Nation.Western: return 12745;
 						case Nation.Khemetar: return 12749;
 						case Nation.Mhordul: return 8260;
 						case Nation.Tyrean: hair = 12753; break;
-						case Nation.Vhalurian: hair = 12753; break;
+						case Nation.Northern: hair = 12753; break;
 					}
 					break;
 				}
@@ -284,12 +284,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: hair = 8262; break;
-						case Nation.Azhuran: return 12241;
+						case Nation.Southern: hair = 8262; break;
+						case Nation.Western: return 12241;
 						case Nation.Khemetar: return 12757;
 						case Nation.Mhordul: hair = 8262; break;
 						case Nation.Tyrean: hair = 12752; break;
-						case Nation.Vhalurian: hair = 12752; break;
+						case Nation.Northern: hair = 12752; break;
 					}
 					break;
 				}
@@ -297,12 +297,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: hair = 12753; break;
-						case Nation.Azhuran: return 8263;
+						case Nation.Southern: hair = 12753; break;
+						case Nation.Western: return 8263;
 						case Nation.Khemetar: hair = 8262; break;
 						case Nation.Mhordul: hair = 12753; break;
 						case Nation.Tyrean: return 0;
-						case Nation.Vhalurian: return 0;
+						case Nation.Northern: return 0;
 					}
 					break;
 				}
@@ -310,12 +310,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: hair = 12752; break;
-						case Nation.Azhuran: return 8266;
+						case Nation.Southern: hair = 12752; break;
+						case Nation.Western: return 8266;
 						case Nation.Khemetar: hair = 12753; break;
 						case Nation.Mhordul: return 0;
 						case Nation.Tyrean: return 0;
-						case Nation.Vhalurian: return 0;
+						case Nation.Northern: return 0;
 					}
 					break;
 				}
@@ -323,12 +323,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 0;
-						case Nation.Azhuran: hair = 8262; break;
+						case Nation.Southern: return 0;
+						case Nation.Western: hair = 8262; break;
 						case Nation.Khemetar: return 0;
 						case Nation.Mhordul: return 0;
 						case Nation.Tyrean: return 0;
-						case Nation.Vhalurian: return 0;
+						case Nation.Northern: return 0;
 					}
 					break;
 				}
@@ -336,12 +336,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 0;
-						case Nation.Azhuran: hair = 12753; break;
+						case Nation.Southern: return 0;
+						case Nation.Western: hair = 12753; break;
 						case Nation.Khemetar: return 0;
 						case Nation.Mhordul: return 0;
 						case Nation.Tyrean: return 0;
-						case Nation.Vhalurian: return 0;
+						case Nation.Northern: return 0;
 					}
 					break;
 				}
@@ -357,7 +357,7 @@ namespace Server.Mobiles
 		{
 			switch ( nation )
 			{		
-				case Nation.Azhuran:
+				case Nation.Western:
 				{
 					switch( Utility.Random( 9 ) )
 					{
@@ -393,7 +393,7 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Vhalurian:
+				case Nation.Northern:
 				{
 					switch( Utility.Random( 9 ) )
 					{
@@ -429,7 +429,7 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Alyrian:
+				case Nation.Southern:
 				{
 					switch( Utility.Random( 9 ) )
 					{
@@ -472,7 +472,7 @@ namespace Server.Mobiles
 		{
 			switch ( nation )
 			{		
-				case Nation.Azhuran:
+				case Nation.Western:
 				{
 					switch( Utility.Random( 9 ) )
 					{
@@ -513,7 +513,7 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Vhalurian:
+				case Nation.Northern:
 				{
 					switch( Utility.Random( 9 ) )
 					{
@@ -551,7 +551,7 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Alyrian:
+				case Nation.Southern:
 				{
 					switch( Utility.Random( 9 ) )
 					{
@@ -613,12 +613,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 12725;
-						case Nation.Azhuran: return 0;
+						case Nation.Southern: return 12725;
+						case Nation.Western: return 0;
 						case Nation.Khemetar: return 12725;
 						case Nation.Mhordul: return 12725;
 						case Nation.Tyrean: return 12725;
-						case Nation.Vhalurian: return 12725;
+						case Nation.Northern: return 12725;
 					}
 					break;
 				}
@@ -626,12 +626,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 12726;
-						case Nation.Azhuran: return 0;
+						case Nation.Southern: return 12726;
+						case Nation.Western: return 0;
 						case Nation.Khemetar: return 12726;
 						case Nation.Mhordul: return 12726;
 						case Nation.Tyrean: return 12726;
-						case Nation.Vhalurian: return 12726;
+						case Nation.Northern: return 12726;
 					}
 					break;
 				}
@@ -639,12 +639,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 12737;
-						case Nation.Azhuran: return 0;
+						case Nation.Southern: return 12737;
+						case Nation.Western: return 0;
 						case Nation.Khemetar: return 12737;
 						case Nation.Mhordul: return 12737;
 						case Nation.Tyrean: return 12737;
-						case Nation.Vhalurian: return 12737;
+						case Nation.Northern: return 12737;
 					}
 					break;
 				}
@@ -652,12 +652,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 8254;
-						case Nation.Azhuran: return 0;
+						case Nation.Southern: return 8254;
+						case Nation.Western: return 0;
 						case Nation.Khemetar: return 0;
 						case Nation.Mhordul: return 8254;
 						case Nation.Tyrean: return 8254;
-						case Nation.Vhalurian: return 8254;
+						case Nation.Northern: return 8254;
 					}
 					break;
 				}
@@ -665,12 +665,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 8268;
-						case Nation.Azhuran: return 0;
+						case Nation.Southern: return 8268;
+						case Nation.Western: return 0;
 						case Nation.Khemetar: return 0;
 						case Nation.Mhordul: return 8268;
 						case Nation.Tyrean: return 8268;
-						case Nation.Vhalurian: return 8268;
+						case Nation.Northern: return 8268;
 					}
 					break;
 				}
@@ -678,12 +678,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 12731;
-						case Nation.Azhuran: return 0;
+						case Nation.Southern: return 12731;
+						case Nation.Western: return 0;
 						case Nation.Khemetar: return 0;
 						case Nation.Mhordul: return 12731;
 						case Nation.Tyrean: return 12731;
-						case Nation.Vhalurian: return 12731;
+						case Nation.Northern: return 12731;
 					}
 					break;
 				}
@@ -691,12 +691,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 12730;
-						case Nation.Azhuran: return 0;
+						case Nation.Southern: return 12730;
+						case Nation.Western: return 0;
 						case Nation.Khemetar: return 0;
 						case Nation.Mhordul: return 12730;
 						case Nation.Tyrean: return 12730;
-						case Nation.Vhalurian: return 12730;
+						case Nation.Northern: return 12730;
 					}
 					break;
 				}
@@ -704,12 +704,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 12733;
-						case Nation.Azhuran: return 0;
+						case Nation.Southern: return 12733;
+						case Nation.Western: return 0;
 						case Nation.Khemetar: return 0;
 						case Nation.Mhordul: return 0;
 						case Nation.Tyrean: return 12733;
-						case Nation.Vhalurian: return 0;
+						case Nation.Northern: return 0;
 					}
 					break;
 				}
@@ -717,12 +717,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 12735;
-						case Nation.Azhuran: return 0;
+						case Nation.Southern: return 12735;
+						case Nation.Western: return 0;
 						case Nation.Khemetar: return 0;
 						case Nation.Mhordul: return 0;
 						case Nation.Tyrean: return 12735;
-						case Nation.Vhalurian: return 0;
+						case Nation.Northern: return 0;
 					}
 					break;
 				}
@@ -730,12 +730,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 12729;
-						case Nation.Azhuran: return 0;
+						case Nation.Southern: return 12729;
+						case Nation.Western: return 0;
 						case Nation.Khemetar: return 0;
 						case Nation.Mhordul: return 0;
 						case Nation.Tyrean: return 12729;
-						case Nation.Vhalurian: return 0;
+						case Nation.Northern: return 0;
 					}
 					break;
 				}
@@ -743,12 +743,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 0;
-						case Nation.Azhuran: return 0;
+						case Nation.Southern: return 0;
+						case Nation.Western: return 0;
 						case Nation.Khemetar: return 0;
 						case Nation.Mhordul: return 0;
 						case Nation.Tyrean: return 12736;
-						case Nation.Vhalurian: return 0;
+						case Nation.Northern: return 0;
 					}
 					break;
 				}
@@ -756,12 +756,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 0;
-						case Nation.Azhuran: return 0;
+						case Nation.Southern: return 0;
+						case Nation.Western: return 0;
 						case Nation.Khemetar: return 0;
 						case Nation.Mhordul: return 0;
 						case Nation.Tyrean: return 12734;
-						case Nation.Vhalurian: return 0;
+						case Nation.Northern: return 0;
 					}
 					break;
 				}
@@ -769,12 +769,12 @@ namespace Server.Mobiles
 				{
 					switch ( nation )
 					{		
-						case Nation.Alyrian: return 0;
-						case Nation.Azhuran: return 0;
+						case Nation.Southern: return 0;
+						case Nation.Western: return 0;
 						case Nation.Khemetar: return 0;
 						case Nation.Mhordul: return 0;
 						case Nation.Tyrean: return 12732;
-						case Nation.Vhalurian: return 0;
+						case Nation.Northern: return 0;
 					}
 					break;
 				}
@@ -816,7 +816,7 @@ namespace Server.Mobiles
 			
 			switch( nation )
 			{
-				case Nation.Alyrian:
+				case Nation.Southern:
 				{
 					if( female )
 			{
@@ -840,7 +840,7 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Azhuran:
+				case Nation.Western:
 				{
 					if( female )
 					{
@@ -944,7 +944,7 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Vhalurian:
+				case Nation.Northern:
 				{
 					if( female )
 					{
@@ -1019,7 +1019,7 @@ namespace Server.Mobiles
 
                         return surname;
                     }
-                case Nation.Vhalurian:
+                case Nation.Northern:
                     {
                         surname += " ";
 
@@ -1047,15 +1047,15 @@ namespace Server.Mobiles
 
             switch (nation)
             {
-                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Vhalurian; } else { nation = Nation.Khemetar; } break; }
-                case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Alyrian; } else { nation = Nation.Mhordul; } break; }
-                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Azhuran; } else { nation = Nation.Tyrean; } break; }
-				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Vhalurian; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Southern; } else { nation = Nation.Mhordul; } break; }
+                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tyrean; } break; }
+				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
             }
 			
 			switch( nation )
 			{
-				case Nation.Alyrian:
+				case Nation.Southern:
 				{
 					if( m.Female )
 					{
@@ -1124,7 +1124,7 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Azhuran:
+				case Nation.Western:
 				{
 					if( m.Female )
 					{
@@ -1407,7 +1407,7 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Vhalurian:
+				case Nation.Northern:
 				{
 					if( m.Female )
 					{
@@ -1496,15 +1496,15 @@ namespace Server.Mobiles
 
             switch (nation)
             {
-                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Vhalurian; } else { nation = Nation.Khemetar; } break; }
-                case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Alyrian; } else { nation = Nation.Mhordul; } break; }
-                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Azhuran; } else { nation = Nation.Tyrean; } break; }
-				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Vhalurian; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Southern; } else { nation = Nation.Mhordul; } break; }
+                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tyrean; } break; }
+				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
             }
 
 			switch( nation )
 			{
-				case Nation.Alyrian:
+				case Nation.Southern:
 				{
 					if( m.Female )
 					{
@@ -1577,7 +1577,7 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Azhuran:
+				case Nation.Western:
 				{
 					if( m.Female )
 					{
@@ -1889,7 +1889,7 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Vhalurian:
+				case Nation.Northern:
 				{
 					if( m.Female )
 					{
@@ -1977,15 +1977,15 @@ namespace Server.Mobiles
 
             switch (nation)
             {
-                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Vhalurian; } else { nation = Nation.Khemetar; } break; }
-                case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Alyrian; } else { nation = Nation.Mhordul; } break; }
-                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Azhuran; } else { nation = Nation.Tyrean; } break; }
-				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Vhalurian; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Southern; } else { nation = Nation.Mhordul; } break; }
+                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tyrean; } break; }
+				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
             }
 			
 			switch( nation )
 			{
-				case Nation.Alyrian:
+				case Nation.Southern:
 				{
 					GreenBeret greenberet = new GreenBeret();
 					greenberet.Hue = 2587;
@@ -2106,7 +2106,7 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Azhuran:
+				case Nation.Western:
 				{
 					switch( choice )
 					{
@@ -2219,7 +2219,7 @@ namespace Server.Mobiles
 							
 							else
 							{
-								AzhuranBoomerang bow = new AzhuranBoomerang();
+								Boomerang bow = new Boomerang();
 								bow.Resource = CraftResource.Redwood;
 								
 								m.EquipItem( bow ); 
@@ -2714,10 +2714,10 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Vhalurian:
+				case Nation.Northern:
 				{
 					Surcoat coat = new Surcoat();
-					coat.Name = "Vhalurian Military Surcoat";
+					coat.Name = "Northern Military Surcoat";
 					coat.Hue = 1327;
 					coat.ItemID = 15479;
 					m.EquipItem( coat );
@@ -2916,15 +2916,15 @@ namespace Server.Mobiles
 
             switch (nation)
             {
-                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Vhalurian; } else { nation = Nation.Khemetar; } break; }
-                case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Alyrian; } else { nation = Nation.Mhordul; } break; }
-                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Azhuran; } else { nation = Nation.Tyrean; } break; }
-				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Vhalurian; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Southern; } else { nation = Nation.Mhordul; } break; }
+                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tyrean; } break; }
+				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
             }
 
 			switch( nation )
 			{
-				case Nation.Alyrian:
+				case Nation.Southern:
 				{
 					if( m.Female )
 					{
@@ -2971,7 +2971,7 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Azhuran:
+				case Nation.Western:
 				{
 					if( m.Female )
 					{
@@ -3142,7 +3142,7 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Vhalurian:
+				case Nation.Northern:
 				{
 					if( m.Female )
 					{

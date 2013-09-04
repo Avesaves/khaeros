@@ -92,67 +92,67 @@ namespace Server.Engines.Craft
 			{
 				PlayerMobile m = from as PlayerMobile;
 			/*	
-				if( itemType == typeof( Cap ) && !TestRace( m, Nation.Vhalurian, Nation.Alyrian ) )
+				if( itemType == typeof( Cap ) && !TestRace( m, Nation.Northern, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( WideBrimHat ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( WideBrimHat ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TricorneHat ) && !TestRace( m, Nation.Vhalurian, Nation.Tyrean ) )
+				else if( itemType == typeof( TricorneHat ) && !TestRace( m, Nation.Northern, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( JesterHat ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian, Nation.Tyrean ) )
+				else if( itemType == typeof( JesterHat ) && !TestRace( m, Nation.Northern, Nation.Khemetar, Nation.Southern, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Doublet ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian, Nation.Tyrean, Nation.Azhuran ) )
+				else if( itemType == typeof( Doublet ) && !TestRace( m, Nation.Northern, Nation.Khemetar, Nation.Southern, Nation.Tyrean, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Tunic ) && !TestRace( m, Nation.Vhalurian, Nation.Alyrian, Nation.Tyrean, Nation.Mhordul ) )
+				else if( itemType == typeof( Tunic ) && !TestRace( m, Nation.Northern, Nation.Southern, Nation.Tyrean, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Surcoat ) && !TestRace( m, Nation.Vhalurian, Nation.Alyrian, Nation.Tyrean ) )
+				else if( itemType == typeof( Surcoat ) && !TestRace( m, Nation.Northern, Nation.Southern, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( PlainDress ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian, Nation.Tyrean, Nation.Azhuran ) )
+				else if( itemType == typeof( PlainDress ) && !TestRace( m, Nation.Northern, Nation.Khemetar, Nation.Southern, Nation.Tyrean, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( FancyDress ) && !TestRace( m, Nation.Vhalurian, Nation.Alyrian, Nation.Tyrean ) )
+				else if( itemType == typeof( FancyDress ) && !TestRace( m, Nation.Northern, Nation.Southern, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( JesterSuit ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian, Nation.Tyrean ) )
+				else if( itemType == typeof( JesterSuit ) && !TestRace( m, Nation.Northern, Nation.Khemetar, Nation.Southern, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ElegantShirt ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( ElegantShirt ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Kilt ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( Kilt ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Sandals ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian, Nation.Mhordul, Nation.Azhuran ) )
+				else if( itemType == typeof( Sandals ) && !TestRace( m, Nation.Northern, Nation.Khemetar, Nation.Southern, Nation.Mhordul, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( LeatherShorts ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( LeatherSkirt ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( LeatherSkirt ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( FleshMask ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( TribalWarriorMask ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( TribalWarriorMask ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( JesterMask ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian, Nation.Tyrean ) )
+				else if( itemType == typeof( JesterMask ) && !TestRace( m, Nation.Northern, Nation.Khemetar, Nation.Southern, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( RogueCowl ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( RogueCowl ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( CeremonialMask ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( RogueMask ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( RogueMask ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( Turban ) && !TestRace( m, Nation.Khemetar ) )
@@ -161,16 +161,16 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( ExecutionerMask ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( AzhuranRogueMask ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( WesternRogueMask ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( HatWithMask ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian, Nation.Tyrean, Nation.Azhuran ) )
+				else if( itemType == typeof( HatWithMask ) && !TestRace( m, Nation.Northern, Nation.Khemetar, Nation.Southern, Nation.Tyrean, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( MonsterMask ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( DeerMask ) && ( !TestRace( m, Nation.Mhordul ) && !TestRace( m, Nation.Alyrian ) && !TestRace( m, Nation.Tyrean ) ) )
+				else if( itemType == typeof( DeerMask ) && ( !TestRace( m, Nation.Mhordul ) && !TestRace( m, Nation.Southern ) && !TestRace( m, Nation.Tyrean ) ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( WolfMask ) && ( !TestRace( m, Nation.Tyrean ) && !TestRace( m, Nation.Mhordul ) ) )
@@ -179,130 +179,130 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( BearMask ) && ( !TestRace( m, Nation.Tyrean ) && !TestRace( m, Nation.Mhordul ) ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( WhiteFeatheredHat ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( WhiteFeatheredHat ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ExpensiveHat ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( ExpensiveHat ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Beret ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( Beret ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( GreenBeret ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( GreenBeret ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( RunicCloak ) && !TestRace( m, Nation.Khemetar, Nation.Alyrian ) )
+				else if( itemType == typeof( RunicCloak ) && !TestRace( m, Nation.Khemetar, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ExpensiveCloak ) && !TestRace( m, Nation.Vhalurian, Nation.Tyrean ) )
+				else if( itemType == typeof( ExpensiveCloak ) && !TestRace( m, Nation.Northern, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Doublet ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian, Nation.Tyrean, Nation.Azhuran ) )
+				else if( itemType == typeof( Doublet ) && !TestRace( m, Nation.Northern, Nation.Khemetar, Nation.Southern, Nation.Tyrean, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( HighHeels ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian ) )
+				else if( itemType == typeof( HighHeels ) && !TestRace( m, Nation.Northern, Nation.Khemetar, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( FurBoots ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( FancyGloves ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian, Nation.Tyrean, Nation.Azhuran ) )
+				else if( itemType == typeof( FancyGloves ) && !TestRace( m, Nation.Northern, Nation.Khemetar, Nation.Southern, Nation.Tyrean, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ExpensiveShirt ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian, Nation.Tyrean, Nation.Azhuran ) )
+				else if( itemType == typeof( ExpensiveShirt ) && !TestRace( m, Nation.Northern, Nation.Khemetar, Nation.Southern, Nation.Tyrean, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( RaggedBra ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( LongRaggedBra ) && !TestRace( m, Nation.Mhordul, Nation.Azhuran ) )
+				else if( itemType == typeof( LongRaggedBra ) && !TestRace( m, Nation.Mhordul, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnateShirt ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( OrnateShirt ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( FancyBra ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ExtravagantShirt ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( ExtravagantShirt ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( FormalShirt ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( FormalShirt ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( BaggyPants ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Stockings ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian ) )
+				else if( itemType == typeof( Stockings ) && !TestRace( m, Nation.Northern, Nation.Khemetar, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( RaggedPants ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( LoinCloth ) && !TestRace( m, Nation.Mhordul, Nation.Azhuran, Nation.Khemetar ) )
+				else if( itemType == typeof( LoinCloth ) && !TestRace( m, Nation.Mhordul, Nation.Western, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MaleLoinCloth ) && !TestRace( m, Nation.Mhordul, Nation.Azhuran ) )
+				else if( itemType == typeof( MaleLoinCloth ) && !TestRace( m, Nation.Mhordul, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( FemaleLoinCloth ) && !TestRace( m, Nation.Mhordul, Nation.Azhuran ) )
+				else if( itemType == typeof( FemaleLoinCloth ) && !TestRace( m, Nation.Mhordul, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( WaistCloth ) && !TestRace( m, Nation.Mhordul, Nation.Azhuran, Nation.Khemetar ) )
+				else if( itemType == typeof( WaistCloth ) && !TestRace( m, Nation.Mhordul, Nation.Western, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnateWaistCloth ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( OrnateWaistCloth ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( RaggedSkirt ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( SmallRaggedSkirt ) && !TestRace( m, Nation.Mhordul, Nation.Azhuran ) )
+				else if( itemType == typeof( SmallRaggedSkirt ) && !TestRace( m, Nation.Mhordul, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( ElegantSkirt ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( PlainKilt ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( PlainKilt ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ElegantKilt ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( ElegantKilt ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnateKilt ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( OrnateKilt ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( FemaleKilt ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( FemaleKilt ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ElegantFemaleKilt ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( ElegantFemaleKilt ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ElegantSurcoat ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian, Nation.Tyrean ) )
+				else if( itemType == typeof( ElegantSurcoat ) && !TestRace( m, Nation.Northern, Nation.Khemetar, Nation.Southern, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ElegantTunic ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian, Nation.Tyrean ) )
+				else if( itemType == typeof( ElegantTunic ) && !TestRace( m, Nation.Northern, Nation.Khemetar, Nation.Southern, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( PaddedVest ) && !TestRace( m, Nation.Vhalurian, Nation.Tyrean ) )
+				else if( itemType == typeof( PaddedVest ) && !TestRace( m, Nation.Northern, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( FancyDoublet ) && !TestRace( m, Nation.Khemetar, Nation.Vhalurian, Nation.Alyrian ) )
+				else if( itemType == typeof( FancyDoublet ) && !TestRace( m, Nation.Khemetar, Nation.Northern, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ElegantVest ) && !TestRace( m, Nation.Khemetar, Nation.Vhalurian, Nation.Alyrian ) )
+				else if( itemType == typeof( ElegantVest ) && !TestRace( m, Nation.Khemetar, Nation.Northern, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ElegantDoublet ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( ElegantDoublet ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( FancySurcoat ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( FancySurcoat ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ClericRobe ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( ClericRobe ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( DruidRobe ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( DruidRobe ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( ProphetRobe ) && !TestRace( m, Nation.Tyrean ) )
@@ -314,19 +314,19 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( PriestRobe ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ShamanRobe ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( ShamanRobe ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( ElegantLongGown ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ElegantGown ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( ElegantGown ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ExpensiveGown ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( ExpensiveGown ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ExpensiveLongGown ) && !TestRace( m, Nation.Vhalurian ) )
+				else if( itemType == typeof( ExpensiveLongGown ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( LongGown ) && !TestRace( m, Nation.Khemetar ) )
@@ -335,61 +335,61 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( LacedGown ) && !TestRace( m, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( BeltedDress ) && !TestRace( m, Nation.Vhalurian, Nation.Alyrian, Nation.Tyrean ) )
+				else if( itemType == typeof( BeltedDress ) && !TestRace( m, Nation.Northern, Nation.Southern, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( LongVest ) && !TestRace( m, Nation.Khemetar, Nation.Vhalurian, Nation.Alyrian, Nation.Tyrean ) )
+				else if( itemType == typeof( LongVest ) && !TestRace( m, Nation.Khemetar, Nation.Northern, Nation.Southern, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( GildedGown ) && !TestRace( m, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( GildedFancyDress ) && !TestRace( m, Nation.Vhalurian, Nation.Khemetar, Nation.Alyrian ) )
+				else if( itemType == typeof( GildedFancyDress ) && !TestRace( m, Nation.Northern, Nation.Khemetar, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ExpensiveDress ) && !TestRace( m, Nation.Vhalurian, Nation.Alyrian ) )
+				else if( itemType == typeof( ExpensiveDress ) && !TestRace( m, Nation.Northern, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MaleDress ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( MaleDress ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ExpensiveShortDress ) && !TestRace( m, Nation.Vhalurian, Nation.Alyrian, Nation.Khemetar, Nation.Tyrean ) )
+				else if( itemType == typeof( ExpensiveShortDress ) && !TestRace( m, Nation.Northern, Nation.Southern, Nation.Khemetar, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( OrnateDress ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( OrnateDress ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( FancyShortDress ) && !TestRace( m, Nation.Alyrian, Nation.Tyrean ) )
+				else if( itemType == typeof( FancyShortDress ) && !TestRace( m, Nation.Southern, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ElegantShortDress ) && !TestRace( m, Nation.Vhalurian, Nation.Alyrian, Nation.Tyrean, Nation.Khemetar, Nation.Azhuran ) )
+				else if( itemType == typeof( ElegantShortDress ) && !TestRace( m, Nation.Northern, Nation.Southern, Nation.Tyrean, Nation.Khemetar, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( PuffyDress ) && !TestRace( m, Nation.Alyrian ) )
+				else if( itemType == typeof( PuffyDress ) && !TestRace( m, Nation.Southern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( RunedDress ) && !TestRace( m, Nation.Vhalurian, Nation.Alyrian, Nation.Azhuran, Nation.Khemetar, Nation.Tyrean ) )
+				else if( itemType == typeof( RunedDress ) && !TestRace( m, Nation.Northern, Nation.Southern, Nation.Western, Nation.Khemetar, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( PlainLongVest ) && !TestRace( m, Nation.Mhordul, Nation.Tyrean ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( LongOrnateDress ) && !TestRace( m, Nation.Vhalurian, Nation.Alyrian, Nation.Tyrean, Nation.Azhuran, Nation.Khemetar ) )
+				else if( itemType == typeof( LongOrnateDress ) && !TestRace( m, Nation.Northern, Nation.Southern, Nation.Tyrean, Nation.Western, Nation.Khemetar ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( SmallDress ) && !TestRace( m, Nation.Vhalurian, Nation.Alyrian, Nation.Tyrean, Nation.Khemetar, Nation.Mhordul ) )
+				else if( itemType == typeof( SmallDress ) && !TestRace( m, Nation.Northern, Nation.Southern, Nation.Tyrean, Nation.Khemetar, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( SoftLeatherPauldrons ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( SoftLeatherPauldrons ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( SoftLeatherBoots ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( SoftLeatherBoots ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( SoftLeatherTunic ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( SoftLeatherTunic ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( SoftLeatherLegs ) && !TestRace( m, Nation.Azhuran ) )
+				else if( itemType == typeof( SoftLeatherLegs ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( BoneGloves ) && !TestRace( m, Nation.Mhordul ) )

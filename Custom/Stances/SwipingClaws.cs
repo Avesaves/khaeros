@@ -47,7 +47,7 @@ namespace Server.Misc
 		}
 		
 		[Usage( "SwipingClaws" )]
-        [Description( "Allows the user to change their combat stance to Azhurans' racial style." )]
+        [Description( "Allows the user to change their combat stance to Westerns' racial style." )]
         private static void SwipingClaws_OnCommand( CommandEventArgs e )
         {
             PlayerMobile m = e.Mobile as PlayerMobile;

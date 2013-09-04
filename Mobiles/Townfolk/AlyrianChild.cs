@@ -6,21 +6,21 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	public class AlyrianChild : BaseKhaerosMobile, IAlyrian
+	public class SouthernChild : BaseKhaerosMobile, ISouthern
 	{
 		[Constructable]
-		public AlyrianChild() : base( Nation.Alyrian ) 
+		public SouthernChild() : base( Nation.Southern ) 
 		{			
 			if ( this.Female = Utility.RandomBool() ) 
 			{ 
 				this.Body = 920; 
-				this.Name = RandomName( Nation.Alyrian, true );
+				this.Name = RandomName( Nation.Southern, true );
 			} 
 			
 			else 
 			{ 
 				this.Body = 763; 
-				this.Name = BaseKhaerosMobile.RandomName( Nation.Alyrian, false );
+				this.Name = BaseKhaerosMobile.RandomName( Nation.Southern, false );
 			} 
 			
 			SetStr( 5 );
@@ -34,7 +34,7 @@ namespace Server.Mobiles
 			Hue = 0;
 		}
 
-		public AlyrianChild(Serial serial) : base(serial)
+		public SouthernChild(Serial serial) : base(serial)
 		{
 		}
 

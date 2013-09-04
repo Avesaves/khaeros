@@ -9,7 +9,7 @@ namespace Server.Mobiles
 	public class TheBlackKnight : BaseKhaerosMobile, IBrigand
 	{
 		[Constructable]
-		public TheBlackKnight() : base( Nation.Vhalurian ) 
+		public TheBlackKnight() : base( Nation.Northern ) 
 		{
 			Name = "The Black Knight";
 			SetStr( 150 );

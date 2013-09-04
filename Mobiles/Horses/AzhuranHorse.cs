@@ -6,27 +6,27 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	public class AzhuranHorse : Horse
+	public class WesternHorse : Horse
 	{
 		public override int[] Hues{ get{ return new int[]{2932,2827,2818}; } }
 		
 		[Constructable]
-		public AzhuranHorse() : this( "an Azhuran Horse" )
+		public WesternHorse() : this( "an Western Horse" )
 		{
 		}
 		
 		[Constructable]
-		public AzhuranHorse( string name ) : base( name )
+		public WesternHorse( string name ) : base( name )
 		{
-			NewBreed = "Azhuran Horse";
+			NewBreed = "Western Horse";
 		}
 		
 		public override void PrepareToGiveBirth()
 		{
-			GiveBirth( new AzhuranHorse() );
+			GiveBirth( new WesternHorse() );
 		}
 
-		public AzhuranHorse(Serial serial) : base(serial)
+		public WesternHorse(Serial serial) : base(serial)
 		{
 		}
 

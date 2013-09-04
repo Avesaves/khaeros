@@ -28,12 +28,12 @@ namespace Server.Mobiles
 
             switch (Nation)
             {
-                case Nation.Alyrian: advisorTitle = "Tribune"; Soldier.EquipAlyrian((Armament)1, this); break;
-                case Nation.Azhuran: advisorTitle = "Keeper"; Soldier.EquipAzhuran((Armament)1, this); break;
+                case Nation.Southern: advisorTitle = "Tribune"; Soldier.EquipSouthern((Armament)1, this); break;
+                case Nation.Western: advisorTitle = "Keeper"; Soldier.EquipWestern((Armament)1, this); break;
                 case Nation.Khemetar: advisorTitle = "Havildar"; Soldier.EquipKhemetar((Armament)1, this); break;
                 case Nation.Mhordul: advisorTitle = "Bambaici"; Soldier.EquipMhordul((Armament)1, this); break;
                 case Nation.Tyrean: advisorTitle = "Drengr"; Soldier.EquipTyrean((Armament)1, this); break;
-                case Nation.Vhalurian: if (Female) { advisorTitle = "Sister"; } else { advisorTitle = "Brother"; } Soldier.EquipVhalurian((Armament)1, this); break;
+                case Nation.Northern: if (Female) { advisorTitle = "Sister"; } else { advisorTitle = "Brother"; } Soldier.EquipNorthern((Armament)1, this); break;
                 case Nation.Imperial: advisorTitle = "Tribune"; Soldier.EquipImperial((Armament)1, this); break;
                 case Nation.Sovereign: if (Female) { advisorTitle = "Warmistress"; } else { advisorTitle = "Warmaster"; } Soldier.EquipSovereign((Armament)1, this); break;
                 case Nation.Society: advisorTitle = "Advisor"; Soldier.EquipSociety((Armament)1, this); break;
@@ -77,9 +77,9 @@ namespace Server.Mobiles
                                 {
                                     switch (Nation)
                                     {
-                                        case Nation.Alyrian:
+                                        case Nation.Southern:
                                             Say("Fight the good fight."); break;
-                                        case Nation.Azhuran:
+                                        case Nation.Western:
                                             Say("All to preserve the Balance."); break;
                                         case Nation.Khemetar:
                                             Say("I have compiled my spies' reports."); break;
@@ -87,7 +87,7 @@ namespace Server.Mobiles
                                             Say("Blood and thunder!"); break;
                                         case Nation.Tyrean:
                                             Say("Ohlm's icy tits, there's so much to do!"); break;
-                                        case Nation.Vhalurian:
+                                        case Nation.Northern:
                                             if(e.Mobile.Female)
                                                 Say("At once, my Lady.");
                                             else
