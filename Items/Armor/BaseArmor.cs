@@ -710,12 +710,15 @@ namespace Server.Items
                     {
                     	
                     PlayerMobile h = m as PlayerMobile;
-                    if (armor.Resource = CraftResource.Electrum && h.Feats.GetFeatLevel(FeatList.Invocation) > 1)
+                    if (h.Feats.GetFeatLevel(FeatList.Invocation) > 1)
                     {
+                    	if (armor.Resource = CraftResource.Electrum )
+                	 {
 
                             m.SendMessage("The metal burns against your skin, preventing you from wearing it.");
 
-                        m.AddToBackpack(armor);
+                	 m.AddToBackpack(armor);
+                	 }
                     }
                     }
                     if (armor.RequiredRace != null && m.Race != armor.RequiredRace)
