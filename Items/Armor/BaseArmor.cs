@@ -1471,9 +1471,24 @@ namespace Server.Items
         public override bool CanEquip(Mobile from)
         {
             PlayerMobile m = from as PlayerMobile;
+           // BaseArmor armor = (BaseArmor)item;
 
             if (from is PlayerMobile)
             {
+            	
+
+
+                    if (m.Feats.GetFeatLevel(FeatList.Invocation) > 1)
+                    {
+                    	if (/*armor.Resource == */CraftResource.Electrum )
+                	 {
+
+                            m.SendMessage("The metal burns against your skin, preventing you from wearing it.");
+
+                            return false;
+                	 }
+                    }
+         	
                 switch (this.ArmourType)
                 {
                     case ArmourWeight.Light:
