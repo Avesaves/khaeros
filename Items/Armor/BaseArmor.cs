@@ -704,7 +704,7 @@ namespace Server.Items
                 if (item is BaseArmor)
                 {
                     BaseArmor armor = (BaseArmor)item;
-                    Mobile h = m as Playermobile; 
+                    Mobile h = m as PlayerMobile; 
                     
                     if (m is PlayerMobile)
                     {
