@@ -7210,6 +7210,9 @@ namespace Server.Mobiles
 			                                		
 			                                		if( student.Level > 29 )
 			                                			exp = 350;
+			                           
+			                                		if( student.Level > 49 )
+			                                			exp = 8;			                           
 			                                		
 			                                		student.XPFromLearning = true;
 			                                		this.XPFromLearning = true;
