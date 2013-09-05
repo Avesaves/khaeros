@@ -712,7 +712,7 @@ namespace Server.Items
                     PlayerMobile h = m as PlayerMobile;
                     if (h.Feats.GetFeatLevel(FeatList.Invocation) > 1)
                     {
-                    	if (armor.Resource = CraftResource.Electrum )
+                    	if (armor.Resource == CraftResource.Electrum )
                 	 {
 
                             m.SendMessage("The metal burns against your skin, preventing you from wearing it.");
