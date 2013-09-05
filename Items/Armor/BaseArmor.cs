@@ -704,7 +704,20 @@ namespace Server.Items
                 if (item is BaseArmor)
                 {
                     BaseArmor armor = (BaseArmor)item;
+                    Mobile h = m as Playermobile; 
+                    
+                    if (m is PlayerMobile)
+                    {
+                    	
+                    PlayerMobile h = m as PlayerMobile;
+                    if (armor.Resource = CraftResource.Electrum && h.Feats.GetFeatLevel(FeatList.Invocation) > 1)
+                    {
 
+                            m.SendMessage("The metal burns against your skin, preventing you from wearing it.");
+
+                        m.AddToBackpack(armor);
+                    }
+                    }
                     if (armor.RequiredRace != null && m.Race != armor.RequiredRace)
                     {
                         if (armor.RequiredRace == Race.Elf)
