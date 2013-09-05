@@ -1480,7 +1480,7 @@ namespace Server.Items
 
                     if (m.Feats.GetFeatLevel(FeatList.Invocation) > 1)
                     {
-                    	if (/*armor.Resource == */CraftResource.Electrum )
+                    	if (this.Resource == CraftResource.Electrum )
                 	 {
 
                             m.SendMessage("The metal burns against your skin, preventing you from wearing it.");
