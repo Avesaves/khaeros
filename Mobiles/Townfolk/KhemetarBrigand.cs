@@ -6,10 +6,10 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	public class KhemetarBrigand : BaseKhaerosMobile, IBrigand
+	public class HaluarocBrigand : BaseKhaerosMobile, IBrigand
 	{
 		[Constructable]
-		public KhemetarBrigand() : base( Nation.Khemetar ) 
+		public HaluarocBrigand() : base( Nation.Haluaroc ) 
 		{
 			SetStr( 100 );
 			SetDex( 50 );
@@ -85,7 +85,7 @@ namespace Server.Mobiles
 			AddLoot( LootPack.Poor );
 		}
 
-		public KhemetarBrigand(Serial serial) : base(serial)
+		public HaluarocBrigand(Serial serial) : base(serial)
 		{
 		}
 

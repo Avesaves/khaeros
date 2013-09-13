@@ -7,10 +7,10 @@ using Server.Mobiles;
 
 namespace Server.FeatInfo
 {
-	public class KhemetarLanguage : BaseFeat
+	public class HaluarocLanguage : BaseFeat
 	{
 		public override string Name{ get{ return "Ancient Language"; } }
-		public override FeatList ListName{ get{ return Mobiles.FeatList.KhemetarLanguage; } }
+		public override FeatList ListName{ get{ return Mobiles.FeatList.HaluarocLanguage; } }
 		public override FeatCost CostLevel{ get{ return FeatCost.High; } }
 		
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
@@ -31,11 +31,11 @@ namespace Server.FeatInfo
 		
 		public override string FullDescription{ get{ return GetFullDescription(this); } }
 		
-		public static void Initialize(){ WriteWebpage(new KhemetarLanguage()); }
+		public static void Initialize(){ WriteWebpage(new HaluarocLanguage()); }
 		
 		public override bool CanBeRemovedFrom( PlayerMobile m )
 		{
-			if( m.Nation == Nation.Khemetar )
+			if( m.Nation == Nation.Haluaroc )
 			{
 				m.SendMessage( "You cannot unlearn your first language." );
 				return false;
@@ -46,7 +46,7 @@ namespace Server.FeatInfo
 
         public override bool IgnoreThisFeatWhenRemovingParent( PlayerMobile m )
         {
-            return m.Nation == Nation.Khemetar;
+            return m.Nation == Nation.Haluaroc;
         }
                public override bool MeetsOurRequirements( PlayerMobile m )
 	{
@@ -66,6 +66,6 @@ namespace Server.FeatInfo
 	return base.MeetsOurRequirements( m );
 	}
 		
-		public KhemetarLanguage() {}
+		public HaluarocLanguage() {}
 	}
 }

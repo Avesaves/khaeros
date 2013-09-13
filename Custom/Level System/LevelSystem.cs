@@ -357,9 +357,9 @@ namespace Server.Misc
                     {
                         case Nation.Southern: { if (Utility.RandomBool()) player.RawDex += Utility.Random(player.StatScale); else player.RawInt += Utility.Random(player.StatScale); break; }
                         case Nation.Western: { player.RawDex += Utility.Random(player.StatScale); break; }
-                        case Nation.Khemetar: { player.RawInt += Utility.Random(player.StatScale); break; }
+                        case Nation.Haluaroc: { player.RawInt += Utility.Random(player.StatScale); break; }
                         case Nation.Mhordul: { player.RawStr += Utility.Random(player.StatScale); break; }
-                        case Nation.Tyrean: { if (Utility.RandomBool()) player.RawStr += Utility.Random(player.StatScale); else player.RawStam += Utility.Random(player.StatScale); break; }
+                        case Nation.Tirebladd: { if (Utility.RandomBool()) player.RawStr += Utility.Random(player.StatScale); else player.RawStam += Utility.Random(player.StatScale); break; }
                         case Nation.Northern: { player.RawHits += Utility.Random(player.StatScale); break; }
                     }
                 }
@@ -792,9 +792,9 @@ namespace Server.Misc
 				{
 					case Nation.Southern: return from.Female == true ? "Sorceress" : "Sorcerer";
 					case Nation.Western: return "Diviner";
-					case Nation.Khemetar: return from.Female == true ? "Enchantress" : "Enchanter";
+					case Nation.Haluaroc: return from.Female == true ? "Enchantress" : "Enchanter";
 					case Nation.Mhordul: return from.Female == true ? "Warlock" : "Witch";
-					case Nation.Tyrean: return "Wizard";
+					case Nation.Tirebladd: return "Wizard";
 					case Nation.Northern: return "Mage";
 				}
 			}
@@ -804,9 +804,9 @@ namespace Server.Misc
 				{
 					case Nation.Southern: return from.Female == true ? "Druidess" : "Druid";
 					case Nation.Western: return "Shaman";
-					case Nation.Khemetar: return from.Female == true ? "Priestess" : "Priest";
+					case Nation.Haluaroc: return from.Female == true ? "Priestess" : "Priest";
 					case Nation.Mhordul: return from.Female == true ? "Medicine Woman" : "Medicine Man";
-					case Nation.Tyrean: return "Prophet";
+					case Nation.Tirebladd: return "Prophet";
 					case Nation.Northern: return "Cleric";
 				}
 			}
@@ -854,9 +854,9 @@ namespace Server.Misc
 				{
 					case Nation.Southern: return from.Female == true ? "Druidess" : "Druid";
 					case Nation.Western: return "Shaman";
-					case Nation.Khemetar: return from.Female == true ? "Priestess" : "Priest";
+					case Nation.Haluaroc: return from.Female == true ? "Priestess" : "Priest";
 					case Nation.Mhordul: return from.Female == true ? "Medicine Woman" : "Medicine Man";
-					case Nation.Tyrean: return "Prophet";
+					case Nation.Tirebladd: return "Prophet";
 					case Nation.Northern: return "Cleric";
 				}
 			}
@@ -961,14 +961,14 @@ namespace Server.Misc
 				else if( from.Nation == Nation.Western )
 					from.Feats.SetFeatLevel(FeatList.WesternLanguage, 3);
 				
-				else if( from.Nation == Nation.Khemetar )
-					from.Feats.SetFeatLevel(FeatList.KhemetarLanguage, 3);
+				else if( from.Nation == Nation.Haluaroc )
+					from.Feats.SetFeatLevel(FeatList.HaluarocLanguage, 3);
 				
 				else if( from.Nation == Nation.Mhordul )
 					from.Feats.SetFeatLevel(FeatList.MhordulLanguage, 3);
 				
-				else if( from.Nation == Nation.Tyrean )
-					from.Feats.SetFeatLevel(FeatList.TyreanLanguage, 3);
+				else if( from.Nation == Nation.Tirebladd )
+					from.Feats.SetFeatLevel(FeatList.TirebladdLanguage, 3);
 				
 				else if( from.Nation == Nation.Northern )
 					from.Feats.SetFeatLevel(FeatList.NorthernLanguage, 3);

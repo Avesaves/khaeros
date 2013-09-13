@@ -6,15 +6,15 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	public class KhemetarNoble : BaseKhaerosMobile, IKhemetar
+	public class HaluarocNoble : BaseKhaerosMobile, IHaluaroc
 	{
 		[Constructable]
-		public KhemetarNoble() : base( Nation.Khemetar ) 
+		public HaluarocNoble() : base( Nation.Haluaroc ) 
 		{			
-			BaseKhaerosMobile.RandomRichClothes( this, Nation.Khemetar );
+			BaseKhaerosMobile.RandomRichClothes( this, Nation.Haluaroc );
 		}
 
-		public KhemetarNoble(Serial serial) : base(serial)
+		public HaluarocNoble(Serial serial) : base(serial)
 		{
 		}
 

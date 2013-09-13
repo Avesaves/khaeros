@@ -189,7 +189,7 @@ namespace Server.Items
                 weapon.AddItem(m_Blade);
                 weapon.AddItem(m_Hilt);
             }
-            if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Tyrean)
+            if (m_Blade is LongBlade && ((PlayerMobile)from).Nation == Nation.Tirebladd)
             {
                 HandAndAHalfSword weapon = new HandAndAHalfSword();
                 weapon.NewCrafting = true;

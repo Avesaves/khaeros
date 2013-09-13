@@ -155,7 +155,7 @@ namespace Server.Gumps
 							hues = new int[]{1133,2683,2657,2935,2724,2740,2881,1345,2585,2820};
 							break;
 						}
-						case Nation.Khemetar:
+						case Nation.Haluaroc:
 						{
 							hues = new int[]{2732,2757,2711,2585,2835,2754,-1,-1,-1,-1};
 							break;
@@ -165,7 +165,7 @@ namespace Server.Gumps
 							hues = new int[]{2588,2795,2939,2798,2600,2886,-1,-1,-1,-1};
 							break;
 						}
-						case Nation.Tyrean:
+						case Nation.Tirebladd:
 						{
 							hues = new int[]{2881,1345,2585,2820,2764,2989,-1,-1,-1,-1};
 							break;

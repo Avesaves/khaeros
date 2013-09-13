@@ -260,7 +260,7 @@ namespace Server.Mobiles
                             Title = "the Worker";
                         break;
                     }
-                case Nation.Khemetar:
+                case Nation.Haluaroc:
                     {
                         if(IsSlave)
                             Title = "the Slave";
@@ -276,7 +276,7 @@ namespace Server.Mobiles
                             Title = "the Hireling";
                         break;
                     }
-                case Nation.Tyrean:
+                case Nation.Tirebladd:
                     {
                         if (IsSlave)
                             Title = "the Peon";

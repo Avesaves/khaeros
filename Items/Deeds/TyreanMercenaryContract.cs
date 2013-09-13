@@ -6,20 +6,20 @@ using Server.Multis;
 
 namespace Server.Items
 {
-	public class TyreanMercenaryContract : Item
+	public class TirebladdMercenaryContract : Item
 	{
 		public override string DefaultName
 		{
-			get { return "an tyrean mercenary contract"; }
+			get { return "an Tirebladd mercenary contract"; }
 		}
 
 		[Constructable]
-		public TyreanMercenaryContract() : base( 0x14F0 )
+		public TirebladdMercenaryContract() : base( 0x14F0 )
 		{
 			Weight = 1.0;
 		}
 
-		public TyreanMercenaryContract( Serial serial ) : base( serial )
+		public TirebladdMercenaryContract( Serial serial ) : base( serial )
 		{
 		}
 
@@ -46,7 +46,7 @@ namespace Server.Items
 			
 			else if ( from.Alive )
 			{
-				TyreanMercenary v = new TyreanMercenary();
+				TirebladdMercenary v = new TirebladdMercenary();
 
 				v.Direction = from.Direction & Direction.Mask;
 				v.MoveToWorld( from.Location, from.Map );

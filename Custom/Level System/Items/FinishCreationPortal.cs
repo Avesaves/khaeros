@@ -85,13 +85,13 @@ namespace Server.Items
 						else if( from.Nation == Nation.Southern )
 							m.Location = new Point3D( 5352, 479, 0 );
 						
-						else if( from.Nation == Nation.Khemetar )
+						else if( from.Nation == Nation.Haluaroc )
 							m.Location = new Point3D( 5363, 487, 0 );
 						
 						else if( from.Nation == Nation.Mhordul )
 							m.Location = new Point3D( 5363, 480, 0 );
 						
-						else if( from.Nation == Nation.Tyrean )
+						else if( from.Nation == Nation.Tirebladd )
 							m.Location = new Point3D( 5362, 471, 0 );
 						
 						else if( from.Nation == Nation.Northern )
@@ -143,13 +143,13 @@ namespace Server.Items
 			if( from.Nation == Nation.Western )
 				racialmaxage -= 25;
 			
-			if( from.Nation == Nation.Khemetar )
+			if( from.Nation == Nation.Haluaroc )
 				racialmaxage -= 10;
 			
 			if( from.Nation == Nation.Mhordul )
 				racialmaxage -= 40;
 			
-			if( from.Nation == Nation.Tyrean )
+			if( from.Nation == Nation.Tirebladd )
 				racialmaxage -= 30;
 			
 			if( from.Nation == Nation.Northern )

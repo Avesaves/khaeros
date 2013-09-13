@@ -15,8 +15,8 @@ namespace Server.Items
 		Northern,
 		Mhordul,
 		Western,
-		Khemetar,
-		Tyrean,
+		Haluaroc,
+		Tirebladd,
 		Southern
 	}
 
@@ -395,12 +395,12 @@ namespace Server.Items
 				kl = KnownLanguage.Southern;
 			else if( language == Language.Western )
 				kl = KnownLanguage.Western;
-			else if( language == Language.Khemetar )
-				kl = KnownLanguage.Khemetar;
+			else if( language == Language.Haluaroc )
+				kl = KnownLanguage.Haluaroc;
 			else if( language == Language.Mhordul )
 				kl = KnownLanguage.Mhordul;
-			else if( language == Language.Tyrean )
-				kl = KnownLanguage.Tyrean;
+			else if( language == Language.Tirebladd )
+				kl = KnownLanguage.Tirebladd;
 			else if( language == Language.Northern )
 				kl = KnownLanguage.Northern;
 			

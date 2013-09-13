@@ -8,18 +8,18 @@ using System.Collections;
 
 namespace Server.Mobiles
 {
-	public class KhemetarGuard : BaseKhaerosMobile, IRacialGuard, IKhemetar
+	public class HaluarocGuard : BaseKhaerosMobile, IRacialGuard, IHaluaroc
 	{
         private DateTime m_speechInterval;
         private Nation guardNation;
 
 		[Constructable]
-        public KhemetarGuard() : this( 0 )
+        public HaluarocGuard() : this( 0 )
         {
         }
         
 		[Constructable]
-		public KhemetarGuard( int choice ) : base( Nation.Khemetar ) 
+		public HaluarocGuard( int choice ) : base( Nation.Haluaroc ) 
 		{
 			SetStr( 150 );
 			SetDex( 75 );
@@ -53,10 +53,10 @@ namespace Server.Mobiles
 			if( choice > 3 || choice < 1 )
 				choice = 0;
 			
-			BaseKhaerosMobile.RandomGuardEquipment( this, Nation.Khemetar, choice );
+			BaseKhaerosMobile.RandomGuardEquipment( this, Nation.Haluaroc, choice );
             m_speechInterval = DateTime.Now; // Initiatlizing speech delay in the constructor for criminal recognition system.
             ((IKhaerosMobile)this).Feats.SetFeatLevel(FeatList.Alertness, Utility.Random(4)); // Giving guards the potential to detect hidden mobiles.
-            guardNation = Nation.Khemetar;
+            guardNation = Nation.Haluaroc;
 		}
 
         // Criminal recognition begins here.
@@ -106,16 +106,16 @@ namespace Server.Mobiles
                     if (((PlayerMobile)m).CriminalActivity) // Is the seen PlayerMobile participating in criminal activity?
                     {
                         XmlAttach.AttachTo(m, new XmlCriminal(guardNation));
-                        m.SendMessage("The Khemetar have been alerted of your crimes!");
+                        m.SendMessage("The Haluaroc have been alerted of your crimes!");
 
                         ((PlayerMobile)m).CriminalActivity = false;
                     }
-                    else if (((PlayerMobile)m).Combatant is IKhemetar)// Is the seen PlayerMobile fighting someone of the guard's race?
+                    else if (((PlayerMobile)m).Combatant is IHaluaroc)// Is the seen PlayerMobile fighting someone of the guard's race?
                     {
                         if (((PlayerMobile)m).Nation != guardNation) // Is the attacking PlayerMobile not of the guard's race?
                         {
                             XmlAttach.AttachTo(m, new XmlCriminal(guardNation));
-                            m.SendMessage("The Khemetar have been alerted of your assault!");
+                            m.SendMessage("The Haluaroc have been alerted of your assault!");
                         }
                     }
                     else if (m.Combatant is PlayerMobile)
@@ -124,7 +124,7 @@ namespace Server.Mobiles
                         if ((currentCombatant.Nation == guardNation) && (((PlayerMobile)m).Nation != guardNation))
                         {
                             XmlAttach.AttachTo(m, new XmlCriminal(guardNation));
-                            m.SendMessage("The Khemetar have been alerted of your assault!");
+                            m.SendMessage("The Haluaroc have been alerted of your assault!");
                         }
                     }
                 }
@@ -169,7 +169,7 @@ namespace Server.Mobiles
         }
         //End of criminal recognition system.
 
-		public KhemetarGuard(Serial serial) : base(serial)
+		public HaluarocGuard(Serial serial) : base(serial)
 		{
 		}
 

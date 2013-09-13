@@ -29,12 +29,12 @@ namespace Server.BackgroundInfo
 				m.SpokenLanguage = KnownLanguage.Southern;
 			else if( m.Nation == Nation.Western )
 				m.SpokenLanguage = KnownLanguage.Western;
-			else if( m.Nation == Nation.Khemetar )
-				m.SpokenLanguage = KnownLanguage.Khemetar;
+			else if( m.Nation == Nation.Haluaroc )
+				m.SpokenLanguage = KnownLanguage.Haluaroc;
 			else if( m.Nation == Nation.Mhordul )
 				m.SpokenLanguage = KnownLanguage.Mhordul;				
-			else if( m.Nation == Nation.Tyrean )
-				m.SpokenLanguage = KnownLanguage.Tyrean;	
+			else if( m.Nation == Nation.Tirebladd )
+				m.SpokenLanguage = KnownLanguage.Tirebladd;	
 			else if( m.Nation == Nation.Northern )
 				m.SpokenLanguage = KnownLanguage.Northern;
 		}

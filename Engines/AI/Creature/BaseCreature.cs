@@ -487,7 +487,7 @@ namespace Server.Mobiles
 	{
 	}
 	
-	public interface IKhemetar
+	public interface IHaluaroc
 	{
 	}
 	
@@ -495,7 +495,7 @@ namespace Server.Mobiles
 	{
 	}
 	
-	public interface ITyrean
+	public interface ITirebladd
 	{
 	}
 	
@@ -1907,7 +1907,7 @@ namespace Server.Mobiles
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
-        public virtual bool KhemetarName
+        public virtual bool HaluarocName
         {
             get{ return false; }
             
@@ -1916,7 +1916,7 @@ namespace Server.Mobiles
             	FixGender();
             	
             	if( value == true )
-            		this.Name = BaseKhaerosMobile.RandomName( Nation.Khemetar, this.Female );
+            		this.Name = BaseKhaerosMobile.RandomName( Nation.Haluaroc, this.Female );
             }
         }
         
@@ -1935,7 +1935,7 @@ namespace Server.Mobiles
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
-        public virtual bool TyreanName
+        public virtual bool TirebladdName
         {
             get{ return false; }
             
@@ -1944,7 +1944,7 @@ namespace Server.Mobiles
             	FixGender();
             	
             	if( value == true )
-            		this.Name = BaseKhaerosMobile.RandomName( Nation.Tyrean, this.Female );
+            		this.Name = BaseKhaerosMobile.RandomName( Nation.Tirebladd, this.Female );
             }
         }
         
@@ -2001,14 +2001,14 @@ namespace Server.Mobiles
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
-        public virtual bool TurnKhemetar
+        public virtual bool TurnHaluaroc
         {
             get{ return false; }
             
             set
             {
             	if( value == true )
-            		ProcessLooks( Nation.Khemetar );
+            		ProcessLooks( Nation.Haluaroc );
             }
         }
         
@@ -2025,14 +2025,14 @@ namespace Server.Mobiles
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
-        public virtual bool TurnTyrean
+        public virtual bool TurnTirebladd
         {
             get{ return false; }
             
             set
             {
             	if( value == true )
-            		ProcessLooks( Nation.Tyrean );
+            		ProcessLooks( Nation.Tirebladd );
             }
         }
         

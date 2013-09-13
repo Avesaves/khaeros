@@ -18,9 +18,9 @@ namespace Server.Misc
         
         private int m_Southern;
         private int m_Western;
-        private int m_Khemetar;
+        private int m_Haluaroc;
         private int m_Mhordul;
-        private int m_Tyrean;
+        private int m_Tirebladd;
         private int m_Northern;
 
         [CommandProperty( AccessLevel.GameMaster )]
@@ -38,10 +38,10 @@ namespace Server.Misc
         }
 
         [CommandProperty( AccessLevel.GameMaster )]
-        public int Khemetar
+        public int Haluaroc
         {
-            get { return m_Khemetar; }
-            set { m_Khemetar = value; }
+            get { return m_Haluaroc; }
+            set { m_Haluaroc = value; }
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
@@ -52,10 +52,10 @@ namespace Server.Misc
         }
 
         [CommandProperty( AccessLevel.GameMaster )]
-        public int Tyrean
+        public int Tirebladd
         {
-            get { return m_Tyrean; }
-            set { m_Tyrean = value; }
+            get { return m_Tirebladd; }
+            set { m_Tirebladd = value; }
         }
 
         [CommandProperty( AccessLevel.GameMaster )]
@@ -75,9 +75,9 @@ namespace Server.Misc
 
             m_Southern = reader.ReadInt();
             m_Western = reader.ReadInt();
-            m_Khemetar = reader.ReadInt();
+            m_Haluaroc = reader.ReadInt();
             m_Mhordul = reader.ReadInt();
-            m_Tyrean = reader.ReadInt();
+            m_Tirebladd = reader.ReadInt();
             m_Northern = reader.ReadInt();
 		}
 
@@ -87,9 +87,9 @@ namespace Server.Misc
 
             writer.Write( (int)info.m_Southern );
             writer.Write( (int)info.m_Western );
-            writer.Write( (int)info.m_Khemetar );
+            writer.Write( (int)info.m_Haluaroc );
             writer.Write( (int)info.m_Mhordul );
-            writer.Write( (int)info.m_Tyrean );
+            writer.Write( (int)info.m_Tirebladd );
             writer.Write( (int)info.m_Northern );
 		}
     }

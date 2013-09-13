@@ -85,7 +85,7 @@ namespace Server.FeatInfo
 					else
 						requirements = requirements + "<br>" + skill.AllowedNations[i].ToString();
 					
-					if( skill.AllowedNations[i] != Nation.Mhordul && skill.AllowedNations[i] != Nation.Khemetar )
+					if( skill.AllowedNations[i] != Nation.Mhordul && skill.AllowedNations[i] != Nation.Haluaroc )
 						requirements = requirements + "s";
 				}
 			}

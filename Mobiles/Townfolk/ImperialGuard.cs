@@ -19,7 +19,7 @@ namespace Server.Mobiles
         }
         
 		[Constructable]
-		public ImperialGuard( int choice ) : base( Utility.RandomBool() == true ? Nation.Northern : Nation.Tyrean )
+		public ImperialGuard( int choice ) : base( Utility.RandomBool() == true ? Nation.Northern : Nation.Tirebladd )
 		{
 			SetStr( 150 );
 			SetDex( 75 );
@@ -107,14 +107,14 @@ namespace Server.Mobiles
                         ((PlayerMobile)m).CriminalActivity = false;
                     }
                     else if ( ((PlayerMobile)m).Combatant is INorthern || // Is the seen PlayerMobile fighting someone of the Imperial race?
-                        ((PlayerMobile)m).Combatant is ITyrean || 
-                        ((PlayerMobile)m).Combatant is IKhemetar || 
+                        ((PlayerMobile)m).Combatant is ITirebladd || 
+                        ((PlayerMobile)m).Combatant is IHaluaroc || 
                         ((PlayerMobile)m).Combatant is IImperial )
                     {
                         if ( ((PlayerMobile)m).Nation != guardNation && // Is the attacking PlayerMobile not of the guard's race?
                             ((PlayerMobile)m).Nation != Nation.Northern && 
-                            ((PlayerMobile)m).Nation != Nation.Tyrean && 
-                            ((PlayerMobile)m).Nation != Nation.Khemetar ) 
+                            ((PlayerMobile)m).Nation != Nation.Tirebladd && 
+                            ((PlayerMobile)m).Nation != Nation.Haluaroc ) 
                         {
                             XmlAttach.AttachTo(m, new XmlCriminal(guardNation));
                             m.SendMessage("The Empire have been alerted of your assault!");

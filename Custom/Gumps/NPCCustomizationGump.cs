@@ -39,7 +39,7 @@ namespace Server.Gumps
 		public static int ornatelongbeard = 12735;
 		public static int ornateverylongbeard = 12736;
 		public static int curlylongbeard = 12737;
-		public static int khemetargoatee = 12723;
+		public static int nicegoatee = 12723;
         public static int wildbeard = 8464;
         public static int thinlongbeard = 8469;
 
@@ -397,11 +397,11 @@ namespace Server.Gumps
 					break;
 				}
 					
-				case Nation.Khemetar:
+				case Nation.Haluaroc:
 				{
 					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
-					this.AddLabel(115, 214, 0, @"Khemetar Goatee");
-					facialhair1 = khemetargoatee;
+					this.AddLabel(115, 214, 0, @"Nice Goatee");
+					facialhair1 = nicegoatee;
 					
 					break;
 				}
@@ -424,7 +424,7 @@ namespace Server.Gumps
 					break;
 				}
 					
-				case Nation.Tyrean:
+				case Nation.Tirebladd:
 				{
 					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
 					this.AddLabel(115, 214, 0, @"Long Beard");
@@ -591,7 +591,7 @@ namespace Server.Gumps
                     break;
                 }
 
-                case Nation.Khemetar:
+                case Nation.Haluaroc:
                 {
                     gump.hair13 = longplaited;
                     gump.hair14 = shortdreads;
@@ -623,7 +623,7 @@ namespace Server.Gumps
                     break;
                 }
 
-                case Nation.Tyrean:
+                case Nation.Tirebladd:
                 {
                     gump.hair13 = fancyshort;
                     gump.hair14 = thinshort;
@@ -1319,7 +1319,7 @@ namespace Server.Gumps
 					break;
 				}
 			
-				case Nation.Khemetar:
+				case Nation.Haluaroc:
 				{
 					hairhue1 = 2795;
 					hairhue2 = 2801;
@@ -1371,7 +1371,7 @@ namespace Server.Gumps
 					break;
 				}
 					
-				case Nation.Tyrean:
+				case Nation.Tirebladd:
 				{
 					hairhue1 = 2418;
 					hairhue2 = 2803;

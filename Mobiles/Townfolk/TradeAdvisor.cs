@@ -29,9 +29,9 @@ namespace Server.Mobiles
             {
                 case Nation.Southern: advisorTitle = "Argentarii"; break;
                 case Nation.Western: advisorTitle = "Makipuray"; break;
-                case Nation.Khemetar: advisorTitle = "Trader"; break;
+                case Nation.Haluaroc: advisorTitle = "Trader"; break;
                 case Nation.Mhordul: advisorTitle = "Qudaldughacin"; break;
-                case Nation.Tyrean: advisorTitle = "Selja"; break;
+                case Nation.Tirebladd: advisorTitle = "Selja"; break;
                 case Nation.Northern: advisorTitle = "Bursar"; break;
                 case Nation.Imperial: advisorTitle = "Agent"; break;
                 case Nation.Sovereign: if(Female) { advisorTitle = "Quartermistress"; } else { advisorTitle = "Quartermaster"; } break;

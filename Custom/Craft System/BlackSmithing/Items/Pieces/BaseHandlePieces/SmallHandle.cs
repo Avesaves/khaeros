@@ -210,7 +210,7 @@ namespace Server.Items
             m_Hilt = hilt;
             m_Blade = blade;
 
-            if (((PlayerMobile)from).Nation != Nation.Southern && ((PlayerMobile)from).Nation != Nation.Khemetar && ((PlayerMobile)from).Nation != Nation.Mhordul)
+            if (((PlayerMobile)from).Nation != Nation.Southern && ((PlayerMobile)from).Nation != Nation.Haluaroc && ((PlayerMobile)from).Nation != Nation.Mhordul)
                 OnResponse(from, "1");
             else
             {
@@ -222,7 +222,7 @@ namespace Server.Items
                     from.SendMessage(" 2 - billhook ");
                     from.SendMessage(" 3 - falcata ");
                 }
-                if (((PlayerMobile)from).Nation == Nation.Khemetar)
+                if (((PlayerMobile)from).Nation == Nation.Haluaroc)
                 {
                     from.SendMessage(" 4 - shamshir ");
                     from.SendMessage(" 5 - shamshir ");
@@ -241,7 +241,7 @@ namespace Server.Items
 
             if (int.TryParse(text, out index))
             {
-                if (index < 1 || index > 6 || ((index == 2 || index == 3) && ((PlayerMobile)from).Nation != Nation.Southern) || ((index == 4 || index == 5) && ((PlayerMobile)from).Nation != Nation.Khemetar) || (index == 6 && ((PlayerMobile)from).Nation != Nation.Mhordul))
+                if (index < 1 || index > 6 || ((index == 2 || index == 3) && ((PlayerMobile)from).Nation != Nation.Southern) || ((index == 4 || index == 5) && ((PlayerMobile)from).Nation != Nation.Haluaroc) || (index == 6 && ((PlayerMobile)from).Nation != Nation.Mhordul))
                 {
                     from.SendMessage("Invalide code.");
                     return;
@@ -827,7 +827,7 @@ namespace Server.Items
             from.SendMessage(" 2 - Cleaver ");
             from.SendMessage(" 3 - Skinning Knife ");
 
-            if (((PlayerMobile)from).Nation == Nation.Khemetar)
+            if (((PlayerMobile)from).Nation == Nation.Haluaroc)
                 from.SendMessage(" 4 - kukri ");
         }
 
@@ -840,7 +840,7 @@ namespace Server.Items
 
             if (int.TryParse(text, out index))
             {
-                if (index < 1 || index > 4 || (index == 4 && ((PlayerMobile)from).Nation != Nation.Khemetar))
+                if (index < 1 || index > 4 || (index == 4 && ((PlayerMobile)from).Nation != Nation.Haluaroc))
                 {
                     from.SendMessage("Invalid code.");
                     return;

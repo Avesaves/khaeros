@@ -28,7 +28,7 @@ namespace Server.Items
 				
 				if( m.Thirst < 1 )
 				{
-					if( m.Nation == Nation.Khemetar )
+					if( m.Nation == Nation.Haluaroc )
 					{
 						if( m.AccessLevel > AccessLevel.Player )
 							m.SendMessage( "Staff-only Debug Message: avoided being damaged by the desert's heat due to racial merit." );
@@ -44,7 +44,7 @@ namespace Server.Items
 						m.SendMessage( "Staff-only Debug Message: avoided being damaged by the desert's heat due to luck." );
 				}
 				
-				if( m.Nation == Nation.Khemetar )
+				if( m.Nation == Nation.Haluaroc )
 				{
 					if( m.AccessLevel > AccessLevel.Player )
 						m.SendMessage( "Staff-only Debug Message: avoided trap due to racial merit." );

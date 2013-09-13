@@ -90,9 +90,9 @@ namespace Server.Gumps
 			{
 				case Nation.Southern: strcap += 50; dexcap += 50; intcap += 50; hitscap += 50; stamcap += 50; manacap += 50; break;
 				case Nation.Western: strcap += 50; dexcap += 50; intcap += 50; hitscap += 50; stamcap += 50; manacap += 50; break;
-				case Nation.Khemetar: strcap += 50; dexcap += 50; intcap += 50; hitscap += 50; stamcap += 50; manacap += 50; break;
+				case Nation.Haluaroc: strcap += 50; dexcap += 50; intcap += 50; hitscap += 50; stamcap += 50; manacap += 50; break;
 				case Nation.Mhordul: strcap += 50; dexcap += 50; intcap += 50; hitscap += 50; stamcap += 50; manacap += 50; break;
-				case Nation.Tyrean: strcap += 50; dexcap += 50; intcap += 50; hitscap += 50; stamcap += 50; manacap += 50; break;
+				case Nation.Tirebladd: strcap += 50; dexcap += 50; intcap += 50; hitscap += 50; stamcap += 50; manacap += 50; break;
 				case Nation.Northern: strcap += 50; dexcap += 50; intcap += 50; hitscap += 50; stamcap += 50; manacap += 50; break;
 			}
 			

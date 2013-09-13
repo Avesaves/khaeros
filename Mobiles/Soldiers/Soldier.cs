@@ -134,9 +134,9 @@ namespace Server.Mobiles
             {
                 case Nation.Southern: SetRank(1); TrainSoldier(a); SetDex(Dex + 20); EquipSouthern(a, this); break;
                 case Nation.Western: SetRank(1); TrainSoldier(a); SetDex(Dex + 20); EquipWestern(a, this); break;
-                case Nation.Khemetar: SetRank(1); TrainSoldier(a); SetInt(Int + 20); EquipKhemetar(a, this); break;
+                case Nation.Haluaroc: SetRank(1); TrainSoldier(a); SetInt(Int + 20); EquipHaluaroc(a, this); break;
                 case Nation.Mhordul: SetRank(1); TrainSoldier(a); SetStr(Str + 20); EquipMhordul(a, this); break;
-                case Nation.Tyrean: SetRank(1); TrainSoldier(a); SetStr(Str + 20); EquipTyrean(a, this); break;
+                case Nation.Tirebladd: SetRank(1); TrainSoldier(a); SetStr(Str + 20); EquipTirebladd(a, this); break;
                 case Nation.Northern: SetRank(1); TrainSoldier(a); SetHits(Hits + 20); EquipNorthern(a, this); break;
                 case Nation.Imperial: SetRank(1); TrainSoldier(a); SetHits(Hits + 10); SetStr(Str + 10); EquipImperial(a, this); break;
                 case Nation.Sovereign: TrainSoldier(a); SetStr(Str + 10); SetDex(Dex + 10); EquipSovereign(a, this); SetRank(1); break;
@@ -297,7 +297,7 @@ namespace Server.Mobiles
                         m.EquipItem(ll);
 
                         PlateGloves lg = new PlateGloves();
-                        lg.Resource = CraftResource.Steel;
+                        lg.Resource = CraftResource.Iron;
                         lg.Hue = 2581;
                         m.EquipItem(lg);
                         
@@ -350,7 +350,7 @@ namespace Server.Mobiles
                         m.EquipItem(lb);
 
                         PlateGloves lg = new PlateGloves();
-                        lg.Resource = CraftResource.Steel;
+                        lg.Resource = CraftResource.Iron;
                         lg.Hue = 2581;
                         m.EquipItem(lg);
                         
@@ -409,7 +409,7 @@ namespace Server.Mobiles
                         m.EquipItem(lb);
 
                         PlateGloves lg = new PlateGloves();
-                        lg.Resource = CraftResource.Steel;
+                        lg.Resource = CraftResource.Iron;
                         lg.Hue = 2581;
                         m.EquipItem(lg);
                         
@@ -498,7 +498,7 @@ namespace Server.Mobiles
 
         }
 
-        public static void EquipKhemetar(Armament a, Mobile m)
+        public static void EquipHaluaroc(Armament a, Mobile m)
         {
             if (a == Armament.LightCavalry)
                 a = (Armament)1;
@@ -509,222 +509,165 @@ namespace Server.Mobiles
             {
                 case Armament.Light:
                     {
-                        Sandals sand = new Sandals();
-                        sand.Resource = CraftResource.BeastLeather;
-                        sand.Hue = 2947;
-                        m.EquipItem(sand);
+                        Sandals sandals = new Sandals();
+                        sandals.Resource = CraftResource.BeastLeather;
+                        sandals.Hue = 2810;
+                        m.EquipItem(sandals);
 
-                        ScaleArmorChest chest = new ScaleArmorChest();
-                        chest.Resource = CraftResource.Bronze;
-                        chest.Hue = 2947;
-                        m.EquipItem(chest);
+                        LeatherLegs ll = new LeatherLegs();
+                        ll.Resource = CraftResource.ScaledLeather;
+                        m.EquipItem(ll);
 
-                        ScaleArmorLegs legs = new ScaleArmorLegs();
-                        legs.Resource = CraftResource.Bronze;
-                        legs.Hue = 2947;
-                        m.EquipItem(legs);
+                        LeatherGloves lg = new LeatherGloves();
+                        lg.Resource = CraftResource.ScaledLeather;
+                        m.EquipItem(lg);
 
-                        ScaleArmorHelmet helmet = new ScaleArmorHelmet();
-                        helmet.Resource = CraftResource.Bronze;
-                        helmet.Hue = 2947;
-                        m.EquipItem(helmet);
+                        TribalWarriorMask mask = new TribalWarriorMask();
+                        mask.Hue = 2810;
+                        m.EquipItem(mask);
 
-                        Kukri k = new Kukri();
-                        k.Resource = CraftResource.Iron;
-                        m.EquipItem(k);
-
-                        WoodenShield shield = new WoodenShield();
-                        shield.Resource = CraftResource.Redwood;
-                        m.EquipItem(shield);
-
-                        if (m.Female)
-                        {
-                            ElegantWaistCloth waist = new ElegantWaistCloth();
-                            waist.Hue = 2795;
-                            m.EquipItem(waist);
-                        }
-
+                        Shortsword sword = new Shortsword();
+                        if (Utility.Random(100) + 1 > 99)
+                            sword.Resource = CraftResource.Obsidian;
                         else
-                        {
-                            WaistSash sash = new WaistSash();
-                            sash.Hue = 2795;
-                            m.EquipItem(sash);
-                        }
+                            sword.Resource = CraftResource.Bronze;
+                        m.EquipItem(sword);
+
+                        BoiledLeatherShield shield = new BoiledLeatherShield();
+                        shield.Resource = CraftResource.Ash;
+                        m.EquipItem(shield);
 
                         break;
                     }
                 case Armament.Medium:
                     {
-                        ThighBoots boots = new ThighBoots();
+                        SoftLeatherTunic chest = new SoftLeatherTunic();
+                        chest.Resource = CraftResource.BeastLeather;
+
+                        SoftLeatherPauldrons pauldrons = new SoftLeatherPauldrons();
+                        pauldrons.Resource = CraftResource.BeastLeather;
+
+                        SoftLeatherBoots boots = new SoftLeatherBoots();
                         boots.Resource = CraftResource.BeastLeather;
-                        boots.Hue = 2947;
-                        m.EquipItem(boots);
 
-                        ScaleArmorChest chest = new ScaleArmorChest();
-                        chest.Resource = CraftResource.Bronze;
-                        chest.Hue = 2947;
+                        SoftLeatherLegs legs = new SoftLeatherLegs();
+                        legs.Resource = CraftResource.BeastLeather;
+
+                        LeatherGloves gloves = new LeatherGloves();
+                        gloves.Resource = CraftResource.BeastLeather;
+
+                        LeatherArms arms = new LeatherArms();
+                        arms.Resource = CraftResource.BeastLeather;
+
+                        PrimitiveSpear spear = new PrimitiveSpear();
+                        spear.Resource = CraftResource.Bronze;
+
                         m.EquipItem(chest);
-
-                        ScaleArmorLegs legs = new ScaleArmorLegs();
-                        legs.Resource = CraftResource.Bronze;
-                        legs.Hue = 2947;
+                        m.EquipItem(pauldrons);
+                        m.EquipItem(new Bandana(2810));
+                        m.EquipItem(spear);
+                        m.EquipItem(boots);
                         m.EquipItem(legs);
-
-                        ScaleArmorArms arms = new ScaleArmorArms();
-                        arms.Resource = CraftResource.Bronze;
-                        arms.Hue = 2947;
-                        m.EquipItem(arms);
-
-                        RingmailGloves gloves = new RingmailGloves();
-                        gloves.Resource = CraftResource.Bronze;
-                        gloves.Hue = 2947;
                         m.EquipItem(gloves);
-
-                        ScaleArmorHelmet helmet = new ScaleArmorHelmet();
-                        helmet.Resource = CraftResource.Bronze;
-                        helmet.Hue = 2947;
-                        m.EquipItem(helmet);
-
-                        Khopesh sword = new Khopesh();
-                        sword.Resource = CraftResource.Bronze;
-                        m.EquipItem(sword);
-
-                        MetalShield shield = new MetalShield();
-                        shield.Resource = CraftResource.Bronze;
-                        shield.Hue = 2947;
-                        m.EquipItem(shield);
-
-                        if (m.Female)
-                        {
-                            ElegantWaistCloth waist = new ElegantWaistCloth();
-                            waist.Hue = 2795;
-                            m.EquipItem(waist);
-                        }
-
-                        else
-                        {
-                            WaistSash sash = new WaistSash();
-                            sash.Hue = 2795;
-                            m.EquipItem(sash);
-                        }
-
+                        m.EquipItem(arms);
                         break;
                     }
                 case Armament.Heavy:
                     {
-                        ScaleArmorChest chest = new ScaleArmorChest();
+                        EagleHelm helm = new EagleHelm();
+                        helm.Resource = CraftResource.Bronze;
+
+                        SpikedChest chest = new SpikedChest();
                         chest.Resource = CraftResource.Bronze;
-                        chest.Hue = 2947;
-                        m.EquipItem(chest);
 
-                        PlateLegs legs = new PlateLegs();
-                        legs.Resource = CraftResource.Bronze;
-                        legs.Hue = 2947;
-                        m.EquipItem(legs);
-
-                        PlateArms arms = new PlateArms();
+                        RingmailArms arms = new RingmailArms();
                         arms.Resource = CraftResource.Bronze;
-                        arms.Hue = 2947;
-                        m.EquipItem(arms);
 
-                        PlateGorget gorget = new PlateGorget();
-                        gorget.Resource = CraftResource.Bronze;
-                        gorget.Hue = 2947;
-                        m.EquipItem(gorget);
+                        ChainLegs legs = new ChainLegs();
+                        legs.Resource = CraftResource.Bronze;
 
-                        PlateGloves gloves = new PlateGloves();
+                        RingmailGloves gloves = new RingmailGloves();
                         gloves.Resource = CraftResource.Bronze;
-                        gloves.Hue = 2947;
+
+                        m.EquipItem(helm);
+                        m.EquipItem(chest);
+                        Sandals sandals = new Sandals();
+                        sandals.Resource = CraftResource.BeastLeather;
+                        sandals.Hue = 2810;
+                        m.EquipItem(sandals);
                         m.EquipItem(gloves);
-
-                        ScaleArmorHelmet helmet = new ScaleArmorHelmet();
-                        helmet.Resource = CraftResource.Bronze;
-                        helmet.Hue = 2947;
-                        m.EquipItem(helmet);
-
-                        RunicCloak cloak = new RunicCloak();
-                        cloak.Hue = 2795;
-                        m.EquipItem(cloak);
-
-                        Tabarzin axe = new Tabarzin();
-                        axe.Resource = CraftResource.Bronze;
-                        m.EquipItem(axe);
+                        m.EquipItem(arms);
+                        m.EquipItem(legs);
+                        m.EquipItem(new Cloak(2810));
 
                         if (m.Female)
                         {
-                            ElegantWaistCloth waist = new ElegantWaistCloth();
-                            waist.Hue = 2795;
-                            m.EquipItem(waist);
+                            TallFaceShield shield = new TallFaceShield();
+                            shield.Resource = CraftResource.Bronze;
+
+                            HookedClub club = new HookedClub();
+                            club.Resource = CraftResource.Bronze;
+
+                            m.EquipItem(shield);
+                            m.EquipItem(club);
+                            m.EquipItem(new ElegantWaistCloth(2810));
                         }
 
                         else
                         {
-                            WaistSash sash = new WaistSash();
-                            sash.Hue = 2795;
-                            m.EquipItem(sash);
+                            RoundedFaceShield shield = new RoundedFaceShield();
+                            shield.Resource = CraftResource.Bronze;
+
+                            Flamberge sword = new Flamberge();
+                            sword.Resource = CraftResource.Bronze;
+
+                            m.EquipItem(shield);
+                            m.EquipItem(sword);
                         }
 
                         break;
                     }
                 case Armament.Ranged:
                     {
-                        Turban turban = new Turban();
-                        turban.Resource = CraftResource.Cotton;
-                        turban.Hue = 2795;
-                        m.EquipItem(turban);
-
-                        BaggyPants pants = new BaggyPants();
-                        pants.Resource = CraftResource.Cotton;
-                        pants.Hue = 2795;
-                        m.EquipItem(pants);
-
-                        ElegantCloak cloak = new ElegantCloak();
-                        cloak.Resource = CraftResource.Cotton;
-                        cloak.Hue = 2795;
-                        m.EquipItem(cloak);
-
-                        m.EquipItem(new Sandals());
-
-                        ScaleArmorChest chest = new ScaleArmorChest();
-                        chest.Resource = CraftResource.Bronze;
-                        chest.Hue = 2947;
-                        m.EquipItem(chest);
-
-                        ScaleArmorArms arms = new ScaleArmorArms();
-                        arms.Resource = CraftResource.Bronze;
-                        arms.Hue = 2947;
-                        m.EquipItem(arms);
-
-                        Hijazi bow = new Hijazi();
-                        bow.Resource = CraftResource.Redwood;
-                        m.EquipItem(bow);
+                        Sandals sandals = new Sandals();
+                        sandals.Resource = CraftResource.BeastLeather;
+                        sandals.Hue = 2810;
+                        m.EquipItem(sandals);
 
                         if (m.Female)
                         {
-                            ElegantWaistCloth waist = new ElegantWaistCloth();
-                            waist.Hue = 2795;
-                            m.EquipItem(waist);
+                            ShortBow bow = new ShortBow();
+                            bow.Resource = CraftResource.Redwood;
+
+                            m.EquipItem(bow);
+                            m.EquipItem(new MetallicBra());
+                            m.EquipItem(new WaistCloth(2810));
                         }
 
                         else
                         {
-                            WaistSash sash = new WaistSash();
-                            sash.Hue = 2795;
-                            m.EquipItem(sash);
-                        }
+                            Boomerang bow = new Boomerang();
+                            bow.Resource = CraftResource.Redwood;
 
+                            m.EquipItem(bow);
+                            m.EquipItem(new LoinCloth(2810));
+                        }
 
                         if (m is BaseCreature)
                         {
                             BaseCreature bc = m as BaseCreature;
                             bc.AI = AIType.AI_Archer;
-                            bc.PackItem(new Arrow(Utility.RandomMinMax(10, 20)));
+
+                            if (m.Female)
+                                bc.PackItem(new Arrow(Utility.RandomMinMax(10, 20)));
                         }
 
                         break;
                     }
             }
+
         }
+
 
         public static void EquipMhordul(Armament a, Mobile m)
         {
@@ -872,214 +815,148 @@ namespace Server.Mobiles
             }
         }
 
-        public static void EquipTyrean(Armament a, Mobile m)
+        public static void EquipTirebladd(Armament a, Mobile m)
         {
             if (a == Armament.LightCavalry)
                 a = (Armament)1;
             else if (a == Armament.HeavyCavalry)
                 a = (Armament)3;
 
-            Surcoat coat = new Surcoat();
-            coat.ItemID = 15477;
-            coat.Name = "A Surcoat of the Jarlsgaard";
-            coat.Hue = 2741;
-            m.EquipItem(coat);
-
             switch (a)
             {
                 case Armament.Light:
-                    {
-                        StuddedChest lc = new StuddedChest();
-                        lc.Resource = CraftResource.BeastLeather;
-                        lc.Hue = 1899;
-                        m.EquipItem(lc);
+                    {                            
+                        Claymore sword = new Claymore();
+                        sword.Resource = CraftResource.Bronze;                            
+                        m.EquipItem(sword);
 
-                        StuddedLegs ll = new StuddedLegs();
-                        ll.Resource = CraftResource.BeastLeather;
-                        ll.Hue = 1899;
-                        m.EquipItem(ll);
+                        StuddedChest chest = new StuddedChest();
+                        chest.Resource = CraftResource.RegularLeather;
+                        m.EquipItem(chest);
 
-                        StuddedArms la = new StuddedArms();
-                        la.Resource = CraftResource.BeastLeather;
-                        la.Hue = 1899;
-                        m.EquipItem(ll);
+                        StuddedLegs legs = new StuddedLegs();
+                        legs.Resource = CraftResource.RegularLeather;
+                        m.EquipItem(legs);
 
-                        StuddedGloves lg = new StuddedGloves();
-                        lg.Resource = CraftResource.BeastLeather;
-                        lg.Hue = 1899;
-                        m.EquipItem(lg);
-
-                        StuddedGorget lo = new StuddedGorget();
-                        lo.Resource = CraftResource.BeastLeather;
-                        lo.Hue = 1899;
-                        m.EquipItem(lo);
-
-                        BearMask mask = new BearMask();
-                        mask.Hue = 1899;
-                        m.EquipItem(mask);
-
-                        FurBoots boots = new FurBoots();
-                        boots.Resource = CraftResource.BeastLeather;
-                        boots.Hue = 2741;
-                        m.EquipItem(boots);
-
-                        ThrowingAxe tta = new ThrowingAxe();
-                        tta.Resource = CraftResource.Bronze;
-                        m.EquipItem(tta);
-
-                        LeatherShield ls = new LeatherShield();
-                        ls.Resource = CraftResource.Yew;
-                        m.EquipItem(ls);
+                        if (m.Female)
+                        {
+                            m.EquipItem(new ElegantFemaleKilt(2587));
+                            m.EquipItem(new MetallicBra());
+                            m.EquipItem(new ElegantShoes());
+                        }
+                        else
+                        {
+                            m.EquipItem(new OrnateKilt(2587));
+                            m.EquipItem(new Sandals());
+                        }
 
                         break;
                     }
                 case Armament.Medium:
-                    {
-                        ChainChest cc = new ChainChest();
-                        cc.Resource = CraftResource.Bronze;
-                        cc.Hue = 1899;
-                        m.EquipItem(cc);
+                    {                        
+                        RoundShield shield = new RoundShield();
+                        shield.Resource = CraftResource.Bronze;
+                        m.EquipItem(shield);
 
-                        ChainLegs cl = new ChainLegs();
-                        cl.Resource = CraftResource.Bronze;
-                        cl.Hue = 1899;
-                        m.EquipItem(cl);
+                        ArmingSword sword = new ArmingSword();
+                        sword.Resource = CraftResource.Bronze;
+                        m.EquipItem(sword);
 
-                        RingmailArms ra = new RingmailArms();
-                        ra.Resource = CraftResource.Bronze;
-                        ra.Hue = 1899;
-                        m.EquipItem(ra);
+                        SplintedMailChest chest = new SplintedMailChest();
+                        chest.Resource = CraftResource.Bronze;
 
-                        RingmailGloves rg = new RingmailGloves();
-                        rg.Resource = CraftResource.Bronze;
-                        rg.Hue = 1899;
-                        m.EquipItem(rg);
+                        SplintedMailLegs legs = new SplintedMailLegs();
+                        legs.Resource = CraftResource.Bronze;
 
-                        HornedHelm thh = new HornedHelm();
-                        thh.Resource = CraftResource.Bronze;
-                        thh.Hue = 1899;
-                        m.EquipItem(thh);
+                        SplintedMailArms arms = new SplintedMailArms();
+                        arms.Resource = CraftResource.Bronze;
 
-                        FurBoots boots = new FurBoots();
-                        boots.Resource = CraftResource.BeastLeather;
-                        boots.Hue = 2741;
+                        SplintedMailGorget gorget = new SplintedMailGorget();
+                        gorget.Resource = CraftResource.Bronze;
+
+                        HardenedFurBoots boots = new HardenedFurBoots();
+
+                        PlainKilt kilt = new PlainKilt(2587);
+                        kilt.Resource = CraftResource.Wool;
+
+                        Beret beret = new Beret(2587);
+                        beret.Resource = CraftResource.Wool;
+
+                        m.EquipItem(chest);
+                        m.EquipItem(legs);
+                        m.EquipItem(arms);
+                        m.EquipItem(gorget);
                         m.EquipItem(boots);
-
-                        bool WeaponChance = Utility.RandomBool();
-
-                        if (WeaponChance)
-                        {
-                            Angon weapon = new Angon();
-                            weapon.Resource = CraftResource.Bronze;
-
-                            m.EquipItem(weapon);
-                        }
-
-                        else
-                        {
-                            HeavyBattleAxe weapon = new HeavyBattleAxe();
-                            weapon.Resource = CraftResource.Bronze;
-
-                            m.EquipItem(weapon);
-                        }
+                        m.EquipItem(kilt);
+                        m.EquipItem(beret);
 
                         break;
                     }
                 case Armament.Heavy:
-                    {
-                        HalfPlateChest thpc = new HalfPlateChest();
-                        thpc.Resource = CraftResource.Bronze;
-                        thpc.Hue = 1899;
-                        m.EquipItem(thpc);
+                    {                            
+                        NotchedShield shield = new NotchedShield();
+                        shield.Resource = CraftResource.Bronze;
+                        m.EquipItem(shield);       
 
-                        HalfPlateLegs thpl = new HalfPlateLegs();
-                        thpl.Resource = CraftResource.Bronze;
-                        thpl.Hue = 1899;
-                        m.EquipItem(thpl);
+                        Falcata sabre = new Falcata();
+                        sabre.Resource = CraftResource.Bronze;
+                        m.EquipItem(sabre);
 
-                        HalfPlateSabatons thps = new HalfPlateSabatons();
-                        thps.Resource = CraftResource.Bronze;
-                        thps.Hue = 1899;
-                        m.EquipItem(thps);
+                        SplintedMailChest chest = new SplintedMailChest();
+                        chest.Resource = CraftResource.Bronze;
+                        m.EquipItem(chest);
 
-                        HalfPlateArms thpa = new HalfPlateArms();
-                        thpa.Resource = CraftResource.Bronze;
-                        thpa.Hue = 1899;
-                        m.EquipItem(thpa);
+                        PlateLegs legs = new PlateLegs();
+                        legs.Resource = CraftResource.Bronze;
+                        m.EquipItem(legs);
 
-                        HalfPlateGloves thpg = new HalfPlateGloves();
-                        thpg.Resource = CraftResource.Bronze;
-                        thpg.Hue = 1899;
-                        m.EquipItem(thpg);
+                        PlateArms arms = new PlateArms();
+                        arms.Resource = CraftResource.Bronze;
+                        m.EquipItem(arms);
 
-                        HalfPlateGorget thpo = new HalfPlateGorget();
-                        thpo.Resource = CraftResource.Bronze;
-                        thpo.Hue = 1899;
-                        m.EquipItem(thpo);
+                        PlateGorget gorget = new PlateGorget();
+                        gorget.Resource = CraftResource.Bronze;
+                        m.EquipItem(gorget);
 
-                        DragonKiteShield tks = new DragonKiteShield();
-                        tks.Resource = CraftResource.Bronze;
-                        tks.Hue = 1899;
-                        m.EquipItem(tks);
+                        PlateGloves gloves = new PlateGloves();
+                        gloves.Resource = CraftResource.Bronze;
+                        m.EquipItem(gloves);
 
-                        m.EquipItem(new Cloak(1445));
+                        m.EquipItem(new RunicCloak(2587));
 
-                        WingedHelm twh = new WingedHelm();
-                        twh.Resource = CraftResource.Bronze;
-                        twh.Hue = 1899;
-                        m.EquipItem(twh);
-
-                        bool WeaponChance = Utility.RandomBool();
-                        if (WeaponChance)
-                        {
-                            BroadAxe axe = new BroadAxe();
-                            axe.Resource = CraftResource.Bronze;
-
-                            m.EquipItem(axe);
-                        }
-
+                        if (m.Female)
+                            m.EquipItem(new FemaleKilt(2587));
                         else
-                        {
-                            OrnateAxe axe = new OrnateAxe();
-                            axe.Resource = CraftResource.Bronze;
-
-                            m.EquipItem(axe);
-                        }
+                            m.EquipItem(new ElegantKilt(2587));
 
                         break;
+
                     }
                 case Armament.Ranged:
                     {
-                        FancyShirt shirt = new FancyShirt();
-                        shirt.Resource = CraftResource.Wool;
-                        shirt.Hue = 1899;
-                        m.EquipItem(shirt);
+                        bool WeaponChance = Utility.RandomBool();
+                        if (WeaponChance)
+                        {
+                            OrnateLongBow bow = new OrnateLongBow();
+                            bow.Resource = CraftResource.Redwood;
+                            m.EquipItem(bow);
+                        }
+                        else
+                        {
+                            WarBow bow = new WarBow();
+                            bow.Resource = CraftResource.Redwood;
+                            m.EquipItem(bow);
+                        }
 
-                        LeatherChest lc = new LeatherChest();
-                        lc.Resource = CraftResource.BeastLeather;
-                        lc.Hue = 1899;
-                        m.EquipItem(lc);
+                        if (m.Female)
+                        {
+                            m.EquipItem(new ElegantKilt(2587));
+                            m.EquipItem(new MetallicBra());
+                        }
+                        else
+                            m.EquipItem(new PlainKilt(2587));
 
-                        LeatherLegs ll = new LeatherLegs();
-                        ll.Resource = CraftResource.BeastLeather;
-                        ll.Hue = 1899;
-                        m.EquipItem(ll);
-
-                        LeatherGloves lg = new LeatherGloves();
-                        lg.Resource = CraftResource.BeastLeather;
-                        lg.Hue = 1899;
-                        m.EquipItem(lg);
-
-                        FurBoots boots = new FurBoots();
-                        boots.Resource = CraftResource.BeastLeather;
-                        boots.Hue = 2741;
-                        m.EquipItem(boots);
-
-                        m.EquipItem(new Cloak(1445));
-
-                        RecurveLongBow bow = new RecurveLongBow();
-                        bow.Resource = CraftResource.Redwood;
-                        m.EquipItem(bow);
+                        m.EquipItem(new Sandals());
 
                         if (m is BaseCreature)
                         {
@@ -1190,48 +1067,48 @@ namespace Server.Mobiles
                 case Armament.Heavy:
                     {
                         PlateLegs vopl = new PlateLegs();
-                        vopl.Resource = CraftResource.Steel;
+                        vopl.Resource = CraftResource.Iron;
                         vopl.Hue = 1899;
                         m.EquipItem(vopl);
 
                         OrnatePlateGorget vopo = new OrnatePlateGorget();
-                        vopo.Resource = CraftResource.Steel;
+                        vopo.Resource = CraftResource.Iron;
                         vopo.Hue = 1899;
                         m.EquipItem(vopo);
 
                         PlateSabatons ps = new PlateSabatons();
-                        ps.Resource = CraftResource.Steel;
+                        ps.Resource = CraftResource.Iron;
                         ps.Hue = 1899;
                         m.EquipItem(ps);
 
                         PlateChest thpc = new PlateChest();
-                        thpc.Resource = CraftResource.Steel;
+                        thpc.Resource = CraftResource.Iron;
                         thpc.Hue = 1899;
                         m.EquipItem(thpc);
 
                         HalfPlateArms thpa = new HalfPlateArms();
-                        thpa.Resource = CraftResource.Steel;
+                        thpa.Resource = CraftResource.Iron;
                         thpa.Hue = 1899;
                         m.EquipItem(thpa);
 
                         PlateGloves thpg = new PlateGloves();
-                        thpg.Resource = CraftResource.Steel;
+                        thpg.Resource = CraftResource.Iron;
                         thpg.Hue = 1899;
                         m.EquipItem(thpg);
 
                         WingedHelm twh = new WingedHelm();
-                        twh.Resource = CraftResource.Steel;
+                        twh.Resource = CraftResource.Iron;
                         twh.Hue = 1899;
                         m.EquipItem(twh);
 
                         OrnateKiteShield voks = new OrnateKiteShield();
-                        voks.Resource = CraftResource.Steel;
+                        voks.Resource = CraftResource.Iron;
                         voks.Hue = 2102;
                         m.EquipItem(voks);
                        
 
                             HandAndAHalfSword sword = new HandAndAHalfSword();
-                            sword.Resource = CraftResource.Steel;
+                            sword.Resource = CraftResource.Iron;
                             m.EquipItem(sword);
 
                         m.EquipItem(new ElegantCloak(2751));
@@ -1295,7 +1172,7 @@ namespace Server.Mobiles
 
             Surcoat coat = new Surcoat();
             coat.ItemID = 15477;
-            coat.Name = "A Surcoat of the True Church of the North";
+            coat.Name = "A Surcoat of the Church of the Divine Union";
             coat.Hue = 2751;
             m.EquipItem(coat);
 
@@ -2166,9 +2043,9 @@ namespace Server.Mobiles
             {
                 case 1: nation = Nation.Southern; break;
                 case 2: nation = Nation.Western; break;
-                case 3: nation = Nation.Khemetar; break;
+                case 3: nation = Nation.Haluaroc; break;
                 case 4: nation = Nation.Mhordul; break;
-                case 5: nation = Nation.Tyrean; break;
+                case 5: nation = Nation.Tirebladd; break;
                 case 6: nation = Nation.Northern; break;
             }
 
@@ -2240,23 +2117,23 @@ namespace Server.Mobiles
                     {
                         SetStr(Utility.Random(120, 130));
                         SetDex(Utility.Random(160, 180));
-                        SetInt(Utility.Random(65, 85));
-                        SetHits(Utility.Random(125, 130));
+                        SetInt(Utility.Random(30, 50));
+                        SetHits(Utility.Random(125, 135));
                         SetStam(Utility.Random(90, 110));
 
-                        SetResistance(ResistanceType.Blunt, 50);
-                        SetResistance(ResistanceType.Piercing, 50);
-                        SetResistance(ResistanceType.Slashing, 50);
+                        SetResistance(ResistanceType.Blunt, 5);
+                        SetResistance(ResistanceType.Piercing, 5);
+                        SetResistance(ResistanceType.Slashing, 5);
                         VirtualArmor = 0;
 
                         SetDamageType(ResistanceType.Blunt, 100);
                         CombatSkills = 75;
-                        SetDamage(15, 20);
+                        SetDamage(30, 35);
 
                         PassiveSpeed = 0.4;
                         ActiveSpeed = 0.2;
 
-                        PayRate = 1000;
+                        PayRate = 100;
 						
 						if (Nation == Nation.Insularii )
                         {
@@ -2272,23 +2149,23 @@ namespace Server.Mobiles
                     {
                         SetStr(Utility.Random(140, 160));
                         SetDex(Utility.Random(130, 150));
-                        SetInt(Utility.Random(90, 110));
-                        SetHits(Utility.Random(135, 155));
+                        SetInt(Utility.Random(40, 60));
+                        SetHits(Utility.Random(125, 145));
                         SetStam(Utility.Random(100, 125));
 
-                        SetResistance(ResistanceType.Blunt, 60);
-                        SetResistance(ResistanceType.Piercing, 60);
-                        SetResistance(ResistanceType.Slashing, 60);
+                        SetResistance(ResistanceType.Blunt, 10);
+                        SetResistance(ResistanceType.Piercing, 10);
+                        SetResistance(ResistanceType.Slashing, 10);
                         VirtualArmor = 0;
 
                         SetDamageType(ResistanceType.Blunt, 100);
                         CombatSkills = 90;
-                        SetDamage(20, 25);
+                        SetDamage(40, 45);
 
                         PassiveSpeed = 0.45;
                         ActiveSpeed = 0.25;
 
-						PayRate = 1500;
+						PayRate = 250;
 						
 						if (Nation == Nation.Insularii )
                         {
@@ -2305,23 +2182,23 @@ namespace Server.Mobiles
                     {
                         SetStr(Utility.Random(160, 180));
                         SetDex(Utility.Random(90, 110));
-                        SetInt(Utility.Random(115, 135));
-                        SetHits(Utility.Random(175, 200));
+                        SetInt(Utility.Random(40, 60));
+                        SetHits(Utility.Random(140, 160));
                         SetStam(Utility.Random(200, 225));
 
-                        SetResistance(ResistanceType.Blunt, 70);
-                        SetResistance(ResistanceType.Piercing, 70);
-                        SetResistance(ResistanceType.Slashing, 70);
+                        SetResistance(ResistanceType.Blunt, 10);
+                        SetResistance(ResistanceType.Piercing, 10);
+                        SetResistance(ResistanceType.Slashing, 10);
                         VirtualArmor = 0;
 
                         SetDamageType(ResistanceType.Blunt, 100);
                         CombatSkills = 100;
-                        SetDamage(25, 30);
+                        SetDamage(35, 40);
 
                         PassiveSpeed = 0.5;
                         ActiveSpeed = 0.3;
 
-                        PayRate = 2000;
+                        PayRate = 500;
 						
 						if (Nation == Nation.Insularii )
                         {
@@ -2341,19 +2218,19 @@ namespace Server.Mobiles
                         SetHits(Utility.Random(100, 120));
                         SetStam(Utility.Random(100, 125));
 
-                        SetResistance(ResistanceType.Blunt, 40);
-                        SetResistance(ResistanceType.Piercing, 40);
-                        SetResistance(ResistanceType.Slashing, 40);
+                        SetResistance(ResistanceType.Blunt, 05);
+                        SetResistance(ResistanceType.Piercing, 05);
+                        SetResistance(ResistanceType.Slashing, 05);
                         VirtualArmor = 0;
 
                         SetDamageType(ResistanceType.Blunt, 100);
                         CombatSkills = 100;
-                        SetDamage(1, 25);
+                        SetDamage(25, 30);
 
                         PassiveSpeed = 0.4;
                         ActiveSpeed = 0.2;
 
-                        PayRate = 1500;
+                        PayRate = 300;
 						
 						if (Nation == Nation.Insularii )
                         {
@@ -2369,8 +2246,8 @@ namespace Server.Mobiles
                     {
                         SetStr(Utility.Random(140, 160));
                         SetDex(Utility.Random(130, 150));
-                        SetInt(Utility.Random(90, 110));
-                        SetHits(Utility.Random(135, 155));
+                        SetInt(Utility.Random(30, 40));
+                        SetHits(Utility.Random(125, 130));
                         SetStam(Utility.Random(100, 125));
 
                         SetResistance(ResistanceType.Blunt, 60);
@@ -2380,12 +2257,12 @@ namespace Server.Mobiles
 
                         SetDamageType(ResistanceType.Blunt, 100);
                         CombatSkills = 90;
-                        SetDamage(25, 30);
+                        SetDamage(30, 35);
 
                         PassiveSpeed = 0.3;
                         ActiveSpeed = 0.1;
 
-						PayRate = 2500;
+						PayRate = 500;
 						
 						if (Nation == Nation.Insularii )
                         {
@@ -2405,8 +2282,8 @@ namespace Server.Mobiles
                     {
                         SetStr(Utility.Random(180, 200));
                         SetDex(Utility.Random(100, 120));
-                        SetInt(Utility.Random(125, 135));
-                        SetHits(Utility.Random(190, 200));
+                        SetInt(Utility.Random(40, 60));
+                        SetHits(Utility.Random(140, 160));
                         SetStam(Utility.Random(200, 225));
 
                         SetResistance(ResistanceType.Blunt, 70);
@@ -2416,12 +2293,12 @@ namespace Server.Mobiles
 
                         SetDamageType(ResistanceType.Blunt, 100);
                         CombatSkills = 100;
-                        SetDamage(30, 35);
+                        SetDamage(35, 40);
 
                         PassiveSpeed = 0.4;
                         ActiveSpeed = 0.2;
 
-                        PayRate = 3500;
+                        PayRate = 1000;
 						
 						if (Nation == Nation.Insularii )
                         {
@@ -2486,14 +2363,14 @@ namespace Server.Mobiles
 
                         FavouriteStance = "DefensiveStance";
 
-                        SetHits(Hits + 100);
-                        SetStam(Stam + 100);
+                        SetHits(Hits + 50);
+                        SetStam(Stam + 50);
 
-                        if (Nation == Nation.Tyrean || Nation == Nation.Insularii)
+                        if (Nation == Nation.Tirebladd || Nation == Nation.Insularii)
                         {
                             GiveFeat = "DamageIgnore 3";
                             GiveFeat = "FastHealing 3";
-                            SetHits(Hits + 100);
+                            SetHits(Hits + 50);
                         }
 
                         PayRate += 1000;
@@ -2518,7 +2395,7 @@ namespace Server.Mobiles
                         SetDex(Dex + 25);
                         SetMana(Mana + 50);
 
-                        if (Nation == Nation.Khemetar || Nation == Nation.Insularii )
+                        if (Nation == Nation.Haluaroc || Nation == Nation.Insularii )
                         {
                             GiveFeat = "QuickReflexes 3";
                             GiveFeat = "DamageIgnore 3";
@@ -2576,14 +2453,14 @@ namespace Server.Mobiles
                         FavouriteStance = "FocusedAttack";
 
                         SetStr(Str + 15);
-                        SetHits(Hits + 50);
+                        SetHits(Hits + 25);
                         SetDex(Dex + 15);
                         SetInt(Int + 15);
                         SetStam(Stam + 50);
 
                         if (Nation == Nation.Northern || Nation == Nation.Insularii )
                         {
-                            SetStr(Str + 50);
+                            SetStr(Str + 25);
                             SetHits(Hits + 100);
                             VirtualArmor += 10;
                         }
@@ -2620,12 +2497,12 @@ namespace Server.Mobiles
                         }
                         break;
                     }
-                case Nation.Khemetar:
+                case Nation.Haluaroc:
                     {
                         switch (rank)
                         {
-                            case 1: Name = "Mnemeran " + BaseName; break;
-                            case 2: Name = "High Mnemeran " + BaseName; break;
+                            case 1: Name = "Agulepoc " + BaseName; break;
+                            case 2: Name = "B'alepoc " + BaseName; break;
                         }
                         break;
                     }
@@ -2638,12 +2515,12 @@ namespace Server.Mobiles
                         }
                         break;
                     }
-                case Nation.Tyrean:
+                case Nation.Tirebladd:
                     {
                         switch (rank)
                         {
-                            case 1: Name = "Varnefr " + BaseName; break;
-                            case 2: Name = "Varnardr " + BaseName; break;
+                            case 1: Name = "Newyddian " + BaseName; break;
+                            case 2: Name = "Milwyr " + BaseName; break;
                         }
                         break;
                     }
@@ -2753,10 +2630,10 @@ namespace Server.Mobiles
                         Westernhorse.Rider = this;
                         break;
                     }
-                case Nation.Khemetar:
+                case Nation.Haluaroc:
                     {
-                        KhemetarHorse khemetarhorse = new KhemetarHorse();
-                        khemetarhorse.Rider = this;
+                        DesertHorse DesertHorse = new DesertHorse();
+                        DesertHorse.Rider = this;
                         break;
                     }
                 case Nation.Mhordul:
@@ -2765,10 +2642,10 @@ namespace Server.Mobiles
                         mhordulhorse.Rider = this;
                         break;
                     }
-                case Nation.Tyrean:
+                case Nation.Tirebladd:
                     {
-                        TyreanHorse tyreanhorse = new TyreanHorse();
-                        tyreanhorse.Rider = this;
+                        SnowHorse snowhorse = new SnowHorse();
+                        snowhorse.Rider = this;
                         break;
                     }
                 case Nation.Northern:
@@ -2794,7 +2671,7 @@ namespace Server.Mobiles
                         }
                         else
                         {
-                            TyreanHorse thorse = new TyreanHorse();
+                            SnowHorse thorse = new SnowHorse();
                             thorse.Rider = this;
                         }
                         break;
@@ -2817,7 +2694,7 @@ namespace Server.Mobiles
                     {
                         if (Utility.RandomBool())
                         {
-                            KhemetarHorse khorse = new KhemetarHorse();
+                            DesertHorse khorse = new DesertHorse();
                             khorse.Rider = this;
                         }
                         else
@@ -2941,9 +2818,9 @@ namespace Server.Mobiles
             {
                 case Nation.Southern:    alertMessage = "The Southerners have been alerted of your deeds!";     break;
                 case Nation.Western:    alertMessage = "The Keepers have been alerted of your deeds!";     break;
-                case Nation.Khemetar:   alertMessage = "The Khemetar have been alerted of your deeds!";     break;
+                case Nation.Haluaroc:   alertMessage = "The Haluaroc have been alerted of your deeds!";     break;
                 case Nation.Mhordul:    alertMessage = "The Mhordul have been alerted of your deeds!";      break;
-                case Nation.Tyrean:     alertMessage = "The Tyreans have been alerted of your deeds!";      break;
+                case Nation.Tirebladd:     alertMessage = "The Tirebladds have been alerted of your deeds!";      break;
                 case Nation.Northern:  alertMessage = "The Northerners have been alerted of your deeds!";   break;
                 case Nation.Imperial:   alertMessage = "The Northerners have been alerted of your deeds!";        break;
                 case Nation.Sovereign:  alertMessage = "The Sovereign have been alerted of your deeds!";    break;
@@ -4013,7 +3890,7 @@ namespace Server.Mobiles
 
                         return null;
                     }
-                case Nation.Khemetar:
+                case Nation.Haluaroc:
                     {
                         if (DateTime.Now >= (s.SpeechInterval + TimeSpan.FromSeconds(Utility.RandomMinMax(120, 600))))
                         {
@@ -4051,7 +3928,7 @@ namespace Server.Mobiles
 
                         return null;
                     }
-                case Nation.Tyrean:
+                case Nation.Tirebladd:
                     {
                         if (DateTime.Now >= (s.SpeechInterval + TimeSpan.FromSeconds(Utility.RandomMinMax(120, 600))))
                         {

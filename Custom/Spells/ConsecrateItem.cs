@@ -55,9 +55,9 @@ namespace Server.Misc
 				else if( caster.Feats.GetFeatLevel(FeatList.ConsecrateItem) > 1 && (
 				         ( caster.Nation == Nation.Northern && TargetItem is ClericCrook ) || 
 				         ( caster.Nation == Nation.Western && TargetItem is ShamanStaff ) || 
-				         ( caster.Nation == Nation.Tyrean && TargetItem is ProphetDiviningRod ) ||
+				         ( caster.Nation == Nation.Tirebladd && TargetItem is ProphetDiviningRod ) ||
 				         ( caster.Nation == Nation.Southern && TargetItem is DruidStaff ) || 
-				         ( caster.Nation == Nation.Khemetar && TargetItem is PriestStaff ) ||
+				         ( caster.Nation == Nation.Haluaroc && TargetItem is PriestStaff ) ||
 				         ( caster.Nation == Nation.Mhordul && TargetItem is MedicineManFetish ) ) )
 				{
 					BaseStaff staff = TargetItem as BaseStaff;
@@ -75,10 +75,10 @@ namespace Server.Misc
 				else if( caster.Feats.GetFeatLevel(FeatList.ConsecrateItem) > 2 && (
 				         ( caster.Nation == Nation.Northern && TargetItem is ClericRobe ) || 
 				         ( caster.Nation == Nation.Western && TargetItem is ShamanRobe ) || 
-				         ( caster.Nation == Nation.Tyrean && TargetItem is ProphetRobe ) ||
+				         ( caster.Nation == Nation.Tirebladd && TargetItem is ProphetRobe ) ||
 				         ( caster.Nation == Nation.Southern && TargetItem is DruidRobe ) || 
-				         ( caster.Nation == Nation.Khemetar && TargetItem is PriestessGown ) || 
-				         ( caster.Nation == Nation.Khemetar && TargetItem is PriestRobe ) ) )
+				         ( caster.Nation == Nation.Haluaroc && TargetItem is PriestessGown ) || 
+				         ( caster.Nation == Nation.Haluaroc && TargetItem is PriestRobe ) ) )
 				{
 					BaseOuterTorso robe = TargetItem as BaseOuterTorso;
 					robe.Attributes.RegenMana = 2;
@@ -152,7 +152,7 @@ namespace Server.Misc
 						necklace.ItemID = 15234;
 					}
 					
-					if( m.Nation == Nation.Tyrean && 
+					if( m.Nation == Nation.Tirebladd && 
 					( text == "Ohlm" || text == "Maelmia" || text == "Sankath"
 					|| text == "Guthraneil" || text == "Athaelbas" || text == "Sildethel" ) )
 					{
@@ -168,7 +168,7 @@ namespace Server.Misc
 						necklace.ItemID = 15234;
 					}
 					
-					if( m.Nation == Nation.Khemetar && 
+					if( m.Nation == Nation.Haluaroc && 
 					( text == "Mah'tet" || text == "Kha-tekh" || text == "Neph'at"
 					|| text == "Pt-chah" || text == "Waret'ta" || text == "Al-falaq" ) )
 					{

@@ -66,22 +66,22 @@ namespace Server.Misc.BreedingSystem
 			else if( (creat is ManedWolf || creat is WesternHorse || creat is AzhuranRetriever || creat is Ridgeraptor) && owner.Nation != Nation.Western )
 				valid = false;
 			
-			else if( (creat is Jackal || creat is KhemetarHorse || creat is KhemetarSaluki || creat is GiantScarab) && owner.Nation != Nation.Khemetar )
+			else if( (creat is Jackal || creat is DesertHorse || creat is Saluki || creat is GiantScarab) && owner.Nation != Nation.Haluaroc )
 				valid = false;
 			
 			else if( (creat is Timberwolf || creat is MhordulHorse || creat is MhordulWolfdog || creat is DireWolf || creat is SkullcrusherOgre) && owner.Nation != Nation.Mhordul )
 				valid = false;
 			
-			else if( (creat is SnowWolf || creat is TyreanHorse || creat is TyreanHusky || creat is DireBear) && owner.Nation != Nation.Tyrean )
+			else if( (creat is SnowWolf || creat is SnowHorse || creat is Husky || creat is DireBear) && owner.Nation != Nation.Tirebladd )
 				valid = false;
 			
 			else if( (creat is GrayWolf || creat is NorthernHorse || creat is BloodHound || creat is WarHorse) && owner.Nation != Nation.Northern )
 				valid = false;
 
-            if (creat is Serpent && owner.Nation != Nation.Khemetar)
+            if (creat is Serpent && owner.Nation != Nation.Haluaroc)
                 valid = false;
 
-            if (creat is Bear && owner.Nation != Nation.Tyrean)
+            if (creat is Bear && owner.Nation != Nation.Tirebladd)
                 valid = false;
 
             if (creat is BirdOfPrey)

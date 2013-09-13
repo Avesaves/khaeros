@@ -112,8 +112,8 @@ namespace Server.Gumps
 				this.AddButton(350, 125, 2362, 2361, (int)Buttons.Western, GumpButtonType.Reply, 0);
 				this.AddLabel(366, 141, ( m_Language == Language.Common ? 56 : 95 ), "Common");
 				this.AddButton(350, 145, 2362, 2361, (int)Buttons.Common, GumpButtonType.Reply, 0);
-				this.AddLabel(366, 161, ( m_Language == Language.Khemetar ? 56 : 95 ), "Ancient");
-				this.AddButton(350, 165, 2362, 2361, (int)Buttons.Khemetar, GumpButtonType.Reply, 0);
+				this.AddLabel(366, 161, ( m_Language == Language.Haluaroc ? 56 : 95 ), "Ancient");
+				this.AddButton(350, 165, 2362, 2361, (int)Buttons.Haluaroc, GumpButtonType.Reply, 0);
 				this.AddLabel(366, 181, ( m_Language == Language.Northern ? 56 : 95 ), "Northern");
 				this.AddButton(350, 185, 2362, 2361, (int)Buttons.Northern, GumpButtonType.Reply, 0);
 
@@ -135,7 +135,7 @@ namespace Server.Gumps
 			Southern,
 			Western,
 			Common,
-			Khemetar,
+			Haluaroc,
 			Northern,
 			DoTranslate,
 			DoDecrypt,
@@ -237,10 +237,10 @@ namespace Server.Gumps
 				
 			
 				
-				case (int)Buttons.Khemetar:
+				case (int)Buttons.Haluaroc:
 				{
-					if ( HTMLBook.UnderstandsLanguage( Language.Khemetar, from ) && HTMLBook.UnderstandsLanguage( m_Book.Language, from ))
-						m_Language = Language.Khemetar;
+					if ( HTMLBook.UnderstandsLanguage( Language.Haluaroc, from ) && HTMLBook.UnderstandsLanguage( m_Book.Language, from ))
+						m_Language = Language.Haluaroc;
 					else
 						from.SendMessage( "You don't know that language!" );
 					

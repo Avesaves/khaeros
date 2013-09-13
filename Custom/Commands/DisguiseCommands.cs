@@ -49,9 +49,9 @@ namespace Server.Commands
             {
                 case Nation.Southern: hue = 2001; break;
                 case Nation.Western: hue = 1358; break;
-                case Nation.Khemetar: hue = 1057; break;
+                case Nation.Haluaroc: hue = 1057; break;
                 case Nation.Mhordul: hue = 1157; break;
-                case Nation.Tyrean: hue = 2406; break;
+                case Nation.Tirebladd: hue = 2406; break;
                 case Nation.Northern: hue = 1156; break;
             }
 

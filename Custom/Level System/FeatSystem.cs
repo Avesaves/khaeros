@@ -575,7 +575,7 @@ namespace Server.Misc
 								break;
 							}
 								
-							case Nation.Khemetar:
+							case Nation.Haluaroc:
 							{
 								m.Feats.GetFeatLevel(FeatList.VenomousWay)++;
 								break;
@@ -587,7 +587,7 @@ namespace Server.Misc
 								break;
 							}
 								
-							case Nation.Tyrean:
+							case Nation.Tirebladd:
 							{
 								m.Feats.GetFeatLevel(FeatList.TempestuousSea)++;
 								break;
@@ -618,7 +618,7 @@ namespace Server.Misc
 								break;
 							}
 								
-							case Nation.Khemetar:
+							case Nation.Haluaroc:
 							{
 								m.Feats.GetFeatLevel(FeatList.Linen)++;
 								break;
@@ -630,7 +630,7 @@ namespace Server.Misc
 								break;
 							}
 								
-							case Nation.Tyrean:
+							case Nation.Tirebladd:
 							{
 								m.Feats.GetFeatLevel(FeatList.Steel)++;
 								break;

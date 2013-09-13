@@ -28,7 +28,7 @@ namespace Server.Items
 				
 				if( m.Hunger < 1 )
 				{
-					if( m.Nation == Nation.Tyrean )
+					if( m.Nation == Nation.Tirebladd )
 					{
 						if( m.AccessLevel > AccessLevel.Player )
 							m.SendMessage( "Staff-only Debug Message: avoided being damaged by the tundra's cold due to racial merit." );
@@ -44,7 +44,7 @@ namespace Server.Items
 						m.SendMessage( "Staff-only Debug Message: avoided being damaged by the tundra's cold due to luck." );
 				}
 				
-				if( m.Nation == Nation.Tyrean )
+				if( m.Nation == Nation.Tirebladd )
 				{
 					if( m.AccessLevel > AccessLevel.Player )
 						m.SendMessage( "Staff-only Debug Message: avoided trap due to racial merit." );

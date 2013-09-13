@@ -6,10 +6,10 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	public class TyreanBrigand : BaseKhaerosMobile, IBrigand
+	public class TirebladdBrigand : BaseKhaerosMobile, IBrigand
 	{
 		[Constructable]
-		public TyreanBrigand() : base( Nation.Tyrean ) 
+		public TirebladdBrigand() : base( Nation.Tirebladd ) 
 		{
 			SetStr( 100 );
 			SetDex( 50 );
@@ -84,7 +84,7 @@ namespace Server.Mobiles
 			EquipItem( new FancyShirt() );
 		}
 
-		public TyreanBrigand(Serial serial) : base(serial)
+		public TirebladdBrigand(Serial serial) : base(serial)
 		{
 		}
 

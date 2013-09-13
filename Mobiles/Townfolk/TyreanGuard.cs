@@ -8,18 +8,18 @@ using System.Collections;
 
 namespace Server.Mobiles
 {
-	public class TyreanGuard : BaseKhaerosMobile, IRacialGuard, ITyrean
+	public class TirebladdGuard : BaseKhaerosMobile, IRacialGuard, ITirebladd
 	{
         private DateTime m_speechInterval;
         private Nation guardNation;
 
 		[Constructable]
-        public TyreanGuard() : this( 0 )
+        public TirebladdGuard() : this( 0 )
         {
         }
         
 		[Constructable]
-		public TyreanGuard( int choice ) : base( Nation.Tyrean ) 
+		public TirebladdGuard( int choice ) : base( Nation.Tirebladd ) 
 		{
 			SetStr( 150 );
 			SetDex( 75 );
@@ -53,10 +53,10 @@ namespace Server.Mobiles
 			if( choice > 3 || choice < 1 )
 				choice = 0;
 			
-			BaseKhaerosMobile.RandomGuardEquipment( this, Nation.Tyrean, choice );
+			BaseKhaerosMobile.RandomGuardEquipment( this, Nation.Tirebladd, choice );
             m_speechInterval = DateTime.Now; // Initiatlizing speech delay in the constructor for criminal recognition system.
             ((IKhaerosMobile)this).Feats.SetFeatLevel(FeatList.Alertness, Utility.Random(4)); // Giving guards the potential to detect hidden mobiles.
-            guardNation = Nation.Tyrean;
+            guardNation = Nation.Tirebladd;
 		}
 
         // Criminal recognition begins here.
@@ -106,16 +106,16 @@ namespace Server.Mobiles
                     if (((PlayerMobile)m).CriminalActivity) // Is the seen PlayerMobile participating in criminal activity?
                     {
                         XmlAttach.AttachTo(m, new XmlCriminal(guardNation));
-                        m.SendMessage("The Tyreans have been alerted of your crimes!");
+                        m.SendMessage("The Tirebladds have been alerted of your crimes!");
 
                         ((PlayerMobile)m).CriminalActivity = false;
                     }
-                    else if (((PlayerMobile)m).Combatant is ITyrean)// Is the seen PlayerMobile fighting someone of the guard's race?
+                    else if (((PlayerMobile)m).Combatant is ITirebladd)// Is the seen PlayerMobile fighting someone of the guard's race?
                     {
                         if (((PlayerMobile)m).Nation != guardNation) // Is the attacking PlayerMobile not of the guard's race?
                         {
                             XmlAttach.AttachTo(m, new XmlCriminal(guardNation));
-                            m.SendMessage("The Tyreans have been alerted of your assault!");
+                            m.SendMessage("The Tirebladds have been alerted of your assault!");
                         }
                     }
                     else if (m.Combatant is PlayerMobile)
@@ -124,7 +124,7 @@ namespace Server.Mobiles
                         if ((currentCombatant.Nation == guardNation) && (((PlayerMobile)m).Nation != guardNation))
                         {
                             XmlAttach.AttachTo(m, new XmlCriminal(guardNation));
-                            m.SendMessage("The Tyreans have been alerted of your assault!");
+                            m.SendMessage("The Tirebladds have been alerted of your assault!");
                         }
                     }
                 }
@@ -169,7 +169,7 @@ namespace Server.Mobiles
         }
         //End of criminal recognition system.
 
-		public TyreanGuard(Serial serial) : base(serial)
+		public TirebladdGuard(Serial serial) : base(serial)
 		{
 		}
 

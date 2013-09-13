@@ -226,10 +226,10 @@ namespace Server.Mobiles
 		
 		public bool RaciallyCompatible( Nation nation )
 		{
-			if( (this.Nation == Nation.Western || this.Nation == Nation.Khemetar) && (nation == Nation.Western || nation == Nation.Khemetar) )
+			if( (this.Nation == Nation.Western || this.Nation == Nation.Haluaroc) && (nation == Nation.Western || nation == Nation.Haluaroc) )
 				return true;
 			
-			if( (this.Nation == Nation.Northern || this.Nation == Nation.Tyrean) && (nation == Nation.Northern || nation == Nation.Tyrean) )
+			if( (this.Nation == Nation.Northern || this.Nation == Nation.Tirebladd) && (nation == Nation.Northern || nation == Nation.Tirebladd) )
 				return true;
 			
 			if( (this.Nation == Nation.Mhordul || this.Nation == Nation.Southern) && (nation == Nation.Mhordul || nation == Nation.Southern) )

@@ -133,7 +133,7 @@ namespace Server
 			{
 				typeof( Pixie ),			
 				typeof( Jaguar ),			typeof( SouthernHorse ),		typeof( WesternHorse ),	
-				typeof( KhemetarHorse ),	typeof( MhordulHorse ),		typeof( TyreanHorse ),	
+				typeof( DesertHorse ),	typeof( MhordulHorse ),		typeof( SnowHorse ),	
 				typeof( NorthernHorse ),	typeof( WarHorse ),			typeof( DireWolf ),		
 				typeof( Ridgeraptor ),		typeof( DireBear ),			typeof( ForestStrider ),
 				typeof( GiantScarab ),		typeof( Petal ),			typeof( Unicorn ),	

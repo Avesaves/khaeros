@@ -25,12 +25,12 @@ namespace Server.Mobiles
                     this.Nation = Nation.Southern;
                 else if (this is IWestern)
                     this.Nation = Nation.Western;
-                else if (this is IKhemetar)
-                    this.Nation = Nation.Khemetar;
+                else if (this is IHaluaroc)
+                    this.Nation = Nation.Haluaroc;
                 else if (this is IMhordul)
                     this.Nation = Nation.Mhordul;
-                else if (this is ITyrean)
-                    this.Nation = Nation.Tyrean;
+                else if (this is ITirebladd)
+                    this.Nation = Nation.Tirebladd;
                 else if (this is INorthern)
                     this.Nation = Nation.Northern;
                 else if (this is IImperial)
@@ -51,10 +51,10 @@ namespace Server.Mobiles
                             case 0: nation = Nation.Northern; break;
                             case 1: nation = Nation.Northern; break;
                             case 2: nation = Nation.Northern; break;
-                            case 3: nation = Nation.Tyrean; break;
-                            case 4: nation = Nation.Tyrean; break;
-                            case 5: nation = Nation.Tyrean; break;
-                            case 6: nation = Nation.Khemetar; break;
+                            case 3: nation = Nation.Tirebladd; break;
+                            case 4: nation = Nation.Tirebladd; break;
+                            case 5: nation = Nation.Tirebladd; break;
+                            case 6: nation = Nation.Haluaroc; break;
 
                             default: nation = Nation.Northern; break;
                         }
@@ -87,12 +87,12 @@ namespace Server.Mobiles
                         {
                             case 0: nation = Nation.Southern; break;
                             case 1: nation = Nation.Western; break;
-                            case 2: nation = Nation.Khemetar; break;
+                            case 2: nation = Nation.Haluaroc; break;
                             case 3: nation = Nation.Mhordul; break;
-                            case 4: nation = Nation.Tyrean; break;
+                            case 4: nation = Nation.Tirebladd; break;
                             case 5: nation = Nation.Northern; break;
 
-                            default: nation = Nation.Khemetar; break;
+                            default: nation = Nation.Haluaroc; break;
                         }
 
                         break;
@@ -105,7 +105,7 @@ namespace Server.Mobiles
                         {
                             case 0: nation = Nation.Northern; break;
                             case 1: nation = Nation.Northern; break;
-                            case 2: nation = Nation.Khemetar; break;
+                            case 2: nation = Nation.Haluaroc; break;
                             case 3: nation = Nation.Mhordul; break;
                             case 4: nation = Nation.Southern; break;
                             case 5: nation = Nation.Northern; break;
@@ -211,9 +211,9 @@ namespace Server.Mobiles
 			{
 				case Nation.Southern: options = 16; break;
 				case Nation.Western: options = 17; break;
-				case Nation.Khemetar: options = 15; break;
+				case Nation.Haluaroc: options = 15; break;
 				case Nation.Mhordul: options = 14; break;
-				case Nation.Tyrean: options = 13; break;
+				case Nation.Tirebladd: options = 16; break;
 				case Nation.Northern: options = 13; break;
 			}
 			
@@ -234,9 +234,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 12738;
 						case Nation.Western: return 12738;
-						case Nation.Khemetar: return 12738;
+						case Nation.Haluaroc: return 12738;
 						case Nation.Mhordul: return 12747;
-						case Nation.Tyrean: return 12749;
+						case Nation.Tirebladd: return 12738;
 						case Nation.Northern: return 12749;
 					}
 					break;
@@ -247,9 +247,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 12749;
 						case Nation.Western: return 12741;
-						case Nation.Khemetar: return 12746;
+						case Nation.Haluaroc: return 12746;
 						case Nation.Mhordul: return 12757;
-						case Nation.Tyrean: return 12757;
+						case Nation.Tirebladd: return 12749;
 						case Nation.Northern: return 8261;
 					}
 					break;
@@ -260,9 +260,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 12750;
 						case Nation.Western: return 12748;
-						case Nation.Khemetar: return 12748;
+						case Nation.Haluaroc: return 12748;
 						case Nation.Mhordul: return 12241;
-						case Nation.Tyrean: hair = 8262; break;
+						case Nation.Tirebladd: hair = 12750; break;
 						case Nation.Northern: hair = 8262; break;
 					}
 					break;
@@ -273,9 +273,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 12757;
 						case Nation.Western: return 12745;
-						case Nation.Khemetar: return 12749;
+						case Nation.Haluaroc: return 12749;
 						case Nation.Mhordul: return 8260;
-						case Nation.Tyrean: hair = 12753; break;
+						case Nation.Tirebladd: hair = 12757; break;
 						case Nation.Northern: hair = 12753; break;
 					}
 					break;
@@ -286,9 +286,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: hair = 8262; break;
 						case Nation.Western: return 12241;
-						case Nation.Khemetar: return 12757;
+						case Nation.Haluaroc: return 12757;
 						case Nation.Mhordul: hair = 8262; break;
-						case Nation.Tyrean: hair = 12752; break;
+						case Nation.Tirebladd: hair = 8262; break;
 						case Nation.Northern: hair = 12752; break;
 					}
 					break;
@@ -299,9 +299,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: hair = 12753; break;
 						case Nation.Western: return 8263;
-						case Nation.Khemetar: hair = 8262; break;
+						case Nation.Haluaroc: hair = 8262; break;
 						case Nation.Mhordul: hair = 12753; break;
-						case Nation.Tyrean: return 0;
+						case Nation.Tirebladd: return 12753;
 						case Nation.Northern: return 0;
 					}
 					break;
@@ -312,9 +312,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: hair = 12752; break;
 						case Nation.Western: return 8266;
-						case Nation.Khemetar: hair = 12753; break;
+						case Nation.Haluaroc: hair = 12753; break;
 						case Nation.Mhordul: return 0;
-						case Nation.Tyrean: return 0;
+						case Nation.Tirebladd: return 12752;
 						case Nation.Northern: return 0;
 					}
 					break;
@@ -325,9 +325,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 0;
 						case Nation.Western: hair = 8262; break;
-						case Nation.Khemetar: return 0;
+						case Nation.Haluaroc: return 0;
 						case Nation.Mhordul: return 0;
-						case Nation.Tyrean: return 0;
+						case Nation.Tirebladd: return 0;
 						case Nation.Northern: return 0;
 					}
 					break;
@@ -338,9 +338,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 0;
 						case Nation.Western: hair = 12753; break;
-						case Nation.Khemetar: return 0;
+						case Nation.Haluaroc: return 0;
 						case Nation.Mhordul: return 0;
-						case Nation.Tyrean: return 0;
+						case Nation.Tirebladd: return 0;
 						case Nation.Northern: return 0;
 					}
 					break;
@@ -375,19 +375,19 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Khemetar:
+				case Nation.Haluaroc:
 				{
 					switch( Utility.Random( 9 ) )
 					{
-						case 0:	return 2795;
-						case 1:	return 2801;
-						case 2:	return 2799;
-						case 3:	return 2990;
-						case 4:	return 1908;
-						case 5:	return 1141;
+						case 0:	return 2801;
+						case 1:	return 2411;
+						case 2:	return 1140;
+						case 3:	return 1109;
+						case 4:	return 2990;
+						case 5:	return 2406;
 						case 6:	return 1175;
-						case 7:	return 1133;
-						case 8:	return 1149;
+						case 7:	return 1881;
+						case 8:	return 1989;
 						case 9:	return 2992;
 					}
 					break;
@@ -411,20 +411,20 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Tyrean:
+				case Nation.Tirebladd:
 				{
 					switch( Utility.Random( 9 ) )
 					{
-						case 0:	return 2418;
-						case 1:	return 2803;
-						case 2:	return 2218;
-						case 3:	return 2657;
-						case 4:	return 2796;
-						case 5:	return 1126;
-						case 6:	return 2413;
-						case 7:	return 1118;
-						case 8:	return 2601;
-						case 9:	return 1108;
+						case 0:	return 1627;
+						case 1:	return 1149;
+						case 2:	return 1607;
+						case 3:	return 1147;
+						case 4:	return 2312;
+						case 5:	return 1627;
+						case 6:	return 1645;
+						case 7:	return 2303;
+						case 8:	return 1617;
+						case 9:	return 2206;
 					}
 					break;
 				}
@@ -495,20 +495,20 @@ namespace Server.Mobiles
 					break;
 				}
 			
-				case Nation.Khemetar:
+				case Nation.Haluaroc:
 				{
 					switch( Utility.Random( 9 ) )
 					{
-						case 0:	return 1815;
-						case 1:	return 1814;
-						case 2:	return 1813;
-						case 3:	return 1812;
-						case 4:	return 1851;
-						case 5:	return 1850;
-						case 6:	return 1849;
-						case 7:	return 1822;
-						case 8:	return 1823;
-						case 9:	return 1824;
+						case 0:	return 1005;
+						case 1:	return 1850;
+						case 2:	return 1812;
+						case 3:	return 1849;
+						case 4:	return 1815;
+						case 5:	return 1148;
+						case 6:	return 1147;
+						case 7:	return 1146;
+						case 8:	return 1145;
+						case 9:	return 1144;
 					}
 					break;
 				}
@@ -533,20 +533,20 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Tyrean:
+				case Nation.Tirebladd:
 				{
 					switch( Utility.Random( 9 ) )
 					{
-						case 0:	return 1002;
-						case 1:	return 1009;
-						case 2:	return 1016;
-						case 3:	return 1023;
-						case 4:	return 1003;
-						case 5:	return 1010;
-						case 6:	return 1017;
-						case 7:	return 1024;
-						case 8:	return 1004;
-						case 9:	return 1011;
+						case 0:	return 1062;
+						case 1:	return 1061;
+						case 2:	return 1063;
+						case 3:	return 1064;
+						case 4:	return 1065;
+						case 5:	return 1066;
+						case 6:	return 1023;
+						case 7:	return 1030;
+						case 8:	return 1037;
+						case 9:	return 1045;
 					}
 					break;
 				}
@@ -615,9 +615,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 12725;
 						case Nation.Western: return 0;
-						case Nation.Khemetar: return 12725;
+						case Nation.Haluaroc: return 0;
 						case Nation.Mhordul: return 12725;
-						case Nation.Tyrean: return 12725;
+						case Nation.Tirebladd: return 0;
 						case Nation.Northern: return 12725;
 					}
 					break;
@@ -628,9 +628,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 12726;
 						case Nation.Western: return 0;
-						case Nation.Khemetar: return 12726;
+						case Nation.Haluaroc: return 0;
 						case Nation.Mhordul: return 12726;
-						case Nation.Tyrean: return 12726;
+						case Nation.Tirebladd: return 0;
 						case Nation.Northern: return 12726;
 					}
 					break;
@@ -641,9 +641,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 12737;
 						case Nation.Western: return 0;
-						case Nation.Khemetar: return 12737;
+						case Nation.Haluaroc: return 0;
 						case Nation.Mhordul: return 12737;
-						case Nation.Tyrean: return 12737;
+						case Nation.Tirebladd: return 0;
 						case Nation.Northern: return 12737;
 					}
 					break;
@@ -654,9 +654,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 8254;
 						case Nation.Western: return 0;
-						case Nation.Khemetar: return 0;
+						case Nation.Haluaroc: return 0;
 						case Nation.Mhordul: return 8254;
-						case Nation.Tyrean: return 8254;
+						case Nation.Tirebladd: return 0;
 						case Nation.Northern: return 8254;
 					}
 					break;
@@ -667,9 +667,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 8268;
 						case Nation.Western: return 0;
-						case Nation.Khemetar: return 0;
+						case Nation.Haluaroc: return 0;
 						case Nation.Mhordul: return 8268;
-						case Nation.Tyrean: return 8268;
+						case Nation.Tirebladd: return 0;
 						case Nation.Northern: return 8268;
 					}
 					break;
@@ -680,9 +680,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 12731;
 						case Nation.Western: return 0;
-						case Nation.Khemetar: return 0;
+						case Nation.Haluaroc: return 0;
 						case Nation.Mhordul: return 12731;
-						case Nation.Tyrean: return 12731;
+						case Nation.Tirebladd: return 0;
 						case Nation.Northern: return 12731;
 					}
 					break;
@@ -693,9 +693,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 12730;
 						case Nation.Western: return 0;
-						case Nation.Khemetar: return 0;
+						case Nation.Haluaroc: return 0;
 						case Nation.Mhordul: return 12730;
-						case Nation.Tyrean: return 12730;
+						case Nation.Tirebladd: return 0;
 						case Nation.Northern: return 12730;
 					}
 					break;
@@ -706,9 +706,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 12733;
 						case Nation.Western: return 0;
-						case Nation.Khemetar: return 0;
+						case Nation.Haluaroc: return 0;
 						case Nation.Mhordul: return 0;
-						case Nation.Tyrean: return 12733;
+						case Nation.Tirebladd: return 0;
 						case Nation.Northern: return 0;
 					}
 					break;
@@ -719,9 +719,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 12735;
 						case Nation.Western: return 0;
-						case Nation.Khemetar: return 0;
+						case Nation.Haluaroc: return 0;
 						case Nation.Mhordul: return 0;
-						case Nation.Tyrean: return 12735;
+						case Nation.Tirebladd: return 0;
 						case Nation.Northern: return 0;
 					}
 					break;
@@ -732,9 +732,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 12729;
 						case Nation.Western: return 0;
-						case Nation.Khemetar: return 0;
+						case Nation.Haluaroc: return 0;
 						case Nation.Mhordul: return 0;
-						case Nation.Tyrean: return 12729;
+						case Nation.Tirebladd: return 0;
 						case Nation.Northern: return 0;
 					}
 					break;
@@ -745,9 +745,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 0;
 						case Nation.Western: return 0;
-						case Nation.Khemetar: return 0;
+						case Nation.Haluaroc: return 0;
 						case Nation.Mhordul: return 0;
-						case Nation.Tyrean: return 12736;
+						case Nation.Tirebladd: return 0;
 						case Nation.Northern: return 0;
 					}
 					break;
@@ -758,9 +758,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 0;
 						case Nation.Western: return 0;
-						case Nation.Khemetar: return 0;
+						case Nation.Haluaroc: return 0;
 						case Nation.Mhordul: return 0;
-						case Nation.Tyrean: return 12734;
+						case Nation.Tirebladd: return 0;
 						case Nation.Northern: return 0;
 					}
 					break;
@@ -771,9 +771,9 @@ namespace Server.Mobiles
 					{		
 						case Nation.Southern: return 0;
 						case Nation.Western: return 0;
-						case Nation.Khemetar: return 0;
+						case Nation.Haluaroc: return 0;
 						case Nation.Mhordul: return 0;
-						case Nation.Tyrean: return 12732;
+						case Nation.Tirebladd: return 0;
 						case Nation.Northern: return 0;
 					}
 					break;
@@ -867,28 +867,28 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Khemetar:
+				case Nation.Haluaroc:
 				{
 					if( female )
 					{
-						namelist = "Nesis,Nismet,Metrit,Sakhet,Sekeret,Sekhmet,Mehefra," +
-							"Taret,Hekarit,Neret,Saherit,Nekeryt,Sibkhet,Khutah,Sura," +
-							"Hura-Ta,Sera,Henem-Sep,Kethys,Setari,Marethys,Nem-Set,Usis," +
-							"Mebt-Ep,Sentera,Maharet,Makare,Neferet,Reonet,Hath-Iunet," +
-							"Taheret,Takhat,Abia,Almira,Badriyyah,Am-Ni,Siyah,Fadia," +
-							"Haniyyah,Karida,Mariyah,Nazira,Qitarah,Rahna,Ruqayah," +
-							"Shahara,Thara,Zuhaira,Duathor,Maneret";
+						namelist = "Esra,Vara,Xi,Zi,Chih,Lozua,Mela,Anixa,Ana" +
+							"Tali,Ildja,Kulla,Tisa,Dihya,Takirri,Zahrit,Zenet,Tiri," +
+							"Atla,Ata,Dia,Essa,Extia,Faris,Izela,Ixela,Fazria,Raza," +
+							"Hadia,Hala,Hani,Isa,Izra,Izza,Khadija,Lamia,Lamya,Khalifa," +
+							"Canari,Layla,Lina,Lixtli,Luffi,Maha,Maali,Maram,Mirza," +
+							"Muna,Nada,Nadya,Nura,Raisa,Ranya,Rana,Rua,Ruya,Safi,Sakina," +
+							"Sana,Sani,Sara,Saria,Zelesi,Shahrazad,Shazi,Thana,Uzma,Thaone," +
+							"Uzme,Exma,Yasmin,Zahra,Zaina,Zia,Aradia";
 					}
 					
 					else
 					{
-						namelist = "Imef,Nekhuem,Nemkasen,Kenses,Atep,Hesutis,Qemmut," +
-							"Muris,Ahmunis,Nebertep,Shematep,Nofru,Pten,Ushetep,Senbek," +
-							"Heseti,Anbis,Shubis,Imhattis,Illatis,Serel-Ut,Henkhen," +
-							"Khepdera,Meshabti,Aminis,Onubiris,Am-Shu,Khen,Amontu,Batis," +
-							"Setesh,Sareed,Saadir,Haqiim,Nakhir,Sakhir,Sartum,Ansis," +
-							"Hakheru,Seti,Hassan,Iu-Khare,Aneb,Nebekh,Fakhir,Shakil," +
-							"Ahmose,Ankhef,Sekhmire,Rekh-Tem";
+						namelist = "Coatl,Ataxl,Camaxtli,Opazin,Coaxri,Atla,Diaxl," +
+							"Farix,Fakri,Raz,Ixandar,Jafar,Janan,Khalil,Maali,Malik," +
+							"Xalik,Mazin,Navid,Ra'lai,Raox,Raiz'ai,Ran'xia,Aran,Raotl" +
+							"Toa,Tariq,Sain,Zain,Mazin,Tarix,Farix,Feran,Exiti,Zulfiqar," +
+							"Usan,Maki,Zia,Thaon,Tirix,Canar,Aladl,Takir,Zenl,Aradl," +
+							"Cuixico,Xomal,Mehen,Ma'alai,Xin'alai,Zain'al";
 					}
 					
 					break;
@@ -919,26 +919,27 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Tyrean:
+				case Nation.Tirebladd:
 				{
 					if( female )
 					{
-						namelist = "Asta,Astrid,Auda,Asvora,Brenda,Brynja,Eir,Elle," +
-							"Ema,Erica,Fjorgyn,Frieda,Gerda,Gunnhilde,Haldana,Hallam," +
-							"Helga,Hilde,Hulda,Idona,Inga,Inge,Ingrid,Kelda,Kirsten," +
-							"Linnea,Liv,Mildri,Nanna,Norma,Olga,Ragnilde,Rana,Rona,Runa," +
-							"Sigourney,Sigrid,Snora,Solveiq,Svanhilde,Ragna,Thora," +
-							"Thordis,Tyra,Unne,Valda,Yngvild,Yule";
+						namelist = "Aideen,Aine,Anna,Arianwen,Blair,Brenda,Briana, " +
+							"Ceinwyn,Colleen,Dealla,Dervil,Devany,Eachna,Eavan,Ethna," +
+							"Eithne,Elatha,Eleanor,Fionna,Grania,Gwynne,Isleen,Kaitlin," +
+							"Keena,Liadan,Lynn,Maeve,Mell,Myrna,Naomh,Neala,Nessa," +
+							"Nevina,Nia,Nila,Nola,Ryann,Sinead,Taillte,Tara,Tullia," +
+							"Una,Vanora,Caireann,Alana";
 					}
 					
 					else
 					{
-						namelist = "Bodvar,Brian,Eric,Erland,Finn,Frey,Garrett,Garth," +
-							"Geir,Gunnar,Gunther,Gus,Gustav,Hakan,Haldor,Harold,Hjordis," +
-							"Holger,Howe,Ingemar,Ivar,Jorund,Kell,Kerr,Kirk,Latham," +
-							"Logmar,Njord,Oddvar,Odell,Olaf,Ormar,Ranulf,Regin,Roscoe," +
-							"Rothwell,Runolf,Somerled,Sorley,Stig,Sven,Swain,Tait,Tarn," +
-							"Tate,Terje,Todd,Torvald,Yngvar";
+						namelist = "Bran,Brennus,Brian,Caley,Calhoun,Casey,Cass,Cathal," +
+							"Ceallach,Conall,Conn,Craig,Culley,Daigh,Devine,Dolan,Donn," +
+							"Doran,Dow,Dumnorix,Eachan,Fearghus,Finnegan,Fionn,Gaeth," +
+							"Gair,Gallagher,Galloway,Gwent,Haley,Imar,Innis,Irv,Keelan," +
+							"Keenan,Keller,Kelvin,Kenneth,Labhraidh,Labras,Leannan,Lonn," +
+							"Mardbod,Murdock,Ossian,Quinn,Raegan,Ryan,Riddock,Sean,Trevor," +
+							"Logan,Liam,Daegan";
 					}
 					
 					break;
@@ -1008,14 +1009,14 @@ namespace Server.Mobiles
 
                         return surname;
                     }
-                case Nation.Tyrean:
+                case Nation.Tirebladd:
                     {
-                        surname += " " + RandomName(Nation.Tyrean, false);
-
                         if (female)
-                            surname += "dottir";
+                            surname += " verch ";
                         else
-                            surname += "son";
+                            surname += " ap ";
+
+                        surname += RandomName(nation, false);
 
                         return surname;
                     }
@@ -1047,10 +1048,10 @@ namespace Server.Mobiles
 
             switch (nation)
             {
-                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
                 case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Southern; } else { nation = Nation.Mhordul; } break; }
-                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tyrean; } break; }
-				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tirebladd; } break; }
+				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
             }
 			
 			switch( nation )
@@ -1193,72 +1194,72 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Khemetar:
-				{
+				case Nation.Haluaroc:
+								{
 					if( m.Female )
 					{
 						switch( choice )
 						{
 							case 0: 
 							{
-								m.EquipItem( new HalfApron() ); 
-								m.EquipItem( new Sandals() ); 
-								m.EquipItem( new GoldBeadNecklace() ); 
-								m.EquipItem( new LongPlainDress( 2983 ) );
+								m.EquipItem( new HalfApron( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new ShortPants( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new MetallicBra() );
 								break;
 							}
-							
+
 							case 1:
 							{
-								m.EquipItem( new BaggyPants() ); 
-								m.EquipItem( new FullApron() ); 
-								m.EquipItem( new Shirt() ); 
-								m.EquipItem( new Shoes() ); 
+								m.EquipItem( new FullApron( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new ShortPants( Utility.RandomNeutralHue() ) );
+								m.EquipItem( new Shirt( Utility.RandomNeutralHue() ) );
+								m.EquipItem( new LeatherGloves() );
 								break;
 							}
-							
+
 							case 2:
 							{
-								m.EquipItem( new Doublet() ); 
-								m.EquipItem( new HalfApron() ); 
-								m.EquipItem( new LongSkirt() ); 
-								m.EquipItem( new Sandals() ); 
+								m.EquipItem( new HalfApron( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new LoinCloth( Utility.RandomNeutralHue() ) );
+								m.EquipItem( new MetallicBra() );
 								break;
 							}
 						}
+
+						m.EquipItem( new Sandals() );
 					}
-					
+
 					else
 					{
 						switch( choice )
 						{
 							case 0: 
 							{
-								m.EquipItem( new BaggyPants() ); 
-								m.EquipItem( new FullApron() ); 
-								m.EquipItem( new LeatherGloves() ); 
-								m.EquipItem( new Shoes() );  
-								break;
-							}
-							
-							case 1:
-							{
-								m.EquipItem( new LongSkirt() ); 
-								m.EquipItem( new HalfApron() ); 
+								m.EquipItem( new HalfApron( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new ShortPants( Utility.RandomNeutralHue() ) ); 
 								m.EquipItem( new Sandals() ); 
 								break;
 							}
-							
+
+							case 1:
+							{
+								m.EquipItem( new FullApron( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new ShortPants( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new Sandals() ); 
+								break;
+							}
+
 							case 2:
 							{
-								m.EquipItem( new BaggyPants() );
-								m.EquipItem( new Shoes() ); 
-								m.EquipItem( new HalfApron() ); 
+								m.EquipItem( new HalfApron( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new ShortPants( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new Boots() ); 
+								m.EquipItem( new LeatherGloves() );
 								break;
 							}
 						}
-					}					
-					
+					}
+
 					break;
 				}
 					
@@ -1329,84 +1330,75 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Tyrean:
+				case Nation.Tirebladd:
 				{
 					if( m.Female )
 					{
 						switch( choice )
 						{
-							case 0:
+							case 0: 
 							{
-								int hue = Utility.RandomNeutralHue();
-								Bonnet bonnet = new Bonnet();
-								bonnet.Hue = hue;
-								m.EquipItem( bonnet ); 
-								m.EquipItem( new PlainDress( hue ) ); 
-								m.EquipItem( new HalfApron( hue ) );
-								m.EquipItem( new FurBoots() );
+								m.EquipItem( new Shirt( Utility.RandomNeutralHue() ) );
+								m.EquipItem( new HalfApron( Utility.RandomNeutralHue() ) );
+								m.EquipItem( new FemaleKilt( Utility.RandomNeutralHue() ) );
 								break;
 							}
-								
+
 							case 1: 
 							{
-								m.EquipItem( new FurBoots() ); 
-								m.EquipItem( new FancyShirt() );
-								m.EquipItem( new LongPants() );
-								m.EquipItem( new LeatherGloves() );
+								m.EquipItem( new ShortPants( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new MetallicBra() );
 								m.EquipItem( new FullApron( Utility.RandomNeutralHue() ) );
 								break;
 							}
-								
-							case 2:
+
+							case 2: 
 							{
-								int hue = Utility.RandomNeutralHue();
-								m.EquipItem( new Skirt( hue ) ); 
-								m.EquipItem( new HalfApron( hue ) );
-								m.EquipItem( new Boots() );
-								m.EquipItem( new FancyShirt() ); 
+								m.EquipItem( new MetallicBra() );
+								m.EquipItem( new HalfApron( Utility.RandomNeutralHue() ) );
+								m.EquipItem( new ElegantFemaleKilt( Utility.RandomNeutralHue() ) );
 								break;
 							}
 						}
+
+						m.EquipItem( new ElegantShoes() );
 					}
-					
+
 					else
 					{
 						switch( choice )
 						{
-							case 0:
-							{ 
-								m.EquipItem( new FurBoots() );
-								m.EquipItem( new FancyShirt() );
-								m.EquipItem( new BeltedPants( Utility.RandomNeutralHue() ) );
-								m.EquipItem( new FullApron( Utility.RandomNeutralHue() ) ); 
-								break;
-							}
-								
-							case 1:
+							case 0: 
 							{
-								m.EquipItem( new FurBoots() );
-								m.EquipItem( new Shirt() ); 
-								m.EquipItem( new FullApron( Utility.RandomNeutralHue() ) ); 
-								m.EquipItem( new LongVest( Utility.RandomNeutralHue() ) ); 
-								m.EquipItem( new BeltedPants( Utility.RandomNeutralHue() ) );
+								m.EquipItem( new ElegantKilt( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new HalfApron( Utility.RandomNeutralHue() ) );
+								m.EquipItem( new Sandals() );
 								break;
 							}
-								
+
+							case 1: 
+							{
+								m.EquipItem( new FullApron( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new BlackLeatherBoots() );
+								m.EquipItem( new BeltedPants() );
+								break;
+							}
+
 							case 2: 
 							{
-								m.EquipItem( new Boots() ); 
+								m.EquipItem( new LeatherBoots() );
+								m.EquipItem( new BeltedPants() );
 								m.EquipItem( new LeatherGloves() ); 
-								m.EquipItem( new Tunic( Utility.RandomNeutralHue() ) );
-								m.EquipItem( new HalfApron( Utility.RandomNeutralHue() ) );
-								m.EquipItem( new BeltedPants( Utility.RandomNeutralHue() ) );
+								m.EquipItem( new ShortPants( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new HalfApron( Utility.RandomNeutralHue() ) ); 
 								break;
 							}
 						}
-					}	
-						
+					}
+
 					break;
 				}
-					
+				
 				case Nation.Northern:
 				{
 					if( m.Female )
@@ -1496,10 +1488,10 @@ namespace Server.Mobiles
 
             switch (nation)
             {
-                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
                 case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Southern; } else { nation = Nation.Mhordul; } break; }
-                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tyrean; } break; }
-				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tirebladd; } break; }
+				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
             }
 
 			switch( nation )
@@ -1651,7 +1643,7 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Khemetar:
+				case Nation.Haluaroc:
 				{
 					if( m.Female )
 					{
@@ -1659,73 +1651,69 @@ namespace Server.Mobiles
 						{
 							case 0: 
 							{
-								m.EquipItem( new ElegantShortDress() ); 
-								m.EquipItem( new GoldRing() ); 
-								m.EquipItem( new GoldBeadNecklace() ); 
+								m.EquipItem( new Skirt( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new SilverBracelet() );
 								break;
 							}
-							
+
 							case 1:
 							{
-								m.EquipItem( new GildedGown() ); 
-								m.EquipItem( new FancyGloves() ); 
-								m.EquipItem( new SilverBeadNecklace() ); 
-								m.EquipItem( new SilverEarrings() ); 
+								m.EquipItem( new LongSkirt( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new SilverBracelet() );
+								m.EquipItem( new SilverNecklace() );
+								m.EquipItem( new SilverRing() );
 								break;
 							}
-							
+
 							case 2:
 							{
-								m.EquipItem( new ElegantSkirt() ); 
-								m.EquipItem( new FancyBra() ); 
-								m.EquipItem( new GoldBracelet() ); 
+								m.EquipItem( new ShortPlainDress( Utility.RandomNeutralHue() ) );
+								m.EquipItem( new GoldBracelet() );
+								m.EquipItem( new GoldBeadNecklace() );
+								m.EquipItem( new GoldRing() );
 								break;
 							}
 						}
-						
+
 						m.EquipItem( new Sandals() );
+
+						if( choice < 2 )
+							m.EquipItem( new MetallicBra() );
 					}
-					
+
 					else
 					{
 						switch( choice )
 						{
 							case 0: 
 							{
-								m.EquipItem( new ElegantTunic() ); 
-								m.EquipItem( new BeltedPants() ); 
-								m.EquipItem( new ThighBoots() ); 
-								m.EquipItem( new GoldBeadNecklace() ); 
+								m.EquipItem( new LongSkirt( Utility.RandomNeutralHue() ) ); 
 								break;
 							}
-							
+
 							case 1:
 							{
-								m.EquipItem( new LongSkirt() ); 
-								m.EquipItem( new GoldEarrings() ); 
-								m.EquipItem( new GoldBracelet() ); 
-								m.EquipItem( new GoldRing() ); 
+								m.EquipItem( new OrnateWaistCloth( Utility.RandomNeutralHue() ) ); 
 								break;
 							}
-							
+
 							case 2:
 							{
-								m.EquipItem( new BaggyPants() );
-								m.EquipItem( new Shoes() ); 
-								m.EquipItem( new Doublet() ); 
-								m.EquipItem( new GoldRing() ); 
-								m.EquipItem( new GoldBeadNecklace() ); 
+								m.EquipItem( new SoftLeatherTunic() ); 
 								break;
 							}
 						}
-						
+
+						m.EquipItem( new Sandals() );
+						m.EquipItem( new GoldBeadNecklace() );
+
 						if( choice < 2 )
-							m.EquipItem( new RunicCloak() );
-						
-						if( choice != 1 )
-							m.EquipItem( new WaistSash() );
-					}					
-					
+						{
+							m.EquipItem( new GoldBracelet() );
+							m.EquipItem( new GoldRing() );
+						}
+					}
+
 					break;
 				}
 					
@@ -1802,93 +1790,79 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Tyrean:
+				case Nation.Tirebladd:
 				{
 					if( m.Female )
 					{
 						switch( choice )
 						{
-							case 0:
+							case 0: 
 							{
-								int hue = Utility.RandomSlimeHue();
-								Bonnet bonnet = new Bonnet();
-								bonnet.Hue = hue;
-								m.EquipItem( bonnet ); 
-								m.EquipItem( new LacedGown( hue ) ); 
+								m.EquipItem( new ElegantShortDress( Utility.RandomNeutralHue() ) );
+								m.EquipItem( new GoldNecklace() );
 								break;
 							}
 								
 							case 1: 
 							{
-								int hue = Utility.RandomSlimeHue();
-								FloppyHat floppy = new FloppyHat();
-								floppy.Hue = hue;
-								m.EquipItem( floppy ); 
-								m.EquipItem( new LongOrnateDress( hue ) );
+								m.EquipItem( new PuffyDress( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new SilverNecklace() );
 								break;
 							}
 								
-							case 2:
+							case 2: 
 							{
-								m.EquipItem( new GoldRing() );
-								m.EquipItem( new LongDress( Utility.RandomSlimeHue() ) ); 
+								m.EquipItem( new OrnateDress( Utility.RandomNeutralHue() ) );
+								m.EquipItem( new SilverBracelet() );
 								break;
 							}
 						}
 						
-						m.EquipItem( new ElegantShoes() ); 
-						
-						if( choice < 2 )
-						{
-							m.EquipItem( new GoldBracelet() );
-							m.EquipItem( new GoldBeadNecklace() );
-						}
+						m.EquipItem( new Sandals() );
 					}
 					
 					else
 					{
 						switch( choice )
 						{
-							case 0:
-							{ 
-								int hue = Utility.RandomNeutralHue();
-								m.EquipItem( new ExpensiveShirt() );
-								m.EquipItem( new ThighBoots() );
-								m.EquipItem( new ElegantCloak( hue ) );
-								m.EquipItem( new ElegantTunic( Utility.RandomNeutralHue() ) ); 
+							case 0: 
+							{
+								m.EquipItem( new MaleDress( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new Sandals() );
+								m.EquipItem( new GoldBracelet() );
 								break;
 							}
 								
-							case 1:
+							case 1: 
 							{
 								int hue = Utility.RandomNeutralHue();
-								m.EquipItem( new ExpensiveShirt() ); 
-								m.EquipItem( new ExpensiveCloak( hue ) ); 
-								m.EquipItem( new ElegantSurcoat( Utility.RandomNeutralHue() ) ); 
+								m.EquipItem( new ElegantTunic( hue ) ); 
+								m.EquipItem( new ElegantShoes() );
+								m.EquipItem( new BeltedPants() );
+								m.EquipItem( new ElegantCloak( hue ) );
+								m.EquipItem( new GoldBeadNecklace() );
 								break;
 							}
 								
 							case 2: 
 							{
 								int hue = Utility.RandomNeutralHue();
-								m.EquipItem( new ExpensiveCloak( hue ) ); 
-								m.EquipItem( new ExpensiveShirt() ); 
-								m.EquipItem( new PaddedVest( Utility.RandomNeutralHue() ) );
+								Bonnet bonnet = new Bonnet();
+								bonnet.Hue = hue;
+								m.EquipItem( bonnet ); 
+								m.EquipItem( new LeatherBoots() );
+								m.EquipItem( new BeltedPants() );
+								m.EquipItem( new RunicCloak( hue ) );
+								m.EquipItem( new LeatherGloves() ); 
+								m.EquipItem( new ElegantShirt() ); 
 								break;
 							}
 						}
-						
-						m.EquipItem( new BeltedPants( Utility.RandomNeutralHue() ) );
-						
-						if( choice > 0 )
-						{
-							m.EquipItem( new BlackLeatherBoots() ); 
-						}
-					}	
-						
+					}
+					
 					break;
 				}
-					
+										
 				case Nation.Northern:
 				{
 					if( m.Female )
@@ -1977,10 +1951,10 @@ namespace Server.Mobiles
 
             switch (nation)
             {
-                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
                 case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Southern; } else { nation = Nation.Mhordul; } break; }
-                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tyrean; } break; }
-				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tirebladd; } break; }
+				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
             }
 			
 			switch( nation )
@@ -2242,7 +2216,7 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Khemetar:
+				case Nation.Haluaroc:
 				{
 					switch( choice )
 					{
@@ -2534,11 +2508,11 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Tyrean:
+				case Nation.Tirebladd:
 				{
 					Surcoat coat = new Surcoat();
 					coat.ItemID = 15477;
-					coat.Name = "Tyrean Military Surcoat";
+					coat.Name = "Tirebladd Military Surcoat";
 					coat.Hue = 2741;
 					m.EquipItem( coat );
 							
@@ -2916,10 +2890,10 @@ namespace Server.Mobiles
 
             switch (nation)
             {
-                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
                 case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Southern; } else { nation = Nation.Mhordul; } break; }
-                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tyrean; } break; }
-				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Khemetar; } break; }
+                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tirebladd; } break; }
+				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
             }
 
 			switch( nation )
@@ -3001,45 +2975,33 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Khemetar:
+				case Nation.Haluaroc:
 				{
 					if( m.Female )
 					{
 						switch( choice )
 						{
-							case 0: m.EquipItem( new LongPlainDress() ); break;
-							case 1: m.EquipItem( new LongDress() ); break;
-							case 2: m.EquipItem( new BaggyPants() ); break;
+							case 0: m.EquipItem( new WaistCloth( Utility.RandomNeutralHue() ) ); break;
+							case 1: m.EquipItem( new ElegantWaistCloth( Utility.RandomNeutralHue() ) ); break;
+							case 2: m.EquipItem( new LoinCloth( Utility.RandomNeutralHue() ) ); break;
 						}
-						
-						if( choice < 2 )
-							m.EquipItem( new Sandals() );
-						
-						else
-						{
-							m.EquipItem( new WaistSash() );
-							m.EquipItem( new Shirt() );
-						}
+
+						m.EquipItem( new Sandals() );
+						m.EquipItem( new MetallicBra() );
 					}
-					
+
 					else
 					{
 						switch( choice )
 						{
-							case 0: m.EquipItem( new LongSkirt() ); break;
-							case 1: m.EquipItem( new ElegantWaistCloth() ); break;
-							case 2: m.EquipItem( new BaggyPants() ); break;
+							case 0: m.EquipItem( new WaistCloth( Utility.RandomNeutralHue() ) ); break;
+							case 1: m.EquipItem( new ElegantWaistCloth( Utility.RandomNeutralHue() ) ); break;
+							case 2: m.EquipItem( new OrnateWaistCloth( Utility.RandomNeutralHue() ) ); break;
 						}
-						
-						if( choice < 2 )
-							m.EquipItem( new Sandals() );
-						
-						else
-						{
-							m.EquipItem( new WaistSash() );
-						}
+
+						m.EquipItem( new Sandals() );
 					}
-					
+
 					break;
 				}
 					
@@ -3088,57 +3050,50 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case Nation.Tyrean:
+				case Nation.Tirebladd:
 				{
 					if( m.Female )
 					{
 						switch( choice )
 						{
-							case 0: m.EquipItem( new LacedGown( Utility.RandomSlimeHue() ) ); break;
-							case 1: m.EquipItem( new RunedDress( Utility.RandomSlimeHue() ) ); break;
-							case 2:
-							{
-								m.EquipItem( new FancyShirt() );
-								m.EquipItem( new Skirt( Utility.RandomSlimeHue() ) ); 
-								m.EquipItem( new Boots() ); 
-								break;
-							}
+							case 0: m.EquipItem( new FemaleKilt( Utility.RandomNeutralHue() ) ); break;
+							case 1: m.EquipItem( new ElegantFemaleKilt( Utility.RandomNeutralHue() ) ); break;
+							case 2: m.EquipItem( new LongSkirt( Utility.RandomNeutralHue() ) ); break;
 						}
 						
 						if( choice < 2 )
-							m.EquipItem( new FurBoots() ); 
+						{
+							m.EquipItem( new MetallicBra() );
+							m.EquipItem( new ElegantShoes() );
+						}
+						
+						else
+						{
+							m.EquipItem( new Sandals() );
+							m.EquipItem( new Shirt() );
+						}
 					}
 					
 					else
 					{
 						switch( choice )
 						{
-							case 0:
-							{
-								m.EquipItem( new LongPants( Utility.RandomNeutralHue() ) ); 
-								m.EquipItem( new FancyShirt() );
-								m.EquipItem( new LongVest( Utility.RandomNeutralHue() ) ); 
-								break;
-							}
-								
-							case 1:
-							{
-								m.EquipItem( new BeltedPants( Utility.RandomNeutralHue() ) ); 
-								m.EquipItem( new ExpensiveShirt( Utility.RandomNeutralHue() ) ); 
-								break;
-							}
-								
-							case 2: 
-							{
-								m.EquipItem( new BeltedPants( Utility.RandomNeutralHue() ) );
-								m.EquipItem( new Tunic( Utility.RandomNeutralHue() ) );
-								break;
-							}
+							case 0: m.EquipItem( new ElegantKilt( Utility.RandomNeutralHue() ) ); break;
+							case 1: m.EquipItem( new PlainKilt( Utility.RandomNeutralHue() ) ); break;
+							case 2: m.EquipItem( new Kilt( Utility.RandomNeutralHue() ) ); break;
 						}
 						
-						m.EquipItem( new FurBoots() ); 
-					}	
+						if( choice > 0 )
+						{
+							m.EquipItem( new Sandals() );
+						}
 						
+						else
+						{
+							m.EquipItem( new LeatherBoots() );
+						}
+					}
+					
 					break;
 				}
 					

@@ -149,9 +149,9 @@ namespace Server.Mobiles
             {
                 case Nation.Southern: { Int += 5; Dex += 5; break; }
                 case Nation.Western: { Dex += 10; break; }
-                case Nation.Khemetar: { Int += 10; break; }
+                case Nation.Haluaroc: { Int += 10; break; }
                 case Nation.Mhordul: { Str += 10; break; }
-                case Nation.Tyrean: { Stam += 5; Str += 5; break; }
+                case Nation.Tirebladd: { Stam += 5; Str += 5; break; }
                 case Nation.Northern: { Hits += 10; break; }
             }
 			

@@ -139,7 +139,7 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( ClericCrook ) && !TestRace( m, Nation.Northern ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( ProphetDiviningRod ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( ProphetDiviningRod ) && !TestRace( m, Nation.Tirebladd ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( MedicineManFetish ) && !TestRace( m, Nation.Mhordul ) )
@@ -166,13 +166,13 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( LargeBoatDeed ) && m.Feats.GetFeatLevel(FeatList.Shipwright) < 3 )
 					return 1063492; // You lack the required feat.
 				
-				else if( itemType == typeof( SmallBoatDeed ) && m.Nation == Nation.Tyrean )
+				else if( itemType == typeof( SmallBoatDeed ) && m.Nation == Nation.Tirebladd )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MediumBoatDeed ) && m.Nation == Nation.Tyrean )
+				else if( itemType == typeof( MediumBoatDeed ) && m.Nation == Nation.Tirebladd )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( LargeBoatDeed ) && m.Nation == Nation.Tyrean )
+				else if( itemType == typeof( LargeBoatDeed ) && m.Nation == Nation.Tirebladd )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( SouthernLowChair ) && m.Nation != Nation.Southern )
@@ -235,13 +235,13 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( LargeDragonBoatDeed ) && m.Feats.GetFeatLevel(FeatList.Shipwright) < 3 )
 					return 1063492; // You lack the required feat.
 				
-				else if( itemType == typeof( SmallDragonBoatDeed ) && m.Nation != Nation.Tyrean )
+				else if( itemType == typeof( SmallDragonBoatDeed ) && m.Nation != Nation.Tirebladd )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( MediumDragonBoatDeed ) && m.Nation != Nation.Tyrean )
+				else if( itemType == typeof( MediumDragonBoatDeed ) && m.Nation != Nation.Tirebladd )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( LargeDragonBoatDeed ) && m.Nation != Nation.Tyrean )
+				else if( itemType == typeof( LargeDragonBoatDeed ) && m.Nation != Nation.Tirebladd )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( BoneShield ) && m.Nation != Nation.Mhordul )

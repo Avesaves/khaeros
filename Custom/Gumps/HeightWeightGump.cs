@@ -121,11 +121,11 @@ namespace Server.Gumps
         {
         	if( nation == Nation.Western )
         		return 90;
-        	if( nation == Nation.Khemetar )
+        	if( nation == Nation.Haluaroc )
         		return 93;
         	if( nation == Nation.Southern )
         		return 103;
-        	if( nation == Nation.Tyrean )
+        	if( nation == Nation.Tirebladd )
         		return 106;
         	if( nation == Nation.Mhordul )
         		return 109;

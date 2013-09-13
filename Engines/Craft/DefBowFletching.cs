@@ -111,13 +111,13 @@ namespace Server.Engines.Craft
 				else if( itemType == typeof( BlowGun ) && !TestRace( m, Nation.Western ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( Hijazi ) && !TestRace( m, Nation.Khemetar ) )
+				else if( itemType == typeof( Hijazi ) && !TestRace( m, Nation.Haluaroc ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( BoneBow ) && !TestRace( m, Nation.Mhordul ) )
 					return 1063491; // Your race cannot craft that item.
 				
-				else if( itemType == typeof( RecurveLongBow ) && !TestRace( m, Nation.Tyrean ) )
+				else if( itemType == typeof( RecurveLongBow ) && !TestRace( m, Nation.Tirebladd ) )
 					return 1063491; // Your race cannot craft that item.
 				
 				else if( itemType == typeof( RepeatingCrossbow ) && !TestRace( m, Nation.Northern ) )

@@ -30,9 +30,9 @@ namespace Server.Mobiles
             {
                 case Nation.Southern: advisorTitle = "Tribune"; Soldier.EquipSouthern((Armament)1, this); break;
                 case Nation.Western: advisorTitle = "Keeper"; Soldier.EquipWestern((Armament)1, this); break;
-                case Nation.Khemetar: advisorTitle = "Havildar"; Soldier.EquipKhemetar((Armament)1, this); break;
+                case Nation.Haluaroc: advisorTitle = "Havildar"; Soldier.EquipHaluaroc((Armament)1, this); break;
                 case Nation.Mhordul: advisorTitle = "Bambaici"; Soldier.EquipMhordul((Armament)1, this); break;
-                case Nation.Tyrean: advisorTitle = "Drengr"; Soldier.EquipTyrean((Armament)1, this); break;
+                case Nation.Tirebladd: advisorTitle = "Drengr"; Soldier.EquipTirebladd((Armament)1, this); break;
                 case Nation.Northern: if (Female) { advisorTitle = "Sister"; } else { advisorTitle = "Brother"; } Soldier.EquipNorthern((Armament)1, this); break;
                 case Nation.Imperial: advisorTitle = "Tribune"; Soldier.EquipImperial((Armament)1, this); break;
                 case Nation.Sovereign: if (Female) { advisorTitle = "Warmistress"; } else { advisorTitle = "Warmaster"; } Soldier.EquipSovereign((Armament)1, this); break;
@@ -81,11 +81,11 @@ namespace Server.Mobiles
                                             Say("Fight the good fight."); break;
                                         case Nation.Western:
                                             Say("All to preserve the Balance."); break;
-                                        case Nation.Khemetar:
+                                        case Nation.Haluaroc:
                                             Say("I have compiled my spies' reports."); break;
                                         case Nation.Mhordul:
                                             Say("Blood and thunder!"); break;
-                                        case Nation.Tyrean:
+                                        case Nation.Tirebladd:
                                             Say("Ohlm's icy tits, there's so much to do!"); break;
                                         case Nation.Northern:
                                             if(e.Mobile.Female)

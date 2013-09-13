@@ -89,9 +89,9 @@ namespace Server.Mobiles
 		Common,
 		Southern,
 		Western,
-		Khemetar,
+		Haluaroc,
 		Mhordul,
-		Tyrean,
+		Tirebladd,
 		Northern,
 		Shorthand
 	}
@@ -148,7 +148,7 @@ namespace Server.Mobiles
         EscortPrisoner,
         SouthernLanguage,
         WesternLanguage,
-        KhemetarLanguage,
+        HaluarocLanguage,
         MhordulLanguage,
         Intimidate,
         ThrowingMastery,
@@ -185,7 +185,7 @@ namespace Server.Mobiles
         Disarm,
         Dismount,
         Disable,
-        TyreanLanguage,
+        TirebladdLanguage,
         FlashyAttack,
         FightingStyle,
         WeaponSpecialization,
@@ -520,9 +520,9 @@ namespace Server.Mobiles
 		Western,
 		Mhordul,
 		Northern,
-		Tyrean,
+		Tirebladd,
 		Southern,
-		Khemetar,
+		Haluaroc,
 		Imperial,
         Society,
         Sovereign,
@@ -629,9 +629,9 @@ namespace Server.Mobiles
         private DateTime m_NextFeatUse;
         private bool m_SouthernGuard;
         private bool m_WesternGuard;
-        private bool m_KhemetarGuard;
+        private bool m_HaluarocGuard;
         private bool m_MhordulGuard;
-        private bool m_TyreanGuard;
+        private bool m_TirebladdGuard;
         private bool m_NorthernGuard;
         private bool m_ImperialGuard;
         private string m_DayOfBirth;
@@ -2144,10 +2144,10 @@ namespace Server.Mobiles
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
-        public bool KhemetarGuard
+        public bool HaluarocGuard
         {
-            get { return m_KhemetarGuard; }
-            set { m_KhemetarGuard = value; }
+            get { return m_HaluarocGuard; }
+            set { m_HaluarocGuard = value; }
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
@@ -2158,10 +2158,10 @@ namespace Server.Mobiles
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
-        public bool TyreanGuard
+        public bool TirebladdGuard
         {
-            get { return m_TyreanGuard; }
-            set { m_TyreanGuard = value; }
+            get { return m_TirebladdGuard; }
+            set { m_TirebladdGuard = value; }
         }
         
         [CommandProperty( AccessLevel.GameMaster )]
@@ -4000,10 +4000,10 @@ namespace Server.Mobiles
 		
 		public bool RaciallyCompatible( Nation nation )
 		{
-			if( (this.Nation == Nation.Western || this.Nation == Nation.Khemetar) && (nation == Nation.Western || nation == Nation.Khemetar) )
+			if( (this.Nation == Nation.Western || this.Nation == Nation.Haluaroc) && (nation == Nation.Western || nation == Nation.Haluaroc) )
 				return true;
 			
-			if( (this.Nation == Nation.Northern || this.Nation == Nation.Tyrean) && (nation == Nation.Northern || nation == Nation.Tyrean) )
+			if( (this.Nation == Nation.Northern || this.Nation == Nation.Tirebladd) && (nation == Nation.Northern || nation == Nation.Tirebladd) )
 				return true;
 			
 			if( (this.Nation == Nation.Mhordul || this.Nation == Nation.Southern) && (nation == Nation.Mhordul || nation == Nation.Southern) )
@@ -4270,9 +4270,9 @@ namespace Server.Mobiles
 				{
 					case Nation.Southern: dexcap += 30; stamcap += 20; break;
 					case Nation.Western: dexcap += 50; stamcap += 10; break;
-					case Nation.Khemetar: dexcap += 40; stamcap += 0; break;
+					case Nation.Haluaroc: dexcap += 40; stamcap += 0; break;
 					case Nation.Mhordul: dexcap += 20; stamcap += 30; break;
-					case Nation.Tyrean: dexcap += 0; stamcap += 40; break;
+					case Nation.Tirebladd: dexcap += 0; stamcap += 40; break;
 					case Nation.Northern: dexcap += 10; stamcap += 50; break;
 				}
 			
@@ -6912,9 +6912,9 @@ namespace Server.Mobiles
             m_CrimesList = new Dictionary<Mobiles.Nation, int>();
             m_CrimesList.Add(Nation.Southern, 0);
             m_CrimesList.Add(Nation.Western, 0);
-            m_CrimesList.Add(Nation.Khemetar, 0);
+            m_CrimesList.Add(Nation.Haluaroc, 0);
             m_CrimesList.Add(Nation.Mhordul, 0);
-            m_CrimesList.Add(Nation.Tyrean, 0);
+            m_CrimesList.Add(Nation.Tirebladd, 0);
             m_CrimesList.Add(Nation.Northern, 0);
             m_CrimesList.Add(Nation.Imperial, 0);
             m_CrimesList.Add(Nation.Sovereign, 0);
@@ -6970,9 +6970,9 @@ namespace Server.Mobiles
         	{
         		case KnownLanguage.Southern: return 482;
         		case KnownLanguage.Western: return 1258;
-        		case KnownLanguage.Khemetar: return 1;
+        		case KnownLanguage.Haluaroc: return 1;
         		case KnownLanguage.Mhordul: return 2964;
-        		case KnownLanguage.Tyrean: return 2618;
+        		case KnownLanguage.Tirebladd: return 2618;
         		case KnownLanguage.Northern: return 138;
         	}
         	return 0;
@@ -7413,9 +7413,9 @@ namespace Server.Mobiles
 			{
 				case KnownLanguage.Southern: feat = m.Feats.GetFeatLevel(FeatList.SouthernLanguage); break;
 				case KnownLanguage.Western: feat = m.Feats.GetFeatLevel(FeatList.WesternLanguage); break;
-				case KnownLanguage.Khemetar: feat = m.Feats.GetFeatLevel(FeatList.KhemetarLanguage); break;
+				case KnownLanguage.Haluaroc: feat = m.Feats.GetFeatLevel(FeatList.HaluarocLanguage); break;
 				case KnownLanguage.Mhordul: feat = m.Feats.GetFeatLevel(FeatList.MhordulLanguage); break;
-				case KnownLanguage.Tyrean: feat = m.Feats.GetFeatLevel(FeatList.TyreanLanguage); break;
+				case KnownLanguage.Tirebladd: feat = m.Feats.GetFeatLevel(FeatList.TirebladdLanguage); break;
 				case KnownLanguage.Northern: feat = m.Feats.GetFeatLevel(FeatList.NorthernLanguage); break;
 			}
 			
@@ -7446,11 +7446,11 @@ namespace Server.Mobiles
                 else if (RPTitle.Contains("of the West") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Western))
                     nation = Nation.Western;
 
-                else if (RPTitle.Contains("the Khemetar") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Khemetar))
-                    nation = Nation.Khemetar;
+                else if (RPTitle.Contains("the Haluaroc") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Haluaroc))
+                    nation = Nation.Haluaroc;
 
-                else if (RPTitle.Contains("the Tyrean") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Tyrean))
-                    nation = Nation.Tyrean;
+                else if (RPTitle.Contains("the Tirebladd") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Tirebladd))
+                    nation = Nation.Tirebladd;
 
                 else if (RPTitle.Contains("of the North") && PlayerMobile.KnowsLanguage(this, KnownLanguage.Northern))
                     nation = Nation.Northern;
@@ -8066,9 +8066,9 @@ namespace Server.Mobiles
 				{
 					m_SouthernGuard = reader.ReadBool();
 					m_WesternGuard = reader.ReadBool();
-					m_KhemetarGuard = reader.ReadBool();
+					m_HaluarocGuard = reader.ReadBool();
 					m_MhordulGuard = reader.ReadBool();
-					m_TyreanGuard = reader.ReadBool();
+					m_TirebladdGuard = reader.ReadBool();
 					m_NorthernGuard = reader.ReadBool();
 					goto case 76;
 				}
@@ -8591,9 +8591,9 @@ namespace Server.Mobiles
                         m_CrimesList = new Dictionary<Mobiles.Nation, int>();
                         m_CrimesList.Add(Nation.Southern, 0);
                         m_CrimesList.Add(Nation.Western, 0);
-                        m_CrimesList.Add(Nation.Khemetar, 0);
+                        m_CrimesList.Add(Nation.Haluaroc, 0);
                         m_CrimesList.Add(Nation.Mhordul, 0);
-                        m_CrimesList.Add(Nation.Tyrean, 0);
+                        m_CrimesList.Add(Nation.Tirebladd, 0);
                         m_CrimesList.Add(Nation.Northern, 0);
                         m_CrimesList.Add(Nation.Imperial, 0);
                         m_CrimesList.Add(Nation.Sovereign, 0);
@@ -8717,12 +8717,12 @@ namespace Server.Mobiles
                     m_RPTitle = "of the South";
                 else if( m_Nation == Nation.Western )
                     m_RPTitle = "of the West";
-                else if( m_Nation == Nation.Khemetar )
-                    m_RPTitle = "the Khemetar";
+                else if( m_Nation == Nation.Haluaroc )
+                    m_RPTitle = "the Haluaroc";
                 else if( m_Nation == Nation.Mhordul )
                     m_RPTitle = "the Stranger";
-                else if( m_Nation == Nation.Tyrean )
-                    m_RPTitle = "the Tyrean";
+                else if( m_Nation == Nation.Tirebladd )
+                    m_RPTitle = "the Tirebladd";
                 else if( m_Nation == Nation.Northern )
                     m_RPTitle = "of the North";
             }
@@ -9030,9 +9030,9 @@ namespace Server.Mobiles
 			
 			writer.Write( (bool) m_SouthernGuard );
 			writer.Write( (bool) m_WesternGuard );
-			writer.Write( (bool) m_KhemetarGuard );
+			writer.Write( (bool) m_HaluarocGuard );
 			writer.Write( (bool) m_MhordulGuard );
-			writer.Write( (bool) m_TyreanGuard );
+			writer.Write( (bool) m_TirebladdGuard );
 			writer.Write( (bool) m_NorthernGuard );
 			
 			writer.Write( (int) m_HearAll );
@@ -9272,9 +9272,9 @@ namespace Server.Mobiles
                 m_CrimesList = new Dictionary<Mobiles.Nation, int>();
                 m_CrimesList.Add(Nation.Southern,    0);
                 m_CrimesList.Add(Nation.Western,    0);
-                m_CrimesList.Add(Nation.Khemetar,   0);
+                m_CrimesList.Add(Nation.Haluaroc,   0);
                 m_CrimesList.Add(Nation.Mhordul,    0);
-                m_CrimesList.Add(Nation.Tyrean,     0);
+                m_CrimesList.Add(Nation.Tirebladd,     0);
                 m_CrimesList.Add(Nation.Northern,  0);
                 m_CrimesList.Add(Nation.Imperial,   0);
                 m_CrimesList.Add(Nation.Sovereign,  0);

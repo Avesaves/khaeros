@@ -250,7 +250,7 @@ namespace Server.Gumps
 					facialhair7 = braidedbeard;
 					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
 					this.AddLabel(115, 214, 0, @"Nice Goatee");
-					facialhair1 = khemetargoatee;
+					facialhair1 = nicegoatee;
 					
 					break;
 				}
@@ -289,7 +289,7 @@ namespace Server.Gumps
 					facialhair7 = braidedbeard;
 					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
 					this.AddLabel(115, 214, 0, @"Nice Goatee");
-					facialhair1 = khemetargoatee;
+					facialhair1 = nicegoatee;
 					
 					break;
 				}
@@ -328,12 +328,12 @@ namespace Server.Gumps
 					facialhair7 = braidedbeard;
 					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
 					this.AddLabel(115, 214, 0, @"Nice Goatee");
-					facialhair1 = khemetargoatee;
+					facialhair1 = nicegoatee;
 					
 					break;
 				}
 					
-				case Nation.Tyrean:
+				case Nation.Tirebladd:
 				{
 					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
 					this.AddLabel(115, 214, 0, @"Long Beard");
@@ -400,7 +400,7 @@ namespace Server.Gumps
 					facialhair7 = braidedbeard;
 					this.AddButton(97, 215, 1209, 1210, 101, GumpButtonType.Reply, 0);
 					this.AddLabel(115, 214, 0, @"Nice Goatee");
-					facialhair1 = khemetargoatee;					
+					facialhair1 = nicegoatee;					
 					break;
 				}
 			}

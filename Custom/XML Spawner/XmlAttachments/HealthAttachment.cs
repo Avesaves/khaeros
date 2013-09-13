@@ -58,7 +58,7 @@ namespace Server.Engines.XmlSpawner2
         WesternFever = 6, // Malaria
         Bile = 7, // Cholera
         Leprosy = 8,
-        TyreanDisease = 9 // Syphilis
+        LoveDisease = 9 // Syphilis
     }
 
     public class HealthAttachment : XmlAttachment
@@ -1325,7 +1325,7 @@ namespace Server.Engines.XmlSpawner2
                             return true;
                         return false;
                     }
-                case Disease.TyreanDisease:
+                case Disease.LoveDisease:
                     {
                         if (m_LastCaught[d] + TimeSpan.FromDays(45) < DateTime.Now)
                             return true;
@@ -1886,12 +1886,12 @@ namespace Server.Engines.XmlSpawner2
                         DiseaseMessage(dis);
                         return true;
                     }
-                case Disease.TyreanDisease:
+                case Disease.LoveDisease:
                     {
                         List<StatMod> removeMod = new List<StatMod>();
                         foreach (StatMod mod in m_Player.StatMods)
                         {
-                            if (mod.Name.Contains("[TyreanDisease]"))
+                            if (mod.Name.Contains("[LoveDisease]"))
                                 removeMod.Add(mod);
                         }
 
@@ -1899,13 +1899,13 @@ namespace Server.Engines.XmlSpawner2
                             if (m_Player.StatMods.Contains(removeMod[i]))
                                 m_Player.StatMods.Remove(removeMod[i]);
 
-                        XmlAosAttribute tyrean = new XmlAosAttribute(AosAttribute.RegenHits, -50, 15);
-                        tyrean.Name = " [Disease] [TyreanDisease] ";
-                        XmlAttach.AttachTo(m_Player, tyrean);
+                        XmlAosAttribute Tirebladd = new XmlAosAttribute(AosAttribute.RegenHits, -50, 15);
+                        Tirebladd.Name = " [Disease] [LoveDisease] ";
+                        XmlAttach.AttachTo(m_Player, Tirebladd);
 
                         int amount = (m_Player.Int / 2) * -1;
                         XmlInt madness = new XmlInt(amount, 600);
-                        madness.Name = " [Disease] [TyreanDisease] ";
+                        madness.Name = " [Disease] [LoveDisease] ";
                         XmlAttach.AttachTo(m_Player, madness);
 
                         Disfigurement++;
@@ -1929,7 +1929,7 @@ namespace Server.Engines.XmlSpawner2
                 case Disease.WesternFever: m_Player.SendMessage("You feel hot..."); return;
                 case Disease.Bile: m_Player.SendMessage("You feel sick to your stomache..."); return;
                 case Disease.Leprosy: m_Player.SendMessage("You feel numb..."); return;
-                case Disease.TyreanDisease: m_Player.SendMessage("You feel dizzy..."); return;
+                case Disease.LoveDisease: m_Player.SendMessage("You feel dizzy..."); return;
                 default: return;
             }
         }
@@ -1986,7 +1986,7 @@ namespace Server.Engines.XmlSpawner2
             #region Disfigure from Disease
             if (GetHA(viewed).Disfigurement > 0)
             {
-                if (!GetHA(viewed).HasDisease(Disease.TyreanDisease) && !GetHA(viewed).HasDisease(Disease.Leprosy))
+                if (!GetHA(viewed).HasDisease(Disease.LoveDisease) && !GetHA(viewed).HasDisease(Disease.Leprosy))
                 {
                     while (GetHA(viewed).LastAppearanceRecovery + TimeSpan.FromHours(48) < DateTime.Now)
                     {
@@ -2361,7 +2361,7 @@ namespace Server.Engines.XmlSpawner2
                     case Disease.WesternFever: return 30;
                     case Disease.Bile: return 50;
                     case Disease.Leprosy: return 250;
-                    case Disease.TyreanDisease: return 350;
+                    case Disease.LoveDisease: return 350;
                     default: return 10;
                 }
         }
@@ -2379,7 +2379,7 @@ namespace Server.Engines.XmlSpawner2
                     case Disease.WesternFever: return true;
                     case Disease.Bile: return true;
                     case Disease.Leprosy: return false;
-                    case Disease.TyreanDisease: return false;
+                    case Disease.LoveDisease: return false;
                     default: return true;
                 }
             }
@@ -2396,7 +2396,7 @@ namespace Server.Engines.XmlSpawner2
                 case Disease.WesternFever: return TimeSpan.FromHours(1);
                 case Disease.Bile: return TimeSpan.FromHours(Utility.RandomMinMax(6, 12));
                 case Disease.Leprosy: return TimeSpan.FromDays(Utility.RandomMinMax(15, 30));
-                case Disease.TyreanDisease: return TimeSpan.FromDays(Utility.RandomMinMax(30, 60));
+                case Disease.LoveDisease: return TimeSpan.FromDays(Utility.RandomMinMax(30, 60));
                 default: return TimeSpan.FromDays(1);
             }
 
@@ -2449,7 +2449,7 @@ namespace Server.Engines.XmlSpawner2
                             diag = "Subject suffers from various growths and infections apparent throughout the subject's skin; subject appears to feel little pain.";
                             break;
                         }
-                    case Disease.TyreanDisease:
+                    case Disease.LoveDisease:
                         {
                             diag = "Subject suffers from painless lesions on hands, face, and sensitive regions of the body; subject appears weakened.";
                             break;
@@ -2507,9 +2507,9 @@ namespace Server.Engines.XmlSpawner2
                             name = "Leprosy";
                             break;
                         }
-                    case Disease.TyreanDisease:
+                    case Disease.LoveDisease:
                         {
-                            name = "Tyrean Disease";
+                            name = "Love Disease";
                             break;
                         }
                     default: break;
@@ -2530,7 +2530,7 @@ namespace Server.Engines.XmlSpawner2
                 case Disease.WesternFever: return TimeSpan.FromMinutes(Utility.RandomMinMax(3, 5));
                 case Disease.Bile: return TimeSpan.FromHours(Utility.RandomMinMax(3, 6));
                 case Disease.Leprosy: return TimeSpan.FromDays(Utility.RandomMinMax(1, 3));
-                case Disease.TyreanDisease: return TimeSpan.FromDays(Utility.RandomMinMax(6, 12));
+                case Disease.LoveDisease: return TimeSpan.FromDays(Utility.RandomMinMax(6, 12));
                 default: return TimeSpan.FromDays(1);
             }
 

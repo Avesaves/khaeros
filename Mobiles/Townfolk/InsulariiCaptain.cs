@@ -21,9 +21,9 @@ namespace Server.Mobiles
 			{
 				case 1: nation = Nation.Southern; break;
 				case 2: nation = Nation.Western; break;
-				case 3: nation = Nation.Khemetar; break;
+				case 3: nation = Nation.Haluaroc; break;
 				case 4: nation = Nation.Mhordul; break;
-				case 5: nation = Nation.Tyrean; break;
+				case 5: nation = Nation.Tirebladd; break;
 				case 6: nation = Nation.Northern; break;
 			}
 			

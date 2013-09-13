@@ -158,7 +158,7 @@ namespace Server.Commands
 		{
 			switch( caster.Nation )
 			{
-				case Nation.Tyrean:
+				case Nation.Tirebladd:
 				{
 					if( featname == FeatList.SummonProtector )
 						return "Summon Servant of Ohlm";
@@ -801,7 +801,7 @@ namespace Server.Commands
             		
             	case "ancient":
             	{
-            		SettingLanguage( m, KnownLanguage.Khemetar, m.Feats.GetFeatLevel(FeatList.KhemetarLanguage), 3, "Ancient" );
+            		SettingLanguage( m, KnownLanguage.Haluaroc, m.Feats.GetFeatLevel(FeatList.HaluarocLanguage), 3, "Ancient" );
             		break;
             	}
             		
@@ -811,9 +811,9 @@ namespace Server.Commands
             		break;
             	}
             		
-            	case "tyrean":
+            	case "Tirebladd":
             	{
-            		SettingLanguage( m, KnownLanguage.Tyrean, m.Feats.GetFeatLevel(FeatList.TyreanLanguage), 3, "Tyrean" );
+            		SettingLanguage( m, KnownLanguage.Tirebladd, m.Feats.GetFeatLevel(FeatList.TirebladdLanguage), 3, "Tirebladd" );
             		break;
             	}
             		
@@ -2707,33 +2707,33 @@ namespace Server.Commands
             		break;
             	}
             		
-            	case "khemetar":
+            	case "Haluaroc":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Khemetar, false, false, false, false );
+            		m.Target = new TurnIntoTarget( Nation.Haluaroc, false, false, false, false );
             		break;
             	}
             		
-            	case "khemetarpoor":
+            	case "Haluarocpoor":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Khemetar, true, false, false, false );
+            		m.Target = new TurnIntoTarget( Nation.Haluaroc, true, false, false, false );
             		break;
             	}
             		
-            	case "khemetarrich":
+            	case "Haluarocrich":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Khemetar, false, true, false, false );
+            		m.Target = new TurnIntoTarget( Nation.Haluaroc, false, true, false, false );
             		break;
             	}
             		
-            	case "khemetarcrafter":
+            	case "Haluaroccrafter":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Khemetar, false, false, true, false );
+            		m.Target = new TurnIntoTarget( Nation.Haluaroc, false, false, true, false );
             		break;
             	}
             		
-            	case "khemetarguard":
+            	case "Haluarocguard":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Khemetar, false, false, false, true );
+            		m.Target = new TurnIntoTarget( Nation.Haluaroc, false, false, false, true );
             		break;
             	}
             		
@@ -2767,33 +2767,33 @@ namespace Server.Commands
             		break;
             	}
             		
-            	case "tyrean":
+            	case "Tirebladd":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Tyrean, false, false, false, false );
+            		m.Target = new TurnIntoTarget( Nation.Tirebladd, false, false, false, false );
             		break;
             	}
             		
-            	case "tyreanpoor":
+            	case "Tirebladdpoor":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Tyrean, true, false, false, false );
+            		m.Target = new TurnIntoTarget( Nation.Tirebladd, true, false, false, false );
             		break;
             	}
             		
-            	case "tyreanrich":
+            	case "Tirebladdrich":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Tyrean, false, true, false, false );
+            		m.Target = new TurnIntoTarget( Nation.Tirebladd, false, true, false, false );
             		break;
             	}
             		
-            	case "tyreancrafter":
+            	case "Tirebladdcrafter":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Tyrean, false, false, true, false );
+            		m.Target = new TurnIntoTarget( Nation.Tirebladd, false, false, true, false );
             		break;
             	}
             		
-            	case "tyreanguard":
+            	case "Tirebladdguard":
             	{
-            		m.Target = new TurnIntoTarget( Nation.Tyrean, false, false, false, true );
+            		m.Target = new TurnIntoTarget( Nation.Tirebladd, false, false, false, true );
             		break;
             	}
             		
@@ -2829,7 +2829,7 @@ namespace Server.Commands
             		
             	case "imperialguard":
             	{
-            		m.Target = new TurnIntoTarget( Utility.RandomBool() == true ? Nation.Northern : Nation.Tyrean, false, false, false, true, "imperial" );
+            		m.Target = new TurnIntoTarget( Utility.RandomBool() == true ? Nation.Northern : Nation.Tirebladd, false, false, false, true, "imperial" );
             		break;
             	}
             }
@@ -3122,14 +3122,14 @@ namespace Server.Commands
             	else if( nationchoice == "Western" )
             		nation = Nation.Western;
             	
-            	else if( nationchoice == "khemetar" )
-            		nation = Nation.Khemetar;
+            	else if( nationchoice == "Haluaroc" )
+            		nation = Nation.Haluaroc;
             	
             	else if( nationchoice == "mhordul" )
             		nation = Nation.Mhordul;
             	
-            	else if( nationchoice == "tyrean" )
-            		nation = Nation.Tyrean;
+            	else if( nationchoice == "Tirebladd" )
+            		nation = Nation.Tirebladd;
             	
             	else if( nationchoice == "Northern" )
             		nation = Nation.Northern;

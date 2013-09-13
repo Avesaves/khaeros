@@ -316,8 +316,8 @@ namespace Server.Mobiles
                     return true;
                 switch (b.Breed)
                 {
-                    case "Falcon":  if (pm.Nation == Nation.Khemetar) return true; break;
-                    case "Osprey":  if (pm.Nation == Nation.Tyrean) return true; break;
+                    case "Falcon":  if (pm.Nation == Nation.Haluaroc) return true; break;
+                    case "Osprey":  if (pm.Nation == Nation.Tirebladd) return true; break;
                     case "Hawk":    if (pm.Nation == Nation.Northern) return true; break;
                     case "Owl":     if (pm.Nation == Nation.Southern) return true; break;
                     case "Harrier": if (pm.Nation == Nation.Mhordul) return true; break;

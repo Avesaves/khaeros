@@ -105,7 +105,7 @@ namespace Server.Items
                 weapon.AddItem(m_Blade);
                 weapon.AddItem(m_Hilt);
             }
-            if (m_Blade is CurvedBlade && ((PlayerMobile)from).Nation == Nation.Khemetar)
+            if (m_Blade is CurvedBlade && ((PlayerMobile)from).Nation == Nation.Haluaroc)
                 from.Prompt = new SCrucHCurvedBladePrompt(from, m_Hilt, (CurvedBlade)m_Blade);
             if (m_Blade is MediumBlade)
             {
@@ -156,7 +156,7 @@ namespace Server.Items
             }
             if (m_Blade is LongBlade)
             {
-                if (((PlayerMobile)from).Nation == Nation.Tyrean)
+                if (((PlayerMobile)from).Nation == Nation.Tirebladd)
                     from.Prompt = new SCrucHLongBladePrompt(from, m_Hilt, (LongBlade)m_Blade);
                 else
                 {

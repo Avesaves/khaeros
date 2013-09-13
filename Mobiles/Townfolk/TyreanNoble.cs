@@ -6,15 +6,15 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	public class TyreanNoble : BaseKhaerosMobile, ITyrean
+	public class TirebladdNoble : BaseKhaerosMobile, ITirebladd
 	{
 		[Constructable]
-		public TyreanNoble() : base( Nation.Tyrean ) 
+		public TirebladdNoble() : base( Nation.Tirebladd ) 
 		{			
-			BaseKhaerosMobile.RandomRichClothes( this, Nation.Tyrean );
+			BaseKhaerosMobile.RandomRichClothes( this, Nation.Tirebladd );
 		}
 
-		public TyreanNoble(Serial serial) : base(serial)
+		public TirebladdNoble(Serial serial) : base(serial)
 		{
 		}
 

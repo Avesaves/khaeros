@@ -11,7 +11,7 @@ namespace Server.Items
 
         public override void ApplyEffect(Mobile to, Mobile source, int intensity, Item itemSource)
         {
-            HealthAttachment.TryTreatDisease(to, Disease.TyreanDisease, intensity);
+            HealthAttachment.TryTreatDisease(to, Disease.LoveDisease, intensity);
             if(Utility.RandomMinMax(1,100) < ( intensity * 2 ) )
             {
                 MadnessTimer MercuryPoisoning = new MadnessTimer(to, TimeSpan.FromSeconds(intensity * Utility.RandomMinMax(15, 60)));

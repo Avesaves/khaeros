@@ -212,10 +212,10 @@ namespace Server.Gumps
 					break;
 				}
 					
-				case Nation.Khemetar:
+				case Nation.Haluaroc:
 				{
-					m.RPTitle = "the Khemetar";
-					m.Feats.SetFeatLevel( FeatList.KhemetarLanguage, 3 );
+					m.RPTitle = "the Haluaroc";
+					m.Feats.SetFeatLevel( FeatList.HaluarocLanguage, 3 );
 					m.Height = 93;
 					m.Weight = 88;
 					
@@ -237,10 +237,10 @@ namespace Server.Gumps
 					break;
 				}
 				
-				case Nation.Tyrean:
+				case Nation.Tirebladd:
 				{
-					m.RPTitle = "the Tyrean";
-					m.Feats.SetFeatLevel( FeatList.TyreanLanguage, 3 );
+					m.RPTitle = "the Tirebladd";
+					m.Feats.SetFeatLevel( FeatList.TirebladdLanguage, 3 );
 					m.Height = 106;
 					m.Weight = 105;
 					

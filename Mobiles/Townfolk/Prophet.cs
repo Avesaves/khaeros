@@ -9,10 +9,10 @@ using Server.Spells;
 
 namespace Server.Mobiles
 {
-	public class Prophet : BaseKhaerosMobile, ITyrean
+	public class Prophet : BaseKhaerosMobile, ITirebladd
 	{
 		[Constructable]
-		public Prophet() : base( Nation.Tyrean ) 
+		public Prophet() : base( Nation.Tirebladd ) 
 		{
 			SetStr( 100 );
 			SetDex( 50 );
@@ -89,7 +89,7 @@ namespace Server.Mobiles
 		            	if( m is BaseCreature && ((BaseCreature)m).ControlMaster != null )
 	            			continue;
 		                
-		            	if( ( m is ITyrean || ( m is PlayerMobile && ( (PlayerMobile)m ).Nation == Nation.Tyrean ) ) && this.InLOS( m ) )
+		            	if( ( m is ITirebladd || ( m is PlayerMobile && ( (PlayerMobile)m ).Nation == Nation.Tirebladd ) ) && this.InLOS( m ) )
 		                    targets.Add( m );
 		            }
 		        }

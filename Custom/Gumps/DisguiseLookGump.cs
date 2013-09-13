@@ -112,10 +112,10 @@ namespace Server.Gumps
             }
 
             /*this.AddLabel(126, 84, 1149, @"Western");
-            this.AddLabel(126, 121, 1149, @"Khemetar");
+            this.AddLabel(126, 121, 1149, @"Haluaroc");
             this.AddLabel(126, 158, 1149, @"Southern");
             this.AddLabel(317, 84, 1149, @"Mhordul");
-            this.AddLabel(317, 121, 1149, @"Tyrean");
+            this.AddLabel(317, 121, 1149, @"Tirebladd");
             this.AddLabel(317, 158, 1149, @"Northern");*/
             this.AddButton( 404, 46, 1150, 1152, 0, GumpButtonType.Reply, 0 );
             this.AddButton( 371, 46, 1153, 1155, 1, GumpButtonType.Reply, 0 );

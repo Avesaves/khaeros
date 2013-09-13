@@ -16,17 +16,17 @@ namespace Server.Misc
 		private int[] m_BasicClothing =  new int[]{1245,1149,1327,1133,1434,1509,1109,1110,1117,1636,0,1890,2989,2739,2764,2737,2604,2683,2743,2745,2581,2723,2749,2761,2587,2744,2935,2835,2738,2881,2605,2992,2932,2756,2657,2985,2600,2583,2598,2800};
 		private int[] m_SouthernClothing = new int[]{2591,2708,2746,2750,2740,2736};
 		private int[] m_WesternClothing = new int[]{2708,1133,2621,2797,2740,2724};
-		private int[] m_KhemetarClothing = new int[]{2759,2766,2585,2711,2877,2751};
+		private int[] m_HaluarocClothing = new int[]{2759,2766,2585,2711,2877,2751};
 		private int[] m_MhordulClothing = new int[]{2816,2886,2757,2795,2798,2801};
-		private int[] m_TyreanClothing = new int[]{1899,2796,2864,2817,2753,2765};
+		private int[] m_TirebladdClothing = new int[]{1899,2796,2864,2817,2753,2765};
 		private int[] m_NorthernClothing = new int[]{2707,2599,2621,2747,2753,2982};
 		
 		private int[] m_BasicArmour =  new int[]{1245,1149,1327,1133,1434,1509,1109,1110,1117,1636,0,1890,2989,2739,2764,2737,2604,2683,2743,2745,2581,2723,2749,2761,2587,2744,2935,2835,2738,2881,2605,2992,2932,2756,2657,2985,2600,2583,2598,2800};
 		private int[] m_SouthernArmour = new int[]{1454,2708,2683,2591,2745,2741};
 		private int[] m_WesternArmour = new int[]{2935,2598,2711,2745,2605,2724};
-		private int[] m_KhemetarArmour = new int[]{2720,2843,2711,2725,2751,2585};
+		private int[] m_HaluarocArmour = new int[]{2720,2843,2711,2725,2751,2585};
 		private int[] m_MhordulArmour = new int[]{2989,2404,2656,2757,2600,2795};
-		private int[] m_TyreanArmour = new int[]{2864,2739,2753,2583,2751,2765};
+		private int[] m_TirebladdArmour = new int[]{2864,2739,2753,2583,2751,2765};
 		private int[] m_NorthernArmour = new int[]{2869,2723,2599,2934,2621,2986};
 		
         public GuildDyeTarget( PlayerMobile m, int hue, bool clothing, CustomGuildStone guild )
@@ -74,14 +74,14 @@ namespace Server.Misc
         				else if( pm.Nation == Nation.Southern )
         					race = (m_clothing == true ? m_SouthernClothing : m_SouthernArmour);
         				
-        				else if( pm.Nation == Nation.Khemetar )
-        					race = (m_clothing == true ? m_KhemetarClothing : m_KhemetarArmour);
+        				else if( pm.Nation == Nation.Haluaroc )
+        					race = (m_clothing == true ? m_HaluarocClothing : m_HaluarocArmour);
         				
         				else if( pm.Nation == Nation.Mhordul )
         					race = (m_clothing == true ? m_MhordulClothing : m_MhordulArmour);
         				
-        				else if( pm.Nation == Nation.Tyrean )
-        					race = (m_clothing == true ? m_TyreanClothing : m_TyreanArmour);
+        				else if( pm.Nation == Nation.Tirebladd )
+        					race = (m_clothing == true ? m_TirebladdClothing : m_TirebladdArmour);
     					
         				for( int i = 0; i < main.Length; i++ )
         				{

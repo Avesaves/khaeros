@@ -139,9 +139,9 @@ namespace Server.Items
 
             if (m_Blade is CurvedBlade)
                 from.Prompt = new StaffCurvedBladePrompt(from, m_Hilt, (CurvedBlade)m_Blade);
-            if (m_Blade is HammerHead && (((PlayerMobile)from).Nation == Nation.Khemetar || ((PlayerMobile)from).Nation == Nation.Mhordul))
+            if (m_Blade is HammerHead && (((PlayerMobile)from).Nation == Nation.Haluaroc || ((PlayerMobile)from).Nation == Nation.Mhordul))
             {
-                if (((PlayerMobile)from).Nation == Nation.Khemetar)
+                if (((PlayerMobile)from).Nation == Nation.Haluaroc)
                 {
                     PriestStaff weapon = new PriestStaff();
                     weapon.NewCrafting = true;
@@ -830,7 +830,7 @@ namespace Server.Items
 
             if (((PlayerMobile)from).Nation == Nation.Mhordul)
                 from.SendMessage(" 4 - barbarian's spear ");
-            if (((PlayerMobile)from).Nation == Nation.Tyrean)
+            if (((PlayerMobile)from).Nation == Nation.Tirebladd)
                 from.SendMessage(" 5 - angon ");
         }
 
@@ -843,7 +843,7 @@ namespace Server.Items
 
             if (int.TryParse(text, out index))
             {
-                if (index < 1 || index > 5 || (index == 4 && ((PlayerMobile)from).Nation != Nation.Mhordul) || (index == 5 && ((PlayerMobile)from).Nation != Nation.Tyrean))
+                if (index < 1 || index > 5 || (index == 4 && ((PlayerMobile)from).Nation != Nation.Mhordul) || (index == 5 && ((PlayerMobile)from).Nation != Nation.Tirebladd))
                 {
                     from.SendMessage("Invalid code.");
                     return;

@@ -172,14 +172,14 @@ namespace Server.Gumps
                 //else if (self.Nation == Nation.Western)
                 //    race = "Exhibits Western qualities";
 
-                //else if (self.Nation == Nation.Khemetar)
-                //    race = "Exhibits Khemetar qualities";
+                //else if (self.Nation == Nation.Haluaroc)
+                //    race = "Exhibits Haluaroc qualities";
 
                 //else if (self.Nation == Nation.Mhordul)
                 //    race = "Exhibits Mhordul qualities";
 
-                //else if (self.Nation == Nation.Tyrean)
-                //    race = "Exhibits Tyrean qualities";
+                //else if (self.Nation == Nation.Tirebladd)
+                //    race = "Exhibits Tirebladd qualities";
 				
 				m_self = self;
 				

@@ -2913,8 +2913,8 @@ namespace Server.Mobiles
                                 continue;
 
                             if ((m_Mobile is ClericScorpion || m_Mobile is LesserClericScorpion || m_Mobile is GreaterClericScorpion) && 
-                                ( (m is PlayerMobile && (m as PlayerMobile).Nation == Nation.Khemetar) || 
-                                (m is BaseCreature && (m as BaseCreature).Nation == Nation.Khemetar) ) )
+                                ( (m is PlayerMobile && (m as PlayerMobile).Nation == Nation.Haluaroc) || 
+                                (m is BaseCreature && (m as BaseCreature).Nation == Nation.Haluaroc) ) )
                                 continue;
 
                             bValid = true;
@@ -3082,13 +3082,13 @@ namespace Server.Mobiles
 		
 		private bool Disguised( PlayerMobile m, BaseKhaerosMobile guard )
 		{
-			if( guard is IKhemetar && m.RPTitle.ToLower().Contains( "khemetar" ) )
+			if( guard is IHaluaroc && m.RPTitle.ToLower().Contains( "Haluaroc" ) )
 				return true;
 			
 			if( guard is IMhordul && m.RPTitle.ToLower().Contains( "mhordul" ) )
 				return true;
 			
-			if( guard is ITyrean && m.RPTitle.ToLower().Contains( "tyrean" ) )
+			if( guard is ITirebladd && m.RPTitle.ToLower().Contains( "Tirebladd" ) )
 				return true;
 			
 			if( guard is INorthern && m.RPTitle.ToLower().Contains( "north" ) )
@@ -3117,7 +3117,7 @@ namespace Server.Mobiles
 			if( ( bc is IMediumPredator || bc is ILargePredator || bc is ISerpent ) && !bc.Controlled )
 				return true;
 			
-			if( bc is IUndead && !( guard is Soldier && guard.Nation == Nation.Khemetar && ( bc is ClericScorpion || bc is LesserClericScorpion || bc is GreaterClericScorpion ) ) )
+			if( bc is IUndead && !( guard is Soldier && guard.Nation == Nation.Haluaroc && ( bc is ClericScorpion || bc is LesserClericScorpion || bc is GreaterClericScorpion ) ) )
 				return true;
 				
 			if( bc.Team != guard.Team )
@@ -3142,7 +3142,7 @@ namespace Server.Mobiles
 		
 		public static bool PlayerAndCreatureAllies( PlayerMobile player, BaseCreature creature )
 		{
-            if (creature is DesertScorpion && player.Nation == Nation.Khemetar)
+            if (creature is DesertScorpion && player.Nation == Nation.Haluaroc)
 				return true;
 			
 			if( creature.ControlMaster != null && creature.ControlMaster is PlayerMobile && ((PlayerMobile)creature.ControlMaster).IsAllyOf(player) )
