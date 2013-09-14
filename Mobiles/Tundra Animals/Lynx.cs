@@ -42,7 +42,7 @@ namespace Server.Mobiles
 
 			Fame = 4200;
 			Karma = -4200;
-			
+			ControlSlots = 5;
 			VirtualArmor = 30;
 		}
 		

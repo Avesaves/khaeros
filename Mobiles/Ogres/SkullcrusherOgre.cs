@@ -43,7 +43,7 @@ namespace Server.Mobiles
 
 			Fame = 15500;
 			Karma = -15500;
-
+                        Tamable = false;
 			VirtualArmor = 54;
 		}
 

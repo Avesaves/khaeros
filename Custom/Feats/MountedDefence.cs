@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Riding }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Longstrider, FeatList.Ridgeking, FeatList.ScarabWarrior, FeatList.Bearjarl, FeatList.Fanglord, FeatList.Horselord }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.HorseArcher, FeatList.KudaRider, FeatList.Clibanarii, FeatList.SteppeRaider, FeatList.Skirmisher, FeatList.HeavyCavalry }; } }
 		
 		public override string FirstDescription{ get{ return "You are able to defend yourself from melee attacks by using " +
 					"your mount, however, this will damage it. [5% damage is transfered to mount if the mount is above 75% health]"; } }

@@ -44,6 +44,7 @@ namespace Server.Mobiles
 			Karma = -4000;
 			
 			VirtualArmor = 30;
+                        ControlSlots = 5;
 		}
 
 		public override bool HasFur{ get{ return true; } }

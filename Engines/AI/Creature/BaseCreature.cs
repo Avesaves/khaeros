@@ -370,6 +370,10 @@ namespace Server.Mobiles
 	public interface IHuge
 	{
 	}
+	
+	public interface IWarHorse
+	{
+	}
 
 	public interface ITooSmart
 	{

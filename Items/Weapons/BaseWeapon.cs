@@ -685,29 +685,29 @@ namespace Server.Items
 
             bool HasCorrectMount = ( rider.Mount != null && rider.Mount.GetType() == mountTypeCheck);
 
-            if (mountTypeCheck == typeof(ForestStrider))
+            if (mountTypeCheck == typeof(BarbHorse))
             {
-                return rider.Feats.GetFeatLevel(FeatList.Longstrider) * (HasCorrectMount ? 3 : -3);
+                return rider.Feats.GetFeatLevel(FeatList.HorseArcher) * (HasCorrectMount ? 3 : -0);
             }
-            else if (mountTypeCheck == typeof(Ridgeraptor))
+            else if (mountTypeCheck == typeof(KudaHorse))
             {
-                return rider.Feats.GetFeatLevel(FeatList.Ridgeking) * (HasCorrectMount ? 3 : -3);
+                return rider.Feats.GetFeatLevel(FeatList.KudaRider) * (HasCorrectMount ? 3 : -0);
             }
-            else if (mountTypeCheck == typeof(GiantScarab))
+            else if (mountTypeCheck == typeof(RoseanHorse))
             {
-                return rider.Feats.GetFeatLevel(FeatList.ScarabWarrior) * (HasCorrectMount ? 5 : -5);
+                return rider.Feats.GetFeatLevel(FeatList.Clibanarii) * (HasCorrectMount ? 5 : -0);
             }
-            else if (mountTypeCheck == typeof(DireWolf))
+            else if (mountTypeCheck == typeof(GallowayHorse))
             {
-                return rider.Feats.GetFeatLevel(FeatList.Fanglord) * (HasCorrectMount ? 5 : -5);
+                return rider.Feats.GetFeatLevel(FeatList.Skirmisher) * (HasCorrectMount ? 5 : -0);
             }
-            else if (mountTypeCheck == typeof(DireBear))
+            else if (mountTypeCheck == typeof(SteppeHorse))
             {
-                return rider.Feats.GetFeatLevel(FeatList.Bearjarl) * (HasCorrectMount ? 3 : -3);
+                return rider.Feats.GetFeatLevel(FeatList.SteppeRaider) * (HasCorrectMount ? 3 : -0);
             }
-            else if (mountTypeCheck == typeof(WarHorse))
+            else if (mountTypeCheck == typeof(RuganHorse))
             {
-                return rider.Feats.GetFeatLevel(FeatList.Horselord) * (HasCorrectMount ? 3 : -3);
+                return rider.Feats.GetFeatLevel(FeatList.HeavyCavalry) * (HasCorrectMount ? 3 : -0);
             }
             else
                 return 0;
@@ -1422,7 +1422,7 @@ namespace Server.Items
 
                 bonus += ((PlayerMobile)defender).GetBackgroundLevel(BackgroundList.Lucky);
                 bonus -= ((PlayerMobile)defender).GetBackgroundLevel(BackgroundList.Unlucky);
-                bonus += GetRacialMountFeatBonus(defender, typeof(GiantScarab));
+                bonus += GetRacialMountFeatBonus(defender, typeof(RoseanHorse));
 			}
 			
 			return Math.Min( 60, bonus );
@@ -1472,7 +1472,7 @@ namespace Server.Items
 				bonus += (int)(((IKhaerosMobile)m).Stance.SpeedBonus * ((IKhaerosMobile)m).Stance.FeatLevel);
             
             if(m.Weapon != null && m.Weapon is BaseMeleeWeapon)
-                bonus += GetRacialMountFeatBonus(m, typeof(Ridgeraptor));
+                bonus += GetRacialMountFeatBonus(m, typeof(KudaHorse));
 
             if( m is PlayerMobile && m.Weapon is Fists && ( (PlayerMobile)m ).Claws != null )
                 bonus += 3;
@@ -2206,9 +2206,9 @@ namespace Server.Items
                 }
         	}
 
-            if (attacker.Weapon is BaseRanged && Utility.RandomMinMax(1, 100) < GetRacialMountAbility(defender, typeof(Ridgeraptor)))
+            if (attacker.Weapon is BaseRanged && Utility.RandomMinMax(1, 100) < GetRacialMountAbility(defender, typeof(KudaHorse)))
             {
-                defender.Emote("*uses {0} ridgeraptor's ridge to deflect a projectile shot at {1} by {2}*", defender.Female == true ? "her" : "his", defender.Female == true ? "her" : "him", attacker.Name);
+                defender.Emote("*uses {0} Kuda Horse's agility to evade a projectile shot at {1} by {2}*", defender.Female == true ? "her" : "his", defender.Female == true ? "her" : "him", attacker.Name);
                 return true;
             }
             	
@@ -2394,11 +2394,11 @@ namespace Server.Items
 			}
             if (attacker is PlayerMobile && attacker.Weapon != null && attacker.Weapon is BaseRanged)
             {
-                damage += GetRacialMountFeatBonus(attacker, typeof(ForestStrider));
+                damage += GetRacialMountFeatBonus(attacker, typeof(BarbHorse));
             }
             else if (attacker is PlayerMobile && attacker.Weapon != null && !(attacker.Weapon is BaseRanged))
             {
-                damage += GetRacialMountFeatBonus(attacker, typeof(DireBear));
+                damage += GetRacialMountFeatBonus(attacker, typeof(SteppeHorse));
             }
             damage += GetDamageBonus();
 
@@ -2544,7 +2544,7 @@ namespace Server.Items
 				if( ((IKhaerosMobile)attacker).RageFeatLevel > 3 )
 					damageignore += ((IKhaerosMobile)attacker).RageFeatLevel - 3;
 
-                damageignore += GetRacialMountFeatBonus(defender, typeof(WarHorse));
+                damageignore += GetRacialMountFeatBonus(defender, typeof(RuganHorse));
             }
 
             IKhaerosMobile defkm = defender as IKhaerosMobile;
@@ -2589,30 +2589,30 @@ namespace Server.Items
 
             if (splashAttack)
             {
-                if (Utility.RandomMinMax(1,100) < GetRacialMountAbility(attacker, typeof(DireBear)))
+                if (Utility.RandomMinMax(1,100) < GetRacialMountAbility(attacker, typeof(SteppeHorse)))
                 {
-                    damageGiven += (int) (damageGiven * (double)(0.01 * GetRacialMountAbility(attacker, typeof(DireBear))));
+                    damageGiven += (int) (damageGiven * (double)(0.01 * GetRacialMountAbility(attacker, typeof(SteppeHorse))));
                 }
             }
 
             if (!splashAttack)
             {
 
-                if (defender is PlayerMobile && Utility.RandomMinMax(1, 200) < GetRacialMountAbility(defender, typeof(WarHorse)))
+                if (defender is PlayerMobile && Utility.RandomMinMax(1, 200) < GetRacialMountAbility(defender, typeof(RuganHorse)))
                     if ((defender as PlayerMobile).Feats.GetFeatLevel(FeatList.PlateMastery) > 0)
                         if ((defender.Mount as BaseMount).BodyValue == 284)
                         {
-                            damageGiven -= (int)(damageGiven * ((0.01 * GetRacialMountAbility(defender, typeof(WarHorse)))));
+                            damageGiven -= (int)(damageGiven * ((0.01 * GetRacialMountAbility(defender, typeof(RuganHorse)))));
                             defender.Emote(attacker.Name + "'s attack glances off " + (defender.Female ? "her" : "his") + " horse's barding*");
                         }
             }
 
             if (splashAttack)
             {
-                if (Utility.RandomMinMax(1, 100) < GetRacialMountAbility(defender, typeof(GiantScarab)))
+                if (Utility.RandomMinMax(1, 100) < GetRacialMountAbility(defender, typeof(RoseanHorse)))
                 {
                     damageGiven = 0;
-                    defender.Emote("*defends " + (defender.Female ? "herself" : "himself") + " using the scarab's plated wings*");
+                    defender.Emote("*defends " + (defender.Female ? "herself" : "himself") + " using skillfull horsemanship*");
                 }
             }
 

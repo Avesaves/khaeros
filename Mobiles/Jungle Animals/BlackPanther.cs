@@ -44,6 +44,7 @@ namespace Server.Mobiles
 			Karma = -4200;
 			
 			VirtualArmor = 30;
+                        ControlSlots = 5;
 		}
 
 		public override int Meat{ get{ return 4; } }

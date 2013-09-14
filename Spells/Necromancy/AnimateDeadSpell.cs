@@ -99,8 +99,8 @@ namespace Server.Spells.Necromancy
 					typeof( Horse ), typeof( Unicorn )
 				}, new SummonEntry[]
 				{
-					new SummonEntry( 10000, typeof( SouthernHorse ) ),
-					new SummonEntry(     0, typeof( WesternHorse ) )
+					new SummonEntry( 10000, typeof( GallowayHorse ) ),
+					new SummonEntry(     0, typeof( KudaHorse ) )
 				} ),
 				// Elementals
 				new CreatureGroup( new Type[]

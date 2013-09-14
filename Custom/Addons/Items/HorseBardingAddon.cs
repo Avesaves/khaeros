@@ -50,9 +50,9 @@ namespace Server.Items
 
             protected override void OnTarget( Mobile from, object obj )
             {
-                if( obj is WarHorse )
+                if( obj is Horse && obj is IWarHorse)
 				{
-					WarHorse warhorse = obj as WarHorse;
+					Horse warhorse = obj as Horse;
 					
 					if( warhorse.BodyValue == 284 )
 					{

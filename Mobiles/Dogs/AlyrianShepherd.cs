@@ -13,7 +13,7 @@ namespace Server.Mobiles
 		[Constructable]
 		public AlyrianShepherd() : base()
 		{
-			NewBreed = "Southern Shepherd";
+			NewBreed = "Alyrian Shepherd";
 		}
 
 		public AlyrianShepherd(Serial serial) : base(serial)

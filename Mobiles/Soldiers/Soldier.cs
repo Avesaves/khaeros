@@ -2618,60 +2618,52 @@ namespace Server.Mobiles
         {
             switch (Nation)
             {
-                case Nation.Southern:
+                case Nation.Northern:
                     {
-                        SouthernHorse Southernhorse = new SouthernHorse();
-                        Southernhorse.Rider = this;
+                        RuganHorse Ruganhorse = new RuganHorse();
+                        Ruganhorse.Rider = this;
                         break;
                     }
                 case Nation.Western:
                     {
-                        WesternHorse Westernhorse = new WesternHorse();
-                        Westernhorse.Rider = this;
+                        KudaHorse Kudahorse = new KudaHorse();
+                        Kudahorse.Rider = this;
                         break;
                     }
                 case Nation.Haluaroc:
                     {
-                        DesertHorse DesertHorse = new DesertHorse();
-                        DesertHorse.Rider = this;
+                        BarbHorse BarbHorse = new BarbHorse();
+                        BarbHorse.Rider = this;
                         break;
                     }
                 case Nation.Mhordul:
                     {
-                        MhordulHorse mhordulhorse = new MhordulHorse();
-                        mhordulhorse.Rider = this;
+                        SteppeHorse steppehorse = new SteppeHorse();
+                        steppehorse.Rider = this;
                         break;
                     }
                 case Nation.Tirebladd:
                     {
-                        SnowHorse snowhorse = new SnowHorse();
-                        snowhorse.Rider = this;
+                        GallowayHorse gallowayhorse = new GallowayHorse();
+                        gallowayhorse.Rider = this;
                         break;
                     }
-                case Nation.Northern:
+                case Nation.Southern:
                     {
-                        if (Utility.RandomBool())
-                        {
-                            NorthernHorse Northernhorse = new NorthernHorse();
-                            Northernhorse.Rider = this;
-                        }
-                        else
-                        {
-                            WarHorse warhorse = new WarHorse();
-                            warhorse.Rider = this;
-                        }
+                        RoseanHorse Roseanhorse = new RoseanHorse();
+                        Roseanhorse.Rider = this;
                         break;
                     }
                 case Nation.Imperial:
                     {
                         if (Utility.RandomBool())
                         {
-                            NorthernHorse vhorse = new NorthernHorse();
+                            RuganHorse vhorse = new RuganHorse();
                             vhorse.Rider = this;
                         }
                         else
                         {
-                            SnowHorse thorse = new SnowHorse();
+                            RoseanHorse thorse = new RoseanHorse();
                             thorse.Rider = this;
                         }
                         break;
@@ -2680,12 +2672,12 @@ namespace Server.Mobiles
                     {
                         if (Utility.RandomBool())
                         {
-                            MhordulHorse mhorse = new MhordulHorse();
+                            SteppeHorse mhorse = new SteppeHorse();
                             mhorse.Rider = this;
                         }
                         else
                         {
-                            SouthernHorse ahorse = new SouthernHorse();
+                            GallowayHorse ahorse = new GallowayHorse();
                             ahorse.Rider = this;
                         }
                         break;
@@ -2694,12 +2686,12 @@ namespace Server.Mobiles
                     {
                         if (Utility.RandomBool())
                         {
-                            DesertHorse khorse = new DesertHorse();
+                            BarbHorse khorse = new BarbHorse();
                             khorse.Rider = this;
                         }
                         else
                         {
-                            WesternHorse azhorse = new WesternHorse();
+                            KudaHorse azhorse = new KudaHorse();
                             azhorse.Rider = this;
                         }
                         break;
@@ -2708,7 +2700,7 @@ namespace Server.Mobiles
                     {
                         if (Utility.RandomBool())
                         {
-                            MhordulHorse imhorse = new MhordulHorse();
+                            SteppeHorse imhorse = new SteppeHorse();
                             imhorse.Rider = this;
                         }
                         else

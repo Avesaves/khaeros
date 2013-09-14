@@ -281,7 +281,7 @@ namespace Server.SkillHandlers
                 }
                 eable.Free();
 
-                range += BaseWeapon.GetRacialMountAbility(tracker, typeof(DireWolf)) > 0 ? (tracker.Mount as BaseMount).Level * (tracker.Mount as BaseMount).XPScale : 0;
+                range += BaseWeapon.GetRacialMountAbility(tracker, typeof(GallowayHorse)) > 0 ? (tracker.Mount as BaseMount).Level * (tracker.Mount as BaseMount).XPScale : 0;
             }
 
             return range;
@@ -376,7 +376,7 @@ namespace Server.SkillHandlers
 			
 			int tracking = (int)(from.Skills[SkillName.Tracking].Base) * 2;
 			int detectHidden = (int)(from.Skills[SkillName.DetectHidden].Base);
-			int total = (50 * (tracking + detectHidden + fromBonus)) + BaseWeapon.GetRacialMountAbility(from, typeof(DireWolf));
+			int total = (50 * (tracking + detectHidden + fromBonus)) + BaseWeapon.GetRacialMountAbility(from, typeof(GallowayHorse));
 
 			int hiding = (int)(m.Skills[SkillName.Hiding].Base);
 			int stealth = (int)(m.Skills[SkillName.Stealth].Base);

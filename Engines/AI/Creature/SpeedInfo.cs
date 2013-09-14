@@ -132,9 +132,9 @@ namespace Server
 			new SpeedInfo( 0.175, 0.350, new Type[]
 			{
 				typeof( Pixie ),			
-				typeof( Jaguar ),			typeof( SouthernHorse ),		typeof( WesternHorse ),	
-				typeof( DesertHorse ),	typeof( MhordulHorse ),		typeof( SnowHorse ),	
-				typeof( NorthernHorse ),	typeof( WarHorse ),			typeof( DireWolf ),		
+				typeof( Jaguar ),			typeof( GallowayHorse ),		typeof( KudaHorse ),	
+				typeof( BarbHorse ),	typeof( SteppeHorse ),		typeof( RuganHorse ),	
+				typeof( RoseanHorse ),	typeof( WarHorse ),			typeof( DireWolf ),		
 				typeof( Ridgeraptor ),		typeof( DireBear ),			typeof( ForestStrider ),
 				typeof( GiantScarab ),		typeof( Petal ),			typeof( Unicorn ),	
 				typeof( MaleUnicorn ),      typeof( Quaraphon ),		typeof( Wyvern ),

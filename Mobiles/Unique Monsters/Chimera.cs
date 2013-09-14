@@ -11,7 +11,6 @@ namespace Server.Mobiles
 	public class Chimera : BaseMount, ILargePredator
 	{
 		public override bool ParryDisabled{ get{ return true; } }
-		public override bool SubdueBeforeTame{ get{ return true; } }
 		
 		[Constructable]
 		public Chimera() : this( "a Chimera" )
@@ -50,7 +49,7 @@ namespace Server.Mobiles
 
 			VirtualArmor = 40;
 
-			Tamable = true;
+			Tamable = false;
 			ControlSlots = 99;
 			MinTameSkill = 100.0;
 			

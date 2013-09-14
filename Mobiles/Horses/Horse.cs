@@ -73,9 +73,9 @@ namespace Server.Mobiles
 			
 			switch( breed )
 			{
-				case "Southern Horse":
+				case "Galloway Horse":
 				{
-					this.Name = "an Southern Horse";
+					this.Name = "a Galloway Horse";
 					this.BodyValue = 228;
 					this.ItemID = 0x3EA1;
 					break;
@@ -89,17 +89,17 @@ namespace Server.Mobiles
 					break;
 				}
 					
-				case "Mhordul Horse":
+				case "Steppe Horse":
 				{
-					this.Name = "a Mhordul Horse";
+					this.Name = "a Steppe Horse";
 					this.BodyValue = 204;
 					this.ItemID = 0x3EA2;
 					break;
 				}
 					
-				case "Khemetar Horse":
+				case "Barb Horse":
 				{
-					this.Name = "a Khemetar Horse";
+					this.Name = "a Barb Horse";
 					this.BodyValue = 228;
 					this.ItemID = 0x3EA1;
 					break;
