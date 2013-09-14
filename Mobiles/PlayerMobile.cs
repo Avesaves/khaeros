@@ -3687,9 +3687,10 @@ namespace Server.Mobiles
 			
 			if( type == ResistanceType.Energy )
 			{
-			int min = int.MinValue;
+			int min = 0;
 			        if( Int > 100 )
-			               min += (int)( ( Int - 100 ) ); //each 1 points of int above 100 incs MR by 1.
+			               min += (int)( ( Int - 100 ) * 1.0 ); //each 1 points of int above 100 incs MR by 1.
+
 				
 
 				if ( min > MaxPlayerResistance )
