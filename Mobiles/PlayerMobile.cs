@@ -3687,7 +3687,20 @@ namespace Server.Mobiles
 			
 			if( type == ResistanceType.Energy )
 			{
-				int magicResist = (int)(Skills[SkillName.MagicResist].Base );
+			int min = int.MinValue;
+			        if( Int > 100 )
+			               min += (int)( ( Int - 100 ) ); //each 1 points of int above 100 incs MR by 1.
+				
+
+				if ( min > MaxPlayerResistance )
+					min = MaxPlayerResistance;
+				
+				return min;
+			
+			
+			               
+			
+				/*int magicResist = (int)(Skills[SkillName.MagicResist].Base );
 				int min = int.MinValue;
 	
 				if ( magicResist > 1 )
@@ -3699,7 +3712,7 @@ namespace Server.Mobiles
 				if( min < 1 )
 					min = 0;
 				
-				return min;
+				return min; */
 			}
 			
 			if( type == ResistanceType.Poison )
