@@ -15,8 +15,9 @@ namespace Server.Items
 		public override string NameType { get { return "Short Spear"; } }
 
 		public override bool Unwieldy{ get{ return false; } }
-		public override bool CanThrustOnMount{ get{ return false; } }
+		public override bool CanThrustOnMount{ get{ return true; } }
 		public override bool CanUseDefensiveFormation{ get{ return false; } }
+		public override bool CannotUseOnMount{ get{ return false; } }
 		
 		public override int AosStrengthReq{ get{ return 35; } }
 		public override double OverheadPercentage{ get{ return 0.1; } }

@@ -13,8 +13,8 @@ namespace Server.Items
 		public override int DefMissSound{ get{ return 0x238; } }
 		
 		public override bool Unwieldy{ get{ return true; } }
-		public override bool CanThrustOnMount{ get{ return true; } }
 		public override bool CanUseDefensiveFormation{ get{ return true; } }
+		public override bool CannotUseOnMount{ get{ return true; } }
 
 		public override SkillName DefSkill{ get{ return SkillName.Swords; } }
 		public override WeaponType DefType{ get{ return WeaponType.Polearm; } }

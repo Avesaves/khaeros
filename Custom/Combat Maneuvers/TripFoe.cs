@@ -7,33 +7,33 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Misc
 {
-	public class TripFoe : BaseCombatManeuver
+	public class Unhorse : BaseCombatManeuver
 	{
 		public override int DamageBonus{ get{ return 0; } }
 		public override int AccuracyBonus{ get{ return 0; } }
 		public override bool Melee{ get{ return true; } }
 		public override bool Ranged{ get{ return false; } }
 		public override bool Throwing{ get{ return false; } }
-		public override FeatList ListedName{ get{ return FeatList.TripFoe; } }
+		public override FeatList ListedName{ get{ return FeatList.Unhorse; } }
 		
 		public override void OnSwing( Mobile attacker, Mobile defender, bool Cleave )
 		{
 			IKhaerosMobile featuser = attacker as IKhaerosMobile;
 			
-			if ( attacker.Mounted )
+			if ( attacker.Mounted || !defender.Mounted)
 			{
-				attacker.SendMessage( 60, "You cannot perform this maneuver while mounted." );
+				attacker.SendMessage( 60, "You can only perform this maneuver while on foot and against a mounted opponent." );
 				featuser.DisableManeuver();
 			}
 			else if ( ((IKhaerosMobile)defender).TrippedTimer != null || CombatSystemAttachment.GetCSA( defender ).PerformingSequence )
 			{
-				attacker.SendMessage( 60, "You cannot trip them right now." );
+				attacker.SendMessage( 60, "You cannot unhorse them right now." );
 				featuser.DisableManeuver();
 			}
 			
 			else if( ((BaseWeapon)attacker.Weapon).Skill == SkillName.Polearms )
                 if( BaseWeapon.CheckStam( attacker, FeatLevel, Cleave, false ) )
-                    attacker.Emote( "*swings {0} polearm in an attempt to trip {1}*", ((IKhaerosMobile)attacker).GetPossessivePronoun(), defender.Name );
+                    attacker.Emote( "*swings {0} polearm in an attempt to unhorse {1}*", ((IKhaerosMobile)attacker).GetPossessivePronoun(), defender.Name );
 
             else
             {
@@ -52,14 +52,13 @@ namespace Server.Misc
 			if( defender.Mounted )
 			{
 				if( attacker != null )
-					Misc.Dismount.DismountCheck( attacker, defender, 0, ((BaseWeapon)attacker.Weapon).Skill, featlevel );
-				else
-					Misc.Dismount.Effect( defender, featlevel );
+				Misc.Dismount.Effect( defender, featlevel );
+				AddTripTimer( defender, featlevel );
 				
 				return;
 			}
 			else
-				AddTripTimer( defender, featlevel );
+				attacker.SendMessage( 60, "Your opponent must be mounted!" );
 		}
 		
 		public static void AddTripTimer( Mobile defender, int featlevel )
@@ -68,19 +67,19 @@ namespace Server.Misc
 			csa.DoTrip( featlevel );
 		}
 		
-		public TripFoe()
+		public Unhorse()
 		{
 		}
 		
-		public TripFoe( int featlevel ) : base( featlevel )
+		public Unhorse( int featlevel ) : base( featlevel )
 		{
 		}
 		
 		public override bool CanUseThisManeuver( Mobile mob )
 		{
-			if( base.CanUseThisManeuver( mob ) && ((IKhaerosMobile)mob).Feats.GetFeatLevel(FeatList.TripFoe) > 0 )
+			if( base.CanUseThisManeuver( mob ) && ((IKhaerosMobile)mob).Feats.GetFeatLevel(FeatList.Unhorse) > 0 )
 			{
-				this.FeatLevel = ((IKhaerosMobile)mob).Feats.GetFeatLevel(FeatList.TripFoe);
+				this.FeatLevel = ((IKhaerosMobile)mob).Feats.GetFeatLevel(FeatList.Unhorse);
 				return true;
 			}
 			
@@ -89,39 +88,39 @@ namespace Server.Misc
 		
 		public static void Initialize() 
 		{
-			CommandSystem.Register( "TripFoe", AccessLevel.Player, new CommandEventHandler( TripFoe_OnCommand ) );
+			CommandSystem.Register( "Unhorse", AccessLevel.Player, new CommandEventHandler( Unhorse_OnCommand ) );
 		}
 		
-		[Usage( "TripFoe" )]
-        [Description( "Allows the user to attempt to trip his foe." )]
-        private static void TripFoe_OnCommand( CommandEventArgs e )
+		[Usage( "Unhorse" )]
+        [Description( "Allows the user to attempt to unhorse his foe." )]
+        private static void Unhorse_OnCommand( CommandEventArgs e )
         {
             PlayerMobile m = e.Mobile as PlayerMobile;
 
-            if( m.CanPerformAttack( m.Feats.GetFeatLevel(FeatList.TripFoe) ) )
+            if( m.CanPerformAttack( m.Feats.GetFeatLevel(FeatList.Unhorse) ) )
             {
                 if( ((BaseWeapon)m.Weapon).Skill == SkillName.Polearms )
-                    m.ChangeManeuver( new TripFoe( m.Feats.GetFeatLevel(FeatList.TripFoe) ), FeatList.TripFoe, "You prepare to trip your foe." );
+                    m.ChangeManeuver( new Unhorse( m.Feats.GetFeatLevel(FeatList.Unhorse) ), FeatList.Unhorse, "You prepare to unhorse your foe." );
 
                 else
                     m.SendMessage( 60, "You need to be equipping a polearm in order to perform this attack." );
             }
         }
 
-        public class TripFoeTimer : Timer
+        public class UnhorseTimer : Timer
         {
             private Mobile m_from;
 			public int m_Stage;
 			private int m_FeatLevel;
             public bool m_Repeat;
 //TimeSpan.FromSeconds(((double)featlevel) * 2.0 - 0.4)
-            public TripFoeTimer( Mobile from, int featlevel ) : base( TimeSpan.FromSeconds( 0.4 ), TimeSpan.FromSeconds( 0.4 ) )
+            public UnhorseTimer( Mobile from, int featlevel ) : base( TimeSpan.FromSeconds( 0.4 ), TimeSpan.FromSeconds( 0.4 ) )
             {
 				Priority = TimerPriority.TwoFiftyMS;
                 m_from = from;
 				m_Stage = 0;
 				m_FeatLevel = featlevel;
-                from.SendMessage( 60, "You have lost your balance." );
+                from.SendMessage( 60, "You have been knocked to the ground!" );
 				CombatSystemAttachment csa = CombatSystemAttachment.GetCSA( from );
 				if ( from.Body.Type == BodyType.Human )
 				{

@@ -162,7 +162,7 @@ namespace Server.Mobiles
         MountedCombat,
         MountedEndurance,
         MountedDefence,
-        TripFoe,
+        Unhorse,
         DefensiveStance,
         SavageStrike,
         GreatweaponFighting,

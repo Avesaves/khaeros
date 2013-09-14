@@ -182,7 +182,7 @@ namespace Server.Mobiles
                     }
                 case Armament.Medium:
                     {                        
-                        Spear spear = new Spear();
+                        Bardiche spear = new Bardiche();
                         spear.Resource = CraftResource.Iron;
                         m.EquipItem(spear);
 
@@ -2327,23 +2327,18 @@ namespace Server.Mobiles
                         CombatSkills = 100;
 
                         GiveFeat = "FlurryOfBlows 3";
-                        GiveFeat = "FlashyAttack 3";
+                        GiveFeat = "SavageStrike 3";
+						GiveFeat = "QuickReflexes 3";
+                        GiveFeat = "BruteStrength 3";
 
                         FavouriteStance = "FlurryOfBlows";
-                        FavouriteManeuver = "FlashyAttack";
+                        FavouriteManeuver = "SavageSTrike";
 
                         SetStr(Str + 50);
                         SetDex(Dex + 50);
 
                         PassiveSpeed -= 0.05;
                         ActiveSpeed -= 0.1;
-
-                        if (Nation == Nation.Mhordul || Nation == Nation.Western || Nation == Nation.Insularii)
-                        {
-                            GiveFeat = "QuickReflexes 3";
-                            GiveFeat = "BruteStrength 3";
-                            SetHits(Hits + 50);
-                        }
 
                         PayRate += 1000;
 
@@ -2626,14 +2621,14 @@ namespace Server.Mobiles
                     }
                 case Nation.Western:
                     {
-                        KudaHorse Kudahorse = new KudaHorse();
-                        Kudahorse.Rider = this;
+                        BarbHorse Barbhorse = new BarbHorse();
+                        Barbhorse.Rider = this;
                         break;
                     }
                 case Nation.Haluaroc:
                     {
-                        BarbHorse BarbHorse = new BarbHorse();
-                        BarbHorse.Rider = this;
+                        KudaHorse KudaHorse = new KudaHorse();
+                        KudaHorse.Rider = this;
                         break;
                     }
                 case Nation.Mhordul:

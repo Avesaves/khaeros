@@ -36,7 +36,7 @@ namespace Server.Misc
 			defplayer.DeafnessTimer = new EarBoxingTimer( defender, featlevel );
 			defplayer.DeafnessTimer.Start();
 			
-			TripFoe.AddTripTimer( defender, featlevel );
+			Unhorse.AddTripTimer( defender, featlevel );
 		}
 		
 		public EarBoxing()

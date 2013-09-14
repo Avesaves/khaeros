@@ -17,7 +17,7 @@ namespace Server.FeatInfo
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Polearms }; } }
-		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.TripFoe }; } }
+		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Unhorse }; } }
 		
 		public override string FirstDescription{ get{ return "Having specialized in polearms, you are now able to prepare " +
 					"them faster than normal. Reduces the speed penalty for polearms. [Reduces penalty from 50% to 40%]"; } }

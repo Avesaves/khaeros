@@ -32,15 +32,15 @@ namespace Server.Commands
                 m.TrippedTimer.Stop();
                 m.TrippedTimer.Interval = TimeSpan.FromSeconds( 0.1 );
                 m.TrippedTimer.Delay = TimeSpan.FromSeconds( 0.1 );
-                ( (Misc.TripFoe.TripFoeTimer)m.TrippedTimer ).m_Repeat = false;
-                ( (Misc.TripFoe.TripFoeTimer)m.TrippedTimer ).m_Stage = 1;
+                ( (Misc.Unhorse.UnhorseTimer)m.TrippedTimer ).m_Repeat = false;
+                ( (Misc.Unhorse.UnhorseTimer)m.TrippedTimer ).m_Stage = 1;
                 m.TrippedTimer.Start();
             }
 
             else
             {
                 csa.DoTrip( 3 );
-                ( (Misc.TripFoe.TripFoeTimer)m.TrippedTimer ).m_Repeat = true;
+                ( (Misc.Unhorse.UnhorseTimer)m.TrippedTimer ).m_Repeat = true;
             }
         }
     }

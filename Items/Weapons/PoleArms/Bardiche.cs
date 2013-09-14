@@ -30,13 +30,16 @@ namespace Server.Items
 
 		public override int InitMinHits{ get{ return 31; } }
 		public override int InitMaxHits{ get{ return 100; } }
+		
+		public override bool Unwieldy{ get{ return false; } }
+		public override bool CannotUseOnMount{ get{ return false; } }
 
 		[Constructable]
 		public Bardiche() : base( 0xF4D )
 		{
 			Weight = 10.0;
 			Layer = Layer.TwoHanded;
-			MaxRange = 2;
+			MaxRange = 1;
 			AosElementDamages.Slashing = 80;
 			AosElementDamages.Blunt = 20;			
 		}

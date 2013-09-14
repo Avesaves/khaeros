@@ -645,7 +645,7 @@ namespace Server.Engines.XmlSpawner2
 				km.TrippedTimer.Stop();
 			m_PerformingSequence = true;
 			
-			km.TrippedTimer = new TripFoe.TripFoeTimer( mob, featLevel );
+			km.TrippedTimer = new Unhorse.UnhorseTimer( mob, featLevel );
 			km.TrippedTimer.Start();
 			
 			/*if ( mob.Body.Type == BodyType.Human )

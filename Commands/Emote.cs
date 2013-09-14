@@ -450,8 +450,8 @@ namespace Server.Scripts.Commands
                 pm.TrippedTimer.Stop();
                 pm.TrippedTimer.Interval = TimeSpan.FromSeconds( 0.1 );
                 pm.TrippedTimer.Delay = TimeSpan.FromSeconds( 0.1 );
-                ( (Misc.TripFoe.TripFoeTimer)pm.TrippedTimer ).m_Repeat = false;
-                ( (Misc.TripFoe.TripFoeTimer)pm.TrippedTimer ).m_Stage = 1;
+                ( (Misc.Unhorse.UnhorseTimer)pm.TrippedTimer ).m_Repeat = false;
+                ( (Misc.Unhorse.UnhorseTimer)pm.TrippedTimer ).m_Stage = 1;
                 pm.TrippedTimer.Start();
             }
 
@@ -460,7 +460,7 @@ namespace Server.Scripts.Commands
                 pm.PlaySound(pm.Female ? 791 : 1063);		    
      		pm.Say("*faints*");		    
                 csa.DoTrip( 3 );
-                ( (Misc.TripFoe.TripFoeTimer)pm.TrippedTimer ).m_Repeat = true;
+                ( (Misc.Unhorse.UnhorseTimer)pm.TrippedTimer ).m_Repeat = true;
             }
         }	    
 

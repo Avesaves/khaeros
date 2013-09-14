@@ -37,12 +37,15 @@ namespace Server.Items
 		
 		public override WeaponType DefType{ get{ return WeaponType.Piercing; } }
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.Pierce2H; } }
+		
+		public override bool Unwieldy{ get{ return false; } }
+		public override bool CannotUseOnMount{ get{ return false; } }
 
 		[Constructable]
 		public Pitchfork() : base( 0xE87 )
 		{
 			Weight = 7.0;
-			MaxRange = 2;
+			MaxRange = 1;
 			AosElementDamages.Piercing = 100;
 		}
 

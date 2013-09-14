@@ -18,7 +18,7 @@ namespace Server.FeatInfo
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.FightingStyle, FeatList.GreatweaponFighting, 
-					FeatList.PolearmsMastery }; } }
+					FeatList.Unhorse }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Polearms skill, which will " +
 					"enhance the speed of your attack animation with weapons of this type. [20% skill]"; } }

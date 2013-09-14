@@ -442,7 +442,7 @@ namespace Server.Engines.XmlSpawner2
 
                     if (Utility.RandomBool())
                     {
-                        new TripFoe.TripFoeTimer(m_Addict, 3);
+                        new Unhorse.UnhorseTimer(m_Addict, 3);
                         m_Addict.Emote("*collapses, thrashing violently!*");
                     }
                     else

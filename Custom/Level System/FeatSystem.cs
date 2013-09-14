@@ -60,7 +60,7 @@ namespace Server.Misc
 						case 12: featname = "Mounted Combat"; m.Feats.GetFeatLevel(FeatList.MountedCombat) += FeatRaise( m, m.Feats.GetFeatLevel(FeatList.MountedCombat), featname, SkillName.Riding, 60.0, 20.0, SkillName.Magery, 0.0, 0.0, 0, 0, 10, 5, 0, 0, 0 ); break;
 						case 13: featname = "Mounted Endurance"; m.Feats.GetFeatLevel(FeatList.MountedEndurance) += FeatRaise( m, m.Feats.GetFeatLevel(FeatList.MountedEndurance), featname, SkillName.Riding, 25.0, 25.0, SkillName.Magery, 0.0, 0.0, 0, 0, 5, 5, 0, 0, 0 ); break;
 						case 14: featname = "Mounted Defence"; m.Feats.GetFeatLevel(FeatList.MountedDefence) += FeatRaise( m, m.Feats.GetFeatLevel(FeatList.MountedDefence), featname, SkillName.Parry, 60.0, 20.0, SkillName.Riding, 60.0, 20.0, 0, 0, 10, 5, 0, 0, 0 ); break;
-						case 15: featname = "Trip Foe"; m.Feats.GetFeatLevel(FeatList.TripFoe) += FeatRaise( m, m.Feats.GetFeatLevel(FeatList.TripFoe), featname, SkillName.Magery, 0.0, 0.0, SkillName.Magery, 0.0, 0.0, m.Feats.GetFeatLevel(FeatList.PolearmsMastery), 1, 20, 5, m.RawInt, 20, 5 ); break;
+						case 15: featname = "Unhorse"; m.Feats.GetFeatLevel(FeatList.Unhorse) += FeatRaise( m, m.Feats.GetFeatLevel(FeatList.Unhorse), featname, SkillName.Magery, 0.0, 0.0, SkillName.Magery, 0.0, 0.0, m.Feats.GetFeatLevel(FeatList.PolearmsMastery), 1, 20, 5, m.RawInt, 20, 5 ); break;
 						case 16: featname = "Defensive Stance"; m.Feats.GetFeatLevel(FeatList.DefensiveStance) += FeatRaise( m, m.Feats.GetFeatLevel(FeatList.DefensiveStance), featname, SkillName.Tactics, 60.0, 20.0, SkillName.Parry, 60.0, 20.0, 0, 0, 10, 5, 0, 0, 0 ); break;
 					}
 					

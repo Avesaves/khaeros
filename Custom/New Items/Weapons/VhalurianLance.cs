@@ -25,6 +25,7 @@ namespace Server.Items
 		public override bool CanUseDefensiveFormation{ get{ return false; } }
 		public override bool CannotUseOnFoot{ get{ return true; } }
 		public override bool ChargeOnly{ get{ return true; } }
+		public override bool CannotUseOnMount{ get{ return false; } }
 
 		public override int OldStrengthReq{ get{ return 95; } }
 		public override int OldMinDamage{ get{ return 17; } }
