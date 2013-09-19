@@ -773,11 +773,11 @@ namespace Server.Items
 
             switch (r)
             {
-                case CraftResource.Copper: div = 15; break;
-                case CraftResource.Tin: div = 10; break;
-                case CraftResource.Iron: div = 5; break;
-                case CraftResource.Silver: div = 2; break;
-                case CraftResource.Gold: div = .5; break;
+                case CraftResource.Copper: div = 5; break;
+                case CraftResource.Tin: div = 5; break;
+                case CraftResource.Iron: div = 10; break;
+                case CraftResource.Silver: div = 1; break;
+                case CraftResource.Gold: div = .1; break;
                 case CraftResource.Cotton: div = 12; break;
                 case CraftResource.Wool: div = 12; break;
                 case CraftResource.Silk: div = 4; break;

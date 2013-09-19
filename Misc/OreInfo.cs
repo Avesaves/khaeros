@@ -157,9 +157,9 @@ namespace Server.Items
 			bronze.ArmorColdResist = 0;
 			bronze.ArmorPoisonResist = 0;
 			bronze.ArmorEnergyResist = 0;
-			bronze.ArmorDurability = 25;
+			bronze.ArmorDurability = 50;
 			bronze.WeaponFireDamage = 0;
-			bronze.WeaponDurability = 25;
+			bronze.WeaponDurability = 50;
 			bronze.RunicMinAttributes = 0;
 			bronze.RunicMaxAttributes = 0;
 			bronze.RunicMinIntensity = 0;
@@ -174,10 +174,10 @@ namespace Server.Items
 			iron.ArmorFireResist = 0;
 			iron.ArmorPoisonResist = 0;
 			iron.ArmorEnergyResist = 0;
-			iron.ArmorDurability = 50;
+			iron.ArmorDurability = 25;
 			iron.WeaponPoisonDamage = 0;
 			iron.WeaponEnergyDamage = 0;
-			iron.WeaponDurability = 50;
+			iron.WeaponDurability = 25;
 			iron.RunicMinAttributes = 0;
 			iron.RunicMaxAttributes = 0;
 			iron.RunicMinIntensity = 0;

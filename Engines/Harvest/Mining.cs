@@ -85,9 +85,9 @@ namespace Server.Engines.Harvest
 
 			res = new HarvestResource[]
 				{
-					new HarvestResource( 00.0, 00.0, 50.0, 1007075, typeof( CopperOre ),		typeof( Coal ),				typeof( Bat ) ),
+					new HarvestResource( 00.0, 00.0, 50.0, 1007075, typeof( IronOre ),		typeof( Coal ),				typeof( Bat ) ),
 					new HarvestResource( 00.0, 00.0, 50.0, 1007073, typeof( TinOre ),			typeof( Granite ),			typeof( Bat ) ),
-					new HarvestResource( 60.0, 40.0, 100.0, 1007072, typeof( IronOre ),			typeof( Granite ),			typeof( Bat ) ),
+					new HarvestResource( 60.0, 40.0, 100.0, 1007072, typeof( CopperOre ),			typeof( Granite ),			typeof( Bat ) ),
 					new HarvestResource( 85.0, 50.0, 100.0, 1007078, typeof( SilverOre ),		typeof( Granite ),			typeof( Bat ) ),
                     new HarvestResource( 95.0, 55.0, 100.0, 1007077, typeof( GoldOre ),			typeof( Granite ),			typeof( Bat ) ),
                    

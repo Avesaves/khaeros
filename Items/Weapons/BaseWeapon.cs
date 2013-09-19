@@ -721,8 +721,8 @@ namespace Server.Items
         	switch( this.Resource )
         	{
         		case CraftResource.Copper: return 0;
-        		case CraftResource.Bronze: return 4;
-        		case CraftResource.Iron: return 2;
+        		case CraftResource.Bronze: return 3;
+        		case CraftResource.Iron: return 3;
         		case CraftResource.Steel: return 4;
         		case CraftResource.Obsidian: return 3;
         		case CraftResource.Starmetal: return 5;
@@ -744,9 +744,9 @@ namespace Server.Items
         	
         	switch( this.Resource )
         	{
-        		case CraftResource.Copper: return 3;
-        		case CraftResource.Bronze: return 0;
-        		case CraftResource.Iron: return 3;
+        		case CraftResource.Copper: return 0;
+        		case CraftResource.Bronze: return 2;
+        		case CraftResource.Iron: return 0;
         		case CraftResource.Steel: return 2;
         		case CraftResource.Obsidian: return 4;
         		case CraftResource.Starmetal: return 5;
