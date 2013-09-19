@@ -29,14 +29,13 @@ namespace Server.Mobiles
             {
                 case Nation.Southern: advisorTitle = "Argentarii"; break;
                 case Nation.Western: advisorTitle = "Makipuray"; break;
-                case Nation.Haluaroc: advisorTitle = "Trader"; break;
+                case Nation.Haluaroc: advisorTitle = "Pochteca"; break;
                 case Nation.Mhordul: advisorTitle = "Qudaldughacin"; break;
-                case Nation.Tirebladd: advisorTitle = "Selja"; break;
+                case Nation.Tirebladd: advisorTitle = "Suirbheir"; break;
                 case Nation.Northern: advisorTitle = "Bursar"; break;
-                case Nation.Imperial: advisorTitle = "Agent"; break;
+/*                 case Nation.Imperial: advisorTitle = "Agent"; break;
                 case Nation.Sovereign: if(Female) { advisorTitle = "Quartermistress"; } else { advisorTitle = "Quartermaster"; } break;
-                case Nation.Society: if(Female) { advisorTitle = "Cellaress"; } else { advisorTitle = "Cellarer"; } break;
-				case Nation.Insularii: if(Female) { advisorTitle = "Epistolary"; } else { advisorTitle = "Epistolary"; } break;
+				case Nation.Insularii: if(Female) { advisorTitle = "Epistolary"; } else { advisorTitle = "Epistolary"; } break; */
             }
             
             Name = advisorTitle + " " + Name; 

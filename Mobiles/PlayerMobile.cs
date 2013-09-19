@@ -523,10 +523,10 @@ namespace Server.Mobiles
 		Tirebladd,
 		Southern,
 		Haluaroc,
-		Imperial,
+		Unknown/*,
         Society,
         Sovereign,
-		Insularii
+		Insularii */
 	}
 
 	public enum SongList
@@ -6917,10 +6917,10 @@ namespace Server.Mobiles
             m_CrimesList.Add(Nation.Mhordul, 0);
             m_CrimesList.Add(Nation.Tirebladd, 0);
             m_CrimesList.Add(Nation.Northern, 0);
-            m_CrimesList.Add(Nation.Imperial, 0);
+/*             m_CrimesList.Add(Nation.Imperial, 0);
             m_CrimesList.Add(Nation.Sovereign, 0);
             m_CrimesList.Add(Nation.Society, 0);
-			m_CrimesList.Add(Nation.Insularii, 0);
+			m_CrimesList.Add(Nation.Insularii, 0); */
 
 			InvalidateMyRunUO();
 		}
@@ -8596,9 +8596,9 @@ namespace Server.Mobiles
                         m_CrimesList.Add(Nation.Mhordul, 0);
                         m_CrimesList.Add(Nation.Tirebladd, 0);
                         m_CrimesList.Add(Nation.Northern, 0);
-                        m_CrimesList.Add(Nation.Imperial, 0);
+/*                         m_CrimesList.Add(Nation.Imperial, 0);
                         m_CrimesList.Add(Nation.Sovereign, 0);
-                        m_CrimesList.Add(Nation.Society, 0);
+                        m_CrimesList.Add(Nation.Society, 0); */
 
                         int count = reader.ReadInt();
                         for (int i = 0; i < count; i++)
@@ -9277,9 +9277,9 @@ namespace Server.Mobiles
                 m_CrimesList.Add(Nation.Mhordul,    0);
                 m_CrimesList.Add(Nation.Tirebladd,     0);
                 m_CrimesList.Add(Nation.Northern,  0);
-                m_CrimesList.Add(Nation.Imperial,   0);
+/*                 m_CrimesList.Add(Nation.Imperial,   0);
                 m_CrimesList.Add(Nation.Sovereign,  0);
-                m_CrimesList.Add(Nation.Society,    0);
+                m_CrimesList.Add(Nation.Society,    0); */
 
                 writer.Write(m_CrimesList.Count);
                 foreach (KeyValuePair<Nation, int> kvp in m_CrimesList)

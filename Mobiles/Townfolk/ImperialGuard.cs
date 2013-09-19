@@ -52,7 +52,7 @@ namespace Server.Mobiles
 			TurnIntoImperialGuard( this, choice );
             m_speechInterval = DateTime.Now; // Initiatlizing speech delay in the constructor for criminal recognition system.
             ((IKhaerosMobile)this).Feats.SetFeatLevel(FeatList.Alertness, Utility.Random(4)); // Giving guards the potential to detect hidden mobiles.
-            guardNation = Nation.Imperial;
+/*             guardNation = Nation.Imperial; */
 		}
 
         // Criminal recognition begins here.

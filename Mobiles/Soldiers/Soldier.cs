@@ -138,10 +138,10 @@ namespace Server.Mobiles
                 case Nation.Mhordul: SetRank(1); TrainSoldier(a); SetStr(Str + 20); EquipMhordul(a, this); break;
                 case Nation.Tirebladd: SetRank(1); TrainSoldier(a); SetStr(Str + 20); EquipTirebladd(a, this); break;
                 case Nation.Northern: SetRank(1); TrainSoldier(a); SetHits(Hits + 20); EquipNorthern(a, this); break;
-                case Nation.Imperial: SetRank(1); TrainSoldier(a); SetHits(Hits + 10); SetStr(Str + 10); EquipImperial(a, this); break;
+/*                 case Nation.Imperial: SetRank(1); TrainSoldier(a); SetHits(Hits + 10); SetStr(Str + 10); EquipImperial(a, this); break;
                 case Nation.Sovereign: TrainSoldier(a); SetStr(Str + 10); SetDex(Dex + 10); EquipSovereign(a, this); SetRank(1); break;
-                case Nation.Society: SetRank(1); TrainSoldier(a); SetStr(Str + 10); SetInt(Int + 10); EquipSociety(a, this); break;
-				case Nation.Insularii: SetRank(1); TrainSoldier(a); SetDex(Dex + 20); SetHits(Hits + 20); SetStr(Str + 20); SetInt(Int + 20); EquipInsularii(a, this); break;
+                case Nation.Society: SetRank(1); TrainSoldier(a); SetStr(Str + 10); SetInt(Int + 10); EquipSociety(a, this); break; 
+				case Nation.Insularii: SetRank(1); TrainSoldier(a); SetDex(Dex + 20); SetHits(Hits + 20); SetStr(Str + 20); SetInt(Int + 20); EquipInsularii(a, this); break; */
 
                 default: TrainSoldier(a);   EquipFreeSoldier(a, this);      break;
             }
@@ -1163,7 +1163,7 @@ namespace Server.Mobiles
             }
         }
 
-        public static void EquipImperial(Armament a, Mobile m)
+ /*        public static void EquipImperial(Armament a, Mobile m)
         {
             if (a == Armament.LightCavalry)
                 a = (Armament)1;
@@ -1576,9 +1576,9 @@ namespace Server.Mobiles
                         break;
                     }
             }
-        }
+        } */
 
-        public static void EquipSociety(Armament a, Mobile m)
+ /*        public static void EquipSociety(Armament a, Mobile m)
         {
             if (a == Armament.LightCavalry)
                 a = (Armament)1;
@@ -1781,10 +1781,10 @@ namespace Server.Mobiles
             coat.ItemID = 15483;
             coat.Name = "A Surcoat of the Society of Rymaliel";
             m.EquipItem(coat);
-        }
+        } */
 		
 		
-		public static void EquipInsularii(Armament a, Mobile m)
+/* 		public static void EquipInsularii(Armament a, Mobile m)
         {
             if (a == Armament.LightCavalry)
                 a = (Armament)1;
@@ -2027,7 +2027,7 @@ namespace Server.Mobiles
                         break;
                     }
             }
-        }
+        } */
 
         public static void EquipFreeSoldier(Armament a, Mobile m)
         {
@@ -2133,13 +2133,8 @@ namespace Server.Mobiles
                         PassiveSpeed = 0.4;
                         ActiveSpeed = 0.2;
 
-                        PayRate = 100;
-						
-						if (Nation == Nation.Insularii )
-                        {
-							SetResistance( ResistanceType.Energy, 70, 70 );
-							SetSkill( SkillName.MagicResist, 100, 100 );
-                        }
+                        PayRate = 0;
+					
 
                         Fame = 5000;
 
@@ -2166,12 +2161,6 @@ namespace Server.Mobiles
                         ActiveSpeed = 0.25;
 
 						PayRate = 250;
-						
-						if (Nation == Nation.Insularii )
-                        {
-							SetResistance( ResistanceType.Energy, 70, 70 );
-							SetSkill( SkillName.MagicResist, 100, 100 );
-                        }
 
                         Fame = 8000;
 
@@ -2199,12 +2188,6 @@ namespace Server.Mobiles
                         ActiveSpeed = 0.3;
 
                         PayRate = 500;
-						
-						if (Nation == Nation.Insularii )
-                        {
-							SetResistance( ResistanceType.Energy, 70, 70 );
-							SetSkill( SkillName.MagicResist, 100, 100 );
-                        }
 
                         Fame = 10000;
 
@@ -2231,12 +2214,6 @@ namespace Server.Mobiles
                         ActiveSpeed = 0.2;
 
                         PayRate = 300;
-						
-						if (Nation == Nation.Insularii )
-                        {
-							SetResistance( ResistanceType.Energy, 70, 70 );
-							SetSkill( SkillName.MagicResist, 100, 100 );
-                        }
 
                         Fame = 8000;
 
@@ -2262,13 +2239,7 @@ namespace Server.Mobiles
                         PassiveSpeed = 0.3;
                         ActiveSpeed = 0.1;
 
-						PayRate = 500;
-						
-						if (Nation == Nation.Insularii )
-                        {
-							SetResistance( ResistanceType.Energy, 70, 70 );
-							SetSkill( SkillName.MagicResist, 100, 100 );
-                        }						
+						PayRate = 500;					
 
                         Fame = 7000;
 
@@ -2298,13 +2269,7 @@ namespace Server.Mobiles
                         PassiveSpeed = 0.4;
                         ActiveSpeed = 0.2;
 
-                        PayRate = 1000;
-						
-						if (Nation == Nation.Insularii )
-                        {
-							SetResistance( ResistanceType.Energy, 70, 70 );
-							SetSkill( SkillName.MagicResist, 100, 100 );
-                        }						
+                        PayRate = 1000;					
 
                         Fame = 12000;
 
@@ -2361,13 +2326,6 @@ namespace Server.Mobiles
                         SetHits(Hits + 50);
                         SetStam(Stam + 50);
 
-                        if (Nation == Nation.Tirebladd || Nation == Nation.Insularii)
-                        {
-                            GiveFeat = "DamageIgnore 3";
-                            GiveFeat = "FastHealing 3";
-                            SetHits(Hits + 50);
-                        }
-
                         PayRate += 1000;
 
                         SetRank(2);
@@ -2389,12 +2347,6 @@ namespace Server.Mobiles
                         SetInt(Int + 50);
                         SetDex(Dex + 25);
                         SetMana(Mana + 50);
-
-                        if (Nation == Nation.Haluaroc || Nation == Nation.Insularii )
-                        {
-                            GiveFeat = "QuickReflexes 3";
-                            GiveFeat = "DamageIgnore 3";
-                        }
 
                         PayRate += 1000;
 
@@ -2418,14 +2370,6 @@ namespace Server.Mobiles
                         SetStr(Str + 25);
                         SetDex(Dex + 25);
                         SetInt(Int + 100);
-
-                        if (Nation == Nation.Southern || Nation == Nation.Insularii )
-                        {
-                            GiveFeat = "Evade 3";
-                            GiveFeat = "Dodge 3";
-                            GiveFeat = "EnhancedDodge 3";
-                            SetDex(Dex + 25);
-                        }
 
                         PayRate += 1000;
 
@@ -2452,13 +2396,6 @@ namespace Server.Mobiles
                         SetDex(Dex + 15);
                         SetInt(Int + 15);
                         SetStam(Stam + 50);
-
-                        if (Nation == Nation.Northern || Nation == Nation.Insularii )
-                        {
-                            SetStr(Str + 25);
-                            SetHits(Hits + 100);
-                            VirtualArmor += 10;
-                        }
 
                         PayRate += 1000;
 
@@ -2528,7 +2465,7 @@ namespace Server.Mobiles
                         }
                         break;
                     }
-                case Nation.Imperial:
+/*                 case Nation.Imperial:
                     {
                         switch (rank)
                         {
@@ -2586,7 +2523,7 @@ namespace Server.Mobiles
                         }
                         break;
                     }
-                case Nation.Society:
+                 case Nation.Society:
                     {
                         switch (rank)
                         {
@@ -2594,7 +2531,7 @@ namespace Server.Mobiles
                             case 2: Name = "Defender " + BaseName; break;
                         }
                         break;
-                    }
+                    } 
 				case Nation.Insularii:
                     {
                         switch (rank)
@@ -2603,7 +2540,7 @@ namespace Server.Mobiles
                             case 2: Name = "a Voxi"; break;
                         }
                         break;
-                    }
+                    } */
 
                 default: return;
             }
@@ -2649,7 +2586,7 @@ namespace Server.Mobiles
                         Roseanhorse.Rider = this;
                         break;
                     }
-                case Nation.Imperial:
+/*                 case Nation.Imperial:
                     {
                         if (Utility.RandomBool())
                         {
@@ -2677,7 +2614,7 @@ namespace Server.Mobiles
                         }
                         break;
                     }
-                case Nation.Society:
+                  case Nation.Society:
                     {
                         if (Utility.RandomBool())
                         {
@@ -2690,7 +2627,7 @@ namespace Server.Mobiles
                             azhorse.Rider = this;
                         }
                         break;
-                    }
+                    } 
                 case Nation.Insularii:
                     {
                         if (Utility.RandomBool())
@@ -2704,7 +2641,7 @@ namespace Server.Mobiles
                             iwarhorse.Rider = this;
                         }
                         break;
-                    }
+                    } */
             }
         }
         #endregion
@@ -2807,12 +2744,12 @@ namespace Server.Mobiles
                 case Nation.Western:    alertMessage = "The Keepers have been alerted of your deeds!";     break;
                 case Nation.Haluaroc:   alertMessage = "The Haluaroc have been alerted of your deeds!";     break;
                 case Nation.Mhordul:    alertMessage = "The Mhordul have been alerted of your deeds!";      break;
-                case Nation.Tirebladd:     alertMessage = "The Tirebladds have been alerted of your deeds!";      break;
+                case Nation.Tirebladd:     alertMessage = "The Tirebladd have been alerted of your deeds!";      break;
                 case Nation.Northern:  alertMessage = "The Northerners have been alerted of your deeds!";   break;
-                case Nation.Imperial:   alertMessage = "The Northerners have been alerted of your deeds!";        break;
+/*                 case Nation.Imperial:   alertMessage = "The Northerners have been alerted of your deeds!";        break;
                 case Nation.Sovereign:  alertMessage = "The Sovereign have been alerted of your deeds!";    break;
-                case Nation.Society:    alertMessage = "The Society has been alerted of your deeds!";       break;
-				case Nation.Insularii:  alertMessage = "The Insularii has been alerted of your deeds!";       break;
+                 case Nation.Society:    alertMessage = "The Society has been alerted of your deeds!";       break; 
+				case Nation.Insularii:  alertMessage = "The Insularii has been alerted of your deeds!";       break; */
             }
 
             return alertMessage;
@@ -3851,8 +3788,8 @@ namespace Server.Mobiles
                                 case 4: { s.SpeechInterval = DateTime.Now; return "With a red hand!"; }
                                 case 5: { s.SpeechInterval = DateTime.Now; return "Your day has come!"; }
                                 case 6: { s.SpeechInterval = DateTime.Now; return "Sons of the hounds, come here and get flesh!"; }
-                                case 7: { s.SpeechInterval = DateTime.Now; return "There'll be no one to sing your name!"; }
-                                case 8: { s.SpeechInterval = DateTime.Now; return "Your story ends here, blighter."; }
+                                case 7: { s.SpeechInterval = DateTime.Now; return "There'll be nothing left of you!"; }
+                                case 8: { s.SpeechInterval = DateTime.Now; return "Come to meet my reaper?"; }
                             }
                         }
 
@@ -3883,14 +3820,14 @@ namespace Server.Mobiles
                         {
                             switch (randomAttackPhrase)
                             {
-                                case 1: { s.SpeechInterval = DateTime.Now; return "Mah'tet wills it."; }
+                                case 1: { s.SpeechInterval = DateTime.Now; return "Xipotec wills it."; }
                                 case 2: { s.SpeechInterval = DateTime.Now; return "Today is an auspicious day for death!"; }
                                 case 3: { s.SpeechInterval = DateTime.Now; return "Stop right there, criminal scum!"; }
                                 case 4: { s.SpeechInterval = DateTime.Now; return "I will sweep you away like the wind."; }
                                 case 5: { s.SpeechInterval = DateTime.Now; return "The vultures take you!"; }
-                                case 6: { s.SpeechInterval = DateTime.Now; return "Black sand!"; }
+                                case 6: { s.SpeechInterval = DateTime.Now; return "In the light!"; }
                                 case 7: { s.SpeechInterval = DateTime.Now; return "You should know your place!"; }
-                                case 8: { s.SpeechInterval = DateTime.Now; return "Ignorant sow!"; }
+                                case 8: { s.SpeechInterval = DateTime.Now; return "Ignorant ape!"; }
                             }
                         }
 
@@ -3921,14 +3858,14 @@ namespace Server.Mobiles
                         {
                             switch (randomAttackPhrase)
                             {
-                                case 1: { s.SpeechInterval = DateTime.Now; return "For the fatherland, forward!"; }
-                                case 2: { s.SpeechInterval = DateTime.Now; return "Remember Tyris!"; }
-                                case 3: { s.SpeechInterval = DateTime.Now; return "Stop right there, criminal scum!"; }
-                                case 4: { s.SpeechInterval = DateTime.Now; return "Cut them down, sons of the north!"; }
-                                case 5: { s.SpeechInterval = DateTime.Now; return "Fire at your balls!"; }
-                                case 6: { s.SpeechInterval = DateTime.Now; return "Follow me, heroes!"; }
+                                case 1: { s.SpeechInterval = DateTime.Now; return "Forward!"; }
+                                case 2: { s.SpeechInterval = DateTime.Now; return "Remember Alyria!"; }
+                                case 3: { s.SpeechInterval = DateTime.Now; return "Prepare to die!"; }
+                                case 4: { s.SpeechInterval = DateTime.Now; return "Cut them down!"; }
+                                case 5: { s.SpeechInterval = DateTime.Now; return "Attack!"; }
+                                case 6: { s.SpeechInterval = DateTime.Now; return "Die!"; }
                                 case 7: { s.SpeechInterval = DateTime.Now; return "Unworthy swine."; }
-                                case 8: { s.SpeechInterval = DateTime.Now; return "Beardless fool!"; }
+                                case 8: { s.SpeechInterval = DateTime.Now; return "Clumsy fool!"; }
                             }
                         }
 
@@ -3941,19 +3878,19 @@ namespace Server.Mobiles
                             switch (randomAttackPhrase)
                             {
                                 case 1: { s.SpeechInterval = DateTime.Now; return "Awake the iron!"; }
-                                case 2: { s.SpeechInterval = DateTime.Now; return "Long live Vhaluran!"; }
-                                case 3: { s.SpeechInterval = DateTime.Now; return "Halt, criminal scum!"; }
+                                case 2: { s.SpeechInterval = DateTime.Now; return "In the name of our Father!"; }
+                                case 3: { s.SpeechInterval = DateTime.Now; return "For the glory of our Mother!"; }
                                 case 4: { s.SpeechInterval = DateTime.Now; return "Charge, my brothers!"; }
-                                case 5: { s.SpeechInterval = DateTime.Now; return "For the Father!"; }
+                                case 5: { s.SpeechInterval = DateTime.Now; return "To the abyss!"; }
                                 case 6: { s.SpeechInterval = DateTime.Now; return "To arms, to arms!"; }
-                                case 7: { s.SpeechInterval = DateTime.Now; return "Halfborn bastard of a Mhordul!"; }
-                                case 8: { s.SpeechInterval = DateTime.Now; return "*snooore... snr-rr-snort?!*"; }
+                                case 7: { s.SpeechInterval = DateTime.Now; return "Cleanse the ground with their blood!"; }
+                                case 8: { s.SpeechInterval = DateTime.Now; return "Slay them!"; }
                             }
                         }
 
                         return null;
                     }
-                case Nation.Imperial:
+/*                 case Nation.Imperial:
                     {
                         if (DateTime.Now >= (s.SpeechInterval + TimeSpan.FromSeconds(Utility.RandomMinMax(120, 600))))
                         {
@@ -3991,7 +3928,7 @@ namespace Server.Mobiles
 
                         return null;
                     }
-                case Nation.Society:
+                 case Nation.Society:
                     {
                         if ( DateTime.Now >= ( s.SpeechInterval + TimeSpan.FromSeconds( Utility.RandomMinMax(120,600) ) ) )
                         {
@@ -4009,7 +3946,7 @@ namespace Server.Mobiles
                         }
 
                         return null;
-                    }
+                    } 
                 case Nation.Insularii:
                     {
                         if ( DateTime.Now >= ( s.SpeechInterval + TimeSpan.FromSeconds( Utility.RandomMinMax(120,600) ) ) )
@@ -4024,7 +3961,7 @@ namespace Server.Mobiles
                         }
 
                         return null;
-                    }
+                    } */
             }
 
             return null;
@@ -4119,43 +4056,43 @@ namespace Server.Mobiles
             {
                 case Armament.Light:
                     {
-                        bonus += ( gov.Resources[ResourceType.Cloth] / resDiv );
+                        /* bonus += ( gov.Resources[ResourceType.Cloth] / resDiv ); */
                         bonus += (gov.Resources[ResourceType.Food] / resDiv);
                         bonus += (gov.Resources[ResourceType.Water] / resDiv);
                         break;
                     }
                 case Armament.Medium:
                     {
-                        bonus += (gov.Resources[ResourceType.Metals] / (resDiv * 2));
-                        bonus += (gov.Resources[ResourceType.Cloth] / (resDiv * 2));
+                        /* bonus += (gov.Resources[ResourceType.Metals] / (resDiv * 2));
+                        bonus += (gov.Resources[ResourceType.Cloth] / (resDiv * 2)) */;
                         bonus += (gov.Resources[ResourceType.Food] / resDiv);
                         bonus += (gov.Resources[ResourceType.Water] / resDiv);
                         break;
                     }
                 case Armament.Heavy:
                     {
-                        bonus += (gov.Resources[ResourceType.Metals] / resDiv);
+                        /* bonus += (gov.Resources[ResourceType.Metals] / resDiv); */
                         bonus += (gov.Resources[ResourceType.Food] / resDiv);
                         bonus += (gov.Resources[ResourceType.Water] / resDiv);
                         break;
                     }
                 case Armament.Ranged:
                     {
-                        bonus += (gov.Resources[ResourceType.Wood] / resDiv);
+                        /* bonus += (gov.Resources[ResourceType.Wood] / resDiv); */
                         bonus += (gov.Resources[ResourceType.Food] / resDiv);
                         bonus += (gov.Resources[ResourceType.Water] / resDiv);
                         break;
                     }
                 case Armament.LightCavalry:
                     {
-                        bonus += (gov.Resources[ResourceType.Cloth] / resDiv);
+                        /* bonus += (gov.Resources[ResourceType.Cloth] / resDiv); */
                         bonus += (gov.Resources[ResourceType.Food] / resDiv);
                         bonus += (gov.Resources[ResourceType.Water] / resDiv);
                         break;
                     }
                 case Armament.HeavyCavalry:
                     {
-                        bonus += (gov.Resources[ResourceType.Metals] / resDiv);
+                        /* bonus += (gov.Resources[ResourceType.Metals] / resDiv); */
                         bonus += (gov.Resources[ResourceType.Food] / resDiv);
                         bonus += (gov.Resources[ResourceType.Water] / resDiv);
                         break;

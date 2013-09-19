@@ -212,21 +212,21 @@ namespace Server.Commands
                 nationchoice = nationchoice.ToLower();
                 Nation nation = Nation.None;
 
-                if (nationchoice == "lurieth")
+                if (nationchoice == "southern")
                     nation = Nation.Southern;
 
-                else if (nationchoice == "keeper")
+                else if (nationchoice == "western")
                     nation = Nation.Western;
 
-                else if (nationchoice == "stranger")
-                    nation = Nation.Mhordul;
+/*                 else if (nationchoice == "stranger")
+                    nation = Nation.Mhordul; */
 
-                else if (nationchoice == "faithful")
+                else if (nationchoice == "northern")
                     nation = Nation.Northern;
 
                 else
                 {
-                    m.SendMessage("Usage example: .Disguise keeper");
+                    m.SendMessage("Usage example: .Disguise Northern .Disguise Southern .Disguise Western");
                     return;
                 }
 

@@ -705,10 +705,7 @@ namespace Server.Items
         {
             if (text == "Southern" || text == "Western" ||
                 text == "Haluaroc" || text == "Mhordul" ||
-                text == "Tirebladd" || text == "Northern" ||
-                text == "Imperial" || text == "Sovereign" ||
-                text == "Society" ||
-                text == "Insularii")
+                text == "Tirebladd" || text == "Northern") 
             {
 
                 switch (m_Option)

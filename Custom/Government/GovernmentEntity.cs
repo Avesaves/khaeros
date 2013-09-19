@@ -159,7 +159,7 @@ namespace Server.Items
             }
 
             //Resource degradation.
-
+/* 
             int MemberDivisor = Members.Count / 2;
             if (MemberDivisor < 1)
                 MemberDivisor = 1;
@@ -175,7 +175,7 @@ namespace Server.Items
 
                 if (Resources[res] < 0)
                     Resources[res] = 0;
-            }
+            } */
         }
 
         public int Budget()

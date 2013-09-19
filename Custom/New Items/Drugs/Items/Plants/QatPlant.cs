@@ -48,7 +48,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            Seed.PickPlantSeed(from, "QatPlant");
+                            /* Seed.PickPlantSeed(from, "QatPlant"); */
 
                             Delete();
                         }

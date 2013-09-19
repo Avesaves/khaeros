@@ -292,7 +292,7 @@ namespace Server.Mobiles
                             Title = "the Peasant";
                         break;
                     }
-                case Nation.Imperial:
+ /*                case Nation.Imperial:
                     {
                         if(IsSlave)
                             Title = "the Vassal";
@@ -307,7 +307,7 @@ namespace Server.Mobiles
                         else
                             Title = "the Roustabout";
                         break;
-                    }
+                    } */
                 default: break;
             }
             #endregion

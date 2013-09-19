@@ -159,8 +159,8 @@ namespace Server.Gumps
 		else if (self.GetDisguisedNation().ToString() == "Southern")
 			race = "Exhibits Southern qualities";
 			
-		else if (self.GetDisguisedNation().ToString() == "Mhordul")
-			race = "Exhibits foreign qualities";			
+/* 		else if (self.GetDisguisedNation().ToString() == "Mhordul")
+			race = "Exhibits Mhordul qualities"; */			
                 	//race = "Exhibits " + self.GetDisguisedNation().ToString() + " qualities";
 
                 //if (self.Nation == Nation.Northern)

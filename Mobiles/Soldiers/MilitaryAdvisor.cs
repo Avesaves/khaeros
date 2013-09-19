@@ -34,10 +34,10 @@ namespace Server.Mobiles
                 case Nation.Mhordul: advisorTitle = "Bambaici"; Soldier.EquipMhordul((Armament)1, this); break;
                 case Nation.Tirebladd: advisorTitle = "Drengr"; Soldier.EquipTirebladd((Armament)1, this); break;
                 case Nation.Northern: if (Female) { advisorTitle = "Sister"; } else { advisorTitle = "Brother"; } Soldier.EquipNorthern((Armament)1, this); break;
-                case Nation.Imperial: advisorTitle = "Tribune"; Soldier.EquipImperial((Armament)1, this); break;
+/*                 case Nation.Imperial: advisorTitle = "Tribune"; Soldier.EquipImperial((Armament)1, this); break;
                 case Nation.Sovereign: if (Female) { advisorTitle = "Warmistress"; } else { advisorTitle = "Warmaster"; } Soldier.EquipSovereign((Armament)1, this); break;
-                case Nation.Society: advisorTitle = "Advisor"; Soldier.EquipSociety((Armament)1, this); break;
-				case Nation.Insularii: advisorTitle = "Maestor"; Soldier.EquipInsularii((Armament)1, this); break;
+                 case Nation.Society: advisorTitle = "Advisor"; Soldier.EquipSociety((Armament)1, this); break;
+				case Nation.Insularii: advisorTitle = "Maestor"; Soldier.EquipInsularii((Armament)1, this); break; */
             }
 
             Name = advisorTitle + " " + Name + " of " + Government.Name.ToString();
@@ -78,37 +78,37 @@ namespace Server.Mobiles
                                     switch (Nation)
                                     {
                                         case Nation.Southern:
-                                            Say("Fight the good fight."); break;
+                                            Say("I have compiled my spies' reports."); break;
                                         case Nation.Western:
                                             Say("All to preserve the Balance."); break;
                                         case Nation.Haluaroc:
-                                            Say("I have compiled my spies' reports."); break;
+                                            Say("In the light!"); break;
                                         case Nation.Mhordul:
                                             Say("Blood and thunder!"); break;
                                         case Nation.Tirebladd:
-                                            Say("Ohlm's icy tits, there's so much to do!"); break;
+                                            Say("Until the end."); break;
                                         case Nation.Northern:
                                             if(e.Mobile.Female)
-                                                Say("At once, my Lady.");
+                                                Say("At once, Sister.");
                                             else
-                                                Say("At once, my Lord.");
+                                                Say("At once, Brother.");
                                             break;
-                                        case Nation.Imperial:
+/*                                         case Nation.Imperial:
                                             Say("The Emperor's will be done."); break;
                                         case Nation.Sovereign:
                                             Say("Our enemies will fear us."); break;
-                                        case Nation.Society:
+                                         case Nation.Society:
                                              if(e.Mobile.Female)
                                                 Say("At once, my Lady.");
                                             else
                                                 Say("At once, my Lord.");				
-											break;
+											break; 
 										case Nation.Insularii:
                                              if(e.Mobile.Female)
                                                 Say("At once, my Lady.");
                                             else
                                                 Say("At once, my Lord.");				
-											break;
+											break; */
                                         default: break;
                                     }
                                     break;

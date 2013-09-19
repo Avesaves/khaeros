@@ -1845,9 +1845,9 @@ namespace Server.Mobiles
 						from.SendMessage( "You cannot price items above 100,000,000 copper.  The price has been adjusted." );
 					}
                     if (m_Vendor.Government != null)
-                        if (price > (m_Vendor.Wages * 50))
+                        if (price > (m_Vendor.Wages * 1000))
                         {
-                            price = m_Vendor.Wages * 50;
+                            price = m_Vendor.Wages * 1000;
                             from.SendMessage( "You cannot price items above " + price.ToString() + ". The price has been adjusted." );
                         }
 

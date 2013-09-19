@@ -781,15 +781,15 @@ namespace Server.Commands
 
             switch( language.ToLower() )
             {
-            	case "lurieth":
+            	case "southern":
             	{
-            		SettingLanguage( m, KnownLanguage.Southern, m.Feats.GetFeatLevel(FeatList.SouthernLanguage), 3, "Lurieth" );
+            		SettingLanguage( m, KnownLanguage.Southern, m.Feats.GetFeatLevel(FeatList.SouthernLanguage), 3, "Southern" );
             		break;
             	}
             	
-            	case "keeper":
+            	case "western":
             	{
-            		SettingLanguage( m, KnownLanguage.Western, m.Feats.GetFeatLevel(FeatList.WesternLanguage), 3, "Keeper" );
+            		SettingLanguage( m, KnownLanguage.Western, m.Feats.GetFeatLevel(FeatList.WesternLanguage), 3, "Western" );
             		break;
             	}
             		
@@ -811,15 +811,15 @@ namespace Server.Commands
             		break;
             	}
             		
-            	case "Tirebladd":
+            	case "tirebladd":
             	{
             		SettingLanguage( m, KnownLanguage.Tirebladd, m.Feats.GetFeatLevel(FeatList.TirebladdLanguage), 3, "Tirebladd" );
             		break;
             	}
             		
-            	case "faithful":
+            	case "northern":
             	{
-            		SettingLanguage( m, KnownLanguage.Northern, m.Feats.GetFeatLevel(FeatList.NorthernLanguage), 3, "Faithful" );
+            		SettingLanguage( m, KnownLanguage.Northern, m.Feats.GetFeatLevel(FeatList.NorthernLanguage), 3, "Northern" );
             		break;
             	}
             		

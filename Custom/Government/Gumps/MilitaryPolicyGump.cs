@@ -138,7 +138,7 @@ namespace Server.Gumps
             m_X = 419;
             m_Y = 196;
 
-            for (int i = 1; i < 10; i++)
+            for (int i = 1; i < 7; i++)
             {
                 if (m_Government.MilitaryPolicies.KillNationOnSight.Contains((Nation)i))
                 {
@@ -160,7 +160,7 @@ namespace Server.Gumps
             m_X = 419;
             m_Y = 196;
 
-            for (int i = 1; i < 10; i++)
+            for (int i = 1; i < 7; i++)
             {
                 if (m_Government.MilitaryPolicies.JailNationOnSight.Contains((Nation)i))
                 {

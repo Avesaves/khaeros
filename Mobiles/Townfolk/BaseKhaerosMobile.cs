@@ -33,8 +33,8 @@ namespace Server.Mobiles
                     this.Nation = Nation.Tirebladd;
                 else if (this is INorthern)
                     this.Nation = Nation.Northern;
-                else if (this is IImperial)
-                    this.Nation = Nation.Imperial;
+/*                 else if (this is IImperial)
+                    this.Nation = Nation.Imperial; */
             }
 
 			SpeechHue = Utility.RandomDyedHue();
@@ -43,7 +43,7 @@ namespace Server.Mobiles
 
             switch (n)
             {
-                case Nation.Imperial:
+ /*                case Nation.Imperial:
                     {
                         int raceChance = Utility.Random(7);
                         switch (raceChance)
@@ -78,8 +78,8 @@ namespace Server.Mobiles
                         }
 
                         break;
-                    }
-                case Nation.Society:
+                    } */
+ /*                case Nation.Society:
                     {
                         int raceChance = Utility.Random(6);
 
@@ -96,8 +96,8 @@ namespace Server.Mobiles
                         }
 
                         break;
-                    }
-				case Nation.Insularii:
+                    } */
+/* 				case Nation.Insularii:
                     {
                         int raceChance = Utility.Random(6);
 
@@ -114,7 +114,7 @@ namespace Server.Mobiles
                         }
 
                         break;
-                    }
+                    } */
             }
 
 			if ( this.Female = Utility.RandomBool() ) 
@@ -1048,10 +1048,10 @@ namespace Server.Mobiles
 
             switch (nation)
             {
-                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
+/*                 case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
                 case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Southern; } else { nation = Nation.Mhordul; } break; }
-                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tirebladd; } break; }
-				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
+                 case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tirebladd; } break; } 
+				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; } */
             }
 			
 			switch( nation )
@@ -1488,10 +1488,10 @@ namespace Server.Mobiles
 
             switch (nation)
             {
-                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
+/*                 case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
                 case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Southern; } else { nation = Nation.Mhordul; } break; }
-                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tirebladd; } break; }
-				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
+                 case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tirebladd; } break; } 
+				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; } */
             }
 
 			switch( nation )
@@ -1951,10 +1951,10 @@ namespace Server.Mobiles
 
             switch (nation)
             {
-                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
+/*                 case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
                 case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Southern; } else { nation = Nation.Mhordul; } break; }
-                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tirebladd; } break; }
-				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
+                 case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tirebladd; } break; } 
+				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; } */
             }
 			
 			switch( nation )
@@ -2890,10 +2890,10 @@ namespace Server.Mobiles
 
             switch (nation)
             {
-                case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
+/*                 case Nation.Imperial: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
                 case Nation.Sovereign: { if (Utility.RandomBool()) { nation = Nation.Southern; } else { nation = Nation.Mhordul; } break; }
-                case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tirebladd; } break; }
-				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; }
+                 case Nation.Society: { if (Utility.RandomBool()) { nation = Nation.Western; } else { nation = Nation.Tirebladd; } break; } 
+				case Nation.Insularii: { if (Utility.RandomBool()) { nation = Nation.Northern; } else { nation = Nation.Haluaroc; } break; } */
             }
 
 			switch( nation )
