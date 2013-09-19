@@ -2926,19 +2926,20 @@ namespace Server.Mobiles
 					{
 						switch( choice )
 						{
-							case 0: m.EquipItem( new ElegantKilt( Utility.RandomNeutralHue() ) ); break;
-							case 1: m.EquipItem( new PlainKilt( Utility.RandomNeutralHue() ) ); break;
-							case 2: m.EquipItem( new Kilt( Utility.RandomNeutralHue() ) ); break;
+							case 0: m.EquipItem( new RaggedPants( Utility.RandomNeutralHue() ) ); break;
+							case 1: m.EquipItem( new LongPants( Utility.RandomNeutralHue() ) ); break;
+							case 2: m.EquipItem( new ShortPants( Utility.RandomNeutralHue() ) ); break;
 						}
 						
 						if( choice > 0 )
 						{
 							m.EquipItem( new Sandals() );
+	                                                m.EquipItem( new Shirt( Utility.RandomNeutralHue() ) ); break;
 						}
 						
 						else
 						{
-							m.EquipItem( new LeatherBoots() );
+                                                        m.EquipItem( new Shirt( Utility.RandomNeutralHue() ) ); break;
 						}
 					}
 					

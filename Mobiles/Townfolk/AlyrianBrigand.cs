@@ -11,29 +11,37 @@ namespace Server.Mobiles
 		[Constructable]
 		public SouthernBrigand() : base( Nation.Southern ) 
 		{
-			SetStr( 100 );
-			SetDex( 50 );
-			SetInt( 20 );
+			SetStr( 150 );
+			SetStr( 150 );
+			SetDex( 150 );
+			SetInt( 35 );
 
-			SetDamage( 3, 6 );
+			SetDamage( 20, 30 );
 			
-			SetHits( 50 );
+			SetHits( 150, 200 );
 			
 			SetDamageType( ResistanceType.Blunt, 100 );
 
-			SetSkill( SkillName.Anatomy, 60.0 );
-			SetSkill( SkillName.Archery, 60.0 );
-			SetSkill( SkillName.Fencing, 60.0 );
-			SetSkill( SkillName.Macing, 60.0 );
-			SetSkill( SkillName.Swords, 60.0 );
-			SetSkill( SkillName.Tactics, 60.0 );
-			SetSkill( SkillName.Polearms, 60.0 );
-			SetSkill( SkillName.ExoticWeaponry, 60.0 );
-			SetSkill( SkillName.Axemanship, 60.0 );
+			SetSkill( SkillName.Anatomy, 80.0 );
+			SetSkill( SkillName.Archery, 80.0 );
+			SetSkill( SkillName.Fencing, 80.0 );
+			SetSkill( SkillName.Macing, 80.0 );
+			SetSkill( SkillName.Swords, 80.0 );
+			SetSkill( SkillName.Tactics, 80.0 );
+			SetSkill( SkillName.Polearms, 80.0 );
+			SetSkill( SkillName.ExoticWeaponry, 80.0 );
+			SetSkill( SkillName.Axemanship, 80.0 );
+			SetResistance( ResistanceType.Blunt, 30, 40 );
+			SetResistance( ResistanceType.Piercing, 50, 50 );
+			SetResistance( ResistanceType.Slashing, 45, 55 );
+			SetResistance( ResistanceType.Fire, 20, 25 );
+			SetResistance( ResistanceType.Cold, 75 );
+			SetResistance( ResistanceType.Poison, 60 );
+			SetResistance( ResistanceType.Energy, 30 );
 			
-			this.Fame = 1500;
+			this.Fame = 8000;
 			
-			this.VirtualArmor = 10;
+			this.VirtualArmor = 45;
 			this.FightMode = FightMode.Closest;
 			int hue = Utility.RandomNeutralHue();
 			
