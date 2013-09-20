@@ -25,7 +25,7 @@ namespace Server.Mobiles
                             }
                         case 1:
                             {
-                                this.Bodyvalue = 400;
+                                this.BodyValue = 400;
                             }
                     }
             SetStr( 180, 200 );
@@ -64,7 +64,7 @@ namespace Server.Mobiles
             Kilt kilt = new Kilt();
             kilt.ItemID = 0x3CA9;
             Claws claws = new Claws();
-            claws.LootType = Blessed; 
+ 
             claws.Name = "Hideous appendages"; 
             Mask mask = new Mask(); 
             mask.ItemID = 0x2682;
