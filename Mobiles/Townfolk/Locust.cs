@@ -10,13 +10,25 @@ namespace Server.Mobiles
 {
 
 		[CorpseName( "a locust corpse" )]
-	public class Locust : BaseKhaerosMobile, IBrigand
+    public class Locust : BaseCreature, IRegenerativeCreature, ILargePredator, IMhordulFavoredEnemy, IEnraged
 	{
 		[Constructable]
 		public Locust() : base( AIType.AI_Berserk, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
-			
-                        SetStr( 180, 200 );
+			        int phance = Utility.RandomMinMax(0, 1);
+                    switch (phance)
+                    {
+                        case 0:
+                            {
+                                this.Female = true;
+                                this.BodyValue = 401;
+                            }
+                        case 1:
+                            {
+                                this.Bodyvalue = 400;
+                            }
+                    }
+            SetStr( 180, 200 );
 			SetDex( 66, 85 );
 			SetInt( 35 );
 
@@ -52,11 +64,13 @@ namespace Server.Mobiles
             Kilt kilt = new Kilt();
             kilt.ItemID = 0x3CA9;
             Claws claws = new Claws();
-            claws.LootType == "Blessed"; 
-            claws.Name == "Hideous appendages"; 
+            claws.LootType = Blessed; 
+            claws.Name = "Hideous appendages"; 
             Mask mask = new Mask(); 
             mask.ItemID = 0x2682;
-			
+
+
+    
 			if( !this.Female )
 			{
              this.FacialHairItemID = 0x31B4; 
@@ -103,7 +117,7 @@ namespace Server.Mobiles
 
         public override void OnGaveMeleeAttack(Mobile defender)
         {
-            if (m_LastSpecial + TimeSpan.FromSeconds(Utility.Random(5, 15)) < DateTime.Now)
+            if ( Utility.Random(100) > 90 )
             {
 
                 switch (Utility.RandomMinMax(1, 3))
