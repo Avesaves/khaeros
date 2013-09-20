@@ -22,10 +22,12 @@ namespace Server.Mobiles
                             {
                                 this.Female = true;
                                 this.BodyValue = 401;
+                                break;
                             }
                         case 1:
                             {
                                 this.BodyValue = 400;
+                                break;
                             }
                     }
             SetStr( 180, 200 );
