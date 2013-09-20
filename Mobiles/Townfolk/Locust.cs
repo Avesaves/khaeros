@@ -1,6 +1,8 @@
 using System;
 using Server;
 using Server.Items;
+using Server.Engines.XmlSpawner2;
+using Server.Targeting;
 using Server.Mobiles;
 using Server.Network;
 
@@ -8,7 +10,7 @@ namespace Server.Mobiles
 {
 
 		[CorpseName( "a locust corpse" )]
-	public class Locust : BaseKhaerosMobile, IRegenerativeCreature, ILargePredator, IEnraged, IBrigand
+	public class Locust : BaseKhaerosMobile, IBrigand
 	{
 		[Constructable]
 		public Locust() : base( AIType.AI_Berserk, FightMode.Closest, 10, 1, 0.2, 0.4 )
@@ -45,19 +47,19 @@ namespace Server.Mobiles
             this.Hue = 0; 
 			int hue = Utility.RandomNeutralHue();
             BoneStaff staff = new BoneStaff();
-            staff.ItemId = 0x26BC;
+            staff.ItemID = 0x26BC;
             Robe robe = new Robe();
             Kilt kilt = new Kilt();
-            kilt.ItemId = 0x3CA9;
+            kilt.ItemID = 0x3CA9;
             Claws claws = new Claws();
-            claws.Blessed = true; 
+            claws.LootType == "Blessed"; 
             claws.Name == "Hideous appendages"; 
             Mask mask = new Mask(); 
-            mask.ItemId = 0x2682;
+            mask.ItemID = 0x2682;
 			
 			if( !this.Female )
 			{
-             this.FacialHairItemId = 0x31B4; 
+             this.FacialHairItemID = 0x31B4; 
 			 this.FacialHairHue = hue; 
 			}
 			
