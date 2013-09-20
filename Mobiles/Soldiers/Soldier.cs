@@ -2413,10 +2413,50 @@ namespace Server.Mobiles
             {
                 case Nation.Southern:
                     {
-                        switch (rank)
+                        switch (Armaments)
                         {
-                            case 1: Name = "Watchman " + BaseName; break;
-                            case 2: Name = "Milite " + BaseName; break;
+                            case Armament.Light:
+                                    switch (rank)
+                                    {
+                                        case 1: Name = "Recruit " + BaseName; break;
+                                        case 2: Name = "Watchman " + BaseName; break;
+                                    }
+                                    break;
+                            case Armament.Medium:            
+                                    switch (rank)
+                                    {
+                                        case 1: Name = "Watchman " + BaseName; break;
+                                        case 2: Name = "Milite " + BaseName; break;
+                                    }
+                                    break;
+                            case Armament.Heavy:
+                                switch (rank)
+                                {
+                                    case 1: Name = "Watchman " + BaseName; break;
+                                    case 2: Name = "Milite " + BaseName; break;
+                                }
+                                break;
+                            case Armament.Ranged:          
+                                    switch (rank)
+                                    {
+                                        case 1: Name = "Watchman " + BaseName; break;
+                                        case 2: Name = "Watchman " + BaseName; break;
+                                    }
+                                    break;
+                            case Armament.LightCavalry:
+                                switch (rank)
+                                {
+                                    case 1: Name = "Watchman " + BaseName; break;
+                                    case 2: Name = "Watchman " + BaseName; break;
+                                }
+                                break;
+                            case Armament.HeavyCavalry:
+                                switch (rank)
+                                {
+                                    case 1: Name = "Outrider " + BaseName; break;
+                                    case 2: Name = "Equite " + BaseName; break;
+                                }
+                                break;
                         }
                         break;
                     }
@@ -2458,10 +2498,50 @@ namespace Server.Mobiles
                     }
                 case Nation.Northern:
                     {
-                        switch (rank)
+                        switch (Armaments)
                         {
-                            case 1: Name = "Guard " + BaseName; break;
-                            case 2: Name = "Templar " + BaseName; break;
+                            case Armament.Light:
+                                    switch (rank)
+                                    {
+                                        case 1: Name = "Recruit " + BaseName; break;
+                                        case 2: Name = "Guard " + BaseName; break;
+                                    }
+                                    break;
+                            case Armament.Medium:            
+                                    switch (rank)
+                                    {
+                                        case 1: Name = "Halberdier " + BaseName; break;
+                                        case 2: Name = "Sergeant " + BaseName; break;
+                                    }
+                                    break;
+                            case Armament.Heavy:
+                                switch (rank)
+                                {
+                                    case 1: Name = "Sentinel " + BaseName; break;
+                                    case 2: Name = "Templar " + BaseName; break;
+                                }
+                                break;
+                            case Armament.Ranged:          
+                                    switch (rank)
+                                    {
+                                        case 1: Name = "Guard " + BaseName; break;
+                                        case 2: Name = "Guard " + BaseName; break;
+                                    }
+                                    break;
+                            case Armament.LightCavalry:
+                                switch (rank)
+                                {
+                                    case 1: Name = "Guard " + BaseName; break;
+                                    case 2: Name = "Guard " + BaseName; break;
+                                }
+                                break;
+                            case Armament.HeavyCavalry:
+                                switch (rank)
+                                {
+                                    case 1: Name = "Dragoon " + BaseName; break;
+                                    case 2: Name = "Templar " + BaseName; break;
+                                }
+                                break;
                         }
                         break;
                     }
