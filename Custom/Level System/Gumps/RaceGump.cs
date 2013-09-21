@@ -31,7 +31,7 @@ namespace Server.Gumps
 			this.AddLabel(126, 84, 1149, @"The Keepers of the Light");
 			this.AddLabel(126, 121, 1149, @"The Free Peoples of Lurieth");
 			this.AddLabel(126, 158, 1149, @"The Northern Protectorate");
-			this.AddLabel(317, 84, 1149, @"Unaffiliated");
+/* 			this.AddLabel(317, 84, 1149, @"Unaffiliated"); */
 			this.AddButton(404, 46, 1150, 1152, 0, GumpButtonType.Reply, 0);
 			
 			this.AddPage(1);
@@ -40,7 +40,7 @@ namespace Server.Gumps
             this.AddButton(90, 81, 9720, 9722, 1, GumpButtonType.Page, 2);
             this.AddButton(90, 118, 9720, 9722, 2, GumpButtonType.Page, 3);
             this.AddButton(90, 155, 9720, 9722, 3, GumpButtonType.Page, 4);
-            this.AddButton(389, 81, 9720, 9722, 4, GumpButtonType.Page, 5);
+/*             this.AddButton(389, 81, 9720, 9722, 4, GumpButtonType.Page, 5); */
 
 			
 			this.AddPage(2);
@@ -65,7 +65,7 @@ namespace Server.Gumps
             this.AddButton(90, 81, 9723, 9722, 1, GumpButtonType.Page, 2);
             this.AddButton(90, 118, 9720, 9722, 2, GumpButtonType.Page, 3);
             this.AddButton(90, 155, 9720, 9722, 3, GumpButtonType.Page, 4);
-            this.AddButton(389, 81, 9720, 9722, 4, GumpButtonType.Page, 5);
+/*             this.AddButton(389, 81, 9720, 9722, 4, GumpButtonType.Page, 5); */
 
 			
 			this.AddPage(3);
@@ -91,7 +91,7 @@ namespace Server.Gumps
             this.AddButton(90, 81, 9720, 9722, 1, GumpButtonType.Page, 2);
             this.AddButton(90, 118, 9723, 9722, 2, GumpButtonType.Page, 3);
             this.AddButton(90, 155, 9720, 9722, 3, GumpButtonType.Page, 4);
-            this.AddButton(389, 81, 9720, 9722, 4, GumpButtonType.Page, 5);
+/*             this.AddButton(389, 81, 9720, 9722, 4, GumpButtonType.Page, 5); */
 
 			
 			this.AddPage(4);
@@ -102,9 +102,9 @@ namespace Server.Gumps
 			             "a pious life. Of course, if this piety leads to their religion " +
 			             "spreading through Khaeros, or the subjugation of lesser peoples, " +
 			             "these are simply the way the Mother and Father wish history to " +
-			             "play out. Although not as numerous as the Southerners, this is " +
-			             "replaced in this culture by ferocity. The Northeners are never " +
-			             "to be trifled with, even in times of peace. Their times of worship " +
+			             "play out. Although not as cosmopolitan as the Southerners, they " +
+			             "make up for it in arms. The Church of the Divine Union is dangerous " +
+			             "to trifle with, even in times of peace. Their times of worship " +
 			             "are only just more frequent than their times of military practice." +
 			             "<br><br><a href=\"http://www.khaeros.net/north.htm\">Further Information</a><br>", (bool)true, (bool)true);
 			this.AddButton(371, 46, 1153, 1155, 9, GumpButtonType.Reply, 0);
@@ -112,10 +112,10 @@ namespace Server.Gumps
             this.AddButton(90, 81, 9720, 9722, 1, GumpButtonType.Page, 2);
             this.AddButton(90, 118, 9720, 9722, 2, GumpButtonType.Page, 3);
             this.AddButton(90, 155, 9723, 9722, 3, GumpButtonType.Page, 4);
-            this.AddButton(389, 81, 9720, 9722, 4, GumpButtonType.Page, 5);
+/*             this.AddButton(389, 81, 9720, 9722, 4, GumpButtonType.Page, 5); */
 
 			
-			this.AddPage(5);
+/* 			this.AddPage(5);
 			this.AddHtml( 99, 219, 307, 147, "<center>???? [locked]</center><br><br>" +
 			             "Just by looking at you, it is hard to see where you come from. " +
 			             "Perhaps, after the terrible events, your ancestors lived " +
@@ -124,13 +124,13 @@ namespace Server.Gumps
 			             "a way as to bias you towards certain gods or ways of living, " +
 			             "although this may change. Your past is a mystery. " +
 
-			             "<br><br><a href=\"http://www.khaeros.net/khaeros.htm\">Further Information</a><br>", (bool)true, (bool)true);
+			             "<br><br><a href=\"http://www.khaeros.net/khaeros.htm\">Further Information</a><br>", (bool)true, (bool)true); */
 		//	this.AddButton(371, 46, 1153, 1155, 10, GumpButtonType.Reply, 0);
 
-            this.AddButton(90, 81, 9720, 9722, 1, GumpButtonType.Page, 2);
+/*             this.AddButton(90, 81, 9720, 9722, 1, GumpButtonType.Page, 2);
             this.AddButton(90, 118, 9720, 9722, 2, GumpButtonType.Page, 3);
             this.AddButton(90, 155, 9720, 9722, 3, GumpButtonType.Page, 4);
-            this.AddButton(389, 81, 9723, 9722, 4, GumpButtonType.Page, 5);
+            this.AddButton(389, 81, 9723, 9722, 4, GumpButtonType.Page, 5); */
 
 			
 		

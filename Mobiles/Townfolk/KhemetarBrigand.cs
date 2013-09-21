@@ -11,7 +11,7 @@ namespace Server.Mobiles
 		[Constructable]
 		public HaluarocBrigand() : base( Nation.Haluaroc ) 
 		{
- 			SetStr( 150 );
+			SetStr( 150 );
 			SetStr( 150 );
 			SetDex( 150 );
 			SetInt( 35 );
@@ -43,50 +43,51 @@ namespace Server.Mobiles
 			
 			this.VirtualArmor = 45;
 			this.FightMode = FightMode.Closest;
-			//int hue = Utility.RandomNeutralHue();
+			int hue = Utility.RandomNeutralHue();
 			
 			if( this.Female )
 			{
-				EquipItem( new Shirt() );
-				EquipItem( new Hijazi() );
+				EquipItem( new WaistCloth( hue ) );
+				EquipItem( new MetallicBra() );
+				EquipItem( new ShortBow() );
 				PackItem( new Arrow( Utility.RandomMinMax( 10, 20 ) ) );
 				AI = AIType.AI_Archer;
 			}
 			
 			else
 			{
+				EquipItem( new ElegantWaistCloth( hue ) );
 				int chance = Utility.RandomMinMax( 0, 2 );
 				
 				switch( chance )
 				{
 					case 0: 
 					{
-						EquipItem( new Tabarzin() );
+						EquipItem( new SpikedMace() );
+						EquipItem( new Buckler() );
 						break;
 					}
 						
 					case 1: 
 					{
-						EquipItem( new DualDaggers() );
+						EquipItem( new PrimitiveSpear() );
 						break;
 					}
 						
 					case 2: 
 					{
-						EquipItem( new Shamshir() );
-						EquipItem( new Buckler() );
+						EquipItem( new SpikedClub() );
+						EquipItem( new WoodenShield() );
 						break;
 					}
 				}
 			}
 			
-			Turban mask = new Turban();
+			RogueMask mask = new RogueMask();
 			//mask.Hue = hue;
 			EquipItem( mask );
-			EquipItem( new BaggyPants() );
-			EquipItem( new WaistSash() );
+			EquipItem( new Sandals() );
 		}
-
 
 		public override void GenerateLoot()
 		{

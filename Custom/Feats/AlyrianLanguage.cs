@@ -9,7 +9,7 @@ namespace Server.FeatInfo
 {
 	public class SouthernLanguage : BaseFeat
 	{
-		public override string Name{ get{ return "Lurethian Language"; } }
+		public override string Name{ get{ return "Southern Language"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.SouthernLanguage; } }
 		public override FeatCost CostLevel{ get{ return FeatCost.High; } }
 		
@@ -19,7 +19,7 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Linguistics }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
-		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Language of Lurieth, which will " +
+		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Language of the Free City of the Lurieth, which will " +
 					"give you a small chance, according to your skill, to understand things spoken in Lurethian and, at max level, to speak the " +
 					"language itself. [25% chance]"; } }
 		public override string SecondDescription{ get{ return "[60% chance]"; } }

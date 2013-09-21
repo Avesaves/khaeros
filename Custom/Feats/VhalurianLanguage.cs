@@ -9,7 +9,7 @@ namespace Server.FeatInfo
 {
 	public class NorthernLanguage : BaseFeat
 	{
-		public override string Name{ get{ return "Divine Union Language"; } }
+		public override string Name{ get{ return "Northern Language"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.NorthernLanguage; } }
 		public override FeatCost CostLevel{ get{ return FeatCost.High; } }
 		
@@ -19,8 +19,8 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Linguistics }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
-		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Language of the Divine Union, which will " +
-					"give you a small chance, according to your skill, to understand things spoken in Northern and, at max level, to speak the " +
+		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the language spoken in the north, which will " +
+					"give you a small chance, according to your skill, to understand things spoken in the Northern tongue and, at max level, to speak the " +
 					"language itself. [25% chance]"; } }
 		public override string SecondDescription{ get{ return "[60% chance]"; } }
 		public override string ThirdDescription{ get{ return "[100% chance]"; } }
