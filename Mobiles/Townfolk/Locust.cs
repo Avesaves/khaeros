@@ -68,7 +68,7 @@ namespace Server.Mobiles
             Kilt kilt = new Kilt();
             kilt.ItemID = 0x3CA9;
             Claws claws = new Claws();
-            claws.Resource = CraftResource.Bone;
+            claws.Resource = CraftResource.Satin;
             claws.LootType = LootType.Blessed;
             WaistCloth waist = new WaistCloth();
             waist.Layer = Layer.Pants;
@@ -119,7 +119,7 @@ namespace Server.Mobiles
                 this.HairHue = hue;
 			}
                             else
-				EquipItem( waist() );
+				EquipItem( waist );
 			}
 
 
