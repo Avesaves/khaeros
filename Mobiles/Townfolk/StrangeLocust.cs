@@ -43,24 +43,24 @@ namespace Server.Mobiles
 
 			SetDamageType( ResistanceType.Blunt, 100 );
 
-			SetResistance( ResistanceType.Blunt, 30, 50 );
-			SetResistance( ResistanceType.Piercing, 30, 50 );
-			SetResistance( ResistanceType.Slashing, 30, 50 );
+			SetResistance( ResistanceType.Blunt, 35, 50 );
+			SetResistance( ResistanceType.Piercing, 35, 50 );
+			SetResistance( ResistanceType.Slashing, 35, 50 );
 			SetResistance( ResistanceType.Fire, 10, 20 );
 			SetResistance( ResistanceType.Cold, 10, 20 );
 			SetResistance( ResistanceType.Poison, 100 );
-			SetResistance( ResistanceType.Energy, 70, 70 );
+			SetResistance( ResistanceType.Energy, 30, 70 );
             MeleeAttackType = MeleeAttackType.FrontalAOE;
 
-			SetSkill( SkillName.Tactics, 100.0, 120.0 );
-			SetSkill( SkillName.UnarmedFighting, 100.0, 120.0 );
-            SetSkill(SkillName.Macing, 100.0, 120.0);
-            SetSkill(SkillName.ExoticWeaponry, 100.0, 120.0);
+			SetSkill( SkillName.Tactics, 110.0, 120.0 );
+			SetSkill( SkillName.UnarmedFighting, 110.0, 120.0 );
+            SetSkill(SkillName.Macing, 110.0, 120.0);
+            SetSkill(SkillName.ExoticWeaponry, 110.0, 120.0);
 
 			Fame = 45000;
 			Karma = -45000;
-
-			VirtualArmor = 55;
+            this.RangeFight = 2;
+			VirtualArmor = 65;
             this.Hue = 2886; 
 			int hue = Utility.RandomNeutralHue();
             BoneStaff staff = new BoneStaff();
@@ -147,7 +147,7 @@ namespace Server.Mobiles
                         {
                             XmlAttach.AttachTo(defender, new XmlFreeze(Utility.RandomMinMax(2, 5)));
                             defender.PlaySound(516);
-                            this.Emote("*Smashes " + defender.Name + ", across the face with, stunning " + (defender.Female == true ? "her" : "him") + " with its stone-like flesh!*");
+                            this.Emote("*Smashes " + defender.Name + ", across the face, stunning " + (defender.Female == true ? "her" : "him") + " with its stone-like flesh!*");
                             break;
                         }
                     case 3:

@@ -36,7 +36,7 @@ namespace Server.Mobiles
                     SetDex(46, 75);
                     SetInt(11, 25);
 
-			SetHits( 700, 900 );
+			SetHits( 500, 700 );
 
 			SetDamage( 40, 50 );
 
@@ -144,7 +144,7 @@ namespace Server.Mobiles
                         {
                             XmlAttach.AttachTo(defender, new XmlFreeze(Utility.RandomMinMax(2, 5)));
                             defender.PlaySound(516);
-                            this.Emote("*Smashes " + defender.Name + ", across the face with, stunning " + (defender.Female == true ? "her" : "him") + " with its stone-like flesh!*");
+                            this.Emote("*Smashes " + defender.Name + ", across the face, stunning " + (defender.Female == true ? "her" : "him") + " with its stone-like flesh!*");
                             break;
                         }
                     case 3:
