@@ -80,7 +80,7 @@ namespace Server.Mobiles
     
 			if( !this.Female )
 			{
-             this.FacialHairItemID = 0x31B4; 
+             this.FacialHairItemID = 12726; 
 			 this.FacialHairHue = hue;
              this.HairItemID = 8465;
              this.HairHue = hue;
