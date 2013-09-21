@@ -578,14 +578,14 @@ namespace Server.Mobiles
 					switch( Utility.Random( 9 ) )
 					{
 						case 0:	return 1849;
-						case 1:	return 1147;
-						case 2:	return 1145;
-						case 3:	return 1062;
+						case 1:	return 2425;
+						case 2:	return 1009;
+						case 3:	return 1010;
 						case 4:	return 2426; 
 						case 5:	return 1017;
 						case 6:	return 1011;
 						case 7:	return 2425; 
-						case 8:	return 1813;
+						case 8:	return 2423;
 						case 9:	return 1072; 
 					}
 					break;
@@ -3105,7 +3105,7 @@ namespace Server.Mobiles
 						switch( choice )
 						{
 							case 0: m.EquipItem( new BeltedDress( Utility.RandomSlimeHue() ) ); break;
-							case 1: m.EquipItem( new ElegantGown( Utility.RandomSlimeHue() ) ); break;
+							case 1: m.EquipItem( new LongDress( Utility.RandomSlimeHue() ) ); break;
 							case 2: m.EquipItem( new LongOrnateDress( Utility.RandomSlimeHue() ) ); break;
 						}
 						
