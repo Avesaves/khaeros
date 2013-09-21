@@ -305,6 +305,11 @@ namespace Server.Mobiles
                         arm.Hue = 2935;
                         m.EquipItem(arm);
                         
+                        LargeScarf scar = new LargeScarf();
+                        scar.Hue = 2581;
+                        scar.Layer = Layer.Neck; 
+                        m.EquipItem(scar);
+                        
                         Robe rober = new Robe();
                         rober.Hue = 2581;
                         m.EquipItem(rober);
@@ -318,8 +323,13 @@ namespace Server.Mobiles
                         m.EquipItem(cloth);
 
                         SkullMask mask = new SkullMask();
+                        mask.Layer = Layer.Earrings;
                         mask.Hue = 2935;
                         m.EquipItem(mask);
+                        
+                        Cowl cow = new Cowl();
+                        cow.Hue = 2581;
+                        m.EquipItem(cow);
 
                         Kukri sword = new Kukri();
                        	
@@ -365,6 +375,11 @@ namespace Server.Mobiles
                         WaistCloth cloth = new WaistCloth();
                         cloth.Hue = 2581;
                         m.EquipItem(cloth);
+                        
+                   LargeScarf scar = new LargeScarf();
+                        scar.Hue = 2581;
+                        scar.Layer = Layer.Neck; 
+                        m.EquipItem(scar);
                         
 
                         
@@ -429,6 +444,11 @@ namespace Server.Mobiles
                         cloth.Hue = 2581;
                         m.EquipItem(cloth);
                         
+                        LargeScarf scar = new LargeScarf();
+                        scar.Hue = 2581;
+                        scar.Layer = Layer.Neck; 
+                        m.EquipItem(scar);
+                        
 
 
                         SkullMask mask = new SkullMask();
@@ -462,15 +482,21 @@ namespace Server.Mobiles
                         
 
                         FancyGlasses fancy = new FancyGlasses();
-                        fancy.Hue = 2581;
+                        fancy.Hue = 2591;
+                        fancy.Name = "Alchemically treated glasses";
                         m.EquipItem(fancy);
                         
                         PaddedVest pad = new PaddedVest();
                         pad.Hue = 2935;
                         m.EquipItem(pad);
                         
+                        Cowl cow = new Cowl();
+                        cow.Hue = 2935;
+                        m.EquipItem(cow);
+                        
                         LargeScarf scar = new LargeScarf();
                         scar.Hue = 2581;
+                        scar.Layer = Layer.Neck; 
                         m.EquipItem(scar);
                         
                         WaistCloth cloth = new WaistCloth();
