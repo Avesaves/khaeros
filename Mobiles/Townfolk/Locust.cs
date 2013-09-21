@@ -30,13 +30,15 @@ namespace Server.Mobiles
                                 break;
                             }
                     }
+                    Name = "A Locust";
+                    this.Criminal = true;
             SetStr( 180, 200 );
 			SetDex( 66, 85 );
 			SetInt( 35 );
 
 			SetHits( 176, 193 );
 
-			SetDamage( 14, 16 );
+			SetDamage( 25, 35 );
 
 			SetDamageType( ResistanceType.Blunt, 100 );
 
@@ -48,16 +50,16 @@ namespace Server.Mobiles
 			SetResistance( ResistanceType.Poison, 100 );
 			SetResistance( ResistanceType.Energy, 15, 25 );
 
-			SetSkill( SkillName.MagicResist, 50.1, 95.0 );
+
 			SetSkill( SkillName.Tactics, 60.1, 100.0 );
-			SetSkill( SkillName.UnarmedFighting, 60.1, 100.0 );
-            SetSkill(SkillName.Macing, 60.1, 100.0);
-            SetSkill(SkillName.ExoticWeaponry, 60.1, 100.0);
+			SetSkill( SkillName.UnarmedFighting, 80.1, 100.0 );
+            SetSkill(SkillName.Macing, 80.1, 100.0);
+            SetSkill(SkillName.ExoticWeaponry, 80.1, 100.0);
 
 			Fame = 4500;
 			Karma = -4500;
 
-			VirtualArmor = 34;
+			VirtualArmor = 50;
             this.Hue = 0; 
 			int hue = Utility.RandomNeutralHue();
             BoneStaff staff = new BoneStaff();
@@ -66,7 +68,10 @@ namespace Server.Mobiles
             Kilt kilt = new Kilt();
             kilt.ItemID = 0x3CA9;
             Claws claws = new Claws();
- 
+            claws.Resource = CraftResource.Bone;
+            claws.LootType = LootType.Blessed;
+            WaistCloth waist = new WaistCloth();
+            waist.Layer = Layer.Pants;
             claws.Name = "Hideous appendages"; 
             Mask mask = new Mask(); 
             mask.ItemID = 0x2682;
@@ -76,7 +81,9 @@ namespace Server.Mobiles
 			if( !this.Female )
 			{
              this.FacialHairItemID = 0x31B4; 
-			 this.FacialHairHue = hue; 
+			 this.FacialHairHue = hue;
+             this.HairItemID = 8465;
+             this.HairHue = hue;
 			}
 			
 			
@@ -107,10 +114,12 @@ namespace Server.Mobiles
                 			if( this.Female )
 			{
 				EquipItem( new RaggedBra( hue ) );
-				EquipItem( new SmallRaggedSkirt( hue ) );				
+				EquipItem( new SmallRaggedSkirt( hue ) );
+                this.HairItemID = 12742;
+                this.HairHue = hue;
 			}
                             else
-				EquipItem( new WaistCloth() );
+				EquipItem( waist() );
 			}
 
 
@@ -119,14 +128,14 @@ namespace Server.Mobiles
 
         public override void OnGaveMeleeAttack(Mobile defender)
         {
-            if ( Utility.Random(100) > 90 )
+            if ( Utility.Random(100) > 70 )
             {
 
                 switch (Utility.RandomMinMax(1, 3))
                 {
                     case 1:
                         {
-                            XmlAttach.AttachTo(defender, new XmlStamDrain(3, 10, 5));
+                            XmlAttach.AttachTo(this, new XmlStamDrain(3, 10, 5));
                             this.Emote("*Barrels into " + defender.Name + ", knocking out " + (defender.Female == true ? "her" : "his") + " wind!*");
                             break;
                         }
@@ -139,7 +148,7 @@ namespace Server.Mobiles
                         }
                     case 3:
                         {
-                            XmlBleedingWound.BeginBleed(defender, this, Utility.RandomMinMax(5, 20));
+                            XmlBleedingWound.BeginBleed(defender, this, Utility.RandomMinMax(10, 20));
                             this.Emote("*Tears at " + defender.Name + "'s flesh with its fingers!*");
                             break;
                         }
@@ -156,7 +165,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Poor );
+			AddLoot( LootPack.Meager, 1 );
 		}
 
 		public override void Serialize(GenericWriter writer)
