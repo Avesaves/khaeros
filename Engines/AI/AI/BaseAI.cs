@@ -555,10 +555,10 @@ namespace Server.Mobiles
 							case 0x165: // all follow
 							{
 							
-														if( m_Mobile.Team == 999 )
+														if( m_Mobile.CreatureGroup == CreatureGroup.Militia )
 							break;
 							
-							else if( m_Mobile.Team != 999 )
+							else if( m_Mobile.CreatureGroup != CreatureGroup.Militia )
 							
 								BeginPickTarget( e.Mobile, OrderType.Follow );
 								return;
@@ -568,10 +568,10 @@ namespace Server.Mobiles
 								if( !isOwner )
 									break;
 									
-																if( m_Mobile.Team == 999 )
+									if( m_Mobile.CreatureGroup == CreatureGroup.Militia )
 							break;
 							
-							else if( m_Mobile.Team != 999 )
+							else if( m_Mobile.CreatureGroup != CreatureGroup.Militia )
 
 								m_Mobile.ControlTarget = null;
 								m_Mobile.ControlOrder = OrderType.Guard;
@@ -602,10 +602,10 @@ namespace Server.Mobiles
 							{
 								if( !isOwner )
 									break;
-																if( m_Mobile.Team == 999 )
+																							if( m_Mobile.CreatureGroup == CreatureGroup.Militia )
 							break;
 							
-							else if( m_Mobile.Team != 999 )
+							else if( m_Mobile.CreatureGroup != CreatureGroup.Militia )
 
 								m_Mobile.ControlTarget = e.Mobile;
 								m_Mobile.ControlOrder = OrderType.Guard;
@@ -614,10 +614,10 @@ namespace Server.Mobiles
 							}
 							case 0x16C: // all follow me
 							{
-							if( m_Mobile.Team == 999 )
+								if( m_Mobile.CreatureGroup == CreatureGroup.Militia )
 							break;
 							
-							else if( m_Mobile.Team != 999 )
+							else if( m_Mobile.CreatureGroup != CreatureGroup.Militia )
                                 m_Mobile.DebugSay("All Follow " + e.Mobile.Name);
 								m_Mobile.ControlTarget = e.Mobile;
 								m_Mobile.ControlOrder = OrderType.Follow;
@@ -650,6 +650,10 @@ namespace Server.Mobiles
                             }
                             else if (groupSpeech.Contains("follow") && !groupSpeech.Contains("me"))
                             {
+							if( m_Mobile.CreatureGroup == CreatureGroup.Militia )
+							return;
+							
+							else if( m_Mobile.CreatureGroup != CreatureGroup.Militia )
                                 if( WasNamed( speech ) )
 									BeginPickTarget( e.Mobile, OrderType.Follow );
                                 return;

@@ -234,7 +234,8 @@ namespace Server.Mobiles
 		Celestial,
 		Brotherhood,
 		Society,
-		Insularii
+		Insularii,
+		Militia
 	}
 
 	public enum ScaleType
