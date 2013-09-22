@@ -1597,13 +1597,14 @@ namespace Server.Mobiles
 				{
 					if( m.Female )
 					{
-						Robe robe = new Robe();
-						robe.ItemID = 0x3CBF;
-						robe.Hue = Utility.RandomNeutralHue();
+
 						switch( choice )
 						{
 							case 0: 
 							{
+						Robe robe = new Robe();
+						robe.ItemID = 0x3CBF;
+						robe.Hue = Utility.RandomNeutralHue();
 								m.EquipItem( new Skirt( Utility.RandomNeutralHue() ) ); 
 								m.EquipItem( new SilverBracelet() );
 								m.EquipItem( robe );
@@ -1617,6 +1618,9 @@ namespace Server.Mobiles
 							
 							case 1:
 							{
+						Robe robe = new Robe();
+						robe.ItemID = 0x3CBF;
+						robe.Hue = Utility.RandomNeutralHue();
 								m.EquipItem( new LongSkirt( Utility.RandomNeutralHue() ) ); 
 								m.EquipItem( new SilverBracelet() );
 								m.EquipItem( new SilverNecklace() );
@@ -1630,6 +1634,9 @@ namespace Server.Mobiles
 							
 							case 2:
 							{
+						Robe robe = new Robe();
+						robe.ItemID = 0x3CBF;
+						robe.Hue = Utility.RandomNeutralHue();
 								m.EquipItem( new ShortPlainDress( Utility.RandomNeutralHue() ) );
 								m.EquipItem( new GoldBracelet() );
 								m.EquipItem( new GoldBeadNecklace() );
