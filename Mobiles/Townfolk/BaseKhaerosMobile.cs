@@ -1602,13 +1602,11 @@ namespace Server.Mobiles
 						{
 							case 0: 
 							{
-						Robe robe = new Robe();
-						
-						robe.Hue = Utility.RandomNeutralHue();
+
 								m.EquipItem( new Skirt( Utility.RandomNeutralHue() ) ); 
 
-								m.EquipItem( robe );
-								robe.ItemID = 0x3CBF;
+					
+								m.EquipItem( new Robe(Utility.RandomNeutralHue()) );
 								m.EquipItem( new WesternRogueMask( Utility.RandomNeutralHue() ) );
 							
 
@@ -1619,31 +1617,27 @@ namespace Server.Mobiles
 							
 							case 1:
 							{
-						Robe robe = new Robe();
-						
-						robe.Hue = Utility.RandomNeutralHue();
+
 								m.EquipItem( new LongSkirt( Utility.RandomNeutralHue() ) ); 
 
 				
 								m.EquipItem( new ElegantCloak( Utility.RandomNeutralHue() ) );
-								m.EquipItem( robe );
-								robe.ItemID = 0x3CBF;
+								m.EquipItem( new Robe(Utility.RandomNeutralHue()) );
+
 								m.EquipItem( new WesternRogueMask( Utility.RandomNeutralHue() ) );
 								break;
 							}
 							
 							case 2:
 							{
-						Robe robe = new Robe();
+					
 						
-						robe.Hue = Utility.RandomNeutralHue();
-								m.EquipItem( new ShortPlainDress( Utility.RandomNeutralHue() ) );
+							
 								m.EquipItem( new GoldBracelet() );
 								m.EquipItem( new GoldBeadNecklace() );
 								m.EquipItem( new GoldRing() );
 								m.EquipItem( new ElegantCloak( Utility.RandomNeutralHue() ) );
-								m.EquipItem( robe );
-								robe.ItemID = 0x3CBF;
+								m.EquipItem( new Robe(Utility.RandomNeutralHue()) );
 								m.EquipItem( new WesternRogueMask() );
 						
 								break;
@@ -3020,7 +3014,7 @@ namespace Server.Mobiles
 
 								m.EquipItem( new Robe( Utility.RandomNeutralHue() ));
 								m.EquipItem( new WesternRogueMask( Utility.RandomNeutralHue() ) );
-								m.EquipItem( new ElegantShoes() );
+						
 
 								m.EquipItem( new Cloak( Utility.RandomNeutralHue() ) );
 								
@@ -3040,13 +3034,11 @@ namespace Server.Mobiles
 							case 2:
 							{
 								
-								m.EquipItem( new GoldBracelet() );
-								m.EquipItem( new GoldBeadNecklace() );
-								m.EquipItem( new GoldRing() );
+
 								m.EquipItem( new Cloak( Utility.RandomNeutralHue() ) );
 								m.EquipItem( new Robe( Utility.RandomNeutralHue() ));
 								m.EquipItem( new WesternRogueMask() );
-								m.EquipItem( new LeatherBoots() );
+	
 								break;
 							}
 						}
@@ -3067,30 +3059,32 @@ namespace Server.Mobiles
 								m.EquipItem( new TribalMask( Utility.RandomNeutralHue() ) );
 								m.EquipItem( new Robe(Utility.RandomNeutralHue() ) );
 								m.EquipItem( new Cloak( Utility.RandomNeutralHue() ) );
-								m.EquipItem( new LeatherBoots() );
+							
 								break;
 							}
 							
 							case 1:
 							{
 								m.EquipItem( new OrnateWaistCloth( Utility.RandomNeutralHue() ) ); 
-								m.EquipItem( new SkullMask( Utility.RandomNeutralHue() ) );
+								m.EquipItem( new TribalMask( Utility.RandomNeutralHue() ) );
 								m.EquipItem( new Robe(Utility.RandomNeutralHue() ));
 								m.EquipItem( new Cloak( Utility.RandomNeutralHue() ) );
-								m.EquipItem( new LeatherBoots() );
+								
 								break;
 							}
 							
 							case 2:
 							{
-								m.EquipItem( new SoftLeatherTunic() ); 
-								m.EquipItem( new LeatherBoots() );
+							
+							
 								m.EquipItem( new WesternRogueMask( Utility.RandomNeutralHue() ) );
 								m.EquipItem( new Robe(Utility.RandomNeutralHue() ) );
 								m.EquipItem( new Cloak( Utility.RandomNeutralHue() ) );
 								break;
 							}
+							
 						}
+						m.EquipItem( new Sandals() );
 					}
 					break;
 				}
