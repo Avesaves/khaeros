@@ -80,6 +80,11 @@ namespace Server.Items
 			if( from is PlayerMobile )
 			{
 				PlayerMobile pm = from as PlayerMobile;
+				if(pm.Mounted)
+				  {
+                	pm.SendMessage( "You cannot use bandages while mounted." );
+                	return;
+                }
 				
 				if( pm.HealingTimer != null )
                 {
