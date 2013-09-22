@@ -554,6 +554,12 @@ namespace Server.Mobiles
 							}
 							case 0x165: // all follow
 							{
+							
+														if( m_Mobile.Team == 999 )
+							break;
+							
+							else if( m_Mobile.Team != 999 )
+							
 								BeginPickTarget( e.Mobile, OrderType.Follow );
 								return;
 							}
@@ -561,6 +567,11 @@ namespace Server.Mobiles
 							{
 								if( !isOwner )
 									break;
+									
+																if( m_Mobile.Team == 999 )
+							break;
+							
+							else if( m_Mobile.Team != 999 )
 
 								m_Mobile.ControlTarget = null;
 								m_Mobile.ControlOrder = OrderType.Guard;
@@ -591,6 +602,10 @@ namespace Server.Mobiles
 							{
 								if( !isOwner )
 									break;
+																if( m_Mobile.Team == 999 )
+							break;
+							
+							else if( m_Mobile.Team != 999 )
 
 								m_Mobile.ControlTarget = e.Mobile;
 								m_Mobile.ControlOrder = OrderType.Guard;
@@ -599,6 +614,10 @@ namespace Server.Mobiles
 							}
 							case 0x16C: // all follow me
 							{
+							if( m_Mobile.Team == 999 )
+							break;
+							
+							else if( m_Mobile.Team != 999 )
                                 m_Mobile.DebugSay("All Follow " + e.Mobile.Name);
 								m_Mobile.ControlTarget = e.Mobile;
 								m_Mobile.ControlOrder = OrderType.Follow;

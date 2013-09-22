@@ -2146,6 +2146,7 @@ namespace Server.Mobiles
                         SetInt(Utility.Random(30, 50));
                         SetHits(Utility.Random(125, 135));
                         SetStam(Utility.Random(90, 110));
+						Team = 999;
 
                         SetResistance(ResistanceType.Blunt, 5);
                         SetResistance(ResistanceType.Piercing, 5);
@@ -2226,6 +2227,7 @@ namespace Server.Mobiles
                         SetInt(Utility.Random(90, 110));
                         SetHits(Utility.Random(100, 120));
                         SetStam(Utility.Random(100, 125));
+						Team = 999;
 
                         SetResistance(ResistanceType.Blunt, 05);
                         SetResistance(ResistanceType.Piercing, 05);
@@ -2252,6 +2254,7 @@ namespace Server.Mobiles
                         SetInt(Utility.Random(30, 40));
                         SetHits(Utility.Random(125, 130));
                         SetStam(Utility.Random(100, 125));
+						Team = 999;
 
                         SetResistance(ResistanceType.Blunt, 60);
                         SetResistance(ResistanceType.Piercing, 60);
