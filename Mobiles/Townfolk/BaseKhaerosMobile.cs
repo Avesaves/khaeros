@@ -1195,7 +1195,7 @@ namespace Server.Mobiles
 							{
 								m.EquipItem( new FullApron( Utility.RandomNeutralHue() ) ); 
 								m.EquipItem( new ShortPants( Utility.RandomNeutralHue() ) ); 
-								m.EquipItem( new Robe( Utility.RandomNeutralHue() ) );  ); 
+								m.EquipItem( new Robe( Utility.RandomNeutralHue() ) );  
 																m.EquipItem( new Robe( Utility.RandomNeutralHue() ) ); 
 								m.EquipItem( new Boots() ); 
 								m.EquipItem( new LeatherGloves() );
@@ -3004,8 +3004,6 @@ namespace Server.Mobiles
 				{
 					if( m.Female )
 					{
-						Robe robe = new Robe();
-						robe.ItemID = 0x3CBF;
 						switch( choice )
 						{
 							case 0: 
@@ -3050,8 +3048,8 @@ namespace Server.Mobiles
 						
 						m.EquipItem( new Sandals() );
 						
-						if( choice < 2 )
-							m.EquipItem( new MetallicBra() );
+						
+						m.EquipItem( new MetallicBra() );
 					}
 					
 					else
@@ -3088,7 +3086,8 @@ namespace Server.Mobiles
 								break;
 							}
 						}
-					}		
+					}
+					break;
 				}
 					
 				case Nation.Haluaroc:
