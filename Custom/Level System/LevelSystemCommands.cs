@@ -4710,6 +4710,13 @@ namespace Server.Commands
         	if( e.Mobile == null || e.Mobile.Deleted || !(e.Mobile is PlayerMobile) || m.Backpack == null || m.Backpack.Deleted )
         		return;
         	
+
+				if(m.Mounted)
+				  {
+                	m.SendMessage( "You cannot use bandages while mounted." );
+                	return;
+                }
+			
         	if( m.HealingTimer != null )
             {
             	m.SendMessage( "You are alreadying trying to heal someone." );
