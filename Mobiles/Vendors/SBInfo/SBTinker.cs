@@ -26,7 +26,7 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( TinkerTools ), 12, 20, 0x1EB8, 0 ) );
 				Add( new GenericBuyInfo( typeof( Tongs ), 12, 20, 0xFBB, 0 ) );
 				Add( new GenericBuyInfo( typeof( SmithHammer ), 12, 20, 0x13E3, 0 ) );
-				Add( new GenericBuyInfo( typeof( BlackSmithingHammer ), 10, 20, 0x13E3, 0 ) );
+/* 				Add( new GenericBuyInfo( typeof( BlackSmithingHammer ), 10, 20, 0x13E3, 0 ) ); */
 				Add( new GenericBuyInfo( typeof( SewingKit ), 12, 20, 0xF9D, 0 ) ); 
 				Add( new GenericBuyInfo( typeof( Scissors ), 5, 20, 0xF9F, 0 ) );
 				Add( new GenericBuyInfo( typeof( DyeTub ), 30, 20, 0xFAB, 0 ) ); 

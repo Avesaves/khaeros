@@ -9,7 +9,7 @@ namespace Server.FeatInfo
 {
 	public class RacialMounts : BaseFeat
 	{
-		public override string Name{ get{ return "Racial Mounts"; } }
+		public override string Name{ get{ return "Disabled - Racial Mounts"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.RacialMounts; } }
 		public override FeatCost CostLevel{ get{ return FeatCost.Low; } }
 		
@@ -29,8 +29,24 @@ namespace Server.FeatInfo
 		
 		public override string FullDescription{ get{ return GetFullDescription(this); } }
 		
+   public override bool MeetsOurRequirements(PlayerMobile m)
+        {
+            if (m.AccessLevel == AccessLevel.Player)
+                return false;
+
+            return base.MeetsOurRequirements(m);
+        }
+
+        public override bool ShouldDisplayTo(PlayerMobile m)
+        {
+            if (m.AccessLevel == AccessLevel.Player)
+                return false;
+
+            return base.ShouldDisplayTo(m);
+        }
+		
 		public static void Initialize(){ WriteWebpage(new RacialMounts()); }
 		
 		public RacialMounts() {}
 	}
-}
+} 

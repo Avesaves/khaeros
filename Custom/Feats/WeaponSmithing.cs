@@ -16,7 +16,7 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Blacksmithing }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.VampireAbilities }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ /*FeatList.WeaponEnameling,*/ FeatList.Damage, FeatList.Speed, FeatList.HCI, FeatList.DCI }; } }
 		
 		public override string FirstDescription{ get{ return "This skill allows you to assemble weapons from various pieces as well as greater chanes for making higher quality weapons. [Weapons crafted by you has a small chance for increased quality] "; } }
@@ -38,6 +38,22 @@ namespace Server.FeatInfo
 
             return base.MeetsOurRequirements(m);
         }*/
+		
+ 		   public override bool MeetsOurRequirements(PlayerMobile m)
+        {
+            if (m.AccessLevel == AccessLevel.Player)
+                return false;
+
+            return base.MeetsOurRequirements(m);
+        }
+
+        public override bool ShouldDisplayTo(PlayerMobile m)
+        {
+            if (m.AccessLevel == AccessLevel.Player)
+                return false;
+
+            return base.ShouldDisplayTo(m);
+        } 
 		
 		public WeaponSmithing() {}
     }

@@ -40,8 +40,8 @@ namespace Server.FeatInfo
 
         public override bool MeetsOurRequirements(PlayerMobile m)
         {
-            if (m.AccessLevel > AccessLevel.Player)
-                return true;
+            if (m.AccessLevel == AccessLevel.Player)
+                return false;
 
             if (!m.CanBeFaithful)
                 return false;
@@ -57,8 +57,8 @@ namespace Server.FeatInfo
 
         public override bool ShouldDisplayTo(PlayerMobile m)
         {
-            if (m.AccessLevel > AccessLevel.Player)
-                return true;
+            if (m.AccessLevel == AccessLevel.Player)
+                return false;
 
             if (!m.CanBeFaithful)
                 return false;
