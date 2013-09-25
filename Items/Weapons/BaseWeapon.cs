@@ -2681,55 +2681,55 @@ namespace Server.Items
 		
 		public void DegradeWeapon()
 		{
-            if (this.Parent is BaseCreature && !(this.Parent is Mercenary) && Utility.RandomMinMax(1, 100) < 90)
+            if (this.Parent is BaseCreature && !(this.Parent is Mercenary) && Utility.RandomMinMax(1, 100) > 90)
                 return;
 
             int qualityDivisor = 0;
             switch(this.Quality)
             {
-                case WeaponQuality.Poor: qualityDivisor = 1; break;
-                case WeaponQuality.Low: qualityDivisor = 1; break;
-                case WeaponQuality.Inferior: qualityDivisor = 2; break;
-                case WeaponQuality.Regular: qualityDivisor = 2; break;
-                case WeaponQuality.Superior: qualityDivisor = 3; break;
-                case WeaponQuality.Exceptional: qualityDivisor = 3; break;
-                case WeaponQuality.Remarkable: qualityDivisor = 4; break;
-                case WeaponQuality.Extraordinary: qualityDivisor = 5; break;
-                case WeaponQuality.Illustrious: qualityDivisor = 7; break;
-                case WeaponQuality.Masterwork: qualityDivisor = 10; break;
-                case WeaponQuality.Legendary: qualityDivisor = 20; break;
+                case WeaponQuality.Poor: qualityDivisor = 5; break;
+                case WeaponQuality.Low: qualityDivisor = 5; break;
+                case WeaponQuality.Inferior: qualityDivisor = 5; break;
+                case WeaponQuality.Regular: qualityDivisor = 5; break;
+                case WeaponQuality.Superior: qualityDivisor = 10; break;
+                case WeaponQuality.Exceptional: qualityDivisor = 10; break;
+                case WeaponQuality.Remarkable: qualityDivisor = 10; break;
+                case WeaponQuality.Extraordinary: qualityDivisor = 20; break;
+                case WeaponQuality.Illustrious: qualityDivisor = 20; break;
+                case WeaponQuality.Masterwork: qualityDivisor = 20; break;
+                case WeaponQuality.Legendary: qualityDivisor = 40; break;
                 default: qualityDivisor = 2; break;
             }
 
             int damageChanceIncrease = (this.MaxHitPoints - this.HitPoints) / qualityDivisor;
 
-			if( Utility.RandomMinMax( 1, 100 ) > ( 95 - damageChanceIncrease ) )
+ 			if( Utility.RandomMinMax( 1, 100 ) > ( 95 - damageChanceIncrease ) )
             {
-                switch (this.Quality)
+/*                 switch (this.Quality)
                 {
-                    case WeaponQuality.Poor: this.HitPoints -= Utility.Random(11); break;
-                    case WeaponQuality.Low: this.HitPoints -= Utility.Random(10); break;
-                    case WeaponQuality.Inferior: this.HitPoints -= Utility.Random(9); break;
-                    case WeaponQuality.Regular: this.HitPoints -= Utility.Random(8); break;
-                    case WeaponQuality.Superior: this.HitPoints -= Utility.Random(7); break;
-                    case WeaponQuality.Exceptional: this.HitPoints -= Utility.Random(6); break;
-                    case WeaponQuality.Remarkable: this.HitPoints -= Utility.Random(5); break;
-                    case WeaponQuality.Extraordinary: this.HitPoints -= Utility.Random(4); break;
-                    case WeaponQuality.Illustrious: if (Utility.RandomBool()) this.HitPoints -= Utility.Random(3); break;
-                    case WeaponQuality.Masterwork: if(Utility.RandomBool()) this.HitPoints -= Utility.Random(2); break;
+                    case WeaponQuality.Poor: this.HitPoints -= Utility.Random(2); break;
+                    case WeaponQuality.Low: this.HitPoints -= Utility.Random(2); break;
+                    case WeaponQuality.Inferior: this.HitPoints -= Utility.Random(2); break;
+                    case WeaponQuality.Regular: this.HitPoints -= Utility.Random(3); break;
+                    case WeaponQuality.Superior: this.HitPoints -= Utility.Random(2); break;
+                    case WeaponQuality.Exceptional: this.HitPoints -= Utility.Random(1); break;
+                    case WeaponQuality.Remarkable: this.HitPoints -= Utility.Random(1); break;
+                    case WeaponQuality.Extraordinary: this.HitPoints -= Utility.Random(1); break;
+                    case WeaponQuality.Illustrious: if (Utility.RandomBool()) this.HitPoints -= Utility.Random(1); break;
+                    case WeaponQuality.Masterwork: if(Utility.RandomBool()) this.HitPoints -= Utility.Random(1); break;
                     case WeaponQuality.Legendary: if (Utility.RandomBool()) this.HitPoints--; break;
-                }
+                }  */
 
                 if (Utility.RandomMinMax(1, 100) > ( 95 - damageChanceIncrease ) )
                 {
                     switch (this.Resource)
                     {
-                        case CraftResource.Copper: this.HitPoints -= Utility.Random(4); break;
-                        case CraftResource.Bronze: this.HitPoints -= Utility.Random(3); break;
+                        case CraftResource.Copper: this.HitPoints -= Utility.Random(5); break;
+                        case CraftResource.Bronze: this.HitPoints -= Utility.Random(1); break;
                         case CraftResource.Iron: this.HitPoints -= Utility.Random(2); break;
-                        case CraftResource.Steel: if(Utility.RandomBool()) this.HitPoints -= Utility.Random(2); break;
-                        case CraftResource.Obsidian: this.HitPoints -= Utility.Random(6); break;
-                        case CraftResource.Starmetal: if(Utility.RandomBool()) this.HitPoints -= Utility.Random(2); break;
+                        case CraftResource.Steel: if(Utility.RandomBool()) this.HitPoints -= Utility.Random(1); break;
+                        case CraftResource.Obsidian: this.HitPoints -= Utility.Random(4); break;
+                        case CraftResource.Starmetal: if(Utility.RandomBool()) this.HitPoints -= Utility.Random(1); break;
                         case CraftResource.Silver: this.HitPoints -= Utility.Random(5); break;
                         case CraftResource.Gold: this.HitPoints -= Utility.Random(6); break;
 

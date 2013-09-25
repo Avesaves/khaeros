@@ -11,12 +11,12 @@ namespace Server.FeatInfo
     {
         public override string Name{ get{ return "Medicine"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.Medicine; } }
-		public override FeatCost CostLevel{ get{ return FeatCost.High; } }
+		public override FeatCost CostLevel{ get{ return FeatCost.Medium; } }
 		
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Alchemy }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Anatomy }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.Surgery }; } }
 		
 		public override string FirstDescription{ get{ return "The study of medicine will allow you to heal injuries much faster than time would normally allow. [+5 Seconds to Heal Attempts]"; } }

@@ -18,7 +18,7 @@ namespace Server.FeatInfo
 		
 		public override FeatList[] Requires{ get{ return new FeatList[]{ }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.LowerSideEffects, FeatList.OilMaking, FeatList.BlackPowder,
-		FeatList.Medicine, FeatList.PoisonResistance }; } }
+		FeatList.PoisonResistance }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in the Alchemy skill, which will " +
 					"allow you to craft a variety of potions, oils and bombs by using your alchemy kit. [20% skill]"; } }

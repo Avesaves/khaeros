@@ -778,21 +778,18 @@ namespace Server.Engines.XmlSpawner2
                     }
                 case Injury.Exhausted:
                     {
-                        int StamLoss = 0;
-                        if (m_Player is PlayerMobile)
-                        {
-                            double numerator = m_Player.StamMax;
-                            StamLoss = (int)(numerator / (m_Player as PlayerMobile).Level);
-                        }
+					    m_Player.Mana -= Utility.RandomMinMax(5, 20);
+
+                        int stamDmg = Utility.RandomMinMax(1, 5);
+                        if (m_Player.Stam - stamDmg > 0)
+                            m_Player.Stam -= stamDmg;
                         else
-                            StamLoss = Utility.Random(1, 10);
-                        if (m_Player.StamMax - StamLoss < 1)
-                            StamLoss = m_Player.Stam - 1;
-                        m_Player.Stam -= StamLoss;
-                        if(Utility.RandomMinMax(1,100) > 90)
-                            m_Player.SendMessage(37, "You are exhausted, drained of " + StamLoss.ToString() + " stamina.");
+                            m_Player.Stam = 1;
+
+                        m_Player.SendMessage(37, "You're exhausted!");
                         break;
                     }
+					
                 case Injury.FracturedLeftArm:
                     {
                         //Handled in BaseWeapon and BaseShield.cs
@@ -944,8 +941,8 @@ namespace Server.Engines.XmlSpawner2
                             csa.DoTrip(1);
                         }
 
-                        if (Utility.RandomMinMax(1, 100) > 25)
-                            XmlAttach.AttachTo(m_Player, new XmlBackground(BackgroundList.Deaf, 1, 5));
+/*                         if (Utility.RandomMinMax(1, 100) > 25)
+                            XmlAttach.AttachTo(m_Player, new XmlBackground(BackgroundList.Deaf, 1, 5)); */
 
                         if(Utility.RandomMinMax(1,100) > 95)
                             m_Player.SendMessage(37, "You are severely concussed!");
@@ -1016,7 +1013,7 @@ namespace Server.Engines.XmlSpawner2
 
                                     break;
                                 }
-                            case 3:
+/*                             case 3:
                                 {
                                     if (Utility.RandomMinMax(1, 100) > 95)
                                     {
@@ -1025,7 +1022,7 @@ namespace Server.Engines.XmlSpawner2
                                         m_Player.SendMessage(37, "You are concussed!");
                                     }
                                     break;
-                                }
+                                } */
                         }
                         break;
                     }
