@@ -97,7 +97,7 @@ namespace Server.Engines.Craft
 			else if( from is PlayerMobile && itemType != null )
 			{
 				PlayerMobile m = from as PlayerMobile;
-				/*	
+					
 				if( itemType == typeof( FootTrap ) && m.Feats.GetFeatLevel(FeatList.NonLethalTraps) < 1 )
 					return 1063492; // You lack the required feat.
 				
@@ -217,7 +217,6 @@ namespace Server.Engines.Craft
 
                 else if( itemType == typeof( LargeSilverNecklace ) && m.Feats.GetFeatLevel( FeatList.JewelryCrafting ) < 2 )
                     return 1063492; // You lack the required feat.
-                    */
 			}
 
 			return 0;
@@ -370,21 +369,21 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( MixingSet  ), 1044046, "mixing set", 5.0, 20.0, typeof( TinIngot ), 1042691, 3, 1044037 );
 			AddCraft( typeof( Scorp ), 1044046, 1024327, 5.0, 20.0, typeof( TinIngot ), 1042691, 2, 1044037 );
 			AddCraft( typeof( TinkerTools ), 1044046, 1044164, 5.0, 20.0, typeof( TinIngot ), 1042691, 2, 1044037 );
-			AddCraft( typeof( Hatchet ), 1044046, 1023907, 5.0, 20.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
-			AddCraft( typeof( DrawKnife ), 1044046, 1024324, 5.0, 20.0, typeof( CopperIngot ), 1044036, 2, 1044037 );
+			AddCraft( typeof( Hatchet ), 1044046, 1023907, 5.0, 20.0, typeof( IronIngot ), 1044036, 4, 1044037 );
+			AddCraft( typeof( DrawKnife ), 1044046, 1024324, 5.0, 20.0, typeof( IronIngot ), 1044036, 2, 1044037 );
 			AddCraft( typeof( SewingKit ), 1044046, 1023997, 5.0, 20.0, typeof( TinIngot ), 1042691, 2, 1044037 );
-			AddCraft( typeof( Saw ), 1044046, 1024148, 5.0, 20.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
-			AddCraft( typeof( DovetailSaw ), 1044046, 1024136, 5.0, 20.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
-			AddCraft( typeof( Froe ), 1044046, 1024325, 5.0, 20.0, typeof( CopperIngot ), 1044036, 2, 1044037 );
-			AddCraft( typeof( Shovel ), 1044046, 1023898, 5.0, 20.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
-			AddCraft( typeof( Hammer ), 1044046, 1024138, 5.0, 20.0, typeof( CopperIngot ), 1044036, 2, 1044037 );
-			AddCraft( typeof( Tongs ), 1044046, 1024028, 5.0, 20.0, typeof( CopperIngot ), 1044036, 2, 1044037 );
-			AddCraft( typeof( SmithHammer ), 1044046, 1025091, 5.0, 20.0, typeof( CopperIngot ), 1044036, 2, 1044037 );
-            //AddCraft(typeof(BlackSmithingHammer), 1044046, "weapon smithing hammer", 5.0, 20.0, typeof(CopperIngot), 1044036, 2, 1044037);
-           // AddCraft(typeof(WeaponDismantler), 1044046, "weapon dismantler", 5.0, 20.0, typeof(CopperIngot), 1044036, 2, 1044037);
-			AddCraft( typeof( SledgeHammer ), 1044046, 1024021, 5.0, 20.0, typeof( CopperIngot ), 1044036, 3, 1044037 );
-			AddCraft( typeof( Inshave ), 1044046, 1024326, 5.0, 20.0, typeof( CopperIngot ), 1044036, 2, 1044037 );
-			AddCraft( typeof( Pickaxe ), 1044046, 1023718, 5.0, 20.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
+			AddCraft( typeof( Saw ), 1044046, 1024148, 5.0, 20.0, typeof( IronIngot ), 1044036, 4, 1044037 );
+			AddCraft( typeof( DovetailSaw ), 1044046, 1024136, 5.0, 20.0, typeof( IronIngot ), 1044036, 4, 1044037 );
+			AddCraft( typeof( Froe ), 1044046, 1024325, 5.0, 20.0, typeof( IronIngot ), 1044036, 2, 1044037 );
+			AddCraft( typeof( Shovel ), 1044046, 1023898, 5.0, 20.0, typeof( IronIngot ), 1044036, 4, 1044037 );
+			AddCraft( typeof( Hammer ), 1044046, 1024138, 5.0, 20.0, typeof( IronIngot ), 1044036, 2, 1044037 );
+			AddCraft( typeof( Tongs ), 1044046, 1024028, 5.0, 20.0, typeof( IronIngot ), 1044036, 2, 1044037 );
+			AddCraft( typeof( SmithHammer ), 1044046, 1025091, 5.0, 20.0, typeof( IronIngot ), 1044036, 2, 1044037 );
+            AddCraft(typeof(BlackSmithingHammer), 1044046, "weapon smithing hammer", 5.0, 20.0, typeof(IronIngot), 1044036, 2, 1044037);
+            AddCraft(typeof(WeaponDismantler), 1044046, "weapon dismantler", 5.0, 20.0, typeof(IronIngot), 1044036, 2, 1044037);
+			AddCraft( typeof( SledgeHammer ), 1044046, 1024021, 5.0, 20.0, typeof( IronIngot ), 1044036, 3, 1044037 );
+			AddCraft( typeof( Inshave ), 1044046, 1024326, 5.0, 20.0, typeof( IronIngot ), 1044036, 2, 1044037 );
+			AddCraft( typeof( Pickaxe ), 1044046, 1023718, 5.0, 20.0, typeof( IronIngot ), 1044036, 4, 1044037 );
 			AddCraft( typeof( Lockpick ), 1044046, 1025371, 5.0, 20.0, typeof( TinIngot ), 1042691, 1, 1044037 );
 			AddCraft( typeof( Skillet ), 1044046, 1044567, 5.0, 20.0, typeof( TinIngot ), 1042691, 4, 1044037 );
 			
@@ -403,11 +402,11 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( MapmakersPen ), 1044046, 1044167, 5.0, 20.0, typeof( TinIngot ), 1042691, 1, 1044037 );
 			AddCraft( typeof( ScribesPen ), 1044046, 1044168, 5.0, 20.0, typeof( TinIngot ), 1042691, 1, 1044037 );
             AddCraft( typeof( PaintsAndBrush ), 1044046, "paints and brush", 5.0, 20.0, typeof( TinIngot ), 1042691, 1, 1044037 );
-			AddCraft( typeof( ClayHarvestingShovel ), 1044046, "clay harvesting shovel", 5.0, 20.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
-			AddCraft( typeof( PottersWheel ), 1044046, "potter's wheel", 5.0, 20.0, typeof( CopperIngot ), 1044036, 20, 1044037 );
-			AddCraft( typeof( Blowpipe ), 1044046, "blowpipe", 5.0, 20.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
-			AddCraft( typeof( Boline ), 1044046, "boline", 5.0, 20.0, typeof( CopperIngot ), 1044036, 4, 1044037 );
-			AddCraft( typeof( MalletAndChisel ), 1044046, "mallet and chisel", 5.0, 20.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
+			AddCraft( typeof( ClayHarvestingShovel ), 1044046, "clay harvesting shovel", 5.0, 20.0, typeof( IronIngot ), 1044036, 4, 1044037 );
+			AddCraft( typeof( PottersWheel ), 1044046, "potter's wheel", 5.0, 20.0, typeof( IronIngot ), 1044036, 20, 1044037 );
+			AddCraft( typeof( Blowpipe ), 1044046, "blowpipe", 5.0, 20.0, typeof( IronIngot ), 1044036, 4, 1044037 );
+			AddCraft( typeof( Boline ), 1044046, "boline", 5.0, 20.0, typeof( IronIngot ), 1044036, 4, 1044037 );
+			AddCraft( typeof( MalletAndChisel ), 1044046, "mallet and chisel", 5.0, 20.0, typeof( IronIngot ), 1044036, 6, 1044037 );
 			AddCraft( typeof( Nails ), 1044046, "nails", 5.0, 20.0, typeof( TinIngot ), 1042691, 2, 1044037 );
 			AddCraft( typeof( TattooArtistTool ), 1044046, "tattoo artist's tool", 5.0, 20.0, typeof( TinIngot ), 1042691, 2, 1044037 );
             AddCraft(typeof(SealmakersTool), 1044046, "sealmaker's tool", 50.0, 75.0, typeof(TinIngot), 1042691, 4, 1044037);
@@ -560,7 +559,7 @@ namespace Server.Engines.Craft
 //			AddSubRes( typeof( SilverIngot ),		1044028, 90.0, 1044036, 1044268 );
 //			AddSubRes( typeof( ObsidianIngot ),		1044029, 95.0, 1044036, 1044268 );
 //			AddSubRes( typeof( SilverIngot ),		1044030, 99.0, 1044036, 1044268 );
-			
+			//
 			SetSubRes( typeof( CopperIngot ), 1044025 );
 			AddSubRes( typeof( CopperIngot ),		1044025, 00.0, 1044036, 1044268 );
 			AddSubRes( typeof( BronzeIngot ),		1044026, 30.0, 1044036, 1044268 );
@@ -570,7 +569,6 @@ namespace Server.Engines.Craft
 			AddSubRes( typeof( ObsidianIngot ),		1044029, 95.0, 1044036, 1044268 );
 			AddSubRes( typeof( SteelIngot ),		1044030, 99.0, 1044036, 1044268 );
 			AddSubRes( typeof( StarmetalIngot ),	1044024, 99.0, 1044036, 1044268 );
-			AddSubRes( typeof( ElectrumIngot ),		1044023, 85.0, 1044036, 1044268 );
 
 			MarkOption = true;
 			Repair = true;
