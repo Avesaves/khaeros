@@ -37,8 +37,8 @@ namespace Server.Items
 		{
 			Weight = 8.0;
 			Layer = Layer.OneHanded;
-			AosElementDamages.Blunt = 90;
-			AosElementDamages.Piercing = 10;
+			AosElementDamages.Blunt = 60;
+			AosElementDamages.Piercing = 40;
 		}
 
 		public HammerPick( Serial serial ) : base( serial )
