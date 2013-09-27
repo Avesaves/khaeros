@@ -5357,13 +5357,16 @@ namespace Server.Mobiles
 						if ( weapon is BasePoleArm )
 						{
 							this.AddBuff( new BuffInfo(
-								BuffIcon.Clumsy, 1041600, 1060847, "<CENTER>Unwieldy Weapon\t<BR>-" + (50-Feats.GetFeatLevel(FeatList.PolearmsMastery)*10) + "% speed", false
+								/* BuffIcon.Clumsy, 1041600, 1060847, "<CENTER>Unwieldy Weapon\t<BR>-" + (50-Feats.GetFeatLevel(FeatList.PolearmsMastery)*10) + "% speed", */
+								BuffIcon.Clumsy, 1041600, 1060847, "<CENTER>Unwieldy Weapon\t<BR>-30% speed", 
+								false
 							) );
 						}
 						else // there are no such weapons atm
 						{
 							this.AddBuff( new BuffInfo(
-								BuffIcon.Clumsy, 1041600, 1060847, "<CENTER>Unwieldy Weapon\t<BR>-50% speed", false
+							    BuffIcon.Clumsy, 1041600, 1060847, "-30% speed", false
+/* 								BuffIcon.Clumsy, 1041600, 1060847, "<CENTER>Unwieldy Weapon\t<BR>-50% speed", false */
 							) );
 						}
 					}
@@ -7232,8 +7235,11 @@ namespace Server.Mobiles
 			                                		this.XPFromLearning = true;
 			                                		LevelSystem.AwardExp( student, exp );
 			                                		LevelSystem.AwardCP( student, exp / 4 );
+													if( this.Level < 50 )
+													{
 			                                		LevelSystem.AwardExp( this, exp / 2 );
 			                                		LevelSystem.AwardCP( this, exp / 8 );
+													}
 			                                		student.XPFromLearning = false;
 			                                		this.XPFromLearning = false;
 			                                		this.m_Teaching = true;

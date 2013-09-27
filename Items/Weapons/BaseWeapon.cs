@@ -2695,7 +2695,7 @@ namespace Server.Items
                 case WeaponQuality.Exceptional: qualityDivisor = 10; break;
                 case WeaponQuality.Remarkable: qualityDivisor = 10; break;
                 case WeaponQuality.Extraordinary: qualityDivisor = 20; break;
-                case WeaponQuality.Illustrious: qualityDivisor = 20; break;
+                case WeaponQuality.Antique: qualityDivisor = 20; break;
                 case WeaponQuality.Masterwork: qualityDivisor = 20; break;
                 case WeaponQuality.Legendary: qualityDivisor = 40; break;
                 default: qualityDivisor = 2; break;
@@ -2715,7 +2715,7 @@ namespace Server.Items
                     case WeaponQuality.Exceptional: this.HitPoints -= Utility.Random(1); break;
                     case WeaponQuality.Remarkable: this.HitPoints -= Utility.Random(1); break;
                     case WeaponQuality.Extraordinary: this.HitPoints -= Utility.Random(1); break;
-                    case WeaponQuality.Illustrious: if (Utility.RandomBool()) this.HitPoints -= Utility.Random(1); break;
+                    case WeaponQuality.Antique: if (Utility.RandomBool()) this.HitPoints -= Utility.Random(1); break;
                     case WeaponQuality.Masterwork: if(Utility.RandomBool()) this.HitPoints -= Utility.Random(1); break;
                     case WeaponQuality.Legendary: if (Utility.RandomBool()) this.HitPoints--; break;
                 }  */
@@ -4730,8 +4730,8 @@ namespace Server.Items
 			if ( m_Quality == WeaponQuality.Remarkable )
 				list.Add( 1060659, "Quality\tRemarkable" );
 
-            if (m_Quality == WeaponQuality.Illustrious)
-                list.Add(1060659, "Quality\tIllustrious");
+            if (m_Quality == WeaponQuality.Antique)
+                list.Add(1060659, "Quality\tAntique");
 			
 			if ( m_Quality == WeaponQuality.Masterwork )
 				list.Add( 1060659, "Quality\tMasterwork" );

@@ -13,7 +13,7 @@ namespace Server.Items
         Inferior = 2,
         Superior = 4,
         Remarkable = 6,
-        Illustrious = 8,
+        Antique = 8,
         Legendary = 10
 	}
 

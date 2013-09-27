@@ -1866,7 +1866,7 @@ namespace Server.Items
                     case ArmorQuality.Exceptional: this.HitPoints -= Utility.Random(4); break; //this.HitPoints -= Utility.Random(6); break;
                     case ArmorQuality.Remarkable: //this.HitPoints -= Utility.Random(5); break;
                     case ArmorQuality.Extraordinary: if (Utility.RandomBool()) this.HitPoints -= Utility.Random(3); break; //this.HitPoints -= Utility.Random(4); break;
-                    case ArmorQuality.Illustrious: //if (Utility.RandomBool()) this.HitPoints -= Utility.Random(3); break;
+                    case ArmorQuality.Antique: //if (Utility.RandomBool()) this.HitPoints -= Utility.Random(3); break;
                     case ArmorQuality.Masterwork: if (Utility.RandomBool()) this.HitPoints -= Utility.Random(2); break;
                     case ArmorQuality.Legendary: if (Utility.RandomBool()) this.HitPoints--; break;
                 }
@@ -2122,7 +2122,7 @@ namespace Server.Items
             if (m_Quality == ArmorQuality.Extraordinary)
                 list.Add(1060659, "Quality\tExtraordinary");
 
-            if (m_Quality == ArmorQuality.Illustrious)
+            if (m_Quality == ArmorQuality.Antique)
                 list.Add(1060659, "Quality\tExceptional");
 
             if (m_Quality == ArmorQuality.Masterwork)

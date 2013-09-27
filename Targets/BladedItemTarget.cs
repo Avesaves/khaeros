@@ -53,7 +53,7 @@ namespace Server.Targets
                 if (quality < 500)
                     weapon.Quality = WeaponQuality.Masterwork;
                 if (quality < 450)
-                    weapon.Quality = WeaponQuality.Illustrious;
+                    weapon.Quality = WeaponQuality.Antique;
                 if (quality < 400)
                     weapon.Quality = WeaponQuality.Extraordinary;
                 if (quality < 350)
@@ -100,7 +100,7 @@ namespace Server.Targets
                 if (quality < 500)
                     weapon.Quality = WeaponQuality.Masterwork;
                 if (quality < 450)
-                    weapon.Quality = WeaponQuality.Illustrious;
+                    weapon.Quality = WeaponQuality.Antique;
                 if (quality < 400)
                     weapon.Quality = WeaponQuality.Extraordinary;
                 if (quality < 350)
@@ -147,7 +147,7 @@ namespace Server.Targets
                 if (quality < 500)
                     weapon.Quality = WeaponQuality.Masterwork;
                 if (quality < 450)
-                    weapon.Quality = WeaponQuality.Illustrious;
+                    weapon.Quality = WeaponQuality.Antique;
                 if (quality < 400)
                     weapon.Quality = WeaponQuality.Extraordinary;
                 if (quality < 350)

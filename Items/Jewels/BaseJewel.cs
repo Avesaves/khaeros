@@ -321,8 +321,8 @@ namespace Server.Items
             if (m_Quality == WeaponQuality.Remarkable)
                 list.Add(1060659, "Quality\tRemarkable");
 
-            if (m_Quality == WeaponQuality.Illustrious)
-                list.Add(1060659, "Quality\tIllustrious");
+            if (m_Quality == WeaponQuality.Antique)
+                list.Add(1060659, "Quality\tAntique");
 
             if (m_Quality == WeaponQuality.Masterwork)
                 list.Add(1060659, "Quality\tMasterwork");
