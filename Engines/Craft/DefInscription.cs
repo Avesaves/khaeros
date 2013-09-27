@@ -100,7 +100,7 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( PieceOfPaper ), "Scrolls", "piece of paper", 5.0, 30.0, typeof( Leather ), 1044462, 2, 1044463 );
 			AddCraft( typeof( RoughScroll ), "Scrolls", "rough scroll", 10.0, 30.0, typeof( Leather ), 1044462, 4, 1044463 );
 			AddCraft( typeof( AlchemicalFormula ), "Scrolls", "alchemical formula", 20.0, 40.0, typeof( Leather ), 1044462, 4, 1044463 );
-			AddCraft( typeof( CustomSpellScroll ), "Scrolls", "spell scroll", 0.0, 0.0, typeof( Leather ), 1044462, 4, 1044463 );
+			//AddCraft( typeof( CustomSpellScroll ), "Scrolls", "spell scroll", 0.0, 0.0, typeof( Leather ), 1044462, 4, 1044463 );
 			
 			AddCraft( typeof( StoneTablet ), "Tablets", "stone tablet", 95.0, 102.5, typeof( Granite ), 1044514, 2, 1044513 );
 			AddCraft( typeof( RoughStoneTablet ), "Tablets", "rough stone tablet", 95.0, 102.5, typeof( Granite ), 1044514, 2, 1044513 );
