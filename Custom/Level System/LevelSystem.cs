@@ -895,7 +895,7 @@ namespace Server.Misc
             from.Advanced = Advanced.None;
             from.Subclass = Subclass.None;
             
-            from.RecreateCP = Math.Max( 0, (from.CPSpent + from.CP - 10000) );
+            from.RecreateCP = Math.Max( 0, (from.CPSpent + from.CP - 20000) );
 			from.RecreateXP = from.XP;
             from.XP = 0;
             from.CP = 20000;
