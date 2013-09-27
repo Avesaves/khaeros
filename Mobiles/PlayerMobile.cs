@@ -7235,10 +7235,11 @@ namespace Server.Mobiles
 			                                		this.XPFromLearning = true;
 			                                		LevelSystem.AwardExp( student, exp );
 			                                		LevelSystem.AwardCP( student, exp / 4 );
+													LevelSystem.AwardCP( this, exp / 8 );
 													if( this.Level < 50 )
 													{
 			                                		LevelSystem.AwardExp( this, exp / 2 );
-			                                		LevelSystem.AwardCP( this, exp / 8 );
+
 													}
 			                                		student.XPFromLearning = false;
 			                                		this.XPFromLearning = false;
