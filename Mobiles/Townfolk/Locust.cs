@@ -137,7 +137,7 @@ namespace Server.Mobiles
                         {
                         
                             XmlAttach.AttachTo(this, new XmlStamDrain(3, 10, 5));
-                            if ( Utility.Random(6) = 1)
+                            if ( Utility.Random(6) < 2)
                             	this.Emote("*Barrels into " + defender.Name + ", knocking out " + (defender.Female == true ? "her" : "his") + " wind!*");
                             break;
                         }
@@ -145,14 +145,14 @@ namespace Server.Mobiles
                         {
                             XmlAttach.AttachTo(defender, new XmlFreeze(Utility.RandomMinMax(1, 3)));
                             defender.PlaySound(516);
-                            if ( Utility.Random(6) = 1)
+                            if ( Utility.Random(6) < 2)
                             	this.Emote("*Smashes " + defender.Name + ", with a bloody fist, stunning " + (defender.Female == true ? "her" : "him") + "!*");
                             break;
                         }
                     case 3:
                         {
                             XmlBleedingWound.BeginBleed(defender, this, Utility.RandomMinMax(10, 20));
-                            if ( Utility.Random(6) = 1)
+                            if ( Utility.Random(6) < 2)
                         	 this.Emote("*Tears at " + defender.Name + "'s flesh with its fingers!*");
                             break;
                         }
