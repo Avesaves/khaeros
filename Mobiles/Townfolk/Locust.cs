@@ -135,21 +135,25 @@ namespace Server.Mobiles
                 {
                     case 1:
                         {
+                        
                             XmlAttach.AttachTo(this, new XmlStamDrain(3, 10, 5));
-                            this.Emote("*Barrels into " + defender.Name + ", knocking out " + (defender.Female == true ? "her" : "his") + " wind!*");
+                            if ( Utility.Random(6) = 1)
+                            	this.Emote("*Barrels into " + defender.Name + ", knocking out " + (defender.Female == true ? "her" : "his") + " wind!*");
                             break;
                         }
                     case 2:
                         {
                             XmlAttach.AttachTo(defender, new XmlFreeze(Utility.RandomMinMax(1, 3)));
                             defender.PlaySound(516);
-                            this.Emote("*Smashes " + defender.Name + ", with a bloody fist, stunning " + (defender.Female == true ? "her" : "him") + "!*");
+                            if ( Utility.Random(6) = 1)
+                            	this.Emote("*Smashes " + defender.Name + ", with a bloody fist, stunning " + (defender.Female == true ? "her" : "him") + "!*");
                             break;
                         }
                     case 3:
                         {
                             XmlBleedingWound.BeginBleed(defender, this, Utility.RandomMinMax(10, 20));
-                            this.Emote("*Tears at " + defender.Name + "'s flesh with its fingers!*");
+                            if ( Utility.Random(6) = 1)
+                        	 this.Emote("*Tears at " + defender.Name + "'s flesh with its fingers!*");
                             break;
                         }
                 }
