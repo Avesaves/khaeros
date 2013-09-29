@@ -777,8 +777,8 @@ namespace Server.Engines.XmlSpawner2
                         break;
                     }
                 case Injury.Exhausted:
-                    {
-					    m_Player.Mana -= Utility.RandomMinMax(5, 20);
+                     {
+                        m_Player.Mana -= Utility.RandomMinMax(5, 20);
 
                         int stamDmg = Utility.RandomMinMax(1, 5);
                         if (m_Player.Stam - stamDmg > 0)
@@ -786,7 +786,7 @@ namespace Server.Engines.XmlSpawner2
                         else
                             m_Player.Stam = 1;
 
-                        m_Player.SendMessage(37, "You're exhausted!");
+                        m_Player.SendMessage(37, "You're exhausted.");
                         break;
                     }
 					
