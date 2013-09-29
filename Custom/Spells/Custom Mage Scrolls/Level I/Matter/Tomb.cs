@@ -227,7 +227,7 @@ namespace Server.Items
              Point3D loc4 = new Point3D(rx, my, pz);
              Point3D loc5 = new Point3D(rx, ty, pz);
              
-             Point3D loc6 = new Point3d(tx, ty, oz);
+             Point3D loc6 = new Point3D(tx, ty, oz);
              Point3D loc7 = new Point3D(tx, my, oz);
              Point3D loc8 = new Point3D(mx, ty, oz);
              Point3D loc9 = new Point3D(mx, my, oz);
