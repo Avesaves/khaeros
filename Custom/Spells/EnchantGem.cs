@@ -31,6 +31,14 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
 		{
 		}
 		
+		public override bool CanBeCast
+        {
+        	 get
+            {
+                return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.MindII || FeatList.MatterII || FeatList.DeathII || FeatList.ForcesII } );
+            }
+        }
+		
 		public override void Effect( )
 		{
 			if( TargetCanBeAffected && CasterHasEnoughMana && TargetItem is IGem )
