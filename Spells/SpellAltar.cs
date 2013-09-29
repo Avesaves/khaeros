@@ -26,7 +26,7 @@ namespace Khaeros.Scripts.Khaeros.Spells
 
         void BuySpells(string speech, Container backpack, Mobile buyer)
         {
-            if (speech.Contains("shapeshiftscroll"))
+            if (speech.Contains("xitiva"))
             {
                 BuySpell<ShapeshiftScroll>(backpack, buyer);
             }
