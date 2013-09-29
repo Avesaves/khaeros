@@ -22,7 +22,7 @@ namespace Server.Items
 		private List<Item> m_AlliedGuilds = new List<Item>();
 		private List<Item> m_EnemyGuilds = new List<Item>();
 		private DateTime m_NextPay;
-		private int m_PayCycleInRLDays = 30;
+		private int m_PayCycleInRLDays = 7;
 		private Container m_Treasury;
 		private bool m_OfficialGuild;
 		

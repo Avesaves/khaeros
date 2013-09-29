@@ -682,6 +682,7 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( Kryss ), 1011081, "kryss", 35.0, 85.0, typeof( CopperIngot ), 1044036, 8, 1044037 );
 			AddCraft( typeof( Longsword ), 1011081, "longsword", 40.0, 80.0, typeof( CopperIngot ), 1044036, 12, 1044037 );
 			AddCraft( typeof( Shortsword ), 1011081, "shortsword", 20.0, 70.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
+			AddCraft( typeof( Gladius ), 1011081, "gladius", 20.0, 70.0, typeof( CopperIngot ), 1044036, 6, 1044037 );			
 			AddCraft( typeof( Machete ), 1011081, "machete", 20.0, 70.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
 			AddCraft( typeof( SkinningKnife ), 1011081, "skinning knife", 0.0, 20.0, typeof( CopperIngot ), 1044036, 3, 1044037 );
 			AddCraft( typeof( Cleaver ), 1011081, "cleaver", 10.0, 30.0, typeof( CopperIngot ), 1044036, 3, 1044037 );

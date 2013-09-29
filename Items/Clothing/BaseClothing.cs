@@ -187,19 +187,34 @@ namespace Server.Items
         public virtual int BaseFireResistance
         {
             get
-            {
-                if( this.Resource == CraftResource.Cotton )
-                    return 5;
-
-                return 0;
-            }
+			{ 
+				if( this.Resource == CraftResource.Linen )
+					return 2;
+				
+				else if( this.Resource == CraftResource.Cotton )
+					return 5;
+					
+				else if( this.Resource == CraftResource.Satin )
+					return 5;
+					
+				else if( this.Resource == CraftResource.Velvet )
+					return 5;					
+				
+				return 0; 
+			} 
         }
         public virtual int BaseColdResistance
         {
             get
             {
-                if( this.Resource == CraftResource.Wool )
-                    return 5;
+				if( this.Resource == CraftResource.Linen )
+					return 2;
+				
+				else if( this.Resource == CraftResource.Wool )
+					return 5;
+					
+				else if( this.Resource == CraftResource.Velvet )
+					return 5;					
 
                 return 0;
             }
@@ -211,7 +226,7 @@ namespace Server.Items
 		{ 
 			get
 			{ 
-				if( this.Resource == CraftResource.Linen )
+				if( this.Resource == CraftResource.Cotton )
 					return 1;
 
 				else if( this.Resource == CraftResource.ScaledLeather )
@@ -242,7 +257,7 @@ namespace Server.Items
 		{ 
 			get
 			{ 
-				if( this.Resource == CraftResource.Linen )
+				if( this.Resource == CraftResource.Silk )
 					return 1;
 				
 				else if( this.Resource == CraftResource.ThickLeather )

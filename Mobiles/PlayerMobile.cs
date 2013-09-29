@@ -3663,7 +3663,7 @@ namespace Server.Mobiles
 					return minvalue;
 				
 				if( this.Feats.GetFeatLevel(FeatList.EnhancedDodge) > 0 )
-					minvalue += this.Feats.GetFeatLevel(FeatList.EnhancedDodge) * 1;
+					minvalue += this.Feats.GetFeatLevel(FeatList.EnhancedDodge) * 3;
 				
 				if( PureDodge )
 				{
@@ -3674,7 +3674,7 @@ namespace Server.Mobiles
 						minvalue += 5;
 					
 					else if( Feats.GetFeatLevel(FeatList.PureDodge) == 1 )
-						minvalue += 1;
+						minvalue += 2;
 				}
 
 				minvalue += (int)((this.Skills[SkillName.Dodge].Base ) * 0.2 );
@@ -10197,7 +10197,7 @@ namespace Server.Mobiles
 
         	if( (((IKhaerosMobile)mob).Feats.GetFeatLevel(FeatList.EnhancedDodge) + offset) > 0 )
             {
-        		int chancetoevade = (((IKhaerosMobile)mob).Feats.GetFeatLevel(FeatList.EnhancedDodge) * 7) + offset;
+        		int chancetoevade = (((IKhaerosMobile)mob).Feats.GetFeatLevel(FeatList.EnhancedDodge) * 5) + offset;
                 int evaderoll = Utility.RandomMinMax( 1, 100 );
 
                 if( chancetoevade >= evaderoll )
