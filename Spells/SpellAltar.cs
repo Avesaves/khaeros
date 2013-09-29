@@ -56,7 +56,6 @@ namespace Khaeros.Scripts.Khaeros.Spells
                 T scroll = Activator.CreateInstance<T>();
                 buyer.AddToBackpack(scroll);
             }
-            buyer.SendMessage("The stone glows.");
         }
 
         void ConsumeGemsByPurchasing(Type spell, Container backpack)
