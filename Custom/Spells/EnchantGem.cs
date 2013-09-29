@@ -33,9 +33,10 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
 		
 		public override bool CanBeCast
         {
-        	PlayerMobile l = Caster as PlayerMobile;
+        	
         	 get
             {
+            	PlayerMobile l = Caster as PlayerMobile;
                 return base.CanBeCast && l.CanBeMage;
             }
         }
