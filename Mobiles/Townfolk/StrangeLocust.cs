@@ -140,26 +140,30 @@ namespace Server.Mobiles
                         {
                             XmlAttach.AttachTo(defender, new XmlFreeze(Utility.RandomMinMax(1, 3)));
                             defender.PlaySound(516);
-                            this.Emote("*Smashes " + defender.Name + ", with a bloody fist, stunning " + (defender.Female == true ? "her" : "him") + "!*");
+                            if ( Utility.Random(6) = 1)
+                            	this.Emote("*Smashes " + defender.Name + ", with a bloody fist, stunning " + (defender.Female == true ? "her" : "him") + "!*");
                             break;
                         }
                     case 2:
                         {
                             XmlAttach.AttachTo(defender, new XmlFreeze(Utility.RandomMinMax(2, 5)));
                             defender.PlaySound(516);
-                            this.Emote("*Smashes " + defender.Name + ", across the face, stunning " + (defender.Female == true ? "her" : "him") + " with its stone-like flesh!*");
+                            if ( Utility.Random(6) = 1)
+                            	this.Emote("*Smashes " + defender.Name + ", across the face, stunning " + (defender.Female == true ? "her" : "him") + " with its stone-like flesh!*");
                             break;
                         }
                     case 3:
                         {
                             XmlBleedingWound.BeginBleed(defender, this, Utility.RandomMinMax(30, 40));
-                            this.Emote("*Tears out a chunk of " + defender.Name + "'s flesh!*");
+                            if ( Utility.Random(6) = 1)
+                        	  this.Emote("*Tears out a chunk of " + defender.Name + "'s flesh!*");
                             break;
                         }
                     case 4:
                         {
                             defender.Poison = Poison.Deadly;
-                            this.Emote("*Tears out a chunk of " + defender.Name + "'s flesh with it's venomous teeth!*");
+                            if ( Utility.Random(6) = 1)
+                            	this.Emote("*Tears out a chunk of " + defender.Name + "'s flesh with it's venomous teeth!*");
                             break;
                         }
                 }
