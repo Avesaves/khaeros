@@ -26,7 +26,7 @@ namespace Khaeros.Scripts.Khaeros.Spells
 
         void BuySpells(string speech, Container backpack, Mobile buyer)
         {
-            if (speech.Contains("shapeshiftscroll"))
+            if (speech.Contains("Xiviita"))
             {
                 BuySpell<ShapeshiftScroll>(backpack, buyer);
             }
@@ -96,7 +96,7 @@ namespace Khaeros.Scripts.Khaeros.Spells
 
         bool PlayerIsInRange(SpeechEventArgs e)
         {
-            return !e.Handled && e.Mobile.InRange(this.Location, 5);
+            return !e.Handled && e.Mobile.InRange(this.Location, 10);
         }
 
         [Constructable]
