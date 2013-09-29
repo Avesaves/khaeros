@@ -7,6 +7,11 @@ namespace Khaeros.Scripts.Khaeros.Spells
 {
     public class SpellAltar : Item
     {
+
+
+	public override bool HandlesOnSpeech{ get{ return true; } }
+
+
         readonly Dictionary<Type, List<SpellScrollCost>> spellCosts;
 
         void AddSpellCosts()
@@ -31,9 +36,10 @@ namespace Khaeros.Scripts.Khaeros.Spells
         {
 			if (PlayerIsInRange(e))
 			{
+			Mobile buyer = e.Mobile;	
                 e.Mobile.SendMessage("You talked in range!");
 			    string speech = e.Speech;
-			    Mobile buyer = e.Mobile;
+			    
 			    Container backpack = buyer.Backpack;
 
                 Console.WriteLine(e.Speech);
@@ -89,7 +95,7 @@ namespace Khaeros.Scripts.Khaeros.Spells
 
         bool PlayerIsInRange(SpeechEventArgs e)
         {
-            return !e.Handled && e.Mobile.InRange(this.Location, 50);
+            return !e.Handled && e.Mobile.InRange(this.Location, 10);
         }
 
         [Constructable]
