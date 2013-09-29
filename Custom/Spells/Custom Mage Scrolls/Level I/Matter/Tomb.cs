@@ -213,6 +213,8 @@ namespace Server.Items
              int tz = Caster.Location.Z + 10;
              int mx = Caster.Location.X + 1;
              int my = Caster.Location.Y + 1;
+             int oz = Caster.Location.Z - 2;
+             int pz = Caster.Location.Z + 3;
              int rz = Caster.Location.Z;
              int rx = Caster.Location.X;
              int ry = Caster.Location.Y;
@@ -220,20 +222,33 @@ namespace Server.Items
              Caster.PlaySound(586);
              Caster.SendMessage("You Summon forth stone walls!");
              Point3D loc = new Point3D(rx, ry, tz);
-             Point3D loc2 = new Point3D(tx, ry, rz);
-             Point3D loc3 = new Point3D(mx, ry, rz);
-             Point3D loc4 = new Point3D(rx, my, rz);
-             Point3D loc5 = new Point3D(rx, ty, rz);
+             Point3D loc2 = new Point3D(tx, ry, pz);
+             Point3D loc3 = new Point3D(mx, ry, pz);
+             Point3D loc4 = new Point3D(rx, my, pz);
+             Point3D loc5 = new Point3D(rx, ty, pz);
+             
+             Point3D loc6 = new Point3d(tx, ty, oz);
+             Point3D loc7 = new Point3D(tx, my, oz);
+             Point3D loc8 = new Point3D(mx, ty, oz);
+             Point3D loc9 = new Point3D(mx, my, oz);
              MagicStoneWall wall = new MagicStoneWall(Caster);
              MagicStoneWall wall2 = new MagicStoneWall(Caster);
              MagicStoneWall wall3 = new MagicStoneWall(Caster);
              MagicStoneWall wall4 = new MagicStoneWall(Caster);
              MagicStoneWall wall5 = new MagicStoneWall(Caster);
+             MagicStoneWall wall6 = new MagicStoneWall(Caster);
+             MagicStoneWall wall7 = new MagicStoneWall(Caster);
+             MagicStoneWall wall8 = new MagicStoneWall(Caster);
+             MagicStoneWall wall9 = new MagicStoneWall(Caster);
              wall.MoveToWorld(loc, Caster.Map);
              wall2.MoveToWorld(loc2, Caster.Map);
              wall3.MoveToWorld(loc3, Caster.Map);
              wall4.MoveToWorld(loc4, Caster.Map);
              wall5.MoveToWorld(loc5, Caster.Map);
+             wall6.MoveToWorld(loc6, Caster.Map);
+             wall7.MoveToWorld(loc7, Caster.Map);
+             wall8.MoveToWorld(loc8, Caster.Map);
+             wall9.MoveToWorld(loc9, Caster.Map);
              Effects.SendLocationParticles(wall, 0x376A, 9, 10, 5025);
              Caster.Emote("*{0} body disappears from sight as stone walls appear from nowhere!*", Caster.Female == true ? "her" : "his", Caster.Name);
 			}
