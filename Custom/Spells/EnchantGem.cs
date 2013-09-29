@@ -35,7 +35,7 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
         {
         	 get
             {
-                return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.MindII || FeatList.MatterII || FeatList.DeathII || FeatList.ForcesII } );
+                return base.CanBeCast && Caster.CanBeMage;
             }
         }
 		
