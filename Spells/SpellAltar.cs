@@ -12,7 +12,7 @@ namespace Khaeros.Scripts.Khaeros.Spells
 	public override bool HandlesOnSpeech{ get{ return true; } }
 
 
-        readonly Dictionary<Type, List<SpellScrollCost>> spellCosts;
+        Dictionary<Type, List<SpellScrollCost>> spellCosts;
 
         void AddSpellCosts()
         {
