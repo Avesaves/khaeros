@@ -101,6 +101,12 @@ namespace Khaeros.Scripts.Khaeros.Spells
             return !e.Handled && e.Mobile.InRange(this.Location, 5);
         }
 
+	void InitializeCosts()
+	{
+	 	spellCosts = new Dictionary<Type, List<SpellScrollCost>>();
+            	AddSpellCosts();
+	}
+
         [Constructable]
 		public SpellAltar() : this( 1 )
 		{
@@ -110,13 +116,13 @@ namespace Khaeros.Scripts.Khaeros.Spells
 		public SpellAltar( int amount ) : base( 0x3650 )
 		{
 			Amount = amount;
-            spellCosts = new Dictionary<Type, List<SpellScrollCost>>();
-            AddSpellCosts();
+			InitializeCosts();
 		}
 
         public SpellAltar(Serial serial)
             : base(serial)
 		{
+			InitializeCosts();
 		}
 
         public override void Serialize(GenericWriter writer)
