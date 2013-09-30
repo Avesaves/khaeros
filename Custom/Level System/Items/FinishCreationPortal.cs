@@ -132,6 +132,7 @@ namespace Server.Items
 					from.OldMapChar = false;
 					from.RecreateCP = 0;
 					from.RecreateXP = 0;
+					from.DisplayGuildTitle = true;
 				}
 			}
 		}
