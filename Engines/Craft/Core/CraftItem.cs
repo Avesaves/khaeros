@@ -612,11 +612,11 @@ namespace Server.Engines.Craft
 				return false;
 			}
 			
-			if ( from is PlayerMobile && m.Feats.GetFeatLevel(FeatList.Linen) < 3 && typeRes == typeof( Linen ) )
+/* 			if ( from is PlayerMobile && m.Feats.GetFeatLevel(FeatList.Linen) < 3 && typeRes == typeof( Linen ) )
 			{
 				message = 1063534; // You do not know how to use that resource.
 				return false;
-			}
+			} */
 			
 			if ( from is PlayerMobile && m.Feats.GetFeatLevel(FeatList.Obsidian) < 3 && typeRes == typeof( ObsidianIngot ) )
 			{

@@ -44,11 +44,11 @@ namespace Server.Items
 			{
 				PlayerMobile m = from as PlayerMobile;
 				
-				if( m.Feats.GetFeatLevel(FeatList.Linen) < 2 )
+/* 				if( m.Feats.GetFeatLevel(FeatList.Linen) < 2 )
 				{
 					from.SendMessage( "You do not know how to use that." ); 
 					return; 
-				}
+				} */
 			}
 			
 			if ( IsChildOf( from.Backpack ) )

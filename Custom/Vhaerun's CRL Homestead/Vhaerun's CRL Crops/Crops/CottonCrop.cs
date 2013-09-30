@@ -39,6 +39,17 @@ namespace Server.Items.Crops
 				return; 
 			}
 
+				if ( from is PlayerMobile  )
+			{
+				PlayerMobile m = from as PlayerMobile;
+				
+				if( m.Feats.GetFeatLevel(FeatList.Linen) < 1 )
+				{
+					from.SendMessage( "You do not know how to plant that seed." ); 
+					return; 
+				}
+			}
+			
 			Point3D m_pnt = from.Location;
 			Map m_map = from.Map;
 
@@ -247,6 +258,17 @@ namespace Server.Items.Crops
 				return; 
 			}
 
+/* 			if ( from is PlayerMobile )
+			{
+				PlayerMobile m = from as PlayerMobile;
+				
+				if( m.Feats.GetFeatLevel(FeatList.Linen) < 1 )
+				{
+					from.SendMessage( "You do not know how to harvest that crop." ); 
+					return; 
+				}
+			}	 */		
+			
 			if ( DateTime.Now > lastpicked.AddSeconds(3) ) // 3 seconds between picking
 			{
 				lastpicked = DateTime.Now;
@@ -299,21 +321,36 @@ namespace Server.Items.Crops
 							PlayerMobile m = from as PlayerMobile;
 							pick += m.Feats.GetFeatLevel(FeatList.EnhancedHarvesting);
 							
+							if( m.Feats.GetFeatLevel(FeatList.Linen) >= 1 )
+							{
+							if( m.Feats.GetFeatLevel(FeatList.Linen) == 1 )
+							pick += m.Feats.GetFeatLevel(FeatList.Linen) + 5;
+							
+							if( m.Feats.GetFeatLevel(FeatList.Linen) >= 2 )
+							pick += m.Feats.GetFeatLevel(FeatList.Linen) + 10;
+							}						
+							
 							if( DateTime.Now > (m.LastCottonFlaxHarvest + TimeSpan.FromHours(1)) )
 								m.HarvestedCrops = 0;
 							
 							if( DateTime.Compare( m.NextHarvestAllowed, DateTime.Now ) > 0 )
 							{
-								m.SendMessage( "The local farmer forbids you to harvest any more crops after reminding you that this is a public farm and that you should leave some crops for the others." );
+								m.SendMessage( "You are too tired to harvest that right now." );
 								m.HarvestedCrops = 0;
 								return;
 							}
 							
-							if( pick + m.HarvestedCrops > 100 )
+ 							if(( pick + m.HarvestedCrops > 100 ) && m.Feats.GetFeatLevel(FeatList.Linen) <= 2 )
 							{
 								m.NextHarvestAllowed = DateTime.Now + TimeSpan.FromHours( 1 );
 								m.HarvestedCrops = 0;
-							}
+							} 
+							
+							 if( pick + m.HarvestedCrops > 200 )
+							{
+								m.NextHarvestAllowed = DateTime.Now + TimeSpan.FromHours( 1 );
+								m.HarvestedCrops = 0;
+							} 
 							
 							m.HarvestedCrops += pick;
 							m.LastCottonFlaxHarvest = DateTime.Now;

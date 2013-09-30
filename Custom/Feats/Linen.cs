@@ -9,7 +9,7 @@ namespace Server.FeatInfo
 {
 	public class Linen : BaseFeat
 	{
-		public override string Name{ get{ return "Linen"; } }
+		public override string Name{ get{ return "Textile Working"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.Linen; } }
 		public override FeatCost CostLevel{ get{ return FeatCost.Low; } }
 		
@@ -19,9 +19,9 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.EnhancedHarvesting }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
-		public override string FirstDescription{ get{ return "This skill will allow you to harvest flax."; } }
-		public override string SecondDescription{ get{ return "With this skill level, you will be able to refine flax into Linen."; } }
-		public override string ThirdDescription{ get{ return "You will now be able to craft with Linen."; } }
+		public override string FirstDescription{ get{ return "This skill will allow you to harvest 5 extra cotton or flax per plant."; } }
+		public override string SecondDescription{ get{ return "With this skill level, you will be able to harvest 10 extra cotton or flax per plant."; } }
+		public override string ThirdDescription{ get{ return "You will now be able to harvest twice as much cotton or flax before getting tired."; } }
 
 		public override string FirstCommand{ get{ return "None"; } }
 		public override string SecondCommand{ get{ return "None"; } }

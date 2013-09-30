@@ -228,6 +228,9 @@ namespace Server.Items
 			{ 
 				if( this.Resource == CraftResource.Cotton )
 					return 1;
+					
+				else if( this.Resource == CraftResource.Wool )
+					return 2;	
 
 				else if( this.Resource == CraftResource.ScaledLeather )
 					return 2;
@@ -258,6 +261,12 @@ namespace Server.Items
 			get
 			{ 
 				if( this.Resource == CraftResource.Silk )
+					return 1;
+					
+				else if( this.Resource == CraftResource.Satin )
+					return 1;
+					
+				else if( this.Resource == CraftResource.Velvet )
 					return 1;
 				
 				else if( this.Resource == CraftResource.ThickLeather )
@@ -1405,11 +1414,11 @@ namespace Server.Items
 			
 			if( Resource == CraftResource.Linen )
 			{
-				if( m.Feats.GetFeatLevel(FeatList.Linen) < 3 )
+/* 				if( m.Feats.GetFeatLevel(FeatList.Linen) < 3 )
 				{
 					from.SendMessage( 60, "You do not know how to use linen and have ruined your craft." );
 			    	this.Delete();
-				}
+				} */
 				
 				MaxHitPoints += ( MaxHitPoints / 2 );
 				HitPoints = MaxHitPoints;
