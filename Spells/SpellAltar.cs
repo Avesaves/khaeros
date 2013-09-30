@@ -71,7 +71,7 @@ namespace Khaeros.Scripts.Khaeros.Spells
         bool PlayerHasEnoughGemsToPurchase(Type spell, Container backpack)
         {
         if (spell == null || backpack == null) 
-        	return;
+        	return false;
         
             if (!spellCosts.ContainsKey(spell))
                 return false;
