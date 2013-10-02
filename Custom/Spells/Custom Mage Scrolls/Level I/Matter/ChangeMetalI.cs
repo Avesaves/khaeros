@@ -118,12 +118,12 @@ namespace Server.Items
             {
 				Caster.Mana -= TotalCost;
 				Success = true;
-                reso = TargetItem.CraftResource; 
+                string reso = TargetItem.Resource; 
                 
                 Caster.Emote("*{0} hand glows a strange metallic blue colour*", Caster.Female == true ? "her" : "his");
 				TargetItem.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*Shimmers as its composition is altered*" );
                 TargetItem.Movable = false;
-                TargetItem.CraftResource = CraftResource.Starmetal; 
+                TargetItem.Resource = CraftResource.Starmetal; 
 				Timer.DelayCall( TimeSpan.FromSeconds( 360 ), new TimerCallback( Flare ) );
             }
         }
@@ -139,7 +139,7 @@ namespace Server.Items
 			 
 			 TargetItem.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*returns to its ordinary material*" );
              TargetItem.Movable = true;
-             TargetItem.CraftResource = reso;   
+             TargetItem.Resource = reso;   
 
 		}				
 	}
