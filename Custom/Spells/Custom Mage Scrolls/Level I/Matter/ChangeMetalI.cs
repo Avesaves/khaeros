@@ -5,6 +5,7 @@ using Server.Items;
 using Server.Gumps;
 using Server.Misc;
 using Server.Mobiles;
+using Server.Engines.Craft;
 using Server.ContextMenus;
 using Server.Engines.XmlSpawner2;
 
