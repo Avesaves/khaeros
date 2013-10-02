@@ -80,9 +80,10 @@ namespace Server.Items
         public override bool IsHarmful { get { return false; } }
         public override bool UsesTarget { get { return true; } }
 		public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
-        public override string Name { get { return "ChangeMetalI"; } }
+        public override string Name { get { return "Change Metal I"; } }
         public override int ManaCost { get { return 10; } }
         public override int BaseRange { get { return 12; } }
+        
 
         public ChangeMetalISpell()
             : this( null, 1 )
@@ -118,12 +119,13 @@ namespace Server.Items
             {
 				Caster.Mana -= TotalCost;
 				Success = true;
-                string reso = TargetItem.Resource; 
+                Item sword = TargetItem as Item;
+                reso = sword.Resource; 
                 
                 Caster.Emote("*{0} hand glows a strange metallic blue colour*", Caster.Female == true ? "her" : "his");
 				TargetItem.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*Shimmers as its composition is altered*" );
                 TargetItem.Movable = false;
-                TargetItem.Resource = CraftResource.Starmetal; 
+                sword.Resource = CraftResource.Starmetal; 
 				Timer.DelayCall( TimeSpan.FromSeconds( 360 ), new TimerCallback( Flare ) );
             }
         }
