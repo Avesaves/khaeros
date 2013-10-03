@@ -106,7 +106,7 @@ namespace Server.Items
                 return base.CanBeCast && HasRequiredArcanas( new FeatList[]{ FeatList.MatterI } );
             }
         }
-        public static string reso = TargetItem.CraftResource; 
+        public static string reso = TargetItem.Resource; 
         public override void Effect()
         {				
 			if (TargetItem.IsChildOf( Caster.Backpack ))
@@ -116,11 +116,11 @@ namespace Server.Items
 				return;
 			}
 				
-            if( TargetCanBeAffected && CasterHasEnoughMana && TargetItem is Item && TargetItem.Movable != false )
+            if( TargetCanBeAffected && CasterHasEnoughMana && TargetItem is Item && TargetItem.Movable != false && TargetItem is BaseWeapon )
             {
 				Caster.Mana -= TotalCost;
 				Success = true;
-                Item sword = TargetItem as Item;
+                BaseWeapon sword = TargetItem as BaseWeapon;
 
                 
                 Caster.Emote("*{0} hand glows a strange metallic blue colour*", Caster.Female == true ? "her" : "his");
@@ -138,11 +138,11 @@ namespace Server.Items
 				
 			if (TargetItem == null || TargetItem.Deleted)
 				return;
-				
-			 
+
+            BaseWeapon sword = TargetItem as BaseWeapon;
 			 TargetItem.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*returns to its ordinary material*" );
              TargetItem.Movable = true;
-             TargetItem.CraftResource = reso;   
+             sword.CraftResource = reso;   
 
 		}				
 	}
