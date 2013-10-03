@@ -111,11 +111,7 @@ namespace Server.Items
         {
             BaseWeapon sword = TargetItem as BaseWeapon;
             BaseArmor armor = TargetItem as BaseArmor;
-            if (TargetItem == null || TargetItem is BaseClothing || TargetItem.Deleted )
-            {
-                Success = false;
-                return;
-            }
+
 			if (TargetItem.IsChildOf( Caster.Backpack ))
 			{
 				Caster.SendMessage("You cannot use that on an item in your pack.");
@@ -136,7 +132,8 @@ namespace Server.Items
                 sword.Resource = CraftResource.Starmetal; 
 				Timer.DelayCall( TimeSpan.FromSeconds( 360 ), new TimerCallback( Flare ) );
             }
-            if (TargetCanBeAffected && CasterHasEnoughMana && armor.Resource == CraftResource.Iron && TargetItem is Item && TargetItem.Movable != false && TargetItem is BaseArmor)
+            
+            else if (TargetCanBeAffected && CasterHasEnoughMana && armor.Resource == CraftResource.Iron && TargetItem is Item && TargetItem.Movable != false && TargetItem is BaseArmor)
             {
                 Caster.Mana -= TotalCost;
                 Success = true;
@@ -148,6 +145,11 @@ namespace Server.Items
                 TargetItem.Movable = false;
                 armor.Resource = CraftResource.Starmetal;
                 Timer.DelayCall(TimeSpan.FromSeconds(360), new TimerCallback(Flare1));
+            }
+            else if (TargetItem == null || TargetItem is BaseClothing || TargetItem.Deleted)
+            {
+                Success = false;
+                return;
             }
         }
 				
