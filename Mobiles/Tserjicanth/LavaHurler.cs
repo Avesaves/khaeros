@@ -1,7 +1,11 @@
 using System;
-using System.Collections;
+using Server;
 using Server.Items;
+using Server.Engines.XmlSpawner2;
 using Server.Targeting;
+using Server.Mobiles;
+using Server.Network;
+using Server.Collections
 
 namespace Server.Mobiles
 {
@@ -44,7 +48,7 @@ namespace Server.Mobiles
 			VirtualArmor = 40;
 			
 			PackItem( new Bone( 3 ) );
-			AddItem( new LightSource );
+			EquipItem( new LightSource() );
 		}
 
 		public override void OnAfterMove( Point3D oldLocation )
@@ -64,7 +68,7 @@ namespace Server.Mobiles
 						if( this.Combatant is PlayerMobile && ((PlayerMobile)this.Combatant).Evaded() )
 			            	return;
 						
-						AOS.Damage( targ, Caster, Utility.RandomMinMax( 15, 18 ), false, 0, 100, 0, 0, 0, 0, 0, 0, false );
+						AOS.Damage( m, this, Utility.RandomMinMax( 15, 18 ), false, 0, 100, 0, 0, 0, 0, 0, 0, false );
 					}
 				}
 			}

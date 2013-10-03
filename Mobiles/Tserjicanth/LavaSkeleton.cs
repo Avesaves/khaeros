@@ -1,7 +1,11 @@
 using System;
-using System.Collections;
+using Server;
 using Server.Items;
+using Server.Engines.XmlSpawner2;
 using Server.Targeting;
+using Server.Mobiles;
+using Server.Network;
+using Server.Collections
 
 namespace Server.Mobiles
 {
@@ -43,7 +47,7 @@ namespace Server.Mobiles
 
 			VirtualArmor = 40;
 
-			AddItem( new LightSource );			
+			EquipItem( new LightSource() );			
 			PackItem( new Bone( 3 ) );
 		}
 

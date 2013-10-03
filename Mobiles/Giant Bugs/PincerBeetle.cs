@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Server.Items;
+using Server.Engines.XmlSpawner2;
 using Server.Targeting;
 
 namespace Server.Mobiles
@@ -50,11 +51,11 @@ namespace Server.Mobiles
 
         public override void OnGaveMeleeAttack(Mobile defender)
         {
-            if ( Utility.Random(100) > 70 )
+            if ( Utility.Random(100) > 80 )
 			{
                 XmlBleedingWound.BeginBleed(defender, this, Utility.RandomMinMax(30, 40));
-                this.Emote("*Tears out a chunk of " + defender.Name + "'s flesh!*");
-                break;
+                this.Emote("*Cuts " + defender.Name + "with its horrible pincers!*");
+                
             } 
 
         }		

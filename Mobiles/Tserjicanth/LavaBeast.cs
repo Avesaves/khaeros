@@ -1,5 +1,11 @@
 using System;
+using Server;
 using Server.Items;
+using Server.Engines.XmlSpawner2;
+using Server.Targeting;
+using Server.Mobiles;
+using Server.Network;
+using Server.Collections;
 
 namespace Server.Mobiles
 {
@@ -44,7 +50,7 @@ namespace Server.Mobiles
 
 			VirtualArmor = 43;
 
-			AddItem( new LightSource );
+			EquipItem( new LightSource() );
 		}
 		
 		public override void OnAfterMove(Point3D oldLocation)
@@ -62,7 +68,7 @@ namespace Server.Mobiles
 			{
                 XmlBleedingWound.BeginBleed(defender, this, Utility.RandomMinMax(20, 25));
                 this.Emote("*Splashes " + defender.Name + " with lava!*");
-                break;
+                
             } 
 
         }	
