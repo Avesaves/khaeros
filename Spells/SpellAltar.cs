@@ -30,7 +30,7 @@ namespace Khaeros.Scripts.Khaeros.Spells
             {
                 BuySpell<ShapeshiftScroll>(backpack, buyer);
                 buyer.Emote("*glows*");
-                this.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*glows softly...*" );
+                this.PublicOverheadMessage( MessageType.Regular, 0, false, "*glows softly...*" );
             }
         }
 
