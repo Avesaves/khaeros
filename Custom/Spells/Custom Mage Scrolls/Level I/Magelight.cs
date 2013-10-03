@@ -115,6 +115,7 @@ namespace Server.Items
                 horse.Hue = 2877;
                 horse.Name = "a living lantern";
                 horse.Blessed = true;
+                horse.EquipItem( new LightSource() );
                 Summon( Caster, horse, 0, 535 );
                 Success = true;
             }
