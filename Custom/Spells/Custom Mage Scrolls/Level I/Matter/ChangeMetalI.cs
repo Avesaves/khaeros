@@ -109,6 +109,11 @@ namespace Server.Items
         
         public override void Effect()
         {
+            if (TargetItem == null || TargetItem is BaseClothing || TargetItem.Deleted)
+            {
+                Success = false;
+                return;
+            }
             BaseWeapon sword = TargetItem as BaseWeapon;
             BaseArmor armor = TargetItem as BaseArmor;
 
@@ -146,11 +151,7 @@ namespace Server.Items
                 armor.Resource = CraftResource.Starmetal;
                 Timer.DelayCall(TimeSpan.FromSeconds(360), new TimerCallback(Flare1));
             }
-            else if (TargetItem == null || TargetItem is BaseClothing || TargetItem.Deleted)
-            {
-                Success = false;
-                return;
-            }
+
         }
 				
 		private void Flare()
