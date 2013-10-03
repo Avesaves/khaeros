@@ -116,7 +116,7 @@ namespace Server.Items
 				return;
 			}
 				
-            if( TargetCanBeAffected && CasterHasEnoughMana && TargetItem.Resource = CraftResource.Iron && TargetItem is Item && TargetItem.Movable != false && TargetItem is BaseWeapon )
+            if( TargetCanBeAffected && CasterHasEnoughMana && TargetItem.Resource == CraftResource.Iron && TargetItem is Item && TargetItem.Movable != false && TargetItem is BaseWeapon )
             {
 				Caster.Mana -= TotalCost;
 				Success = true;
@@ -142,7 +142,7 @@ namespace Server.Items
             BaseWeapon sword = TargetItem as BaseWeapon;
 			 TargetItem.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*returns to its ordinary material*" );
              TargetItem.Movable = true;
-             sword.Resource = reso;   
+             sword.Resource = CraftResource.Iron;   
 
 		}				
 	}
