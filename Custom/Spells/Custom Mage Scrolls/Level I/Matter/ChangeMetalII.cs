@@ -11,13 +11,13 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-    public class ChangeMetalIScroll : CustomSpellScroll
+    public class ChangeMetalIIScroll : CustomSpellScroll
     {
         public override CustomMageSpell Spell
         {
             get
             {
-                return new ChangeMetalISpell();
+                return new ChangeMetalIISpell();
             }
             set
             {
@@ -25,10 +25,10 @@ namespace Server.Items
         }
 
         [Constructable]
-        public ChangeMetalIScroll() : base()
+        public ChangeMetalIIScroll() : base()
         {
             Hue = 2832;
-            Name = "A Change Metal I scroll";
+            Name = "A Change Metal II scroll";
         }
 
         public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
@@ -43,10 +43,10 @@ namespace Server.Items
             if( !IsMageCheck( m, true ) )
                 return;
 
-            BaseCustomSpell.SpellInitiator( new ChangeMetalISpell( m, 1 ) );
+            BaseCustomSpell.SpellInitiator( new ChangeMetalIISpell( m, 1 ) );
         }
 
-        public ChangeMetalIScroll( Serial serial )
+        public ChangeMetalIIScroll( Serial serial )
             : base( serial )
         {
         }
@@ -65,11 +65,11 @@ namespace Server.Items
     }
 
     [PropertyObject]
-    public class ChangeMetalISpell : CustomMageSpell
+    public class ChangeMetalIISpell : CustomMageSpell
     {
         public override CustomMageSpell GetNewInstance()
         {
-            return new ChangeMetalISpell();
+            return new ChangeMetalIISpell();
         }
 
         public override bool CustomScripted { get { return true; } }
@@ -81,22 +81,22 @@ namespace Server.Items
         public override bool IsHarmful { get { return false; } }
         public override bool UsesTarget { get { return true; } }
 		public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
-        public override string Name { get { return "Change Metal I"; } }
+        public override string Name { get { return "Change Metal II"; } }
         public override int ManaCost { get { return 25; } }
         public override int BaseRange { get { return 12; } }
         
 
-        public ChangeMetalISpell()
+        public ChangeMetalIISpell()
             : this( null, 1 )
         {
         }
 
-        public ChangeMetalISpell( Mobile caster, int featLevel ) 
+        public ChangeMetalIISpell( Mobile caster, int featLevel ) 
             : base( caster, featLevel )
         {
-            IconID = 6107;
+            IconID = 6096;
             Range = 12;
-            CustomName = "Change Metal I";
+            CustomName = "Change Metal II";
         }
 
         public override bool CanBeCast
@@ -133,7 +133,7 @@ namespace Server.Items
                 Caster.Emote("*{0} hand glows a strange metallic blue colour*", Caster.Female == true ? "her" : "his");
 				TargetItem.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*Shimmers as its composition is altered*" );
                 TargetItem.Movable = false;
-                sword.Resource = CraftResource.Starmetal; 
+                sword.Resource = CraftResource.Electrum; 
 				Timer.DelayCall( TimeSpan.FromSeconds( 360 ), new TimerCallback( Flare ) );
             }
             if (TargetCanBeAffected && CasterHasEnoughMana && armor.Resource == CraftResource.Iron && TargetItem is Item && TargetItem.Movable != false && TargetItem is BaseArmor)
@@ -146,7 +146,7 @@ namespace Server.Items
                 Caster.Emote("*{0} hand glows a strange metallic blue colour*", Caster.Female == true ? "her" : "his");
                 TargetItem.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*Shimmers as its composition is altered*");
                 TargetItem.Movable = false;
-                armor.Resource = CraftResource.Starmetal;
+                armor.Resource = CraftResource.Electrum;
                 Timer.DelayCall(TimeSpan.FromSeconds(360), new TimerCallback(Flare1));
             }
         }
