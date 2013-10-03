@@ -8,28 +8,29 @@ using Server.Network;
 namespace Server.Mobiles
 {
 	[CorpseName( "a beetle corpse" )]
-	public class HornedBeetle : BaseCreature, ILargePredator, IEnraged, IGiantBug
+	public class RhinoBeetle : BaseCreature, ILargePredator, IEnraged, IGiantBug
 	{
 		[Constructable]
-		public HornedBeetle() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		public RhinoBeetle() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
-			Name = "a horned beetle";
+			Name = "a rhino beetle";
 			Body = 43;
 
-			SetStr( 101, 160 );
+			SetStr( 201, 260 );
 			SetDex( 121, 170 );
 			SetInt( 26, 30 );
 
-			SetHits( 191, 220 );
+			SetHits( 750, 850 );
 
-			SetDamage( 8, 12 );
+			SetDamage( 35, 50 );
 
-			SetDamageType( ResistanceType.Piercing, 100 );
+			SetDamageType( ResistanceType.Piercing, 50 );
+			SetDamageType( ResistanceType.Blunt, 50 );
 
-			SetResistance( ResistanceType.Blunt, 20, 35 );
-			SetResistance( ResistanceType.Piercing, 30, 40 );
-			SetResistance( ResistanceType.Slashing, 30, 40 );
-			SetResistance( ResistanceType.Fire, 35, 50 );
+			SetResistance( ResistanceType.Blunt, 15, 25 );
+			SetResistance( ResistanceType.Piercing, 65, 75 );
+			SetResistance( ResistanceType.Slashing, 65, 75 );
+			SetResistance( ResistanceType.Fire, 50, 60 );
 			SetResistance( ResistanceType.Cold, 35, 50 );
 			SetResistance( ResistanceType.Poison, 75, 95 );
 			SetResistance( ResistanceType.Energy, 40, 60 );
@@ -38,11 +39,15 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Magery, 100.1, 110.0 );
 			SetSkill( SkillName.Poisoning, 120.1, 140.0 );
 			SetSkill( SkillName.MagicResist, 30.0 );
-			SetSkill( SkillName.Tactics, 78.1, 93.0 );
-			SetSkill( SkillName.UnarmedFighting, 70.1, 77.5 );
+			SetSkill( SkillName.Tactics, 88.1, 93.0 );
+			SetSkill( SkillName.UnarmedFighting, 85.1, 99.5 );
 
-			Fame = 6000;
-			Karma = -6000;
+			Fame = 35000;
+			Karma = -35000;
+			PackItem( new RewardToken( 4 ) );
+			
+			RangeFight = 2;
+            MeleeAttackType = MeleeAttackType.FullAOE;
 				
 			ControlSlots = 3;
 			MinTameSkill = 93.9;	
@@ -81,8 +86,13 @@ namespace Server.Mobiles
 
 		public override int Meat{ get{ return 20; } }
 		public override Poison PoisonImmune{ get{ return Poison.Greater; } }
+		
+						public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Rich, 2 );
+		}
 
-		public HornedBeetle( Serial serial ) : base( serial )
+		public RhinoBeetle( Serial serial ) : base( serial )
 		{
 		}
 

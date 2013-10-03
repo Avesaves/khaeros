@@ -7,29 +7,30 @@ using Server.Targeting;
 namespace Server.Mobiles
 {
 	[CorpseName( "a beetle corpse" )]
-	public class RuneBeetle : BaseCreature, ILargePredator, IEnraged, IGiantBug
+	public class FireBeetle : BaseCreature, ILargePredator, IEnraged, IGiantBug
 	{
 		[Constructable]
-		public RuneBeetle() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		public FireBeetle() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
-			Name = "a rune beetle";
+			Name = "a fire beetle";
 			Body = 244;
+			Hue = 2650;
 
-			SetStr( 167, 185 );
-			SetDex( 46, 55 );
+			SetStr( 350, 400 );
+			SetDex( 50, 75 );
 			SetInt( 35 );
 
-			SetHits( 300 );
+			SetHits( 650, 775 );
 
-			SetDamage( 15, 20 );
+			SetDamage( 20, 25 );
 
 			SetDamageType( ResistanceType.Blunt, 100 );			
 
-			SetResistance( ResistanceType.Blunt, 45, 55 );
-			SetResistance( ResistanceType.Piercing, 30, 50 );
-			SetResistance( ResistanceType.Slashing, 50 );
+			SetResistance( ResistanceType.Blunt, 10, 20 );
+			SetResistance( ResistanceType.Piercing, 50, 65 );
+			SetResistance( ResistanceType.Slashing, 50, 65 );
 			SetResistance( ResistanceType.Energy, 40, 50 );
-			SetResistance( ResistanceType.Fire, 60, 70 );
+			SetResistance( ResistanceType.Fire, 70, 80 );
 			SetResistance( ResistanceType.Poison, 40 );
 
 			SetSkill( SkillName.Macing, 95.1, 100.0 );
@@ -37,12 +38,18 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 95.1, 100.0 );
 			SetSkill( SkillName.UnarmedFighting, 85.1, 90.0 );
 
-			Fame = 12000;
-			Karma = -12000;
+			Fame = 30000;
+			Karma = -30000;
 
-			VirtualArmor = 30;
+			PackItem( new SulfurousAsh( 10 ) );
+            PackItem( new RewardToken( 2 ) );	
+
+            MeleeAttackType = MeleeAttackType.FrontalAOE;			
 		}
-
+		
+		public override bool HasBreath{ get{ return true; } }
+		public override double BreathDamageScalar{ get{ return 0.05; } }
+		
 		public override int GetAngerSound()
 		{
 			return 0x4E8;
@@ -72,10 +79,10 @@ namespace Server.Mobiles
 
 				public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Average, 1 );
+			AddLoot( LootPack.Rich, 1 );
 		}
 
-		public RuneBeetle( Serial serial ) : base( serial )
+		public FireBeetle( Serial serial ) : base( serial )
 		{
 		}
 

@@ -6,24 +6,25 @@ using Server.Targeting;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a beetle corpse" )]
-	public class RuneBeetle : BaseCreature, ILargePredator, IEnraged, IGiantBug
+	[CorpseName( "a centipede corpse" )]
+	public class GiantCentipede : BaseCreature, ILargePredator, IEnraged, IGiantBug
 	{
 		[Constructable]
-		public RuneBeetle() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		public GiantCentipede() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
-			Name = "a rune beetle";
-			Body = 244;
+			Name = "a giant centipede";
+			Body = 31;
 
-			SetStr( 167, 185 );
-			SetDex( 46, 55 );
+			SetStr( 350, 400 );
+			SetDex( 50, 75 );
 			SetInt( 35 );
 
-			SetHits( 300 );
+			SetHits( 625, 700 );
 
-			SetDamage( 15, 20 );
+			SetDamage( 20, 25 );
 
-			SetDamageType( ResistanceType.Blunt, 100 );			
+			SetDamageType( ResistanceType.Piercing, 50 );	
+			SetDamageType( ResistanceType.Poison, 50 );			
 
 			SetResistance( ResistanceType.Blunt, 45, 55 );
 			SetResistance( ResistanceType.Piercing, 30, 50 );
@@ -41,6 +42,19 @@ namespace Server.Mobiles
 			Karma = -12000;
 
 			VirtualArmor = 30;
+		}
+		
+		public override KeyValuePair<PoisonEffectEnum, int>[] HitPoison{ get{ return new KeyValuePair<PoisonEffectEnum, int>[] { 
+				new KeyValuePair<PoisonEffectEnum, int>(PoisonEffectEnum.DamageMana, 50),
+				new KeyValuePair<PoisonEffectEnum, int>(PoisonEffectEnum.DamageHealth, 50)
+		}; } }
+		public override int PoisonDuration { get { return 180; } }
+		public override int PoisonActingSpeed { get { return 3; } }
+
+		public override void AddBodyParts( BodyPartsContainer bpc, Corpse corpse )
+		{
+			base.AddBodyParts( bpc, corpse );
+			bpc.DropItem( new LargeInsectVenom() );
 		}
 
 		public override int GetAngerSound()
@@ -72,10 +86,10 @@ namespace Server.Mobiles
 
 				public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Average, 1 );
+			AddLoot( LootPack.Rich, 1 );
 		}
 
-		public RuneBeetle( Serial serial ) : base( serial )
+		public GiantCentipede( Serial serial ) : base( serial )
 		{
 		}
 

@@ -6,28 +6,28 @@ using Server.Targeting;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a beetle corpse" )]
-	public class RuneBeetle : BaseCreature, ILargePredator, IEnraged, IGiantBug
+	[CorpseName( "a larva corpse" )]
+	public class BeetleLarva : BaseCreature, ILargePredator, IEnraged, IGiantBug
 	{
 		[Constructable]
-		public RuneBeetle() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		public BeetleLarva() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
-			Name = "a rune beetle";
+			Name = "a beetle larva";
 			Body = 244;
 
 			SetStr( 167, 185 );
 			SetDex( 46, 55 );
 			SetInt( 35 );
 
-			SetHits( 300 );
+			SetHits( 100, 195 );
 
-			SetDamage( 15, 20 );
+			SetDamage( 10, 15 );
 
 			SetDamageType( ResistanceType.Blunt, 100 );			
 
-			SetResistance( ResistanceType.Blunt, 45, 55 );
+			SetResistance( ResistanceType.Blunt, 30, 45 );
 			SetResistance( ResistanceType.Piercing, 30, 50 );
-			SetResistance( ResistanceType.Slashing, 50 );
+			SetResistance( ResistanceType.Slashing, 35 );
 			SetResistance( ResistanceType.Energy, 40, 50 );
 			SetResistance( ResistanceType.Fire, 60, 70 );
 			SetResistance( ResistanceType.Poison, 40 );
@@ -37,10 +37,9 @@ namespace Server.Mobiles
 			SetSkill( SkillName.Tactics, 95.1, 100.0 );
 			SetSkill( SkillName.UnarmedFighting, 85.1, 90.0 );
 
-			Fame = 12000;
-			Karma = -12000;
+			Fame = 6000;
+			Karma = -6000;
 
-			VirtualArmor = 30;
 		}
 
 		public override int GetAngerSound()
@@ -72,10 +71,10 @@ namespace Server.Mobiles
 
 				public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Average, 1 );
+			AddLoot( LootPack.Meager, 1 );
 		}
 
-		public RuneBeetle( Serial serial ) : base( serial )
+		public BeetleLarva( Serial serial ) : base( serial )
 		{
 		}
 

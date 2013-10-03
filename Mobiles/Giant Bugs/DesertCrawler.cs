@@ -4,44 +4,45 @@ using Server.Items;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a dunedigger corpse" )]
-	public class DuneDigger : BaseCreature, ILargePredator, IGiantBug
+	[CorpseName( "a beetle corpse" )]
+	public class DesertCrawler : BaseCreature, ILargePredator, IGiantBug
 	{
 		[Constructable]
-		public DuneDigger() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		public DesertCrawler() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
-			Name = "a dunedigger";
-			Body = 315;
-			Hue = 2108;
+			Name = "a desert crawler";
+			Body = 787;
+			Hue = 2713;
 
-			SetStr( 101, 160 );
-			SetDex( 51, 60 );
-			SetInt( 11, 20 );
+			SetStr( 190, 220 );
+			SetDex( 45, 65 );
+			SetInt( 21, 30 );
 
-			SetHits( 280 );
+			SetHits( 350, 450 );
 
-			SetDamage( 14, 16 );
+			SetDamage( 23, 27 );
 
-			SetDamageType( ResistanceType.Slashing, 100 );
+			SetDamageType( ResistanceType.Piercing, 100 );
 
-			SetResistance( ResistanceType.Blunt, 20, 30 );
+			SetResistance( ResistanceType.Blunt, 30, 40 );
 			SetResistance( ResistanceType.Piercing, 20, 30 );
 			SetResistance( ResistanceType.Slashing, 20, 30 );
-			SetResistance( ResistanceType.Fire, 50, 60 );
-			SetResistance( ResistanceType.Cold, 50, 60 );
-			SetResistance( ResistanceType.Poison, 100 );
-			SetResistance( ResistanceType.Energy, 20, 30 );
+			SetResistance( ResistanceType.Fire, 15, 20 );
+			SetResistance( ResistanceType.Cold, 70 );
+			SetResistance( ResistanceType.Poison, 60 );
+			SetResistance( ResistanceType.Energy, 20 );
 
 			SetSkill( SkillName.DetectHidden, 80.0 );
+			SetSkill( SkillName.Meditation, 120.0 );
+			SetSkill( SkillName.Poisoning, 160.0 );
 			SetSkill( SkillName.MagicResist, 10.0 );
-			SetSkill( SkillName.Meditation, 100.0 );
-			SetSkill( SkillName.Tactics, 100.0 );
-			SetSkill( SkillName.UnarmedFighting, 90.1, 100.0 );
+			SetSkill( SkillName.Tactics, 75.0, 85.0 );
+			SetSkill( SkillName.UnarmedFighting, 80.0 );
 
-			Fame = 6000;
-			Karma = -6000;
+			Fame = 12000;
+			Karma = -12000;
 
-			VirtualArmor = 23;
+			VirtualArmor = 40;
 		}
 
 		public override int Meat{ get{ return 10; } }
@@ -73,7 +74,7 @@ namespace Server.Mobiles
 			return 0x354;
 		}
 
-		public DuneDigger( Serial serial ) : base( serial )
+		public DesertCrawler( Serial serial ) : base( serial )
 		{
 		}
 
