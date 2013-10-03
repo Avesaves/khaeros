@@ -108,7 +108,8 @@ namespace Server.Items
         }
         
         public override void Effect()
-        {				
+        {
+            BaseWeapon sword = TargetItem as BaseWeapon;
 			if (TargetItem.IsChildOf( Caster.Backpack ))
 			{
 				Caster.SendMessage("You cannot use that on an item in your pack.");
@@ -116,11 +117,11 @@ namespace Server.Items
 				return;
 			}
 				
-            if( TargetCanBeAffected && CasterHasEnoughMana && TargetItem.Resource == CraftResource.Iron && TargetItem is Item && TargetItem.Movable != false && TargetItem is BaseWeapon )
+            if( TargetCanBeAffected && CasterHasEnoughMana && sword.Resource == CraftResource.Iron && TargetItem is Item && TargetItem.Movable != false && TargetItem is BaseWeapon )
             {
 				Caster.Mana -= TotalCost;
 				Success = true;
-                BaseWeapon sword = TargetItem as BaseWeapon;
+                
 
                 
                 Caster.Emote("*{0} hand glows a strange metallic blue colour*", Caster.Female == true ? "her" : "his");
