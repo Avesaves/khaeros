@@ -134,7 +134,7 @@ namespace Server.Items
 
 
 
-                    Caster.Emote("*{0} hand glows a strange metallic blue colour*", Caster.Female == true ? "her" : "his");
+                    Caster.Emote("*{0} hand glows a strange golden colour*", Caster.Female == true ? "her" : "his");
                     TargetItem.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*Shimmers as its composition is altered*");
                     TargetItem.Movable = false;
                     sword.Resource = CraftResource.Electrum;
@@ -153,7 +153,7 @@ namespace Server.Items
 
 
 
-                    Caster.Emote("*{0} hand glows a strange metallic blue colour*", Caster.Female == true ? "her" : "his");
+                    Caster.Emote("*{0} hand glows a strange golden colour*", Caster.Female == true ? "her" : "his");
                     TargetItem.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*Shimmers as its composition is altered*");
                     TargetItem.Movable = false;
                     armor.Resource = CraftResource.Electrum;
