@@ -109,8 +109,8 @@ namespace Server.Items
         
         public override void Effect()
         {
-            BaseWeapon sword = TargetItem as BaseWeapon;
-            BaseArmor armor = TargetItem as BaseArmor;
+            
+            
             if (TargetItem == null || TargetItem is BaseClothing || TargetItem.Deleted )
             {
                 Success = false;
@@ -122,33 +122,46 @@ namespace Server.Items
 				Success = false;
 				return;
 			}
-				
-            if( TargetCanBeAffected && CasterHasEnoughMana && sword.Resource == CraftResource.Iron && TargetItem is Item && TargetItem.Movable != false && TargetItem is BaseWeapon )
+            if (TargetItem is BaseWeapon)
             {
-				Caster.Mana -= TotalCost;
-				Success = true;
-                
+                BaseWeapon sword = TargetItem as BaseWeapon;
+                if (sword.Resource == null)
+                    return;
+                if (TargetCanBeAffected && CasterHasEnoughMana && sword.Resource == CraftResource.Iron && TargetItem is Item && TargetItem.Movable != false )
+                {
+                    Caster.Mana -= TotalCost;
+                    Success = true;
 
-                
-                Caster.Emote("*{0} hand glows a strange metallic blue colour*", Caster.Female == true ? "her" : "his");
-				TargetItem.PublicOverheadMessage( Network.MessageType.Regular, 0, false, "*Shimmers as its composition is altered*" );
-                TargetItem.Movable = false;
-                sword.Resource = CraftResource.Electrum; 
-				Timer.DelayCall( TimeSpan.FromSeconds( 360 ), new TimerCallback( Flare ) );
+
+
+                    Caster.Emote("*{0} hand glows a strange metallic blue colour*", Caster.Female == true ? "her" : "his");
+                    TargetItem.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*Shimmers as its composition is altered*");
+                    TargetItem.Movable = false;
+                    sword.Resource = CraftResource.Electrum;
+                    Timer.DelayCall(TimeSpan.FromSeconds(360), new TimerCallback(Flare));
+                }
             }
-            if (TargetCanBeAffected && CasterHasEnoughMana && armor.Resource == CraftResource.Iron && TargetItem is Item && TargetItem.Movable != false && TargetItem is BaseArmor)
+            if (TargetItem is BaseArmor)
             {
-                Caster.Mana -= TotalCost;
-                Success = true;
+                BaseArmor armor = TargetItem as BaseArmor;
+                if (armor.Resource == null)
+                    return;
+                if (TargetCanBeAffected && CasterHasEnoughMana && armor.Resource == CraftResource.Iron && TargetItem is Item && TargetItem.Movable != false)
+                {
+                    Caster.Mana -= TotalCost;
+                    Success = true;
 
 
 
-                Caster.Emote("*{0} hand glows a strange metallic blue colour*", Caster.Female == true ? "her" : "his");
-                TargetItem.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*Shimmers as its composition is altered*");
-                TargetItem.Movable = false;
-                armor.Resource = CraftResource.Electrum;
-                Timer.DelayCall(TimeSpan.FromSeconds(360), new TimerCallback(Flare1));
+                    Caster.Emote("*{0} hand glows a strange metallic blue colour*", Caster.Female == true ? "her" : "his");
+                    TargetItem.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*Shimmers as its composition is altered*");
+                    TargetItem.Movable = false;
+                    armor.Resource = CraftResource.Electrum;
+                    Timer.DelayCall(TimeSpan.FromSeconds(360), new TimerCallback(Flare1));
+                }
             }
+            else
+                return;
         }
 				
 		private void Flare()
