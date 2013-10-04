@@ -39,7 +39,7 @@ namespace Server.Items
             Name = "Arcane Weapon";
             AosElementDamages.Energy = 100;
             Quality = WeaponQuality.Masterwork;
-            QualityAccuracy = 3;
+            QualityAccuracy = 1;
             QualityDamage = 1;
             QualitySpeed = 1;
             Description = "This swirling mass of shadows appears to have taken the shape of a blade, albeit barely. It glimmers with twisting voltaic arcs.";
@@ -47,7 +47,7 @@ namespace Server.Items
             att.Chance = 100;
             att.EnergyDamage = 15;
             Engines.XmlSpawner2.XmlAttach.AttachTo( this, att );
-            Resource = CraftResource.Obsidian;
+            Resource = CraftResource.Satin;
             Hue = 2992;
         }
 
