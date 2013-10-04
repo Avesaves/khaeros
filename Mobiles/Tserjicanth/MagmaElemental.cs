@@ -73,6 +73,7 @@ namespace Server.Mobiles
             gooPuddle.ItemID = 0x19AB;
             gooPuddle.Name = "flames";
             gooPuddle.Hue = 0;
+            gooPuddle.Light = LightType.Circle150;
             gooPuddle.MoveToWorld(oldLocation, this.Map);
         }
 		
