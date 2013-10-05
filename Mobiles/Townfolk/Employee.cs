@@ -247,7 +247,7 @@ namespace Server.Mobiles
                 case Nation.Southern:
                     {
                         if(IsSlave)
-                            Title = "the Drudge";
+                            Title = "the Slave";
                         else
                             Title = "the Artisan";
                         break;
@@ -287,7 +287,7 @@ namespace Server.Mobiles
                 case Nation.Northern:
                     {
                         if(IsSlave)
-                            Title = "the Serf";
+                            Title = "the Laborer";
                         else
                             Title = "the Peasant";
                         break;
@@ -716,7 +716,7 @@ namespace Server.Mobiles
             m_IsSlave = slave;
 
             if (m_IsSlave)
-                Name = "A Contract of Slavery from " + m_Government.Name;
+                Name = "A Contract of Labor from " + m_Government.Name;
             else
                 Name = "A Contract of Wage Employment from " + m_Government.Name;
         }
@@ -737,7 +737,7 @@ namespace Server.Mobiles
             {
                 if (empCount >= m_Government.TradeInformation.MaxSlaves)
                 {
-                    from.SendMessage("This would exceed the maximum number of slaves " + m_Government.Name + " current allows.");
+                    from.SendMessage("This would exceed the maximum number of laborers " + m_Government.Name + " current allows.");
                     return;
                 }
             }

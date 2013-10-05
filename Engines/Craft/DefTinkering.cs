@@ -531,18 +531,18 @@ namespace Server.Engines.Craft
 
 			#region Traps
 			// Dart Trap
-			index = AddCraft( typeof( DartTrapCraft ), 1044052, 1024396, 30.0, 80.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
+			index = AddCraft( typeof( DartTrapCraft ), 1044052, 1024396, 30.0, 80.0, typeof( IronIngot ), 1044036, 6, 1044037 );
 			AddRes( index, typeof( Bolt ), 1044570, 1, 1044253 );
 
 			// Poison Trap
-			index = AddCraft( typeof( PoisonTrapCraft ), 1044052, 1044593, 30.0, 80.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
+			index = AddCraft( typeof( PoisonTrapCraft ), 1044052, 1044593, 30.0, 80.0, typeof( IronIngot ), 1044036, 6, 1044037 );
 			AddRes( index, typeof( BasePoisonPotion ), 1044571, 1, 1044253 );
 
 			// Explosion Trap
-			index = AddCraft( typeof( ExplosionTrapCraft ), 1044052, 1044597, 55.0, 105.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
+			index = AddCraft( typeof( ExplosionTrapCraft ), 1044052, 1044597, 55.0, 105.0, typeof( IronIngot ), 1044036, 6, 1044037 );
 			AddRes( index, typeof( BaseExplosionPotion ), 1044569, 1, 1044253 );
 			
-			index = AddCraft( typeof( FootTrap ), 1044052, "foot trap", 0.0, 0.0, typeof( CopperIngot ), 1044036, 6, 1044037 );
+			index = AddCraft( typeof( FootTrap ), 1044052, "foot trap", 0.0, 0.0, typeof( IronIngot ), 1044036, 6, 1044037 );
 			index = AddCraft( typeof( Rope ), 1044052, "rope", 0.0, 0.0, typeof( Leather ), 1044462, 6, 1044463 );
 
 			#endregion
@@ -563,7 +563,7 @@ namespace Server.Engines.Craft
 			SetSubRes( typeof( CopperIngot ), 1044025 );
 			AddSubRes( typeof( CopperIngot ),		1044025, 00.0, 1044036, 1044268 );
 			AddSubRes( typeof( BronzeIngot ),		1044026, 30.0, 1044036, 1044268 );
-			AddSubRes( typeof( IronIngot ),			1044022, 60.0, 1044036, 1044267 );
+			AddSubRes( typeof( IronIngot ),			1044022, 00.0, 1044036, 1044267 );
 			AddSubRes( typeof( SilverIngot ),		1044028, 90.0, 1044036, 1044268 );
 			AddSubRes( typeof( GoldIngot ),			1044027, 85.0, 1044036, 1044268 );
 			AddSubRes( typeof( ObsidianIngot ),		1044029, 95.0, 1044036, 1044268 );

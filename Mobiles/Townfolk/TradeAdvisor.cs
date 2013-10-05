@@ -675,14 +675,14 @@ namespace Server.Mobiles
             AddLabel(493, 311, 247, "PRICE");
             AddLabel(584, 311, 247, "LIMIT");
             AddButton(352, 336, m_Government.TradeInformation.SellsSlaves ? 9027 : 9026, m_Government.TradeInformation.SellsSlaves ? 9026 : 9027, (int)TradeButton.SellSlaves, GumpButtonType.Reply, 0);
-            AddLabel(375, 336, m_Government.TradeInformation.SellsSlaves ? 37 : 0, "Slaves");
+            AddLabel(375, 336, m_Government.TradeInformation.SellsSlaves ? 37 : 0, "Laborers");
             if (m_Government.TradeInformation.SellsSlaves)
             {
                 AddTextEntry(489, 336, 45, 20, 0, (int)Text.SlaveCost, m_Government.TradeInformation.SlavePrice.ToString());
                 AddTextEntry(579, 336, 45, 20, 0, (int)Text.SlaveLimit, m_Government.TradeInformation.MaxSlaves.ToString());
             }
-            AddButton(352, 366, m_Government.TradeInformation.SellsWageEarners ? 9027 : 9026, m_Government.TradeInformation.SellsWageEarners ? 9026 : 9027, (int)TradeButton.SellWageEarners, GumpButtonType.Reply, 0);
-            AddLabel(375, 366, m_Government.TradeInformation.SellsWageEarners ? 37 : 0, "Wage-Earners");
+            /* AddButton(352, 366, m_Government.TradeInformation.SellsWageEarners ? 9027 : 9026, m_Government.TradeInformation.SellsWageEarners ? 9026 : 9027, (int)TradeButton.SellWageEarners, GumpButtonType.Reply, 0); */
+            AddLabel(375, 366, m_Government.TradeInformation.SellsWageEarners ? 37 : 0, "(Workers)");
             if (m_Government.TradeInformation.SellsWageEarners)
             {
                 AddTextEntry(489, 366, 45, 20, 0, (int)Text.WageCost, m_Government.TradeInformation.WageEarnerPrice.ToString());

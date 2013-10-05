@@ -775,15 +775,16 @@ namespace Server.Mobiles
                         return ChargePerRealWorldDay;
                     else
                     {
-                        if (FlatTax && Taxes > 0)
+/*                         if (FlatTax && Taxes > 0)
                             return Wages + Taxes;
                         else
-                            return Wages;
+                            return Wages; */
+							return 10;
                     }
 				}
 				else
 				{
-					long total = 0;
+/* 					long total = 0;
 					foreach ( VendorItem vi in m_SellItems.Values )
 					{
 						total += vi.Price;
@@ -792,9 +793,10 @@ namespace Server.Mobiles
 					total -= 500;
 
 					if ( total < 0 )
-						total = 0;
+						total = 0; */
 
-					return (int)( 5 + (total / 500) );
+/* 					return (int)( 5 + (total / 500) ); */
+                    return 10;
 				}
 			}
 		}
@@ -811,11 +813,13 @@ namespace Server.Mobiles
 						total += vi.Price;
 					}
 
-					return (int)( 5 + (total / 500) * 3 );
+					/* return (int)( 5 + (total / 500) * 3 ); */
+					return 10;
 				}
 				else
 				{
-					return ChargePerDay * 3;
+					/* return ChargePerDay * 3; */
+					return 10;
 				}
 			}
 		}
