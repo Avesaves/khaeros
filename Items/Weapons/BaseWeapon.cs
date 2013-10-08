@@ -2691,13 +2691,13 @@ namespace Server.Items
                 case WeaponQuality.Low: qualityDivisor = 2; break;
                 case WeaponQuality.Inferior: qualityDivisor = 2; break;
                 case WeaponQuality.Regular: qualityDivisor = 2; break;
-                case WeaponQuality.Superior: qualityDivisor = 5; break;
-                case WeaponQuality.Exceptional: qualityDivisor = 5; break;
-                case WeaponQuality.Remarkable: qualityDivisor = 5; break;
-                case WeaponQuality.Extraordinary: qualityDivisor = 10; break;
-                case WeaponQuality.Antique: qualityDivisor = 10; break;
-                case WeaponQuality.Masterwork: qualityDivisor = 10; break;
-                case WeaponQuality.Legendary: qualityDivisor = 40; break;
+                case WeaponQuality.Superior: qualityDivisor = 3; break;
+                case WeaponQuality.Exceptional: qualityDivisor = 3; break;
+                case WeaponQuality.Remarkable: qualityDivisor = 3; break;
+                case WeaponQuality.Extraordinary: qualityDivisor = 5; break;
+                case WeaponQuality.Antique: qualityDivisor = 5; break;
+                case WeaponQuality.Masterwork: qualityDivisor = 8; break;
+                case WeaponQuality.Legendary: qualityDivisor = 20; break;
                 default: qualityDivisor = 2; break;
             }
 
@@ -2728,7 +2728,7 @@ namespace Server.Items
                         case CraftResource.Bronze: this.HitPoints -= Utility.Random(1); break;
                         case CraftResource.Iron: this.HitPoints -= Utility.Random(2); break;
                         case CraftResource.Steel: if(Utility.RandomBool()) this.HitPoints -= Utility.Random(1); break;
-                        case CraftResource.Obsidian: this.HitPoints -= Utility.Random(4); break;
+                        case CraftResource.Obsidian: this.HitPoints -= Utility.Random(2); break;
                         case CraftResource.Starmetal: if(Utility.RandomBool()) this.HitPoints -= Utility.Random(1); break;
                         case CraftResource.Silver: this.HitPoints -= Utility.Random(5); break;
                         case CraftResource.Gold: this.HitPoints -= Utility.Random(6); break;
