@@ -169,7 +169,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-            AddLoot(LootPack.UltraRich, 1);
+            AddLoot(LootPack.FilthyRich, 1);
 		}
 
 		public override void Serialize(GenericWriter writer)

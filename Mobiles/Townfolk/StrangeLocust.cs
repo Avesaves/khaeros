@@ -179,8 +179,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-            AddLoot(LootPack.UltraRich, 1);
-            AddLoot(LootPack.FilthyRich, 2);
+            AddLoot(LootPack.Rich, 3);
 		}
 
 		public override void Serialize(GenericWriter writer)

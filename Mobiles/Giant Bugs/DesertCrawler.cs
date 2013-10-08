@@ -20,7 +20,7 @@ namespace Server.Mobiles
 
 			SetHits( 350, 450 );
 
-			SetDamage( 23, 27 );
+			SetDamage( 15, 20 );
 
 			SetDamageType( ResistanceType.Piercing, 100 );
 
@@ -72,6 +72,11 @@ namespace Server.Mobiles
 		public override int GetDeathSound()
 		{
 			return 0x354;
+		}
+		
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Poor, 1 );
 		}
 
 		public DesertCrawler( Serial serial ) : base( serial )

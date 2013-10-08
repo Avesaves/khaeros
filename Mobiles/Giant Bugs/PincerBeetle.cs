@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Server.Items;
-using Server.Engines.XmlSpawner2;
 using Server.Targeting;
+using Server.Engines.XmlSpawner2;
 
 namespace Server.Mobiles
 {
@@ -20,9 +20,9 @@ namespace Server.Mobiles
 			SetDex( 46, 75 );
 			SetInt( 11, 25 );
 
-			SetHits( 622, 651 );
+			SetHits( 500, 550 );
 
-			SetDamage( 15, 20 );
+			SetDamage( 20, 25 );
 
 			SetDamageType( ResistanceType.Blunt, 100 );
 
@@ -51,11 +51,10 @@ namespace Server.Mobiles
 
         public override void OnGaveMeleeAttack(Mobile defender)
         {
-            if ( Utility.Random(100) > 80 )
+            if ( Utility.Random(100) > 70 )
 			{
-                XmlBleedingWound.BeginBleed(defender, this, Utility.RandomMinMax(30, 40));
-                this.Emote("*Cuts " + defender.Name + "with its horrible pincers!*");
-                
+                XmlBleedingWound.BeginBleed(defender, this, Utility.RandomMinMax(15, 20));
+                this.Emote("*Tears out a chunk of " + defender.Name + "'s flesh!*");
             } 
 
         }		
@@ -87,7 +86,7 @@ namespace Server.Mobiles
 
 		public override int Meat{ get{ return 20; } }
 
-				public override void GenerateLoot()
+		public override void GenerateLoot()
 		{
 			AddLoot( LootPack.Rich, 1 );
 		}

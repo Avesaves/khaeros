@@ -47,6 +47,11 @@ namespace Server.Mobiles
 		public override int Meat{ get{ return 10; } }
 		public override bool Unprovokable{ get{ return true; } }
 		public override bool Uncalmable{ get{ return true; } }
+		
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Poor, 1 );
+		}
 
 		public override int GetAttackSound()
 		{

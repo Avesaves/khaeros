@@ -15,13 +15,13 @@ namespace Server.Mobiles
 			Name = "a giant centipede";
 			Body = 31;
 
-			SetStr( 350, 400 );
+			SetStr( 175, 200 );
 			SetDex( 50, 75 );
 			SetInt( 35 );
 
-			SetHits( 625, 700 );
+			SetHits( 450, 500 );
 
-			SetDamage( 20, 25 );
+			SetDamage( 15, 18 );
 
 			SetDamageType( ResistanceType.Piercing, 50 );	
 			SetDamageType( ResistanceType.Poison, 50 );			

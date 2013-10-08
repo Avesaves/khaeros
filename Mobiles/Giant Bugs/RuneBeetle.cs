@@ -70,7 +70,7 @@ namespace Server.Mobiles
 
 		public override int Meat{ get{ return 20; } }
 
-				public override void GenerateLoot()
+		public override void GenerateLoot()
 		{
 			AddLoot( LootPack.Average, 1 );
 		}

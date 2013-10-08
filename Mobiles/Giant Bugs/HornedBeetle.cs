@@ -81,7 +81,12 @@ namespace Server.Mobiles
 
 		public override int Meat{ get{ return 20; } }
 		public override Poison PoisonImmune{ get{ return Poison.Greater; } }
-
+		
+		public override void GenerateLoot()
+		{
+			AddLoot( LootPack.Poor, 1 );
+		}
+		
 		public HornedBeetle( Serial serial ) : base( serial )
 		{
 		}
