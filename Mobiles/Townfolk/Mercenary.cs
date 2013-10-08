@@ -137,24 +137,24 @@ namespace Server.Mobiles
 				this.Name = BaseKhaerosMobile.RandomName( nation, false );
 			} 
 			
-			SetStr( Utility.RandomMinMax(75, 85) );
-            SetDex( Utility.RandomMinMax(75, 85) );
+			SetStr( Utility.RandomMinMax(5, 5) );
+            SetDex( Utility.RandomMinMax(5, 5) );
 			SetInt( 55 );
 
-            SetHits( Utility.RandomMinMax(75, 85) );
-            SetStam( Utility.RandomMinMax(75, 85) );
+            SetHits( Utility.RandomMinMax(45, 55) );
+            SetStam( Utility.RandomMinMax(45, 55) );
 			SetMana( 55 );
 
-			SetDamage( 3, 4 );
+			SetDamage( 0, 0 );
 
             switch (nation)
             {
-                case Nation.Southern: { Int += 5; Dex += 5; break; }
-                case Nation.Western: { Dex += 10; break; }
-                case Nation.Haluaroc: { Int += 10; break; }
-                case Nation.Mhordul: { Str += 10; break; }
-                case Nation.Tirebladd: { Stam += 5; Str += 5; break; }
-                case Nation.Northern: { Hits += 10; break; }
+                case Nation.Southern: { Int += 1; Dex += 1; break; }
+                case Nation.Western: { Dex += 1; break; }
+                case Nation.Haluaroc: { Int += 1; break; }
+                case Nation.Mhordul: { Str += 1; break; }
+                case Nation.Tirebladd: { Stam += 1; Str += 1; break; }
+                case Nation.Northern: { Hits += 1; break; }
             }
 			
 			this.XPScale = 1;
