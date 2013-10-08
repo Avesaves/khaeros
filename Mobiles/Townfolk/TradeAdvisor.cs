@@ -315,12 +315,12 @@ namespace Server.Mobiles
                                         SellVendorDeed(speaker);
                                         break;
                                     }
-                                    else if (e.Speech.ToLower().Contains("slave"))
+                                    else if (e.Speech.ToLower().Contains("laborer"))
                                     {
                                         if (CheckEmployeeLimit(true))
                                             SellEmployeeContract(speaker, true);
                                         else
-                                            this.Say("That would exceed the number of slaves we allow.");
+                                            this.Say("That would exceed the number of laborers we allow.");
                                         break;
                                     }
                                     else if (e.Speech.ToLower().Contains("worker") || e.Speech.ToLower().Contains("wage-earner"))
@@ -752,14 +752,14 @@ namespace Server.Mobiles
                             if (m_Government.TradeInformation.SellsSlaves && info.ButtonID != (int)TradeButton.SellSlaves)
                             {
                                 val = 0;
-                                if (ValidateInt(m_Viewer, info.GetTextEntry((int)Text.SlaveCost).Text, "Slave Cost", ref val))
+                                if (ValidateInt(m_Viewer, info.GetTextEntry((int)Text.SlaveCost).Text, "Laborer Cost", ref val))
                                     m_Government.TradeInformation.SlavePrice = val;
                                 val = 0;
-                                if (ValidateInt(m_Viewer, info.GetTextEntry((int)Text.SlaveLimit).Text, "Slave Limit", ref val))
+                                if (ValidateInt(m_Viewer, info.GetTextEntry((int)Text.SlaveLimit).Text, "Laborer Limit", ref val))
                                     m_Government.TradeInformation.MaxSlaves = val;
                                 if (m_Government.TradeInformation.MaxSlaves > m_Government.Resources[ResourceType.Influence] / 50)
                                 {
-                                    m_Viewer.SendMessage("You cannot have more slaves in existence than (your Influence / 50).");
+                                    m_Viewer.SendMessage("You cannot have more laborers in existence than (your Influence / 50).");
                                     m_Government.TradeInformation.MaxSlaves = m_Government.Resources[ResourceType.Influence] / 50;
                                 }
                             }

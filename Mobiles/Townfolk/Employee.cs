@@ -141,7 +141,7 @@ namespace Server.Mobiles
 
                 #region nodePerc: Calculating the percentage-adjustment the employe receives to their gahtering rate, based on the node's regular output.
                 if (m_Node != null && !m_Node.Deleted)
-                    nodePerc = (m_Node.ProductionRate * 0.001);
+                    nodePerc = (m_Node.ProductionRate * 0.002);
                 else
                     return 0;
                 #endregion
@@ -157,22 +157,22 @@ namespace Server.Mobiles
                 #region resMult: Calculating the resource-amount-adjustment, based on the type of resource they are gathering.
                 switch (m_ToGather)
                 {
-                    case CraftResource.Copper: resMult = 1; break;
-                    case CraftResource.Tin: resMult = 5; break;
-                    case CraftResource.Iron: resMult = 3; break;
-                    //case CraftResource.Silver: resMult = 1; break;
-                    //case CraftResource.Gold: resMult = 0.1; break;
-                    case CraftResource.Cotton: resMult = 12; break;
-                    case CraftResource.Wool: resMult = 12; break;
-                    case CraftResource.Silk: resMult = 1; break;
-                    case CraftResource.RegularLeather: resMult = 10; break;
-                    case CraftResource.ThickLeather: resMult = 8; break;
-                    case CraftResource.BeastLeather: resMult = 6; break;
-                    case CraftResource.ScaledLeather: resMult = 4; break;
-                    case CraftResource.Oak: resMult = 10; break;
-                    case CraftResource.Yew: resMult = 9; break;
-                    case CraftResource.Redwood: resMult = 8; break;
-                    case CraftResource.Ash: resMult = 7; break;
+                    case CraftResource.Copper: resMult = 10; break;
+                    case CraftResource.Tin: resMult = 10; break;
+                    case CraftResource.Iron: resMult = 20; break;
+                    case CraftResource.Silver: resMult = 1; break;
+                    case CraftResource.Gold: resMult = 0.1; break;
+                    case CraftResource.Cotton: resMult = 25; break;
+                    case CraftResource.Wool: resMult = 25; break;
+                    case CraftResource.Silk: resMult = 3; break;
+                    case CraftResource.RegularLeather: resMult = 20; break;
+                    case CraftResource.ThickLeather: resMult = 16; break;
+                    case CraftResource.BeastLeather: resMult = 12; break;
+                    case CraftResource.ScaledLeather: resMult = 8; break;
+                    case CraftResource.Oak: resMult = 20; break;
+                    case CraftResource.Yew: resMult = 18; break;
+                    case CraftResource.Redwood: resMult = 16; break;
+                    case CraftResource.Ash: resMult = 14; break;
                     default: break;
                 }
                 #endregion
@@ -594,7 +594,7 @@ namespace Server.Mobiles
                     }
                     else
                     {
-                        this.Say("Thank you, " + (from.Female ? "mistress" : "master") + ".");
+                        this.Say("Thank you, " + (from.Female ? "ma'am" : "sir") + ".");
                         if(item is CustomFood)
                             HeldFood += ( (int)(item as CustomFood).Quality * 2 );
                         else
@@ -862,7 +862,7 @@ namespace Server.Mobiles
                     if (m_Emp.Wage > 0)
                         m_Emp.Say("Yes, " + (from.Female ? "ma'am." : "sir."));
                     else
-                        m_Emp.Say("Yes, " + (from.Female ? "mistress." : "master."));
+                        m_Emp.Say("Yes, " + (from.Female ? "ma'am." : "sir."));
                     m_Emp.Home = (targeted as ResourceNode).Location;
                     m_Emp.RangeHome = 2;
                     m_Emp.ControlOrder = OrderType.None;
@@ -956,7 +956,7 @@ namespace Server.Mobiles
             AddBackground(315, 208, 170, 30, 9350);
             if (m_Emp.IsSlave)
             {
-                AddLabel(385, 213, 37, "Slave");
+                AddLabel(385, 213, 37, "Laborer");
             }
             else
             {
