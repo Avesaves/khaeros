@@ -75,12 +75,12 @@ namespace Server.Commands
 			CommandSystem.Register( "Spar", AccessLevel.Player, new CommandEventHandler( Spar_OnCommand ) );
 			CommandSystem.Register( "StaffAccount", AccessLevel.Administrator, new CommandEventHandler( StaffAccount_OnCommand ) );
 			CommandSystem.Register( "HideStatus", AccessLevel.Counselor, new CommandEventHandler( HideStatus_OnCommand ) );
-			CommandSystem.Register( "MercSay", AccessLevel.Player, new CommandEventHandler( MercSay_OnCommand ) );
-			CommandSystem.Register( "MercEmote", AccessLevel.Player, new CommandEventHandler( MercEmote_OnCommand ) );
-			CommandSystem.Register( "MercMount", AccessLevel.Player, new CommandEventHandler( MercMount_OnCommand ) );
-			CommandSystem.Register( "MercDismount", AccessLevel.Player, new CommandEventHandler( MercDismount_OnCommand ) );
-			CommandSystem.Register( "MercName", AccessLevel.Player, new CommandEventHandler( MercName_OnCommand ) );
-			CommandSystem.Register( "MercTitle", AccessLevel.Player, new CommandEventHandler( MercTitle_OnCommand ) );
+			CommandSystem.Register( "FollowerSay", AccessLevel.Player, new CommandEventHandler( MercSay_OnCommand ) );
+			CommandSystem.Register( "FollowerEmote", AccessLevel.Player, new CommandEventHandler( MercEmote_OnCommand ) );
+			CommandSystem.Register( "FollowerMount", AccessLevel.Player, new CommandEventHandler( MercMount_OnCommand ) );
+			CommandSystem.Register( "FollowerDismount", AccessLevel.Player, new CommandEventHandler( MercDismount_OnCommand ) );
+			CommandSystem.Register( "FollowerName", AccessLevel.Player, new CommandEventHandler( MercName_OnCommand ) );
+			CommandSystem.Register( "FollowerTitle", AccessLevel.Player, new CommandEventHandler( MercTitle_OnCommand ) );
 			CommandSystem.Register( "Birthday", AccessLevel.Player, new CommandEventHandler( Birthday_OnCommand ) );
 			CommandSystem.Register( "GrantSlot", AccessLevel.Administrator, new CommandEventHandler( GrantSlot_OnCommand ) );
 			CommandSystem.Register( "HearParty", AccessLevel.GameMaster, new CommandEventHandler( HearParty_OnCommand ) );
@@ -393,11 +393,11 @@ namespace Server.Commands
         }
         
         [Usage( "MercMount" )]
-        [Description( "Allows you to force one of your mercenaries to mount one of your mounts." )]
+        [Description( "Allows you to force one of your followers to mount one of your mounts." )]
         private static void MercMount_OnCommand( CommandEventArgs e )
         {
         	PlayerMobile m = e.Mobile as PlayerMobile;
-        	m.SendMessage( "Which of your mercenaries do you wish to order to mount?" );
+        	m.SendMessage( "Which of your followers do you wish to order to mount?" );
         	m.Target = new MercMountTarget();
         }
         
@@ -422,7 +422,7 @@ namespace Server.Commands
             		
             		else
             		{
-            			m.SendMessage( "Which of your mounts do you wish to order your mercenary to mount on?" );
+            			m.SendMessage( "Which of your mounts do you wish to order your follower to mount on?" );
             			m.Target = new MountForMercTarget( merc );
             		}
             	}
@@ -460,7 +460,7 @@ namespace Server.Commands
             			mount.Rider = merc;
             		
             		else
-            			m.SendMessage( "The mercenary is either too far away from the mount or unable to mount it." );
+            			m.SendMessage( "The follower is either too far away from the mount or unable to mount it." );
             	}
             	
             	else
@@ -469,11 +469,11 @@ namespace Server.Commands
         }
         
         [Usage( "MercDismount" )]
-        [Description( "Allows you to force one of your mercenaries to mount one of your mounts." )]
+        [Description( "Allows you to force one of your followers to mount one of your mounts." )]
         private static void MercDismount_OnCommand( CommandEventArgs e )
         {
         	PlayerMobile m = e.Mobile as PlayerMobile;
-        	m.SendMessage( "Which of your mercenaries do you wish to order to dismount?" );
+        	m.SendMessage( "Which of your followers do you wish to order to dismount?" );
         	m.Target = new MercDismountTarget();
         }
         
@@ -509,11 +509,11 @@ namespace Server.Commands
         }
         
         [Usage( "MercName" )]
-        [Description( "Allows you to rename a mercenary you have hired." )]
+        [Description( "Allows you to rename a follower you have hired." )]
         private static void MercName_OnCommand( CommandEventArgs e )
         {
         	PlayerMobile m = e.Mobile as PlayerMobile;
-        	m.SendMessage( "Which of your mercenaries do you wish to rename?" );
+        	m.SendMessage( "Which of your followers do you wish to rename?" );
         	m.Target = new MercNameTarget();
         }
         
@@ -533,7 +533,7 @@ namespace Server.Commands
             	{
             		Mercenary merc = obj as Mercenary;
             		
-            		m.SendMessage( "Type in a new name for your mercenary and press 'Enter'." );
+            		m.SendMessage( "Type in a new name for your follower and press 'Enter'." );
             		m.Prompt = new MercNamePrompt( merc );
             	}
             	
@@ -559,11 +559,11 @@ namespace Server.Commands
         }
         
         [Usage( "MercTitle" )]
-        [Description( "Allows you to change the title of a mercenary you have hired." )]
+        [Description( "Allows you to change the title of a follower you have hired." )]
         private static void MercTitle_OnCommand( CommandEventArgs e )
         {
         	PlayerMobile m = e.Mobile as PlayerMobile;
-        	m.SendMessage( "Which of your mercenaries will have their title changed?" );
+        	m.SendMessage( "Which of your followers will have their title changed?" );
         	m.Target = new MercTitleTarget();
         }
         
@@ -583,7 +583,7 @@ namespace Server.Commands
             	{
             		Mercenary merc = obj as Mercenary;
             		
-            		m.SendMessage( "Type in a new title for your mercenary and press 'Enter'." );
+            		m.SendMessage( "Type in a new title for your follower and press 'Enter'." );
             		m.Prompt = new MercTitlePrompt( merc );
             	}
             	
@@ -869,8 +869,8 @@ namespace Server.Commands
             		if( obj is Mercenary )
             		{
             			Mercenary merc = obj as Mercenary;
-            			m_player.SendMessage( 60, "This mercenary's fighting skills are at " + bc.Skills[SkillName.Tactics].Fixed / 10 + "% and " + pron + " stats are: Str {0}, Dex {1}, Int {2}, Hits {3}, Stam {4}, Mana {5}. " + pron2 + " charges you " + ( (Mercenary)bc ).ChargePerDay + " copper per Khaeros day and is currently carrying " + ( (Mercenary)bc ).HoldCopper + " copper pieces.", bc.RawStr, bc.RawDex, bc.RawInt, bc.RawHits, bc.RawStam, bc.RawMana );
-            			m_player.SendMessage( 65, "This mercenary has the following feats:" );
+            			m_player.SendMessage( 60, "This follower's fighting skills are at " + bc.Skills[SkillName.Tactics].Fixed / 10 + "% and " + pron + " stats are: Str {0}, Dex {1}, Int {2}, Hits {3}, Stam {4}, Mana {5}. " + pron2 + " charges you " + ( (Mercenary)bc ).ChargePerDay + " copper per Khaeros day and is currently carrying " + ( (Mercenary)bc ).HoldCopper + " copper pieces.", bc.RawStr, bc.RawDex, bc.RawInt, bc.RawHits, bc.RawStam, bc.RawMana );
+            			m_player.SendMessage( 65, "This follower has the following feats:" );
             			
             			for( int i = 0; i < 21; i++ )
             			{
@@ -3373,7 +3373,7 @@ namespace Server.Commands
         }
         
         [Usage( "MercSay" )]
-        [Description( "Allows you to force speech on a mercenary you control." )]
+        [Description( "Allows you to force speech on a follower you control." )]
         private static void MercSay_OnCommand( CommandEventArgs e )
         {
             PlayerMobile m = e.Mobile as PlayerMobile;
@@ -3386,7 +3386,7 @@ namespace Server.Commands
         }
         
         [Usage( "MercEmote" )]
-        [Description( "Allows you to force an emote on a mercenary you control." )]
+        [Description( "Allows you to force an emote on a follower you control." )]
         private static void MercEmote_OnCommand( CommandEventArgs e )
         {
             PlayerMobile m = e.Mobile as PlayerMobile;
@@ -3411,7 +3411,7 @@ namespace Server.Commands
 
             protected override void OnTarget( Mobile m, object obj )
             {
-            	m.SendMessage( "Choose a mercenary you control." );
+            	m.SendMessage( "Choose a follower you control." );
             	
                 Mobile mob = obj as Mobile;
                 

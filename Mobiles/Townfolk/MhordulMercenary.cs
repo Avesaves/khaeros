@@ -11,6 +11,7 @@ namespace Server.Mobiles
 		[Constructable]
 		public MhordulMercenary() : base( Nation.Mhordul )
 		{
+					BaseKhaerosMobile.RandomPoorClothes( this, Nation.Mhordul );
 		}
 
 		public MhordulMercenary(Serial serial) : base(serial)

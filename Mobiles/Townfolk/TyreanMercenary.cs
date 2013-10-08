@@ -11,6 +11,7 @@ namespace Server.Mobiles
 		[Constructable]
 		public TirebladdMercenary() : base( Nation.Tirebladd )
 		{
+					BaseKhaerosMobile.RandomPoorClothes( this, Nation.Tirebladd );
 		}
 
 		public TirebladdMercenary(Serial serial) : base(serial)

@@ -77,7 +77,8 @@ namespace Server.Mobiles
 				{
 					if( Owner is PlayerMobile )
 					{
-                        int basevalue = (Level * XPScale) + XPScale;
+/*                         int basevalue = (Level * XPScale) + XPScale; */
+                        int basevalue = 50;
 						int skillbonus = 0;
                         int pay = 0;
 				
@@ -89,7 +90,8 @@ namespace Server.Mobiles
                         if ((Owner as PlayerMobile).Nation == Nation.Mhordul)
                             skillbonus *= 2;
 
-                        pay = basevalue - skillbonus;
+                        /* pay = basevalue - skillbonus; */
+						pay = basevalue;
 
                         if (pay < XPScale * 2)
                             pay = XPScale * 2;
@@ -135,13 +137,13 @@ namespace Server.Mobiles
 				this.Name = BaseKhaerosMobile.RandomName( nation, false );
 			} 
 			
-			SetStr( Utility.RandomMinMax(15, 35) );
-            SetDex( Utility.RandomMinMax(15, 35) );
-			SetInt( 25 );
+			SetStr( Utility.RandomMinMax(75, 85) );
+            SetDex( Utility.RandomMinMax(75, 85) );
+			SetInt( 55 );
 
-            SetHits( Utility.RandomMinMax(15, 35) );
-            SetStam( Utility.RandomMinMax(15, 35) );
-			SetMana( 25 );
+            SetHits( Utility.RandomMinMax(75, 85) );
+            SetStam( Utility.RandomMinMax(75, 85) );
+			SetMana( 55 );
 
 			SetDamage( 3, 4 );
 
@@ -155,9 +157,9 @@ namespace Server.Mobiles
                 case Nation.Northern: { Hits += 10; break; }
             }
 			
-			this.XPScale = 5;
-		  	this.StatScale = 5;
-		  	this.SkillScale = 5;
+			this.XPScale = 1;
+		  	this.StatScale = 1;
+		  	this.SkillScale = 1;
 		  	
 		  	m_HoldCopper = 0;
 		  	
@@ -182,12 +184,12 @@ namespace Server.Mobiles
 			this.Fame = 1000;
 			this.Karma = -1000;
 			this.Lives = 1;
-			this.Level = 1;
+			this.Level = 60;
 			this.NextLevel = 1000;
 			this.ControlSlots = 2;
 
 			this.VirtualArmor = 0;
-			this.Title = "the Mercenary";
+			this.Title = "the Servant";
 			
 			this.Hue = BaseKhaerosMobile.AssignRacialHue( nation );
 			this.HairItemID = BaseKhaerosMobile.AssignRacialHair( nation, this.Female );
@@ -202,12 +204,12 @@ namespace Server.Mobiles
 			if( this.Backpack == null )
 				AddItem( new Backpack() );
 			
-			AddItem( new Boots() );
+/* 			AddItem( new Boots() );
 			AddItem( new LeatherArms() );
 			AddItem( new LeatherLegs() );
 			AddItem( new LeatherChest() );
 			AddItem( new LeatherGloves() );
-			AddItem( new FancyShirt()) ;
+			AddItem( new FancyShirt()) ; */
 		}
 		
 		public void MercWeapon( int blunt, int slash, int pierc, int min, int max )

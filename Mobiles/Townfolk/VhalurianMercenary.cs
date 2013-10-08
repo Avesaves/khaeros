@@ -11,6 +11,7 @@ namespace Server.Mobiles
 		[Constructable]
 		public NorthernMercenary() : base( Nation.Northern )
 		{
+					BaseKhaerosMobile.RandomPoorClothes( this, Nation.Northern );
 		}
 
 		public NorthernMercenary(Serial serial) : base(serial)
