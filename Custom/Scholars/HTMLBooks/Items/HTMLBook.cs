@@ -82,7 +82,10 @@ namespace Server.Items
 
 			if ( !String.IsNullOrEmpty( Author ) )
 				list.Add( 1060659, "Author\t{0}", Author ); // ~1_val~: ~2_val~
-			list.Add( 1060658, "{0}\t{1}", "Language", m_Language.ToString() ); // ~1_val~: ~2_val~
+				if (m_Language == Language.Haluaroc)
+					list.Add( 1060658, "{0}\t{1}", "Language", "Ancient Script" ); // ~1_val~: ~2_val~
+				else
+				list.Add( 1060658, "{0}\t{1}", "Language", m_Language.ToString() ); // ~1_val~: ~2_val~
             if (!String.IsNullOrEmpty(m_Seal))
                 list.Add(m_Seal);
 		}
