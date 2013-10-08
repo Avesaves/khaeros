@@ -185,6 +185,7 @@ namespace Server.Engines.Harvest
 		{
 			if ( !base.CheckHarvest( from, tool ) )
 				return false;
+		    from.RevealingAction();
 
 			if ( from.Mounted )
 			{

@@ -195,6 +195,7 @@ namespace Server.Mobiles
 					{
 						from.Location = this.Location;
 						Rider = from;
+						from.RevealingAction();
 					}
 				}
 				else if ( !Controlled && !Summoned )

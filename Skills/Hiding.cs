@@ -79,6 +79,7 @@ namespace Server.SkillHandlers
 
                             else if( check is BaseCreature )
                                 against += (int)( ( (BaseCreature)check ).Fame * 0.001 );
+								
 
                             if( check.GetDistanceToSqrt( m.Location ) < 2 )
                                 against += 40;
@@ -128,6 +129,13 @@ namespace Server.SkillHandlers
             }
 			
 			ok = ( !badCombat && m.CheckSkill( SkillName.Hiding, 0.0 - bonus, 100.0 - bonus ) );
+			
+			if ( m.Mounted )
+			{
+				m.RevealingAction();
+				m.LocalOverheadMessage( MessageType.Regular, 0x22, 501237 ); // You can't seem to hide right now.
+				return TimeSpan.FromSeconds( 1.0 );
+			}
 
 			if ( badCombat )
 			{
@@ -137,6 +145,7 @@ namespace Server.SkillHandlers
 
 				return TimeSpan.FromSeconds( 1.0 );
 			}
+			
 			else 
 			{
 				if ( ok )
