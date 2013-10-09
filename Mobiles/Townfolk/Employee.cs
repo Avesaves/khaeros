@@ -567,7 +567,7 @@ namespace Server.Mobiles
                 {
                     if(m_IsSlave)
                     {
-                        this.Say("You... you want to do what?");
+                        this.Say("*looks confused*");
                         return false;
                     }
                     else
@@ -594,7 +594,7 @@ namespace Server.Mobiles
                     }
                     else
                     {
-                        this.Say("Thank you, " + (from.Female ? "ma'am" : "sir") + ".");
+                        this.Say("*accepts the food from " + (from.Female ? "her" : "him") + "*");
                         if(item is CustomFood)
                             HeldFood += ( (int)(item as CustomFood).Quality * 2 );
                         else
@@ -860,9 +860,9 @@ namespace Server.Mobiles
                     m_Emp.GatherTimer = new EmployeeGatherTimer(m_Emp);
                     m_Emp.GatherTimer.Start();
                     if (m_Emp.Wage > 0)
-                        m_Emp.Say("Yes, " + (from.Female ? "ma'am." : "sir."));
+                        m_Emp.Say("*nods at " + (from.Female ? "her" : "him*"));
                     else
-                        m_Emp.Say("Yes, " + (from.Female ? "ma'am." : "sir."));
+                        m_Emp.Say("*nods at " + (from.Female ? "her" : "him*"));
                     m_Emp.Home = (targeted as ResourceNode).Location;
                     m_Emp.RangeHome = 2;
                     m_Emp.ControlOrder = OrderType.None;
