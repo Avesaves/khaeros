@@ -19,7 +19,7 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.DivineConsecration }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
-		public override string FirstDescription{ get{ return "This power allows you to summon a powerful creature with affinity for your chosen deity, " +
+		public override string FirstDescription{ get{ return "This power allows you to summon a powerful creature with affinity for your culture, " +
 					"who will serve you for some time. [Lasts 5 minutes. Costs 30 mana]"; } }
 		public override string SecondDescription{ get{ return "[Lasts 10 minutes. Costs 60 mana]"; } }
 		public override string ThirdDescription{ get{ return "[Lasts 15 minutes. Costs 90 mana]"; } }
