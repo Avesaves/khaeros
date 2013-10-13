@@ -19,12 +19,7 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Faith }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ FeatList.SummonProtector }; } }
 		
-		public override string FirstDescription{ get{ return "This power varies according to your chosen deity. Elysia: Holy Water (damages undead, " +
-					"requires a pitcher full of water). Ohlm: Consecrate Weapon (blesses a weapon). Mah'tet: Sticks to Snakes (requires " +
-					"kindling). Arianthynt: Living Tree (requires kindling). Xipotec: Sacrificial Blood (passive mana regen (1 * Feat Level) when " +
-					"the cleric or an ally gets a kill). Xorgoth: Blood of Xorgoth (damage reduction, requires  pitcher full of water). [Costs 10 " +
-					"mana. Consecrate weapon lasts for 20 minutes and adds 5% Hit Chance. Holy water deals (Feat Level * 50) damage " +
-					"to undead and demons]"; } }
+		public override string FirstDescription{ get{ return "This power blesses your weapon."; } }
 		public override string SecondDescription{ get{ return "Improved effect."; } }
 		public override string ThirdDescription{ get{ return "Improved effect."; } }
 
