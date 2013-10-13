@@ -8,7 +8,7 @@ namespace Server.Mobiles
 	public class WanderingSpirit : BaseCreature, IUndead, IEnraged
 	{
 		[Constructable]
-		public WanderingSpirit() : base( AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.3, 0.6 )
+		public WanderingSpirit() : base( AIType.AI_Mage, FightMode.Aggressor, 10, 1, 0.3, 0.6 )
 		{
 			Name = "a Wandering Spirit";
 			Body = 165;
