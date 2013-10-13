@@ -54,7 +54,7 @@ namespace Server.Misc
 					{
                         WanderingSpirit wand = new WanderingSpirit();
                         wand.Name = "A flittering spirit";
-                        wand.AI = AI_Mage;
+
                         wand.ControlSlots = 2;
                         wand.RawHits = 150;
                         wand.Hits = 150;
