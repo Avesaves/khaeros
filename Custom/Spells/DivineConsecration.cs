@@ -22,14 +22,15 @@ namespace Server.Misc
 			{
 				if( !BadCasting && Caster is PlayerMobile )
 				{
-					switch( ((PlayerMobile)Caster).ChosenDeity )
+					/*switch( ((PlayerMobile)Caster).ChosenDeity )
 					{
 						case ChosenDeity.Mahtet: return "Stick to Snake";
 						case ChosenDeity.Xorgoth: return "Blood of Xorgoth";
 						case ChosenDeity.Ohlm: return "Consecrate Weapon";
 						case ChosenDeity.Elysia: return "Holy Water";
 						case ChosenDeity.Arianthynt: return "Living Tree";
-					}
+					}*/
+                    return "Consecrate Weapon";
 				}
 				
 				return "a spell";
@@ -44,7 +45,7 @@ namespace Server.Misc
 		{
 			PlayerMobile caster = Caster as PlayerMobile;
 			
-			if( Caster is PlayerMobile && caster.ChosenDeity == ChosenDeity.Ohlm )
+			if( Caster is PlayerMobile )
 			{
 				if( TargetCanBeAffected && TargetItem is BaseWeapon && CasterHasEnoughMana )
 				{
@@ -63,7 +64,7 @@ namespace Server.Misc
 				}
 			}
 			
-			else if( Caster is PlayerMobile && caster.ChosenDeity == ChosenDeity.Elysia )
+			/*else if( Caster is PlayerMobile && caster.ChosenDeity == ChosenDeity.Elysia )
 			{
 				if( TargetCanBeAffected && TargetItem is Pitcher && ( (Pitcher)TargetItem ).Content == BeverageType.Water && ( (Pitcher)TargetItem ).IsFull && CasterHasEnoughMana )
 				{
@@ -139,7 +140,7 @@ namespace Server.Misc
 	            	caster.Mana -= TotalCost;
 	            	Success = true;
 				}
-			}
+			} */
 		}
 		
 		public static void Initialize()
@@ -153,17 +154,14 @@ namespace Server.Misc
         {
         	if( e.Mobile != null )
         	{
-        		if( e.Mobile is PlayerMobile && ((PlayerMobile)e.Mobile).ChosenDeity != ChosenDeity.None )
+        		if( e.Mobile is PlayerMobile && ((PlayerMobile)e.Mobile).Nation != Nation.None )
         		{
-        			if( ((PlayerMobile)e.Mobile).ChosenDeity == ChosenDeity.Xipotec )
-        				e.Mobile.SendMessage( "Your deity's Divine Consecration is passive only." );
         			
-        			else
         				SpellInitiator( new DivineConsecration( e.Mobile, GetSpellPower( e.ArgString, ((IKhaerosMobile)e.Mobile).Feats.GetFeatLevel(FeatList.DivineConsecration) ) ) );
         		}
         		
         		else
-        			e.Mobile.SendMessage( "You still need to choose which deity you worship. Please use .ChosenDeity to do so." );
+        			e.Mobile.SendMessage( "You still need to choose your culture." );
         	}
         }
 	}

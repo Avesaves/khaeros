@@ -20,14 +20,14 @@ namespace Server.Misc
 			{
 				if( !BadCasting && Caster is PlayerMobile )
 				{
-					switch( ((PlayerMobile)Caster).ChosenDeity )
+					switch( ((PlayerMobile)Caster).Nation )
 					{
-						case ChosenDeity.Arianthynt: return "Summon Huorn";
-						case ChosenDeity.Xipotec: return "Summon Volcanic Guardian";
-						case ChosenDeity.Mahtet: return "Summon Scorpion";
-						case ChosenDeity.Xorgoth: return "Summon Spirit Totem";
-						case ChosenDeity.Ohlm: return "Summon Servant of Ohlm";
-						case ChosenDeity.Elysia: return "Summon Divine Servant";
+						case Nation.Western: return "Summon Spirit of Balance";
+						case Nation.Northern: return "Summon Spirit of Faith";
+						case Nation.Southern: return "Summon Spirit of Power";
+						case Nation.Haluaroc: return "Summon Spirit Totem";
+						case Nation.Unknown: return "Summon Servant of Ohlm";
+						case Nation.Tirebladd: return "Summon Divine Servant";
 					}
 				}
 				
@@ -48,48 +48,98 @@ namespace Server.Misc
 				
 				BaseCreature summoned = new Chicken() as BaseCreature;
 						
-				switch( caster.ChosenDeity )
+				switch( caster.Nation )
 				{
-					case ChosenDeity.Arianthynt:
+					case Nation.Western:
 					{
-						if( FeatLevel > 2 )
-							summoned = new GreaterHuorn();
-						
-						else if( FeatLevel > 1 )
-							summoned = new Huorn();
-						
-						else
-							summoned = new LesserHuorn();
+                        WanderingSpirit wand = new WanderingSpirit();
+                        wand.Name = "A flittering spirit";
+                        wand.AI = AI_Mage;
+                        wand.ControlSlots = 2;
+                        wand.RawHits = 150;
+                        wand.Hits = 150;
+                        if (FeatLevel > 2)
+                        {
+                            summoned = wand;
+                            wand.RawMana = 100;
+                            wand.Mana = 100;
+                            wand.RangeFight = 5;
+                            wand.Emote("*Giggles*");
+                        }
+
+                        else if (FeatLevel > 1)
+                        {
+                            summoned = wand;
+                            wand.RawMana = 50;
+                            wand.Mana = 50;
+                            wand.Emote("*Giggles*");
+                        }
+
+                        else
+                        {
+                            summoned = wand;
+                        }
 						
 						break;
 					}
-					case ChosenDeity.Xipotec:
+					case Nation.Northern:
 					{
-						if( FeatLevel > 2 )
-							summoned = new GreaterVolcanicGuardian();
-						
-						else if( FeatLevel > 1 )
-							summoned = new VolcanicGuardian();
-						
-						else
-							summoned = new VolcanicGuardian();
+                        SpiritSoldier spir = new SpiritSoldier();
+                        spir.ControlSlots = 3;
+                        if (FeatLevel > 2)
+                        {
+                            summoned = spir;
+                            spir.Say("For the Mother and Father.");
+                            spir.RawHits = 300;
+                        }
+
+                        else if (FeatLevel > 1)
+                        {
+                            summoned = spir;
+                            spir.RawHits = 100;
+                            spir.RawDex = 30;
+                            spir.Say("For the Mother and Father.");
+                        }
+
+                        else
+                        {
+                            summoned = spir;
+                            spir.RawHits = 50;
+                            spir.RawDex = 10;
+                            spir.Say("For the Mother and Father.");
+                        }
 						
 						break;
 					}
-					case ChosenDeity.Elysia:
+					case Nation.Southern:
 					{
+                        LesserEnergyElemental energ = new LesserEnergyElemental();
+                        energ.Name = "A spirit of power";
+                        energ.Hue = 2968;
+                        energ.ControlSlots = 3;
 						if( FeatLevel > 2 )
-							summoned = new GreaterDivineProtector();
-						
-						else if( FeatLevel > 1 )
-							summoned = new DivineProtector();
-						
-						else
-							summoned = new LesserDivineProtector();
+                        {
+							summoned = energ;
+                            energ.RangeFight = 2;
+                            energ.Say("By the will of Aetreus.");
+                        }
+
+                        else if (FeatLevel > 1)
+                        {
+                            summoned = energ;
+                            energ.Say("By the will of Aetreus.");
+                        }
+
+                        else
+                        {
+                            summoned = energ;
+                            energ.RawHits = 50;
+                            energ.Say("By the will of Aetreus.");
+                        }
 						
 						break;
 					}
-					case ChosenDeity.Ohlm:
+					case Nation.Haluaroc:
 					{
 						if( FeatLevel > 2 )
 							summoned = new GreaterServantOfOhlm();
@@ -102,7 +152,7 @@ namespace Server.Misc
 						
 						break;
 					}
-					case ChosenDeity.Mahtet:
+					case Nation.Unknown:
 					{
 						if( FeatLevel > 2 )
 							summoned = new GreaterClericScorpion();
@@ -115,7 +165,7 @@ namespace Server.Misc
 						
 						break;
 					}
-					case ChosenDeity.Xorgoth:
+					case Nation.Tirebladd:
 					{
 						if( FeatLevel > 2 )
 							summoned = new GreaterSpiritTotem();
@@ -146,11 +196,11 @@ namespace Server.Misc
         {
         	if( e.Mobile != null )
         	{
-        		if( e.Mobile is PlayerMobile && ((PlayerMobile)e.Mobile).ChosenDeity != ChosenDeity.None )
+        		if( e.Mobile is PlayerMobile && ((PlayerMobile)e.Mobile).Nation != Nation.None )
         			SpellInitiator( new SummonProtector( e.Mobile, GetSpellPower( e.ArgString, ((IKhaerosMobile)e.Mobile).Feats.GetFeatLevel(FeatList.SummonProtector) ) ) );
         		
         		else
-        			e.Mobile.SendMessage( "You still need to choose which deity you worship. Please use .ChosenDeity to do so." );
+        			e.Mobile.SendMessage( "You belong to no culture." );
         	}
         }
 	}
