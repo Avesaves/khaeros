@@ -5358,7 +5358,7 @@ namespace Server.Mobiles
 						{
 							this.AddBuff( new BuffInfo(
 								/* BuffIcon.Clumsy, 1041600, 1060847, "<CENTER>Unwieldy Weapon\t<BR>-" + (50-Feats.GetFeatLevel(FeatList.PolearmsMastery)*10) + "% speed", */
-								BuffIcon.Clumsy, 1041600, 1060847, "<CENTER>Unwieldy Weapon\t<BR>", 
+								BuffIcon.Clumsy, 1041600, 1060847, "<CENTER>Unwieldy Weapon\t-20% Speed<BR>", 
 								false
 							) );
 						}

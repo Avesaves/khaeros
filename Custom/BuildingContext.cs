@@ -552,7 +552,7 @@ namespace Server.Engines.Craft
                 else
                 {
                     m_Viewer.Target = new BuildingIngredientTarget(m_Context);
-                    m_Viewer.SendMessage("Target an material to add to your meal.");
+                    m_Viewer.SendMessage("Target a piece of Rare Material.");
                 }
             }
 
