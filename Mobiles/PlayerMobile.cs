@@ -5358,14 +5358,14 @@ namespace Server.Mobiles
 						{
 							this.AddBuff( new BuffInfo(
 								/* BuffIcon.Clumsy, 1041600, 1060847, "<CENTER>Unwieldy Weapon\t<BR>-" + (50-Feats.GetFeatLevel(FeatList.PolearmsMastery)*10) + "% speed", */
-								BuffIcon.Clumsy, 1041600, 1060847, "<CENTER>Unwieldy Weapon\t<BR>-30% speed", 
+								BuffIcon.Clumsy, 1041600, 1060847, "<CENTER>Unwieldy Weapon\t<BR>", 
 								false
 							) );
 						}
 						else // there are no such weapons atm
 						{
 							this.AddBuff( new BuffInfo(
-							    BuffIcon.Clumsy, 1041600, 1060847, "-30% speed", false
+							    BuffIcon.Clumsy, 1041600, 1060847, "2 Tile Range", false
 /* 								BuffIcon.Clumsy, 1041600, 1060847, "<CENTER>Unwieldy Weapon\t<BR>-50% speed", false */
 							) );
 						}

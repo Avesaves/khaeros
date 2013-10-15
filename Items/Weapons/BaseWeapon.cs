@@ -2345,14 +2345,14 @@ namespace Server.Items
 				factor += featuser.Heroes * 0.075;
 			}
 			
-			if ( Unwieldy )
+/* 			if ( Unwieldy )
 			{
 				factor -= 0.5; 
 				// 50% speed for polearms (this is not supposed to be counted in the penalty calculations)
 				// as that would penalize post-bonus, we don't want that in this case
 				if ( this is BasePoleArm && attacker is IKhaerosMobile )
 					factor += ((IKhaerosMobile)attacker).Feats.GetFeatLevel(FeatList.PolearmsMastery)*0.1;
-			}
+			} */
 			
 			//factor += ((IKhaerosMobile)attacker).Stance.SpeedBonus * (double)((IKhaerosMobile)attacker).Stance.FeatLevel;
 				
