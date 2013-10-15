@@ -348,12 +348,15 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( RattanTable ),				1044291, "rattan table",	85.0, 110.0,	typeof( Log ), 1044041, 27, 1044351 );
 			AddCraft( typeof( LargeFancyTable ),			1044291, "fancy table",	85.0, 110.0,	typeof( Log ), 1044041, 27, 1044351 );
 			AddCraft( typeof( LargeOakTable ),				1044291, "oak table",	85.0, 110.0,	typeof( Log ), 1044041, 27, 1044351 );
+			AddCraft( typeof( AlchemistTableEastAddon ),			1044291, "Alchemy Table East",	85.0, 110.0,	typeof( Log ), 1044041, 27, 1044351 );
+			AddCraft( typeof( AlchemistTableSouthAddon ),			1044291, "Alchemy Table South",	85.0, 110.0,	typeof( Log ), 1044041, 27, 1044351 );
 			
 			AddCraft( typeof( ElegantLowTable ),			1044291, 1030265,	80.0, 105.0,	typeof( Log ), 1044041, 20, 1044351 );
 			AddCraft( typeof( PlainLowTable ),				1044291, 1030266,	80.0, 105.0,	typeof( Log ), 1044041, 20, 1044351 );
 			AddCraft( typeof( OrnateSouthernChair ),			1044291, "ornate Southern chair",	80.0, 105.0,	typeof( Log ), 1044041, 12, 1044351 );
 			AddCraft( typeof( CozySouthernChair ),				1044291, "cozy Southern chair",	80.0, 105.0,	typeof( Log ), 1044041, 13, 1044351 );
 			AddCraft( typeof( SouthernLowChair ),			1044291, "Southern low chair",	80.0, 105.0,	typeof( Log ), 1044041, 12, 1044351 );
+
 
 			// Containers
 			AddCraft( typeof( WoodenBox ),					1044292, 1023709,	20.0,  45.0,	typeof( Log ), 1044041, 10, 1044351 );
@@ -455,6 +458,29 @@ namespace Server.Engines.Craft
             AddCraft( typeof( LeftPegleg ), 1044295, "pegleg (left)", 80.0, 120.0, typeof( Log ), 1044041, 8, 1044351 );
             AddCraft( typeof( Pipe ), 1044295, "pipe", 80.0, 120.0, typeof( Log ), 1044041, 2, 1044351 );
 			AddCraft( typeof( Pipe2 ), 1044295, "pipe", 80.0, 120.0, typeof( Log ), 1044041, 2, 1044351 );
+
+			index = AddCraft( typeof( AG_TyreanFirePitAddonDeed ), 1044299, "Fire Pit", 75.0, 95.0, typeof( Log ), 1044041, 75, 1044351 );
+			AddSkill( index, SkillName.Tinkering, 40.0, 45.0 );
+			AddRes( index, typeof( IronIngot ), 1044036, 135, 1044037 );				
+			index = AddCraft( typeof( StoneFireplaceEastDeed ), 1044299, "Stone Fireplace East", 70.0, 95.0, typeof( Log ), 1044041, 85, 1044351 );
+			AddSkill( index, SkillName.Tinkering, 50.0, 55.0 );
+			AddRes( index, typeof( IronIngot ), 1044036, 125, 1044037 );
+			index = AddCraft( typeof( StoneFireplaceSouthDeed ), 1044299, "Stone Fireplace South", 70.0, 95.0, typeof( Log ), 1044041, 85, 1044351 );
+			AddSkill( index, SkillName.Tinkering, 50.0, 55.0 );
+			AddRes( index, typeof( IronIngot ), 1044036, 125, 1044037 );
+			index = AddCraft( typeof( GrayBrickFireplaceEastDeed ), 1044299, "Gray Brick Fireplace East", 70.5, 95.0, typeof( Log ), 1044041, 95, 1044351 );
+			AddSkill( index, SkillName.Tinkering, 55.0, 60.0 );
+			AddRes( index, typeof( IronIngot ), 1044036, 130, 1044037 );
+			index = AddCraft( typeof( GrayBrickFireplaceSouthDeed ), 1044299, "Gray Brick Fireplace South", 75.0, 95.0, typeof( Log ), 1044041, 95, 1044351 );
+			AddSkill( index, SkillName.Tinkering, 55.0, 60.0 );
+			AddRes( index, typeof( IronIngot ), 1044036, 130, 1044037 );	
+			index = AddCraft( typeof( SandstoneFireplaceEastDeed ), 1044299, "Sandstone Fireplace East", 80.0, 95.0, typeof( Log ), 1044041, 100, 1044351 );
+			AddSkill( index, SkillName.Tinkering, 60.0, 65.0 );
+			AddRes( index, typeof( IronIngot ), 1044036, 135, 1044037 );
+			index = AddCraft( typeof( SandstoneFireplaceSouthDeed ), 1044299, "Sandstone Fireplace South", 80.0, 95.0, typeof( Log ), 1044041, 100, 1044351 );
+			AddSkill( index, SkillName.Tinkering, 60.0, 65.0 );
+			AddRes( index, typeof( IronIngot ), 1044036, 135, 1044037 );	
+		
 			
 			// Blacksmithy
 			index = AddCraft( typeof( SmallForgeDeed ), 1044296, 1044330, 75.0, 100.0, typeof( Log ), 1044041, 5, 1044351 );

@@ -11,12 +11,12 @@ namespace Server.Items
         }
 
         [Constructable]
-        public RewardToken( int amount ) : base( 3577 )
+        public RewardToken( int amount ) : base( 7154 )
         {
             Amount = amount;
-            Hue = 2699;
+            Hue = 2999;
             Weight = 0.0;
-            Name = "Reward Token";
+            Name = "Rare Materials";
             Stackable = true;
         }
 

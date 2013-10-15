@@ -126,6 +126,12 @@ namespace Server.Items
 		{
 			if (( IsChildOf( from.Backpack ) || Parent == from ) && !from.Warmode && from.Alive)
 			{
+				if (this is ArtificerSupplies)
+                {
+                    from.SendGump(new BuildingGump(from as Mobiles.PlayerMobile, this));
+					return;
+                }
+			
                 if (this is BakersBoard || this is CooksCauldron || this is FryingPan || this is FlourSifter || this is RollingPin || this is Skillet)
                 {
                     from.SendGump(new CookingGump(from as Mobiles.PlayerMobile, this));

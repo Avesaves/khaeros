@@ -1467,7 +1467,7 @@ namespace Server.Multis
 					
 					bool canlock = true;
 			
-					if( item is BaseLeather || item is BaseOre || item is BaseLog || item is BaseIngot || item is Cloth || item is BaseHides || item is BaseArmor || item is BaseWeapon || item is BaseClothing || item.Amount > 3 )
+					if( item is BaseLeather || item is BaseOre || item is BaseLog || item is BaseIngot || item is Cloth || item is BaseHides || item is BaseArmor || item is BaseWeapon || item is BaseClothing || item is Food || item.Amount > 3 )
 					{
 						canlock = false;
 					}

@@ -2687,17 +2687,17 @@ namespace Server.Items
             int qualityDivisor = 0;
             switch(this.Quality)
             {
-                case WeaponQuality.Poor: qualityDivisor = 2; break;
-                case WeaponQuality.Low: qualityDivisor = 2; break;
-                case WeaponQuality.Inferior: qualityDivisor = 2; break;
-                case WeaponQuality.Regular: qualityDivisor = 2; break;
-                case WeaponQuality.Superior: qualityDivisor = 3; break;
-                case WeaponQuality.Exceptional: qualityDivisor = 3; break;
-                case WeaponQuality.Remarkable: qualityDivisor = 3; break;
-                case WeaponQuality.Extraordinary: qualityDivisor = 5; break;
-                case WeaponQuality.Antique: qualityDivisor = 5; break;
-                case WeaponQuality.Masterwork: qualityDivisor = 8; break;
-                case WeaponQuality.Legendary: qualityDivisor = 20; break;
+                case WeaponQuality.Poor: qualityDivisor = 1; break;
+                case WeaponQuality.Low: qualityDivisor = 1; break;
+                case WeaponQuality.Inferior: qualityDivisor = 1; break;
+                case WeaponQuality.Regular: qualityDivisor = 1; break;
+                case WeaponQuality.Superior: qualityDivisor = 2; break;
+                case WeaponQuality.Exceptional: qualityDivisor = 2; break;
+                case WeaponQuality.Remarkable: qualityDivisor = 2; break;
+                case WeaponQuality.Extraordinary: qualityDivisor = 3; break;
+                case WeaponQuality.Antique: qualityDivisor = 3; break;
+                case WeaponQuality.Masterwork: qualityDivisor = 4; break;
+                case WeaponQuality.Legendary: qualityDivisor = 10; break;
                 default: qualityDivisor = 2; break;
             }
 

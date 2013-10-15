@@ -20,13 +20,13 @@ namespace Server.Mobiles
 		{ 
 			public InternalBuyInfo() 
 			{ 
-				Add( new GenericBuyInfo( typeof( RawFishSteak ), 3, 20, 0x97A, 0 ) );
+				Add( new GenericBuyInfo( typeof( RawFishSteak ), 6, 20, 0x97A, 0 ) );
 				//TODO: Add( new GenericBuyInfo( typeof( SmallFish ), 3, 20, 0xDD6, 0 ) );
 				//TODO: Add( new GenericBuyInfo( typeof( SmallFish ), 3, 20, 0xDD7, 0 ) );
-				Add( new GenericBuyInfo( typeof( Fish ), 3, 80, 0x9CC, 0 ) );
-				Add( new GenericBuyInfo( typeof( Fish ), 3, 80, 0x9CD, 0 ) );
-				Add( new GenericBuyInfo( typeof( Fish ), 3, 80, 0x9CE, 0 ) );
-				Add( new GenericBuyInfo( typeof( Fish ), 3, 80, 0x9CF, 0 ) );
+				Add( new GenericBuyInfo( typeof( Fish ), 6, 80, 0x9CC, 0 ) );
+				Add( new GenericBuyInfo( typeof( Fish ), 6, 80, 0x9CD, 0 ) );
+				Add( new GenericBuyInfo( typeof( Fish ), 6, 80, 0x9CE, 0 ) );
+				Add( new GenericBuyInfo( typeof( Fish ), 6, 80, 0x9CF, 0 ) );
 			} 
 		} 
 
