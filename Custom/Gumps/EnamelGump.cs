@@ -200,13 +200,13 @@ namespace Server.Gumps
             {
                 PlayerMobile pm = m as PlayerMobile;
                 
-                if( (obj is BaseArmor && EnamelGump.IsMetal((BaseArmor)obj)) || ( obj is Item && ( (Item)obj ).ItemID == 4984 ) || ( obj is WarHorse && ( ( (WarHorse)obj ).IsPetFriend( m ) || ( (WarHorse)obj ).ControlMaster == m ) && ( (WarHorse)obj ).BodyValue == 284 ) )
+                if( (obj is BaseArmor && EnamelGump.IsMetal((BaseArmor)obj)) || ( obj is Item && ( (Item)obj ).ItemID == 4984 ) || ( obj is Horse && ( ( (Horse)obj ).IsPetFriend( m ) || ( (Horse)obj ).ControlMaster == m ) && ( (Horse)obj ).BodyValue == 284 ) )
                 {
                 	if( obj is Item )
                     	( (Item)obj ).Hue = m_hue;
                 	
-                	if( obj is WarHorse )
-                		( (WarHorse)obj ).Hue = m_hue;
+                	if( obj is Horse )
+                		( (Horse)obj ).Hue = m_hue;
                 	
                     m.PlaySound( 0x23E );
                     
