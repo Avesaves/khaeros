@@ -60,7 +60,8 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.Average );
+			AddLoot( LootPack.Average, 1 );
+			AddLoot( LootPack.Rich, 1 );
 		}
 
 		public MinotaurWarrior( Serial serial ) : base( serial )
