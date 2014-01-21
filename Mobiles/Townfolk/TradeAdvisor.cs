@@ -220,8 +220,11 @@ namespace Server.Mobiles
                 else if (speech.Contains("prices"))
                     {
                         e.Mobile.SendMessage("Selling Metal @ " + Government.TradeInformation.MetalSalesPrice.ToString() + " copper a unit.");
+			e.Mobile.SendMessage("Buying Metal @ " + Government.TradeInformation.MetalPurchasePrice.ToString() + " copper a unit.");
                         e.Mobile.SendMessage("Selling Cloth @ " + Government.TradeInformation.ClothSalesPrice.ToString() + " copper a unit.");
+                        e.Mobile.SendMessage("Buying Cloth @ " + Government.TradeInformation.ClothPurchasePrice.ToString() + " copper a unit.");                        
                         e.Mobile.SendMessage("Selling Wood @ " + Government.TradeInformation.WoodSalesPrice.ToString() + " copper a unit.");
+                        e.Mobile.SendMessage("Buying Wood @ " + Government.TradeInformation.WoodPurchasePrice.ToString() + " copper a unit.");                       
                         e.Mobile.SendMessage("Selling vendors at " + Government.TradeInformation.VendorPrice.ToString() + " copper a contract; vendor wages are " + Government.TradeInformation.VendorWages.ToString() + " copper a month.");
                         if (Government.TradeInformation.SellsSlaves)
                             e.Mobile.SendMessage("Selling slaves at " + Government.TradeInformation.SlavePrice.ToString() + " copper a head.");
@@ -257,6 +260,7 @@ namespace Server.Mobiles
                         e.Mobile.SendMessage("Say 'buy,' the resource you want to buy (cotton, copper, etc.) and the amount in any order to buy a resource.");
                         e.Mobile.SendMessage("Say 'buy' and 'vendor' to purchase a vendor contract.");
                         e.Mobile.SendMessage("Use 'donate' to donate resources to the trader's government.");
+-                       e.Mobile.SendMessage("Say 'sell,' the resource, and the amount to sell a resource to the trader.");                        
                         if (e.Mobile is PlayerMobile && CustomGuildStone.IsGuildEconomic(e.Mobile as PlayerMobile, Government))
                         {
                             e.Mobile.SendMessage("Say 'manage' to manage the trader's prices, ban lists, and other details of your government's economy.");
@@ -363,6 +367,65 @@ namespace Server.Mobiles
                                     }
                                 }
                             case "purchase":
+                            case "sell":
+
+                                {
+
+                                    int amt = 0;
+
+                                    CraftResource res = CraftResource.None;
+
+                                    foreach (string findInt in split)
+
+                                    {
+
+                                        int val = 0;
+
+                                        if (ValidateInt(findInt, ref val))
+
+                                            amt = val;
+
+                                    }
+
+
+
+                                    if (amt != 0 && amt > 0)
+
+                                    {
+
+                                        foreach (string findRes in split)
+
+                                        {
+
+                                            if (Resource(findRes) != CraftResource.None)
+
+                                            {
+
+                                                res = Resource(findRes);
+
+                                                continue;
+
+                                            }
+
+                                        }
+
+                                    }
+
+
+
+                                    if (res != CraftResource.None)
+
+                                    {
+
+                                        TradeInfo.BuyResource(this, speaker, res, amt);
+
+                                        continue;
+
+                                    }
+
+                                    break;
+                                }
+                            
                             case "donate":
                             case "give":
                                 {
