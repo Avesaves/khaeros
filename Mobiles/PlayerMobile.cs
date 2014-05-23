@@ -7208,25 +7208,25 @@ namespace Server.Mobiles
 			                                		student.m_LastTeaching = DateTime.Now;
 			                                		this.m_LastTeaching = DateTime.Now;
 			                                		
-			                                		int exp = 300;
+			                                		int exp = 200;
 			                                		
 			                                		if( student.Level > 4 )
-			                                			exp = 300;
+			                                			exp = 225;
 			                                		
 			                                		if( student.Level > 9 )
-			                                			exp = 300;
+			                                			exp = 250;
 			                                		
 			                                		if( student.Level > 14 )
-			                                			exp = 300;
+			                                			exp = 275;
 			                                		
 			                                		if( student.Level > 19 )
 			                                			exp = 300;
 			                                		
 			                                		if( student.Level > 24 )
-			                                			exp = 200;
+			                                			exp = 325;
 			                                		
 			                                		if( student.Level > 29 )
-			                                			exp = 200;
+			                                			exp = 350;
 			                           
 			                                		if( student.Level > 49 )
 			                                			exp = 8;			                           
