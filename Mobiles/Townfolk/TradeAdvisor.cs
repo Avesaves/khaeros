@@ -260,7 +260,7 @@ namespace Server.Mobiles
                         e.Mobile.SendMessage("Say 'buy,' the resource you want to buy (cotton, copper, etc.) and the amount in any order to buy a resource.");
                         e.Mobile.SendMessage("Say 'buy' and 'vendor' to purchase a vendor contract.");
                         e.Mobile.SendMessage("Use 'donate' to donate resources to the trader's government.");
-                        e.Mobile.SendMessage("Say 'sell,' the resource, and the amount to sell a resource to the trader.");                        
+-                       e.Mobile.SendMessage("Say 'sell,' the resource, and the amount to sell a resource to the trader.");                        
                         if (e.Mobile is PlayerMobile && CustomGuildStone.IsGuildEconomic(e.Mobile as PlayerMobile, Government))
                         {
                             e.Mobile.SendMessage("Say 'manage' to manage the trader's prices, ban lists, and other details of your government's economy.");
