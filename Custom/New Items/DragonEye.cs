@@ -46,9 +46,9 @@ namespace Server.Items
 
                 this.Delete();
                 pm.WikiConfig = "dragon";
-               // pm.DemonEye = new DemonEyeTimer(pm);
-               // pm.BloodOfXorgoth.Start();
-                Timer.DelayCall(TimeSpan.FromSeconds(30), new TimerCallback(Flare(pm)));
+                pm.DemonEye = new DemonEyeTimer(pm);
+                //pm.BloodOfXorgoth.Start();
+                //Timer.DelayCall(TimeSpan.FromSeconds(30), new TimerCallback(Flare(pm)));
             }
 
             else
