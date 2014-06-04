@@ -156,7 +156,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
         private static void BloodMagic_OnCommand( CommandEventArgs e )
         {
         	if( e.Mobile != null )
-        		SpellInitiator( new BloodMagic( e.Mobile, GetSpellPower( e.ArgString, ((IKhaerosMobile)e.Mobile).Feats.GetFeatLevel(FeatList.Magery) ) ) );
+        		SpellInitiator( new BloodMagic( e.Mobile, GetSpellPower( e.ArgString, ((IKhaerosMobile)e.Mobile).Feats.GetFeatLevel(FeatList.RedMagic) ) ) );
 
         }
 	}
