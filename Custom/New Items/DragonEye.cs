@@ -55,7 +55,7 @@ namespace Server.Items
         private void Flare()
         {
 
-            PlayerMobile pm = from as PlayerMobile;
+            
             pm.WikiConfig = null;
             pm.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*A light fades from their eyes...*");
 
