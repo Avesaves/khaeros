@@ -46,18 +46,17 @@ namespace Server.Items
 
                 this.Delete();
                 pm.WikiConfig = "dragon";
-                pm.DemonEye = new DemonEyeTimer(pm);
-                //pm.BloodOfXorgoth.Start();
-                //Timer.DelayCall(TimeSpan.FromSeconds(30), new TimerCallback(Flare(pm)));
+
+                Timer.DelayCall(TimeSpan.FromSeconds(30), new TimerCallback(Flare)));
             }
 
             else
                 from.SendMessage("That needs to be in your backpack for you to use it.");
         }
-        private void Flare(PlayerMobile from)
+        private void Flare()
         {
 
-            
+            PlayerMobile from = Mobile as PlayerMobile;
             from.WikiConfig = null;
             from.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*A light fades from their eyes...*");
 
@@ -86,25 +85,6 @@ namespace Server.Items
             m_Power = reader.ReadInt();
         }
 
-        public class DragonEyeTimer : Timer
-        {
-            private PlayerMobile m;
-
-            public DragonEyeTimer(PlayerMobile from)
-                : base(TimeSpan.FromMinutes(1))
-            {
-                m = from;
-            }
-
-            protected override void OnTick()
-            {
-                if (m != null)
-                {
-                    m.WikiConfig = null;
-                    m.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*A light fades from their eyes...*");
-                }
-            }
-
-        }
+      
     }
 }
