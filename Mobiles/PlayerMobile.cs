@@ -457,7 +457,8 @@ namespace Server.Mobiles
         Slashing,
         Piercing,
         Consecrate,
-        BalanceDestiny
+        BalanceDestiny,
+        RedMagic
     }
 
     public enum Subclass // We're no longer using this.

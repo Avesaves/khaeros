@@ -53,13 +53,28 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                 Caster.Emote("*Glows a deep red*");
                 Caster.Mana -= TotalCost;
                 Container pack = Caster.Backpack;
-
+                if (m.Prompt == "undead")
+                {
+                if (pack == null)
+                    return;
+                else if (pack.ConsumeTotal(typeof(Diamond), 1))
+                    {
+                        w.Slayer = SlayerName.Silver;
+                        Timer.DelayCall(TimeSpan.FromSeconds(360), new TimerCallback(Flare));
+                        return;
+                    }
+                else
+                    {
+                        from.SendMessage("You lack the materials needed for this spell.");
+                        return;
+                    }
+                }
                 Success = true;
             }
             else
                 Success = false;
-
-			}
+        }
+			
 
         private class BloodMagicPrompt : Prompt
         {
@@ -69,32 +84,13 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
 
             public override void OnResponse(Mobile from, string text)
             {
-                BaseWeapon w = TargetItem as BaseWeapon;
-                Container pack = Caster.Backpack;
-                if (pack == null)
-                    return;
-                else if (text == "undead")
-                {
-                    if (pack.ConsumeTotal(typeof(Diamond), 1))
-                    {
-                        w.Slayer = SlayerName.Silver;
-                        Timer.DelayCall(TimeSpan.FromSeconds(360), new TimerCallback(Flare));
-                        return;
-                    }
-                    else
-                    {
-                        from.SendMessage("You lack the materials needed for this spell.");
-                        return;
-                    }
-                }
+                    return text; 
 
-                else
-                {
-                    from.SendMessage("You lack the knowledge to make this work.");
-                    return;
+
                 }
             }
-        }
+        
+   
         private void Flare()
         {
           
@@ -102,7 +98,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                 return;
             
             BaseWeapon w = TargetItem as BaseWeapon;
-            w.Slayer == SlayerName.None;
+            w.Slayer = SlayerName.None;
             TargetItem.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*Ceases to glow*");
 
 
