@@ -7,6 +7,7 @@ using Server.Targeting;
 using Server.Network;
 using Server.Misc;
 using Server.Engines.XmlSpawner2;
+using Server.Prompts;
 
 
 namespace Server.Misc
