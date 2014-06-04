@@ -37,7 +37,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
         	 get
             {
             	PlayerMobile l = Caster as PlayerMobile;
-                return base.CanBeCast;
+                return base.CanBeCast && HasRequiredArcanas(new FeatList[] { FeatList.RedMagic });
             }
         }
 
@@ -49,51 +49,80 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
             {
                 PlayerMobile m = Caster as PlayerMobile;
                 BaseWeapon w = TargetItem as BaseWeapon;
-                m.Prompt = new BloodMagicPrompt();
-                Caster.Emote("*Glows a deep red*");
+
+                
                 Caster.Mana -= TotalCost;
 
                 Container pack = Caster.Backpack;
-                if (m.WikiConfig == "undead")
+                if (m.WikiConfig != null)
                 {
-                if (pack == null)
-                    return;
-                else if (pack.ConsumeTotal(typeof(Diamond), 1))
+                    Caster.Emote("*Glows a deep red*");
+                    if (m.WikiConfig == "undead")
                     {
-                        w.Slayer = SlayerName.Silver;
-                        Timer.DelayCall(TimeSpan.FromSeconds(360), new TimerCallback(Flare));
-                        return;
+                        if (pack == null)
+                            return;
+                            Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
+                            w.Slayer = SlayerName.Silver;
+                            Success = true;
+                            Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                            return;
+                       
+                     }
+                    else if (m.Wikiconfig == "dragon")
+                    {
+                        Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
+                            w.Slayer = SlayerName.DragonSlaying;
+                            Success = true;
+                            Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                            return;
+
                     }
-                else
+                    else if (m.Wikiconfig == "fey")
                     {
-                        Caster.SendMessage("You lack the materials needed for this spell.");
+                        Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
+                        w.Slayer = SlayerName.Fey;
+                        Success = true;
+                        Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
+
+                    }
+
+                    else if (m.Wikiconfig == "elemental")
+                    {
+                        Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
+                        w.Slayer = SlayerName.ElementalBan;
+                        Success = true;
+                        Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                        return;
+
+                    }
+                    else if (m.Wikiconfig == "arachnid")
+                    {
+                        Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
+                        w.Slayer = SlayerName.ArachnidDoom;
+                        Success = true;
+                        Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                        return;
+
+                    }
+                    else if (m.Wikiconfig == "repond")
+                    {
+                        Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
+                        w.Slayer = SlayerName.Repond;
+                        Success = true;
+                        Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                        return;
+
+                    }
                     }
                 }
-                Success = true;
-            }
-            else
                 Success = false;
+            
+
         }
 			
 
-        private class BloodMagicPrompt : Prompt
-        {
-            public BloodMagicPrompt()
-            {
-            }
-
-            public override void OnResponse(Mobile Caster, string text)
-            {
-                PlayerMobile m = Caster as PlayerMobile;
-                if (text == "undead")
-                    m.WikiConfig = "undead";
-
-             return; 
-
-
-                }
-            }
+       
         
    
         private void Flare()
