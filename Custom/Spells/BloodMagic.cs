@@ -39,7 +39,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
         	 get
             {
             	PlayerMobile l = Caster as PlayerMobile;
-                return base.CanBeCast && 1.Feats.GetFeatLevel(FeatList.RedMagic) > 0;
+                return base.CanBeCast && l.Feats.GetFeatLevel(FeatList.RedMagic) > 0;
             }
         }
 

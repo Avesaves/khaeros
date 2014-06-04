@@ -52,7 +52,7 @@ namespace Server.Items
         	else
         		from.SendMessage( "That needs to be in your backpack for you to use it." );
         }
-        private void Flare( Mobile from )
+        private void Flare()
         {
 
             PlayerMobile pm = from as PlayerMobile;
