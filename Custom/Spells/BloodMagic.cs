@@ -1,6 +1,8 @@
 using System;
 using Server;
 using Server.Mobiles;
+using System.Collections;
+using System.Collections.Generic;
 using Server.Items;
 using Server.Commands;
 using Server.Targeting;
@@ -37,7 +39,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
         	 get
             {
             	PlayerMobile l = Caster as PlayerMobile;
-                return base.CanBeCast && HasRequiredArcanas(new FeatList[] { FeatList.RedMagic });
+                return base.CanBeCast && 1.Feats.GetFeatLevel(FeatList.RedMagic) > 0;
             }
         }
 
@@ -68,7 +70,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                             return;
                        
                      }
-                    else if (m.Wikiconfig == "dragon")
+                    else if (m.WikiConfig == "dragon")
                     {
                         Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
                             w.Slayer = SlayerName.DragonSlaying;
@@ -77,7 +79,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                             return;
 
                     }
-                    else if (m.Wikiconfig == "fey")
+                    else if (m.WikiConfig == "fey")
                     {
                         Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
                         w.Slayer = SlayerName.Fey;
@@ -87,7 +89,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
 
                     }
 
-                    else if (m.Wikiconfig == "elemental")
+                    else if (m.WikiConfig == "elemental")
                     {
                         Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
                         w.Slayer = SlayerName.ElementalBan;
@@ -96,7 +98,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         return;
 
                     }
-                    else if (m.Wikiconfig == "arachnid")
+                    else if (m.WikiConfig == "arachnid")
                     {
                         Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
                         w.Slayer = SlayerName.ArachnidDoom;
@@ -105,7 +107,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         return;
 
                     }
-                    else if (m.Wikiconfig == "repond")
+                    else if (m.WikiConfig == "repond")
                     {
                         Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
                         w.Slayer = SlayerName.Repond;

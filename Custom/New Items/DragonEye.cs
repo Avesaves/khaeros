@@ -52,12 +52,12 @@ namespace Server.Items
         	else
         		from.SendMessage( "That needs to be in your backpack for you to use it." );
         }
-        private void Flare()
+        private void Flare( Mobile from )
         {
 
-            PlayerMobile pm = Mobile as PlayerMobile;
+            PlayerMobile pm = from as PlayerMobile;
             pm.WikiConfig = null;
-            TargetItem.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*A light fades from their eyes...*");
+            pm.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*A light fades from their eyes...*");
 
 
         }
@@ -84,21 +84,6 @@ namespace Server.Items
             m_Power = reader.ReadInt();
         }
         
-        public class DragonEyeTimer : Timer
-        {
-            private PlayerMobile m;
 
-            public DragonEyeTimer( PlayerMobile from, int featLevel )
-            	: base( TimeSpan.FromMinutes( featLevel ) )
-            {
-                m = from;
-            }
-
-            protected override void OnTick()
-            {
-            	if( m != null )
-            		m.DragonEye = null;
-            }
-        }
     }
 }
