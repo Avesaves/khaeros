@@ -67,7 +67,7 @@ namespace Server.Items
 
 			humanoid.Opposition = new SlayerGroup[]{ undead };
 			humanoid.FoundOn = new Type[]{ typeof( Bird ) };
-			humanoid.Super = new SlayerEntry( SlayerName.Repond, typeof( Bird ) );
+            humanoid.Super = new SlayerEntry(SlayerName.Repond, typeof(Bird), typeof( FireGiant ), typeof( HillGiant ), typeof( IceGiant ), typeof( StoneGiant ), typeof( StormGiant ));
 			humanoid.Entries = new SlayerEntry[]
 				{
 					new SlayerEntry( SlayerName.OgreTrashing, typeof( Bird ) ),
@@ -76,16 +76,16 @@ namespace Server.Items
 				};
 
 			undead.Opposition = new SlayerGroup[]{ humanoid };
-			undead.Super = new SlayerEntry( SlayerName.Silver, typeof( Bird ) );
+            undead.Super = new SlayerEntry(SlayerName.Silver, typeof(Bird), typeof(BoneGolem), typeof(FamineSpirit), typeof(FleshGolem), typeof(LesserBoneGolem), typeof(LesserFleshGolem), typeof(SkeletalLord), typeof(SkeletalSoldier), typeof(Skeleton), typeof(Zombie));
 			undead.Entries = new SlayerEntry[0];
 
 			fey.Opposition = new SlayerGroup[]{ abyss };
-			fey.Super = new SlayerEntry( SlayerName.Fey, typeof( Bird ) );
+			fey.Super = new SlayerEntry( SlayerName.Fey, typeof( Centaur ), typeof( MaleUnicorn ), typeof( Petal ), typeof( Pixie ), typeof( Satyr ), typeof( Sprite ), typeof( Unicorn ), typeof( Treefellow ), typeof( Treant ), typeof( ElderDryad ), typeof( Dryad ));
 			fey.Entries = new SlayerEntry[0];
 
 			elemental.Opposition = new SlayerGroup[]{ abyss };
 			elemental.FoundOn = new Type[]{ typeof( Bird ) };
-			elemental.Super = new SlayerEntry( SlayerName.ElementalBan, typeof( Bird ) );
+			elemental.Super = new SlayerEntry( SlayerName.ElementalBan, typeof( FireElemental ), typeof( AirElemental ), typeof( EarthElemental ), typeof( StormElemental ), typeof( WaterElemental ), typeof( AirElemental ), typeof( CrystalElemental ), typeof( LesserFireElemental ), typeof( LesserCrystalElemental ), typeof( LesserEarthElemental ), typeof( LesserFireElemental ), typeof( LesserStormElemental ), typeof( LesserWaterElemental ), typeof( Excremental ));
 			elemental.Entries = new SlayerEntry[]
 				{
 					new SlayerEntry( SlayerName.BloodDrinking, typeof( Bird ) ),
@@ -124,7 +124,7 @@ namespace Server.Items
 
 			arachnid.Opposition = new SlayerGroup[]{ reptilian };
 			arachnid.FoundOn = new Type[]{ typeof( Bird ) };
-			arachnid.Super = new SlayerEntry( SlayerName.ArachnidDoom, typeof( Bird ) );
+            arachnid.Super = new SlayerEntry(SlayerName.ArachnidDoom, typeof(Bird), typeof(DuneDigger), typeof(CrawlingVermin), typeof(DesertCrawler), typeof(DireSpider), typeof(FireBeetle), typeof(GiantCentipede), typeof(HornedBeetle), typeof(Larva), typeof(PincerBeetle), typeof(RhinoBeetle), typeof(RuneBeetle), typeof(SnowDigger));
 			arachnid.Entries = new SlayerEntry[]
 				{
 					new SlayerEntry( SlayerName.ScorpionsBane, typeof( Bird ) ),
@@ -137,7 +137,7 @@ namespace Server.Items
 			reptilian.Super = new SlayerEntry( SlayerName.ReptilianDeath, typeof( Bird ) );
 			reptilian.Entries = new SlayerEntry[]
 				{
-					new SlayerEntry( SlayerName.DragonSlaying, typeof( Bird ) ),
+					new SlayerEntry( SlayerName.DragonSlaying, typeof( BronzeDragon ),typeof( CopperDragon ),typeof( Dragon ),typeof( Wyvern ),typeof( GoldDragon ),typeof( IronDragon ),typeof( SilverDragon ),typeof( SkeletalDragon ), typeof( SteelDragon ) ),
 					new SlayerEntry( SlayerName.LizardmanSlaughter, typeof( Bird ) ),
 					new SlayerEntry( SlayerName.Ophidian, typeof( Bird ) ),
 					new SlayerEntry( SlayerName.SnakesBane, typeof( Bird ) )
