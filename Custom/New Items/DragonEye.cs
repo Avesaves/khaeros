@@ -47,21 +47,15 @@ namespace Server.Items
                 this.Delete();
                 pm.WikiConfig = "dragon";
 
-                Timer.DelayCall(TimeSpan.FromSeconds(30), new TimerCallback(Flare)));
+                Timer(TimeSpan.FromSeconds(30));
+                from.WikiConfig = null;
+                from.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*A light fades from their eyes...*");
             }
 
             else
                 from.SendMessage("That needs to be in your backpack for you to use it.");
         }
-        private void Flare()
-        {
 
-            PlayerMobile from = Mobile as PlayerMobile;
-            from.WikiConfig = null;
-            from.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*A light fades from their eyes...*");
-
-
-        }
         public DragonEye(Serial serial)
             : base(serial)
         {
