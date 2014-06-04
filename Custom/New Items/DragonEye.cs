@@ -47,9 +47,7 @@ namespace Server.Items
                 this.Delete();
                 pm.WikiConfig = "dragon";
 
-                Timer(TimeSpan.FromSeconds(30));
-                from.WikiConfig = null;
-                from.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*A light fades from their eyes...*");
+                
             }
 
             else

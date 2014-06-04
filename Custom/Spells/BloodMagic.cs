@@ -66,6 +66,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                             Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
                             w.Slayer = SlayerName.Silver;
                             Success = true;
+                            m.WikiConfig = null;
                             Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                             return;
                        
@@ -75,6 +76,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
                             w.Slayer = SlayerName.DragonSlaying;
                             Success = true;
+                            m.WikiConfig = null;
                             Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                             return;
 
@@ -84,6 +86,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
                         w.Slayer = SlayerName.Fey;
                         Success = true;
+                        m.WikiConfig = null;
                         Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
@@ -94,6 +97,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
                         w.Slayer = SlayerName.ElementalBan;
                         Success = true;
+                        m.WikiConfig = null;
                         Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
@@ -103,6 +107,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
                         w.Slayer = SlayerName.ArachnidDoom;
                         Success = true;
+                        m.WikiConfig = null;
                         Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
@@ -112,6 +117,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
                         w.Slayer = SlayerName.Repond;
                         Success = true;
+                        m.WikiConfig = null;
                         Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
