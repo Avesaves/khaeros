@@ -54,7 +54,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                 Caster.Mana -= TotalCost;
 
                 Container pack = Caster.Backpack;
-                if (Caster.WikiConfig == "undead")
+                if (m.WikiConfig == "undead")
                 {
                 if (pack == null)
                     return;
@@ -85,8 +85,9 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
 
             public override void OnResponse(Mobile Caster, string text)
             {
+                PlayerMobile m = Caster as PlayerMobile;
                 if (text == "undead")
-                    Caster.WikiConfig = "undead";
+                    m.WikiConfig = "undead";
 
              return; 
 
