@@ -6383,9 +6383,9 @@ namespace Server.Mobiles
                             return false;
 					}
 					 
-					else if( Stam >= 10 )
+					else if( Stam >= 5 )
 					{
-						Stam -= 10;
+						Stam -= 5;
 						RevealingAction();
 					}
 					
