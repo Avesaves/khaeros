@@ -52,8 +52,9 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                 m.Prompt = new BloodMagicPrompt();
                 Caster.Emote("*Glows a deep red*");
                 Caster.Mana -= TotalCost;
+                prom = "";
                 Container pack = Caster.Backpack;
-                if (m.Prompt == "undead")
+                if (prom == "undead")
                 {
                 if (pack == null)
                     return;
@@ -82,9 +83,12 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
             {
             }
 
-            public override void OnResponse(Mobile from, string text)
+            public override void OnResponse(Mobile Caster, string text)
             {
-                    return text; 
+                if (text == "undead")
+                    prom = "undead";
+
+             return; 
 
 
                 }
