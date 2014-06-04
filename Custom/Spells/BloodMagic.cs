@@ -49,7 +49,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
             {
                 PlayerMobile m = Caster as PlayerMobile;
                 BaseWeapon w = TargetItem as BaseWeapon;
-                m.Prompt = new LookForRPPrompt();
+                m.Prompt = new BloodMagicPrompt();
                 Caster.Emote("*Glows a deep red*");
                 Caster.Mana -= TotalCost;
                 Container pack = Caster.Backpack;

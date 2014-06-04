@@ -45,10 +45,9 @@ namespace Server.Commands
 
         private void CalculateAmountToUse()
         {
-            hts = this.target.RawHits;
-            stm = this.target.RawStam;
 
-            this.amountToHeal = hts/4;
+
+            this.amountToHeal = this.target.RawHits/4;
             this.amountToDamage = 40;
         }
 
@@ -56,7 +55,7 @@ namespace Server.Commands
         {
             this.target.Emote("*Gets "+this.target.GetPossessivePronoun() +" second wind!*");
             this.target.Heal(this.amountToHeal);
-            this.target.Stam += stm;
+            this.target.Stam += this.target.RawStam/4;
         }
     }
 }
