@@ -85,7 +85,7 @@ namespace Server.Items
 
 			elemental.Opposition = new SlayerGroup[]{ abyss };
 			elemental.FoundOn = new Type[]{ typeof( Bird ) };
-			elemental.Super = new SlayerEntry( SlayerName.ElementalBan, typeof( FireElemental ), typeof( AirElemental ), typeof( EarthElemental ), typeof( StormElemental ), typeof( WaterElemental ), typeof( AirElemental ), typeof( CrystalElemental ), typeof( LesserFireElemental ), typeof( LesserCrystalElemental ), typeof( LesserEarthElemental ), typeof( LesserFireElemental ), typeof( LesserStormElemental ), typeof( LesserWaterElemental ), typeof( Excremental ));
+			elemental.Super = new SlayerEntry( SlayerName.ElementalBan, typeof( FireElemental ), typeof( AirElemental ), typeof( EarthElemental ), typeof( EnergyElemental ), typeof( WaterElemental ), typeof( AirElemental ), typeof( CrystalElemental ), typeof( LesserFireElemental ), typeof( LesserCrystalElemental ), typeof( LesserEarthElemental ), typeof( LesserFireElemental ), typeof( LesserEnergyElemental ), typeof( LesserWaterElemental ), typeof( Excremental ));
 			elemental.Entries = new SlayerEntry[]
 				{
 					new SlayerEntry( SlayerName.BloodDrinking, typeof( Bird ) ),
@@ -124,7 +124,7 @@ namespace Server.Items
 
 			arachnid.Opposition = new SlayerGroup[]{ reptilian };
 			arachnid.FoundOn = new Type[]{ typeof( Bird ) };
-            arachnid.Super = new SlayerEntry(SlayerName.ArachnidDoom, typeof(Bird), typeof(DuneDigger), typeof(CrawlingVermin), typeof(DesertCrawler), typeof(DireSpider), typeof(FireBeetle), typeof(GiantCentipede), typeof(HornedBeetle), typeof(Larva), typeof(PincerBeetle), typeof(RhinoBeetle), typeof(RuneBeetle), typeof(SnowDigger));
+            arachnid.Super = new SlayerEntry(SlayerName.ArachnidDoom, typeof(Bird), typeof(DuneDigger), typeof(CrawlingVermin), typeof(DesertCrawler), typeof(DireSpider), typeof(FireBeetle), typeof(GiantCentipede), typeof(HornedBeetle), typeof(BeetleLarva), typeof(PincerBeetle), typeof(RhinoBeetle), typeof(RuneBeetle), typeof(Snowdigger));
 			arachnid.Entries = new SlayerEntry[]
 				{
 					new SlayerEntry( SlayerName.ScorpionsBane, typeof( Bird ) ),
