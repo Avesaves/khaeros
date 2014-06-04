@@ -52,9 +52,9 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                 m.Prompt = new BloodMagicPrompt();
                 Caster.Emote("*Glows a deep red*");
                 Caster.Mana -= TotalCost;
-                prom = "";
+
                 Container pack = Caster.Backpack;
-                if (prom == "undead")
+                if (Caster.WikiConfig == "undead")
                 {
                 if (pack == null)
                     return;
@@ -66,7 +66,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                     }
                 else
                     {
-                        from.SendMessage("You lack the materials needed for this spell.");
+                        Caster.SendMessage("You lack the materials needed for this spell.");
                         return;
                     }
                 }
@@ -86,7 +86,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
             public override void OnResponse(Mobile Caster, string text)
             {
                 if (text == "undead")
-                    prom = "undead";
+                    Caster.WikiConfig = "undead";
 
              return; 
 
