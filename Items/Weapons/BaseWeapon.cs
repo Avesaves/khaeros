@@ -3470,7 +3470,17 @@ namespace Server.Items
 
             if( attacker is PlayerMobile && attacker.Weapon is Fists && ( (PlayerMobile)attacker ).Claws != null )
                 scalar += 0.2;
+                
+        //This is an attempt to put slayers back in for red magic
+CheckSlayerResult cs = CheckSlayers(attacker, defender);
+	if (cs != CheckSlayerResult.None)
+{
+if (cs == CheckSlayerResult.Slayer)
+defender.FixedEffect(0x37B9, 10, 5);
+damage *= 1.5;
 
+//factor *= 2.0;
+}
             if (defender is PlayerMobile && ((PlayerMobile)defender).IsVampire && this.Resource == CraftResource.Silver)
             {
                 damage *= 1.5; 

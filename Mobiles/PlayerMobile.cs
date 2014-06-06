@@ -457,7 +457,8 @@ namespace Server.Mobiles
         Slashing,
         Piercing,
         Consecrate,
-        BalanceDestiny
+        BalanceDestiny,
+        RedMagic
     }
 
     public enum Subclass // We're no longer using this.
@@ -6383,9 +6384,9 @@ namespace Server.Mobiles
                             return false;
 					}
 					 
-					else if( Stam >= 10 )
+					else if( Stam >= 5 )
 					{
-						Stam -= 10;
+						Stam -= 5;
 						RevealingAction();
 					}
 					

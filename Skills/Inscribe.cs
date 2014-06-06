@@ -134,8 +134,9 @@ namespace Server.SkillHandlers
 					from.SendLocalizedMessage( 501621 ); // Someone else is inscribing that item.
 				else if( book is HTMLBook && ((HTMLBook)book).SealedBy == null )
 					from.SendMessage( "You cannot copy a book that has not been sealed." );
-				else if( book is HTMLBook && ((HTMLBook)book).SealedBy != from && from.AccessLevel < AccessLevel.GameMaster )
-					from.SendMessage( "You cannot copy a book that has been sealed by someone else." );
+				//else if( book is HTMLBook && ((HTMLBook)book).SealedBy != from && from.AccessLevel < AccessLevel.GameMaster )
+				else if (!book.IsChildOf( from.Backpack ))	
+					from.SendMessage( "You can only copy books in your pack." );
 				else
 				{
 					Target target = new InternalTargetDst( book );
