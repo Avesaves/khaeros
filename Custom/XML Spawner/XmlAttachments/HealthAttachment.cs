@@ -383,8 +383,8 @@ namespace Server.Engines.XmlSpawner2
                 if ((from as PlayerMobile).IsVampire)
                     chance /= 2; //Half the chance as a vampire
 			if (from is PlayerMobile)
-                if ((from as PlayerMobile).IsHardcore)
-                     chance += (Utility.RandomMinMax(0,15));// + 0 - 15% chance of injury if Hardcore
+                if (((PlayerMobile)m_Player).LastDeath + TimeSpan.FromMinutes(5) > DateTime.Now)
+                     chance += (Utility.RandomMinMax(0,25));// + 0 - 15% chance of injury if Hardcore
 
             return chance;
         }

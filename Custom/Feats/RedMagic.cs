@@ -33,6 +33,8 @@ namespace Server.FeatInfo
 		
 		public override bool MeetsOurRequirements( PlayerMobile m )
 		{
+            if (!m.CanBeMage)
+                return false;
             if (m.Feats.GetFeatLevel(FeatList.Faith) > 0)
                 return false;
             if (m.Feats.GetFeatLevel(FeatList.Magery) > 0)
