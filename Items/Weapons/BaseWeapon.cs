@@ -1567,7 +1567,7 @@ namespace Server.Items
             if( attacker.Weapon is Lance && !attacker.Mounted )
                 return true;
             
-            if( featuser.IsTired() )
+            if( featuser.IsTired() && defender is PlayerMobile )
             	return true;
 
             if( featuser.Enthralled )
