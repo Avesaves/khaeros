@@ -1585,7 +1585,7 @@ namespace Server.Engines.XmlSpawner2
             if( awe != null )
                 return false;
 
-			if ( mob is PlayerMobile && ((PlayerMobile)mob).RessSick )
+			if ( mob is PlayerMobile && ((PlayerMobile)mob).RessSick && mob.Combatant is PlayerMobile)
 			{
 				m_ErrorMessage = "You must wait an additional " + ((PlayerMobile)mob).m_KOPenalty.Next + " seconds due to the knockout penalty before you can attack.";
 				return false;

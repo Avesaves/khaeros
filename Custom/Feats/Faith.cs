@@ -40,6 +40,8 @@ namespace Server.FeatInfo
 				
            		if (m.Feats.GetFeatLevel(FeatList.Magery) > 0 )
               			return false;
+                if (m.Feats.GetFeatLevel(FeatList.RedMagic) > 0)
+                        return false;
 			
 			return base.MeetsOurRequirements( m );
 		}
