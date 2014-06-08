@@ -38,7 +38,7 @@ namespace Server.Misc
 		 */
 
 		public static readonly string Address = "74.91.112.223";
-		public static readonly string ServerName = "Khaeros";
+		public static readonly string ServerName = "Test Center";
 
 		public static readonly bool AutoDetect = true;
 
