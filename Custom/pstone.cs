@@ -39,6 +39,8 @@ namespace Server.Items
   private string m_Name;
   private string m_Title;
   private int m_Hue;
+     private int m_HairHue;
+     private int m_HairItemID;
   private int m_SpeechHue;
   private int m_BodyValue;
   private int m_Karma;
@@ -72,6 +74,8 @@ public override void OnDoubleClick( Mobile from )
     from.Name=m_Name;
     from.Title=m_Title;
     from.Hue=m_Hue;
+    from.Hue = m_HairHue;
+    from.Hue = m_HairItemID;
     from.BodyValue=m_BodyValue;
     from.Female=m_Female;
     from.Hidden=true;
@@ -141,6 +145,7 @@ public override void OnDoubleClick( Mobile from )
    // take everything off and put it in a white backpack
       ps.m_Stuff = new Backpack(); 
       ps.m_Stuff.Hue =  1153;
+      ps.m_Stuff.LootType = LootType.Blessed;
       Container packy = from.Backpack; 
       packy.DropItem(ps.m_Stuff); 
  
@@ -206,7 +211,12 @@ public override void OnDoubleClick( Mobile from )
  
       ps.m_Hue = from.Hue;
       from.Hue = ps.m_Possessed.Hue;
- 
+
+      ps.m_HairHue = from.HairHue;
+      from.HairHue = ps.m_Possessed.HairHue;
+      ps.m_HairItemID = from.HairItemID;
+      from.HairItemID = ps.m_Possessed.HairItemID;
+
       ps.m_SpeechHue = from.SpeechHue;
       from.SpeechHue = ps.m_Possessed.SpeechHue;
  
@@ -238,7 +248,9 @@ public override void OnDoubleClick( Mobile from )
       from.Hidden = false;
  // hide the mobile 
       ps.m_Possessed.Hidden = true;
+      ps.m_Possessed.Map = Map.Tokuno;
       ps.m_Possessed.CantWalk = true;
+     
    ps.m_Possessing = true;
      }
     }
@@ -283,6 +295,8 @@ public override void OnDoubleClick( Mobile from )
  writer.Write( (string) m_Name);
  writer.Write( (string) m_Title);
  writer.Write( (int) m_Hue);
+ writer.Write((int)m_HairHue);
+ writer.Write((int)m_HairItemID);
  writer.Write( (int) m_Karma);
  writer.Write( (int) m_Fame);
  writer.Write( (int) m_Kills);
@@ -302,6 +316,8 @@ public override void OnDoubleClick( Mobile from )
  m_Name=reader.ReadString();
  m_Title = reader.ReadString();
  m_Hue = reader.ReadInt();
+ m_HairItemID = reader.ReadInt();
+ m_HairHue = reader.ReadInt();
  m_Karma = reader.ReadInt();
  m_Fame = reader.ReadInt();
  m_Kills = reader.ReadInt();
