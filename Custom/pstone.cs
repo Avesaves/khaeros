@@ -56,7 +56,7 @@ public override void OnDoubleClick( Mobile from )
  AccessLevel al_MobLevel = m_Mob.AccessLevel;
  Account a_Account = (Account)m_Mob.Account;
  AccessLevel al_AccLevel = a_Account.AccessLevel;
- if ( al_AccLevel > AccessLevel.Player)
+ if ( al_AccLevel != AccessLevel.Player)
  {
   // if not already possessing a mobile
   if( !m_Possessing ) 
@@ -110,7 +110,7 @@ public override void OnDoubleClick( Mobile from )
  }
  else // somehow a player got one of these which should never happen, just delete it and put a scare into them
  {
-  from.SendMessage("You are trying to access a restricted item. The item has been removed and your account has been scheduled for deletion.");
+  from.SendMessage("You are trying to access a restricted item. The item has been removed and you should feel ashamed of yourself.");
   this.Delete();
  }
  

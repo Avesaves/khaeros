@@ -97,6 +97,8 @@ namespace Server.Engines.Craft
                 return true;
             if (ing.GetType().IsSubclassOf(typeof(CookableFood)))
                 return true;
+            if (ing.Name == "Silphium")
+                return true;				
             if(ing is BaseHerb)
                 return true;
             if(ing.GetType().IsSubclassOf(typeof(BaseHerb)))
