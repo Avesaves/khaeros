@@ -56,7 +56,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                 Success = false;
             }
  
-            if (TargetCanBeAffected && CasterHasEnoughMana && TargetItem is IWeapon)
+            else if (TargetCanBeAffected && CasterHasEnoughMana && TargetItem is IWeapon)
             {
                 
 
