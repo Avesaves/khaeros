@@ -67,7 +67,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                             w.Slayer = SlayerName.Silver;
                             Success = true;
                             m.WikiConfig = null;
-                            Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                           // Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                             return;
                        
                      }
@@ -77,7 +77,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                             w.Slayer = SlayerName.DragonSlaying;
                             Success = true;
                             m.WikiConfig = null;
-                            Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                           // Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                             return;
 
                     }
@@ -87,7 +87,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         w.Slayer = SlayerName.Fey;
                         Success = true;
                         m.WikiConfig = null;
-                        Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                     //   Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
                     }
@@ -98,7 +98,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         w.Slayer = SlayerName.ElementalBan;
                         Success = true;
                         m.WikiConfig = null;
-                        Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                    //    Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
                     }
@@ -108,7 +108,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         w.Slayer = SlayerName.ArachnidDoom;
                         Success = true;
                         m.WikiConfig = null;
-                        Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                      //  Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
                     }
@@ -118,7 +118,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         w.Slayer = SlayerName.Repond;
                         Success = true;
                         m.WikiConfig = null;
-                        Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                      //  Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
                     }
@@ -132,7 +132,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
 
        
         
-   
+   /*
         private void Flare()
         {
           
@@ -145,7 +145,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
 
 
         }
-
+        */ 
 		public static void Initialize()
 		{
 			CommandSystem.Register( "BloodMagic", AccessLevel.Player, new CommandEventHandler( BloodMagic_OnCommand ) );
