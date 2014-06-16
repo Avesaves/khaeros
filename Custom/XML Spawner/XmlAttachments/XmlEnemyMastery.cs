@@ -99,7 +99,7 @@ namespace Server.Engines.XmlSpawner2
 
 				// is the defender the correct type?
 			//	if(defender.GetType() == m_EnemyType || defender.GetType().IsSubclassOf(m_EnemyType))
-                if (defender is m_Enemy)
+                if (defender is m_EnemyType)
 				{
                     defender.FixedEffect(0x37B9, 10, 5);
 					defender.Damage( (int) (damageGiven*PercentIncrease/100), attacker );
