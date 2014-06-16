@@ -25,7 +25,7 @@ namespace Server.Items
         public DragonEye()
             : base(0x23E)
         {
-            Stackable = true;
+            Stackable = false;
             Weight = 1.0;
             Name = "A draconian eyeball";
 
@@ -37,7 +37,11 @@ namespace Server.Items
                 return;
 
             PlayerMobile pm = from as PlayerMobile;
-
+            if (pm.DayOfDeath + 10 >= 100)
+            {
+                pm.SendMessage("This just looks too unappetizing to eat right now.");
+                return;
+            }
             if (pm.Hunger > 19)
             {
                 pm.SendMessage("You are too full to eat this ... thing!");
@@ -57,7 +61,7 @@ namespace Server.Items
             }
 
             else
-                from.SendMessage("That needs to be in your backpack for you to use it.");
+                from.SendMessage("That needs to be in your backpack for you to eat it.");
         }
 
         public DragonEye(Serial serial)

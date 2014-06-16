@@ -64,9 +64,10 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         if (pack == null)
                             return;
                             Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
-                            w.Slayer = SlayerName.Silver;
+                            //w.Slayer = SlayerName.Silver;
                             Success = true;
                             m.WikiConfig = null;
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery(IUndead, 100, 50, 3));
                            // Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                             return;
                        
