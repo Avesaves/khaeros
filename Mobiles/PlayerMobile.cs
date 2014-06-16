@@ -9610,11 +9610,11 @@ namespace Server.Mobiles
 			if ( m_DesignContext != null && m_DesignContext.Foundation.IsHiddenToCustomizer( item ) )
 				return false;
 
-            if( item is MilitaryWayPoint )
-                return ( (MilitaryWayPoint)item ).CanSeeMe( this );
+          //  if( item is MilitaryWayPoint )
+          //      return ( (MilitaryWayPoint)item ).CanSeeMe( this );
 
-            if( item is MilitarySpawner )
-                return ( (MilitarySpawner)item ).CanSeeMe( this );
+          //  if( item is MilitarySpawner )
+          //      return ( (MilitarySpawner)item ).CanSeeMe( this );
 
             if (item is AtmosphereTile)
                 return ((AtmosphereTile)item).CanSeeMe(this);
