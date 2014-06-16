@@ -60,7 +60,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
             {
                 
 
-                w.Identified = true; 
+                
                 Caster.Mana -= TotalCost;
 
                 Container pack = Caster.Backpack;
@@ -104,7 +104,10 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, eight);
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("LesserBoneGolem", 80, 50, 30));
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, nine);
+
+                            w.Identified = true; 
                             Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+
                             return;
                        
                      }
@@ -123,6 +126,8 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("BronzeDragon", 80, 50, 30));
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Wyvern", 80, 50, 30));
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("SkeletalDragon", 80, 50, 30));
+
+                            w.Identified = true; 
                             Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                             return;
 
@@ -142,6 +147,8 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("MaleUnicorn", 80, 50, 30));
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Dryad", 80, 50, 30));
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("ElderDryad", 80, 50, 30));
+
+                        w.Identified = true; 
                         Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
@@ -166,6 +173,8 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("LesserEarthElemental", 80, 50, 30));
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("LesserCrystalElemental", 80, 50, 30));
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("LesserStormElemental", 80, 50, 30));
+
+                        w.Identified = true; 
                         Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
@@ -191,6 +200,8 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("AssassinSpider", 80, 50, 30));
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Scorpion", 80, 50, 30));
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("AmbusherSpider", 80, 50, 30));
+
+                        w.Identified = true; 
                         Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
@@ -206,6 +217,8 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("IceGiant", 80, 50, 30));
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("StoneGiant", 80, 50, 30));
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("StormGiant", 80, 50, 30));
+
+                        w.Identified = true; 
                         Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
