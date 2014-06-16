@@ -67,7 +67,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                             //w.Slayer = SlayerName.Silver;
                             Success = true;
                             m.WikiConfig = null;
-                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery(IUndead, 100, 50, 3));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("IUndead", 100, 50, 3));
                            // Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                             return;
                        
