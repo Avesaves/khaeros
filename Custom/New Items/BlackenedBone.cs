@@ -37,6 +37,17 @@ namespace Server.Items
                 return;
 
             PlayerMobile pm = from as PlayerMobile;
+            if (pm.DayOfDeath *2 >= 100 || pm.DayOfDeath *2 <= -100)
+            {
+                pm.SendMessage("This just looks too unappetizing to eat right now.");
+                return;
+            }
+            if (pm.Hunger > 19)
+            {
+                pm.SendMessage("You are too full to eat this ... thing!");
+                return;
+            }
+
 
 
             if (from.Backpack != null && this.ParentEntity == from.Backpack)
@@ -44,7 +55,10 @@ namespace Server.Items
 
                 from.Emote("*Licks something off of a blackened skeleton bone*");
 
+
                 this.Delete();
+                pm.DayOfDeath *= 2;
+                pm.Hunger += 1; 
                 pm.WikiConfig = "undead";
 
                 

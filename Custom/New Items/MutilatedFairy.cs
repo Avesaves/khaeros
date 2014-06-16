@@ -39,12 +39,24 @@ namespace Server.Items
             PlayerMobile pm = from as PlayerMobile;
 
 
+            if (pm.DayOfDeath - 3 <= -100)
+            {
+                pm.SendMessage("This just looks too unappetizing to eat right now.");
+                return;
+            }
+            if (pm.Hunger > 19)
+            {
+                pm.SendMessage("You are too full to eat this ... thing!");
+                return;
+            }
             if (from.Backpack != null && this.ParentEntity == from.Backpack)
             {
 
                 from.Emote("*Pops a live fairy into their mouth*");
 
                 this.Delete();
+                pm.DayOfDeath -= 3;
+                pm.Hunger += 1; 
                 pm.WikiConfig = "fey";
 
                 

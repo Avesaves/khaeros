@@ -62,8 +62,9 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                 Container pack = Caster.Backpack;
                 if (m.WikiConfig != null)
                 {
-                    Caster.Emote("*Glows a deep red*");
-                    w.HueMod = 2943; 
+                    Caster.Emote("*A deep red glow passes into the weapon*");
+                    w.HueMod = 2943;
+                    m.DayOfDeath = 0; 
                    
                     if (m.WikiConfig == "undead")
                     {
