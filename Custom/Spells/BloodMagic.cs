@@ -52,7 +52,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
             BaseWeapon w = TargetItem as BaseWeapon;
 
 
-            if (TargetCanBeAffected && CasterHasEnoughMana && TargetItem is IWeapon && w.Identified = false)
+            if (TargetCanBeAffected && CasterHasEnoughMana && TargetItem is IWeapon && w.Identified == false)
             {
                 
 
