@@ -47,12 +47,20 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
 		
 		public override void Effect( )
 		{
+           PlayerMobile m = Caster as PlayerMobile;
+                
+            BaseWeapon w = TargetItem as BaseWeapon;
+            if (w.Identified = true)
+            {
+                m.SendMessage("This item already holds an enchantment.");
+                Success = false;
+            }
+ 
             if (TargetCanBeAffected && CasterHasEnoughMana && TargetItem is IWeapon)
             {
-                PlayerMobile m = Caster as PlayerMobile;
-                BaseWeapon w = TargetItem as BaseWeapon;
-
                 
+
+                w.Identified = true; 
                 Caster.Mana -= TotalCost;
 
                 Container pack = Caster.Backpack;
@@ -67,28 +75,55 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                             //w.Slayer = SlayerName.Silver;
                             Success = true;
                             m.WikiConfig = null;
-                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("IUndead", 100, 50, 3));
-                           // Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("SkeletalLord", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("SkeletalSoldier", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Zombie", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Skeleton", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("FamineSpirit", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("FleshGolem", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("BoneGolem", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("LesserFleshGolem", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("LesserBoneGolem", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("SkeletalDragon", 80, 50, 30));
+                            Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                             return;
                        
                      }
                     else if (m.WikiConfig == "dragon")
                     {
                         Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
-                            w.Slayer = SlayerName.DragonSlaying;
+                           // w.Slayer = SlayerName.DragonSlaying;
                             Success = true;
                             m.WikiConfig = null;
-                           // Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Dragon", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("CopperDragon", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("SteelDragon", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("IronDragon", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("SilverDragon", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("GoldDragon", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("BronzeDragon", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Wyvern", 80, 50, 30));
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("SkeletalDragon", 80, 50, 30));
+                            Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                             return;
 
                     }
                     else if (m.WikiConfig == "fey")
                     {
                         Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
-                        w.Slayer = SlayerName.Fey;
+                        //w.Slayer = SlayerName.Fey;
                         Success = true;
                         m.WikiConfig = null;
-                     //   Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Centaur", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Petal", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Pixie", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Satyr", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Unicorn", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Sprite", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("MaleUnicorn", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Dryad", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("ElderDryad", 80, 50, 30));
+                        Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
                     }
@@ -96,30 +131,63 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                     else if (m.WikiConfig == "elemental")
                     {
                         Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
-                        w.Slayer = SlayerName.ElementalBan;
+                        //w.Slayer = SlayerName.ElementalBan;
                         Success = true;
                         m.WikiConfig = null;
-                    //    Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("AirElemental", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("WaterElemental", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("FireElemental", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("EarthElemental", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("CrystalElemental", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Excremental", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("StormElemental", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("LesserAirElemental", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("LesserWaterElemental", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("LesserFireElemental", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("LesserEarthElemental", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("LesserCrystalElemental", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("LesserStormElemental", 80, 50, 30));
+                        Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
                     }
                     else if (m.WikiConfig == "arachnid")
                     {
                         Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
-                        w.Slayer = SlayerName.ArachnidDoom;
+                       // w.Slayer = SlayerName.ArachnidDoom;
                         Success = true;
                         m.WikiConfig = null;
-                      //  Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("CrawlingVermin", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("DesertCrawler", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("DireSpider", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("DuneDigger", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("FireBeetle", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("GiantCentipede", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("HornedBeetle", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Larva", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("PincerBeetle", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("RhinoBeetle", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("RuneBeetle", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Snowdigger", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("AssassinSpider", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("Scorpion", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("AmbusherSpider", 80, 50, 30));
+                        Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
                     }
                     else if (m.WikiConfig == "repond")
                     {
                         Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
-                        w.Slayer = SlayerName.Repond;
+                       // w.Slayer = SlayerName.Repond;
                         Success = true;
                         m.WikiConfig = null;
-                      //  Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("FireGiant", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("HillGiant", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("IceGiant", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("StoneGiant", 80, 50, 30));
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("StormGiant", 80, 50, 30));
+                        Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                         return;
 
                     }
@@ -133,7 +201,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
 
        
         
-   /*
+   
         private void Flare()
         {
           
@@ -141,12 +209,12 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                 return;
             
             BaseWeapon w = TargetItem as BaseWeapon;
-            w.Slayer = SlayerName.None;
-            TargetItem.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*Ceases to glow*");
+            w.Identified = false;
+            TargetItem.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*Loses it's enchantment.*");
 
 
         }
-        */ 
+         
 		public static void Initialize()
 		{
 			CommandSystem.Register( "BloodMagic", AccessLevel.Player, new CommandEventHandler( BloodMagic_OnCommand ) );
