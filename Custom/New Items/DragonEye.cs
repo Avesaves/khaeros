@@ -25,7 +25,7 @@ namespace Server.Items
         public DragonEye()
             : base(0x23E)
         {
-            Stackable = false;
+            Stackable = true;
             Weight = 1.0;
             Name = "A draconian eyeball";
 
@@ -38,13 +38,19 @@ namespace Server.Items
 
             PlayerMobile pm = from as PlayerMobile;
 
-
+            if (pm.Hunger > 19)
+            {
+                pm.SendMessage("You are too full to eat this ... thing!");
+                return;
+            }
             if (from.Backpack != null && this.ParentEntity == from.Backpack)
             {
 
                 from.Emote("*Eats a dragon's eye, with a squelch*");
 
                 this.Delete();
+                pm.DayOfDeath += 10;
+                pm.Hunger += 1; 
                 pm.WikiConfig = "dragon";
 
                 
