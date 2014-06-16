@@ -50,13 +50,9 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
            PlayerMobile m = Caster as PlayerMobile;
                 
             BaseWeapon w = TargetItem as BaseWeapon;
-            if (w.Identified = true)
-            {
-                m.SendMessage("This item already holds an enchantment.");
-                Success = false;
-            }
- 
-            else if (TargetCanBeAffected && CasterHasEnoughMana && TargetItem is IWeapon)
+
+
+            if (TargetCanBeAffected && CasterHasEnoughMana && TargetItem is IWeapon && w.Identified = false)
             {
                 
 
