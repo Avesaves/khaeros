@@ -10,7 +10,7 @@ using Server.Commands;
 
 namespace Server.Items
 {
-    public class ElementalGoop : Item
+    public class MutilatedFairy : Item
     {
         private int m_Power;
 
@@ -22,12 +22,12 @@ namespace Server.Items
         }
 
         [Constructable]
-        public ElementalGoop()
-            : base(0x21C)
+        public MutilatedFairy()
+            : base(0x2634)
         {
             Stackable = false;
             Weight = 1.0;
-            Name = "A Pile of Glowing Goop";
+            Name = "A Mutilated Fairy";
 
         }
 
@@ -37,7 +37,9 @@ namespace Server.Items
                 return;
 
             PlayerMobile pm = from as PlayerMobile;
-            if (pm.DayOfDeath + 3 >= 100)
+
+
+            if (pm.DayOfDeath +6 >= 50)
             {
                 pm.SendMessage("This just looks too unappetizing to eat right now.");
                 return;
@@ -47,18 +49,15 @@ namespace Server.Items
                 pm.SendMessage("You are too full to eat this ... thing!");
                 return;
             }
-
-
-
             if (from.Backpack != null && this.ParentEntity == from.Backpack)
             {
 
-                from.Emote("*Sucks up the glowing goop*");
+                from.Emote("*Pops a live fairy into their mouth*");
 
                 this.Delete();
-                pm.DayOfDeath += 3;
+                pm.DayOfDeath += 6;
                 pm.Hunger += 1; 
-                pm.WikiConfig = "elemental";
+                pm.WikiConfig = "fey";
 
                 
             }
@@ -67,7 +66,7 @@ namespace Server.Items
                 from.SendMessage("That needs to be in your backpack for you to use it.");
         }
 
-        public ElementalGoop(Serial serial)
+        public MutilatedFairy(Serial serial)
             : base(serial)
         {
         }

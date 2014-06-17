@@ -10,7 +10,7 @@ using Server.Commands;
 
 namespace Server.Items
 {
-    public class SpiderHeart : Item
+    public class QuaraphonInkSack : Item
     {
         private int m_Power;
 
@@ -22,12 +22,12 @@ namespace Server.Items
         }
 
         [Constructable]
-        public SpiderHeart()
-            : base(0x318D)
+        public QuaraphonInkSack()
+            : base(0x3338)
         {
             Stackable = false;
             Weight = 1.0;
-            Name = "A spider's heart";
+            Name = "An ink sack";
 
         }
 
@@ -39,7 +39,7 @@ namespace Server.Items
             PlayerMobile pm = from as PlayerMobile;
 
 
-            if (pm.DayOfDeath + 7 >= 100)
+            if (pm.DayOfDeath - 7 <= -50)
             {
                 pm.SendMessage("This just looks too unappetizing to eat right now.");
                 return;
@@ -52,12 +52,12 @@ namespace Server.Items
             if (from.Backpack != null && this.ParentEntity == from.Backpack)
             {
 
-                from.Emote("*Chews on a spider's heart*");
+                from.Emote("*Chews on something dark and inky");
 
                 this.Delete();
-                pm.DayOfDeath += 7;
+                pm.DayOfDeath -= 7;
                 pm.Hunger += 1; 
-                pm.WikiConfig = "arachnid";
+               // pm.WikiConfig = "fey";
 
                 
             }
@@ -66,7 +66,7 @@ namespace Server.Items
                 from.SendMessage("That needs to be in your backpack for you to use it.");
         }
 
-        public SpiderHeart(Serial serial)
+        public QuaraphonInkSack(Serial serial)
             : base(serial)
         {
         }

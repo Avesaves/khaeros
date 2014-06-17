@@ -10,7 +10,7 @@ using Server.Commands;
 
 namespace Server.Items
 {
-    public class GiantBrain : Item
+    public class MinotaurHooves : Item
     {
         private int m_Power;
 
@@ -22,12 +22,12 @@ namespace Server.Items
         }
 
         [Constructable]
-        public GiantBrain()
-            : base(0x3AFA)
+        public MinotaurHooves()
+            : base(0x3B8E)
         {
             Stackable = false;
             Weight = 1.0;
-            Name = "A Giant's Brain";
+            Name = "Minotaur Hooves";
 
         }
 
@@ -38,12 +38,13 @@ namespace Server.Items
 
             PlayerMobile pm = from as PlayerMobile;
 
-            if (pm.DayOfDeath + 17 >= 100)
+
+            if (pm.DayOfDeath *3 >= 50 || pm.DayOfDeath *3 <= -50)
             {
                 pm.SendMessage("This just looks too unappetizing to eat right now.");
                 return;
             }
-            if (pm.Hunger > 16)
+            if (pm.Hunger > 19)
             {
                 pm.SendMessage("You are too full to eat this ... thing!");
                 return;
@@ -51,12 +52,12 @@ namespace Server.Items
             if (from.Backpack != null && this.ParentEntity == from.Backpack)
             {
 
-                from.Emote("*Chews on a piece of a giant's brain*");
+                from.Emote("*Licks something out of some... hooves*");
 
                 this.Delete();
-                pm.DayOfDeath += 17;
-                pm.Hunger += 4; 
-                pm.WikiConfig = "repond";
+                pm.DayOfDeath *= 3;
+                pm.Hunger += 1; 
+               // pm.WikiConfig = "fey";
 
                 
             }
@@ -65,7 +66,7 @@ namespace Server.Items
                 from.SendMessage("That needs to be in your backpack for you to use it.");
         }
 
-        public GiantBrain(Serial serial)
+        public MinotaurHooves(Serial serial)
             : base(serial)
         {
         }

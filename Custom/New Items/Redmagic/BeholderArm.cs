@@ -10,7 +10,7 @@ using Server.Commands;
 
 namespace Server.Items
 {
-    public class DragonEye : Item
+    public class BeholderArm : Item
     {
         private int m_Power;
 
@@ -22,12 +22,12 @@ namespace Server.Items
         }
 
         [Constructable]
-        public DragonEye()
-            : base(0x23E)
+        public BeholderArm()
+            : base(0xD91)
         {
             Stackable = false;
             Weight = 1.0;
-            Name = "A draconian eyeball";
+            Name = "A beholder appendage";
 
         }
 
@@ -37,7 +37,9 @@ namespace Server.Items
                 return;
 
             PlayerMobile pm = from as PlayerMobile;
-            if (pm.DayOfDeath + 10 >= 100)
+
+
+            if (pm.DayOfDeath - 3 <= -50)
             {
                 pm.SendMessage("This just looks too unappetizing to eat right now.");
                 return;
@@ -50,21 +52,21 @@ namespace Server.Items
             if (from.Backpack != null && this.ParentEntity == from.Backpack)
             {
 
-                from.Emote("*Eats a dragon's eye, with a squelch*");
+                from.Emote("*Slurps up a strange appendage");
 
                 this.Delete();
-                pm.DayOfDeath += 10;
+                pm.DayOfDeath -= 3;
                 pm.Hunger += 1; 
-                pm.WikiConfig = "dragon";
+               // pm.WikiConfig = "fey";
 
                 
             }
 
             else
-                from.SendMessage("That needs to be in your backpack for you to eat it.");
+                from.SendMessage("That needs to be in your backpack for you to use it.");
         }
 
-        public DragonEye(Serial serial)
+        public BeholderArm(Serial serial)
             : base(serial)
         {
         }

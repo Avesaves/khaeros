@@ -10,7 +10,7 @@ using Server.Commands;
 
 namespace Server.Items
 {
-    public class BlackenedBone : Item
+    public class LocustTeeth : Item
     {
         private int m_Power;
 
@@ -22,12 +22,13 @@ namespace Server.Items
         }
 
         [Constructable]
-        public BlackenedBone()
-            : base(0x2F5C)
+        public LocustTeeth()
+            : base(0x2243)
         {
             Stackable = false;
             Weight = 1.0;
-            Name = "A blackened bone";
+            Name = "Locust Teeth";
+            Hue = 2943; 
 
         }
 
@@ -37,29 +38,27 @@ namespace Server.Items
                 return;
 
             PlayerMobile pm = from as PlayerMobile;
-            if (pm.DayOfDeath *2 >= 100 || pm.DayOfDeath *2 <= -100)
+
+/*
+            if (pm.DayOfDeath - 6 <= -50)
             {
                 pm.SendMessage("This just looks too unappetizing to eat right now.");
                 return;
-            }
+            } */ 
             if (pm.Hunger > 19)
             {
                 pm.SendMessage("You are too full to eat this ... thing!");
                 return;
             }
-
-
-
             if (from.Backpack != null && this.ParentEntity == from.Backpack)
             {
 
-                from.Emote("*Licks something off of a blackened skeleton bone*");
-
+                from.Emote("*Swallows some teeth*");
 
                 this.Delete();
-                pm.DayOfDeath *= 2;
+                pm.DayOfDeath *= -1;
                 pm.Hunger += 1; 
-                pm.WikiConfig = "undead";
+               // pm.WikiConfig = "fey";
 
                 
             }
@@ -68,7 +67,7 @@ namespace Server.Items
                 from.SendMessage("That needs to be in your backpack for you to use it.");
         }
 
-        public BlackenedBone(Serial serial)
+        public LocustTeeth(Serial serial)
             : base(serial)
         {
         }
