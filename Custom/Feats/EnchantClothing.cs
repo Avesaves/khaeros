@@ -30,7 +30,12 @@ namespace Server.FeatInfo
 		public override string FullDescription{ get{ return GetFullDescription(this); } }
 		
 		public static void Initialize(){ WriteWebpage(new EnchantClothing()); }
-		
+        public override bool MeetsOurRequirements(PlayerMobile m)
+        {
+
+            if (!m.CanBeMage)
+                return false;
+        }
 		public EnchantClothing() {}
 	}
 }

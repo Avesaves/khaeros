@@ -23,7 +23,7 @@ namespace Server.FeatInfo
 		public override string SecondDescription{ get{ return "Improved effect."; } }
 		public override string ThirdDescription{ get{ return "Improved effect."; } }
 
-		public override string FirstCommand{ get{ return "None"; } }
+		public override string FirstCommand{ get{ return ".bloodmagic"; } }
 		public override string SecondCommand{ get{ return "None"; } }
 		public override string ThirdCommand{ get{ return "None"; } }
 		
@@ -33,8 +33,7 @@ namespace Server.FeatInfo
 		
 		public override bool MeetsOurRequirements( PlayerMobile m )
 		{
-            if (!m.CanBeMage)
-                return false;
+
             if (m.Feats.GetFeatLevel(FeatList.Faith) > 0)
                 return false;
             if (m.Feats.GetFeatLevel(FeatList.Magery) > 0)
