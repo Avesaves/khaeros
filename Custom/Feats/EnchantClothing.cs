@@ -35,6 +35,7 @@ namespace Server.FeatInfo
 
             if (!m.CanBeMage)
                 return false;
+            return base.MeetsOurRequirements(m);
         }
 		public EnchantClothing() {}
 	}
