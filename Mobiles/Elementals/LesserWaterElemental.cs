@@ -61,6 +61,7 @@ namespace Server.Mobiles
         {
             base.AddBodyParts(bpc, corpse);
             bpc.DropItem(new PureWater());
+            bpc.DropItem(new ElementalGoop());
         }
 
 		public LesserWaterElemental( Serial serial ) : base( serial )
@@ -100,11 +101,7 @@ namespace Server.Mobiles
 			
 			base.OnThink();
 		}
-        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
-        {
-            base.AddBodyParts(bpc, corpse);
-            bpc.DropItem(new ElementalGoop());
-        }
+
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );

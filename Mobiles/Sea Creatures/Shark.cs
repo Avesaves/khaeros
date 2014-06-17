@@ -43,12 +43,7 @@ namespace Server.Mobiles
 			CanSwim = true;
 			CantWalk = true;
 		}
-        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
-        {
-            base.AddBodyParts(bpc, corpse);
-            bpc.DropItem(new CartilagePile());
 
-        }
 		public override int Meat{ get{ return 8; } }
 		public override int Bones{ get{ return 8; } }
 		public override int Hides{ get{ return 4; } }
