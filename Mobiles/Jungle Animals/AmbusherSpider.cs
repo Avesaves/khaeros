@@ -52,6 +52,8 @@ namespace Server.Mobiles
 
 			PackItem( new SpidersSilk( 5 ) );
 		}
+
+
 		public override FoodType FavoriteFood{ get{ return FoodType.Meat; } }
 		public override PackInstinct PackInstinct{ get{ return PackInstinct.Arachnid; } }
 
@@ -67,6 +69,7 @@ namespace Server.Mobiles
 		{
 			base.AddBodyParts( bpc, corpse );
 			bpc.DropItem( new AmbusherSpiderVenom() );
+            bpc.DropItem( new SpiderHeart());
 		}
 		
 		public override int Meat{ get{ return 4; } }

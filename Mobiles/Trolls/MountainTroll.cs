@@ -49,6 +49,7 @@ namespace Server.Mobiles
 		{
 			base.AddBodyParts( bpc, corpse );
 			bpc.DropItem( new TrollBlood() );
+            bpc.DropItem(new TrollHair()); 
 		}
 		
 		public override int Meat{ get{ return 14; } }

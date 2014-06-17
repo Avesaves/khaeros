@@ -95,6 +95,7 @@ namespace Server.Mobiles
 			bpc.DropItem( bacon );
 			bpc.DropItem( bird );
 			bpc.DropItem( deer );
+            bpc.DropItem(new UndeadFetus());
 		}
 
 		public override void GenerateLoot()

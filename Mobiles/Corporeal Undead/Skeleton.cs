@@ -53,7 +53,11 @@ namespace Server.Mobiles
 			
 			PackItem( hatchet );
 		}
-
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new BlackenedBone());
+        }
 		public override bool BleedImmune{ get{ return true; } }
 
 		public override void GenerateLoot()

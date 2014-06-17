@@ -46,7 +46,12 @@ namespace Server.Mobiles
 
 			VirtualArmor = 30;
 		}
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new SerpentBile());
 
+        }
 		public override void GenerateLoot()
 		{
 			AddLoot( LootPack.Rich );

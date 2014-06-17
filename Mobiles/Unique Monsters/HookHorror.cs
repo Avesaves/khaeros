@@ -58,7 +58,12 @@ namespace Server.Mobiles
 		{
 			AddLoot( LootPack.Average, 1 );
 		}
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new CartilagePile());
 
+        }
 		public HookHorror( Serial serial ) : base( serial )
 		{
 		}

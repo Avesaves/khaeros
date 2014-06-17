@@ -59,7 +59,12 @@ namespace Server.Mobiles
 		public override int Bones{ get{ return 20; } }
 		public override int Hides{ get{ return 12; } }
 		public override HideType HideType{ get{ return HideType.Scaled; } }
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new SerpentBile());
 
+        }
 		public override void GenerateLoot()
 		{
 			AddLoot( LootPack.Rich );

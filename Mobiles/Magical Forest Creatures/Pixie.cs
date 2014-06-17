@@ -56,6 +56,7 @@ namespace Server.Mobiles
 			base.AddBodyParts( bpc, corpse );
 			bpc.DropItem( new FairyWing( 2 ) );
             bpc.DropItem(new FairyShroom(1));
+             bpc.DropItem(new MutilatedFairy());
 		}
 
 		public override void GenerateLoot()

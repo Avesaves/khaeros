@@ -42,7 +42,12 @@ namespace Server.Mobiles
 			VirtualArmor = 44;
 			PackItem( new BlackSlime( 1 ) );
 		}
-		
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new GlowingGoop());
+
+        }
 		public void SpawnBlackPuddingSpawns( Mobile target )
 		{
 			Map map = this.Map;

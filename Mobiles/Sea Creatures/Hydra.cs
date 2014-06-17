@@ -57,6 +57,7 @@ namespace Server.Mobiles
 		{
 			base.AddBodyParts( bpc, corpse );
 			bpc.DropItem( new HydraScale() );
+            bpc.DropItem(new Gills());
 		}
 
 		public override bool HasBreath{ get{ return true; } }

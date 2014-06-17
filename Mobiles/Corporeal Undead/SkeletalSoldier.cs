@@ -63,7 +63,11 @@ namespace Server.Mobiles
 			
 			PackItem( buckler );
 		}
-
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new BlackenedBone());
+        }
 		public override bool BleedImmune{ get{ return true; } }
 
 		public SkeletalSoldier( Serial serial ) : base( serial )

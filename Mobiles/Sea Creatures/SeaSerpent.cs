@@ -46,6 +46,12 @@ namespace Server.Mobiles
 			CantWalk = true;
 		}
 
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new Gills());
+
+        }
 		public override int Meat{ get{ return 20; } }
 		public override int Bones{ get{ return 10; } }
 		public override int Hides{ get{ return 10; } }

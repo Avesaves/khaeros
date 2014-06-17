@@ -161,7 +161,12 @@ namespace Server.Mobiles
             }
 
         }
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new LocustTeeth());
 
+        }
 		public LocustBoneEater(Serial serial) : base(serial)
 		{
 		}

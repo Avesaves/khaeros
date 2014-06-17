@@ -45,7 +45,11 @@ namespace Server.Mobiles
 
 			PackItem( new Bone( 7 ) );
 		}
-
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new BlackenedBone());
+        }
 		public override void GenerateLoot()
 		{
 			AddLoot( LootPack.Meager );

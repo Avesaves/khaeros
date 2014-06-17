@@ -100,7 +100,11 @@ namespace Server.Mobiles
 			
 			base.OnThink();
 		}
-
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new ElementalGoop());
+        }
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );

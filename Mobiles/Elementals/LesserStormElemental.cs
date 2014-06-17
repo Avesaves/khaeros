@@ -78,7 +78,11 @@ namespace Server.Mobiles
 				}
 			}
 		}
-
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new ElementalGoop());
+        }
 		public LesserEnergyElemental( Serial serial ) : base( serial )
 		{
 		}

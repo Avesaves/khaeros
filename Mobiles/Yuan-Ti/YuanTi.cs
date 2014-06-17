@@ -46,7 +46,12 @@ namespace Server.Mobiles
 
 			VirtualArmor = 30;
 		}
-		
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new SerpentBile());
+
+        }
 		public override int Meat{ get{ return 10; } }
 		public override int Bones{ get{ return 10; } }
 		public override int Hides{ get{ return 3; } }

@@ -10,7 +10,7 @@ using Server.Commands;
 
 namespace Server.Items
 {
-    public class QuaraphonInkSack : Item
+    public class OctopodInkSack : Item
     {
         private int m_Power;
 
@@ -22,7 +22,7 @@ namespace Server.Items
         }
 
         [Constructable]
-        public QuaraphonInkSack()
+        public OctopodInkSack()
             : base(0x3338)
         {
             Stackable = false;
@@ -66,7 +66,7 @@ namespace Server.Items
                 from.SendMessage("That needs to be in your backpack for you to use it.");
         }
 
-        public QuaraphonInkSack(Serial serial)
+        public OctopodInkSack(Serial serial)
             : base(serial)
         {
         }

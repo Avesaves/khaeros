@@ -55,7 +55,11 @@ namespace Server.Mobiles
 			VirtualArmor = 40;
 			ControlSlots = 2;
 		}
-
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new ElementalGoop());
+        }
 		public override bool BleedImmune{ get{ return true; } }
 
 		public AirElemental( Serial serial ) : base( serial )

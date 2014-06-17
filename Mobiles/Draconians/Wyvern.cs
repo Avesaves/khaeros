@@ -61,6 +61,7 @@ namespace Server.Mobiles
 		{
 			base.AddBodyParts( bpc, corpse );
 			bpc.DropItem( new WyvernVenom() );
+            bpc.DropItem(new DragonEye()); 
 		}
 
 		public override int Meat{ get{ return 20; } }

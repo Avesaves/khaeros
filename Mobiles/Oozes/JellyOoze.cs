@@ -82,7 +82,12 @@ namespace Server.Mobiles
 			
 			this.Emote( "*some of its severed pieces start to move about and fight to defend it*" );
 		}
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new GlowingGoop());
 
+        }
 		public override void AlterDamageScalarFrom( Mobile caster, ref double scalar )
 		{
 			if ( 0.3 >= Utility.RandomDouble() )

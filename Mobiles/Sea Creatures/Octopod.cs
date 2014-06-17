@@ -86,7 +86,12 @@ namespace Server.Mobiles
 				}
 			}
 		}
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new OctopodInkSack());
 
+        }
 		public override void GenerateLoot()
 		{
 			AddLoot( LootPack.Average);

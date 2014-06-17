@@ -65,6 +65,7 @@ namespace Server.Mobiles
 		{
 			base.AddBodyParts( bpc, corpse );
 			bpc.DropItem( new FunnelWebSpiderVenom() );
+            bpc.DropItem(new SpiderHeart()); 
 		}
 		
 		public override void OnAfterMove( Point3D oldLocation )

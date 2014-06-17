@@ -59,6 +59,7 @@ namespace Server.Mobiles
 		{
 			base.AddBodyParts( bpc, corpse );
 			bpc.DropItem( new GiantsSkull() );
+            bpc.DropItem(new GiantBrain());
 		}
 
 		public override void GenerateLoot()

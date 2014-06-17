@@ -54,6 +54,7 @@ namespace Server.Mobiles
 			ribs.RotStage = RotStage.Rotten;
 			
 			bpc.DropItem( ribs );
+            bpc.DropItem(new UndeadFetus());
 		}
 
 		public override bool BleedImmune{ get{ return true; } }

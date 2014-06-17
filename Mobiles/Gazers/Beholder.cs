@@ -52,6 +52,7 @@ namespace Server.Mobiles
 		{
 			base.AddBodyParts( bpc, corpse );
 			bpc.DropItem( new BeholdersEye() );
+            bpc.DropItem(new BeholderArm()); 
 		}
 		
 				public override void GenerateLoot()

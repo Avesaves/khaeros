@@ -30,6 +30,7 @@ namespace Server.Mobiles
 			DragonHead head = new DragonHead();
 			head.Hue = 0;
 			bpc.DropItem( head );
+            bpc.DropItem(new DragonEye()); 
 		}
 
 		public override void GenerateLoot()

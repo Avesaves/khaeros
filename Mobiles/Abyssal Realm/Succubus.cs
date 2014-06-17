@@ -47,7 +47,12 @@ namespace Server.Mobiles
 
 			VirtualArmor = 80;
 		}
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new SuccubusWomb());
 
+        }
 		public override void GenerateLoot()
 		{
 			AddLoot( LootPack.Rich, 3 );

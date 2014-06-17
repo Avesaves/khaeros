@@ -51,6 +51,7 @@ namespace Server.Mobiles
 		{
 			base.AddBodyParts( bpc, corpse );
 			bpc.DropItem( new MinotaurHorn( 2 ) );
+            bpc.DropItem(new MinotaurHooves()); 
 		}
 
 		public override int Meat{ get{ return 20; } }

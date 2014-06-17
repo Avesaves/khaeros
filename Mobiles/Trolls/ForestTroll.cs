@@ -51,6 +51,7 @@ namespace Server.Mobiles
 		{
 			base.AddBodyParts( bpc, corpse );
 			bpc.DropItem( new TrollBlood() );
+            bpc.DropItem(new TrollHair()); 
 		}
 
 		public override bool HasFur{ get{ return true; } }

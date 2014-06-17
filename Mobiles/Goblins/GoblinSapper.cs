@@ -50,6 +50,7 @@ namespace Server.Mobiles
             base.AddBodyParts(bpc, corpse);
             bpc.DropItem(new WeakBlackPowder());
             bpc.DropItem(new GoblinBrain());
+            bpc.DropItem(new GoblinGonads()); 
         }
 
         public override int Meat { get { return 10; } }

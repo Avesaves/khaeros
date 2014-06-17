@@ -57,8 +57,12 @@ namespace Server.Mobiles
 		}
 
 		public override bool BleedImmune{ get{ return true; } }
-		
 
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new ElementalGoop());
+        }
 		public LesserAirElemental( Serial serial ) : base( serial )
 		{
 		}

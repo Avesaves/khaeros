@@ -90,6 +90,7 @@ namespace Server.Mobiles
         {
             base.AddBodyParts(bpc, corpse);
             bpc.DropItem(new PureWater());
+            bpc.DropItem(new ElementalGoop());
         }
 
 		public override void GenerateLoot()

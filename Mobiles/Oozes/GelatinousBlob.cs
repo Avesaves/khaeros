@@ -42,7 +42,12 @@ namespace Server.Mobiles
 			
 			PackItem( new GreenSlime( 1 ) );
 		}
-		
+        public override void AddBodyParts(BodyPartsContainer bpc, Corpse corpse)
+        {
+            base.AddBodyParts(bpc, corpse);
+            bpc.DropItem(new GlowingGoop());
+
+        }
 		public void SpawnGelatinousBlobSpawns( Mobile target )
 		{
 			Map map = this.Map;
