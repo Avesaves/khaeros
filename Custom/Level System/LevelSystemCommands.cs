@@ -88,6 +88,7 @@ namespace Server.Commands
 			CommandSystem.Register( "HairStyling", AccessLevel.Player, new CommandEventHandler( HairStyling_OnCommand ) );
 			CommandSystem.Register( "CharInfo", AccessLevel.Player, new CommandEventHandler( CharInfo_OnCommand ) );
 			CommandSystem.Register( "Say", AccessLevel.Player, new CommandEventHandler( Say_OnCommand ) );
+            CommandSystem.Register("Telepathy", AccessLevel.Player, new CommandEventHandler(Say_OnCommand));
 			CommandSystem.Register( "Emote", AccessLevel.Counselor, new CommandEventHandler( Emote_OnCommand ) );
 			CommandSystem.Register( "LastSay", AccessLevel.Counselor, new CommandEventHandler( LastSay_OnCommand ) );
 			CommandSystem.Register( "LastEmote", AccessLevel.Counselor, new CommandEventHandler( LastEmote_OnCommand ) );
@@ -3215,7 +3216,59 @@ namespace Server.Commands
                 	m.SendMessage( "Your target needs to be wearing a hair styling apron." );
             }
         }
-        
+        [Usage("Telepathy")]
+        [Description("Allows you to force speech on a mobile.")]
+        private static void Telepathy_OnCommand(CommandEventArgs e)
+        {
+            PlayerMobile m = e.Mobile as PlayerMobile;
+
+            if (m != null)
+            {
+                int dist = m.Feats.GetFeatLevel(FeatList.MindI) * 2;
+
+                if (m.AccessLevel >= AccessLevel.Counselor)
+                    dist = 15;
+
+                if (dist == 0)
+                {
+                    m.SendMessage("You lack the appropriate feat.");
+                    return;
+                }
+
+                else
+                {
+                    string speech = e.ArgString;
+                    string nam = m.Name;
+                    m.Target = new TelepathyTarget(speech, dist);
+                }
+            }
+        }
+        private class TelepathyTarget : Target
+        {
+            private string m_speech;
+            private string m_nam;
+            public TelepathyTarget(string speech, int dist)
+                : base(dist, TargetFlags.None)
+            {
+                m_speech = speech;
+                m_nam = nam;
+            }
+
+            protected override void OnTarget(Mobile m, object obj)
+            {
+                if (m == null || m.Deleted)
+                    return;
+
+                if (obj == null)
+                {
+                    m.SendMessage("That no longer exists.");
+                    return;
+                }
+                if (!(obj is Mobile))
+                    m.SendMessage("You don't have the skill to converse with objects.");
+                obj.SendMessage(2660, m_nam + ":" + " " + m_speech);
+            }
+        }      
         [Usage( "Say" )]
         [Description( "Allows you to force speech on a mobile." )]
         private static void Say_OnCommand( CommandEventArgs e )
@@ -3262,7 +3315,7 @@ namespace Server.Commands
         		m.Target = new SayTarget( speech, true, 15 );
         	}
         }
-        
+       
         private class SayTarget : Target
         {
         	private string m_speech;
