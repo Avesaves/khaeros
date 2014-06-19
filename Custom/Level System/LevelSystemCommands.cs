@@ -3228,7 +3228,7 @@ namespace Server.Commands
 
                 if (m.AccessLevel >= AccessLevel.Counselor)
                     dist = 15;
-                XmlData awe = XmlAttach.FindAttachment(l, typeof(XmlData), "Telepathy") as XmlData;
+                XmlData awe = XmlAttach.FindAttachment(m, typeof(XmlData), "Telepathy") as XmlData;
                 if (awe == null)
                 {
                     m.SendMessage("You lack this ability.");
@@ -3244,19 +3244,18 @@ namespace Server.Commands
                 {
                     string speech = e.ArgString;
                     string nam = m.Name;
-                    m.Target = new TelepathyTarget(speech, dist);
+                    m.Target = new TelepathyTarget(speech, false, dist);
                 }
             }
         }
         private class TelepathyTarget : Target
         {
             private string m_speech;
-            private string m_nam;
-            public TelepathyTarget(string speech, int dist)
-                : base(dist, TargetFlags.None)
+
+            public TelepathyTarget(string speech, bool emote, int dist)
+                : base(dist, false, TargetFlags.None)
             {
                 m_speech = speech;
-                m_nam = nam;
             }
 
             protected override void OnTarget(Mobile m, object obj)
@@ -3271,7 +3270,8 @@ namespace Server.Commands
                 }
                 if (!(obj is Mobile))
                     m.SendMessage("You don't have the skill to converse with objects.");
-                obj.SendMessage(2660, m_nam + ":" + " " + m_speech);
+                Mobile targ = obj as Mobile; 
+                targ.SendMessage(2660, m.Name + ":" + " " + m_speech);
             }
         }      
         [Usage( "Say" )]
