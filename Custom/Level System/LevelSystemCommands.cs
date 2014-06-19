@@ -3228,7 +3228,12 @@ namespace Server.Commands
 
                 if (m.AccessLevel >= AccessLevel.Counselor)
                     dist = 15;
-
+                XmlData awe = XmlAttach.FindAttachment(l, typeof(XmlData), "Telepathy") as XmlData;
+                if (awe == null)
+                {
+                    m.SendMessage("You lack this ability.");
+                    return;
+                }
                 if (dist == 0)
                 {
                     m.SendMessage("You lack the appropriate feat.");
