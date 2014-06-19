@@ -14,7 +14,7 @@ namespace Server
 		private const int CoalesceBufferSize = 512; // MSS that the core will use when buffering packets
 
 		//private static int[] m_AdditionalPorts = new int[0];
-		private static int[] m_AdditionalPorts = new int[]{ 2595 };
+		private static int[] m_AdditionalPorts = new int[]{ 2594 };
 
 		public static void Initialize()
 		{
@@ -40,7 +40,7 @@ namespace Server
 				e.Socket.SetSocketOption( SocketOptionLevel.Tcp, SocketOptionName.NoDelay, 1 ); // RunUO uses its own algorithm
 		}
                 private static IPEndPoint[] m_ListenerEndPoints = new IPEndPoint[] {
-                        new IPEndPoint( IPAddress.Any, 2595 ), // Shard Two will Listen on 2594
+                        new IPEndPoint( IPAddress.Any, 2594 ), // Shard Two will Listen on 2594
                      
                         // Examples:
                         // new IPEndPoint( IPAddress.Any, 80 ), // Listen on port 80 on all IP addresses
