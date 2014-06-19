@@ -481,7 +481,7 @@ namespace Server.Misc
 				InitialAnimation();
 				((IKhaerosMobile)m_Caster).CurrentSpell = Feat;
 				Timer.DelayCall( TimeSpan.FromSeconds( 1.0 ), new TimerCallback( CastCallback ) );
-				if (pm.CanBeMage == true && pm.RawInt >=100 && IsMageSpell)
+				if ( pm.RawInt >=100 && IsMageSpell)
 				m_Caster.SendMessage( "You silently begin casting " + Name + "." );
 				else
 				m_Caster.SendMessage( "You begin casting " + Name + "." );
