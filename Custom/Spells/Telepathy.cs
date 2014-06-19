@@ -44,14 +44,15 @@ public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
                     return false;
             }
         }
-		
+        public string nam { get { Caster.Name; } }
+        public string mess;
 		public override void Effect( )
 		{
             PlayerMobile l = Caster as PlayerMobile;
 			if( TargetCanBeAffected && CasterHasEnoughMana )
 			{
-                string nam = l.Name; 
-                targ.SendMessage(2660, nam + ":" + " " + mess); 
+
+                TargetMobile.SendMessage(2660, nam + ":" + " " + mess); 
 				Success = true;
 			}
             Success = false; 
@@ -90,7 +91,7 @@ from.SendMessage( m_Background.ToString() + " = " + target.Backgrounds.Backgroun
            
             if (e.Mobile == null || !(e.Mobile is PlayerMobile) || e.Length < 1 || e.Arguments[0].Trim().Length < 1)
                 return;
-            string mess = e.ArgString;
+            mess = e.ArgString;
         	if( e.Mobile != null )
         		SpellInitiator( new Telepathy( e.Mobile, GetSpellPower( "3", ((IKhaerosMobile)e.Mobile).Feats.GetFeatLevel(FeatList.MindI) ) ) );
         }
