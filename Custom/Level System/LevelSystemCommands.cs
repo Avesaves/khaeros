@@ -3263,17 +3263,23 @@ namespace Server.Commands
                 if (m == null || m.Deleted)
                     return;
                 if (m.Mana < 5)
+                {
                     m.SendMessage("You do not have the energy for this.");
+                    return;
+                }
                 if (obj == null)
                 {
                     m.SendMessage("That no longer exists.");
                     return;
                 }
                 if (!(obj is Mobile))
+                {
                     m.SendMessage("You don't have the skill to converse with objects.");
+                    return;
+                }
                 Mobile targ = obj as Mobile;
                 m.Mana -= 5; 
-                targ.SendMessage(2660, m.Name + ":" + " " + m_speech);
+                targ.SendMessage(2659, m.Name + " " + "(telepathy):" + " " + m_speech);
             }
         }      
         [Usage( "Say" )]
