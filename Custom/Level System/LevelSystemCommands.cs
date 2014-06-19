@@ -88,7 +88,7 @@ namespace Server.Commands
 			CommandSystem.Register( "HairStyling", AccessLevel.Player, new CommandEventHandler( HairStyling_OnCommand ) );
 			CommandSystem.Register( "CharInfo", AccessLevel.Player, new CommandEventHandler( CharInfo_OnCommand ) );
 			CommandSystem.Register( "Say", AccessLevel.Player, new CommandEventHandler( Say_OnCommand ) );
-            CommandSystem.Register("Telepathy", AccessLevel.Player, new CommandEventHandler(Say_OnCommand));
+            CommandSystem.Register("Telepathy", AccessLevel.Player, new CommandEventHandler(Telepathy_OnCommand));
 			CommandSystem.Register( "Emote", AccessLevel.Counselor, new CommandEventHandler( Emote_OnCommand ) );
 			CommandSystem.Register( "LastSay", AccessLevel.Counselor, new CommandEventHandler( LastSay_OnCommand ) );
 			CommandSystem.Register( "LastEmote", AccessLevel.Counselor, new CommandEventHandler( LastEmote_OnCommand ) );
@@ -3217,7 +3217,7 @@ namespace Server.Commands
             }
         }
         [Usage("Telepathy")]
-        [Description("Allows you to force speech on a mobile.")]
+        [Description("Allows you to speak into other people's minds.")]
         private static void Telepathy_OnCommand(CommandEventArgs e)
         {
             PlayerMobile m = e.Mobile as PlayerMobile;
