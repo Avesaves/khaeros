@@ -908,7 +908,7 @@ namespace Server.Multis
 					return;
 				}
 			}
-			else if( cost < 0 )
+			 else if( cost < 0 )
 			{
 				if( Banker.Deposit( from, -cost ) )
 					from.SendLocalizedMessage( 1060397, (-cost).ToString() ); // ~1_AMOUNT~ gold has been deposited into your bank box.
@@ -982,7 +982,7 @@ namespace Server.Multis
 			Mobile from = state.Mobile;
 			DesignContext context = DesignContext.Find( from );
 
-			if( context != null )
+			if(( context != null ) && (from.AccessLevel > AccessLevel.Player))
 			{
 				int oldPrice = context.Foundation.Price;
 				int newPrice = oldPrice + context.Foundation.CustomizationCost + ((context.Foundation.DesignState.Components.List.Length - context.Foundation.CurrentState.Components.List.Length) * 500);
