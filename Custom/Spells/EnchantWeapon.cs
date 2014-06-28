@@ -1205,7 +1205,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -23:
                             {
-                                w.Emote("*This weapon changes you while you hold it!"*);
+                                w.Emote("*This weapon changes you while you hold it!*");
                                 m.SendMessage("Your weapon will give you every positive background for half hour, but deafen you while you hold it.");
                                 Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
                                 // w.Slayer = SlayerName.ArachnidDoom;
@@ -1491,7 +1491,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
             pot.HeldBy = Caster;
             pot.PotionEffect = PotionEffect.ExplosionLesser;
 
-            pot.Explode(this, false, loc, map);
+            pot.Explode(Caster, false, loc, map);
         }
         private void Flare()
         {
