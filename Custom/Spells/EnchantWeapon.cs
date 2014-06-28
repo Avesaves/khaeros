@@ -1413,7 +1413,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                         case -43:
                             {
                                 Success = true;
-                                w.SendMessage("Although nothing happens, you feel immediately ready for a new enchantment...!");
+                                m.SendMessage("Although nothing happens, you feel immediately ready for a new enchantment...!");
                                 int smoop = Utility.Random(49);
                                 m.DayOfDeath = smoop;
                                 w.HueMod = -1;
