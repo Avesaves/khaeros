@@ -60,26 +60,27 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                 Caster.Mana -= TotalCost;
 
                 Container pack = Caster.Backpack;
-                if (m.DayOfDeath != null && m.DayOfDeath != 0)
+                if ( m.DayOfDeath != 0)
                 {
-                    Caster.Emote("*A deep red glow passes into the weapon*");
+                    Caster.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*A deep red glow passes into the weapon*");
                     Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
                     w.HueMod = 2943;
                     int redcounter = m.DayOfDeath;
-                    m.DayOfDeath = null;
+                    m.DayOfDeath = 0;
                     m.WikiConfig = null;
                     #region magic effects
                     switch (redcounter)
                     {
                         case 0:
                             {
+                                m.SendMessage("This should not have happened"); 
                                 Success = false;
                                 break; 
                             }
                         case 1:
                             {
                                 //medium level normal critical 
-                                w.Emote("It begins to vibrate...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It begins to vibrate...");
                                 m.SendMessage("The item will have critical hits for a half hour.");
                                 Engines.XmlSpawner2.XmlCriticalHit att = new Server.Engines.XmlSpawner2.XmlCriticalHit();
                                 att.Chance = m.RawInt/4;
@@ -97,7 +98,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 3:
                             {
-                                w.Emote("It buzzes with energy...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It buzzes with energy...");
                                 m.SendMessage("The item will have energy damage for a half hour.");
                                   w.AosElementDamages.Energy = 5;
                                 //w.AosElementDamages.Cold = 5;
@@ -110,7 +111,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 4:
                             {
-                                w.Emote("It grows a little colder...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It grows a little colder...");
                                 m.SendMessage("The item will have cold damage for a half hour.");
                               //  w.AosElementDamages.Energy = 0;
                                 w.AosElementDamages.Cold = 5;
@@ -123,7 +124,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 5:
                             {
-                                w.Emote("The weapon begins to ... stink like rotten food?"); 
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "The weapon begins to ... stink like rotten food?"); 
                                 m.SendMessage("This is an awful enchantment. It immediately wears off.");
                                 w.HueMod = -1; 
                                 Success = true;
@@ -135,7 +136,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 7:
                             {
-                                w.Emote("It grows a little venomous...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It grows a little venomous...");
                                 m.SendMessage("The item will have poison damage for a half hour.");
                                 //  w.AosElementDamages.Energy = 0;
                                 //w.AosElementDamages.Cold = 5;
@@ -148,7 +149,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 8:
                             {
-                                w.Emote("It grows a little hotter...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It grows a little hotter...");
                                 m.SendMessage("The item will have fire damage for a half hour.");
                                 //  w.AosElementDamages.Energy = 0;
                                // w.AosElementDamages.Cold = 5;
@@ -169,7 +170,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 11:
                             {
-                                w.Emote("It buzzes with energy...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It buzzes with energy...");
                                 m.SendMessage("The item will have energy damage for a half hour.");
                                 w.AosElementDamages.Energy = 25;
                                 //w.AosElementDamages.Cold = 5;
@@ -182,7 +183,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 12:
                             {
-                                w.Emote("The weapon grows too hot to hold!");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "The weapon grows too hot to hold!");
                                 m.SendMessage("Ouch! What a bad enchantment!");
                                 w.Movable = false;
                                 w.BetaNerf = true;
@@ -192,7 +193,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 13:
                             {
-                                w.Emote("It grows colder...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It grows colder...");
                                 m.SendMessage("The item will have energy damage for a half hour.");
                                 //w.AosElementDamages.Energy = 25;
                                 w.AosElementDamages.Cold = 25;
@@ -205,7 +206,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 14:
                             {
-                                w.Emote("The weapon grows heavier!");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "The weapon grows heavier!");
                                 m.SendMessage("Oh no! What a bad enchantment!");
                                 w.Weight += 50;
                                 w.BetaNerf = true;
@@ -219,7 +220,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 16:
                             {
-                                w.Emote("It grows brighter...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It grows brighter...");
                                 m.SendMessage("The item simply glows.");
                                 //w.AosElementDamages.Energy = 25;
                                 //w.AosElementDamages.Cold = 25;
@@ -234,7 +235,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                         case 17:
                             {
                                 
-                                w.Emote("It glows strangely...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It glows strangely...");
                                 m.SendMessage("The item will steal life on kill for a half hour.");
                                 Engines.XmlSpawner2.XmlSoulEater att = new Server.Engines.XmlSpawner2.XmlSoulEater();
                                 att.Chance = m.RawInt / 2;
@@ -251,7 +252,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 18:
                             {
-                                m.Emote("The weapon sprays something red all over them!"); 
+                                m.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "The weapon sprays something red all over them!"); 
                                 m.SolidHueOverride = 37;
                                 Success = true; 
                                 Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
@@ -265,7 +266,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                         {
 
 
-                                            w.Emote("It glows strangely...");
+                                            w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It glows strangely...");
                                             m.SendMessage("The item will steal life on hit for an hour.");
                                             Engines.XmlSpawner2.XmlLifeStealer att = new Server.Engines.XmlSpawner2.XmlLifeStealer();
                                             att.Chance = m.RawInt / 4;
@@ -282,7 +283,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                         {
 
 
-                                            w.Emote("It glows strangely...");
+                                            w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It glows strangely...");
                                             m.SendMessage("The item will steal stamina on hit for an hour.");
                                             Engines.XmlSpawner2.XmlLifeStealer att = new Server.Engines.XmlSpawner2.XmlLifeStealer();
                                             att.Chance = m.RawInt / 4;
@@ -297,7 +298,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                         }
                                     case 2:
                                         {
-                                            w.Emote("It glows strangely...");
+                                            w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It glows strangely...");
                                             m.SendMessage("The item will steal mana on hit for an hour.");
                                             Engines.XmlSpawner2.XmlLifeStealer att = new Server.Engines.XmlSpawner2.XmlLifeStealer();
                                             att.Chance = m.RawInt / 4;
@@ -320,7 +321,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 21:
                             {
-                                w.Emote("It grows cold...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It grows cold...");
                                 m.SendMessage("The item will have energy damage for a half hour.");
                                 //w.AosElementDamages.Energy = 12;
                                 w.AosElementDamages.Cold = 12;
@@ -338,7 +339,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                     case 0:
                                         {
                                 //medium level normal critical 
-                                w.Emote("It begins to vibrate...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It begins to vibrate...");
                                 m.SendMessage("The item will have critical hits for a half hour.");
                                 Engines.XmlSpawner2.XmlCriticalHit att = new Server.Engines.XmlSpawner2.XmlCriticalHit();
                                 att.Chance = m.RawInt / 4;
@@ -353,7 +354,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                                                             case 1:
                                         {
                                 //medium level normal critical 
-                                w.Emote("It begins to vibrate...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It begins to vibrate...");
                                 m.SendMessage("The item will have critical hits for a half hour.");
                                 Engines.XmlSpawner2.XmlCriticalHit att = new Server.Engines.XmlSpawner2.XmlCriticalHit();
                                 att.Chance = m.RawInt / 4;
@@ -367,11 +368,11 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                         }                                    case 2:
                                         {
                                 //medium level normal critical 
-                                w.Emote("It begins to vibrate...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It begins to vibrate...");
                                 m.SendMessage("The item will have critical hits for a half hour.");
                                 Engines.XmlSpawner2.XmlCriticalHit att = new Server.Engines.XmlSpawner2.XmlCriticalHit();
                                 att.Chance = m.RawInt / 4;
-                                att.ColdDamage = m.RawMana / 5;
+                                att.FrostDamage = m.RawMana / 5;
                                 att.Expiration = TimeSpan.FromMinutes(30);
                                 Engines.XmlSpawner2.XmlAttach.AttachTo(w, att);
                                 w.BetaNerf = true;
@@ -381,7 +382,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                         }                                    case 3:
                                         {
                                 //medium level normal critical 
-                                w.Emote("It begins to vibrate...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It begins to vibrate...");
                                 m.SendMessage("The item will have critical hits for a half hour.");
                                 Engines.XmlSpawner2.XmlCriticalHit att = new Server.Engines.XmlSpawner2.XmlCriticalHit();
                                 att.Chance = m.RawInt / 4;
@@ -399,7 +400,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 23:
                             {
-                                w.Emote("It glows strangely...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It glows strangely...");
                                 m.SendMessage("The item will steal mana on hit for an hour.");
                                 Engines.XmlSpawner2.XmlLifeStealer att = new Server.Engines.XmlSpawner2.XmlLifeStealer();
                                 att.Chance = m.RawMana / 2;
@@ -414,7 +415,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 24:
                             {
-                                w.Emote("It begins to vibrate...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It begins to vibrate...");
                                 m.SendMessage("The item will have critical hits for a half hour.");
                                 Engines.XmlSpawner2.XmlCriticalHit att = new Server.Engines.XmlSpawner2.XmlCriticalHit();
                                 att.Chance = m.RawInt / 4;
@@ -437,7 +438,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 27:
                             {
-                                w.Emote("It grows a little hotter...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It grows a little hotter...");
                                 m.SendMessage("The item will have fire damage for a half hour.");
                                 //  w.AosElementDamages.Energy = 0;
                                 // w.AosElementDamages.Cold = 5;
@@ -455,7 +456,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                     case 0:
                                         {
                                             //medium level normal critical 
-                                            w.Emote("It begins to vibrate...");
+                                            w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It begins to vibrate...");
                                             m.SendMessage("The item will have critical hits for a half hour.");
                                             Engines.XmlSpawner2.XmlCriticalHit att = new Server.Engines.XmlSpawner2.XmlCriticalHit();
                                             att.Chance = m.RawInt / 5;
@@ -470,7 +471,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                     case 1:
                                         {
                                             //medium level normal critical 
-                                            w.Emote("It begins to vibrate...");
+                                            w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It begins to vibrate...");
                                             m.SendMessage("The item will have critical hits for a half hour.");
                                             Engines.XmlSpawner2.XmlCriticalHit att = new Server.Engines.XmlSpawner2.XmlCriticalHit();
                                             att.Chance = m.RawInt / 5;
@@ -485,11 +486,11 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                     case 2:
                                         {
                                             //medium level normal critical 
-                                            w.Emote("It begins to vibrate...");
+                                            w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It begins to vibrate...");
                                             m.SendMessage("The item will have critical hits for a half hour.");
                                             Engines.XmlSpawner2.XmlCriticalHit att = new Server.Engines.XmlSpawner2.XmlCriticalHit();
                                             att.Chance = m.RawInt / 5;
-                                            att.ColdDamage = 10;
+                                            att.FrostDamage = 10;
                                             att.Expiration = TimeSpan.FromMinutes(30);
                                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, att);
                                             w.BetaNerf = true;
@@ -500,7 +501,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                     case 3:
                                         {
                                             //medium level normal critical 
-                                            w.Emote("It begins to vibrate...");
+                                            w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It begins to vibrate...");
                                             m.SendMessage("The item will have critical hits for a half hour.");
                                             Engines.XmlSpawner2.XmlCriticalHit att = new Server.Engines.XmlSpawner2.XmlCriticalHit();
                                             att.Chance = m.RawInt / 5;
@@ -519,7 +520,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                         case 29:
                             {
                                 m.Hits = 1;
-                                w.Emote("Energy explodes out of the item!");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "Energy explodes out of the item!");
                                 ExplodeItself(Caster);
                                 Success = true;
                                 Timer.DelayCall(TimeSpan.FromSeconds(1), new TimerCallback(Flare));
@@ -531,7 +532,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 31:
                             {
-                                w.Emote("It glows strangely...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It glows strangely...");
                                 m.SendMessage("The item will steal life on kill for an hour.");
                                 Engines.XmlSpawner2.XmlSoulEater att = new Server.Engines.XmlSpawner2.XmlSoulEater();
                                 att.Chance = 100;
@@ -552,7 +553,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 33:
                             {
-                                w.Emote("It buzzes with energy...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It buzzes with energy...");
                                 m.SendMessage("The item will have energy damage for a half hour.");
                                 w.AosElementDamages.Energy = 12;
                                 //w.AosElementDamages.Cold = 5;
@@ -565,7 +566,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 34:
                             {
-                                w.Emote("It glows strangely...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It glows strangely...");
                                 m.SendMessage("The item will steal life on hit for an hour.");
                                 Engines.XmlSpawner2.XmlLifeStealer att = new Server.Engines.XmlSpawner2.XmlLifeStealer();
                                 att.Chance = m.RawMana / 2;
@@ -596,7 +597,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 39:
                             {
-                                w.Emote("You feel nimble.");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "You feel nimble.");
                                 m.SendMessage("The item will increase your dexterity for a half hour.");
                                 Engines.XmlSpawner2.XmlDex att = new Server.Engines.XmlSpawner2.XmlDex(m.RawMana/5, 1800);
                                 Engines.XmlSpawner2.XmlAttach.AttachTo(w, att);
@@ -611,7 +612,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 41:
                             {
-                                w.Emote("The weapon looks more powerful...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "The weapon looks more powerful...");
                                 w.QualityDamage += 1;
                                 w.QualitySpeed += 1;
                                 w.QualityAccuracy += 1;
@@ -623,7 +624,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 42:
                             {
-                                w.Emote("You feel STRONG.");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "You feel STRONG.");
                                 m.SendMessage("The item will increase your strength for a half hour.");
                                 Engines.XmlSpawner2.XmlStr att = new Server.Engines.XmlSpawner2.XmlStr(m.RawMana/5, 1800);
                                 Engines.XmlSpawner2.XmlAttach.AttachTo(w, att);
@@ -706,7 +707,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 47:
                             {
-                                w.Emote("It glows strangely...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It glows strangely...");
                                 m.SendMessage("The item will steal life on hit for an hour.");
                                 Engines.XmlSpawner2.XmlLifeStealer att = new Server.Engines.XmlSpawner2.XmlLifeStealer();
                                 att.Chance = m.RawMana/2;
@@ -727,9 +728,9 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case 49:
                             {
-                                w.Emote("It feels lucky...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It feels lucky...");
                                 m.SendMessage("The item will make you luckier for a half hour.");
-                                Engines.XmlSpawner2.XmlBackground att = new Server.Engines.XmlSpawner2.XmlBackground("Lucky", 1, 30);
+                                Engines.XmlSpawner2.XmlBackground att = new Server.Engines.XmlSpawner2.XmlBackground(BackgroundList.Lucky, 1, 30);
                                 Engines.XmlSpawner2.XmlAttach.AttachTo(w, att);
                                 w.BetaNerf = true;
                                 Success = true;
@@ -739,7 +740,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
 
                         case -1:
                             {
-                                w.Emote("It grows wickedly sharp...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It grows wickedly sharp...");
                                 m.SendMessage("The item will bleed your opponent for a half hour.");
                                 Engines.XmlSpawner2.XmlBleedingWound att = new Server.Engines.XmlSpawner2.XmlBleedingWound();
                                 att.Chance = m.RawInt/5;
@@ -755,7 +756,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -2:
                             {
-                                w.Emote("It grows wickedly sharp...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It grows wickedly sharp...");
                                 m.SendMessage("The item will bleed your opponent for a half hour.");
                                 Engines.XmlSpawner2.XmlBleedingWound att = new Server.Engines.XmlSpawner2.XmlBleedingWound();
                                 att.Chance = m.RawInt/6;
@@ -1063,7 +1064,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -7:
                             {
-                                w.Emote("It grows a little venomous...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It grows a little venomous...");
                                 m.SendMessage("The item will have poison damage for a half hour.");
                                 //  w.AosElementDamages.Energy = 0;
                                 //w.AosElementDamages.Cold = 5;
@@ -1089,7 +1090,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -11:
                             {
-                                w.Emote("It seems more forceful...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It seems more forceful...");
                                 m.SendMessage("The item will stun on hit for a half hour.");
                                 Engines.XmlSpawner2.XmlMiniStun att = new Server.Engines.XmlSpawner2.XmlMiniStun();
                                 att.Chance = m.RawInt / 5;
@@ -1105,7 +1106,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -12:
                             {
-                                w.Emote("The weapon turns on its user!");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "The weapon turns on its user!");
                                 m.Hits -= 100;
                                 Success = true;
                                 Timer.DelayCall(TimeSpan.FromSeconds(1), new TimerCallback(Flare));
@@ -1124,7 +1125,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -14:
                             {
-                                w.Emote("You feel healthy.");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "You feel healthy.");
                                 m.SendMessage("The item will increase your hits for a half hour.");
                                 Engines.XmlSpawner2.XmlHits att = new Server.Engines.XmlSpawner2.XmlHits(m.RawMana/5, 1800);
                                 Engines.XmlSpawner2.XmlAttach.AttachTo(w, att);
@@ -1139,7 +1140,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -16:
                             {
-                                w.Emote("*Takes on a green sheen*"); 
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*Takes on a green sheen*"); 
                                 w.Poison = Poison.Deadly;
                                 Success = true;
                                 Timer.DelayCall(TimeSpan.FromSeconds(1), new TimerCallback(Flare));
@@ -1149,7 +1150,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                         case -17:
                             {
 
-                                w.Emote("It glows strangely...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It glows strangely...");
                                 m.SendMessage("The item will steal life on hit for an hour.");
                                 Engines.XmlSpawner2.XmlLifeStealer att = new Server.Engines.XmlSpawner2.XmlLifeStealer();
                                 att.Chance = m.RawInt / 5;
@@ -1170,7 +1171,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -19:
                             {
-                                w.Emote("It seems more forceful...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It seems more forceful...");
                                 m.SendMessage("The item will stun on hit for a half hour.");
                                 Engines.XmlSpawner2.XmlMiniStun att = new Server.Engines.XmlSpawner2.XmlMiniStun();
                                 att.Chance = m.RawInt / 3;
@@ -1190,7 +1191,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -21:
                             {
-                                w.Emote("You feel intelligent.");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "You feel intelligent.");
                                 m.SendMessage("The item will increase your strength for a half hour.");
                                 Engines.XmlSpawner2.XmlInt att = new Server.Engines.XmlSpawner2.XmlInt(m.RawMana/5, 1800);
                                 Engines.XmlSpawner2.XmlAttach.AttachTo(w, att);
@@ -1205,26 +1206,26 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -23:
                             {
-                                w.Emote("*This weapon changes you while you hold it!*");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*This weapon changes you while you hold it!*");
                                 m.SendMessage("Your weapon will give you every positive background for half hour, but deafen you while you hold it.");
                                 Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
                                 // w.Slayer = SlayerName.ArachnidDoom;
                                 Success = true;
                                 m.WikiConfig = null;
 
-                                XmlBackground one = new Engines.XmlSpawner2.XmlBackground("Fit", 1, 30);
-                                XmlBackground two = new Engines.XmlSpawner2.XmlBackground("Faithful", 1, 30);
-                                XmlBackground three = new Engines.XmlSpawner2.XmlBackground("FocusedMind", 1, 30);
-                                XmlBackground four = new Engines.XmlSpawner2.XmlBackground("IronWilled", 1, 30);
-                                XmlBackground five = new Engines.XmlSpawner2.XmlBackground("Lucky", 1, 30);
-                                XmlBackground six = new Engines.XmlSpawner2.XmlBackground("Quick", 1, 30);
-                                XmlBackground seven = new Engines.XmlSpawner2.XmlBackground("QuickHealer", 1, 30);
-                                XmlBackground eight = new Engines.XmlSpawner2.XmlBackground("Resilient", 1, 30);
-                                XmlBackground nine = new Engines.XmlSpawner2.XmlBackground("Smart", 1, 30);
-                                XmlBackground ten = new Engines.XmlSpawner2.XmlBackground("Strong", 1, 30);
-                                XmlBackground eleven = new Engines.XmlSpawner2.XmlBackground("Tough", 1, 30);
-                                XmlBackground twelve = new Engines.XmlSpawner2.XmlBackground("AnimalEmpathy", 1, 30);
-                                XmlBackground thirteen = new Engines.XmlSpawner2.XmlBackground("Deaf", 1, 30);
+                                XmlBackground one = new Engines.XmlSpawner2.XmlBackground(BackgroundList.Fit, 1, 30);
+                                XmlBackground two = new Engines.XmlSpawner2.XmlBackground(BackgroundList.Faithful, 1, 30);
+                                XmlBackground three = new Engines.XmlSpawner2.XmlBackground(BackgroundList.FocusedMind, 1, 30);
+                                XmlBackground four = new Engines.XmlSpawner2.XmlBackground(BackgroundList.IronWilled, 1, 30);
+                                XmlBackground five = new Engines.XmlSpawner2.XmlBackground(BackgroundList.Lucky, 1, 30);
+                                XmlBackground six = new Engines.XmlSpawner2.XmlBackground(BackgroundList.Quick, 1, 30);
+                                XmlBackground seven = new Engines.XmlSpawner2.XmlBackground(BackgroundList.QuickHealer, 1, 30);
+                                XmlBackground eight = new Engines.XmlSpawner2.XmlBackground(BackgroundList.Resilient, 1, 30);
+                                XmlBackground nine = new Engines.XmlSpawner2.XmlBackground(BackgroundList.Smart, 1, 30);
+                                XmlBackground ten = new Engines.XmlSpawner2.XmlBackground(BackgroundList.Strong, 1, 30);
+                                XmlBackground eleven = new Engines.XmlSpawner2.XmlBackground(BackgroundList.Tough, 1, 30);
+                                XmlBackground twelve = new Engines.XmlSpawner2.XmlBackground(BackgroundList.AnimalEmpathy, 1, 30);
+                                XmlBackground thirteen = new Engines.XmlSpawner2.XmlBackground(BackgroundList.Deaf, 1, 30);
 
                                 one.Name = "a";
                                 two.Name = "b";
@@ -1254,8 +1255,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                 Engines.XmlSpawner2.XmlAttach.AttachTo(w, eleven);
                                 Engines.XmlSpawner2.XmlAttach.AttachTo(w, twelve);
                                 Engines.XmlSpawner2.XmlAttach.AttachTo(w, thirteen);
-                                Engines.XmlSpawner2.XmlAttach.AttachTo(w, fourteen);
-                                Engines.XmlSpawner2.XmlAttach.AttachTo(w, fifteen);
+
 
                                 w.BetaNerf = true;
                                 Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
@@ -1275,7 +1275,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -27:
                             {
-                                w.Emote("You feel you could run forever holding this item...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "You feel you could run forever holding this item...");
                                 m.SendMessage("The item will increase your stamina for a half hour.");
                                 Engines.XmlSpawner2.XmlStam att = new Server.Engines.XmlSpawner2.XmlStam(m.RawMana/5, 1800);
                                 Engines.XmlSpawner2.XmlAttach.AttachTo(w, att);
@@ -1290,7 +1290,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -29:
                             {
-                                w.Emote("It sparks in your hand...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It sparks in your hand...");
                                 m.SendMessage("The item will deal lightning damage for an hour.");
                                 Engines.XmlSpawner2.XmlLightningStrike att = new Server.Engines.XmlSpawner2.XmlLightningStrike();
                                 att.Chance = m.RawMana / 4;
@@ -1309,7 +1309,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -31:
                             {
-                                w.Emote("It glows strangely...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It glows strangely...");
                                 m.SendMessage("The item will steal life on kill for six hours.");
                                 Engines.XmlSpawner2.XmlSoulEater att = new Server.Engines.XmlSpawner2.XmlSoulEater();
                                 att.Chance = 100;
@@ -1330,7 +1330,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -33:
                             {
-                                w.Emote("It buzzes crazily...!");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It buzzes crazily...!");
                                 m.SendMessage("The item will have various damages for a half hour.");
                                 w.AosElementDamages.Energy = 5;
                                 w.AosElementDamages.Cold = 5;
@@ -1356,7 +1356,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -37:
                             {
-                                w.Emote("The weapon grows longer...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "The weapon grows longer...");
                                 m.SendMessage("The item will have increased range for a half hour.");
                                 w.MaxRange += 1;
                                 w.BetaNerf = true;
@@ -1382,7 +1382,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -41:
                             {
-                                w.Emote("The weapon looks more powerful...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "The weapon looks more powerful...");
                                 w.QualityDamage += 2;
                                 w.QualitySpeed += 2;
                                 w.QualityAccuracy += 2;
@@ -1398,7 +1398,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                 {
                                     case 0:
                                         {
-                                            w.Emote("The weapon repairs itself...");
+                                            w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "The weapon repairs itself...");
                                             w.HitPoints += 20;
                                             w.BetaNerf = true;
                                             Success = true;
@@ -1412,8 +1412,13 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -43:
                             {
+                                Success = true;
+                                w.SendMessage("Although nothing happens, you feel immediately ready for a new enchantment...!");
                                 int smoop = Utility.Random(49);
-                                goto case smoop;
+                                m.DayOfDeath = smoop;
+                                w.HueMod = -1;
+                                break;
+                            
                             }
                         case -44:
                             {
@@ -1429,7 +1434,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -47:
                             {
-                                w.Emote("It glows strangely...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It glows strangely...");
                                 m.SendMessage("The item will steal life on hit for two hours.");
                                 Engines.XmlSpawner2.XmlLifeStealer att = new Server.Engines.XmlSpawner2.XmlLifeStealer();
                                 att.Chance = 90;
@@ -1450,9 +1455,9 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                             }
                         case -49:
                             {
-                                w.Emote("It feels lucky...");
+                                w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "It feels lucky...");
                                 m.SendMessage("The item will make you luckier for a half hour.");
-                                Engines.XmlSpawner2.XmlBackground att = new Server.Engines.XmlSpawner2.XmlBackground("Lucky", 1, 30);
+                                Engines.XmlSpawner2.XmlBackground att = new Server.Engines.XmlSpawner2.XmlBackground(BackgroundList.Lucky, 1, 30);
                                 Engines.XmlSpawner2.XmlAttach.AttachTo(w, att);
                                 w.BetaNerf = true;
                                 Success = true;
