@@ -39,7 +39,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
         	 get
             {
             	PlayerMobile l = Caster as PlayerMobile;
-                return base.CanBeCast && l.Feats.GetFeatLevel(FeatList.RedMagic) > 0;
+                return base.CanBeCast && l.Feats.GetFeatLevel(FeatList.EnchantWeapon) > 0;
             }
         }
 
@@ -63,6 +63,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                 if (m.DayOfDeath != null && m.DayOfDeath != 0)
                 {
                     Caster.Emote("*A deep red glow passes into the weapon*");
+                    Caster.FixedParticles(0x22AE, 244, 25, 9950, 37, 0, EffectLayer.Waist);
                     w.HueMod = 2943;
                     int redcounter = m.DayOfDeath;
                     m.DayOfDeath = null;
@@ -1462,6 +1463,11 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                     }
                     return; 
                 }
+            }
+            else
+            {
+                Success = false;
+                return;
             }
         }
                     #endregion
