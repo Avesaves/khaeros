@@ -33,8 +33,6 @@ namespace Server.FeatInfo
         public override bool MeetsOurRequirements(PlayerMobile m)
         {
 
-            if (!m.CanBeMage)
-                return false;
             return base.MeetsOurRequirements(m);
         }
 		public EnchantWeapon() {}
