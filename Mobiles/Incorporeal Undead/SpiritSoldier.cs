@@ -34,7 +34,7 @@ namespace Server.Mobiles
 			SetDex( 51, 65 );
 			SetInt( 35 );
 			
-			SetHits( 156, 170 );
+			SetHits( 10, 20 );
 
 			SetDamage( 12, 14 );
 
@@ -43,10 +43,9 @@ namespace Server.Mobiles
 			SetResistance( ResistanceType.Blunt, 35, 45 );
 			SetResistance( ResistanceType.Piercing, 30, 40 );
 			SetResistance( ResistanceType.Slashing, 30, 40 );
-			SetResistance( ResistanceType.Fire, 25, 30 );
-			SetResistance( ResistanceType.Cold, 25, 30 );
+
 			SetResistance( ResistanceType.Poison, 100 );
-			SetResistance( ResistanceType.Energy, 10, 20 );
+
 
 			SetSkill( SkillName.Anatomy, 125.0 );
 			SetSkill( SkillName.Fencing, 46.0, 77.5 );
@@ -60,7 +59,7 @@ namespace Server.Mobiles
 			Fame = 6500;
 			Karma = -6500;
 
-			VirtualArmor = 40;
+			VirtualArmor = 0;
 	
 			Broadsword weapon = new Broadsword();
 			weapon.Hue = 12345678;
