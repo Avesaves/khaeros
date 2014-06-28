@@ -1405,8 +1405,23 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                             Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
                                             break;
                                         }
-                                    case 1: goto case -39; 
-                                    case 2: goto case 29; 
+                                    case 1:
+                                        {
+                                            m.Map = Map.Ilshenar;
+                                            m.SendMessage("You... don't think you're dead....");
+                                            Success = true;
+                                            Timer.DelayCall(TimeSpan.FromSeconds(30), new TimerCallback(Flare));
+                                            break;
+                                        }
+                                    case 2:
+                                        {
+                                            m.Hits = 1;
+                                            w.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "Energy explodes out of the item!");
+                                            ExplodeItself(Caster);
+                                            Success = true;
+                                            Timer.DelayCall(TimeSpan.FromSeconds(1), new TimerCallback(Flare));
+                                            break;
+                                        }
                                 }
                                 break; 
                             }
