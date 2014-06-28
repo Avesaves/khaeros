@@ -50,7 +50,13 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
             PlayerMobile m = Caster as PlayerMobile;
 
             BaseWeapon w = TargetItem as BaseWeapon;
+            if (w.BetaNerf == true)
+            {
+                Success = false;
+                m.SendMessage("This weapon already has an enchantment on it.");
+                return; 
 
+            }
 
             if (TargetCanBeAffected && CasterHasEnoughMana && TargetItem is IWeapon && w.BetaNerf == false)
             {
@@ -60,6 +66,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                 Caster.Mana -= TotalCost;
 
                 Container pack = Caster.Backpack;
+                
                 if ( m.DayOfDeath != 0)
                 {
                     Caster.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*A deep red glow passes into the weapon*");
@@ -1226,7 +1233,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                 XmlBackground eleven = new Engines.XmlSpawner2.XmlBackground(BackgroundList.Tough, 1, 30);
                                 XmlBackground twelve = new Engines.XmlSpawner2.XmlBackground(BackgroundList.AnimalEmpathy, 1, 30);
                                 XmlBackground thirteen = new Engines.XmlSpawner2.XmlBackground(BackgroundList.Deaf, 1, 30);
-
+                                /*
                                 one.Name = "a";
                                 two.Name = "b";
                                 three.Name = "c";
@@ -1240,8 +1247,8 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
                                 eleven.Name = "k";
                                 twelve.Name = "l";
                                 thirteen.Name = "m";
-
-
+                                */
+                                
                                 Engines.XmlSpawner2.XmlAttach.AttachTo(w, one);
                                 Engines.XmlSpawner2.XmlAttach.AttachTo(w, two);
                                 Engines.XmlSpawner2.XmlAttach.AttachTo(w, three);
@@ -1486,6 +1493,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantWeapon; } }
             }
             else
             {
+                m.SendMessage("You haven't eaten anything to use for an enchantment"); 
                 Success = false;
                 return;
             }
