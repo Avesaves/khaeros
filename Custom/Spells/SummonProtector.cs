@@ -58,6 +58,7 @@ namespace Server.Misc
                         wand.ControlSlots = 2;
                         wand.RawHits = 150;
                         wand.Hits = 150;
+                        wand.RangedAttackType = RangedAttackType.BreatheEnergy; 
                         if (FeatLevel > 2)
                         {
                             summoned = wand;
@@ -90,13 +91,13 @@ namespace Server.Misc
                         {
                             summoned = spir;
                             spir.Say("For the Mother and Father.");
-                            spir.RawHits = 300;
+                            spir.RawHits = 18;
                         }
 
                         else if (FeatLevel > 1)
                         {
                             summoned = spir;
-                            spir.RawHits = 100;
+                            spir.RawHits = 10;
                             spir.RawDex = 30;
                             spir.Say("For the Mother and Father.");
                         }
@@ -104,7 +105,7 @@ namespace Server.Misc
                         else
                         {
                             summoned = spir;
-                            spir.RawHits = 50;
+                            spir.RawHits = 5;
                             spir.RawDex = 10;
                             spir.Say("For the Mother and Father.");
                         }
