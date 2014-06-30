@@ -19,7 +19,7 @@ namespace Server.Items
                 case 0: ItemID = 3676; break;
                 case 1: ItemID = 3679; break;
                 case 2: ItemID = 3682; break;
-                case 3: ItemID = 3675; break;
+                case 3: ItemID = 3685; break;
                 case 4: ItemID = 3688; break;
 
                 }
@@ -33,7 +33,7 @@ namespace Server.Items
 
 		public override void OnTrigger( Mobile from )
 		{
-			if ( !from.Alive || ItemID != 0x36D3 || from.AccessLevel > AccessLevel.Player || m_trapper == null )
+			if ( !from.Alive || from.AccessLevel > AccessLevel.Player || m_trapper == null )
 				return;
 
 			//m_trapper.SendMessage("A dull moaning reaches your ears; something has disturbed your ghastly vigil!");
