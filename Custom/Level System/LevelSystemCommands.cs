@@ -3281,7 +3281,7 @@ namespace Server.Commands
                 //Mobile targ = obj as Mobile;
                 m.Mana -= 25;
                XmlMessage one = new Engines.XmlSpawner2.XmlMessage(m_speech, 5, "Echo", 5);
-               Engines.XmlSpawner2.XmlAttach.AttachTo(TargetItem, one);;
+               Engines.XmlSpawner2.XmlAttach.AttachTo(obj, one);;
                 m.SendMessage(2659, "This item will speak your message when you command it by saying 'Echo', up to five times.");
             }
         }  

@@ -63,7 +63,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantTrinket; } }
                 Point3D loc = new Point3D(tx, ty, tz);
                 RedMagicTrap trap = new RedMagicTrap(Caster);
                 trap.MoveToWorld(loc, Caster.Map);
-                Effects.SendLocationParticles(trap, 0x376A, 9, 10, 37, 1, 5025);
+                Effects.SendLocationParticles(trap, 0x376A, 9, 10, 37, 1, 5025, 1);
                 Caster.Followers += 2;
                 return; 
 
