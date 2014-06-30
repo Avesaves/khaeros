@@ -55,6 +55,12 @@ public override FeatList Feat{ get{ return FeatList.EnchantTrinket; } }
 				Success = false;
 				return;
                         }
+                       if (TargetItem.Parent is Mobile)
+                        {
+                            Caster.SendMessage("You cannot use that on an equipped item.");
+                            Success = false;
+                            return;
+                        }
 
             if (TargetCanBeAffected && CasterHasEnoughMana && TargetItem.Movable == true)
             {
@@ -66,7 +72,7 @@ public override FeatList Feat{ get{ return FeatList.EnchantTrinket; } }
                 Container pack = Caster.Backpack;
 
                 Success = true; 
-                TargetItem.Movable = true;
+                TargetItem.Movable = false;
                 TargetItem.CanBeGrabbed = true;
                 Caster.Hunger -= 1; 
                 TargetItem.PublicOverheadMessage(Network.MessageType.Regular, 0, false, "*roots itself to the ground*");

@@ -28,7 +28,7 @@ namespace Server.Items
 
         public override bool PassivelyTriggered { get { return true; } }
 		public override TimeSpan PassiveTriggerDelay{ get{ return TimeSpan.Zero; } }
-		public override int PassiveTriggerRange{ get{ return 0; } }
+		public override int PassiveTriggerRange{ get{ return 1; } }
 		public override TimeSpan ResetDelay{ get{ return TimeSpan.Zero; } }
 
 		public override void OnTrigger( Mobile from )
