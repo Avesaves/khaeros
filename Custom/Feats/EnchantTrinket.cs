@@ -9,7 +9,7 @@ namespace Server.FeatInfo
 {
 	public class EnchantTrinket : BaseFeat
 	{
-		public override string Name{ get{ return "Enchant Trinket"; } }
+		public override string Name{ get{ return "Special Enchantment"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.EnchantTrinket; } }
 		public override FeatCost CostLevel{ get{ return FeatCost.Medium; } }
 		
@@ -19,13 +19,13 @@ namespace Server.FeatInfo
 		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.RedMagic }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
-		public override string FirstDescription{ get{ return "This skill will allow you to enchant non-equipable items."; } }
-		public override string SecondDescription{ get{ return "Better effects."; } }
-		public override string ThirdDescription{ get{ return "Best effects."; } }
+		public override string FirstDescription{ get{ return "This unlocks .CreateEcho, which will let you put a verbal message on an item."; } }
+		public override string SecondDescription{ get{ return "This unlocks .Root, which will allow you to lockdown items outside a house (can be retrieved by anyone with .grab)."; } }
+		public override string ThirdDescription{ get{ return "This unlocks .CastRune, which will allow you to create a visible trap at your feet."; } }
 
-		public override string FirstCommand{ get{ return "None"; } }
-		public override string SecondCommand{ get{ return "None"; } }
-		public override string ThirdCommand{ get{ return "None"; } }
+		public override string FirstCommand{ get{ return ".CreateEcho"; } }
+		public override string SecondCommand{ get{ return ".Root"; } }
+		public override string ThirdCommand{ get{ return ".CastRune"; } }
 		
 		public override string FullDescription{ get{ return GetFullDescription(this); } }
 		
@@ -33,8 +33,6 @@ namespace Server.FeatInfo
         public override bool MeetsOurRequirements(PlayerMobile m)
         {
 
-            if (!m.CanBeMage)
-                return false;
             return base.MeetsOurRequirements(m);
         }
 		public EnchantTrinket() {}

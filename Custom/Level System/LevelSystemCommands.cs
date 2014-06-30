@@ -88,6 +88,7 @@ namespace Server.Commands
 			CommandSystem.Register( "HairStyling", AccessLevel.Player, new CommandEventHandler( HairStyling_OnCommand ) );
 			CommandSystem.Register( "CharInfo", AccessLevel.Player, new CommandEventHandler( CharInfo_OnCommand ) );
 			CommandSystem.Register( "Say", AccessLevel.Player, new CommandEventHandler( Say_OnCommand ) );
+            CommandSystem.Register("CreateEcho", AccessLevel.Player, new CommandEventHandler(CreateEcho_OnCommand));
             CommandSystem.Register("Telepathy", AccessLevel.Player, new CommandEventHandler(Telepathy_OnCommand));
 			CommandSystem.Register( "Emote", AccessLevel.Counselor, new CommandEventHandler( Emote_OnCommand ) );
 			CommandSystem.Register( "LastSay", AccessLevel.Counselor, new CommandEventHandler( LastSay_OnCommand ) );
@@ -3216,6 +3217,74 @@ namespace Server.Commands
                 	m.SendMessage( "Your target needs to be wearing a hair styling apron." );
             }
         }
+        [Usage("CreateEcho")]
+        [Description("Allows you to add speech to an item.")]
+        private static void CreateEcho_OnCommand(CommandEventArgs e)
+        {
+            PlayerMobile m = e.Mobile as PlayerMobile;
+
+            if (m != null)
+            {
+                int dist = m.Feats.GetFeatLevel(FeatList.EnchantTrinket) * 2;
+
+              //  if (m.AccessLevel >= AccessLevel.Counselor)
+                //    dist = 15;
+               // XmlData awe = XmlAttach.FindAttachment(m, typeof(XmlData), "CreateEcho") as XmlData;
+             /*   if (awe == null)
+                {
+                    m.SendMessage("You lack this ability.");
+                    return;
+                }*/
+                if (dist == 0)
+                {
+                    m.SendMessage("You lack the appropriate feat.");
+                    return;
+                }
+
+                else
+                {
+                    string speech = e.ArgString;
+                   // string nam = m.Name;
+                    m.Target = new CreateEchoTarget(speech, false, dist);
+                }
+            }
+        }
+        private class CreateEchoTarget : Target
+        {
+            private string m_speech;
+
+            public CreateEchoTarget(string speech, bool emote, int dist)
+                : base(dist, false, TargetFlags.None)
+            {
+                m_speech = speech;
+            }
+
+            protected override void OnTarget(Mobile m, object obj)
+            {
+                if (m == null || m.Deleted)
+                    return;
+                if (m.Mana < 25)
+                {
+                    m.SendMessage("You do not have the energy for this.");
+                    return;
+                }
+                if (obj == null)
+                {
+                    m.SendMessage("That no longer exists.");
+                    return;
+                }
+                if (obj is Mobile)
+                {
+                    m.SendMessage("You cannot enchant creatures.");
+                    return;
+                }
+                //Mobile targ = obj as Mobile;
+                m.Mana -= 25;
+               XmlMessage one = new Engines.XmlSpawner2.XmlMessage(m_speech, 5, "Echo", 5);
+               Engines.XmlSpawner2.XmlAttach.AttachTo(TargetItem, one);;
+                m.SendMessage(2659, "This item will speak your message when you command it by saying 'Echo', up to five times.");
+            }
+        }  
         [Usage("Telepathy")]
         [Description("Allows you to speak into other people's minds.")]
         private static void Telepathy_OnCommand(CommandEventArgs e)
