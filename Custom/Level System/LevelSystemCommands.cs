@@ -3224,7 +3224,7 @@ namespace Server.Commands
         private static void Burn_OnCommand(CommandEventArgs e)
         {
             PlayerMobile m = e.Mobile as PlayerMobile;
-            Point3D loc = Caster.Location;
+        
            // Map map = Caster.Map;
 
           //  if (map == null)
@@ -3256,9 +3256,10 @@ namespace Server.Commands
             {
                 if (m == null || m.Deleted)
                     return;
-
-                            Point3D loc = obj.Location;
-            Map map = obj.Map;
+                IPoint3D point3d = obj as IPoint3D;
+                Point3D location = new Point3D(point3d.X, point3d.Y, point3d.Z);
+           //                 Point3D loc = obj.Location;
+            Map map = m.Map;
 
             BombPotion pot = new BombPotion(1);
 
@@ -3270,7 +3271,7 @@ namespace Server.Commands
             pot.HeldBy = m;
             pot.PotionEffect = PotionEffect.ExplosionLesser;
 
-            pot.Explode(m, false, loc, map);
+            pot.Explode(m, false, location, map);
 
             }
         }          

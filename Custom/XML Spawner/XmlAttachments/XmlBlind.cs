@@ -37,11 +37,11 @@ namespace Server.Engines.XmlSpawner2
 
 			if(Expiration > TimeSpan.Zero)
 			{
-				return String.Format("Freeze expires in {1} secs",Expiration.TotalSeconds);
+				return String.Format("Blind expires in {1} secs",Expiration.TotalSeconds);
 			} 
 			else
 			{
-				return String.Format("Frozen");
+				return String.Format("Blinded");
 			}
 		}
 
@@ -52,7 +52,7 @@ namespace Server.Engines.XmlSpawner2
 			// remove the mod
 			if(AttachedTo is Mobile)
 			{
-				((Mobile)AttachedTo).Frozen = false;
+                ((Mobile)AttachedTo).CloseGump(typeof(Gumps.BlindnessGump));
 			} 
 		}
 
@@ -63,8 +63,9 @@ namespace Server.Engines.XmlSpawner2
 			// apply the mod
 			if(AttachedTo is Mobile)
 			{
-				((Mobile)AttachedTo).Frozen = true;
-				((Mobile)AttachedTo).ProcessDelta();
+                ((Mobile)AttachedTo).SendGump(new Gumps.BlindnessGump());
+				//((Mobile)AttachedTo).Frozen = true;
+				//((Mobile)AttachedTo).ProcessDelta();
 			} 
 			else
 				Delete();

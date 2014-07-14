@@ -2,6 +2,14 @@ using System;
 using Server;
 using Server.Network;
 using Server.Regions;
+using System.Collections;
+using System.Collections.Generic;
+using Server.Items;
+using Server.Gumps;
+using Server.Misc;
+using Server.Mobiles;
+using Server.ContextMenus;
+using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
