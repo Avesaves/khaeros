@@ -39,7 +39,10 @@ namespace Server.Items
 			//m_trapper.SendMessage("A dull moaning reaches your ears; something has disturbed your ghastly vigil!");
 			ItemID = 0x3735;
 			from.PlaySound(245);
-            AOS.Damage(from, m_trapper, m_trapper.RawMana/3, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
+            if (from is PlayerMobile)
+                AOS.Damage(from, m_trapper, m_trapper.Mana/3, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
+            else
+                AOS.Damage(from, m_trapper, m_trapper.Mana/3*2, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
             m_trapper.Followers -= 2;
 			Timer.DelayCall( TimeSpan.FromSeconds( 2.0 ), new TimerCallback( Trigger ) );
 		}
