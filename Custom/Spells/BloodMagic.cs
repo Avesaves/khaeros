@@ -83,6 +83,8 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                             XmlEnemyMastery seven = new Engines.XmlSpawner2.XmlEnemyMastery("BoneGolem", 80, 50, 30);
                             XmlEnemyMastery eight = new Engines.XmlSpawner2.XmlEnemyMastery("LesserFleshGolem", 80, 50, 30);
                             XmlEnemyMastery nine = new Engines.XmlSpawner2.XmlEnemyMastery("SkeletalDragon", 80, 50, 30);
+                            XmlEnemyMastery ten = new Engines.XmlSpawner2.XmlEnemyMastery("ImperialZombie", 80, 50, 30);
+                            XmlEnemyMastery eleven = new Engines.XmlSpawner2.XmlEnemyMastery("SocietyZombie", 80, 50, 30);
                             one.Name = "One";
                             two.Name = "Two";
                             three.Name = "Three";
@@ -91,7 +93,9 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                             six.Name = "Six";
                             seven.Name = "Seven";
                             eight.Name = "Eight";
-                            nine.Name = "Nine"; 
+                            nine.Name = "Nine";
+                            ten.Name = "ten";
+                            eleven.Name = "eleven";
 
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, one);
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, two);
@@ -103,6 +107,8 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, eight);
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, new Engines.XmlSpawner2.XmlEnemyMastery("LesserBoneGolem", 80, 50, 30));
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, nine);
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, ten);
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, eleven);
 
                             w.Identified = true; 
                             Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
