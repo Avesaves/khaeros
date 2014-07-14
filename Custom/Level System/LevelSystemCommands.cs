@@ -133,6 +133,7 @@ namespace Server.Commands
             CommandSystem.Register( "CraftingSpecialization", AccessLevel.Player, new CommandEventHandler( CraftingSpecialization_OnCommand ) );
             CommandSystem.Register("SecondWind", AccessLevel.Player, new CommandEventHandler(SecondWind_OnCommand));
             CommandSystem.Register("GoToGreenAcres", AccessLevel.GameMaster, new CommandEventHandler(GoToGreenAcres_OnCommand));
+            CommandSystem.Register("Burn", AccessLevel.GameMaster, new CommandEventHandler(Burn_OnCommand)); 
         }
 		
 		
@@ -3217,6 +3218,64 @@ namespace Server.Commands
                 	m.SendMessage( "Your target needs to be wearing a hair styling apron." );
             }
         }
+
+        [Usage("Burn")]
+        [Description("Allows staff to create instant bombs!")]
+        private static void Burn_OnCommand(CommandEventArgs e)
+        {
+            PlayerMobile m = e.Mobile as PlayerMobile;
+            Point3D loc = Caster.Location;
+           // Map map = Caster.Map;
+
+          //  if (map == null)
+          //      return;
+            if (e.Mobile == null || !(e.Mobile is PlayerMobile) || e.Length < 1 || e.Arguments[0].Trim().Length < 1)
+                return;
+            int dist = 15; 
+            int body = 0;
+
+            if (e.Length > 0 && int.TryParse(e.Arguments[0], out body))
+            {
+               
+                m.Target = new BurnTarget(body, false, dist);
+            }
+
+        }
+
+        private class BurnTarget : Target
+        {
+            private int m_body;
+
+            public BurnTarget(int body, bool emote, int dist)
+                : base(dist, false, TargetFlags.None)
+            {
+                m_body = body;
+            }
+
+            protected override void OnTarget(Mobile m, object obj)
+            {
+                if (m == null || m.Deleted)
+                    return;
+
+                            Point3D loc = obj.Location;
+            Map map = obj.Map;
+
+            BombPotion pot = new BombPotion(1);
+
+            pot.InstantExplosion = true;
+            pot.ExplosionRange = m_body;
+            pot.AddEffect(CustomEffect.Explosion, 100);
+            pot.AddEffect(CustomEffect.Fire, 100);
+            pot.AddEffect(CustomEffect.Shrapnel, 1000);
+            pot.HeldBy = m;
+            pot.PotionEffect = PotionEffect.ExplosionLesser;
+
+            pot.Explode(m, false, loc, map);
+
+            }
+        }          
+
+
         [Usage("CreateEcho")]
         [Description("Allows you to add speech to an item.")]
         private static void CreateEcho_OnCommand(CommandEventArgs e)
