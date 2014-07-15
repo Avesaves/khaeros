@@ -3267,7 +3267,7 @@ namespace Server.Commands
             pot.ExplosionRange = m_body;
             pot.AddEffect(CustomEffect.Explosion, 100);
             pot.AddEffect(CustomEffect.Fire, 100);
-            pot.AddEffect(CustomEffect.Shrapnel, 1000);
+            pot.AddEffect(CustomEffect.Shrapnel, m.RawInt);
             pot.HeldBy = m;
             pot.PotionEffect = PotionEffect.ExplosionLesser;
 
