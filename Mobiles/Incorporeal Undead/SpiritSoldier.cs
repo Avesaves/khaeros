@@ -40,9 +40,9 @@ namespace Server.Mobiles
 
 			SetDamageType( ResistanceType.Energy, 100 );
 
-			SetResistance( ResistanceType.Blunt, 35, 45 );
-			SetResistance( ResistanceType.Piercing, 30, 40 );
-			SetResistance( ResistanceType.Slashing, 30, 40 );
+			//SetResistance( ResistanceType.Blunt, 35, 45 );
+		//	SetResistance( ResistanceType.Piercing, 30, 40 );
+			//SetResistance( ResistanceType.Slashing, 30, 40 );
 
 			SetResistance( ResistanceType.Poison, 100 );
 
