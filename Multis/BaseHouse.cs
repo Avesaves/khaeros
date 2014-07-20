@@ -1568,8 +1568,9 @@ namespace Server.Multis
 				if ( Deleted || m_House == null || m_House.Deleted || !m_House.IsOwner( from ) || !from.CheckAlive() || !to.CheckAlive() )
 					return false;
 
-				if ( BaseHouse.HasHouse( to ) )
+				if ( BaseHouse.HasHouse( to ) && ( to.AccessLevel > AccessLevel.Player ))
 				{
+
 					from.SendMessage( "You cannot transfer ownership to someone who already has two houses!" );
 					return false;
 				}
@@ -1650,7 +1651,7 @@ namespace Server.Multis
 			}
 			else if ( to.Player )
 			{
-				if ( BaseHouse.HasHouse( to ) )
+				if ( BaseHouse.HasHouse( to ) && ( to.AccessLevel < AccessLevel.GameMaster ))
 				{
 					from.SendMessage( "You cannot transfer ownership to someone who already has two houses!" );
 				}

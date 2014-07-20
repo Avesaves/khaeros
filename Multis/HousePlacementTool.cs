@@ -142,8 +142,8 @@ namespace Server.Items
 			AddHtmlLocalized( 50, 40, 225, 20, 1060235, LabelColor, false, false ); // House Description
 			AddHtmlLocalized( 275, 40, 75, 20, 1060236, LabelColor, false, false ); // Storage
 			AddHtmlLocalized( 350, 40, 75, 20, 1060237, LabelColor, false, false ); // Lockdowns
-			AddHtmlLocalized( 425, 40, 75, 20, 1060034, LabelColor, false, false ); // Cost
-
+		    AddHtmlLocalized( 425, 40, 75, 20, 1060034, LabelColor, false, false ); // Cost
+            
 			AddImageTiled( 10, 70, 500, 280, 2624 );
 			AddAlphaRegion( 10, 70, 500, 280 );
 
@@ -374,6 +374,7 @@ namespace Server.Items
 							return;
 
 						house.Price = m_Cost;
+						house.Price = 1;
 
 						if ( Banker.Withdraw( from, m_Cost ) )
 						{

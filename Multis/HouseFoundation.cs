@@ -689,7 +689,7 @@ namespace Server.Multis
 				case 1:
 				{
 					if( version < 5 )
-						m_DefaultPrice = reader.ReadInt();
+						m_DefaultPrice = 1;
 
 					goto case 0;
 				}
@@ -892,8 +892,8 @@ namespace Server.Multis
 
 		public void EndConfirmCommit( Mobile from )
 		{
-			int oldPrice = Price;
-			int newPrice = oldPrice + CustomizationCost + ((DesignState.Components.List.Length - CurrentState.Components.List.Length) * 500);
+			int oldPrice = 1;
+			int newPrice = 1;
 			int cost = newPrice - oldPrice;
 
 			if( cost > 0 )
@@ -984,8 +984,8 @@ namespace Server.Multis
 
 			if(( context != null ) && (from.AccessLevel > AccessLevel.Player))
 			{
-				int oldPrice = context.Foundation.Price;
-				int newPrice = oldPrice + context.Foundation.CustomizationCost + ((context.Foundation.DesignState.Components.List.Length - context.Foundation.CurrentState.Components.List.Length) * 500);
+				int oldPrice = 1;
+				int newPrice = 1;
 				int bankBalance = Banker.GetBalance( from );
 
 				from.SendGump( new ConfirmCommitGump( from, context.Foundation, bankBalance, oldPrice, newPrice ) );
