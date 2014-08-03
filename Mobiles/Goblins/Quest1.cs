@@ -7,14 +7,14 @@ using Server.Network;
 
 namespace Server.Mobiles
 {
-	[CorpseName( "a Hobgoblin Rider corpse" )]
-	public class HobgoblinRider : BaseCreature, IMediumPredator, IGoblin
+	[CorpseName( "a goblin corpse" )]
+	public class Quest1 : BaseCreature, IMediumPredator, IGoblin
 	{
 		//public override bool ParryDisabled{ get{ return true; } }
 		[Constructable]
-		public HobgoblinRider() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.1, 0.2 )
+		public Quest1() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.1, 0.2 )
 		{
-			Name = "a Hobgoblin Rider";
+			Name = "a strange goblin thing";
 			BodyValue = 793;
 			BaseSoundID = 594;
             
@@ -70,7 +70,7 @@ namespace Server.Mobiles
 		public override int Bones{ get{ return 2; } }
 		
 
-		public HobgoblinRider( Serial serial ) : base( serial )
+		public Quest1( Serial serial ) : base( serial )
 		{
 		}
 
