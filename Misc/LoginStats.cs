@@ -34,7 +34,8 @@ namespace Server.Misc
 			
 			m.SendMessage(55, text);
 			
-			m.SendMessage( 33, "We hope you enjoy your time!");
+			//m.SendMessage( 33, "We hope you enjoy your time!");
+            m.SendMessage(2832, "At night, the sky is streaked with falling stars....");
 
 
 //******Edit: Added in********

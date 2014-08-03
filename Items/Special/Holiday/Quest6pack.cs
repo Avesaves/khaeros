@@ -14,7 +14,7 @@ namespace Server.Items
 			DropItem( new Copper(1000,2500) );
             DropItem(new Silver(15, 35));
             DropItem(new Gold(1, 10));
-            DropItem(new RewardToken(20, 25)); 
+            DropItem(new RewardToken(25)); 
 
 		}
 

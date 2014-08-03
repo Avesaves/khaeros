@@ -13,7 +13,7 @@ namespace Server.Items
             Name = "A giftbox"; 
 			DropItem( new Copper(100,200) );
             DropItem(new Silver(5, 10));
-            DropItem(new RewardToken(1, 5)); 
+            DropItem(new RewardToken(5)); 
 
 		}
 
