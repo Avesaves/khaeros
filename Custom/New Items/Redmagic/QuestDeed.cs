@@ -78,6 +78,7 @@ namespace Server.Items
                         questc.MoveToWorld( l1, pm.Map );
                         from.SendMessage("This deed tells you of a fallen star sighted headed towards the meteor fields, south across the river from Tserjicanth....");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     }
                 case 1:
@@ -85,6 +86,7 @@ namespace Server.Items
                         questc.MoveToWorld(l2, pm.Map);
                         from.SendMessage("This deed tells you of a falling star that landed somewhere in the labyrinthine steinnbaer mountains....");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     }
                 case 2:
@@ -92,6 +94,7 @@ namespace Server.Items
                         questc.MoveToWorld(l3, pm.Map);
                         from.SendMessage("This deed tells you of a strange occurance near the lost city of arianwen, in the winding degraded paths....");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     }
                 case 3:
@@ -99,6 +102,7 @@ namespace Server.Items
                         questc.MoveToWorld(l4, pm.Map);
                         from.SendMessage("This deed tells you of a fallen star landing in the distant frozen wastes of Eastern Khaeros....");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     }
                 case 4:
@@ -106,6 +110,7 @@ namespace Server.Items
                         questc.MoveToWorld(l5, pm.Map);
                         from.SendMessage("This deed tells of a keeper rumour that there may have been a celestial event deep in their desert, seen by the denizens of the oases....");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     }
 
@@ -114,6 +119,7 @@ namespace Server.Items
                         questc.MoveToWorld(l6, pm.Map);
                         from.SendMessage("Something, the deed writes, has landed in the giant crater to the west....");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     }
                 case 6:
@@ -121,6 +127,7 @@ namespace Server.Items
                         questc.MoveToWorld(l7, pm.Map);
                         from.SendMessage("Last night, the deed tells you, a strange celestial event terminated somewhere in the dragonspine pass....");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     }
                 case 7:
@@ -128,6 +135,7 @@ namespace Server.Items
                         questc.MoveToWorld(l8, pm.Map);
                         from.SendMessage("The deed tells you of a fallen star, which apparently fell somewhere far to the north, in the area of the world called the 'Frost Veldt', where Tyreans once called home... ");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     }
                 case 8:
@@ -135,6 +143,7 @@ namespace Server.Items
                         questc.MoveToWorld(l9, pm.Map);
                         from.SendMessage("This deed tells you of strange creatures that have appeared near Veiled Sun, the undying, to the east against the great mountains...");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     }
                 case 9:
@@ -142,6 +151,7 @@ namespace Server.Items
                         questc.MoveToWorld(l10, pm.Map);
                         from.SendMessage("This appears to be the story of monstrous unknown creatures falling from the sky, south a creepy abandoned castle in the east...");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     }
                 case 10:
@@ -149,6 +159,7 @@ namespace Server.Items
                         questc.MoveToWorld(l11, pm.Map);
                         from.SendMessage("A wandering savage told, and had his story recorded, about a sky god sending creatures into the jungles of Azhur.");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     }
                 case 11:
@@ -156,6 +167,7 @@ namespace Server.Items
                         questc.MoveToWorld(l12, pm.Map);
                         from.SendMessage("This deed is a formally written report by a Keeper on a strange sighting of a fallen star related event very near the Dawn Temple....");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     }
                 case 12:
@@ -163,6 +175,7 @@ namespace Server.Items
                         questc.MoveToWorld(l13, pm.Map);
                         from.SendMessage("This is a report by a drunken guard who was nearly killed by some bizarre creature near the entrance to the Caerdwyr Forest!");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     }
                 case 13:
@@ -170,6 +183,7 @@ namespace Server.Items
                         questc.MoveToWorld(l14, pm.Map);
                         from.SendMessage("This deed tells you of a questionable story about monsters from the celestial spheres living near the ruins of Droeddmor, in the southern wilds...");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     }
                 case 14:
@@ -177,6 +191,7 @@ namespace Server.Items
                         questc.MoveToWorld(l15, pm.Map);
                         from.SendMessage("Something fell recently very nearby - just on the other side of the steinnbaer mountains, near the path connecting north and south.");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     }
                 case 15:
@@ -184,6 +199,7 @@ namespace Server.Items
                         questc.MoveToWorld(l16, pm.Map);
                         from.SendMessage("This is a report of a strange tale of a shooting star breaking apart over the exotic Eastern Jungles, just south of the snowfields....");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
+                        this.Delete();
                         break; 
                     } 
                     this.Delete();

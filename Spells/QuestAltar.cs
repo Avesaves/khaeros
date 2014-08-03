@@ -84,7 +84,7 @@ namespace Khaeros.Scripts.Khaeros.Spells
 			Mobile buyer = e.Mobile;	
                 //e.Mobile.SendMessage("Your words seem to echo back at you....");
 			    string speech = e.Speech;
-			    e.Mobile.SendMessage(e.Speech);
+			   // e.Mobile.SendMessage(e.Speech);
 			    
 			    Container backpack = buyer.Backpack;
 

@@ -8,11 +8,15 @@ namespace Server.Multis
 	public class QuestCamp : BaseCamp
 	{
 		private Mobile m_Prisoner;
-        private Mobile goons; 
+        private Mobile goons;
+        private Mobile goons2;
+        private Mobile goons3;
+        private Mobile goons4;
+        
 		private BaseDoor m_Gate;
 
 		[Constructable]
-		public QuestCamp() : base( 0x1D4C )
+		public QuestCamp() : base( 0x25 )
 		{
 		}
 
@@ -45,37 +49,55 @@ namespace Server.Multis
                 case 0:
                     {
                         m_Prisoner = new Quest1();
-                        goons = new HobgoblinWarrior(); 
+                        goons = new HobgoblinWarrior();
+                        goons2 = new HobgoblinWarrior();
+                        goons3 = new HobgoblinWarrior();
+                        goons4 = new HobgoblinWarrior(); 
                         break;
                     }
                 case 1:
                     {
                         m_Prisoner = new Quest2();
-                        goons = new ConstrictingVine(); 
+                        goons = new ConstrictingVine();
+                        goons2 = new ConstrictingVine();
+                        goons3 = new ConstrictingVine();
+                        goons4 = new ConstrictingVine();
                         break;
                     }
                 case 2:
                     {
                         m_Prisoner = new Quest3();
-                        goons = new CrystalElemental(); 
+                        goons = new CrystalElemental();
+                        goons2 = new CrystalElemental();
+                        goons3 = new CrystalElemental();
+                        goons4 = new CrystalElemental();
                         break;
                     }
                 case 3:
                     {
                         m_Prisoner = new Quest4();
-                        goons = new DisplacerBeast(); 
+                        goons = new DisplacerBeast();
+                        goons2 = new DisplacerBeast();
+                        goons3 = new DisplacerBeast();
+                        goons4 = new DisplacerBeast();
                         break;
                     }
                 case 4:
                     {
                         m_Prisoner = new Quest5();
-                        goons = new HookHorror(); 
+                        goons = new HookHorror();
+                        goons2 = new HookHorror();
+                        goons3 = new HookHorror();
+                        goons4 = new HookHorror(); 
                         break;
                     }
                 case 5:
                     {
                         m_Prisoner = new Quest6();
-                        goons = new Wyvern(); 
+                        goons = new Wyvern();
+                        goons2 = new Wyvern();
+                        goons3 = new Wyvern();
+                        goons4 = new Wyvern(); 
                         break;
                     }
 			}
@@ -84,9 +106,9 @@ namespace Server.Multis
              
 			AddMobile( m_Prisoner, 15, 0, 0, 0 );
             AddMobile(goons, 10, -2, 2, 0);
-            AddMobile(goons, 10, 2, 1, 0);
-            AddMobile(goons, 10, -2, -1, 0);
-            AddMobile(goons, 10, 2, -2, 0);
+            AddMobile(goons2, 10, 2, 1, 0);
+            AddMobile(goons3, 10, -2, -1, 0);
+            AddMobile(goons4, 10, 2, -2, 0);
 		}
         /*
 		    public override void OnEnter( Mobile m )
