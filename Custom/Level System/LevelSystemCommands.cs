@@ -2360,10 +2360,10 @@ namespace Server.Commands
                 {
                 	BaseArmor armor = obj as BaseArmor;
 
-                    if (armor.Crafter == pm && armor.Quality == WeaponQuality.Extraordinary)
+                    if (armor.Crafter == pm && armor.Quality == ArmorQuality.Extraordinary)
                 		armor.Name = m_name;
 
-                    else if (armor.Crafter == pm && armor.Quality == WeaponQuality.Masterwork)
+                    else if (armor.Crafter == pm && armor.Quality == ArmorQuality.Masterwork)
                         armor.Name = m_name;
                 	else
                 		m.SendMessage( 60, "You can only rename masterwork equipment you have crafted yourself." );
@@ -2375,6 +2375,8 @@ namespace Server.Commands
                 	
                 	if( weapon.Crafter == pm && weapon.Quality == WeaponQuality.Masterwork )
                 		weapon.Name = m_name;
+                    else if (weapon.Crafter == pm && weapon.Quality == WeaponQuality.Extraordinary)
+                        weapon.Name = m_name;
                 	
                 	else
                 		m.SendMessage( 60, "You can only rename masterwork equipment you have crafted yourself." );
