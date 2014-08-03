@@ -59,12 +59,12 @@ namespace Server.Gumps
 					else if ( skinning >= 3 )
 					{
 						canCarve = true;
-						if ( item is BaseToxinIngredient )
+						/*if ( item is BaseToxinIngredient )
 						{
 							if ( pm.Skills[SkillName.Poisoning].Fixed < ((BaseToxinIngredient)item).SkillRequired )
 								canCarve = false;
-						}
-						else if ( item is Bone )
+						} */  
+						if ( item is Bone )
 						{
 							if ( pm.Feats.GetFeatLevel(FeatList.Bone) < 1 )
 								canCarve = false;

@@ -85,6 +85,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                             XmlEnemyMastery nine = new Engines.XmlSpawner2.XmlEnemyMastery("SkeletalDragon", 80, 50, 30);
                             XmlEnemyMastery ten = new Engines.XmlSpawner2.XmlEnemyMastery("ImperialZombie", 80, 50, 30);
                             XmlEnemyMastery eleven = new Engines.XmlSpawner2.XmlEnemyMastery("SocietyZombie", 80, 50, 30);
+                            XmlEnemyMastery twelve = new Engines.XmlSpawner2.XmlEnemyMastery("UndeadMinotaur", 80, 50, 30);
                             one.Name = "One";
                             two.Name = "Two";
                             three.Name = "Three";
@@ -96,6 +97,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                             nine.Name = "Nine";
                             ten.Name = "ten";
                             eleven.Name = "eleven";
+                            twelve.Name = "twelve"; 
 
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, one);
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, two);
@@ -109,6 +111,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, nine);
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, ten);
                             Engines.XmlSpawner2.XmlAttach.AttachTo(w, eleven);
+                            Engines.XmlSpawner2.XmlAttach.AttachTo(w, twelve);
 
                             w.Identified = true; 
                             Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));
@@ -278,6 +281,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         XmlEnemyMastery fourteen = new Engines.XmlSpawner2.XmlEnemyMastery("Scorpion", 80, 50, 30);
                         XmlEnemyMastery fifteen = new Engines.XmlSpawner2.XmlEnemyMastery("AmbusherSpider", 80, 50, 30);
                         XmlEnemyMastery sixteen = new Engines.XmlSpawner2.XmlEnemyMastery("FunnelWebSpider", 80, 50, 30);
+                        XmlEnemyMastery seventeen = new Engines.XmlSpawner2.XmlEnemyMastery("GiantWolfSpider", 80, 50, 30);
                         one.Name = "One";
                         two.Name = "Two";
                         three.Name = "Three";
@@ -294,6 +298,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         fourteen.Name = "fourteen";
                         fifteen.Name = "fifteen";
                         sixteen.Name = "sixteen";
+                        seventeen.Name = "seventeen";
 
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, one);
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, two);
@@ -311,6 +316,7 @@ public override FeatList Feat{ get{ return FeatList.RedMagic; } }
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, fourteen);
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, fifteen);
                         Engines.XmlSpawner2.XmlAttach.AttachTo(w, sixteen);
+                        Engines.XmlSpawner2.XmlAttach.AttachTo(w, seventeen);
 
                         w.Identified = true; 
                         Timer.DelayCall(TimeSpan.FromMinutes(30), new TimerCallback(Flare));

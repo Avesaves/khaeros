@@ -13,7 +13,8 @@ namespace Server.Mobiles
 			Name = "a wolf";
 			Body = 225;
 			BaseSoundID = 0xE5;
-
+            FavouriteManeuver = "criticalstrike";
+            FavouriteStance = "defensivestance"; 
 			SetStr( 70 );
 			SetDex( 45 );
 			SetInt( 20 );

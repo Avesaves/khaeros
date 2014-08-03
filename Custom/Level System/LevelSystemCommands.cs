@@ -2359,8 +2359,8 @@ namespace Server.Commands
                 else if( obj is BaseArmor )
                 {
                 	BaseArmor armor = obj as BaseArmor;
-                	
-                	if( armor.Crafter == pm && armor.Quality == ArmorQuality.Masterwork )
+
+                    if (armor.Crafter == pm && armor.Quality > WeaponQuality.Exceptional)
                 		armor.Name = m_name;
                 	
                 	else
