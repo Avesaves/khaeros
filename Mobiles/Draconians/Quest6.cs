@@ -22,7 +22,7 @@ namespace Server.Mobiles
 			Fame = 80000;
 			Karma = -80000;
             PackItem( new RewardToken( 11 ) );
-            PackItem(new Quest6Item(1));
+            PackItem(new Quest6Item());
             int rand = Utility.Random(40);
             if (rand > 39)
                 PackItem(new StarmetalOre(2)); 

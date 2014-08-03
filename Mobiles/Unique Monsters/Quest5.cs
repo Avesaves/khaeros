@@ -42,7 +42,7 @@ namespace Server.Mobiles
 
 			Fame = 50000;
 			Karma = -50000;
-            PackItem(new Quest5Item(1)); 
+            PackItem(new Quest5Item()); 
 			VirtualArmor = 54;
             int rand = Utility.Random(75);
             if (rand > 74)
