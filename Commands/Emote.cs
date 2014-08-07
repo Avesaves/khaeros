@@ -581,6 +581,8 @@ namespace Server.Scripts.Commands
                 case 26:
                     pm.PlaySound(pm.Female ? 813 : 1087);
                     pm.Say("*pukes*");
+                    if (pm.Hunger > 5)
+                        pm.Hunger -= 5; 
                     if (!pm.Mounted)
                         pm.Animate(32, 5, 1, true, false, 0);
                     Point3D p = new Point3D(pm.Location);

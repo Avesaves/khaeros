@@ -133,7 +133,8 @@ namespace Server.Commands
             CommandSystem.Register( "CraftingSpecialization", AccessLevel.Player, new CommandEventHandler( CraftingSpecialization_OnCommand ) );
             CommandSystem.Register("SecondWind", AccessLevel.Player, new CommandEventHandler(SecondWind_OnCommand));
             CommandSystem.Register("GoToGreenAcres", AccessLevel.GameMaster, new CommandEventHandler(GoToGreenAcres_OnCommand));
-            CommandSystem.Register("Burn", AccessLevel.GameMaster, new CommandEventHandler(Burn_OnCommand)); 
+            CommandSystem.Register("Burn", AccessLevel.GameMaster, new CommandEventHandler(Burn_OnCommand));
+            CommandSystem.Register("Dazzle", AccessLevel.Player, new CommandEventHandler(Dazzle_OnCommand)); 
         }
 		
 		
@@ -3222,7 +3223,87 @@ namespace Server.Commands
                 	m.SendMessage( "Your target needs to be wearing a hair styling apron." );
             }
         }
+        [Usage("Dazzle")]
+        [Description("Allows mages to use effects for RP.")]
+        private static void Dazzle_OnCommand(CommandEventArgs e)
+        {
+            if (e.Mobile == null || !(e.Mobile is PlayerMobile))
+                return;
 
+            PlayerMobile m = e.Mobile as PlayerMobile;
+
+            if (m.Feats.GetFeatLevel(FeatList.Magery) < 3)
+                return; 
+            if (e.Length >= 2)
+            {
+                int un = e.Arguments[0];
+                int pw = e.Arguments[1];
+
+                //Account dispAccount = null;
+                string notice;
+
+                if (un == null || un.Length == 0)
+                {
+                    notice = "You must enter an itemid.";
+                }
+                else if (pw == null || pw.Length == 0)
+                {
+                    notice = "You must enter a hue.";
+                }
+                else
+                {
+                    m.Target = new DazzleTarget(un, pw);
+
+                    
+                }
+
+                m.SendMessage(notice);
+            }
+
+            else
+            {
+                m.SendMessage("Incorrect usage. Please add two arguments to the command, the first being the ItemID and the second, its hue.");
+                m.SendMessage("Example: \".Dazzle 4154 123.");
+            }
+        }
+        private class DazzleTarget : Target
+        {
+            private int un1;
+            private int pw1;
+
+
+            public DazzleTarget(int un, int pw)
+                : base(15, false, TargetFlags.None)
+            {
+                un1 = un;
+                pw1 = pw; 
+            }
+
+            protected override void OnTarget(Mobile m, object obj)
+            {
+                if (m == null || m.Deleted)
+                    return;
+                if (m.Mana < 5)
+                {
+                    m.SendMessage("You do not have the energy for this.");
+                    return;
+                }
+                if (obj == null)
+                {
+                    m.SendMessage("That no longer exists.");
+                    return;
+                }
+               /* if (!(obj is Mobile))
+                {
+                    m.SendMessage("You don't have the skill to converse with objects.");
+                    return;
+                }*/
+               // Mobile targ = obj as Mobile;
+                m.Mana -= 5;
+                obj.FixedParticles(un1, 244, 50, 9950, pw1, 0, EffectLayer.Waist);
+               // targ.SendMessage(2659, m.Name + " " + "(telepathy):" + " " + m_speech);
+            }
+        }      
         [Usage("Burn")]
         [Description("Allows staff to create instant bombs!")]
         private static void Burn_OnCommand(CommandEventArgs e)
