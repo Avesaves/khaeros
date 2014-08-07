@@ -3236,8 +3236,8 @@ namespace Server.Commands
                 return; 
             if (e.Length >= 2)
             {
-                int un = e.Arguments[0];
-                int pw = e.Arguments[1];
+                string un = e.Arguments[0];
+                string pw = e.Arguments[1];
 
                 //Account dispAccount = null;
                 string notice;
@@ -3272,7 +3272,7 @@ namespace Server.Commands
             private int pw1;
 
 
-            public DazzleTarget(int un, int pw)
+            public DazzleTarget(string un, string pw)
                 : base(15, false, TargetFlags.None)
             {
                 un1 = un;
@@ -3298,9 +3298,11 @@ namespace Server.Commands
                     m.SendMessage("You don't have the skill to converse with objects.");
                     return;
                 }*/
-               // Mobile targ = obj as Mobile;
+                un2 = Convert.toInt32(un1);
+                pw2 = Convert.ToInt32(pw1); 
+                Mobile targ = obj as Mobile;
                 m.Mana -= 5;
-                obj.FixedParticles(un1, 244, 50, 9950, pw1, 0, EffectLayer.Waist);
+                targ.FixedParticles(un2, 244, 50, 9950, pw2, 0, EffectLayer.Waist);
                // targ.SendMessage(2659, m.Name + " " + "(telepathy):" + " " + m_speech);
             }
         }      
