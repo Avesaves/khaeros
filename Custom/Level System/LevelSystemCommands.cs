@@ -3312,6 +3312,8 @@ namespace Server.Commands
                     return;
                 }
                 Mobile targ = obj as Mobile;
+                IPoint3D point3d = obj as IPoint3D;
+                Point3D location = new Point3D(point3d.X, point3d.Y, point3d.Z);
                 m.Mana -= 5;
                 if (obj is Mobile)
                 {
@@ -3319,7 +3321,8 @@ namespace Server.Commands
                 }
                 else
                 {
-                    Effects.SendTargetEffect( obj, un2, 244, 50, pw2, 0);
+
+                    Effects.SendLocationEffect( location, m.Map, un2, 50, 244, pw2, 0);
                 }
 
                // targ.SendMessage(2659, m.Name + " " + "(telepathy):" + " " + m_speech);
