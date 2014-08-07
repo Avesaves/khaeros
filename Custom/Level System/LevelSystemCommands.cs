@@ -3271,6 +3271,8 @@ namespace Server.Commands
         {
             private string un1;
             private string pw1;
+            private int un2;
+            private int pw2; 
 
 
             public DazzleTarget(string un, string pw)
