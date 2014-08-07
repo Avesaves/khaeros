@@ -3301,11 +3301,27 @@ namespace Server.Commands
                     m.SendMessage("You don't have the skill to converse with objects.");
                     return;
                 }*/
-                un2 = Convert.ToInt32(un1);
-                pw2 = Convert.ToInt32(pw1); 
+                try
+                {
+                    un2 = Convert.ToInt32(un1);
+                    pw2 = Convert.ToInt32(pw1);
+                }
+                catch (OverflowException)
+                {
+                    m.SendMessage("Are you trying to crash the shard?");
+                    return;
+                }
                 Mobile targ = obj as Mobile;
                 m.Mana -= 5;
-                targ.FixedParticles(un2, 244, 50, 9950, pw2, 0, EffectLayer.Waist);
+                if (obj is Mobile)
+                {
+                    targ.FixedParticles(un2, 244, 50, 9950, pw2, 0, EffectLayer.Waist);
+                }
+                else
+                {
+                    Effects.SendTargetEffect( obj, un2, 244, 50, pw2, 0);
+                }
+
                // targ.SendMessage(2659, m.Name + " " + "(telepathy):" + " " + m_speech);
             }
         }      
