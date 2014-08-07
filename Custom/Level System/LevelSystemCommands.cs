@@ -3252,8 +3252,9 @@ namespace Server.Commands
                 }
                 else
                 {
+                    notice = " "; 
                     m.Target = new DazzleTarget(un, pw);
-
+                    
                     
                 }
 
@@ -3268,8 +3269,8 @@ namespace Server.Commands
         }
         private class DazzleTarget : Target
         {
-            private int un1;
-            private int pw1;
+            private string un1;
+            private string pw1;
 
 
             public DazzleTarget(string un, string pw)
@@ -3298,7 +3299,7 @@ namespace Server.Commands
                     m.SendMessage("You don't have the skill to converse with objects.");
                     return;
                 }*/
-                un2 = Convert.toInt32(un1);
+                un2 = Convert.ToInt32(un1);
                 pw2 = Convert.ToInt32(pw1); 
                 Mobile targ = obj as Mobile;
                 m.Mana -= 5;
