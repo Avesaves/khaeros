@@ -74,62 +74,62 @@ namespace Server.Items
                 {
                     case 0:
                         {
-                            Point3D l1 = new Point3D(2600, 3286, 12); // meteor fields
-                            Point3D l2 = new Point3D(2376, 2515, 0); // steainnbaer mountains
-                            Point3D l3 = new Point3D(2127, 2967, -44); // Arianwen 
-                            Point3D l4 = new Point3D(4097, 1154, 0); // the wastes
-                            Point3D l5 = new Point3D(838, 1624, 2); // the desert
-                            Point3D l6 = new Point3D(1074, 1972, 2); //Meteor
-                            Point3D l7 = new Point3D(3974, 2120, 60); // dragonspine
-                            Point3D l8 = new Point3D(3314, 1234, 0); // near tyrheim
-                            Point3D l9 = new Point3D(3304, 2039, 10);//veiled sun
-                            Point3D l10 = new Point3D(3510, 2975, 25); // south of the creepy castle
-                            Point3D l11 = new Point3D(856, 2880, 5); // the jungles of azhur
-                            Point3D l12 = new Point3D(1626, 1058, 2); // the heath
-                            Point3D l13 = new Point3D(1373, 3147, 0); // caerdwyr
-                            Point3D l14 = new Point3D(2281, 3392, 2); // droeddmor
-                            Point3D l15 = new Point3D(1898, 2439, 0); // spirit mountain
-                            Point3D l16 = new Point3D(4375, 2430, 2); // eastern jungles
+                            l1 = new Point3D(2600, 3286, 12); // meteor fields
+                            l2 = new Point3D(2376, 2515, 0); // steainnbaer mountains
+                            l3 = new Point3D(2127, 2967, -44); // Arianwen 
+                            l4 = new Point3D(4097, 1154, 0); // the wastes
+                            l5 = new Point3D(838, 1624, 2); // the desert
+                            l6 = new Point3D(1074, 1972, 2); //Meteor
+                            l7 = new Point3D(3974, 2120, 60); // dragonspine
+                            l8 = new Point3D(3314, 1234, 0); // near tyrheim
+                            l9 = new Point3D(3304, 2039, 10);//veiled sun
+                            l10 = new Point3D(3510, 2975, 25); // south of the creepy castle
+                            l11 = new Point3D(856, 2880, 5); // the jungles of azhur
+                            l12 = new Point3D(1626, 1058, 2); // the heath
+                            l13 = new Point3D(1373, 3147, 0); // caerdwyr
+                            l14 = new Point3D(2281, 3392, 2); // droeddmor
+                            l15 = new Point3D(1898, 2439, 0); // spirit mountain
+                            l16 = new Point3D(4375, 2430, 2); // eastern jungles
                             break;
                         }
                     case 1:
                         {
-                            Point3D l1 = new Point3D(2527, 3371, 11); // meteor fields
-                            Point3D l2 = new Point3D(2572, 2415, 32); // steainnbaer mountains
-                            Point3D l3 = new Point3D(2158, 2910, 0); // Arianwen 
-                            Point3D l4 = new Point3D(4196, 956, 0); // the wastes
-                            Point3D l5 = new Point3D(845, 1525, 2); // the desert
-                            Point3D l6 = new Point3D(1144, 2045, 26); //Meteor
-                            Point3D l7 = new Point3D(4046, 1958, 60); // dragonspine
-                            Point3D l8 = new Point3D(3277, 1304, 5); // near tyrheim
-                            Point3D l9 = new Point3D(3395, 1925, 2);//veiled sun
-                            Point3D l10 = new Point3D(3401, 3106, 0); // south of the creepy castle
-                            Point3D l11 = new Point3D(849, 2774, 10); // the jungles of azhur
-                            Point3D l12 = new Point3D(1298, 1101, 5); // the heath
-                            Point3D l13 = new Point3D(1279, 3204, 5); // caerdwyr
-                            Point3D l14 = new Point3D(2199, 3510, 2); // droeddmor
-                            Point3D l15 = new Point3D(1939, 2521, -7); // spirit mountain
-                            Point3D l16 = new Point3D(4390, 2325, 2); // eastern jungles
+                            l1 = new Point3D(2527, 3371, 11); // meteor fields
+                            l2 = new Point3D(2572, 2415, 32); // steainnbaer mountains
+                            l3 = new Point3D(2158, 2910, 0); // Arianwen 
+                            l4 = new Point3D(4196, 956, 0); // the wastes
+                            l5 = new Point3D(845, 1525, 2); // the desert
+                            l6 = new Point3D(1144, 2045, 26); //Meteor
+                            l7 = new Point3D(4046, 1958, 60); // dragonspine
+                            l8 = new Point3D(3277, 1304, 5); // near tyrheim
+                            l9 = new Point3D(3395, 1925, 2);//veiled sun
+                            l10 = new Point3D(3401, 3106, 0); // south of the creepy castle
+                            l11 = new Point3D(849, 2774, 10); // the jungles of azhur
+                            l12 = new Point3D(1298, 1101, 5); // the heath
+                            l13 = new Point3D(1279, 3204, 5); // caerdwyr
+                            l14 = new Point3D(2199, 3510, 2); // droeddmor
+                            l15 = new Point3D(1939, 2521, -7); // spirit mountain
+                            l16 = new Point3D(4390, 2325, 2); // eastern jungles
                             break;
                         }
                     case 2:
                         {
-                            Point3D l1 = new Point3D(2516, 3434, 10); // meteor fields
-                            Point3D l2 = new Point3D(2554, 2380, 35); // steainnbaer mountains
-                            Point3D l3 = new Point3D(2063, 2999, 0); // Arianwen 
-                            Point3D l4 = new Point3D(3991, 863, 2); // the wastes
-                            Point3D l5 = new Point3D(1230, 1454, 2); // the desert
-                            Point3D l6 = new Point3D(1035, 2035, 27); //Meteor
-                            Point3D l7 = new Point3D(3845, 2216, 60); // dragonspine
-                            Point3D l8 = new Point3D(3149, 1261, 0); // near tyrheim
-                            Point3D l9 = new Point3D(3229, 1864, 2);//veiled sun
-                            Point3D l10 = new Point3D(3285, 2980, 2); // south of the creepy castle
-                            Point3D l11 = new Point3D(854, 2602, 10); // the jungles of azhur
-                            Point3D l12 = new Point3D(1432, 867, 0); // the heath
-                            Point3D l13 = new Point3D(1207, 3191, 10); // caerdwyr
-                            Point3D l14 = new Point3D(2196, 3246, 0); // droeddmor
-                            Point3D l15 = new Point3D(2088, 2414, 0); // spirit mountain
-                            Point3D l16 = new Point3D(4223, 2673, 2); // eastern jungles
+                            l1 = new Point3D(2516, 3434, 10); // meteor fields
+                            l2 = new Point3D(2554, 2380, 35); // steainnbaer mountains
+                            l3 = new Point3D(2063, 2999, 0); // Arianwen 
+                            l4 = new Point3D(3991, 863, 2); // the wastes
+                            l5 = new Point3D(1230, 1454, 2); // the desert
+                            l6 = new Point3D(1035, 2035, 27); //Meteor
+                            l7 = new Point3D(3845, 2216, 60); // dragonspine
+                            l8 = new Point3D(3149, 1261, 0); // near tyrheim
+                            l9 = new Point3D(3229, 1864, 2);//veiled sun
+                            l10 = new Point3D(3285, 2980, 2); // south of the creepy castle
+                            l11 = new Point3D(854, 2602, 10); // the jungles of azhur
+                            l12 = new Point3D(1432, 867, 0); // the heath
+                            l13 = new Point3D(1207, 3191, 10); // caerdwyr
+                            l14 = new Point3D(2196, 3246, 0); // droeddmor
+                            l15 = new Point3D(2088, 2414, 0); // spirit mountain
+                            l16 = new Point3D(4223, 2673, 2); // eastern jungles
                             break;
                         }
                 }
