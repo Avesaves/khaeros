@@ -3311,6 +3311,11 @@ namespace Server.Commands
                     m.SendMessage("Are you trying to crash the shard?");
                     return;
                 }
+                catch (FormatException)
+                {
+                    m.SendMessage("Are you trying to crash the shard?");
+                    return;
+                }  
                 Mobile targ = obj as Mobile;
                 IPoint3D point3d = obj as IPoint3D;
                 Point3D location = new Point3D(point3d.X, point3d.Y, point3d.Z);

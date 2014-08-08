@@ -141,14 +141,20 @@ namespace Server.Items
 				protected override void OnTick()
 				{
 					Item item = (Item)m_Item;
+
+
                     double LockpickingSkill = m_From.Skills[SkillName.Lockpicking].Value;
+                   if (m_Item is tChest)
+                        LockpickingSkill += m_From.Skills[SkillName.Tinkering].Value;
 
                     if (m_From is PlayerMobile)
                     {
                         PlayerMobile pm = m_From as PlayerMobile;
                         pm.CriminalActivity = true;
-
-                        LockpickingSkill += Utility.Random(pm.Feats.GetFeatLevel(FeatList.Safecracking) * Utility.Random(100 + Utility.Random(pm.RawInt)));
+                        if (m_Item is tChest)
+                            LockpickingSkill += Utility.Random(pm.Feats.GetFeatLevel(FeatList.Counterfeiting) * Utility.Random(100 + Utility.Random(pm.RawInt)));
+                        else
+                            LockpickingSkill += Utility.Random(pm.Feats.GetFeatLevel(FeatList.Safecracking) * Utility.Random(100 + Utility.Random(pm.RawInt)));
                     }
 
 					if ( !m_From.InRange( item.GetWorldLocation(), 2 ) )

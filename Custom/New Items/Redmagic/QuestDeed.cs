@@ -54,6 +54,10 @@ namespace Server.Items
             if (from.Backpack != null && this.ParentEntity == from.Backpack)
             {
                 QuestCamp questc = new QuestCamp(); 
+                switch (Utility.Random(2))
+                {
+                    case 0:
+                        {
                 Point3D l1 = new Point3D(2600, 3286, 12 ); // meteor fields
                 Point3D l2 = new Point3D( 2376, 2515, 0 ); // steainnbaer mountains
                 Point3D l3 = new Point3D( 2127, 2967, -44 ); // Arianwen 
@@ -70,6 +74,48 @@ namespace Server.Items
                 Point3D l14 = new Point3D( 2281, 3392, 2 ); // droeddmor
                 Point3D l15 = new Point3D( 1898, 2439, 0 ); // spirit mountain
                 Point3D l16 = new Point3D( 4375, 2430, 2 ); // eastern jungles
+                            break; 
+                        }
+                    case 1: 
+                        {
+                Point3D l1 = new Point3D(2527, 3371, 11 ); // meteor fields
+                Point3D l2 = new Point3D( 2572, 2415, 32 ); // steainnbaer mountains
+                Point3D l3 = new Point3D( 2158, 2910, 0 ); // Arianwen 
+                Point3D l4 = new Point3D( 4196, 956, 0 ); // the wastes
+                Point3D l5 = new Point3D( 845, 1525, 2 ); // the desert
+                Point3D l6 = new Point3D( 1144, 2045, 26 ); //Meteor
+                Point3D l7 = new Point3D( 4046, 1958, 60 ); // dragonspine
+                Point3D l8 = new Point3D( 3277, 1304, 5 ); // near tyrheim
+                Point3D l9 = new Point3D( 3395, 1925, 2 );//veiled sun
+                Point3D l10 = new Point3D( 3401, 3106, 0 ); // south of the creepy castle
+                Point3D l11 = new Point3D( 849, 2774, 10 ); // the jungles of azhur
+                Point3D l12 = new Point3D( 1298, 1101, 5 ); // the heath
+                Point3D l13 = new Point3D( 1279, 3204, 5 ); // caerdwyr
+                Point3D l14 = new Point3D( 2199, 3510, 2 ); // droeddmor
+                Point3D l15 = new Point3D( 1939, 2521, -7 ); // spirit mountain
+                Point3D l16 = new Point3D( 4390, 2325, 2 ); // eastern jungles
+                            break; 
+                        }
+                    case 2: 
+                        {
+                Point3D l1 = new Point3D(2516, 3434, 10 ); // meteor fields
+                Point3D l2 = new Point3D( 2554, 2380, 35); // steainnbaer mountains
+                Point3D l3 = new Point3D(2063, 2999, 0 ); // Arianwen 
+                Point3D l4 = new Point3D( 3991, 863, 2); // the wastes
+                Point3D l5 = new Point3D(1230, 1454, 2); // the desert
+                Point3D l6 = new Point3D(1035, 2035, 27); //Meteor
+                Point3D l7 = new Point3D(3845, 2216, 60 ); // dragonspine
+                Point3D l8 = new Point3D(3149, 1261, 0 ); // near tyrheim
+                Point3D l9 = new Point3D(3229, 1864, 2);//veiled sun
+                Point3D l10 = new Point3D(3285, 2980, 2 ); // south of the creepy castle
+                Point3D l11 = new Point3D( 854, 2602, 10 ); // the jungles of azhur
+                Point3D l12 = new Point3D( 1432, 867, 0 ); // the heath
+                Point3D l13 = new Point3D( 1207, 3191, 10 ); // caerdwyr
+                Point3D l14 = new Point3D( 2196, 3246, 0 ); // droeddmor
+                Point3D l15 = new Point3D( 2088, 2414, 0); // spirit mountain
+                Point3D l16 = new Point3D( 4223, 2673, 2); // eastern jungles
+                            break; 
+                        }
 
                				switch ( Utility.Random( 15 ) )
 			{
@@ -157,7 +203,7 @@ namespace Server.Items
                 case 10:
                     {
                         questc.MoveToWorld(l11, pm.Map);
-                        from.SendMessage("A wandering savage told, and had his story recorded, about a sky god sending creatures into the jungles of Azhur.");
+                        from.SendMessage("A wandering savage told, and had his story recorded, about a sky god sending creatures into the jungles of Azhur, near the city itself.");
                         from.SendMessage("You will have a half hour to find and dispatch the monsters at this site, and bring back the unique item.");
                         this.Delete();
                         break; 

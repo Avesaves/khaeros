@@ -1085,7 +1085,40 @@ namespace Server.Items
 				Weight = -1;
 		}
 	}
+    [DynamicFliping]
+    [Flipable(0x9AB, 0xE7C)]
+    public class tChest : LockableContainer
+    {
+        public override int MaxWeight { get { return 2000; } }
 
+        [Constructable]
+        public tChest()
+            : base(0x9AB)
+        {
+        }
+
+        public tChest(Serial serial)
+            : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+
+            writer.Write((int)0); // version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+
+            int version = reader.ReadInt();
+
+            if (version == 0 && Weight == 25)
+                Weight = -1;
+        }
+    }
 	[DynamicFliping]
 	[Flipable( 0xE41, 0xE40 )]
 	public class MetalGoldenChest : LockableContainer

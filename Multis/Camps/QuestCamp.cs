@@ -29,9 +29,11 @@ namespace Server.Multis
 			//gate.Locked = true;
 
 			//AddItem( gate, -2, 1, 0 );
-
+            GiantRock rock = new GiantRock(); 
 			//MetalChest chest = new MetalChest();
-
+            rock.ItemID = 0x3660;
+            rock.Hue = 2832;
+            AddItem(rock, 1, 0, 0); 
 			//chest.ItemID = 0xE7C;
 		//	chest.DropItem( new Key( KeyType.Iron, gate.KeyValue ) );
 
