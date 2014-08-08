@@ -24,6 +24,7 @@ namespace Server.Items
         private Point3D l8;
         private Point3D l9;
         private Point3D l10;
+        private Point3D l11;
         private Point3D l12;
         private Point3D l13;
         private Point3D l14;
