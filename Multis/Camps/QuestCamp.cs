@@ -33,6 +33,7 @@ namespace Server.Multis
 			//MetalChest chest = new MetalChest();
             rock.ItemID = 0x3660;
             rock.Hue = 2832;
+            rock.Movable = false; 
             AddItem(rock, 1, 0, 0); 
 			//chest.ItemID = 0xE7C;
 		//	chest.DropItem( new Key( KeyType.Iron, gate.KeyValue ) );

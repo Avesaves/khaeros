@@ -14,6 +14,22 @@ namespace Server.Items
     public class QuestDeed : Item
     {
         private int m_Power;
+        private Point3D l1;
+        private Point3D l2;
+        private Point3D l3;
+        private Point3D l4;
+        private Point3D l5;
+        private Point3D l6;
+        private Point3D l7;
+        private Point3D l8;
+        private Point3D l9;
+        private Point3D l10;
+        private Point3D l12;
+        private Point3D l13;
+        private Point3D l14;
+        private Point3D l15;
+        private Point3D l16; 
+
 
         [CommandProperty(AccessLevel.GameMaster)]
         public int Power
@@ -53,8 +69,8 @@ namespace Server.Items
             } */ 
             if (from.Backpack != null && this.ParentEntity == from.Backpack)
             {
-                QuestCamp questc = new QuestCamp();
-                Point3D l1 = new Point3D(2600, 3286, 12); // meteor fields
+               QuestCamp questc = new QuestCamp();
+                /*Point3D l1 = new Point3D(2600, 3286, 12); // meteor fields
                 Point3D l2 = new Point3D(2376, 2515, 0); // steainnbaer mountains
                 Point3D l3 = new Point3D(2127, 2967, -44); // Arianwen 
                 Point3D l4 = new Point3D(4097, 1154, 0); // the wastes
@@ -69,7 +85,9 @@ namespace Server.Items
                 Point3D l13 = new Point3D(1373, 3147, 0); // caerdwyr
                 Point3D l14 = new Point3D(2281, 3392, 2); // droeddmor
                 Point3D l15 = new Point3D(1898, 2439, 0); // spirit mountain
-                Point3D l16 = new Point3D(4375, 2430, 2); // eastern jungles
+                Point3D l16 = new Point3D(4375, 2430, 2); // eastern jungles */ 
+
+                
                 switch (Utility.Random(2))
                 {
                     case 0:
