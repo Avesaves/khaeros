@@ -11,7 +11,7 @@ using Server.Multis;
 
 namespace Server.Items
 {
-    public class QuestDeed : Item
+    public class hardQuestDeed : Item
     {
         private int m_Power;
         private Point3D l1;
@@ -40,7 +40,7 @@ namespace Server.Items
         }
 
         [Constructable]
-        public QuestDeed()
+        public hardQuestDeed()
             : base(0x14EB)
         {
             Stackable = false;
@@ -295,7 +295,7 @@ namespace Server.Items
                 from.SendMessage("That needs to be in your backpack for you to use it.");
         }
 
-        public QuestDeed(Serial serial)
+        public hardQuestDeed(Serial serial)
             : base(serial)
         {
         }
