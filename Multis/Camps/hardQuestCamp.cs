@@ -103,6 +103,10 @@ namespace Server.Multis
                         goons2 = new SkeletalSoldier();
                         goons3 = new SkeletalSoldier();
                         goons4 = new SkeletalSoldier();
+                        BaseCreature gons = goons as BaseCreature;
+                        BaseCreature gons2 = goons2 as BaseCreature;
+                        BaseCreature gons3 = goons3 as BaseCreature;
+                        BaseCreature gons4 = goons4 as BaseCreature;
                         gons2.Team = 1;
                         gons3.Team = 1;
                         gons4.Team = 1;
