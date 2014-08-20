@@ -102,18 +102,22 @@ namespace Server.Multis
                         goons2 = new CaveTroll();
                         goons3 = new CaveTroll();
                         goons4 = new CaveTroll();
-                        goons.WikiConfig = "trollhound";
-                        goons.LoadWikiConfig = true;
-                        goons.Name = "A crystalline entity"; 
-                        goons2.WikiConfig = "trollhound";
-                        goons2.LoadWikiConfig = true;
-                        goons2.Name = "A crystalline entity"; 
-                        goons3.WikiConfig = "trollhound";
-                        goons3.LoadWikiConfig = true;
-                        goons3.Name = "A crystalline entity"; 
-                        goons4.WikiConfig = "trollhound";
-                        goons4.LoadWikiConfig = true;
-                        goons4.Name = "A crystalline entity"; 
+                        BaseCreature gons = goons as BaseCreature;
+                        BaseCreature gons2 = goons2 as BaseCreature;
+                        BaseCreature gons3 = goons3 as BaseCreature;
+                        BaseCreature gons4 = goons4 as BaseCreature;
+                        gons.WikiConfig = "trollhound";
+                        gons.LoadWikiConfig = true;
+                        gons.Name = "A crystalline entity"; 
+                        gons2.WikiConfig = "trollhound";
+                        gons2.LoadWikiConfig = true;
+                        gons2.Name = "A crystalline entity"; 
+                        gons3.WikiConfig = "trollhound";
+                        gons3.LoadWikiConfig = true;
+                        gons3.Name = "A crystalline entity"; 
+                        gons4.WikiConfig = "trollhound";
+                        gons4.LoadWikiConfig = true;
+                        gons4.Name = "A crystalline entity"; 
                         break;
                     }
 			}

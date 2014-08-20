@@ -15,8 +15,8 @@ namespace Server.Mobiles
         public Stalker()
             : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.1, 0.2)
         {
-            Name = "a Stalker";
-            CreatureGroup = "Troll";
+            Name = "a Troll God";
+            Team = "1";
             Body = 130;
             Hue = 2994;
             BaseSoundID = 0x175;

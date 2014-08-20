@@ -47,32 +47,44 @@ namespace Server.Multis
 		//	AddMobile( new HobgoblinWarrior(), 15, 0, -1, 0 );
 		//	AddMobile( new HobgoblinRider(), 15, 0,  0, 0 );
 
+
 			switch ( Utility.Random( 6 ) )
 			{
                 case 0:
                     {
                         m_Prisoner = new Quest9();
-                        m_Prisoner.WikiConfig = "bloodspirit";
-                        m_Prisoner.LoadWikiConfig = true; 
+
                         goons = new GenericWarrior();
                         goons2 = new GenericWarrior();
                         goons3 = new GenericWarrior();
                         goons4 = new GenericWarrior();
-                        goons.WikiConfig = "bloodspirit";
-                        goons2.WikiConfig = "bloodspirit";
-                        goons3.WikiConfig = "bloodspirit";
-                        goons4.WikiConfig = "bloodspirit";
-                        goons.LoadWikiConfig = true;
-                        goons2.LoadWikiConfig = true;
-                        goons3.LoadWikiConfig = true;
-                        goons4.LoadWikiConfig = true;
+                        goons2.Team = "1";
+                        goons3.Team = "1";
+                        goons4.Team = "1";
+                        goons.Team = "1"; 
+                        BaseCreature mop = m_Prisoner as BaseCreature;
+                        BaseCreature gons = goons as BaseCreature;
+                        BaseCreature gons2 = goons2 as BaseCreature;
+                        BaseCreature gons3 = goons3 as BaseCreature;
+                        BaseCreature gons4 = goons4 as BaseCreature;
+                        gons.WikiConfig = "bloodspirit";
+                        gons2.WikiConfig = "bloodspirit";
+                        gons3.WikiConfig = "bloodspirit";
+                        gons4.WikiConfig = "bloodspirit";
+                        mop.WikiConfig = "bloodspirit";
+                        mop.LoadWikiConfig = true; 
+                        gons.LoadWikiConfig = true;
+                        gons2.LoadWikiConfig = true;
+                        gons3.LoadWikiConfig = true;
+                        gons4.LoadWikiConfig = true;
                         break;
                     }
                 case 1:
                     {
                         m_Prisoner = new Quest9();
-                        m_Prisoner.WikiConfig = "rym_headmaster";
-                        m_Prisoner.LoadWikiConfig = true;
+                        BaseCreature mop = m_Prisoner as BaseCreature;
+                        mop.WikiConfig = "rym_headmaster";
+                        mop.LoadWikiConfig = true;
                         m_Prisoner.Name = "A spirit of hate";
                         goons = new WesternBrigand();
                         goons2 = new SouthernBrigand();
@@ -83,12 +95,17 @@ namespace Server.Multis
                 case 2:
                     {
                         m_Prisoner = new Quest9();
-                        m_Prisoner.WikiConfig = "graftedspiderabomination";
-                        m_Prisoner.LoadWikiConfig = true; 
+                        BaseCreature mop = m_Prisoner as BaseCreature;
+                        mop.WikiConfig = "graftedspiderabomination";
+                        mop.LoadWikiConfig = true; 
                         goons = new SkeletalSoldier();
                         goons2 = new SkeletalSoldier();
                         goons3 = new SkeletalSoldier();
                         goons4 = new SkeletalSoldier();
+                        goons2.Team = "1";
+                        goons3.Team = "1";
+                        goons4.Team = "1";
+                        goons.Team = "1"; 
                         break;
                     }
                 case 3:
@@ -109,14 +126,22 @@ namespace Server.Multis
                         goons2 = new CaveTroll();
                         goons3 = new CaveTroll();
                         goons4 = new CaveTroll();
-                        goons.WikiConfig = "cavetrollrager";
-                        goons2.WikiConfig = "cavetrollrager";
-                        goons3.WikiConfig = "cavetrollrager";
-                        goons4.WikiConfig = "cavetrollrager";
-                        goons.LoadWikiConfig = true;
-                        goons2.LoadWikiConfig = true;
-                        goons3.LoadWikiConfig = true;
-                        goons4.LoadWikiConfig = true;
+                        goons2.Team = "1";
+                        goons3.Team = "1";
+                        goons4.Team = "1";
+                        goons.Team = "1"; 
+                        BaseCreature gons = goons as BaseCreature;
+                        BaseCreature gons2 = goons2 as BaseCreature;
+                        BaseCreature gons3 = goons3 as BaseCreature;
+                        BaseCreature gons4 = goons4 as BaseCreature;
+                        gons.WikiConfig = "cavetrollrager";
+                        gons2.WikiConfig = "cavetrollrager";
+                        gons3.WikiConfig = "cavetrollrager";
+                        gons4.WikiConfig = "cavetrollrager";
+                        gons.LoadWikiConfig = true;
+                        gons2.LoadWikiConfig = true;
+                        gons3.LoadWikiConfig = true;
+                        gons4.LoadWikiConfig = true;
 
                         break;
                     }
@@ -124,10 +149,10 @@ namespace Server.Multis
                     {
                         m_Prisoner = new Quest7();
                         m_Prisoner.Name = "A star wyrm"; 
-                        goons = new wyvern();
-                        goons2 = new wyvern();
-                        goons3 = new wyvern();
-                        goons4 = new wyvern();
+                        goons = new Wyvern();
+                        goons2 = new Wyvern();
+                        goons3 = new Wyvern();
+                        goons4 = new Wyvern();
 
                         break;
                     }
