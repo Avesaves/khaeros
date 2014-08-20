@@ -366,7 +366,7 @@ namespace Server.Mobiles
                                     }
                                 }
                             case "purchase":
-                            -                            case "sell":
+                                 case "sell":
                                  {
                                      int amt = 0;
                                      CraftResource res = CraftResource.None;
