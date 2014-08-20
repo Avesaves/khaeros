@@ -34,6 +34,9 @@ namespace Khaeros.Scripts.Khaeros.Spells
             List<SpellScrollCost> Quest6Costs = new List<SpellScrollCost>();
             Quest6Costs.Add(CreateSpellCost(typeof(Quest6Item), 1));
 
+            List<SpellScrollCost> Quest7Costs = new List<SpellScrollCost>();
+            Quest7Costs.Add(CreateSpellCost(typeof(Quest7Item), 1));
+
 
             AddToSpellCosts(typeof (Quest1pack), Quest1Costs);
             AddToSpellCosts(typeof(Quest2pack), Quest2Costs);
@@ -41,26 +44,27 @@ namespace Khaeros.Scripts.Khaeros.Spells
             AddToSpellCosts(typeof(Quest4pack), Quest4Costs);
             AddToSpellCosts(typeof(Quest5pack), Quest5Costs);
             AddToSpellCosts(typeof(Quest6pack), Quest6Costs);
+            AddToSpellCosts(typeof(Quest7pack), Quest7Costs);
         }
 
         void BuySpells(string speech, Container backpack, Mobile buyer)
         {
-            if (speech.Contains("goblins"))
+            if (speech.Contains("goblins") || speech.Contains("goblin"))
             {
                 BuySpell<Quest1pack>(backpack, buyer);
                 //buyer.Emote("*tries to exchange an item for a reward*");
             }
-            if (speech.Contains("plants"))
+            if (speech.Contains("plants")||speech.Contains("plant"))
             {
                 BuySpell<Quest2pack>(backpack, buyer);
                 //buyer.Emote("*tries to exchange an item for a reward*");
             }
-            if (speech.Contains("elementals"))
+            if (speech.Contains("elementals")||speech.Contains("elemental"))
             {
                 BuySpell<Quest3pack>(backpack, buyer);
                 //buyer.Emote("*tries to exchange an item for a reward*");
             }
-            if (speech.Contains("beasts"))
+            if (speech.Contains("beasts")||speech.Contains("beast"))
             {
                 BuySpell<Quest4pack>(backpack, buyer);
                 //buyer.Emote("*tries to exchange an item for a reward*");
@@ -70,9 +74,14 @@ namespace Khaeros.Scripts.Khaeros.Spells
                 BuySpell<Quest5pack>(backpack, buyer);
                 //buyer.Emote("*tries to exchange an item for a reward*");
             }
-            if (speech.Contains("dragons"))
+            if (speech.Contains("star")||speech.Contains("creature"))
             {
                 BuySpell<Quest6pack>(backpack, buyer);
+                //buyer.Emote("*tries to exchange an item for a reward*");
+            }
+            if (speech.Contains("unknown") || speech.Contains("fearsome"))
+            {
+                BuySpell<Quest7pack>(backpack, buyer);
                 //buyer.Emote("*tries to exchange an item for a reward*");
             }
         }

@@ -5,7 +5,7 @@ using Server.Mobiles;
 
 namespace Server.Multis
 {
-	public class QuestCamp : BaseCamp
+	public class hardQuestCamp : BaseCamp
 	{
 		private Mobile m_Prisoner;
         private Mobile goons;
@@ -16,7 +16,7 @@ namespace Server.Multis
 		private BaseDoor m_Gate;
 
 		[Constructable]
-		public QuestCamp() : base( 0x25 )
+		public hardQuestCamp() : base( 0x25 )
 		{
 		}
 
@@ -51,69 +51,84 @@ namespace Server.Multis
 			{
                 case 0:
                     {
-                        m_Prisoner = new Quest1();
-                        goons = new HobgoblinWarrior();
-                        goons2 = new HobgoblinWarrior();
-                        goons3 = new HobgoblinWarrior();
-                        goons4 = new HobgoblinWarrior(); 
+                        m_Prisoner = new Quest9();
+                        m_Prisoner.WikiConfig = "bloodspirit";
+                        m_Prisoner.LoadWikiConfig = true; 
+                        goons = new GenericWarrior();
+                        goons2 = new GenericWarrior();
+                        goons3 = new GenericWarrior();
+                        goons4 = new GenericWarrior();
+                        goons.WikiConfig = "bloodspirit";
+                        goons2.WikiConfig = "bloodspirit";
+                        goons3.WikiConfig = "bloodspirit";
+                        goons4.WikiConfig = "bloodspirit";
+                        goons.LoadWikiConfig = true;
+                        goons2.LoadWikiConfig = true;
+                        goons3.LoadWikiConfig = true;
+                        goons4.LoadWikiConfig = true;
                         break;
                     }
                 case 1:
                     {
-                        m_Prisoner = new Quest2();
-                        goons = new ConstrictingVine();
-                        goons2 = new ConstrictingVine();
-                        goons3 = new ConstrictingVine();
-                        goons4 = new ConstrictingVine();
+                        m_Prisoner = new Quest9();
+                        m_Prisoner.WikiConfig = "rym_headmaster";
+                        m_Prisoner.LoadWikiConfig = true;
+                        m_Prisoner.Name = "A spirit of hate";
+                        goons = new WesternBrigand();
+                        goons2 = new SouthernBrigand();
+                        goons3 = new NorthernBrigand();
+                        goons4 = new SouthernNoble();
                         break;
                     }
                 case 2:
                     {
-                        m_Prisoner = new Quest3();
-                        goons = new CrystalElemental();
-                        goons2 = new CrystalElemental();
-                        goons3 = new CrystalElemental();
-                        goons4 = new CrystalElemental();
+                        m_Prisoner = new Quest9();
+                        m_Prisoner.WikiConfig = "graftedspiderabomination";
+                        m_Prisoner.LoadWikiConfig = true; 
+                        goons = new SkeletalSoldier();
+                        goons2 = new SkeletalSoldier();
+                        goons3 = new SkeletalSoldier();
+                        goons4 = new SkeletalSoldier();
                         break;
                     }
                 case 3:
                     {
-                        m_Prisoner = new Quest4();
-                        goons = new DisplacerBeast();
-                        goons2 = new DisplacerBeast();
-                        goons3 = new DisplacerBeast();
-                        goons4 = new DisplacerBeast();
+                        m_Prisoner = new Quest8();
+                        m_Prisoner.Name = "An unknown horror";
+
+                        goons = new WesternBrigand();
+                        goons2 = new SouthernBrigand();
+                        goons3 = new NorthernBrigand();
+                        goons4 = new SouthernNoble();
                         break;
                     }
                 case 4:
                     {
-                        m_Prisoner = new Quest5();
-                        goons = new HookHorror();
-                        goons2 = new HookHorror();
-                        goons3 = new HookHorror();
-                        goons4 = new HookHorror(); 
-                        break;
-                    }
-                case 5:
-                    {
-                        m_Prisoner = new Quest6();
-                        m_Prisoner.Name = "A star creature"; 
+                        m_Prisoner = new Stalker();
                         goons = new CaveTroll();
                         goons2 = new CaveTroll();
                         goons3 = new CaveTroll();
                         goons4 = new CaveTroll();
-                        goons.WikiConfig = "trollhound";
+                        goons.WikiConfig = "cavetrollrager";
+                        goons2.WikiConfig = "cavetrollrager";
+                        goons3.WikiConfig = "cavetrollrager";
+                        goons4.WikiConfig = "cavetrollrager";
                         goons.LoadWikiConfig = true;
-                        goons.Name = "A crystalline entity"; 
-                        goons2.WikiConfig = "trollhound";
                         goons2.LoadWikiConfig = true;
-                        goons2.Name = "A crystalline entity"; 
-                        goons3.WikiConfig = "trollhound";
                         goons3.LoadWikiConfig = true;
-                        goons3.Name = "A crystalline entity"; 
-                        goons4.WikiConfig = "trollhound";
                         goons4.LoadWikiConfig = true;
-                        goons4.Name = "A crystalline entity"; 
+
+                        break;
+                    }
+                case 5:
+                    {
+                        m_Prisoner = new Quest7();
+                        m_Prisoner.Name = "A star wyrm"; 
+                        goons = new wyvern();
+                        goons2 = new wyvern();
+                        goons3 = new wyvern();
+                        goons4 = new wyvern();
+
                         break;
                     }
 			}
@@ -148,7 +163,7 @@ namespace Server.Multis
 			}
 		}
         */
-		public QuestCamp( Serial serial ) : base( serial )
+		public hardQuestCamp( Serial serial ) : base( serial )
 		{
 		}
 

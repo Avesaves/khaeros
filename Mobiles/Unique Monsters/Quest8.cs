@@ -8,14 +8,14 @@ using Server.Regions;
 
 namespace Server.Mobiles
 {
-    [CorpseName("a Stalker corpse")]
-    public class Stalker : BaseCreature, IAbyssal, IHasReach
+    [CorpseName("a strange corpse")]
+    public class Quest8 : BaseCreature, IAbyssal, IHasReach
     {
         [Constructable]
-        public Stalker()
+        public Quest8()
             : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.1, 0.2)
         {
-            Name = "a Stalker";
+            Name = "a constructed horror";
             CreatureGroup = "Troll";
             Body = 130;
             Hue = 2994;
@@ -48,7 +48,8 @@ namespace Server.Mobiles
 
             MeleeAttackType = MeleeAttackType.FrontalAOE;
             CreatureGroup = CreatureGroup.Abyssal;
-
+            WikiConfig = "cookie";
+            LoadWikiConfig = true;
             Fame = 90000;
             Karma = -60000;
             PackItem(new RewardToken(11));
@@ -66,7 +67,7 @@ namespace Server.Mobiles
         public override int Meat { get { return 15; } }
         public override int Bones { get { return 30; } }
         public override FoodType FavoriteFood { get { return FoodType.Meat; } }
-
+/*
         public override int GetAngerSound()
         {
             return 0x174;
@@ -91,8 +92,8 @@ namespace Server.Mobiles
         {
             return 0x178;
         }
-
-        public void DisplaceItself(Mobile target)
+        */
+     /*   public void DisplaceItself(Mobile target)
         {
             Map map = this.Map;
 
@@ -121,7 +122,7 @@ namespace Server.Mobiles
 
             this.Location = loc;
             this.ProcessDelta();
-        }
+        }*/
 
         public override void OnGotMeleeAttack(Mobile attacker)
         {
@@ -133,18 +134,19 @@ namespace Server.Mobiles
 
                 if (randomEmote == 5)
                 {
-                    this.Emote("*Roars in pain!*");
+                    this.Emote("*laughs maniacally!*");
                     this.PlaySound(0x167);
                 }
                 else if (randomEmote == 4)
                 {
-                    this.Say("Damn the gods!");
+                    this.Say("eheh! EHEHEHEHEHEHEHEH!!");
                     this.PlaySound(0x168);
                 }
             }
             else
             {
-                DisplaceItself(attacker);
+                this.Emote("*laughs maniacally!*");
+                this.PlaySound(0x167);
             }
         }
 
@@ -154,7 +156,7 @@ namespace Server.Mobiles
             AddLoot(LootPack.Gems, 15);
 		}
 
-        public Stalker(Serial serial)
+        public Quest8(Serial serial)
             : base(serial)
         {
         }
