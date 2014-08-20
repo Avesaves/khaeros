@@ -4,7 +4,7 @@ using Server.Items;
 namespace Server.Mobiles
 {
 	[CorpseName( "a Dire Bear corpse" )]
-	public class DireBear : ILargePredator, ITundraCreature 
+	public class DireBear : ILargePredator, ITundraCreature, BaseMount, IRacialMount
 	{
 		public override bool ParryDisabled{ get{ return true; } }
 		public override int[] Hues{ get{ return new int[]{2581,2802,2992}; } }
