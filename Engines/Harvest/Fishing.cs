@@ -130,7 +130,7 @@ namespace Server.Engines.Harvest
 				new MutateEntry(  10.0,  60.0,  -100.0,  true, typeof( Cod ), typeof (Salmon), typeof (Bass), typeof (Trout) ),
 				new MutateEntry(  20.0,  75.0,  -100.0,  true, typeof( Tuna ), typeof (Catfish), typeof (Carp), typeof (Perch) ),
 				//new MutateEntry( 100.0,  80.0,  4080.0,  true, typeof( MessageInABottle ) ),
-				new MutateEntry(   80.0, 125.0, -1375.0, false, typeof( MurrelFish ), typeof( BarbedFish ), typeof( DragonFish ), 
+				new MutateEntry(   80.0, 125.0, -375.0, false, typeof( MurrelFish ), typeof( BarbedFish ), typeof( DragonFish ), 
                     typeof( ShimmeringBass ), typeof( PufferFish ), typeof( StoneFish ) ),
 				//new MutateEntry(   0.0, 105.0,  -420.0, false, typeof( Boots ), typeof( Shoes ), typeof( Sandals ), typeof( ThighBoots ) ),
 				new MutateEntry(   5.0, 50.0,  -200.0, false, typeof( Fish ) )
