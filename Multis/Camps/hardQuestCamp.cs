@@ -87,8 +87,8 @@ namespace Server.Multis
                         mop.WikiConfig = "rym_headmaster";
                         mop.LoadWikiConfig = true;
                         m_Prisoner.Name = "A spirit of hate";
-                        m_Prisoner.Bodyvalue = 400;
-                        m_Prisoner.AI = AIType.AI_Mage;
+                        m_Prisoner.BodyValue = 400;
+                        mop.AI = AIType.AI_Mage;
                         goons = new WesternBrigand();
                         goons2 = new SouthernBrigand();
                         goons3 = new NorthernBrigand();
