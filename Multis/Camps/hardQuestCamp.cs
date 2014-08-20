@@ -58,10 +58,7 @@ namespace Server.Multis
                         goons2 = new GenericWarrior();
                         goons3 = new GenericWarrior();
                         goons4 = new GenericWarrior();
-                        goons2.Team = "1";
-                        goons3.Team = "1";
-                        goons4.Team = "1";
-                        goons.Team = "1"; 
+
                         BaseCreature mop = m_Prisoner as BaseCreature;
                         BaseCreature gons = goons as BaseCreature;
                         BaseCreature gons2 = goons2 as BaseCreature;
@@ -72,6 +69,10 @@ namespace Server.Multis
                         gons3.WikiConfig = "bloodspirit";
                         gons4.WikiConfig = "bloodspirit";
                         mop.WikiConfig = "bloodspirit";
+                        gons2.Team = 1;
+                        gons3.Team = 1;
+                        gons4.Team = 1;
+                        gons.Team = 1; 
                         mop.LoadWikiConfig = true; 
                         gons.LoadWikiConfig = true;
                         gons2.LoadWikiConfig = true;
@@ -102,10 +103,10 @@ namespace Server.Multis
                         goons2 = new SkeletalSoldier();
                         goons3 = new SkeletalSoldier();
                         goons4 = new SkeletalSoldier();
-                        goons2.Team = "1";
-                        goons3.Team = "1";
-                        goons4.Team = "1";
-                        goons.Team = "1"; 
+                        gons2.Team = 1;
+                        gons3.Team = 1;
+                        gons4.Team = 1;
+                        gons.Team = 1; 
                         break;
                     }
                 case 3:
@@ -126,10 +127,7 @@ namespace Server.Multis
                         goons2 = new CaveTroll();
                         goons3 = new CaveTroll();
                         goons4 = new CaveTroll();
-                        goons2.Team = "1";
-                        goons3.Team = "1";
-                        goons4.Team = "1";
-                        goons.Team = "1"; 
+
                         BaseCreature gons = goons as BaseCreature;
                         BaseCreature gons2 = goons2 as BaseCreature;
                         BaseCreature gons3 = goons3 as BaseCreature;
@@ -138,6 +136,10 @@ namespace Server.Multis
                         gons2.WikiConfig = "cavetrollrager";
                         gons3.WikiConfig = "cavetrollrager";
                         gons4.WikiConfig = "cavetrollrager";
+                        gons2.Team = 1;
+                        gons3.Team = 1;
+                        gons4.Team = 1;
+                        gons.Team = 1; 
                         gons.LoadWikiConfig = true;
                         gons2.LoadWikiConfig = true;
                         gons3.LoadWikiConfig = true;
