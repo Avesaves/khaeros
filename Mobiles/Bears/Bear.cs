@@ -14,7 +14,7 @@ namespace Server.Mobiles
             Name = "a bear";
             Body = 213;
             BaseSoundID = 0xA3;
-
+            Tamable = true; 
 			SetStr( 150, 185 );
 			SetDex( 100, 110 );
 			SetInt( 26, 30 );
