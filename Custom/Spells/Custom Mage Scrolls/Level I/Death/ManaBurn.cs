@@ -146,7 +146,7 @@ namespace Server.Items
 						}
 
 						//Effects.SendLocationEffect( m_loc, map, 0x3915, 17 );
-                        Engines.XmlSpawner2.XmlMana att = new Server.Engines.XmlSpawner2.XmlLifeStealer(-Caster.Mana, 600);
+                        Engines.XmlSpawner2.XmlMana att = new Server.Engines.XmlSpawner2.XmlMana(-Caster.Mana, 600);
                         
                 Caster.Mana -= Caster.Mana;
                 Engines.XmlSpawner2.XmlAttach.AttachTo(Caster, att);
