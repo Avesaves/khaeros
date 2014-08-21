@@ -80,7 +80,7 @@ namespace Server.Items
         public override bool IsHarmful { get { return false; } }
         public override bool UsesTarget { get { return false; } }
 		public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
-        public override string Name { get { return "Explode Corpse"; } }
+        public override string Name { get { return "Mana Burn"; } }
         public override int ManaCost { get { return 0; } }
         public override int BaseRange { get { return 0; } }
 
@@ -106,8 +106,9 @@ namespace Server.Items
         }
 		
         public override void Effect()
-        {		
-			if (CasterHasEnoughMana )
+        {
+        
+			if (CasterHasEnoughMana && Caster.RawMana == Caster.ManaMax )
 			{
 				//Corpse cp = TargetItem as Corpse;
 
@@ -138,7 +139,7 @@ namespace Server.Items
 							Mobile mb = (Mobile)targets[i];
 							mb.DoHarmful( mb );
 							mb.Emote ("*Burns with ethereal flame!*");
-							mb.FixedEffect( 0x3915, 1, 20, 2937, 30 ); // At player
+							mb.FixedEffect( 0x3915, 1, 20, 2936, 30 ); // At player
                             if (mb is PlayerMobile)
 							    AOS.Damage( mb, Caster, Caster.Mana, 0, 0, 0, 100, 0, 0, 0, 0 );
                             else
