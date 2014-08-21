@@ -139,7 +139,8 @@ namespace Server.Items
 							Mobile mb = (Mobile)targets[i];
 							mb.DoHarmful( mb );
 							mb.Emote ("*Burns with ethereal flame!*");
-							mb.FixedEffect( 0x3915, 1, 20, 2936, 30 ); // At player
+							//mb.FixedEffect( 0x3915, 1, 20, 2936, 30 ); // At player  - this made things see through and cool!
+                            mb.FixedEffect(0x3915, 1, 20, 2936, 0);
                             if (mb is PlayerMobile)
 							    AOS.Damage( mb, Caster, Caster.Mana, 0, 0, 0, 100, 0, 0, 0, 0 );
                             else
