@@ -91,13 +91,15 @@ namespace Server.Misc
                         {
                             summoned = spir;
                             spir.Say("For the Mother and Father.");
-                            spir.RawHits = 18;
+                            spir.RawHits = 300;
+                            spir.Hits = 300;
                         }
 
                         else if (FeatLevel > 1)
                         {
                             summoned = spir;
-                            spir.RawHits = 10;
+                            spir.RawHits = 100;
+                            spir.Hits = 100;
                             spir.RawDex = 30;
                             spir.Say("For the Mother and Father.");
                         }
@@ -105,7 +107,8 @@ namespace Server.Misc
                         else
                         {
                             summoned = spir;
-                            spir.RawHits = 5;
+                            spir.RawHits = 50;
+                            spir.Hits = 50;
                             spir.RawDex = 10;
                             spir.Say("For the Mother and Father.");
                         }
