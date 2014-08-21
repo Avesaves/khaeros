@@ -53,7 +53,7 @@ namespace Server.SkillHandlers
 
 		public static bool MustBeSubdued( BaseCreature bc )
 		{
-			return (bc.SubdueBeforeTame && (bc.Hits > (bc.HitsMax / 10)) && !bc.IsOldPet());
+			return (bc.SubdueBeforeTame && (bc.Hits > (bc.HitsMax / 5)) && !bc.IsOldPet());
 		}
 
 		public static void ScaleStats( BaseCreature bc, double scalar )
