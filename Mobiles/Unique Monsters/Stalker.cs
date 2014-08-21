@@ -54,7 +54,7 @@ namespace Server.Mobiles
             PackItem(new RewardToken(11));
             PackItem(new Quest7Item());
             int rand = Utility.Random(40);
-            if (rand > 39)
+            if (rand > 38)
                 PackItem(new StarmetalOre(2)); 
         }
 
