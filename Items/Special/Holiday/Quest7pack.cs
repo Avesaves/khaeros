@@ -15,7 +15,7 @@ namespace Server.Items
             DropItem(new Silver(15, 35));
             DropItem(new Gold(1, 25));
             DropItem(new RewardToken(40));
-            int rand = Utility.Random(9);
+            int rand = Utility.Random(10);
             if (rand > 8)
                 DropItem(new ManaBurnScroll());
 
