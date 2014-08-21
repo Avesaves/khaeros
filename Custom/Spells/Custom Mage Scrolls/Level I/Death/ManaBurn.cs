@@ -142,9 +142,9 @@ namespace Server.Items
 							//mb.FixedEffect( 0x3915, 1, 20, 2936, 30 ); // At player  - this made things see through and cool!
                             mb.FixedEffect(0x3915, 1, 20, 2936, 0);
                             if (mb is PlayerMobile)
-							    AOS.Damage( mb, Caster, Caster.Mana, 0, 0, 0, 100, 0, 0, 0, 0 );
+							    AOS.Damage( mb, Caster, Caster.Mana, 0, 0, 0, 0, 100, 0, 0, 0 );
                             else
-                                AOS.Damage(mb, Caster, Caster.Mana*2, 0, 0, 0, 100, 0, 0, 0, 0);
+                                AOS.Damage(mb, Caster, Caster.Mana*2, 0, 0, 0, 0, 100, 0, 0, 0);
 						}
 
 						//Effects.SendLocationEffect( m_loc, map, 0x3915, 17 );
