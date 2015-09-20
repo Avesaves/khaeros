@@ -129,7 +129,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "WillowBark"); */
+                            Seed.PickPlantSeed(from, "WillowBark"); 
                             
 
                             Delete();
@@ -210,7 +210,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "WolfLichen"); */
+                            Seed.PickPlantSeed(from, "WolfLichen"); 
 
                             Delete();
                         }
@@ -290,7 +290,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Yarrow"); */
+                            Seed.PickPlantSeed(from, "Yarrow");
 
                             Delete();
                         }
@@ -370,7 +370,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "AlpineSorrel"); */
+                            Seed.PickPlantSeed(from, "AlpineSorrel");
 
                             Delete();
                         }
@@ -450,7 +450,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "MyrrhaTree"); */
+                            Seed.PickPlantSeed(from, "MyrrhaTree");
 
                             Delete();
                         }
@@ -530,7 +530,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "DesertSage"); */
+                            Seed.PickPlantSeed(from, "DesertSage"); 
 
                             Delete();
                         }
@@ -610,7 +610,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Chia"); */
+                            Seed.PickPlantSeed(from, "Chia");
 
                             Delete();
                         }
@@ -690,7 +690,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Cliffrose"); */
+                            Seed.PickPlantSeed(from, "Cliffrose");
 
                             Delete();
                         }
@@ -770,7 +770,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Datura"); */
+                            Seed.PickPlantSeed(from, "Datura");
 
                             Delete();
                         }
@@ -850,7 +850,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Dogbane"); */
+                            Seed.PickPlantSeed(from, "Dogbane");
 
                             Delete();
                         }
@@ -930,7 +930,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Agrimony"); */
+                            Seed.PickPlantSeed(from, "Agrimony");
 
                             Delete();
                         }
@@ -1010,7 +1010,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Echinacea"); */
+                            Seed.PickPlantSeed(from, "Echinacea"); 
 
                             Delete();
                         }
@@ -1094,7 +1094,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Goldenseal"); */
+                            Seed.PickPlantSeed(from, "Goldenseal");
 
                             Delete();
                         }
@@ -1170,7 +1170,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Mullein"); */
+                            Seed.PickPlantSeed(from, "Mullein");
 
                             Delete();
                         }
@@ -1250,7 +1250,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "SkullcapMushroom"); */
+                            Seed.PickPlantSeed(from, "SkullcapMushroom");
 
                             Delete();
                         }
@@ -1330,7 +1330,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Hyssop"); */
+                            Seed.PickPlantSeed(from, "Hyssop"); 
 
                             Delete();
                         }
@@ -1410,7 +1410,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "SphagnumMoss"); */
+                            Seed.PickPlantSeed(from, "SphagnumMoss");
 
                             Delete();
                         }
@@ -1490,7 +1490,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "MarshMallow"); */
+                            Seed.PickPlantSeed(from, "MarshMallow");
 
                             Delete();
                         }
@@ -1570,7 +1570,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "GingkoTree"); */
+                            Seed.PickPlantSeed(from, "GingkoTree");
 
                             Delete();
                         }
@@ -1650,7 +1650,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Ginger"); */
+                            Seed.PickPlantSeed(from, "Ginger");
 
                             Delete();
                         }
@@ -1730,7 +1730,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "PinonTree"); */
+                            Seed.PickPlantSeed(from, "PinonTree");
 
                             Delete();
                         }
@@ -1810,7 +1810,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "CopalTree"); */
+                            Seed.PickPlantSeed(from, "CopalTree");
 
                             Delete();
                         }
@@ -1890,7 +1890,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "SacraTree"); */
+                            Seed.PickPlantSeed(from, "SacraTree");
 
                             Delete();
                         }
@@ -1974,7 +1974,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "JuniperBush"); */
+                            Seed.PickPlantSeed(from, "JuniperBush");
 
                             Delete();
                         }
@@ -2050,7 +2050,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "RedValerian"); */
+                            Seed.PickPlantSeed(from, "RedValerian");
 
                             Delete();
                         }
@@ -2130,7 +2130,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Belladonna"); */
+                            Seed.PickPlantSeed(from, "Belladonna");
 
                             Delete();
                         }
@@ -2210,7 +2210,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Comfrey"); */
+                            Seed.PickPlantSeed(from, "Comfrey");
 
                             Delete();
                         }
@@ -2290,7 +2290,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Purslane"); */
+                            Seed.PickPlantSeed(from, "Purslane");
 
                             Delete();
                         }
@@ -2374,7 +2374,7 @@ namespace Server.Items
                             seedChance += ((PlayerMobile)from).Feats.GetFeatLevel(FeatList.Farming);
                             seedChance += from.RawInt / 10;
 
-                            /* Seed.PickPlantSeed(from, "Aloe"); */
+                            Seed.PickPlantSeed(from, "Aloe"); 
 
                             Delete();
                         }
@@ -2458,7 +2458,7 @@ namespace Server.Items
                             seedChance += ((PlayerMobile)from).Feats.GetFeatLevel(FeatList.Farming);
                             seedChance += from.RawInt / 10;
 
-                            /* Seed.PickPlantSeed(from, "Cinchona"); */
+                            Seed.PickPlantSeed(from, "Cinchona"); 
 
                             Delete();
                         }
@@ -2538,7 +2538,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Lousewort"); */
+                            Seed.PickPlantSeed(from, "Lousewort"); 
 
                             Delete();
                         }
@@ -2618,7 +2618,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "BlueLily"); */
+                            Seed.PickPlantSeed(from, "BlueLily");
 
                             Delete();
                         }
@@ -2698,7 +2698,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "CatsClaw"); */
+                            Seed.PickPlantSeed(from, "CatsClaw");
 
                             Delete();
                         }
@@ -2778,7 +2778,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Damiana"); */
+                            Seed.PickPlantSeed(from, "Damiana");
 
                             Delete();
                         }
@@ -2858,7 +2858,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Foxglove"); */
+                            Seed.PickPlantSeed(from, "Foxglove"); 
 
                             Delete();
                         }
@@ -2938,7 +2938,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Wormwood"); */
+                            Seed.PickPlantSeed(from, "Wormwood");
 
                             Delete();
                         }
@@ -3019,7 +3019,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "Passionflower"); */
+                            Seed.PickPlantSeed(from, "Passionflower");
 
                             Delete();
                         }
@@ -3100,7 +3100,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "ChaulmoograTree"); */
+                            Seed.PickPlantSeed(from, "ChaulmoograTree"); 
 
                             Delete();
                         }
@@ -3181,7 +3181,7 @@ namespace Server.Items
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
 
-                            /* Seed.PickPlantSeed(from, "CamphorTree"); */
+                            Seed.PickPlantSeed(from, "CamphorTree"); 
 
                             Delete();
                         }
