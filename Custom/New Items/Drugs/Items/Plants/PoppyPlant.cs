@@ -46,7 +46,7 @@ namespace Server.Items
                             Misc.LevelSystem.AwardMinimumXP((PlayerMobile)from, 1);
                             ((PlayerMobile)from).Crafting = false;
                             IsPlanted(from);
-                            /* Seed.PickPlantSeed(from, "PoppyPlant"); */
+                            Seed.PickPlantSeed(from, "PoppyPlant");
 
                             Delete();
                         }
