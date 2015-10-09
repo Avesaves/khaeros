@@ -20,7 +20,7 @@ namespace Server.Items
         public override double RangedPercentage { get { return 0; } }
         public override int AosMinDamage { get { return 16; } }
         public override int AosMaxDamage { get { return 16; } }
-        public override double AosSpeed { get { return 4.25; } }
+        public override double AosSpeed { get { return 4; } }
 
         public override int OldStrengthReq { get { return 20; } }
         public override int OldMinDamage { get { return 12; } }
