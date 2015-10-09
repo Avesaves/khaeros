@@ -9,7 +9,7 @@ namespace Server.FeatInfo
 {
 	public class AdvancedLumberjacking : BaseFeat
 	{
-		public override string Name{ get{ return "Advanced Lumberjkacing"; } }
+		public override string Name{ get{ return "Advanced Lumberjacking"; } }
 		public override FeatList ListName{ get{ return Mobiles.FeatList.AdvancedLumberjacking; } }
 		public override FeatCost CostLevel{ get{ return FeatCost.Low; } }
 		
