@@ -42,15 +42,15 @@ namespace Server.Spells.Seventh
 
 				if ( Core.AOS )
 				{
-					damage = GetNewAosDamage( 48, 1, 5, m );
+					damage = GetNewAosDamage( 23, 1, 4, m );
 				}
 				else
 				{
-					damage = Utility.Random( 27, 22 );
+					damage = Utility.Random( 12, 9 );
 
 					if ( CheckResisted( m ) )
 					{
-						damage *= 0.6;
+						damage *= 0.75;
 
 						m.SendLocalizedMessage( 501783 ); // You feel yourself resisting magical energy.
 					}
