@@ -121,10 +121,10 @@ namespace Server.Items
                     Caster.MovingParticles(targ, 0x36D4, 7, 0, false, true, 2624, 0, 3043, 4043, 0x211, 0x100);
                     Caster.FixedParticles(0x375A, 244, 25, 9950, 2624, 0, EffectLayer.Waist);
                     if ( targ is PlayerMobile )
-                        AOS.Damage(targ, Caster, 45, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
+                        AOS.Damage(targ, Caster.RawInt/2, 45, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
                         //phys fire cold pois energy, blunt slash pierce 
                     else
-                        AOS.Damage(targ, Caster, 90, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
+                        AOS.Damage(targ, Caster.RawInt, 90, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
                     Caster.Emote("*Fires a bolt of energy!*");
 
                     return;
