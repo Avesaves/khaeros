@@ -2565,7 +2565,7 @@ namespace Server.Items
 				}
 			}
 			if ( damage > 1 && defender is PlayerMobile && !(attacker is PlayerMobile))
-				damage = damage/2
+				damage = damage/2;
 			
 			int finaldamage = Math.Max( damage - damageignore, 0 );
 			
