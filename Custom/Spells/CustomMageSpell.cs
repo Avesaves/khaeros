@@ -367,11 +367,11 @@ namespace Server.Misc
             	
             	if( !m_target.Alive || m_target.Blessed || m_target.Deleted )
             		return;
-            	
+            	Mobile cCaster = m_spell.Caster;
             	if(m_target is PlayerMobile)
-                    AOS.Damage( m_target, m_spell.Caster, Convert.ToInt32(m_spell.RepDamage*(Caster.RawInt*.01)), false, 0, 0, 0, 0, 100, 0, 0, 0, false );
+                    AOS.Damage( m_target, m_spell.Caster, Convert.ToInt32(m_spell.RepDamage*(cCaster.RawInt*.01)), false, 0, 0, 0, 0, 100, 0, 0, 0, false );
                 else
-                    AOS.Damage(m_target, m_spell.Caster, Convert.ToInt32((m_spell.RepDamage*2)*(Caster.RawInt*.01)), false, 0, 0, 0, 0, 100, 0, 0, 0, false);
+                    AOS.Damage(m_target, m_spell.Caster, Convert.ToInt32((m_spell.RepDamage*2)*(cCaster.RawInt*.01)), false, 0, 0, 0, 0, 100, 0, 0, 0, false);
             	m_target.FixedParticles( 0x374A, 10, 15, 5013, m_spell.EffectHue, 0, EffectLayer.Waist );
 				m_target.PlaySound( 0x1F1 );
             	m_spell.Reps--;
@@ -408,13 +408,13 @@ namespace Server.Misc
             	if( spell.Damage > 0 && spell.TargetCanBeAffected )
             	{
                     int damage = 100;
-
+			Mobile cCaster = spell.Caster;
 	            	Mobile toDamage = spell.TargetMobile;
 	            	spell.HandleEffect( false );
                     if(toDamage is PlayerMobile)
-	            	    AOS.Damage( toDamage, spell.Caster, Convert.ToInt32( spell.TotalEffect *(Caster.RawInt*.01)), false, 0, 0, 0, 0, damage, 0, 0, 0, false );
+	            	    AOS.Damage( toDamage, spell.Caster, Convert.ToInt32( spell.TotalEffect *(cCaster.RawInt*.01)), false, 0, 0, 0, 0, damage, 0, 0, 0, false );
                     else
-                        AOS.Damage(toDamage, spell.Caster, Convert.ToInt32((spell.TotalEffect*2)*(Caster.RawInt*.01)), false, 0, 0, 0, 0, damage, 0, 0, 0, false);
+                        AOS.Damage(toDamage, spell.Caster, Convert.ToInt32((spell.TotalEffect*2)*(cCaster.RawInt*.01)), false, 0, 0, 0, 0, damage, 0, 0, 0, false);
 	            	
 	            	if( toDamage.Alive && spell.Reps > 0 && spell.RepDelay > 0 )
 	            		new RecurrentDamageTimer( toDamage, spell ).Start();
