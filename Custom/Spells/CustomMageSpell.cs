@@ -330,9 +330,9 @@ namespace Server.Misc
 				Mobile m = list[i] as Mobile;
 				m.FixedParticles( ExplosionID, 10, 30, 5052, ExplosionHue, 0, EffectLayer.LeftFoot );
                 if (m is PlayerMobile)
-				    AOS.Damage( m, Caster, ExplosionDamage, false, 0, 0, 0, 0, 100, 0, 0, 0, false );
+				    AOS.Damage( m, Caster, ExplosionDamage*(Caster.RawInt*.01), false, 0, 0, 0, 0, 100, 0, 0, 0, false );
                 else
-                    AOS.Damage(m, Caster, ExplosionDamage*2, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
+                    AOS.Damage(m, Caster, (ExplosionDamage*2)*(Caster.RawInt*.01), false, 0, 0, 0, 0, 100, 0, 0, 0, false);
 			}
 		}
 		
@@ -369,9 +369,9 @@ namespace Server.Misc
             		return;
             	
             	if(m_target is PlayerMobile)
-                    AOS.Damage( m_target, m_spell.Caster, m_spell.RepDamage, false, 0, 0, 0, 0, 100, 0, 0, 0, false );
+                    AOS.Damage( m_target, m_spell.Caster, m_spell.RepDamage*(Caster.RawInt*.01), false, 0, 0, 0, 0, 100, 0, 0, 0, false );
                 else
-                    AOS.Damage(m_target, m_spell.Caster, m_spell.RepDamage*2, false, 0, 0, 0, 0, 100, 0, 0, 0, false);
+                    AOS.Damage(m_target, m_spell.Caster, (m_spell.RepDamage*2)*(Caster.RawInt*.01), false, 0, 0, 0, 0, 100, 0, 0, 0, false);
             	m_target.FixedParticles( 0x374A, 10, 15, 5013, m_spell.EffectHue, 0, EffectLayer.Waist );
 				m_target.PlaySound( 0x1F1 );
             	m_spell.Reps--;
@@ -412,9 +412,9 @@ namespace Server.Misc
 	            	Mobile toDamage = spell.TargetMobile;
 	            	spell.HandleEffect( false );
                     if(toDamage is PlayerMobile)
-	            	    AOS.Damage( toDamage, spell.Caster, Convert.ToInt32( spell.TotalEffect ), false, 0, 0, 0, 0, damage, 0, 0, 0, false );
+	            	    AOS.Damage( toDamage, spell.Caster, (Convert.ToInt32( spell.TotalEffect ))*(Caster.RawInt*.01), false, 0, 0, 0, 0, damage, 0, 0, 0, false );
                     else
-                        AOS.Damage(toDamage, spell.Caster, Convert.ToInt32(spell.TotalEffect)*2, false, 0, 0, 0, 0, damage, 0, 0, 0, false);
+                        AOS.Damage(toDamage, spell.Caster, (Convert.ToInt32(spell.TotalEffect)*2)*(Caster.RawInt*.01), false, 0, 0, 0, 0, damage, 0, 0, 0, false);
 	            	
 	            	if( toDamage.Alive && spell.Reps > 0 && spell.RepDelay > 0 )
 	            		new RecurrentDamageTimer( toDamage, spell ).Start();
