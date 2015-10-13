@@ -8,10 +8,10 @@ namespace Server.BackgroundInfo
 {	
 	public class Hardcore : BaseBackground
 	{
-		public override int Cost{ get{ return 0; } }
-		public override string Name{ get{ return "Hardcore"; } }
+		public override int Cost{ get{ return -20000; } }
+		public override string Name{ get{ return "Realism"; } }
 		public override BackgroundList ListName{ get{ return BackgroundList.Hardcore; } }
-		public override string Description{ get{ return "Description: This background is disabled."; } }
+		public override string Description{ get{ return "This background will make your character experience more grevious wounds, as well as open them to the possibility of permanent death at the hands of others."; } }
 		
 		public override string FullDescription{ get{ return GetFullDescription(this); } }
 		
@@ -24,7 +24,7 @@ namespace Server.BackgroundInfo
 		
 		public override void OnAddedTo( PlayerMobile m )
 		{
-			m.IsHardcore = false;
+			m.IsHardcore = true;
 		}
 		
 		public override void OnRemovedFrom( PlayerMobile m )
