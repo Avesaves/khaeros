@@ -1104,7 +1104,7 @@ namespace Server.Mobiles
 			else if( m_Mobile.CurrentWayPoint != null )
 			{
 				WayPoint point = m_Mobile.CurrentWayPoint;
-				if( (point.X != m_Mobile.Location.X || point.Y != m_Mobile.Location.Y) && point.Map == m_Mobile.Map && point.Parent == null && !point.Deleted )
+				if( (Convert.ToInt32(point.X) - Convert.ToInt32(m_Mobile.Location.X)< -3) || (Convert.ToInt32(point.X) - Convert.ToInt32(m_Mobile.Location.X)>3) ||(Convert.ToInt32(point.Y) - Convert.ToInt32(m_Mobile.Location.Y) <-3)||(Convert.ToInt32(point.Y) - Convert.ToInt32(m_Mobile.Location.Y) >3) && point.Map == m_Mobile.Map && point.Parent == null && !point.Deleted )
 				{
 					m_Mobile.DebugSay( "I will move towards my waypoint." );
 					DoMove( m_Mobile.GetDirectionTo( m_Mobile.CurrentWayPoint ) );
