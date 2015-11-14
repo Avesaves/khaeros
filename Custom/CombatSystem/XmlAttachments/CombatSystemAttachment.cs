@@ -3524,7 +3524,7 @@ namespace Server.Engines.XmlSpawner2
 				{
 					if ( mob.CanSee( m_Opponent ) && mob.InLOS( m_Opponent ) )
 					{
-						if ( !m_Opponent.InRange( mob, 1 ) )
+						if ( !m_Opponent.InRange( mob, -1 ) )
 						{
 							if ( weapon.IsStill( mob ) )
 							{

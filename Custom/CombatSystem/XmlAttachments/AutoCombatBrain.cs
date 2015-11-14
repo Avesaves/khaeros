@@ -341,12 +341,12 @@ namespace Server.Engines.XmlSpawner2
 					if (((BaseRanged)weapon).IsStill( m_Body ) )
 					{
 						if ( m_Body.CanSee( m_Body.Combatant ) && m_Body.InLOS( m_Body.Combatant ) )
-						{
-							if ( !m_Body.InRange( m_Body.Combatant, 1 ) )
-							{
+				        {
+							//if ( !m_Body.InRange( m_Body.Combatant, 1 ) )
+							//{
 								csa.BeginAiming();
 								return true;
-							}
+							//}
 						}
 					}
 					else

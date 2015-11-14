@@ -7212,16 +7212,16 @@ namespace Server.Mobiles
 			                                		int exp = 300;
 			                                		
 			                                		if( student.Level > 4 )
-			                                			exp = 300;
+			                                			exp = 200;
 			                                		
 			                                		if( student.Level > 9 )
-			                                			exp = 300;
+			                                			exp = 200;
 			                                		
 			                                		if( student.Level > 14 )
-			                                			exp = 300;
+			                                			exp = 200;
 			                                		
 			                                		if( student.Level > 19 )
-			                                			exp = 300;
+			                                			exp = 200;
 			                                		
 			                                		if( student.Level > 24 )
 			                                			exp = 200;
@@ -7230,7 +7230,7 @@ namespace Server.Mobiles
 			                                			exp = 200;
 			                           
 			                                		if( student.Level > 49 )
-			                                			exp = 8;			                           
+			                                			exp = 200;			                           
 			                                		
 			                                		student.XPFromLearning = true;
 			                                		this.XPFromLearning = true;

@@ -1189,38 +1189,35 @@ namespace Server.Items
 			return true;
 		}
 
-		public bool Scissor( Mobile from, Scissors scissors )
-		{
-			if ( !IsChildOf( from.Backpack ) )
-			{
-				from.SendLocalizedMessage( 502437 ); // Items you wish to cut must be in your backpack.
-				return false;
-			}
+        public bool Scissor(Mobile from, Scissors scissors)
+        {
+            if (!IsChildOf(from.Backpack))
+            {
+                from.SendLocalizedMessage(502437); // Items you wish to cut must be in your backpack.
+                return false;
+            }
 
-			if ( this != null )
-			{
-				Bandage bandage = new Bandage( 2 );
-				
-				if( this.Weight > 5.0 )
-					bandage.Amount += 2;
-				
-				if( this.Weight > 10.0 )
-					bandage.Amount += 2;
-				
-				bandage.Hue = this.Hue;
-				
-				Container pack = from.Backpack;
-				
-				pack.DropItem( bandage );
-				
-				from.SendMessage( "You rip the garment apart and create some bandages out of it" );
-				
-				this.Delete();
-			}
+            CraftSystem system = DefTailoring.CraftSystem;
 
-			from.SendLocalizedMessage( 502440 ); // Scissors can not be used on that to produce anything.
-			return false;
-		}
+            CraftItem item = system.CraftItems.SearchFor(GetType());
+
+            if (item != null && item.Ressources.Count == 1 && item.Ressources.GetAt(0).Amount >= 2)
+            {
+                try
+                {
+                    Item res = (Item)Activator.CreateInstance(CraftResources.GetInfo(m_Resource).ResourceTypes[0]);
+
+                    ScissorHelper(from, res, m_PlayerConstructed ? (item.Ressources.GetAt(0).Amount / 2) : 1);
+                    return true;
+                }
+                catch
+                {
+                }
+            }
+
+            from.SendLocalizedMessage(502440); // Scissors can not be used on that to produce anything.
+            return false;
+        }
 		
 		public override void AddNameProperty( ObjectPropertyList list )
 		{

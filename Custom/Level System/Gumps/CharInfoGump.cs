@@ -23,7 +23,7 @@ namespace Server.Gumps
 			if( divisor > 0 )
 				offset = thislevelsxp / divisor;
 			
-			if( m.Level > 49 )
+			if( m.Level > 59 )
 				offset = 0;
 			
 			this.Closable=false;

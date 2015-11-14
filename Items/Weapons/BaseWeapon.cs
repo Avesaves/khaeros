@@ -1409,10 +1409,11 @@ namespace Server.Items
 			bonus += AosAttributes.GetValue(defender, AosAttribute.DefendChance);
 			bonus += def.Stance.DefensiveBonus * def.Stance.FeatLevel;
 
-			if( def.RageFeatLevel <= 3 ) // normal rage, remove bonus
+			if( def.RageFeatLevel <= 3 )
+                // normal rage, remove bonus
 				bonus -= def.RageFeatLevel * 5;
 			else // defensive rage, add bonus
-				bonus += (def.RageFeatLevel - 3) * 5;
+				bonus += (def.RageFeatLevel) * 5;
 			
 			if( defender is PlayerMobile )
 			{
@@ -1576,8 +1577,8 @@ namespace Server.Items
             if( attacker.Paralyzed )
             	return true;
             
-            if( this is BaseRanged && attacker.InRange( defender, 1 ) )
-                return true;
+            if( this is BaseRanged && attacker.InRange( defender, 1 ) && defender is PlayerMobile  )
+               return true;
 		
             return false;
 		}
@@ -2565,7 +2566,7 @@ namespace Server.Items
 				}
 			}
 			if ( damage > 1 && defender is PlayerMobile && !(attacker is PlayerMobile))
-				damage = damage/2;
+				damage = (damage);
 			
 			int finaldamage = Math.Max( damage - damageignore, 0 );
 			
