@@ -2035,7 +2035,6 @@ namespace Server.Items
 
         public static bool IsGuildMilitary(PlayerMobile m, CustomGuildStone g, bool msg)
         {
-<<<<<<< HEAD
             if (IsGuildMilitary(m, g))
                 return true;
             else
@@ -2043,23 +2042,6 @@ namespace Server.Items
                 if (msg)
                     m.SendMessage("You do have access to that function because you are not military personnel for this organization.");
                 return false;
-=======
-            if (m.AccessLevel > AccessLevel.Player)
-            {
-                if (IsGuildMilitary(m, g))
-                    return true;
-                else
-                {
-                    if (msg)
-                        m.SendMessage(
-                            "You dont have access to that function because you are not military personnel for this organization.");
-                    return false;
-                }
-            }
-            else
-            {
-                m.SendMessage("Players do not have access to this function.");
->>>>>>> parent of 885aec1... Moved checking if player is a seer one level higher.
             }
         }
 
