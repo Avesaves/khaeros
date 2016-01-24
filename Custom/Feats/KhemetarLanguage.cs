@@ -16,7 +16,7 @@ namespace Server.FeatInfo
 		public override SkillName[] AssociatedSkills{ get{ return new SkillName[]{ }; } }
 		public override FeatList[] AssociatedFeats{ get{ return new FeatList[]{ }; } }
 		
-		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Linguistics, FeatList.WesternLanguage, FeatList.NorthernLanguage, FeatList.SouthernLanguage }; } }
+		public override FeatList[] Requires{ get{ return new FeatList[]{ FeatList.Linguistics, FeatList.WesternLanguage, FeatList.NorthernLanguage, FeatList.SouthernLanguage, FeatList.Inscription }; } }
 		public override FeatList[] Allows{ get{ return new FeatList[]{ }; } }
 		
 		public override string FirstDescription{ get{ return "This skill will give you some knowledge in Archaic languages, which will " +
