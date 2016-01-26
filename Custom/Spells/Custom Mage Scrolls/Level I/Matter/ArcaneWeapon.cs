@@ -81,7 +81,7 @@ namespace Server.Items
         public override bool UsesTarget { get { return false; } }
         public override FeatList Feat { get { return FeatList.CustomMageSpell; } }
         public override string Name { get { return "Arcane Weapon II"; } }
-        public override int ManaCost { get { return 50; } }
+        public override int ManaCost { get { return 75; } }
         public override int BaseRange { get { return 0; } }
 
         public ArcaneWeaponSpell()
