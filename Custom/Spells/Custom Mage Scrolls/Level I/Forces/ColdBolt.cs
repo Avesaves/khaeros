@@ -81,7 +81,7 @@ namespace Server.Items
         public override bool UsesTarget { get { return true; } }
 		public override FeatList Feat{ get{ return FeatList.CustomMageSpell; } }
         public override string Name { get { return "Cold Bolt"; } }
-        public override int ManaCost { get { return 100; } }
+        public override int ManaCost { get { return 110; } }
         public override int BaseRange { get { return 12; } }
 
         public ColdBoltSpell()
